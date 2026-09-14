@@ -53,7 +53,7 @@ The production budget must include single-instrument and underlying sector overl
 
 Use an existing computer for setup and a dedicated host for sustained testing. Later deploy a pinned Python environment and IB Gateway on a maintained host with encrypted storage, restricted network access and a service supervisor. Keep API traffic local. No public TWS port, no credentials in prompts, no bypassing MFA. Add heartbeat, stale-data, order-reject and state-mismatch alerts. Define who handles weekly reauthentication and exceptional failures. There is no permanent trading runtime inside this chat.
 
-## Current status
+## Historical status — Foundation 0.1
 
 - 21 local tests passed on Python 3.12.14 / Linux.
 - Synthetic 300-bar demonstration completed.
@@ -63,3 +63,15 @@ Use an existing computer for setup and a dedicated host for sustained testing. L
 - Risk and ledger modules are standalone foundations; integration into a broker execution engine remains work package C.
 
 Primary sources and exact user-facing setup steps are in Trading_Agent_Setup_HE.html.
+
+## Current continuation — Alpaca Paper and Phase A
+
+The project intentionally moved development to Alpaca Paper. The owner reported
+the real read-only probe passed. Broker portability and the original foundation
+are preserved. Phase A now adds a multi-asset 30-minute historical data provider,
+strict contract, quality gate and reproducible export; see MARKET_DATA_CONTRACT.md
+for commands, acceptance tests, scientific limitations and the next real-data gate.
+The new historical download still needs validation with local Paper credentials.
+The active sequence is data → Quant baseline → multi-asset simulator → Paper order
+manager → autonomous loop → AI → controlled A/B experiment. Earlier roadmap labels
+in this document describe the original IBKR plan. No execution gate has passed.
