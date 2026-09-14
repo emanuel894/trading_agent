@@ -30,6 +30,13 @@ def _iso(value: datetime | None) -> str | None:
     return value.isoformat() if value is not None else None
 
 
+def _missing_dependency_error(exc: ModuleNotFoundError) -> RuntimeError:
+    missing = exc.name or "unknown"
+    return RuntimeError(
+        f"Missing Python dependency '{missing}'. Run: pip install -r requirements.txt"
+    )
+
+
 @dataclass(frozen=True)
 class AlpacaPaperConfig:
     api_key: str
@@ -110,9 +117,7 @@ class AlpacaPaperAdapter:
         try:
             from alpaca.trading.client import TradingClient
         except ModuleNotFoundError as exc:
-            raise RuntimeError(
-                "alpaca-py is not installed. Run: pip install -r requirements.txt"
-            ) from exc
+            raise _missing_dependency_error(exc) from exc
         # The hard-coded paper=True is a safety boundary for this adapter.
         return TradingClient(config.api_key, config.secret_key, paper=True)
 
@@ -121,9 +126,7 @@ class AlpacaPaperAdapter:
         try:
             from alpaca.data.historical import StockHistoricalDataClient
         except ModuleNotFoundError as exc:
-            raise RuntimeError(
-                "alpaca-py is not installed. Run: pip install -r requirements.txt"
-            ) from exc
+            raise _missing_dependency_error(exc) from exc
         return StockHistoricalDataClient(config.api_key, config.secret_key)
 
     @staticmethod
