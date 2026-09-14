@@ -1,0 +1,21 @@
+{
+  "Trading_Agent_Setup_HE.html": "31406dd9f4e029d558d967e74aa498d2bf6871c1b64c253b1258d851cad60185",
+  ".gitignore": "cf0e83fce430c22555547da98da23de1fdfb6db3b4906f4813b70f02757e421b",
+  "README_HE.md": "663d79df94986dff748aa8b4f1d8da36ee5066cff58e2b6ebd6789137f301996",
+  "TECHNICAL_SPEC_V1_HE.md": "94344bc881b11c70ad5d6b9c1b0b5b3f2f7d9e86f98241c011af037c8b3e74f3",
+  "GAP_ANALYSIS_V1_HE.md": "c400ec579d75c3c845e342d25e12758617c51f4357db27b9f21923d5574a757a",
+  "check_connection.bat": "f99ccd4598736b1bb1ed6f643d0ae75855df2a46e26c3caf5ed762d61e73f1cd",
+  "IMPLEMENTATION_PLAN.md": "c7a00fe10487963356181f34f1ea438d21ebf5e00e6e3ab751f635e306525286",
+  "setup_windows.bat": "6a1ba9633f0a26941e41b6f98a776f5e9277b6976a7719ff6f381b9b690694e7",
+  "run_demo.bat": "c70ab5b4e43d6241ac1b293acfb3f69cb3257371d6b02950a9df73e06bcf7058",
+  "VERIFICATION.txt": "ca01c8e2c56fc7eb9c11a51191566fa980dc7c9881c78ebe6a202e6df4621fd6",
+  "SHA256SUMS.json": "e29c2debf27fc07716ec38521c7fe0d67ce599495b62d3a01eeefda1d9ca6e18",
+  "tests/test_foundation.py": "5e1f25d0876fdb17d8e1921d5cf628e5432afcd9eff98b77f791bd29778d7c1d",
+  "config/ibkr.example.json": "acb46837f198871c6f4f5502fc0b97ef451ad563cffa385a6c93107e9df3ad7e",
+  "agent/ibkr_readonly.py": "95ba9d879606e920ce60b72de5398a7733698f6208414cca4d38a7d52f7d3836",
+  "agent/replay.py": "e81350f7358bd19c58cdf109225dada95398e43ca85dedd77379065452482857",
+  "agent/__main__.py": "f9fa53e59f316eb207d8336fedfa0836eb6d713a20f1e1902a8221a8113bbf03",
+  "agent/__init__.py": "19a2bcc0283ff462da122cdf4cbdba91ba194f873e9abf9f37667f65368299ce",
+  "agent/risk.py": "2069ae54b1f4fb464ab426b0648808d8b31a2ed9661e739bcf88dc5c5125c757",
+  "agent/ledger.py": "781e37de8dd632d6c350756a121d7e35026727a8eaa8ba799e8e08f51a3a6350"
+}

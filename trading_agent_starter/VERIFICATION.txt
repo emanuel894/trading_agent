@@ -1,0 +1,36 @@
+Verified 2026-09-14
+Python 3.12.14 / Linux
+
+test_current_error_signature_and_redaction (test_foundation.ApiCompatibilityTests.test_current_error_signature_and_redaction) ... ok
+test_old_error_signature (test_foundation.ApiCompatibilityTests.test_old_error_signature) ... ok
+test_duplicate_after_restart_is_not_reserved_again (test_foundation.DurableStateTests.test_duplicate_after_restart_is_not_reserved_again) ... ok
+test_halt_survives_restart (test_foundation.DurableStateTests.test_halt_survives_restart) ... ok
+test_bad_csv_rejected (test_foundation.ReplayTests.test_bad_csv_rejected) ... ok
+test_cash_baseline_constant (test_foundation.ReplayTests.test_cash_baseline_constant) ... ok
+test_fee_and_adverse_cost_charged_once (test_foundation.ReplayTests.test_fee_and_adverse_cost_charged_once) ... ok
+test_future_data_cannot_change_earlier_decisions (test_foundation.ReplayTests.test_future_data_cannot_change_earlier_decisions) ... ok
+test_next_bar_execution (test_foundation.ReplayTests.test_next_bar_execution) ... ok
+test_simulated_drawdown_latches_stop (test_foundation.ReplayTests.test_simulated_drawdown_latches_stop) ... ok
+test_nonfinite_data_block (test_foundation.RiskTests.test_nonfinite_data_block) ... ok
+test_paper_port_does_not_override_account_check (test_foundation.RiskTests.test_paper_port_does_not_override_account_check) ... ok
+test_pending_orders_consume_gross_capacity (test_foundation.RiskTests.test_pending_orders_consume_gross_capacity) ... ok
+test_pending_orders_consume_symbol_capacity (test_foundation.RiskTests.test_pending_orders_consume_symbol_capacity) ... ok
+test_real_endpoints_rejected (test_foundation.RiskTests.test_real_endpoints_rejected) ... ok
+test_remote_or_live_account_rejected (test_foundation.RiskTests.test_remote_or_live_account_rejected) ... ok
+test_reserved_cash_and_shares_not_reused (test_foundation.RiskTests.test_reserved_cash_and_shares_not_reused) ... ok
+test_spread_blocks (test_foundation.RiskTests.test_spread_blocks) ... ok
+test_stale_and_future_data_block (test_foundation.RiskTests.test_stale_and_future_data_block) ... ok
+test_unknown_or_halted_state_blocks (test_foundation.RiskTests.test_unknown_or_halted_state_blocks) ... ok
+test_valid_order_passes (test_foundation.RiskTests.test_valid_order_passes) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.023s
+
+OK
+
+Synthetic demo: 300 bars processed successfully.
+Broker connection: NOT TESTED.
+Broker orders: NONE.
+Historical market performance: NOT TESTED.
+Windows scripts: NOT EXECUTED ON WINDOWS.
+Technical specification and gap analysis updated against Trading Agent V1 brief.

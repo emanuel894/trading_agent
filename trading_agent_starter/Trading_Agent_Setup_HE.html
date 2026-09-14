@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>סוכן מסחר — תוכנית פעולה והתקנה</title>
+<style>
+:root{--ink:#18342f;--muted:#54685f;--green:#126b55;--line:#d9e3db;--paper:#fff;--bg:#f2f5ef}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.8 Arial,"Noto Sans Hebrew",sans-serif}main{max-width:1040px;margin:auto;padding:42px 26px 80px}header{padding:38px;background:#163e35;color:white;border-radius:20px}header p{max-width:800px;color:#e4eee7}.eyebrow{font-size:13px;letter-spacing:.05em;color:#c8e0cf}h1{font-size:40px;line-height:1.25;margin:14px 0}h2{font-size:25px;line-height:1.4;margin:0 0 16px}h3{font-size:19px;margin:24px 0 10px}p{margin:12px 0}section{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:28px;margin:20px 0}a{color:var(--green);text-underline-offset:3px}header a{color:#daeee1}nav{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}nav a{padding:6px 13px;border:1px solid var(--line);border-radius:30px;text-decoration:none;background:white;font-size:14px}ul,ol{padding-right:25px}li{padding:4px 0}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border-bottom:1px solid var(--line);text-align:right;padding:12px 10px;vertical-align:top}th{background:#edf4ee}code{direction:ltr;unicode-bidi:isolate;display:inline-block;font-size:.9em;color:#174d42}pre{direction:ltr;text-align:left;overflow:auto;white-space:pre;padding:18px;background:#edf2ef;border-radius:9px;line-height:1.65;font-size:14px}pre code{display:block}.note{padding:16px 20px;border-right:4px solid #d4a54c;background:#fff8e8;border-radius:8px}.good{border-color:#23866c;background:#eef8f1}.muted{color:var(--muted);font-size:14px}.badge{display:inline-block;padding:3px 12px;background:#d9ecdf;color:#174d42;border-radius:30px;font-size:13px}.scroll{overflow-x:auto}.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.card{border:1px solid var(--line);border-radius:10px;padding:18px}.num{font-size:28px;color:var(--green);font-weight:bold}.footer{text-align:center;color:var(--muted);font-size:13px;margin-top:26px}
+@media(max-width:640px){body{font-size:16px}main{padding:18px 12px 40px}header{padding:25px 20px}h1{font-size:30px}section{padding:20px 17px}h2{font-size:22px}.grid{grid-template-columns:1fr}th,td{min-width:115px;padding:9px 7px}}
+@media print{body{background:white;font-size:11pt}main{max-width:none;padding:0}header{color:#18342f;background:#edf4ee}header p,.eyebrow{color:#18342f}section{break-inside:auto}h2,h3{break-after:avoid}nav{display:none}a{color:#18342f}pre{white-space:pre-wrap}}
+</style>
+</head>
+<body><main>
+<header>
+<div class="eyebrow">תוכנית עבודה · נבדק מול מקורות רשמיים ב־14.09.2026</div>
+<h1>סוכן מסחר אוטונומי<br>מישראל, בשוק האמריקאי</h1>
+<p>היעד: מערכת שמנטרת, מחליטה וקונה או מוכרת דרך Interactive Brokers ללא אישור לכל עסקה. מתחילים ב־Paper, מודדים אמינות וביצועים, ורק לאחר מכן בוחנים בנפרד כסף אמיתי.</p>
+<span class="badge">המסירה הנוכחית: Foundation 0.1</span>
+</header>
+<nav aria-label="ניווט"><a href="#decision">ההחלטה</a><a href="#today">מה לעשות עכשיו</a><a href="#install">התקנה</a><a href="#roadmap">תוכנית פעולה</a><a href="#operation">איך זה יעבוד</a><a href="#cost">עלות והצלחה</a></nav>
+
+<section id="decision">
+<h2>ההחלטה שלי</h2>
+<p><strong>IBKR הוא בסיס מתאים לפרויקט הזה.</strong> ישראל מופיעה ברשימת המדינות הנתמכות, והחיבור שנבחר הוא TWS API הרשמי. הזכאות בפועל תלויה באישור החשבון ובהרשאותיו. התוכנית מתייחסת למסחר בניירות אמריקאיים מתוך ישראל, בהתאם לבחירה שלך. <a href="https://www.interactivebrokers.com/en/accounts/open-account-country-list.php">רשימת המדינות של IBKR</a> · <a href="https://www.interactivebrokers.com/docs/tws-api/doc/introduction">תיעוד ה־API</a>.</p>
+<p>הדרך לשפר את הסיכוי לרווח היא לבחור מעט אסטרטגיות, לבדוק אותן על נתונים שלא שימשו לפיתוח, ולהכניס לחשבון את כל העלויות והסיכונים. אין מודל שאפשר להכתיר מראש כ״הטוב ביותר להרווחת כסף״, ואין הבטחת רווח.</p>
+<p>לגרסה הראשונה אני מציע סל מחקר קטן של ETF נזילים ולא ממונפים, קנייה והחזקה או יציאה למזומן, ואותות יומיים. בהמשך נבדוק אם מעבר לשעה או הוספת מניות בודדות משפרים את התוצאה. תדירות מסחר גבוהה מוסיפה עלויות ומורכבות, וצריכה להצדיק את עצמה.</p>
+<div class="note"><strong>מה מוכן כעת:</strong> קוד להרצת הדגמה ומחקר ייחוס, רכיבי סיכון ויומן שנבדקו, ומתאם לבדיקת חיבור לקריאה בלבד ל־IBKR Paper. <strong>עדיין אין בחבילה מנוע ששולח עסקאות לברוקר, מודל AI מאומן או שירות 24/7.</strong> החיבור האמיתי דורש חשבון ו־TWS במחשב שלך; המחקר דורש נתונים. אלו השלבים הבאים בתוכנית, לא יכולות שכבר הוכחו.</div>
+</section>
+
+<section id="today">
+<h2>מה לפתוח ומה להוריד עכשיו</h2>
+<div class="scroll"><table>
+<thead><tr><th>פריט</th><th>מה לעשות</th><th>מתי</th></tr></thead>
+<tbody>
+<tr><td>חשבון IBKR אישי</td><td>אם אין לך חשבון, התחל באתר הרשמי ובחר פתיחת חשבון Individual עם תושבות ישראל. השלם זיהוי, תושבות מס, ניסיון והרשאות לפי הנתונים האמיתיים שלך. לצורך ההתחלה, Cash הוא מסלול פשוט לבחינה; הסוכן יצטרך לכבד מגבלות סליקה ומזומן זמין. <a href="https://www.interactivebrokers.com/">אתר IBKR</a>.</td><td>עכשיו</td></tr>
+<tr><td>אימות דו־שלבי</td><td>הגדר את אמצעי האימות ש־IBKR מציעה לחשבון שלך, לרוב דרך IBKR Mobile / IB Key. פעל לפי מסלול ההפעלה הרשמי בתוך החשבון.</td><td>בפתיחת החשבון</td></tr>
+<tr><td>חשבון Paper</td><td>לאחר אישור החשבון: Client Portal → Settings → Paper Trading Account. צור פרטי כניסה נפרדים ורשום אצלך את מספר חשבון ה־Paper. <a href="https://www.ibkrguides.com/clientportal/aboutpapertradingaccounts.htm">מדריך Paper הרשמי</a>.</td><td>לאחר אישור החשבון</td></tr>
+<tr><td>Trader Workstation</td><td>התקן TWS מהאתר הרשמי. נתחיל בממשק שאפשר לראות בו את מצב החשבון והפקודות. <a href="https://www.interactivebrokers.com/en/trading/tws.php">הורדת TWS</a>.</td><td>עכשיו</td></tr>
+<tr><td>Python 3.13 — 64 bit</td><td>התקן גרסה עדכנית מענף 3.13, כולל Python Launcher. זהו יעד ההתקנה של קובץ ה־BAT. אל תבחר גרסת ניסוי או free-threaded עבור חבילה זו. <a href="https://www.python.org/downloads/windows/">הורדה רשמית ל־Windows</a>.</td><td>עכשיו</td></tr>
+<tr><td>TWS API Latest</td><td>הורד את חבילת Windows הכוללת Python. בעת הבדיקה Latest היא 10.50 מ־9.9.2026; האתר מציין שהחבילה Stable אינה כוללת Python. קרא וקבל בעצמך את רישיון הספק. <a href="https://interactivebrokers.github.io/">הורדת SDK רשמי</a>.</td><td>לפני בדיקת החיבור</td></tr>
+</tbody></table></div>
+<p class="note">התיעוד הנוכחי של IBKR מציין <strong>חשבון Pro פתוח וממומן</strong> כדרישת API. קיימות תשובות תמיכה ותיקות על גישה מוגבלת ל־Paper ללא מימון, אך אין לבנות על כך. בדוק בחשבון או מול התמיכה אם נדרשת הפקדה להפעלת השירות שלך ומה הסכום; אין כאן המלצה לסכום הפקדה. הפקדה לחשבון הראשי אינה הופכת את עסקאות ה־Paper לעסקאות בכסף אמיתי. חשבון Free Trial אינו מסלול שעליו נסתמך לצורך API. <a href="https://www.interactivebrokers.com/docs/tws-api/doc/notes-limitations/requirements">דרישות API נוכחיות</a> · <a href="https://www.interactivebrokers.com/campus/trading-lessons/request-paper-trading-account/">הבהרות התמיכה לגבי חשבון ניסיון</a>.</p>
+<p>אם החשבון שלך נפתח דרך גורם מתווך, נבדוק את הגישה ל־API, מבנה העמלות והתמיכה של המסלול הקיים. אין צורך לפתוח חשבון נוסף לפני הבדיקה הזו. המדריך מניח Windows; קוד Python עצמו מתאים גם ל־Linux, עם הוראות פקודה בקובץ README.</p>
+<p><strong>אין צורך לקנות כעת</strong> מחשב עם GPU, מנוי LLM, שרת ענן, TradingView, נתוני L2/L3 או חשבון ברוקר נוסף. מחשב קיים עם SSD ו־16GB זיכרון הוא נקודת התחלה נוחה, כהמלצת תכנון.</p>
+</section>
+
+<section id="install">
+<h2>סדר ההתקנה — צעד אחר צעד</h2>
+<h3>1. הרץ את החבילה בלי ברוקר</h3>
+<ol>
+<li>חלץ את <code>Trading_Agent_Starter.zip</code> לתיקייה קבועה, למשל <code>C:\TradingAgent</code>. אל תריץ מתוך חלון ה־ZIP.</li>
+<li>הפעל <code>setup_windows.bat</code>. הוא ייצור סביבה מקומית, יעתיק קובץ הגדרות לדוגמה ויריץ את הבדיקות.</li>
+<li>התוצאה הצפויה היא <code>Ran 21 tests</code> ולאחר מכן <code>OK</code>. אם מתקבלת שגיאה, עצור ושלח את הטקסט שלה לאחר הסרת פרטים אישיים.</li>
+<li>הפעל <code>run_demo.bat</code>. אמורה להופיע הודעה שעובדו 300 נרות יומיים ושהדוח נשמר בתיקיית <code>runs</code>. הנתונים בהדגמה מלאכותיים; כל מספר תשואה שם הוא תוצר הדגמה.</li>
+</ol>
+
+<h3>2. התקן את חבילת Python של IBKR</h3>
+<p>לאחר התקנת קובץ ה־MSI של TWS API, אתר את תיקיית <code>source\pythonclient</code>. בנתיב התקנה רגיל היא עשויה להימצא תחת <code>C:\TWSAPI</code>; בדוק את הנתיב בפועל. פתח Terminal מתוך תיקיית הפרויקט והרץ:</p>
+<pre><code>.\.venv\Scripts\python.exe -m pip install "C:\TWSAPI\source\pythonclient"
+.\.venv\Scripts\python.exe -c "from ibapi.client import EClient; print('IB API import OK')"</code></pre>
+<p>אם התיקייה שונה, החלף את הנתיב בפקודה. ה־SDK יותקן בסביבה המקומית בלבד. אין בחבילה עותק של קוד IBKR, והתקנת התלויות שלו עשויה לדרוש אינטרנט. IBKR דורשת כיום Python 3.11 ומעלה; הבסיס שצורף נבדק כאן על 3.12.14. <a href="https://www.interactivebrokers.com/docs/tws-api/doc/download-the-tws-api/install-the-tws-api-on-windows">התקנת SDK ב־Windows</a> · <a href="https://www.interactivebrokers.com/docs/tws-api/doc/notes-limitations/requirements">דרישות גרסה</a>.</p>
+
+<h3>3. הגדר TWS לקריאה מ־Paper</h3>
+<ol>
+<li>התחבר ל־TWS באמצעות פרטי ה־Paper ובדוק שמופיע במפורש סימון Paper Trading.</li>
+<li>פתח <code>Global Configuration → API → Settings</code>.</li>
+<li>סמן <code>Enable ActiveX and Socket Clients</code>. בשלב הזה <strong>השאר Read-Only API מסומן</strong>: החבילה הנוכחית קוראת נתונים בלבד. הדרכת IBKR הכללית מסירה הגדרה זו לצורך ביצוע פקודות; את שלב הביצוע ניישם בנפרד.</li>
+<li>הגדר את יציאת Paper של TWS ל־<code>7497</code>, וגישה מהמחשב המקומי בלבד. אל תפתח יציאה בנתב או גישה ציבורית.</li>
+<li>פתח את <code>config\ibkr.local.json</code>. החלף את <code>REPLACE_WITH_YOUR_DU_ACCOUNT</code> במספר ה־Paper המדויק. אין להכניס סיסמה לקובץ.</li>
+<li>הפעל <code>check_connection.bat</code>. ב־TWS אשר את החיבור המקומי אם מוצגת בקשה.</li>
+</ol>
+<p><a href="https://www.interactivebrokers.com/docs/tws-api/doc/tws-settings/tws-configuration-for-api-use/introduction">מיקום הגדרות API בתיעוד IBKR</a>. החבילה מקבלת רק <code>127.0.0.1</code> ויציאת Paper מוכרת, ובודקת בנוסף את החשבון ש־TWS מחזירה. אין להסיר את בדיקת החשבון כדי לעקוף תקלה.</p>
+<p>התוצאה הצפויה היא <code>READ_ONLY_CHECK_PASSED</code>. הדוח יכיל גרסת API, אימות התאמת החשבון וספירת פוזיציות ופקודות פתוחות. הצלחה אינה מאשרת זכאות לנתוני זמן אמת או כשירות למסחר אוטומטי. אם הבדיקה נכשלת, בדוק שה־Paper מחובר, שהיציאה תואמת ושמספר <code>client_id</code> אינו תפוס.</p>
+
+<h3>4. הורד דגימת נתונים והרץ ייחוס ראשוני</h3>
+<p>לאחר הצלחת החיבור, ניתן להריץ את הפקודות הבאות מתיקיית הפרויקט:</p>
+<pre><code>.\.venv\Scripts\python.exe -m agent history --output runs\history
+.\.venv\Scripts\python.exe -m agent research --csv runs\history\SPY_daily.csv</code></pre>
+<p>הפקודה מבקשת שנתיים של נרות יומיים ל־SPY, כדוגמת אינטגרציה בלבד. זמינות הנתונים תלויה בהרשאות. נר היום מוסר. הקוד משווה כלל מגמה פשוט, קנייה והחזקה באותה הקצאה התחלתית, מזומן, ועלויות ביצוע מוגדלות. הוא אינו מאמן AI ואינו מחשב תוצאה מלאה הכוללת דיבידנדים, ריבית, מס וסליקה. הרחבה כזו היא חלק משלב המחקר.</p>
+<div class="note good"><strong>מה להעביר להמשך עבודה:</strong> את קובץ <code>connection_report.json</code> לאחר שעיינת בו והסרת מידע אישי, את מערכת ההפעלה שלך ואת הודעות השגיאה אם יש. אין לשלוח סיסמה, קוד MFA, מסמכי זיהוי או את קובץ ההגדרות המקומי. הדוח משמיט יתרות וממסך מספרי חשבון בתבניות נפוצות, אך עדיין נדרש לעיין בו.</div>
+</section>
+
+<section id="roadmap">
+<h2>התוכנית עד לסוכן שסוחר לבד</h2>
+<div class="scroll"><table>
+<thead><tr><th>שלב</th><th>התוצר</th><th>מתי מתקדמים</th></tr></thead><tbody>
+<tr><td>א. התקנה וחיבור</td><td>החבילה הנוכחית, חשבון Paper, בדיקת TWS והרשאות נתונים</td><td>הבדיקות עוברות גם במחשב שלך והחשבון מזוהה באופן חד־משמעי</td></tr>
+<tr><td>ב. מחקר כלכלי</td><td>נתונים תקינים, אסטרטגיות ייחוס, מודל לינארי/עצים, בדיקות כרונולוגיות ועלויות מלאות</td><td>תוצאה ניתנת לשחזור על תקופות שלא שימשו לבחירת המודל, ביחס לייחוס מתאים</td></tr>
+<tr><td>ג. ביצוע אוטומטי ב־Paper</td><td>המרת יעדים לפקודות, התאמה רציפה למצב הברוקר, טיפול במילויים חלקיים, ביטולים והפעלה מחדש</td><td>בדיקות כשל עוברות, ואין פקודות כפולות או פערי חשבון לא מוסברים</td></tr>
+<tr><td>ד. הפעלה רציפה</td><td>IB Gateway על מחשב ייעודי או שרת, ניטור, התראות וגיבוי; עסקאות Paper ללא אישור לכל עסקה</td><td>לפחות 30 ימי מסחר של תפעול נבחן, כולל ניתוקים ואתחולים; מאריכים לפי הצורך</td></tr>
+<tr><td>ה. הוכחת כדאיות</td><td>דוח ביצועים נטו, יציבות בין תקופות, אי־ודאות, עלות תפעול והשוואה לחלופות</td><td>היתרון מספיק משכנע בתקציב הסיכון שהוגדר; מספר השבועות לבדו אינו הוכחה</td></tr>
+<tr><td>ו. בדיקת כסף אמיתי</td><td>גרסה נפרדת, סכום קטן ומדידת עלויות ביצוע אמיתיות</td><td>רק לאחר החלטה מפורשת שלך על מעבר ל־Live</td></tr>
+</tbody></table></div>
+<p>אומדן עבודה: כ־2–4 שבועות לתשתית מחקר וכ־2–4 שבועות למנוע Paper, עם חפיפה אפשרית. MVP אמין עשוי להצריך כ־6–10 שבועות לאחר שהגישה והנתונים זמינים, ולאחריו תקופת בחינה מתמשכת. אלו אומדני תכנון, לא התחייבות לזמן או לרווח. לא נקבע תאריך מחייב למעבר לכסף אמיתי.</p>
+<p>המחקר וההנדסה מתקדמים במקביל. אם אסטרטגיה אינה מראה יתרון, פוסלים אותה. לא מפצים על כך בהגדלת מינוף, בהסרת חסימות או בבחירה חוזרת של פרמטרים לפי התוצאה שרוצים לראות.</p>
+</section>
+
+<section id="operation">
+<h2>איך הסוכן יעבוד ביום רגיל</h2>
+<ol>
+<li><strong>לפני מסחר:</strong> בדיקת לוח הבורסה, נתונים, חיבור ומצב החשבון. אי־התאמה תחסום הגדלת סיכון.</li>
+<li><strong>החלטה:</strong> האסטרטגיה תחשב יעד לפוזיציה, לרבות האפשרות להישאר במזומן. כל החלטה תירשם עם הנתונים וגרסת המודל.</li>
+<li><strong>סיכון:</strong> רכיב נפרד יבדוק מזומן פנוי, התחייבויות ופקודות ממתינות, חשיפה, נזילות, מחיר ומגבלות הפסד.</li>
+<li><strong>ביצוע:</strong> המנוע ישלח פקודות Paper מאושרות, יטפל במילויים חלקיים ויעדכן את המצב מול הברוקר. אין צורך באישור שלך לכל עסקה.</li>
+<li><strong>בקרה:</strong> תקלה תפעיל מצב עצירה מוגדר והתראה. חידוש אחרי עצירה קשה או החלפת מודל הם פעולות נפרדות מהמסחר השוטף.</li>
+<li><strong>סוף היום:</strong> התאמת פוזיציות וכספים, סיכום פעילות, בדיקת חריגות וגיבוי.</li>
+</ol>
+<p><strong>24/7 פירושו זמינות וניטור רציפים.</strong> ב־V1 נבצע פקודות בשעות המסחר הרגילות בלבד, לפי לוח הבורסה: בדרך כלל 09:30–16:00 בזמן ניו יורק, עם חגים וימים מקוצרים. השעה בישראל משתנה בתקופות מעבר שעון; לא נשתמש בהפרש קבוע. <a href="https://www.nyse.com/trade/hours-calendars">לוח NYSE</a>.</p>
+<p>IBKR מתעדת אתחול יומי ואימות שבועי שעשוי לדרוש כניסה ידנית מחדש. לכן היעד הוא אוטונומיה בהחלטות ובביצוע לצד תחזוקה והתערבות בתקלות. נתכנן זאת במפורש, בלי לעקוף MFA. השירות יפעל על מחשב או שרת ייעודי; השיחה הזו אינה שרת מסחר קבוע. <a href="https://www.interactivebrokers.com/docs/tws-api/doc/tws-settings/daily-weekly-reauthentication">אימות ואתחול ב־IBKR</a>.</p>
+<p>LLM יוכל בהמשך לסווג חדשות ולהפיק דוחות. הוא לא יחזיק הרשאה חופשית לשינוי מגבלות או לשליחת פקודות. גם אסטרטגיה המבוססת על AI תעבור דרך אותו מנוע סיכונים.</p>
+</section>
+
+<section id="cost">
+<h2>עלות, סיכון ותנאי הצלחה</h2>
+<div class="grid"><div class="card"><div class="num">עכשיו</div><p>הקוד וההדגמה אינם דורשים שירות בתשלום. השתמש במחשב הקיים. הפעלת API ונתוני שוק כפופות לתנאי חשבון IBKR.</p></div><div class="card"><div class="num">אחרי חיבור</div><p>בחר מנוי נתונים רק לאחר בירור הרשאות API וצרכי האסטרטגיה. שרת רציף ייבחר לאחר שהרצה מקומית יציבה.</p></div></div>
+<p>נבדוק מנוי נתוני מניות אמריקאיות שכולל את הבורסות וה־quotes הדרושים דרך ה־API. מחיר ומעמד מקצועי/לא מקצועי נקבעים לפי החשבון; תצוגת מחיר בזמן אמת במסך אינה כשלעצמה הוכחה להרשאות API מתאימות. נתונים מושהים יכולים לעזור בבדיקת חיבור, אך אינם בסיס למדידת תגובה בזמן אמת. <a href="https://www.interactivebrokers.com/en/pricing/market-data-pricing.php">מחירון נתוני IBKR</a>.</p>
+<p>לשלב השרת אפשר להקצות לצורכי תכנון כ־40–150 דולר בחודש למחשב ענן קטן ושירותים בסיסיים, לפני נתונים וגיבוי מתקדם. זהו אומדן הנדסי, לא הצעת ספק. עמלות, המרות מטבע ויתר חיובי המסחר ייכנסו למודל העלויות לפי החשבון שלך. <a href="https://www.interactivebrokers.com/en/pricing/commissions-stocks.php">עמלות מניות רשמיות</a>.</p>
+<p><strong>ההון משנה את הכדאיות:</strong> עלות של 100 דולר בחודש היא 1,200 דולר לשנה — 12% מהון של 10,000 דולר או 2.4% מהון של 50,000 דולר, עוד לפני עלויות מסחר ומס. לכן נצטרך להגדיר הון עתידי, תקציב חודשי והפסד מרבי נסבל לפני שנקבע את היקף המערכת. סכום ה־10,000 דולר בהדגמה הוא כסף וירטואלי לצורכי בדיקה בלבד.</p>
+<p>הסוכן יצטרך לכבד את סוג החשבון, הסליקה ומגבלות הברוקר בפועל. אין להניח שכללי PDT הישנים חלים ללא שינוי: FINRA מתעדת כללים חדשים מ־4.6.2026 ותקופת מעבר לברוקרים עד 20.10.2027. לפני מסחר תוך־יומי יש לברר עם IBKR איזה משטר חל על החשבון שלך. <a href="https://www.finra.org/investors/insights/intraday-margin-requirements">הסבר FINRA המעודכן</a>.</p>
+<ul>
+<li><strong>הוכחה תפעולית:</strong> אין כפילויות, אין פערי פוזיציה לא מוסברים, אין מסחר על מצב לא ידוע, ועצירה נשמרת גם אחרי אתחול.</li>
+<li><strong>הוכחה כלכלית:</strong> יתרון לאחר עלויות ביחס לייחוס מתאים, במספר תקופות ובתרחישים מחמירים, תוך הצגת טווחי אי־ודאות ותוצאות הניסויים שנכשלו.</li>
+<li><strong>הבחנה בין Paper ל־Live:</strong> מילויי Paper מדומים. הם מאפשרים לבחון את המערכת אך אינם מוכיחים מחיר ביצוע, תור פקודות או השפעה על השוק בכסף אמיתי. <a href="https://www.interactivebrokers.com/docs/tws-api/doc/notes-limitations/limitations/paper-trading">מגבלות Paper</a>.</li>
+<li><strong>סיכון אישי:</strong> לינה עם פוזיציה יוצרת סיכון פערי פתיחה; נכסים בדולר יוצרים גם חשיפת דולר–שקל. סף עצירה הוא טריגר לפעולה, ולא הבטחה שההפסד לא יחרוג ממנו.</li>
+</ul>
+<p class="muted">לפני Live יש לברר דיווח ומיסוי בישראל בהתאם למבנה החשבון והפעילות. התוכנית אינה קובעת שיעור מס או פטור מרישוי, ומתייחסת למסחר בחשבון אישי בלבד. ניהול כספים של אחרים מחייב בחינה נפרדת.</p>
+</section>
+
+<section>
+<h2>מה נבדק במסירה הזו</h2>
+<p>21 בדיקות מקומיות עברו, והדגמה של 300 נרות מלאכותיים הושלמה ב־Python 3.12.14 על Linux. נבדקו בין היתר חסימות חשבון ונתונים, חשיפה עם פקודות ממתינות, יומן אחרי אתחול, חישוב עלויות וביצוע מדומה בנר הבא.</p>
+<p>לא בוצעו כאן כניסה ל־TWS, בדיקת SDK מול חשבון אמיתי, קנייה או מכירה ב־Paper, אימון מודל או בדיקת רווחיות על נתוני שוק אמיתיים. קובצי ההתקנה ל־Windows נכתבו אך לא הורצו על Windows. רכיבי הסיכון והיומן בחבילה הם יסודות נפרדים שעדיין יש לחבר למנוע הביצוע.</p>
+<p>העבודה נשענת על המחקר שהדבקת, על בחירת השוק שלך ועל המקורות הרשמיים המקושרים כאן. קובץ ה־Handoff המצורף לא היה זמין לקריאה בסביבת העבודה הנוכחית, ולכן לא מוצגת טענה שהוא נבדק. מדריך זה והקוד אינם תלויים בו כדי להתחיל בהתקנה.</p>
+</section>
+<div class="footer">Trading Agent Foundation 0.1 · 14 בספטמבר 2026 · מתחילים בהתקנה ובאימות חיבור; הביצועים יקבעו אם ממשיכים.</div>
+</main></body></html>
