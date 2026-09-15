@@ -19,14 +19,9 @@ from .audit_sec import SECSource
 from .audit_store import AuditFailure, EvidenceStore, canonical, digest, strict_json, timestamp, utc_now
 from .audit_text import PARSER_VERSION, disclosure_map, parse_document, verify_comparable
 from .entitlement_probe import _collect_quality, _recover_rows
+from .dated_source_gate import evaluate_packet
 
 VERSION = "access-fastpath-v1"
-BLOCKERS = [
-    "DATED_SECURITY_MASTER_AND_LIFECYCLE_EVIDENCE_MISSING",
-    "HISTORICAL_STATUS_COVERAGE_AND_SOURCE_RIGHTS_UNVERIFIED",
-    "REAL_SIP_QUOTE_AND_STATUS_POLICY_REVIEW_NOT_COMPLETE",
-    "PROSPECTIVE_WARM_CAPTURE_AND_DECISION_SEAL_NOT_VALIDATED",
-]
 
 
 def source_documents(source):
@@ -263,13 +258,15 @@ def main(argv=None):
     parser.add_argument("--account-observation", default="config/access_gate_observations.json")
     parser.add_argument("--sip-store")
     parser.add_argument("--refresh-current", action="store_true")
+    parser.add_argument("--dated-packet", default="config/dated_source_packet.json")
+    parser.add_argument("--evidence-root", default=".")
     args = parser.parse_args(argv)
     if not 1 <= len(args.source_store) <= 2:
         parser.error("at most two source stores; this is not the 50-filing audit")
     destination = EvidenceStore(args.store)
     run_id = uuid.uuid4().hex
     report = {"version": VERSION, "run_id": run_id, "started_at": utc_now(),
-              "recommendation": "BLOCK", "blockers": list(BLOCKERS), "benchmarks": [],
+              "recommendation": "BLOCK_HISTORICAL_AUDIT", "blockers": [], "benchmarks": [],
               "comparator_diagnostics": [], "failures": [], "alpha_research": "NOT_RUN",
               "source_code_sha256": digest(Path(__file__).read_bytes())}
     try:
@@ -308,6 +305,18 @@ def main(argv=None):
     except (AuditFailure, OSError, KeyError, TypeError, ValueError, StopIteration) as exc:
         report["failures"].append(str(exc) if isinstance(exc, AuditFailure) else "MALFORMED_OR_MISSING_GATE_INPUT")
     finally:
+        try:
+            raw_packet = Path(args.dated_packet).read_bytes()
+            destination.append("dated_source_packet", run_id, {}, raw_packet)
+            gate = evaluate_packet(strict_json(raw_packet), args.evidence_root)
+            report["dated_source_gate"] = gate
+            report["recommendation"] = gate["historical_recommendation"]
+            report["prospective_recommendation"] = gate["prospective_recommendation"]
+            report["blockers"] = [k for k, v in gate["gates"].items()
+                                  if k != "prospective_readiness" and v["status"] != "PASS"]
+        except (AuditFailure, OSError, KeyError, TypeError, ValueError):
+            report["blockers"] = ["DATED_SOURCE_PACKET_MISSING_OR_INVALID"]
+            report["prospective_recommendation"] = "PROSPECTIVE_ACTIONABILITY_BLOCKED"
         report["finished_at"] = utc_now()
         report["evidence_integrity_before_report"] = destination.verify()
         destination.append("access_fastpath_report", run_id, report)
@@ -315,9 +324,10 @@ def main(argv=None):
         with path.open("x", encoding="utf-8") as handle:
             json.dump(report, handle, indent=2, allow_nan=False)
         destination.close()
-    print(json.dumps({"recommendation": "BLOCK", "blockers": report["blockers"],
+    print(json.dumps({"recommendation": report["recommendation"], "blockers": report["blockers"],
+                      "prospective_recommendation": report["prospective_recommendation"],
                       "failures": report["failures"], "report": str(path)}, indent=2))
-    return 2
+    return 0 if report["recommendation"] == "RUN_50_HISTORICAL_AUDIT" and not report["failures"] else 2
 
 
 if __name__ == "__main__":

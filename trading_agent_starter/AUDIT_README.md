@@ -4,8 +4,11 @@ This implements ADR 001's acquisition milestone. It does not run an LLM, calcula
 returns, fit forecasts, allocate capital or submit orders. All existing Alpaca,
 30-minute, risk, ledger, CLI and replay modules remain unchanged.
 
-**The 50-filing audit is BLOCKED by the Access + Fast-Path mini-gate.** Read
-`ACCESS_FASTPATH_GATE.md` before registering a cohort. Historical SIP bars and
+**The 50-filing audit is BLOCKED by the dated-source validation packet.** Read
+`DATED_SOURCE_VALIDATION_PACKET.md` before registering a cohort. The dynamic gate
+requires historical evidence only; prospective readiness is separate. Run the
+offline `agent.dated_source_gate` to evaluate current evidence without repeating
+the warm benchmark or spending the cohort budget. Historical SIP bars and
 quotes are locally confirmed sufficient for backfill; real-time SIP remains
 not entitled, and status subscription was not reached. The mini-gate records
 these owner-reported observations without claiming an independent account run.

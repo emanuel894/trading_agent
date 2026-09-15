@@ -8,7 +8,10 @@ import pytz
 
 from .audit_store import AuditFailure, VERSION, digest, strict_json, timestamp, utc_now
 
-FORMS = {"10-Q", "10-Q/A", "10-K", "10-K/A", "8-K", "8-K/A"}
+# Transition reports are prior-disclosure evidence, never original 10-Q targets
+# or ordinary same-quarter comparators. Keep the latter selections unchanged.
+FORMS = {"10-Q", "10-Q/A", "10-K", "10-K/A", "8-K", "8-K/A",
+         "10-QT", "10-QT/A", "10-KT", "10-KT/A"}
 ACCESSION = re.compile(r"\d{10}-\d{2}-\d{6}\Z")
 FILENAME = re.compile(r"[A-Za-z0-9_.-]+\Z")
 

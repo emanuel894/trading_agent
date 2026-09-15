@@ -91,7 +91,7 @@ class FastPathTests(unittest.TestCase):
         store = EvidenceStore(self.root / "gate")
         try:
             result = store.records("access_fastpath_report")[0]["metadata"]
-            self.assertEqual(result["recommendation"], "BLOCK")
+            self.assertEqual(result["recommendation"], "BLOCK_HISTORICAL_AUDIT")
             self.assertTrue(result["failures"])
             self.assertEqual(store.verify()["status"], "VERIFIED")
         finally:

@@ -1,5 +1,9 @@
 # Access + Fast-Path gate — 2026-09-15
 
+**Historical report:** source requirements and fixed recommendation behavior below
+are superseded by `DATED_SOURCE_VALIDATION_PACKET.md`. Its gate computes separate
+historical and prospective outcomes. The two timing measurements remain unchanged.
+
 **Decision: BLOCK the 50-filing cohort.** Historical SIP is sufficient for
 backfill. The blockers are missing dated security/lifecycle/status evidence and
 source rights, unreviewed real quote/status samples, and an unvalidated live

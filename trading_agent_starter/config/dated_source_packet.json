@@ -1,0 +1,456 @@
+{
+  "version": "dated-source-gate-v1",
+  "created_at": "2026-09-15T23:48:50.486590+00:00",
+  "scope": {
+    "status": "NOT_FROZEN",
+    "targets": [],
+    "context_instruments": [],
+    "selection_rule": "ADR001: 25 issuers, two earliest original 10-Qs per issuer in registered window; no success-based replacement",
+    "note": "No 50-filing run or target selection performed. Populate proposed dated issuer and SPY context manifest, then scope reviews, before authorization."
+  },
+  "instrument_intervals": [],
+  "evidence": [
+    {
+      "id": "owner_access",
+      "path": "config/access_gate_observations.json",
+      "sha256": "9491dad223a64bf9b45b0409618258742dade96ca5bb2f86f02c586b3a028cc1",
+      "kind": "owner_local_observation"
+    },
+    {
+      "id": "findings",
+      "path": "research/dated_source_findings_20260915.json",
+      "sha256": "2330fa23d187340c136a528f651b16c5ad1ccd42bcae055d55aab004f8380c5a",
+      "kind": "source_review"
+    },
+    {
+      "id": "rights_review",
+      "path": "research/source_rights_20260915.json",
+      "sha256": "e56b9e3e6697e4e495994dc66544c4ee256d5aa960c4f10de0672dd4db9dcfbd",
+      "kind": "source_review"
+    },
+    {
+      "id": "0000909832-23-000065",
+      "path": "runs/dated_source_packet/objects/595c7328f4b7c43507794cb1a9f627a39483a9be383d83c892b55ce4977d479f",
+      "sha256": "595c7328f4b7c43507794cb1a9f627a39483a9be383d83c892b55ce4977d479f",
+      "kind": "official_capture",
+      "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983223000065/0000909832-23-000065.txt"
+    },
+    {
+      "id": "0000909832-22-000035",
+      "path": "runs/dated_source_packet/objects/20edea4ad7af90f87df385e673aaf600e1a979e3ccfe5ba0b50dcec7faef93a2",
+      "sha256": "20edea4ad7af90f87df385e673aaf600e1a979e3ccfe5ba0b50dcec7faef93a2",
+      "kind": "official_capture",
+      "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983222000035/0000909832-22-000035.txt"
+    },
+    {
+      "id": "0000909832-23-000042",
+      "path": "runs/dated_source_packet/objects/4c81ec24c12bf8c3dab56e0641bf9cc3446fb0eb63e03c6e5cb6a346164d4be4",
+      "sha256": "4c81ec24c12bf8c3dab56e0641bf9cc3446fb0eb63e03c6e5cb6a346164d4be4",
+      "kind": "official_capture",
+      "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983223000042/0000909832-23-000042.txt"
+    },
+    {
+      "id": "0001336917-22-000017",
+      "path": "runs/dated_source_packet/objects/f1f397512d68f0e912e9347b729739ec04d5624ca8718cd7275c2a9557816741",
+      "sha256": "f1f397512d68f0e912e9347b729739ec04d5624ca8718cd7275c2a9557816741",
+      "kind": "official_capture",
+      "url": "https://www.sec.gov/Archives/edgar/data/1336917/000133691722000017/0001336917-22-000017.txt"
+    },
+    {
+      "id": "0001336917-22-000029",
+      "path": "runs/dated_source_packet/objects/3c9166a39893bec53728de30e28ba6a1a9fe928c8522c63cac8d7d3702c926b3",
+      "sha256": "3c9166a39893bec53728de30e28ba6a1a9fe928c8522c63cac8d7d3702c926b3",
+      "kind": "official_capture",
+      "url": "https://www.sec.gov/Archives/edgar/data/1336917/000133691722000029/0001336917-22-000029.txt"
+    },
+    {
+      "id": "0001336917-21-000040",
+      "path": "runs/dated_source_packet/objects/1a96a1c09b83231e3fec7d94e5f7fadb80f3e47fa5bd3677d3d06a0b27eadbea",
+      "sha256": "1a96a1c09b83231e3fec7d94e5f7fadb80f3e47fa5bd3677d3d06a0b27eadbea",
+      "kind": "official_capture",
+      "url": "https://www.sec.gov/Archives/edgar/data/1336917/000133691721000040/0001336917-21-000040.txt"
+    },
+    {
+      "id": "nasdaq_rss_terms",
+      "path": "runs/dated_source_packet/objects/9f3e25671be08d33b81785dac0eae63fc374904debcf2452aa1752964b3751b1",
+      "sha256": "9f3e25671be08d33b81785dac0eae63fc374904debcf2452aa1752964b3751b1",
+      "kind": "official_capture",
+      "url": "https://www.nasdaqtrader.com/content/administrationsupport/agreementstrading/THRSSFeedTermsCond.pdf"
+    },
+    {
+      "id": "sec_access",
+      "path": "runs/dated_source_packet/objects/7b8a92147bae67dd2b5263884a3cfd8c88cc710c744d037dc2705cf3ba58b1c5",
+      "sha256": "7b8a92147bae67dd2b5263884a3cfd8c88cc710c744d037dc2705cf3ba58b1c5",
+      "kind": "official_capture",
+      "url": "https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data"
+    },
+    {
+      "id": "alpaca_terms",
+      "path": "runs/dated_source_packet/objects/2dc774d4aeeafbe4c7f0565e7842d932bc8bc10488af805fce43b8734e7b9859",
+      "sha256": "2dc774d4aeeafbe4c7f0565e7842d932bc8bc10488af805fce43b8734e7b9859",
+      "kind": "official_capture",
+      "url": "https://files.alpaca.markets/disclosures/library/TermsAndConditions.pdf"
+    }
+  ],
+  "reviews": {
+    "historical_sip_access": {
+      "reviewed_by": "Codex source validation, owner observations attributed separately",
+      "reviewed_at": "2026-09-15T23:48:50.486596+00:00",
+      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "criteria": {
+        "bars_rows": {
+          "value": true,
+          "evidence_ids": [
+            "owner_access"
+          ],
+          "rationale": "Accepted owner local authenticated historical SIP bars/quotes result; no independent account run or quality claim."
+        },
+        "quotes_rows": {
+          "value": true,
+          "evidence_ids": [
+            "owner_access"
+          ],
+          "rationale": "Accepted owner local authenticated historical SIP bars/quotes result; no independent account run or quality claim."
+        },
+        "sip_only": {
+          "value": true,
+          "evidence_ids": [
+            "owner_access"
+          ],
+          "rationale": "Accepted owner local authenticated historical SIP bars/quotes result; no independent account run or quality claim."
+        },
+        "no_provider_restriction": {
+          "value": true,
+          "evidence_ids": [
+            "owner_access"
+          ],
+          "rationale": "Accepted owner local authenticated historical SIP bars/quotes result; no independent account run or quality claim."
+        }
+      }
+    },
+    "instrument_identity": {
+      "reviewed_by": "Codex source validation, owner observations attributed separately",
+      "reviewed_at": "2026-09-15T23:48:50.486612+00:00",
+      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "criteria": {
+        "dated_intervals": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "Captured COST/UAA/UA historical cover anchors, but no reviewed bounded identity intervals for proposed cohort and SPY."
+        },
+        "share_class_lineage": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "Captured COST/UAA/UA historical cover anchors, but no reviewed bounded identity intervals for proposed cohort and SPY."
+        },
+        "scope_coverage": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "Captured COST/UAA/UA historical cover anchors, but no reviewed bounded identity intervals for proposed cohort and SPY."
+        }
+      }
+    },
+    "lifecycle": {
+      "reviewed_by": "Codex source validation, owner observations attributed separately",
+      "reviewed_at": "2026-09-15T23:48:50.486620+00:00",
+      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "criteria": {
+        "listing_delisting_bounds": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "No complete scoped listing/delisting or ticker/name-change evidence inventory; cover/report periods are not listing bounds."
+        },
+        "ticker_name_changes": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "No complete scoped listing/delisting or ticker/name-change evidence inventory; cover/report periods are not listing bounds."
+        },
+        "scope_coverage": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "No complete scoped listing/delisting or ticker/name-change evidence inventory; cover/report periods are not listing bounds."
+        }
+      }
+    },
+    "corporate_actions": {
+      "reviewed_by": "Codex source validation, owner observations attributed separately",
+      "reviewed_at": "2026-09-15T23:48:50.486626+00:00",
+      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "criteria": {
+        "splits": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "No scoped action completeness review separating announcement/effective dates; current downloader omits non-99 exhibits."
+        },
+        "mergers_reorganizations": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "No scoped action completeness review separating announcement/effective dates; current downloader omits non-99 exhibits."
+        },
+        "distributions_class_changes": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "No scoped action completeness review separating announcement/effective dates; current downloader omits non-99 exhibits."
+        },
+        "announcement_effective_separate": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "No scoped action completeness review separating announcement/effective dates; current downloader omits non-99 exhibits."
+        },
+        "no_unresolved_conflicts": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "No scoped action completeness review separating announcement/effective dates; current downloader omits non-99 exhibits."
+        }
+      }
+    },
+    "historical_halt_tradability": {
+      "reviewed_by": "Codex source validation, owner observations attributed separately",
+      "reviewed_at": "2026-09-15T23:48:50.486631+00:00",
+      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "criteria": {
+        "known_sessions": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved."
+        },
+        "halt_history_coverage": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved."
+        },
+        "carry_in_resolved": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved."
+        },
+        "suspension_coverage": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved."
+        },
+        "rule_registered": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved."
+        },
+        "nbbo_context_available": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved."
+        }
+      }
+    },
+    "source_rights": {
+      "reviewed_by": "Codex source validation, owner observations attributed separately",
+      "reviewed_at": "2026-09-15T23:48:50.486637+00:00",
+      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "criteria": {
+        "terms_snapshots": {
+          "value": true,
+          "evidence_ids": [
+            "rights_review",
+            "nasdaq_rss_terms",
+            "sec_access",
+            "alpaca_terms"
+          ],
+          "rationale": "Retrieved version/hash pins are recorded; this criterion alone does not grant usage rights."
+        },
+        "internal_research_use": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "Terms hashes captured; applicable account agreements/internal retention and scope reviews unresolved."
+        },
+        "automated_retrieval": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "Terms hashes captured; applicable account agreements/internal retention and scope reviews unresolved."
+        },
+        "retention": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "Terms hashes captured; applicable account agreements/internal retention and scope reviews unresolved."
+        },
+        "redistribution_restrictions_recorded": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "Terms hashes captured; applicable account agreements/internal retention and scope reviews unresolved."
+        }
+      }
+    },
+    "quote_policy_review": {
+      "reviewed_by": "Codex source validation, owner observations attributed separately",
+      "reviewed_at": "2026-09-15T23:48:50.486643+00:00",
+      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "criteria": {
+        "real_sample_review": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "Successful owner local quote archive absent; frequencies/pass rates and tape-specific definitions cannot yet justify policy freeze."
+        },
+        "provider_definitions_review": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "Successful owner local quote archive absent; frequencies/pass rates and tape-specific definitions cannot yet justify policy freeze."
+        },
+        "policy_frozen": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "Successful owner local quote archive absent; frequencies/pass rates and tape-specific definitions cannot yet justify policy freeze."
+        }
+      }
+    },
+    "fiscal_comparator_review": {
+      "reviewed_by": "Codex source validation, owner observations attributed separately",
+      "reviewed_at": "2026-09-15T23:48:50.486648+00:00",
+      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "criteria": {
+        "real_53_week_sample": {
+          "value": true,
+          "evidence_ids": [
+            "findings",
+            "0000909832-23-000065",
+            "0000909832-22-000035",
+            "0000909832-23-000042",
+            "0001336917-22-000017",
+            "0001336917-22-000029",
+            "0001336917-21-000040"
+          ],
+          "rationale": "Six real source-checked documents: Costco 53-week/week calendar accepted at 371 days; Under Armour transition fails fiscal match at 365 days. Keep filter; capture transition disclosures; affected transition candidates require explicit review/abstention."
+        },
+        "real_transition_sample": {
+          "value": true,
+          "evidence_ids": [
+            "findings",
+            "0000909832-23-000065",
+            "0000909832-22-000035",
+            "0000909832-23-000042",
+            "0001336917-22-000017",
+            "0001336917-22-000029",
+            "0001336917-21-000040"
+          ],
+          "rationale": "Six real source-checked documents: Costco 53-week/week calendar accepted at 371 days; Under Armour transition fails fiscal match at 365 days. Keep filter; capture transition disclosures; affected transition candidates require explicit review/abstention."
+        },
+        "week_based_sample": {
+          "value": true,
+          "evidence_ids": [
+            "findings",
+            "0000909832-23-000065",
+            "0000909832-22-000035",
+            "0000909832-23-000042",
+            "0001336917-22-000017",
+            "0001336917-22-000029",
+            "0001336917-21-000040"
+          ],
+          "rationale": "Six real source-checked documents: Costco 53-week/week calendar accepted at 371 days; Under Armour transition fails fiscal match at 365 days. Keep filter; capture transition disclosures; affected transition candidates require explicit review/abstention."
+        },
+        "rule_decision_registered": {
+          "value": true,
+          "evidence_ids": [
+            "findings",
+            "0000909832-23-000065",
+            "0000909832-22-000035",
+            "0000909832-23-000042",
+            "0001336917-22-000017",
+            "0001336917-22-000029",
+            "0001336917-21-000040"
+          ],
+          "rationale": "Six real source-checked documents: Costco 53-week/week calendar accepted at 371 days; Under Armour transition fails fiscal match at 365 days. Keep filter; capture transition disclosures; affected transition candidates require explicit review/abstention."
+        }
+      }
+    },
+    "prospective_readiness": {
+      "reviewed_by": "Codex source validation, owner observations attributed separately",
+      "reviewed_at": "2026-09-15T23:48:50.486654+00:00",
+      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "criteria": {
+        "realtime_sip": {
+          "value": false,
+          "evidence_ids": [
+            "owner_access"
+          ],
+          "rationale": "Realtime SIP NOT_ENTITLED; status subscription not reached; prospective capture/clock/decision receipt not validated."
+        },
+        "live_status": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "Realtime SIP NOT_ENTITLED; status subscription not reached; prospective capture/clock/decision receipt not validated."
+        },
+        "pre_event_warm_evidence": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "Realtime SIP NOT_ENTITLED; status subscription not reached; prospective capture/clock/decision receipt not validated."
+        },
+        "decision_receipt_cutoff": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "Realtime SIP NOT_ENTITLED; status subscription not reached; prospective capture/clock/decision receipt not validated."
+        },
+        "clock_and_continuity": {
+          "value": null,
+          "evidence_ids": [
+            "findings"
+          ],
+          "rationale": "Realtime SIP NOT_ENTITLED; status subscription not reached; prospective capture/clock/decision receipt not validated."
+        }
+      }
+    }
+  },
+  "rights_ledger": "research/source_rights_20260915.json",
+  "no_purchase": true,
+  "no_execution": true
+}

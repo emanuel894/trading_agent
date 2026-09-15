@@ -1,0 +1,170 @@
+{
+  "reviewed_at": "2026-09-15T23:48:50.486197+00:00",
+  "access_is_rights_grant": false,
+  "purchase_required_now": false,
+  "sources": [
+    {
+      "id": "sec_edgar",
+      "owner": "U.S. Securities and Exchange Commission; filer retains rights in submitted company material",
+      "source_urls": [
+        "https://data.sec.gov/submissions/",
+        "https://www.sec.gov/Archives/edgar/data/"
+      ],
+      "product": "EDGAR complete submissions, cover tags, attached company disclosures; candidate Forms 8-A/25/8-K/10-Q/10-K and transition forms",
+      "terms": [
+        {
+          "source_key": "sec_developer",
+          "url": "https://www.sec.gov/about/developer-resources",
+          "record_id": "ac3fe39d6a3546ef8c39d333d5e71921",
+          "sha256": "7dd8cdf16635bc2a18cba121de6d7ff57ea9aa9f0e9df6587577f8e6d65ddd96",
+          "retrieved_at": "2026-09-15T16:06:14.185796+00:00",
+          "document_version": "Not stated; pinned by retrieved SHA-256"
+        },
+        {
+          "source_key": "sec_access",
+          "url": "https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data",
+          "record_id": "5a8fe9d1deb44958bf9ab48a429493e8",
+          "sha256": "7b8a92147bae67dd2b5263884a3cfd8c88cc710c744d037dc2705cf3ba58b1c5",
+          "retrieved_at": "2026-09-15T16:06:25.648196+00:00",
+          "document_version": "Not stated; pinned by retrieved SHA-256"
+        },
+        {
+          "source_key": "sec_privacy",
+          "url": "https://www.sec.gov/about/privacy-information",
+          "record_id": "383a9d57c2d34cf39a31aae4ed28d030",
+          "sha256": "c11a1ce03500625a693b0a3fc851a6d58eb45693567749ed902c24c1c62de5b4",
+          "retrieved_at": "2026-09-15T16:06:02.615563+00:00",
+          "document_version": "Not stated; pinned by retrieved SHA-256"
+        }
+      ],
+      "internal_research_use": "Official public access/download is documented; intended local factual extraction is the proposed scope, not a grant to republish company documents.",
+      "automated_retrieval": "Documented EDGAR APIs/downloads; identified User-Agent and fair access up to 10 requests/second across machines.",
+      "retention": "Official download/archive route exists; immutable internal retention proposed. Scope/third-party exhibits require review; no blanket copyright conclusion.",
+      "redistribution": "No raw company documents committed or redistributed; do not infer public domain merely from SEC hosting.",
+      "date_coverage": "This packet: six complete submissions accepted 2021-08-05 through 2023-12-20. Not a complete historical identity or action database.",
+      "unresolved_question": "Document and approve internal factual extraction/retention scope for relevant issuer exhibits; cover tags do not establish continuous listing history.",
+      "readiness": "UNRESOLVED_SCOPE_REVIEW"
+    },
+    {
+      "id": "sec_suspensions",
+      "owner": "U.S. Securities and Exchange Commission",
+      "source_urls": [
+        "https://www.sec.gov/enforcement-litigation/trading-suspensions",
+        "https://www.sec.gov/files/form25.pdf"
+      ],
+      "product": "Official suspension orders and Form 25 instructions; supplemental dated lifecycle/status evidence",
+      "terms": [
+        {
+          "source_key": "sec_developer",
+          "url": "https://www.sec.gov/about/developer-resources",
+          "record_id": "ac3fe39d6a3546ef8c39d333d5e71921",
+          "sha256": "7dd8cdf16635bc2a18cba121de6d7ff57ea9aa9f0e9df6587577f8e6d65ddd96",
+          "retrieved_at": "2026-09-15T16:06:14.185796+00:00",
+          "document_version": "Not stated; pinned by retrieved SHA-256"
+        },
+        {
+          "source_key": "sec_access",
+          "url": "https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data",
+          "record_id": "5a8fe9d1deb44958bf9ab48a429493e8",
+          "sha256": "7b8a92147bae67dd2b5263884a3cfd8c88cc710c744d037dc2705cf3ba58b1c5",
+          "retrieved_at": "2026-09-15T16:06:25.648196+00:00",
+          "document_version": "Not stated; pinned by retrieved SHA-256"
+        },
+        {
+          "source_key": "sec_privacy",
+          "url": "https://www.sec.gov/about/privacy-information",
+          "record_id": "383a9d57c2d34cf39a31aae4ed28d030",
+          "sha256": "c11a1ce03500625a693b0a3fc851a6d58eb45693567749ed902c24c1c62de5b4",
+          "retrieved_at": "2026-09-15T16:06:02.615563+00:00",
+          "document_version": "Not stated; pinned by retrieved SHA-256"
+        }
+      ],
+      "internal_research_use": "Official public regulatory source; scope is facts/orders for internal research.",
+      "automated_retrieval": "Bounded identified GET; EDGAR policy applies to EDGAR downloads, not a blanket guarantee for every SEC website route.",
+      "retention": "Retain pinned government-source records and source attribution; confirm intended storage review.",
+      "redistribution": "Only source pointers, hashes and research findings in repository.",
+      "date_coverage": "Index fetched; displays 1-100 of 1349 records in web view. All pages/date coverage NOT acquired or certified.",
+      "unresolved_question": "Complete scoped order enumeration, amendments/revocations and carry-in coverage; index page alone is not negative evidence.",
+      "readiness": "UNRESOLVED_COVERAGE"
+    },
+    {
+      "id": "nasdaq_halts",
+      "owner": "The Nasdaq Stock Market, Inc. / Nasdaq",
+      "source_urls": [
+        "https://www.nasdaqtrader.com/Trader.aspx?id=TradingHaltSearch",
+        "https://www.nasdaqtrader.com/trader.aspx?id=TradingHaltHistory",
+        "https://www.nasdaqtrader.com/Trader.aspx?id=TradeHaltRSS"
+      ],
+      "product": "Public halt search/history and trade-halt RSS, including other exchange-listed securities",
+      "terms": [
+        {
+          "source_key": "nasdaq_rss_terms",
+          "url": "https://www.nasdaqtrader.com/content/administrationsupport/agreementstrading/THRSSFeedTermsCond.pdf",
+          "record_id": "e77364b81b0049179ae901f8b5710750",
+          "sha256": "9f3e25671be08d33b81785dac0eae63fc374904debcf2452aa1752964b3751b1",
+          "retrieved_at": "2026-09-15T16:00:11.983047+00:00",
+          "document_version": "Not stated; pinned by retrieved SHA-256"
+        },
+        {
+          "source_key": "nasdaq_rss_docs",
+          "url": "https://www.nasdaqtrader.com/Trader.aspx?id=TradeHaltRSS",
+          "record_id": "2c370565759a490584abc4212615ad12",
+          "sha256": "09ac583d31eed3212dfb8cd5d2cfa52578cef60b3aaffe655a65c969a398fbd4",
+          "retrieved_at": "2026-09-15T16:00:02.236809+00:00",
+          "document_version": "Not stated; pinned by retrieved SHA-256"
+        },
+        {
+          "source_key": "nasdaq_rss_query_semantics",
+          "url": "https://www.nasdaqtrader.com/snippets/tradehaltaccordion.html",
+          "record_id": "10fd0b9b2b9b44d9a33a4e8808fe7931",
+          "sha256": "2bfde036115ea1c1b966444a1348f69b5d68f3b402206173a9ee00cd7a7bee00",
+          "retrieved_at": "2026-09-15T16:05:40.153371+00:00",
+          "document_version": "Not stated; pinned by retrieved SHA-256"
+        }
+      ],
+      "internal_research_use": "Free RSS use/custom feed reader is documented. Applicability to retained analytical research archive remains an explicit review question.",
+      "automated_retrieval": "Custom RSS polling documented; no more than once per minute. Search UI is not treated as a documented bulk API.",
+      "retention": "No explicit long-term research retention grant identified in captured two-page RSS terms; clarification/review unresolved, not an assumed prohibition.",
+      "redistribution": "Nasdaq ownership retained; do not modify/misrepresent source or imply affiliation. No raw public redistribution; additional distribution grant unresolved.",
+      "date_coverage": "Search advertises last year. RSS returned 7 rows for 2010-10-11, 91 for 2024-06-03, 53 for 2025-01-31. Continuous coverage/retention lower bound unknown.",
+      "unresolved_question": "Confirm applicable internal retention/analysis permission and historical coverage/correction semantics; terms disclaim completeness. No paid subscription conclusion follows.",
+      "readiness": "UNRESOLVED_RETENTION_AND_COVERAGE"
+    },
+    {
+      "id": "alpaca_sip",
+      "owner": "Alpaca Data API; underlying consolidated market-data rights depend on exchange/SIP agreements",
+      "source_urls": [
+        "https://data.alpaca.markets/v2/stocks/bars",
+        "https://data.alpaca.markets/v2/stocks/quotes",
+        "https://paper-api.alpaca.markets/v2/calendar",
+        "https://alpaca.markets/disclosures"
+      ],
+      "product": "Existing authenticated historical SIP 1-minute bars, SIP/NBBO quotes and market calendar",
+      "terms": [
+        {
+          "source_key": "alpaca_terms",
+          "url": "https://files.alpaca.markets/disclosures/library/TermsAndConditions.pdf",
+          "record_id": "485a9fedf1b44ee5802780ed66bc5265",
+          "sha256": "2dc774d4aeeafbe4c7f0565e7842d932bc8bc10488af805fce43b8734e7b9859",
+          "retrieved_at": "2026-09-15T16:06:37.224096+00:00",
+          "document_version": "Not stated; pinned by retrieved SHA-256"
+        },
+        {
+          "source_key": "alpaca_stock_schema",
+          "url": "https://docs.alpaca.markets/us/docs/real-time-stock-pricing-data",
+          "record_id": "816909c80fad4d818f8251d016a7ea2a",
+          "sha256": "9b5a93fb5fcaa314792e1822bfc697d660c3b571abac17dd1eae5da7b3ce2576",
+          "retrieved_at": "2026-09-15T16:06:49.723238+00:00",
+          "document_version": "Not stated; pinned by retrieved SHA-256"
+        }
+      ],
+      "internal_research_use": "General terms describe personal/non-commercial service use; actual account agreements and intended automated/non-display use have not been supplied.",
+      "automated_retrieval": "Documented API; owner verified historical SIP endpoints. Entitlement is access evidence, not all downstream usage rights.",
+      "retention": "Account/exchange permission for immutable raw historical archive and derived research must be confirmed; no assumed unrestricted retention.",
+      "redistribution": "Do not publish raw quotes, account archives or credentials. Website terms do not grant unrestricted exchange-data redistribution.",
+      "date_coverage": "Owner successful completed historical window; exact local successful run timestamps/window not supplied. Pipeline requests raw SIP with asof=-, no IEX fallback.",
+      "unresolved_question": "Retrieve accepted applicable subscriber/data agreements, classify intended use, confirm storage/derived-use scope and data-history availability for cohort dates.",
+      "readiness": "ACCESS_PASS_RIGHTS_UNRESOLVED"
+    }
+  ]
+}
