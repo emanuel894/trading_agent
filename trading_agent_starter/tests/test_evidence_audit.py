@@ -18,6 +18,8 @@ from agent.audit_store import AuditFailure, EvidenceStore, canonical, digest, st
 from agent.audit_text import disclosure_map, parse_document, verify_comparable
 from agent.evidence_audit import (audit_filing, credentials_from_env, instrument_at,
                                   load_context, main, prior_review, summarize)
+from agent.entitlement_probe import (REALTIME_SIP, _endpoint_result, _request_is_sip,
+                                     classify_failure, completed_window, default_historical_window, run_probe)
 
 CIK = "0000320193"
 OLD = "0000320193-23-000001"
@@ -62,6 +64,84 @@ class StoreCase(unittest.TestCase):
     def tearDown(self):
         self.store.close()
         self.tmp.cleanup()
+
+
+class EntitlementProbeTests(StoreCase):
+    def test_default_window_is_completed(self):
+        with patch("agent.entitlement_probe.utc_now", return_value="2026-09-15T12:00:37+00:00"):
+            start, end = completed_window()
+        self.assertEqual((start, end), ("2026-09-15T11:25:00+00:00", "2026-09-15T11:30:00+00:00"))
+
+    def test_run_default_is_reproducible_known_session_window(self):
+        with patch("agent.entitlement_probe.utc_now", return_value="2026-09-15T12:00:37+00:00"):
+            self.assertEqual(default_historical_window(),
+                             ("2025-01-15T15:00:00+00:00", "2025-01-15T15:05:00+00:00"))
+
+    def test_missing_credentials_never_makes_http_request(self):
+        with patch.dict("os.environ", {}, clear=True):
+            report, _, code = run_probe(Path(self.tmp.name) / "probe")
+        self.assertEqual(code, 2)
+        self.assertEqual(report["REALTIME_SIP"], REALTIME_SIP)
+        self.assertEqual(report["historical_sip"]["status"], "CREDENTIALS_UNAVAILABLE")
+        self.assertEqual(self.store.records("http"), [])
+        probe_store = EvidenceStore(Path(self.tmp.name) / "probe")
+        try:
+            self.assertEqual(probe_store.records("http"), [])
+            self.assertEqual(probe_store.verify()["status"], "VERIFIED")
+        finally:
+            probe_store.close()
+
+    def test_provider_classification_is_explicit_and_never_iex(self):
+        sip_url = "https://data.alpaca.markets/v2/stocks/bars?feed=sip"
+        delayed = self.store.append("http", sip_url, {"http_status": 403},
+                                    b'{"message":"historical data is delayed 15 minutes"}')
+        self.assertEqual(classify_failure(self.store, [delayed], "HTTP_403")[0], "DELAYED_LIMITED")
+        restricted = self.store.append("http", "https://data.alpaca.markets/v2/stocks/quotes?feed=sip",
+                                       {"http_status": 403}, b'{"message":"subscription required for SIP"}')
+        self.assertEqual(classify_failure(self.store, [restricted], "HTTP_403")[0], "PROVIDER_RESTRICTION")
+        with self.assertRaisesRegex(AuditFailure, "SIP_FEED_NOT_ENFORCED"):
+            _request_is_sip("https://data.alpaca.markets/v2/stocks/bars?feed=iex")
+
+    def test_success_requires_rows_for_both_symbols_and_records_sip_urls(self):
+        start, end = "2026-09-15T11:25:00+00:00", "2026-09-15T11:30:00+00:00"
+        bar = {"t": "2026-09-15T11:25:00Z", "o": 100, "h": 101, "l": 99,
+               "c": 100.5, "v": 10}
+        quote = {"t": "2026-09-15T11:25:00Z", "bp": 100, "ap": 100.1, "bs": 1,
+                 "as": 1, "bx": "X", "ax": "Y", "c": ["R"], "z": "A"}
+        records = {}
+        for kind in ("bars", "quotes"):
+            url = f"https://data.alpaca.markets/v2/stocks/{kind}?feed=sip"
+            records[kind] = self.store.append("http", url, {"http_status": 200}, b"{}")
+
+        class StubMarket:
+            def pages(self, kind, symbols, request_start, request_end):
+                row = bar if kind == "bars" else quote
+                record = records[kind]
+                return {symbol: [(row, record["id"], "2026-09-15T11:25:01Z")] for symbol in symbols}, [record["id"]]
+
+        bars = _endpoint_result(self.store, StubMarket(), "bars", start, end)
+        quotes = _endpoint_result(self.store, StubMarket(), "quotes", start, end)
+        self.assertEqual(bars["classification"], "SUCCEEDED_WITH_ROWS")
+        self.assertEqual(quotes["classification"], "SUCCEEDED_WITH_ROWS")
+        self.assertEqual(bars["rows_by_symbol"], {"AAPL": 1, "SPY": 1})
+        self.assertTrue(bars["no_iex_fallback"] and quotes["no_iex_fallback"])
+        self.assertEqual(quotes["quote_contract"], "SIP/NBBO")
+        self.assertEqual(bars["responses"][0]["raw_sha256"], records["bars"]["blob_sha"])
+        self.assertEqual(bars["responses"][0]["first_observed_at"], None)
+
+    def test_two_valid_empty_symbol_batches_are_accessible_but_not_sufficient(self):
+        start, end = "2026-09-15T11:25:00+00:00", "2026-09-15T11:30:00+00:00"
+        url = "https://data.alpaca.markets/v2/stocks/bars?feed=sip"
+        record = self.store.append("http", url, {"http_status": 200},
+                                   b'{"bars":{"AAPL":[],"SPY":[]},"next_page_token":null}')
+
+        class EmptyMarket:
+            def pages(self, kind, symbols, request_start, request_end):
+                raise AuditFailure("MISSING_SIP_SYMBOL")
+
+        result = _endpoint_result(self.store, EmptyMarket(), "bars", start, end)
+        self.assertEqual(result["classification"], "SUCCEEDED_EMPTY")
+        self.assertEqual(result["reason_code"], "NO_ROWS_IN_WINDOW")
 
 
 class EvidenceStoreTests(StoreCase):

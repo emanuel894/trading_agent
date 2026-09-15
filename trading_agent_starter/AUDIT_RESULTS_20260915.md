@@ -5,6 +5,8 @@ Real SEC acquisition worked for Apple and Microsoft. Three target filings were
 attempted; two completed document/comparator/prior-disclosure processing. No
 target was eligible. The required 50-filing/25-issuer audit has **not** been run.
 
+`REALTIME_SIP = NOT_ENTITLED`
+
 ## Measured acquisition and provenance
 
 | Probe | Actual acquisition | Result |
@@ -14,6 +16,25 @@ target was eligible. The required 50-filing/25-issuer audit has **not** been run
 | SEC timestamp cross-check | Revalidated 17 distinct saved Apple submissions offline against accession, issuer, form and New York-header/UTC-API acceptance agreement. Microsoft downloads enforced that check directly. | Passed for those records. This establishes consistent SEC metadata, not earliest issuer publication. |
 | Immutable-store verification | Apple: 142 records; Microsoft: 81 records at preservation. Raw blobs, record hashes, prior-version links and record chains checked. | Passed. The later Apple verification records append to, rather than overwrite, the initial report's evidence. |
 | SIP / execution context | No Alpaca credentials or sourced historical instrument/status context present in this workspace. | No actual SIP requests or prospective capture were run; executable context remains unmeasured. |
+
+## Independent historical SIP entitlement probe
+
+The standalone probe was added and unit-tested without importing the full 10-Q
+audit context. It is limited to two GET-only endpoint calls (AAPL/SPY `1Min`
+bars and quotes, identical completed window; any explicit pagination is
+retained), hard-requires `feed=sip`, and records raw
+responses plus request receipt/status/elapsed metadata in the append-only store.
+It does not use IEX, the validated 30-minute pipeline, status/security-master
+inputs, forecasting, LLMs, allocation or orders.
+
+The local execution environment used for this implementation has no Alpaca
+credentials, so its run stopped before network access with
+`CREDENTIALS_UNAVAILABLE`; this is a measured credential guard, not a claim
+about the account's historical SIP entitlement. Run the single Windows probe
+command in the README on the credentialed machine to measure
+`SUCCEEDED_WITH_ROWS`, `SUCCEEDED_EMPTY`, `DELAYED_LIMITED` or a provider
+restriction for the account. No subscription was purchased or recommended.
+The separately supplied real-time result remains `REALTIME_SIP = NOT_ENTITLED`.
 
 Targets: Apple `0000320193-25-000008` (completed) and
 `0000320193-25-000057` (partial); Microsoft `0000950170-25-010491` (completed).
@@ -59,7 +80,7 @@ issuer-disclosure coverage and source-grounded human adjudication remain open.
 
 ## Engineering verification, separate from the probes
 
-- **91 tests passed, zero skips**, in an isolated Python 3.12.14 environment with
+- **97 tests passed, zero skips**, in an isolated Python 3.12.14 environment with
   the unchanged requirements installed: 55 foundation tests and 36 new audit tests.
 - Tests cover append-only integrity, as-of exclusion, tampering, SEC history and
   timestamp conflicts, prior/future disclosure separation, suspicious documents,

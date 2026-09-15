@@ -30,6 +30,33 @@ missing mappings/reviews become explicit abstentions. Supply a populated
 `--context config/evidence_audit.local.json` for the complete gate. Copy the empty
 example first; empty evidence never passes.
 
+## Independent historical SIP entitlement probe
+
+Run this small probe before the 50-filing audit. It requires only the local
+Alpaca credentials and read-only execution flags; it does not load the evidence
+audit context, security master or status inputs. It requests AAPL and SPY
+historical `1Min` bars and quotes from the same completed UTC window, with
+`feed=sip`, and never falls back to IEX. The default is the reproducible
+ordinary-session window 2025-01-15 15:00–15:05 UTC; `--start` and `--end` can
+pin another completed window.
+
+The report records the exact window, request URLs/IDs, HTTP statuses, receipt
+and elapsed-time metadata, row counts, immutable response hashes and one of
+`SUCCEEDED_WITH_ROWS`, `SUCCEEDED_EMPTY`, `DELAYED_LIMITED`,
+`PROVIDER_RESTRICTION`, `AUTHENTICATION_FAILED` or `FAILED`. Empty data is not
+treated as sufficient backfill access. The supplied real-time websocket result
+is recorded separately as `REALTIME_SIP = NOT_ENTITLED`; this probe does not
+open a websocket, purchase a subscription, run a model, or send an order.
+
+The probe exits `0` only when both endpoints return rows for both symbols. It
+exits `2` for missing credentials, empty windows, provider restrictions,
+malformed data or any other failed gate, while preserving the failure record.
+Run it from `trading_agent_starter`:
+
+```powershell
+.venv\Scripts\python.exe -m agent.entitlement_probe
+```
+
 Exit codes: `0` means the command completed (for `run`, the software research count
 gate passed); `2` means stopped or the gate did not pass. A readable report is not
 itself a successful acquisition gate. Manual quality review remains separate.
