@@ -152,18 +152,25 @@ class SIPSource:
         if not earlier:
             raise AuditFailure("PRIOR_SESSION_MISSING")
         begin = earlier[-1] - timedelta(minutes=1)
-        end = action_dt + timedelta(minutes=30)
+        # Only completed pre-action minutes belong to this reconstruction.
+        # Post-action coverage/quality is a separate, optional audit below.
+        end = action_dt
         symbols = list(dict.fromkeys([symbol, "SPY"]))
-        bars, bar_ids = self.pages("bars", symbols, begin.isoformat(), end.isoformat())
+        bars, bar_ids = self.pages("bars", symbols, begin.isoformat(),
+                                   (end - timedelta(minutes=1)).isoformat())
         quotes, quote_ids = self.pages("quotes", symbols, (action_dt - timedelta(seconds=60)).isoformat(),
-                                       (action_dt + timedelta(seconds=60)).isoformat())
+                                       action)
         result = {"feed": "sip", "actionable_at": action, "deadline_provisional": True,
                   "calendar_id": calendar_id, "bar_records": bar_ids, "quote_records": quote_ids,
                   "symbols": {}, "mode": mode, "failures": [],
-                  "quote_size_units": "round_lots", "fill_simulated": False}
+                  "quote_size_units": "round_lots", "fill_simulated": False,
+                  "temporal_scope": "PRE_ACTION_RECONSTRUCTION",
+                  "decision_time_eligibility": "NOT_EVALUATED"}
         for sym in symbols:
             normalized, expected = {}, []
             for row, record_id, received in bars[sym]:
+                if nanoseconds(row["t"]) + 60_000_000_000 > nanoseconds(action):
+                    raise AuditFailure("INCOMPLETE_OR_POST_ACTION_BAR")
                 t = validate_bar(row)
                 if not nanoseconds(begin.isoformat()) <= t <= nanoseconds(end.isoformat()):
                     raise AuditFailure("BAR_OUTSIDE_REQUEST")
@@ -198,7 +205,34 @@ class SIPSource:
             stream = stream_context(self.store, symbols, action)
             result["stream_context"] = stream
             result["failures"].extend(stream["failures"])
+            # This offline audit does not yet seal a live decision input set.
+            # In particular, a later stream_end cannot prove earlier continuity.
+            result["failures"].append("PROSPECTIVE_ADMISSION_NOT_IMPLEMENTED")
         return result
+
+    def post_decision_context(self, decision_record):
+        """Append optional outcome-quality evidence; never update admission.
+
+        Call only with an already persisted audit result. Even acquisition
+        failures are data-quality outcomes, not new eligibility reasons.
+        """
+        saved = self.store.get(decision_record["id"])
+        if saved["kind"] != "audit_result" or saved != decision_record:
+            raise AuditFailure("SEALED_AUDIT_RESULT_REQUIRED")
+        market = saved["metadata"]["market"]
+        action = market["actionable_at"]
+        end = (timestamp(action) + timedelta(minutes=30)).isoformat()
+        report = {"decision_record_id": saved["id"], "affects_admission": False,
+                  "temporal_scope": "POST_DECISION_QUALITY_ONLY", "end": end,
+                  "request_ids": [], "rows": {}, "failures": []}
+        for kind in ("bars", "quotes"):
+            try:
+                rows, ids = self.pages(kind, list(market["symbols"]), action, end)
+                report["request_ids"].extend(ids)
+                report["rows"][kind] = {s: len(values) for s, values in rows.items()}
+            except AuditFailure as exc:
+                report["failures"].append(kind + ":" + str(exc))
+        return self.store.append("post_decision_quality", saved["id"], report)
 
 
 def stream_context(store, symbols, action):

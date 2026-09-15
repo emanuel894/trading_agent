@@ -488,7 +488,7 @@ class MarketTests(StoreCase):
         from datetime import timedelta
         calendar = [{"date": d, "open": "09:30", "close": "16:00"} for d in ("2024-05-14", "2024-05-15")]
         times = [datetime(2024, 5, 14, 19, 59, tzinfo=timezone.utc)] + [
-            datetime(2024, 5, 15, 13, 30, tzinfo=timezone.utc) + timedelta(minutes=i) for i in range(35)]
+            datetime(2024, 5, 15, 13, 30, tzinfo=timezone.utc) + timedelta(minutes=i) for i in range(5)]
         batch = [dict(t=t.isoformat(), o=100, h=101, l=99, c=100, v=1000) for t in times]
         q = quote("2024-05-15T13:34:59.999999999Z")
         for missing in (False, True):

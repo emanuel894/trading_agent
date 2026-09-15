@@ -4,6 +4,25 @@ This implements ADR 001's acquisition milestone. It does not run an LLM, calcula
 returns, fit forecasts, allocate capital or submit orders. All existing Alpaca,
 30-minute, risk, ledger, CLI and replay modules remain unchanged.
 
+**The 50-filing audit is BLOCKED by the Access + Fast-Path mini-gate.** Read
+`ACCESS_FASTPATH_GATE.md` before registering a cohort. Historical SIP bars and
+quotes are locally confirmed sufficient for backfill; real-time SIP remains
+not entitled, and status subscription was not reached. The mini-gate records
+these owner-reported observations without claiming an independent account run.
+
+To repeat the two-issuer evidence-path measurement from existing archives:
+
+```powershell
+.venv\Scripts\python.exe -m agent.access_fastpath --source-store runs/audit_access_probe --source-store runs/audit_msft_probe --store runs/access_fastpath_gate --refresh-current
+```
+
+The source directories must contain the earlier complete evidence archives.
+Optional `--sip-store <local_probe_directory>` reviews captured SIP quality;
+it does not probe credentials, require audit context or change entitlement.
+The gate persists a unique report and intentionally exits 2 while its dated-source
+and real-sample policy blockers remain. Cached historical preparation cannot pass
+the prospective cutoff check. This command does not run the 50-filing audit.
+
 ## Run a small acquisition probe
 
 From `trading_agent_starter`, using the existing environment:
@@ -134,9 +153,11 @@ reliable earlier-publication evidence cannot be acquired economically.
 ## Market context and prospective capture
 
 The separate adapter requests raw `1Min`, `feed=sip`, `asof=-` data, following
-pagination without an IEX fallback. It retrieves context from the prior regular
-close through the provisional action plus 30 minutes, and SIP quote windows
-around action for the issuer and SPY. RTH minute gaps, missing symbols, bad OHLC,
+pagination without an IEX fallback. Admission reconstruction retrieves completed
+minutes from the prior regular close up to action, and SIP quotes at/before
+action for the issuer and SPY. Optional action-to-+30-minute collection requires
+an already persisted audit record via `SIPSource.post_decision_context`; its
+quality results never modify admission. RTH minute gaps, missing symbols, bad OHLC,
 crossed/locked/stale/future quotes, ambiguous quote ordering and unsupported quote
 conditions fail. Extended-hours bars are context only; sparse intervals are not
 filled. Quote timestamps retain native nanoseconds and sizes retain round-lot

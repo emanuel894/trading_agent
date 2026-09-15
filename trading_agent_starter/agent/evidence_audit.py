@@ -230,6 +230,7 @@ def audit_filing(store, sec, market, target, history, context, *, mode, deadline
     if not result["reasons"]:
         result["status"] = "ELIGIBLE"
     result["eligibility_scope"] = "acquisition research only; not proof of public novelty, fills or alpha"
+    result["decision_time_eligibility"] = "NOT_EVALUATED"
     if mode == "historical_backfill":
         result["historical_limitation"] = "Reception times and first-served document/bar versions are not reconstructed."
     if mode == "fixture":
