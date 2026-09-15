@@ -2,7 +2,12 @@
 
 **Decision date:** 2026-09-14. **Baseline commit:** `885ebf1`.
 **Status:** architecture accepted; first research candidate selected; acquisition gate NOT PASSED.
-**Scope:** documentation only; order execution remains disabled. This decision supersedes the old baseline → LLM → six-agent roadmap.
+**Scope:** bounded read-only acquisition audit; order execution remains disabled. This decision supersedes the old baseline → LLM → six-agent roadmap.
+
+**Amendment 2026-09-15 (approved by owner):** section 8 supersedes the original
+fixed ten-minute deadline and the implementation deferral. It adds prior-disclosure
+review and an early research gate. Long confirmation remains a promotion standard,
+not a prerequisite for rejecting an architecture.
 
 The Quant strategy is a control. Preserve the validated Alpaca foundation and
 regular-session 30-minute contract unchanged. The proposed intelligence path is
@@ -103,7 +108,7 @@ first observation → ingestion → extraction → verification → numerical ev
 clock UTC and monotonic durations; clock-offset uncertainty above one second
 causes abstention from timing-sensitive evaluation.
 
-**Registered information-value experiment:** all A/B/C arms share a ten-minute
+**Provisional proposal, pending section 8's latency audit:** all A/B/C arms share a ten-minute
 processing deadline after first observation. Schedule the decision on the first
 whole-minute boundary at or after that deadline inside 09:35 to session-close
 minus 30 minutes. Otherwise use 09:35 of the next trading session. Overnight and
@@ -231,15 +236,67 @@ universe/status inputs, clock/latency records and an as-of replay audit.
 daily replay control, existing tests and Python 3.13 CI. Existing risk/ledger
 modules still need later integration; reuse is not production certification.
 
-**Disposition:** document the decision and refresh its checksum; no trading code
-changes. The candidate passes design comparison, but data readiness is unproven:
-no verified account SIP access or historical membership/status source. Once access
-is established, the one audit above should measure capture latency and provenance;
-those measurements are its deliverable, not prerequisites to writing the collector.
-Published API capabilities or offline fixtures cannot certify the acquisition gate.
+**Updated disposition:** implement only the bounded read-only audit described in
+`AUDIT_README.md`. Acquisition remains unproven until measured on the required
+sample. Published capabilities and fixtures cannot certify access or alpha.
 
 SEC discovery/archives and fair-access limits are documented, but a production
 collector needs an identifying user agent, bounded retries and capture-gap logs.
-No collector has been started here.
+Collector limits and measured runs are documented separately from future research.
 [SEC developer resources](https://www.sec.gov/about/developer-resources),
 [SEC API documentation](https://www.sec.gov/search-filings/edgar-application-programming-interfaces).
+
+## 8. Approved refinements and fast falsification — 2026-09-15
+
+**Candidate, not commitment.** Original 10-Q MD&A is the first falsifiable event
+family. A failed 50-filing acquisition audit can end this track immediately;
+failure need not wait for the two-year confirmatory period. A missing account
+entitlement or truncated probe is an unresolved access gate, not evidence that
+10-Qs have no information value.
+
+**Prior-disclosure map.** For each target, inventory captured 10-Q/10-K/8-K filings,
+amendments and EX-99 exhibits from the prior comparable filing up to, but excluding,
+target acceptance. Link separately imported issuer releases and other company
+disclosures with source evidence. Preserve earlier publication claims separately
+from verified reception/SEC acceptance. Downloading an exhibit today does not
+prove when the issuer first distributed it.
+
+Every changed paragraph receives source-grounded linkage: exact prior wording,
+possible equivalent requiring review, or unresolved. Identical wording alone can
+still describe another period. No match never means new to the market. Record
+both `new_relative_to_prior_10q` and `new_to_public`; the latter stays unknown.
+Human review must be tied to the exact text hash and prior-inventory hash and
+cover every changed paragraph before eligibility. It can establish distinctness
+within captured sources, not universal absence of earlier disclosure. Missing
+issuer-source coverage or unresolved material equivalence causes abstention.
+
+**Earlier decisions, separate from proof:**
+
+| Gate | Evidence and bounded decision | Interpretation |
+|---|---|---|
+| Acquisition, first 50 filings / ≥25 issuers | Freeze CIK list, date window and earliest-two-per-issuer selection before acquisition. Require ≥48 complete parsed/comparable/disclosure sets, ≥48 SIP contexts without feed errors, and ≥10 events with reviewed distinct information and complete instrument/status evidence. Unresolved cases stay in the denominator. Audit 100 sampled parser/linkage spans manually; require ≥95 correct grounding/section/period assignments. | Continue research only. Stop the candidate if the complete sample misses these criteria after one documented parser/access repair cycle; do not keep expanding scope to rescue it. The software count gate does not substitute for the manual quality check. |
+| Feasibility, capped 12-week prospective shadow | ≥50 filings, ≥95% observed within five minutes of acceptance, ≥95% actionable market contexts, no known future joins; report failures and cold/cache timings. Freeze the deadline below. | Decide whether to fund the next experiment or park the event track. This is an acquisition/latency study, not alpha evidence. |
+| Exploratory research, later authorization | Use the already specified historical train/validation split for fixed A/B/N models, costs and latency; then a predeclared 12-week shadow comparison with ≥50 events. Require positive validation and shadow direction versus N after costs, no dependence on pre-observation prices, and usable extraction quality. An inconclusive short sample permits at most one explicitly budgeted follow-up, not deployment. | Can justify continued bounded investment; cannot prove alpha. Negative/fragile results favor the numerical fallback. No forecasting or return calculation is implemented in this milestone. |
+| Untouched prospective confirmation | Retain the long fixed test, clustered uncertainty, sample-size checks and portfolio gates from sections 5–6. Freeze any revised dates before performance access. | Required for a strong promotion claim, not for rejecting an architecture early. |
+
+**Provisional deadline.** The audit records the selected 600-second setting but
+does not optimize or freeze it. Measure actual discovery, current/prior download,
+parsing, deterministic linkage and verification distributions, including failures
+and cache hits. Human review is an offline quality gate; its automatic validation
+time is not human reading time. No LLM latency is measured in this milestone.
+
+Before any performance test, register a deadline using representative prospective
+latency (p95 plus an explicit reserve for jitter), the first permitted RTH action
+and an independently justified remaining information window. If no operationally
+achievable deadline fits that window, stop the hypothesis. Do not choose among
+deadlines by final returns. A later C arm must separately measure its actual
+extraction/verification latency before registration; current timings cannot stand
+in for it. The final-test window and rules remain inaccessible to tuning.
+
+**Untrusted documents.** Store original bytes; never execute, render or follow
+document instructions/links. Bounded parsers reject suspicious active content,
+malformed inputs and ambiguous sections. Future LLM extraction gets inert,
+delimited evidence, no tools, credentials, broker access or trading authority,
+an allowlisted strict schema and source-span references. Deterministic validators
+check identity, period, units, spans and contradictions; failures abstain. No
+BUY/SELL schema, model escalation or conversational trading agents are added now.

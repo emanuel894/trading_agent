@@ -1,0 +1,163 @@
+# Read-only 10-Q evidence and actionability audit
+
+This implements ADR 001's acquisition milestone. It does not run an LLM, calculate
+returns, fit forecasts, allocate capital or submit orders. All existing Alpaca,
+30-minute, risk, ledger, CLI and replay modules remain unchanged.
+
+## Run a small acquisition probe
+
+From `trading_agent_starter`, using the existing environment:
+
+```powershell
+.venv\Scripts\python.exe -m agent.evidence_audit --store runs/10q_audit run --ciks 0000320193,0000789019 --start 2025-01-01 --end 2025-06-30 --max-requests 60
+```
+
+The two CIKs are an acquisition smoke sample, not a point-in-time investment
+universe. The 50-filing gate needs a registered 25-issuer list, two target filings
+per issuer, and sourced context. Selection is the earliest original 10-Qs by
+acceptance/accession within the stated window; amendments are prior evidence.
+Register the cohort before inspecting results. Do not substitute successful
+issuers for failed issuers.
+
+Set `SEC_USER_AGENT` locally to your identifying organization/contact string.
+The default identifies this repository without inventing an email address. Keep
+existing `.env` flags disabled. The audit can use existing local Alpaca credentials
+for explicit SIP requests while leaving `ALPACA_DATA_FEED=iex` unchanged for the
+validated foundation. It does not purchase a data subscription.
+
+An initial run without a context file is useful: SEC acquisition proceeds and
+missing mappings/reviews become explicit abstentions. Supply a populated
+`--context config/evidence_audit.local.json` for the complete gate. Copy the empty
+example first; empty evidence never passes.
+
+Exit codes: `0` means the command completed (for `run`, the software research count
+gate passed); `2` means stopped or the gate did not pass. A readable report is not
+itself a successful acquisition gate. Manual quality review remains separate.
+
+## What is persisted
+
+`evidence.sqlite` contains append-only records with update/delete guards, prior
+version references and a hash chain. `objects/<sha256>` holds immutable raw HTTP
+responses, individual SEC document bytes and normalized text views. Every report
+has a unique name and an immutable database counterpart. New versions append;
+prior versions remain queryable. Code-file hashes are registered before a run.
+
+Preserve the entire directory, not just the report. Close writers before copying
+or use SQLite's backup API. Verify a restored copy with:
+
+```powershell
+.venv\Scripts\python.exe -m agent.evidence_audit --store runs/10q_audit verify
+```
+
+These checks detect accidental alteration; they are not independent publication
+proof or protection against an administrator rewriting the whole archive. Raw
+runtime evidence stays outside Git. Imported-source receipt times are declared
+metadata; actual import time is recorded separately and is not backdated.
+
+## Context file contract
+
+The top-level keys must exactly match `config/evidence_audit.example.json`.
+All input context is versioned. Source files must be beneath the manifest's
+directory; absolute paths/traversal are rejected. No external URL is fetched from
+the manifest or from document content.
+
+| Collection | Required record fields |
+|---|---|
+| `sources` | `id`, relative `path`, exact `sha256`, `url`, `published_at` or null, `reported_observed_at` or null, `rights_ref`. Files: JSON, CSV, text or inert HTML. Unknown times stay null. |
+| `instruments` | `cik` as a 10-digit string, `symbol`, permanent `instrument_id`, UTC-aware `valid_from`/`valid_to`, `round_lot_shares`, `source_id`, `reviewed_by`. Intervals are half-open and cannot overlap at action. A current ticker file is insufficient. |
+| `status_intervals` | `symbol`, UTC-aware `valid_from`/`valid_to`, `state` (`TRADING` required for eligibility), `source_id`, `reviewed_by`. Include the issuer and SPY. Unknown status is not inferred from available quotes. |
+| `company_disclosures` | `cik`, `source_id`. Publication comes from the referenced captured source; documents at or after target acceptance cannot enter the prior map. |
+| `prior_reviews` | `accession`, exact report `text_sha256` and `inventory_sha256`, `reviewed_by`, `external_search_source_ids`, and one `paragraph_reviews` entry per changed paragraph. Each entry needs `paragraph_id`, `relation` (`equivalent` or `distinct_within_captured_sources`), `rationale`, and `source_ids`. The source files must contain the reviewer's evidence. Unreviewed or stale reviews abstain. |
+| `clock` | null, or `source_id`, `uncertainty_ms`, `measured_at`. Prospective admission requires sourced absolute clock uncertainty ≤1 second, measured within the preceding day. Local wall/monotonic agreement alone cannot establish UTC accuracy. |
+
+Context assertions are reviewed input, not independent verification by the
+software. Hashes establish which evidence was used, not whether a supplied
+vendor history or reviewer conclusion is correct. Raw source spans and the review
+sources allow a person to assess that conclusion before research admission.
+
+## Prior-disclosure map
+
+The source adapter follows SEC submissions-history pages and downloads complete
+submissions. It preserves the primary document and EX-99 exhibits. Acceptance,
+accession, form and issuer are cross-checked against the SEC envelope; New York
+header time must agree with the API's UTC time. Same fiscal quarter/year pairing
+requires matching source-tagged fiscal period and adjacent fiscal years.
+
+Normalized text is a separate immutable object. Paragraph references identify
+that object and Unicode character offsets; raw-parent byte spans also link each
+SEC child document to its original submission. Token overlap is deliberately
+conservative about numeric changes and negation. It generates review candidates,
+not semantic truth. There is no automatic `new_to_public=true` path.
+
+Issuer releases outside SEC are explicit imports in this milestone, not an
+unbounded web crawler. The map records incomplete coverage and requires external
+search evidence before eligibility. This limitation can kill the event family if
+reliable earlier-publication evidence cannot be acquired economically.
+
+## Market context and prospective capture
+
+The separate adapter requests raw `1Min`, `feed=sip`, `asof=-` data, following
+pagination without an IEX fallback. It retrieves context from the prior regular
+close through the provisional action plus 30 minutes, and SIP quote windows
+around action for the issuer and SPY. RTH minute gaps, missing symbols, bad OHLC,
+crossed/locked/stale/future quotes, ambiguous quote ordering and unsupported quote
+conditions fail. Extended-hours bars are context only; sparse intervals are not
+filled. Quote timestamps retain native nanoseconds and sizes retain round-lot
+units. No execution/fill is simulated.
+
+Calendar access is GET-only on the Paper endpoint. It handles New York DST and
+early closes. The provisional action is the first whole minute inside 09:35 to
+close minus 30 minutes after the selected delay; otherwise the next eligible
+session. Historical action uses **simulated availability after acceptance**.
+Historical corrected bars/quotes cannot prove reception at that time.
+
+For a bounded real-time pilot, run a separate capture process **before** the
+filing/action window, using the same store and including SPY:
+
+```powershell
+.venv\Scripts\python.exe -m agent.evidence_audit --store runs/10q_audit capture-sip --symbols AAPL,SPY --seconds 900
+```
+
+Then a bounded SEC observation run, with actual current dates:
+
+```powershell
+.venv\Scripts\python.exe -m agent.evidence_audit --store runs/10q_audit run --ciks 0000320193 --start YYYY-MM-DD --end YYYY-MM-DD --mode prospective --polls 15 --poll-seconds 60 --context config/evidence_audit.local.json
+```
+
+Capture subscribes only to SIP quotes, minute/updated bars and statuses. It logs
+receipt times, subscription denial, discontinuities and termination. Status
+channels may require additional access. Absence of a halt message is **not** an
+initial tradable-status snapshot. A bounded pilot may correctly abstain throughout
+if status evidence is unavailable. No restart/reconnect is hidden as continuous
+coverage. Historical REST responses received after action cannot substitute for
+prospective quote receipts. Stream bars are retained for subsequent as-of review;
+this audit does not certify a complete prospective feature dataset or simulator.
+
+The observation loop is intentionally single-worker and finite; slow acquisition
+can delay later polls and will be visible. It is an audit, not a production scanner.
+The context window must have completed before historical retrieval; early runs
+abstain and can be rerun against the same immutable first-observation record.
+
+## Bounds and interpretation
+
+- At most 25 issuers × two targets per run; eight history pages per issuer;
+  64 prior filings and 20 admitted documents per submission. A cap causes failure,
+  never silent truncation. Prior downloads are cached only within one poll, with
+  explicit cache-hit records; subsequent polls re-observe possible revisions.
+- SEC/HTTP requests: at most four starts/second per process, 20-second timeout,
+  three attempts for transient failures, no retry on 403, 2,000 default requests
+  (maximum 5,000), 2 GB aggregate raw-response budget, 40 MB per response.
+- SIP pagination: at most 50 pages/window; capture ≤30 minutes, ≤10 symbols,
+  ≤100,000 frames. No fallback feed, order endpoint or arbitrary redirect.
+- Parsing: ≤15 MB/document, ≤2 million visible characters, bounded paragraphs and
+  comparisons; suspicious content and ambiguous MD&A boundaries abstain.
+
+Do not compare cached prior-document timings with fresh current-filing downloads
+as if they were equivalent. Automatic review validation is not human review
+latency. The initial 600-second setting remains provisional. Freeze an operationally
+achievable deadline before later performance tests; no return-based deadline
+selection or alpha metric exists in this implementation.
+
+Read the actual measured report separately from unit tests. A test fixture can
+exercise the eligible path but can never pass the real research gate. No small
+probe, extraction precision result or short shadow period is final alpha proof.
