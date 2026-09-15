@@ -1,0 +1,21 @@
+{
+  "recorded_date": "2026-09-15",
+  "origin": "USER_REPORTED_LOCAL_ACCOUNT_PROBES",
+  "provider": "Alpaca",
+  "feed": "sip",
+  "historical_1minute_bars": "SUCCEEDED_WITH_ROWS",
+  "historical_sip_nbbo_quotes": "SUCCEEDED_WITH_ROWS",
+  "historical_status": "SUFFICIENT_FOR_BACKFILL",
+  "REALTIME_SIP": "NOT_ENTITLED",
+  "realtime_failure_mode": "SIP_AUTH_OR_ENTITLEMENT_REJECTED",
+  "status_channel": "NOT_TESTED_AUTH_BLOCKED",
+  "status_channel_explanation": "Authentication failed before status subscription; separate entitlement and initial-state coverage are unknown.",
+  "requested_symbols": ["AAPL", "SPY"],
+  "raw_local_probe_archive_available_here": false,
+  "provider_error_code": null,
+  "exact_local_probe_timestamps": null,
+  "latest_data_delay_boundary_tested": false,
+  "independently_retested_here": false,
+  "subscription_purchase": "NOT_REQUESTED",
+  "iex_fallback": false
+}
