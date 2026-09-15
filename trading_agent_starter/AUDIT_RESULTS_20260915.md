@@ -15,7 +15,7 @@ target was eligible. The required 50-filing/25-issuer audit has **not** been run
 | Separate Microsoft probe | 15 HTTP responses, all 200; one current 10-Q, prior fiscal comparator and 20-document prior inventory completed. | Document stages completed; instrument mapping and prior-disclosure review remained unavailable. |
 | SEC timestamp cross-check | Revalidated 17 distinct saved Apple submissions offline against accession, issuer, form and New York-header/UTC-API acceptance agreement. Microsoft downloads enforced that check directly. | Passed for those records. This establishes consistent SEC metadata, not earliest issuer publication. |
 | Immutable-store verification | Apple: 142 records; Microsoft: 81 records at preservation. Raw blobs, record hashes, prior-version links and record chains checked. | Passed. The later Apple verification records append to, rather than overwrite, the initial report's evidence. |
-| SIP / execution context | No Alpaca credentials or sourced historical instrument/status context present in this workspace. | No actual SIP requests or prospective capture were run; executable context remains unmeasured. |
+| SIP / execution context | Owner's credentialed Windows probe observed historical SIP 1-minute bars HTTP 200 with AAPL/SPY rows; seven HTTP 200 paginated SIP quote responses; at least 13,088 AAPL quote rows; no auth/subscription/permission/entitlement error. | Historical SIP provider access is observed. The initial probe incorrectly failed during quote-quality validation; the corrected probe separates entitlement from quality. Real-time remains `REALTIME_SIP = NOT_ENTITLED`. |
 
 ## Independent historical SIP entitlement probe
 
@@ -29,12 +29,22 @@ inputs, forecasting, LLMs, allocation or orders.
 
 The local execution environment used for this implementation has no Alpaca
 credentials, so its run stopped before network access with
-`CREDENTIALS_UNAVAILABLE`; this is a measured credential guard, not a claim
-about the account's historical SIP entitlement. Run the single Windows probe
-command in the README on the credentialed machine to measure
-`SUCCEEDED_WITH_ROWS`, `SUCCEEDED_EMPTY`, `DELAYED_LIMITED` or a provider
-restriction for the account. No subscription was purchased or recommended.
+`CREDENTIALS_UNAVAILABLE`; this is separate from the owner's credentialed
+Windows result above. Rerun the single Windows probe command in the README on
+the credentialed machine to obtain the corrected immutable report and its
+`SUCCEEDED_WITH_ROWS`, `SUCCEEDED_EMPTY`, `DELAYED_LIMITED` or provider
+restriction classification. No subscription was purchased or recommended.
 The separately supplied real-time result remains `REALTIME_SIP = NOT_ENTITLED`.
+
+The observed account result exposed a probe bug: seven HTTP 200 SIP quote pages
+and at least 13,088 AAPL rows were incorrectly turned into `FAILED` by the
+execution-quality check `INVALID_HISTORICAL_QUOTE`; SPY was shown as zero only
+because processing stopped before its count was recorded. The corrected probe
+now counts both symbols first, classifies entitlement only from authenticated
+200/SIP/structured responses and row coverage, and places quote conditions,
+crossed/locked/zero-size counts, malformed rows and strict-policy pass counts
+under a separate `data_quality` section. A quote-quality failure can no longer
+label successful historical SIP access as `NOT_ENTITLED`.
 
 Targets: Apple `0000320193-25-000008` (completed) and
 `0000320193-25-000057` (partial); Microsoft `0000950170-25-010491` (completed).
@@ -80,7 +90,7 @@ issuer-disclosure coverage and source-grounded human adjudication remain open.
 
 ## Engineering verification, separate from the probes
 
-- **97 tests passed, zero skips**, in an isolated Python 3.12.14 environment with
+- **98 tests passed, zero skips**, in an isolated Python 3.12.14 environment with
   the unchanged requirements installed: 55 foundation tests and 36 new audit tests.
 - Tests cover append-only integrity, as-of exclusion, tampering, SEC history and
   timestamp conflicts, prior/future disclosure separation, suspicious documents,

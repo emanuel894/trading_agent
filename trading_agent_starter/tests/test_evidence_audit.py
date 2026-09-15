@@ -83,6 +83,7 @@ class EntitlementProbeTests(StoreCase):
         self.assertEqual(code, 2)
         self.assertEqual(report["REALTIME_SIP"], REALTIME_SIP)
         self.assertEqual(report["historical_sip"]["status"], "CREDENTIALS_UNAVAILABLE")
+        self.assertEqual(set(report["data_quality"]), {"bars", "quotes"})
         self.assertEqual(self.store.records("http"), [])
         probe_store = EvidenceStore(Path(self.tmp.name) / "probe")
         try:
@@ -142,6 +143,38 @@ class EntitlementProbeTests(StoreCase):
         result = _endpoint_result(self.store, EmptyMarket(), "bars", start, end)
         self.assertEqual(result["classification"], "SUCCEEDED_EMPTY")
         self.assertEqual(result["reason_code"], "NO_ROWS_IN_WINDOW")
+
+    def test_quote_quality_failure_does_not_fail_entitlement_or_hide_spy(self):
+        start, end = "2026-09-15T11:25:00+00:00", "2026-09-15T11:30:00+00:00"
+        invalid = {"t": "2026-09-15T11:25:00Z", "bp": 100, "ap": 100, "bs": 0,
+                   "as": 1, "bx": "X", "ax": "Y", "c": ["Z"], "z": "A"}
+        valid = {"t": "2026-09-15T11:25:00Z", "bp": 100, "ap": 100.1, "bs": 1,
+                 "as": 1, "bx": "X", "ax": "Y", "c": ["R"], "z": "B"}
+        records = {}
+        for kind in ("bars", "quotes"):
+            url = f"https://data.alpaca.markets/v2/stocks/{kind}?feed=sip"
+            records[kind] = self.store.append("http", url, {"http_status": 200}, b"{}")
+
+        class QualityMarket:
+            def pages(self, kind, symbols, request_start, request_end):
+                record = records[kind]
+                if kind == "bars":
+                    row_by_symbol = {symbol: {"t": "2026-09-15T11:25:00Z", "o": 100,
+                                               "h": 101, "l": 99, "c": 100.5, "v": 10}
+                                     for symbol in symbols}
+                else:
+                    row_by_symbol = {"AAPL": invalid, "SPY": valid}
+                return {symbol: [(row_by_symbol[symbol], record["id"], "2026-09-15T11:25:01Z")]
+                        for symbol in symbols}, [record["id"]]
+
+        result = _endpoint_result(self.store, QualityMarket(), "quotes", start, end)
+        self.assertEqual(result["provider_access"], "SUCCEEDED")
+        self.assertEqual(result["classification"], "SUCCEEDED_WITH_ROWS")
+        self.assertEqual(result["rows_by_symbol"], {"AAPL": 1, "SPY": 1})
+        self.assertEqual(result["data_quality"]["locked_quotes"], 1)
+        self.assertEqual(result["data_quality"]["zero_size"], 1)
+        self.assertEqual(result["data_quality"]["strict_execution_quality_pass_rows_by_symbol"],
+                         {"AAPL": 0, "SPY": 1})
 
 
 class EvidenceStoreTests(StoreCase):

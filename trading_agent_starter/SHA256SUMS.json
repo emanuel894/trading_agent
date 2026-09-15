@@ -4,8 +4,8 @@
   "trading_agent_starter/.env.example": "dad621738958d940f0cf1ae90f569985a51d1559a62bcde871e15fceea9eee58",
   "trading_agent_starter/ALPACA_PAPER_SETUP_HE.md": "bc7310ceb545ec33f0c135a8e930ff77764bea8626f64adb046c7adf41353674",
   "trading_agent_starter/ARCHITECTURE_DECISION_001.md": "8e550b45447c616138704715f2de4424c392bacc0d4b7939aa077a72657b3641",
-  "trading_agent_starter/AUDIT_README.md": "c1301b6c602af8f01e7d62e3addaf078a5f4fae76ddc397814f9c038b6954e04",
-  "trading_agent_starter/AUDIT_RESULTS_20260915.md": "1246095f46fb0fd867b5a26ca3a6dbbdcb7a2fe5f10063868aae2e0576b5af1e",
+  "trading_agent_starter/AUDIT_README.md": "034630fcd4563bae5a275521b8e151729b71c536265a00eff13559a30deb24d2",
+  "trading_agent_starter/AUDIT_RESULTS_20260915.md": "71fa5176444805c9fdcacd227902e93544a4b23339b575e345e8c4f5eaa7c1c2",
   "trading_agent_starter/BEGINNER_STEP_BY_STEP_HE.md": "5b4ffd404f1a66fc8577387e637a4f147c71aa26b09502a743add3a7d3857479",
   "trading_agent_starter/GAP_ANALYSIS_V1_HE.md": "c400ec579d75c3c845e342d25e12758617c51f4357db27b9f21923d5574a757a",
   "trading_agent_starter/IMPLEMENTATION_PLAN.md": "7c7281867f38369177e3fdec9bf3cd9cbc65a3ea956021e37b6b4c4eaafed5b7",
@@ -24,7 +24,7 @@
   "trading_agent_starter/agent/audit_store.py": "ac25404c420f3f0f44828216d38b9795de758cffcdba29e410feda68dbd5c90d",
   "trading_agent_starter/agent/audit_text.py": "8833dfff59f833737446d391c0384ada42c4febc2f1192e4793a5958d1a6ad6f",
   "trading_agent_starter/agent/broker.py": "343b77407ba16c938a6fc2767f1c3aecd4c1dc2dd7cda90a99bc53fc306f9261",
-  "trading_agent_starter/agent/entitlement_probe.py": "0f39a744acdec6062a2d949a6b69b0e7d50b6464fcf104e2e268402b5d54675f",
+  "trading_agent_starter/agent/entitlement_probe.py": "c5bc5ebc318939478ed1203577e6c6100a93e555eb855c326b37423661c0a447",
   "trading_agent_starter/agent/evidence_audit.py": "8f49e0c7b9a9b1dbfd52180594595af56059a9e6c3c9a3edc61b81c79c962a2a",
   "trading_agent_starter/agent/ibkr_readonly.py": "95ba9d879606e920ce60b72de5398a7733698f6208414cca4d38a7d52f7d3836",
   "trading_agent_starter/agent/ledger.py": "781e37de8dd632d6c350756a121d7e35026727a8eaa8ba799e8e08f51a3a6350",
@@ -40,7 +40,7 @@
   "trading_agent_starter/setup_windows.bat": "f6d350609871acd4916f319ff625b0452642eff2a725b7617408cc995b23e770",
   "trading_agent_starter/tests/test_alpaca_history.py": "e5296ed99a7834214cc585940e65c643376caa222f807fbd9860296cb46f91c3",
   "trading_agent_starter/tests/test_alpaca_paper.py": "dd1136f727c1ae3c2a150925de13615cbe97709751b103d78d4c99fe59beca02",
-  "trading_agent_starter/tests/test_evidence_audit.py": "a6c18d1c35dc380964019643ce4b14e3c5f4c51622461ef8ffddbe2e4044ebcf",
+  "trading_agent_starter/tests/test_evidence_audit.py": "65244877ff0720365a82dae5c150088ee6a0ee28ad70f4f523893641c326d90f",
   "trading_agent_starter/tests/test_foundation.py": "5e1f25d0876fdb17d8e1921d5cf628e5432afcd9eff98b77f791bd29778d7c1d",
   "trading_agent_starter/tests/test_market_data.py": "41c2837dd4b3128f484711f7d3c34c7794f46e01f0c96701d609c4152b74ad9a"
 }

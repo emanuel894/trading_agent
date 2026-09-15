@@ -42,11 +42,21 @@ pin another completed window.
 
 The report records the exact window, request URLs/IDs, HTTP statuses, receipt
 and elapsed-time metadata, row counts, immutable response hashes and one of
-`SUCCEEDED_WITH_ROWS`, `SUCCEEDED_EMPTY`, `DELAYED_LIMITED`,
+`SUCCEEDED_WITH_ROWS`, `SUCCEEDED_PARTIAL_ROWS`, `SUCCEEDED_EMPTY`,
+`DELAYED_LIMITED`,
 `PROVIDER_RESTRICTION`, `AUTHENTICATION_FAILED` or `FAILED`. Empty data is not
 treated as sufficient backfill access. The supplied real-time websocket result
 is recorded separately as `REALTIME_SIP = NOT_ENTITLED`; this probe does not
 open a websocket, purchase a subscription, run a model, or send an order.
+
+Historical entitlement and market-data quality are separate report sections.
+Successful HTTP 200 SIP access remains successful even when a quote is locked,
+crossed, zero-sized, uses a non-`R` condition, or fails the later strict
+execution-quality policy. The `data_quality` section counts rows for every
+symbol, quote/tape/exchange frequencies, locked/crossed/zero values, malformed
+rows, strict-policy passes and rejection reasons. Historical freshness is not
+claimed because reception time at the original market timestamp cannot be
+reconstructed.
 
 The probe exits `0` only when both endpoints return rows for both symbols. It
 exits `2` for missing credentials, empty windows, provider restrictions,
