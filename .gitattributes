@@ -1,0 +1,5 @@
+# Preserve byte hashes of frozen evidence-review artifacts on Windows checkouts.
+trading_agent_starter/research/*.json -text
+trading_agent_starter/config/dated_source_packet.json -text
+trading_agent_starter/agent/audit_market.py text eol=lf
+trading_agent_starter/agent/dated_source_gate.py text eol=lf

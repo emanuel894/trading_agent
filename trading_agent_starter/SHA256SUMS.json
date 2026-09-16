@@ -1,4 +1,5 @@
 {
+  ".gitattributes": "949ac814f4e329facf76ab6ee8cbf3c0bda0831fd5f41042700030d54b03dcab",
   ".github/workflows/tests.yml": "4bc704a519de01468bb80d6fb1fac8e93ae33f7bcd23bfc11f14c01534f0ceba",
   ".gitignore": "a440c313ad731c0a8da6061227d7d5bc3dcd394f7c7c8c3289a5938e2fd9f174",
   "trading_agent_starter/.env.example": "dad621738958d940f0cf1ae90f569985a51d1559a62bcde871e15fceea9eee58",
@@ -8,7 +9,7 @@
   "trading_agent_starter/AUDIT_README.md": "85d9df4f888fd79b868c00815fcb4eaeeeebe117f852b0c14674f6ee451615b9",
   "trading_agent_starter/AUDIT_RESULTS_20260915.md": "71fa5176444805c9fdcacd227902e93544a4b23339b575e345e8c4f5eaa7c1c2",
   "trading_agent_starter/BEGINNER_STEP_BY_STEP_HE.md": "5b4ffd404f1a66fc8577387e637a4f147c71aa26b09502a743add3a7d3857479",
-  "trading_agent_starter/COHORT_CLOSURE_20260916.md": "6fa385e9265b16c2fa016ba5e6680e5f19bf19dd5ff6683a24693a071de62228",
+  "trading_agent_starter/COHORT_CLOSURE_20260916.md": "e8198f38e481540a2ca0337613a6b6fdfffaee8eb76fc3f60554935414e09369",
   "trading_agent_starter/COHORT_CLOSURE_EXCEPTIONS.md": "39860ae50a25ded25f5042e623436551f0fae0c9c72c98915f52f18dac404486",
   "trading_agent_starter/DATED_SOURCE_VALIDATION_PACKET.md": "5b58e44165fe42f168d6c7b5ed143bd53fc44ec92fa9d7462188ab76c8fd25d2",
   "trading_agent_starter/GAP_ANALYSIS_V1_HE.md": "c400ec579d75c3c845e342d25e12758617c51f4357db27b9f21923d5574a757a",
