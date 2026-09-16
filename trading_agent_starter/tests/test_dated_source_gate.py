@@ -8,6 +8,7 @@ import unittest
 from unittest.mock import patch
 
 from agent.audit_sec import SECSource
+from agent import audit_market
 from agent.audit_store import AuditFailure, EvidenceStore, canonical, digest, utc_now
 from agent.dated_source_gate import (CRITERIA, SCOPED, VERSION, evaluate_packet,
                                     historical_tradability, main)
@@ -22,7 +23,7 @@ class DatedGateTests(unittest.TestCase):
         self.root = Path(self.tmp.name)
         raw = b"Explicit synthetic reviewer assertions; never production evidence"
         (self.root / "source").write_bytes(raw)
-        targets = [dict(cik=str(i // 2 + 1).zfill(10), accession=f"{i // 2 + 1:010d}-24-{i:06d}",
+        targets = [dict(cik=str(i // 2 + 1).zfill(10), accession=f"{i // 2 + 1:010d}-24-{i:06d}", form="10-Q",
                         instrument_id=f"research:{i // 2}", actionable_at="2024-05-15T13:35:01Z") for i in range(50)]
         scope = {"targets": targets, "context_instruments": [{"cik": "0000000026", "symbol": "SPY",
             "instrument_id": "research:25", "actionable_at": "2024-05-15T13:35:01Z"}]}
@@ -36,6 +37,11 @@ class DatedGateTests(unittest.TestCase):
                 "scope_sha256": digest(canonical(scope)), "criteria": {k: {
                     "value": True, "evidence_ids": ["e"], "rationale": "Synthetic test assertion"}
                 for k in keys}} for name, keys in CRITERIA.items()}}
+        manifest = canonical({"version": "historical-cohort-v1", "scope": scope,
+            "scope_sha256": digest(canonical(scope)), "frozen_at": utc_now(), "amendment": None})
+        (self.root / "manifest.json").write_bytes(manifest)
+        self.packet["frozen_manifest"] = {"path": "manifest.json", "sha256": digest(manifest)}
+        self.packet["quote_policy_code_sha256"] = digest(Path(audit_market.__file__).read_bytes())
 
     def tearDown(self):
         self.tmp.cleanup()
@@ -75,6 +81,25 @@ class DatedGateTests(unittest.TestCase):
         self.packet["scope"]["targets"] = self.packet["scope"]["targets"][:2]
         self.assertEqual(self.result()["historical_recommendation"], "BLOCK_HISTORICAL_AUDIT")
 
+    def test_manifest_is_required_and_tampering_fails(self):
+        (self.root / "manifest.json").write_bytes(b"changed")
+        self.assertEqual(self.result()["frozen_manifest"]["status"], "FAIL")
+        self.assertEqual(self.result()["historical_recommendation"], "BLOCK_HISTORICAL_AUDIT")
+        (self.root / "manifest.json").unlink()
+        self.assertEqual(self.result()["frozen_manifest"]["status"], "UNRESOLVED")
+
+    def test_refreshing_review_hashes_does_not_bypass_manifest_amendment(self):
+        self.packet["scope"]["selection"] = "changed rule"
+        for review in self.packet["reviews"].values():
+            review["scope_sha256"] = digest(canonical(self.packet["scope"]))
+        self.assertEqual(self.result()["frozen_manifest"]["status"], "UNRESOLVED")
+        self.assertEqual(self.result()["historical_recommendation"], "BLOCK_HISTORICAL_AUDIT")
+
+    def test_quote_rule_change_invalidates_the_frozen_policy_review(self):
+        self.packet["quote_policy_code_sha256"] = "0" * 64
+        self.assertEqual(self.result()["gates"]["quote_policy_review"]["status"], "UNRESOLVED")
+        self.assertEqual(self.result()["historical_recommendation"], "BLOCK_HISTORICAL_AUDIT")
+
     def test_owner_access_does_not_prove_quote_quality_or_rights(self):
         self.packet["evidence"][0]["kind"] = "owner_local_observation"
         gates = self.result()["gates"]
@@ -85,6 +110,28 @@ class DatedGateTests(unittest.TestCase):
     def test_identity_overlap_and_reused_lineage_fail(self):
         duplicate = deepcopy(self.packet["instrument_intervals"][0])
         duplicate["lineage_id"] = "different class"
+        self.packet["instrument_intervals"].append(duplicate)
+        result = self.result()["gates"]["instrument_identity"]
+        self.assertEqual(result["status"], "FAIL")
+        self.assertIn("INTERNAL_ID_REUSED_FOR_DIFFERENT_LINEAGE", result["reasons"])
+
+    def test_partial_identity_coverage_is_unresolved_not_fail(self):
+        self.packet["instrument_intervals"] = self.packet["instrument_intervals"][:1]
+        result = self.result()["gates"]["instrument_identity"]
+        self.assertEqual(result["status"], "UNRESOLVED")
+        self.assertTrue(any(r.startswith("MISSING_IDENTITY_INTERVAL:") for r in result["reasons"]))
+
+    def test_missing_interval_field_is_unresolved_and_compatible_overlap_is_allowed(self):
+        row = self.packet["instrument_intervals"][0]
+        self.packet["instrument_intervals"].append(deepcopy(row))
+        self.assertEqual(self.result()["gates"]["instrument_identity"]["status"], "PASS")
+        del row["valid_to"]
+        self.assertEqual(self.result()["gates"]["instrument_identity"]["status"], "UNRESOLVED")
+
+    def test_missing_bounds_do_not_hide_a_known_reused_lineage(self):
+        duplicate = deepcopy(self.packet["instrument_intervals"][0])
+        duplicate["lineage_id"] = "unrelated issuer class"
+        del duplicate["valid_to"]
         self.packet["instrument_intervals"].append(duplicate)
         result = self.result()["gates"]["instrument_identity"]
         self.assertEqual(result["status"], "FAIL")

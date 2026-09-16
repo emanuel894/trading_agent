@@ -13,6 +13,7 @@ import re
 import uuid
 
 from .audit_market import validate_quote
+from . import audit_market
 from .audit_store import AuditFailure, EvidenceStore, canonical, digest, strict_json, timestamp, utc_now
 
 VERSION = "dated-source-gate-v1"
@@ -77,6 +78,7 @@ def valid_scope(scope):
         for target in targets:
             if (not re.fullmatch(r"\d{10}", target["cik"])
                     or not re.fullmatch(r"\d{10}-\d{2}-\d{6}", target["accession"])
+                    or target.get("form") != "10-Q"
                     or not target["instrument_id"].startswith("research:")):
                 return False
             timestamp(target["actionable_at"])
@@ -89,6 +91,33 @@ def valid_scope(scope):
     except (KeyError, AuditFailure):
         return False
     return True
+
+
+def frozen_scope_check(packet, root):
+    """Pin reviews to the persisted manifest, including its selection and clock rule."""
+    ref = packet.get("frozen_manifest", {})
+    if not ref.get("path") or not ref.get("sha256"):
+        return {"status": "UNRESOLVED", "reason": "FROZEN_MANIFEST_MISSING"}
+    root = Path(root).resolve()
+    path = (root / ref["path"]).resolve()
+    if not path.is_relative_to(root):
+        raise AuditFailure("INVALID_MANIFEST_PATH")
+    if not path.is_file():
+        return {"status": "UNRESOLVED", "reason": "FROZEN_MANIFEST_UNAVAILABLE"}
+    if path.stat().st_size > 2_000_000:
+        raise AuditFailure("MANIFEST_BYTE_CAP")
+    raw = path.read_bytes()
+    if digest(raw) != ref["sha256"]:
+        return {"status": "FAIL", "reason": "FROZEN_MANIFEST_HASH_MISMATCH"}
+    document = strict_json(raw)
+    if (document.get("version") != "historical-cohort-v1"
+            or document.get("scope_sha256") != digest(canonical(document.get("scope")))
+            or not document.get("frozen_at")):
+        return {"status": "FAIL", "reason": "INVALID_FROZEN_MANIFEST"}
+    timestamp(document["frozen_at"])
+    if document["scope"] != packet.get("scope"):
+        return {"status": "UNRESOLVED", "reason": "SCOPE_CHANGED_EXPLICIT_AMENDMENT_AND_NEW_REVIEWS_REQUIRED"}
+    return {"status": "PASS", "reason": None, "file_sha256": ref["sha256"]}
 
 
 def review_gate(name, review, scope_sha, evidence):
@@ -122,37 +151,50 @@ def review_gate(name, review, scope_sha, evidence):
 
 
 def identity_failures(packet):
+    """Separate incomplete coverage from contradictory identity assertions."""
     intervals = packet.get("instrument_intervals", [])
-    failures = []
-    for row in intervals:
-        required = ("instrument_id", "cik", "issuer", "share_class", "ticker", "exchange",
-                    "valid_from", "valid_to", "lineage_id", "id_authority", "evidence_ids")
-        if not all(row.get(k) for k in required):
-            failures.append("INCOMPLETE_INSTRUMENT_INTERVAL")
-            continue
-        if (row["id_authority"] != "INTERNAL_RESEARCH" or not row["instrument_id"].startswith("research:")
-                or not re.fullmatch(r"\d{10}", row["cik"])):
-            failures.append("INSTRUMENT_ID_AUTHORITY_MISREPRESENTED")
-        if timestamp(row["valid_from"]) >= timestamp(row["valid_to"]):
-            failures.append("INVALID_INSTRUMENT_INTERVAL")
-    for target in (packet.get("scope", {}).get("targets", [])
-                   + packet.get("scope", {}).get("context_instruments", [])):
-        at = timestamp(target["actionable_at"])
-        matches = [r for r in intervals if r.get("instrument_id") == target["instrument_id"]
-                   and r.get("cik") == target["cik"] and r.get("valid_from") and r.get("valid_to")
-                   and (not target.get("symbol") or r.get("ticker") == target["symbol"])
-                   and timestamp(r["valid_from"]) <= at < timestamp(r["valid_to"])]
-        if len(matches) != 1:
-            failures.append("MISSING_OR_OVERLAPPING_IDENTITY_INTERVAL:" + target.get("accession", target["instrument_id"]))
-    # Reusing a ticker for a different class must not merge internal lineages.
+    failures, unresolved, complete, comparable = [], [], [], []
     lineages = {}
     for row in intervals:
         key = row.get("instrument_id")
-        lineage = (row.get("cik"), row.get("lineage_id"))
-        if key in lineages and lineages[key] != lineage:
-            failures.append("INTERNAL_ID_REUSED_FOR_DIFFERENT_LINEAGE")
-        lineages[key] = lineage
-    return sorted(set(failures))
+        if ((key and not key.startswith("research:"))
+                or (row.get("id_authority") and row["id_authority"] != "INTERNAL_RESEARCH")
+                or (row.get("cik") and not re.fullmatch(r"\d{10}", row["cik"]))):
+            failures.append("INSTRUMENT_ID_AUTHORITY_MISREPRESENTED")
+        if key and row.get("cik") and row.get("lineage_id"):
+            lineage = (row["cik"], row["lineage_id"])
+            if key in lineages and lineages[key] != lineage:
+                failures.append("INTERNAL_ID_REUSED_FOR_DIFFERENT_LINEAGE")
+            lineages[key] = lineage
+        if row.get("valid_from") and row.get("valid_to"):
+            if timestamp(row["valid_from"]) >= timestamp(row["valid_to"]):
+                failures.append("INVALID_INSTRUMENT_INTERVAL")
+            if all(row.get(k) for k in ("instrument_id", "cik", "lineage_id", "share_class", "ticker", "exchange")):
+                comparable.append(row)
+        required = ("instrument_id", "cik", "issuer", "share_class", "ticker", "exchange",
+                    "valid_from", "valid_to", "lineage_id", "id_authority", "evidence_ids")
+        if not all(row.get(k) for k in required):
+            unresolved.append("INCOMPLETE_INSTRUMENT_INTERVAL:" + row.get("instrument_id", "UNKNOWN"))
+            continue
+        complete.append(row)
+    # Multiple compatible supporting sources are not conflicting identities.
+    semantic = lambda r: tuple(r.get(k) for k in ("cik", "lineage_id", "share_class", "ticker", "exchange"))
+    for i, row in enumerate(comparable):
+        for other in comparable[i + 1:]:
+            if (row["instrument_id"] == other["instrument_id"] and semantic(row) != semantic(other)
+                    and max(timestamp(row["valid_from"]), timestamp(other["valid_from"]))
+                    < min(timestamp(row["valid_to"]), timestamp(other["valid_to"]))):
+                failures.append("OVERLAPPING_INCOMPATIBLE_IDENTITY_INTERVAL:" + row["instrument_id"])
+    for target in (packet.get("scope", {}).get("targets", [])
+                   + packet.get("scope", {}).get("context_instruments", [])):
+        at = timestamp(target["actionable_at"])
+        matches = [r for r in complete if r.get("instrument_id") == target["instrument_id"]
+                   and r.get("cik") == target["cik"] and r.get("valid_from") and r.get("valid_to")
+                   and (not target.get("symbol") or r.get("ticker") == target["symbol"])
+                   and timestamp(r["valid_from"]) <= at < timestamp(r["valid_to"])]
+        if not matches:
+            unresolved.append("MISSING_IDENTITY_INTERVAL:" + target.get("accession", target["instrument_id"]))
+    return {"failed": sorted(set(failures)), "unresolved": sorted(set(unresolved))}
 
 
 def historical_tradability(*, at, listing, session, quote, halts, coverage, conflicts):
@@ -210,22 +252,33 @@ def evaluate_packet(packet, root):
     gates = {name: review_gate(name, packet.get("reviews", {}).get(name, {}), scope_sha, evidence)
              for name in CRITERIA}
     scope_ok = valid_scope(scope)
+    frozen = frozen_scope_check(packet, root)
+    if frozen["status"] != "PASS":
+        for name in SCOPED:
+            gates[name]["status"] = combine([gates[name]["status"], frozen["status"]])
+            gates[name]["reasons"].append(frozen["reason"])
+    current_quote_code = digest(Path(audit_market.__file__).read_bytes())
+    if packet.get("quote_policy_code_sha256") != current_quote_code:
+        gates["quote_policy_review"]["status"] = combine([gates["quote_policy_review"]["status"], "UNRESOLVED"])
+        gates["quote_policy_review"]["reasons"].append("QUOTE_POLICY_CODE_NOT_PINNED_OR_CHANGED_REVIEW_REQUIRED")
     if not scope_ok:
         for name in SCOPED:
             if gates[name]["status"] == "PASS":
                 gates[name]["status"] = "UNRESOLVED"
             gates[name]["reasons"].append("PROPOSED_COHORT_SCOPE_MISSING_OR_INVALID")
     identity = identity_failures(packet)
-    if identity:
-        # Missing rows are incomplete; contradictory/overlapping identities fail.
-        gates["instrument_identity"]["status"] = "FAIL" if packet.get("instrument_intervals") else "UNRESOLVED"
-        gates["instrument_identity"]["reasons"].extend(identity)
+    if identity["failed"] or identity["unresolved"]:
+        status = "FAIL" if identity["failed"] else "UNRESOLVED"
+        gates["instrument_identity"]["status"] = combine([gates["instrument_identity"]["status"], status])
+        gates["instrument_identity"]["reasons"].extend(identity["failed"] + identity["unresolved"])
     for row in packet.get("instrument_intervals", []):
-        if any(evidence.get(ref, {}).get("status") != "PASS" for ref in row.get("evidence_ids", [])):
-            gates["instrument_identity"]["status"] = combine([gates["instrument_identity"]["status"], "UNRESOLVED"])
+        statuses = [evidence.get(ref, {}).get("status", "UNRESOLVED") for ref in row.get("evidence_ids", [])]
+        gates["instrument_identity"]["status"] = combine([gates["instrument_identity"]["status"], combine(statuses)])
     historical_ready = all(gates[k]["status"] == "PASS" for k in HISTORICAL)
     prospective_ready = historical_ready and gates["prospective_readiness"]["status"] == "PASS"
     return {"version": VERSION, "packet_sha256": digest(canonical(packet)), "scope_sha256": scope_sha,
+            "frozen_manifest": frozen,
+            "quote_policy_code_sha256": current_quote_code,
             "gate_code_sha256": digest(Path(__file__).read_bytes()),
             "gates": gates, "historical_recommendation": "RUN_50_HISTORICAL_AUDIT" if historical_ready else "BLOCK_HISTORICAL_AUDIT",
             "prospective_recommendation": "PROSPECTIVE_ACTIONABILITY_READY_FOR_REVIEW" if prospective_ready else "PROSPECTIVE_ACTIONABILITY_BLOCKED",

@@ -2,13 +2,1284 @@
   "version": "dated-source-gate-v1",
   "created_at": "2026-09-15T23:48:50.486590+00:00",
   "scope": {
-    "status": "NOT_FROZEN",
-    "targets": [],
-    "context_instruments": [],
-    "selection_rule": "ADR001: 25 issuers, two earliest original 10-Qs per issuer in registered window; no success-based replacement",
-    "note": "No 50-filing run or target selection performed. Populate proposed dated issuer and SPY context manifest, then scope reviews, before authorization."
+    "availability_anchor": "SIMULATED_FROM_SEC_ACCEPTANCE_NOT_HISTORICAL_RECEIPT",
+    "calendar_evidence": [
+      {
+        "record_id": "6c3cba24c46a44b8aeeb2b9addbd5c7a",
+        "sha256": "a379433b12a84c1b898075be0c04343ffaef45b6d47a2fd4283747cdcd2bd64f",
+        "url": "https://s2.q4cdn.com/154085107/files/doc_news/NYSE-Group-Announces-2024-2025-and-2026-Holiday-and-Early-Closings-Calendar-2023.pdf"
+      },
+      {
+        "record_id": "8cce52d8fa1d4da7a08f930198e17bde",
+        "sha256": "4ed869089ac681487820bc7e404e572b75a084b431e21dc65b62e769dbfb7f81",
+        "url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=UTP2024-20"
+      }
+    ],
+    "context_instruments": [
+      {
+        "actionable_at": "2025-01-06T18:17:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-01-08T14:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-01-13T14:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-01-28T18:16:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-01-30T19:51:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-01-31T14:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-02-04T14:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-02-05T15:41:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-02-05T15:49:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-02-06T14:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-02-06T17:14:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-02-07T14:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-02-12T14:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-02-13T14:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-02-18T14:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-02-19T14:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-02-21T14:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-02-27T15:36:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-03-05T14:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-03-10T13:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-03-13T13:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-03-25T15:41:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-03-26T19:29:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-03-28T13:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-04-09T13:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-04-25T13:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-04-30T14:51:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-05-01T17:52:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-05-01T18:58:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-05-02T13:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-05-06T13:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-05-07T16:48:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-05-08T13:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-05-09T15:52:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-05-14T13:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-05-16T13:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-05-20T13:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-05-22T13:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-05-23T13:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-05-29T18:14:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-06-02T13:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-06-03T13:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      },
+      {
+        "actionable_at": "2025-06-30T13:35:00+00:00",
+        "cik": "0000884394",
+        "instrument_id": "research:cik-0000884394-unit-001",
+        "symbol": "SPY"
+      }
+    ],
+    "deadline_semantics": "Fixed acquisition scenario only; not a measured or frozen alpha-processing deadline",
+    "historical_deadline_seconds": 600,
+    "no_replacement": true,
+    "registration_sha256": "6dd68227890896f326b3dd1d8798d0f5c60315922b5ebc973f3cf6b64ea10a16",
+    "selection": "25 lowest numeric CIKs with at least two indexed original 10-Qs; earliest acceptance then accession, two each",
+    "status": "FROZEN",
+    "targets": [
+      {
+        "accepted_at": "2025-01-07T22:45:44.000Z",
+        "accession": "0001410578-25-000003",
+        "actionable_at": "2025-01-08T14:35:00+00:00",
+        "cik": "0000001750",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000001750-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "7882bd1442ba4f8cb051b9b11cd0a387",
+        "report_date": "2024-11-30"
+      },
+      {
+        "accepted_at": "2025-03-27T21:39:48.000Z",
+        "accession": "0001410578-25-000519",
+        "actionable_at": "2025-03-28T13:35:00+00:00",
+        "cik": "0000001750",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000001750-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "10d768e6e8ff44ceb8977a77d978d472",
+        "report_date": "2025-02-28"
+      },
+      {
+        "accepted_at": "2025-02-06T17:03:33.000Z",
+        "accession": "0000002969-25-000013",
+        "actionable_at": "2025-02-06T17:14:00+00:00",
+        "cik": "0000002969",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000002969-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "a7638e605384409ab8edebdb35a62b01",
+        "report_date": "2024-12-31"
+      },
+      {
+        "accepted_at": "2025-05-01T17:41:13.000Z",
+        "accession": "0000002969-25-000027",
+        "actionable_at": "2025-05-01T17:52:00+00:00",
+        "cik": "0000002969",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000002969-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "42575c7d2eb64b4da504b8f5e319f054",
+        "report_date": "2025-03-31"
+      },
+      {
+        "accepted_at": "2025-02-05T15:30:05.000Z",
+        "accession": "0000950170-25-014213",
+        "actionable_at": "2025-02-05T15:41:00+00:00",
+        "cik": "0000003146",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000003146-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "6e2215a3c05e49618625f01cc95200b6",
+        "report_date": "2024-12-31"
+      },
+      {
+        "accepted_at": "2025-04-30T14:40:26.000Z",
+        "accession": "0000950170-25-060698",
+        "actionable_at": "2025-04-30T14:51:00+00:00",
+        "cik": "0000003146",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000003146-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "768973bc09dc4881a521660529784d27",
+        "report_date": "2025-03-31"
+      },
+      {
+        "accepted_at": "2025-02-12T21:09:27.000Z",
+        "accession": "0000003545-25-000030",
+        "actionable_at": "2025-02-13T14:35:00+00:00",
+        "cik": "0000003545",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000003545-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "f457f44f275945a7bf30592443878d88",
+        "report_date": "2024-12-31"
+      },
+      {
+        "accepted_at": "2025-05-13T20:23:40.000Z",
+        "accession": "0000003545-25-000079",
+        "actionable_at": "2025-05-14T13:35:00+00:00",
+        "cik": "0000003545",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000003545-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "9b060c940e30488ab9801287b94ec706",
+        "report_date": "2025-03-31"
+      },
+      {
+        "accepted_at": "2025-02-05T21:33:24.000Z",
+        "accession": "0000004127-25-000010",
+        "actionable_at": "2025-02-06T14:35:00+00:00",
+        "cik": "0000004127",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000004127-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "d6eae543601d4ee7bb00cdf785f930cd",
+        "report_date": "2024-12-27"
+      },
+      {
+        "accepted_at": "2025-05-07T21:00:18.000Z",
+        "accession": "0000004127-25-000040",
+        "actionable_at": "2025-05-08T13:35:00+00:00",
+        "cik": "0000004127",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000004127-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "0a2244b53bd1450398059bace068262c",
+        "report_date": "2025-03-28"
+      },
+      {
+        "accepted_at": "2025-02-19T12:15:01.000Z",
+        "accession": "0000006281-25-000023",
+        "actionable_at": "2025-02-19T14:35:00+00:00",
+        "cik": "0000006281",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000006281-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "339e514bac784e42b059ef07ddefa302",
+        "report_date": "2025-02-01"
+      },
+      {
+        "accepted_at": "2025-05-22T11:05:43.000Z",
+        "accession": "0000006281-25-000125",
+        "actionable_at": "2025-05-22T13:35:00+00:00",
+        "cik": "0000006281",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000006281-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "031b1f5a043a44c98f444014bb9a9717",
+        "report_date": "2025-05-03"
+      },
+      {
+        "accepted_at": "2025-02-20T21:02:43.000Z",
+        "accession": "0000006951-25-000011",
+        "actionable_at": "2025-02-21T14:35:00+00:00",
+        "cik": "0000006951",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000006951-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "8219fe130a514f529c14acf59313913f",
+        "report_date": "2025-01-26"
+      },
+      {
+        "accepted_at": "2025-05-22T20:02:01.000Z",
+        "accession": "0000006951-25-000024",
+        "actionable_at": "2025-05-23T13:35:00+00:00",
+        "cik": "0000006951",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000006951-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "6826d037d078484bb3e419d05ddbbe8a",
+        "report_date": "2025-04-27"
+      },
+      {
+        "accepted_at": "2025-03-26T19:18:50.000Z",
+        "accession": "0000006955-25-000008",
+        "actionable_at": "2025-03-26T19:29:00+00:00",
+        "cik": "0000006955",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000006955-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "6dfa9a2f45384d77befc34b10d767b77",
+        "report_date": "2025-02-28"
+      },
+      {
+        "accepted_at": "2025-06-27T19:35:32.000Z",
+        "accession": "0000006955-25-000014",
+        "actionable_at": "2025-06-30T13:35:00+00:00",
+        "cik": "0000006955",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000006955-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "d2bce14ef9224b16b3c2ea3c29f0d0ce",
+        "report_date": "2025-05-31"
+      },
+      {
+        "accepted_at": "2025-01-30T19:40:43.000Z",
+        "accession": "0000008670-25-000007",
+        "actionable_at": "2025-01-30T19:51:00+00:00",
+        "cik": "0000008670",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000008670-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "a211eb1c7ffb4940a675208e7b4cb907",
+        "report_date": "2024-12-31"
+      },
+      {
+        "accepted_at": "2025-05-01T18:47:20.000Z",
+        "accession": "0000008670-25-000015",
+        "actionable_at": "2025-05-01T18:58:00+00:00",
+        "cik": "0000008670",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000008670-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "180d834a32b242bd92dac566e8751625",
+        "report_date": "2025-03-31"
+      },
+      {
+        "accepted_at": "2025-01-30T23:08:23.000Z",
+        "accession": "0000008858-25-000009",
+        "actionable_at": "2025-01-31T14:35:00+00:00",
+        "cik": "0000008858",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000008858-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "bf96bcfe59e04f4c8814c701ab360b0f",
+        "report_date": "2024-12-28"
+      },
+      {
+        "accepted_at": "2025-05-01T22:44:57.000Z",
+        "accession": "0000008858-25-000018",
+        "actionable_at": "2025-05-02T13:35:00+00:00",
+        "cik": "0000008858",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000008858-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "ecfd70b76915485288df04721db272a8",
+        "report_date": "2025-03-29"
+      },
+      {
+        "accepted_at": "2025-02-14T21:05:58.000Z",
+        "accession": "0000010048-25-000009",
+        "actionable_at": "2025-02-18T14:35:00+00:00",
+        "cik": "0000010048",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000010048-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "7443690bbfee40e5be27b62ad97bf385",
+        "report_date": "2024-12-31"
+      },
+      {
+        "accepted_at": "2025-05-15T20:03:28.000Z",
+        "accession": "0000010048-25-000019",
+        "actionable_at": "2025-05-16T13:35:00+00:00",
+        "cik": "0000010048",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000010048-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "9be51e82c5e34566ba9f74a0a0a1d265",
+        "report_date": "2025-03-31"
+      },
+      {
+        "accepted_at": "2025-02-06T22:03:32.000Z",
+        "accession": "0000010795-25-000022",
+        "actionable_at": "2025-02-07T14:35:00+00:00",
+        "cik": "0000010795",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000010795-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "05f39c85356a4b039c68a914ec2ae7d5",
+        "report_date": "2024-12-31"
+      },
+      {
+        "accepted_at": "2025-05-01T20:30:56.000Z",
+        "accession": "0000010795-25-000039",
+        "actionable_at": "2025-05-02T13:35:00+00:00",
+        "cik": "0000010795",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000010795-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "e9bdf235f74244579ad9e8fc674de7c9",
+        "report_date": "2025-03-31"
+      },
+      {
+        "accepted_at": "2025-02-11T21:33:40.000Z",
+        "accession": "0001174947-25-000152",
+        "actionable_at": "2025-02-12T14:35:00+00:00",
+        "cik": "0000012040",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000012040-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "0bd0e40e00764cf8a7d69ffc9e077f2f",
+        "report_date": "2024-12-28"
+      },
+      {
+        "accepted_at": "2025-05-19T21:17:18.000Z",
+        "accession": "0001174947-25-000783",
+        "actionable_at": "2025-05-20T13:35:00+00:00",
+        "cik": "0000012040",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000012040-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "4139c98557e44d278e0aa56da5f243a9",
+        "report_date": "2025-03-29"
+      },
+      {
+        "accepted_at": "2025-02-06T21:08:40.000Z",
+        "accession": "0001838862-25-000011",
+        "actionable_at": "2025-02-07T14:35:00+00:00",
+        "cik": "0000012659",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000012659-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "e681308d72ac4d0ab877545ccb2cf395",
+        "report_date": "2024-12-31"
+      },
+      {
+        "accepted_at": "2025-05-07T20:52:55.000Z",
+        "accession": "0001605297-25-000005",
+        "actionable_at": "2025-05-08T13:35:00+00:00",
+        "cik": "0000012659",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000012659-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "24e56f14821448e9aead20a07c179666",
+        "report_date": "2025-03-31"
+      },
+      {
+        "accepted_at": "2025-03-07T22:25:41.000Z",
+        "accession": "0001493152-25-009592",
+        "actionable_at": "2025-03-10T13:35:00+00:00",
+        "cik": "0000014177",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000014177-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "6664b89ec5354f73bdeec35a21d808b3",
+        "report_date": "2025-01-24"
+      },
+      {
+        "accepted_at": "2025-06-02T20:32:42.000Z",
+        "accession": "0001641172-25-013252",
+        "actionable_at": "2025-06-03T13:35:00+00:00",
+        "cik": "0000014177",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000014177-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "fab6e0857b6842d5ad36246bc82f5c92",
+        "report_date": "2025-04-18"
+      },
+      {
+        "accepted_at": "2025-02-05T15:38:42.000Z",
+        "accession": "0001558370-25-000645",
+        "actionable_at": "2025-02-05T15:49:00+00:00",
+        "cik": "0000015357",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000015357-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "d53594b79a7344508fe559039b4fc497",
+        "report_date": "2024-12-31"
+      },
+      {
+        "accepted_at": "2025-05-09T15:41:02.000Z",
+        "accession": "0001558370-25-007111",
+        "actionable_at": "2025-05-09T15:52:00+00:00",
+        "cik": "0000015357",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000015357-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "1bd5011ee8e648d8ba6fd106c358ef49",
+        "report_date": "2025-03-31"
+      },
+      {
+        "accepted_at": "2025-02-06T22:11:23.000Z",
+        "accession": "0000950170-25-015513",
+        "actionable_at": "2025-02-07T14:35:00+00:00",
+        "cik": "0000016040",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000016040-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "da33b045753a40549db8576fbfb88748",
+        "report_date": "2024-12-31"
+      },
+      {
+        "accepted_at": "2025-05-07T16:37:39.000Z",
+        "accession": "0000950170-25-065336",
+        "actionable_at": "2025-05-07T16:48:00+00:00",
+        "cik": "0000016040",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000016040-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "e0882e0d5ed746748d6d6c999a0ff196",
+        "report_date": "2025-03-31"
+      },
+      {
+        "accepted_at": "2025-01-28T18:05:39.000Z",
+        "accession": "0000016058-25-000032",
+        "actionable_at": "2025-01-28T18:16:00+00:00",
+        "cik": "0000016058",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000016058-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "6e533ed48609478c87545d997cf30b2f",
+        "report_date": "2024-12-31"
+      },
+      {
+        "accepted_at": "2025-04-24T19:58:23.000Z",
+        "accession": "0000016058-25-000053",
+        "actionable_at": "2025-04-25T13:35:00+00:00",
+        "cik": "0000016058",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000016058-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "1df362acae5643a3978eae530f502256",
+        "report_date": "2025-03-31"
+      },
+      {
+        "accepted_at": "2025-01-07T21:11:40.000Z",
+        "accession": "0001562762-25-000004",
+        "actionable_at": "2025-01-08T14:35:00+00:00",
+        "cik": "0000016160",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000016160-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "767465ffe83c490dbb372636fcd94614",
+        "report_date": "2024-11-30"
+      },
+      {
+        "accepted_at": "2025-04-08T20:31:12.000Z",
+        "accession": "0001562762-25-000084",
+        "actionable_at": "2025-04-09T13:35:00+00:00",
+        "cik": "0000016160",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000016160-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "2b21ccab2439418ab5e929e7407c58b2",
+        "report_date": "2025-03-01"
+      },
+      {
+        "accepted_at": "2025-03-05T12:23:34.000Z",
+        "accession": "0000016732-25-000026",
+        "actionable_at": "2025-03-05T14:35:00+00:00",
+        "cik": "0000016732",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000016732-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "d345a279b802414f9201fc236c542199",
+        "report_date": "2025-01-26"
+      },
+      {
+        "accepted_at": "2025-06-02T11:19:05.000Z",
+        "accession": "0000016732-25-000064",
+        "actionable_at": "2025-06-02T13:35:00+00:00",
+        "cik": "0000016732",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000016732-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "8136313c126e48beb2631fbc536ef264",
+        "report_date": "2025-04-27"
+      },
+      {
+        "accepted_at": "2025-01-30T21:11:24.000Z",
+        "accession": "0000017843-25-000003",
+        "actionable_at": "2025-01-31T14:35:00+00:00",
+        "cik": "0000017843",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000017843-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "1b8123eb0c5d4d45b4df5d168093e218",
+        "report_date": "2024-12-31"
+      },
+      {
+        "accepted_at": "2025-04-24T20:14:36.000Z",
+        "accession": "0000017843-25-000011",
+        "actionable_at": "2025-04-25T13:35:00+00:00",
+        "cik": "0000017843",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000017843-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "ccf2232b320042f79ce329860e45ac39",
+        "report_date": "2025-03-31"
+      },
+      {
+        "accepted_at": "2025-02-03T21:45:16.000Z",
+        "accession": "0000021076-25-000013",
+        "actionable_at": "2025-02-04T14:35:00+00:00",
+        "cik": "0000021076",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000021076-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "0ec91c6927584afbbb6a68083fb6acd2",
+        "report_date": "2024-12-31"
+      },
+      {
+        "accepted_at": "2025-05-05T20:45:05.000Z",
+        "accession": "0000021076-25-000023",
+        "actionable_at": "2025-05-06T13:35:00+00:00",
+        "cik": "0000021076",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000021076-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "b12bfb1ed40844d4b6b44fa0039c62f7",
+        "report_date": "2025-03-31"
+      },
+      {
+        "accepted_at": "2025-01-06T18:06:09.000Z",
+        "accession": "0000022444-25-000013",
+        "actionable_at": "2025-01-06T18:17:00+00:00",
+        "cik": "0000022444",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000022444-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "db2a9b740fd34880a6af2b409b738cf1",
+        "report_date": "2024-11-30"
+      },
+      {
+        "accepted_at": "2025-03-25T15:30:02.000Z",
+        "accession": "0000022444-25-000060",
+        "actionable_at": "2025-03-25T15:41:00+00:00",
+        "cik": "0000022444",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000022444-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "bba20390f94b4a518da157442fcb54b5",
+        "report_date": "2025-02-28"
+      },
+      {
+        "accepted_at": "2025-01-13T12:40:41.000Z",
+        "accession": "0000023197-25-000009",
+        "actionable_at": "2025-01-13T14:35:00+00:00",
+        "cik": "0000023197",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000023197-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "9813162ef317465fbf22921893bd3d71",
+        "report_date": "2024-10-31"
+      },
+      {
+        "accepted_at": "2025-03-12T20:22:27.000Z",
+        "accession": "0000023197-25-000039",
+        "actionable_at": "2025-03-13T13:35:00+00:00",
+        "cik": "0000023197",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000023197-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "8140c5b3ce944a3dbece650e632439bd",
+        "report_date": "2025-01-31"
+      },
+      {
+        "accepted_at": "2025-02-27T15:25:23.000Z",
+        "accession": "0001558370-25-001716",
+        "actionable_at": "2025-02-27T15:36:00+00:00",
+        "cik": "0000027673",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000027673-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "abed3795c73c45248d98dcc81854c978",
+        "report_date": "2025-01-26"
+      },
+      {
+        "accepted_at": "2025-05-29T18:04:00.000Z",
+        "accession": "0001558370-25-008226",
+        "actionable_at": "2025-05-29T18:14:00+00:00",
+        "cik": "0000027673",
+        "class_binding": "RESERVED_PENDING_SOURCE_LINEAGE_REVIEW",
+        "form": "10-Q",
+        "instrument_id": "research:cik-0000027673-common-001",
+        "instrument_id_authority": "INTERNAL_RESEARCH",
+        "metadata_observation_id": "8434101f3a394d67928dc6dc0eae4436",
+        "report_date": "2025-04-27"
+      }
+    ],
+    "window": {
+      "end": "2025-06-30",
+      "start": "2025-01-01"
+    }
   },
-  "instrument_intervals": [],
+  "instrument_intervals": [
+    {
+      "instrument_id": "research:cik-0000001750-common-001",
+      "cik": "0000001750",
+      "issuer": null,
+      "share_class": "Common Stock, $1.00 par value",
+      "ticker": "AIR",
+      "exchange": "New York Stock Exchange",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000001750-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0001410578-25-000003",
+        "cover:0001410578-25-000519"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000002969-common-001",
+      "cik": "0000002969",
+      "issuer": null,
+      "share_class": "Common Stock, par value $1.00 per share",
+      "ticker": "APD",
+      "exchange": "New York Stock Exchange",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000002969-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0000002969-25-000013",
+        "cover:0000002969-25-000027"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000003545-common-001",
+      "cik": "0000003545",
+      "issuer": null,
+      "share_class": "Common Stock",
+      "ticker": "ALCO",
+      "exchange": "Nasdaq Global Select Market",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000003545-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0000003545-25-000030",
+        "cover:0000003545-25-000079"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000004127-common-001",
+      "cik": "0000004127",
+      "issuer": null,
+      "share_class": "Common Stock, par value $0.25 per share",
+      "ticker": "SWKS",
+      "exchange": "Nasdaq Global Select Market",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000004127-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0000004127-25-000010",
+        "cover:0000004127-25-000040"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000006281-common-001",
+      "cik": "0000006281",
+      "issuer": null,
+      "share_class": "Common Stock $0.16 2/3 par value per share",
+      "ticker": "ADI",
+      "exchange": "Nasdaq Global Select Market",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000006281-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0000006281-25-000023",
+        "cover:0000006281-25-000125"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000006951-common-001",
+      "cik": "0000006951",
+      "issuer": null,
+      "share_class": "Common Stock, par value $.01 per share",
+      "ticker": "AMAT",
+      "exchange": "The NASDAQ Stock Market LLC",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000006951-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0000006951-25-000011",
+        "cover:0000006951-25-000024"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000006955-common-001",
+      "cik": "0000006955",
+      "issuer": null,
+      "share_class": "Class A common stock, $0.20 par value per share",
+      "ticker": "EPAC",
+      "exchange": "NYSE",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000006955-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0000006955-25-000008",
+        "cover:0000006955-25-000014"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000008670-common-001",
+      "cik": "0000008670",
+      "issuer": null,
+      "share_class": "Common Stock, $0.10 Par Value(voting)",
+      "ticker": "ADP",
+      "exchange": "NASDAQ Global Select Market",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000008670-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0000008670-25-000007",
+        "cover:0000008670-25-000015"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000008858-common-001",
+      "cik": "0000008858",
+      "issuer": null,
+      "share_class": "Common stock, par value $1.00 per share",
+      "ticker": "AVT",
+      "exchange": "Nasdaq Global Select Market",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000008858-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0000008858-25-000009",
+        "cover:0000008858-25-000018"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000010048-common-001",
+      "cik": "0000010048",
+      "issuer": null,
+      "share_class": "Common Stock, $0.50 par value",
+      "ticker": "BRN",
+      "exchange": "NYSE American",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000010048-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0000010048-25-000009",
+        "cover:0000010048-25-000019"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000010795-common-001",
+      "cik": "0000010795",
+      "issuer": null,
+      "share_class": "Common stock, par value $1.00",
+      "ticker": "BDX",
+      "exchange": "New York Stock Exchange",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000010795-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0000010795-25-000022",
+        "cover:0000010795-25-000039"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000012040-common-001",
+      "cik": "0000012040",
+      "issuer": null,
+      "share_class": "Common Stock, $.10 par value",
+      "ticker": "BDL",
+      "exchange": "NYSE",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000012040-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0001174947-25-000152",
+        "cover:0001174947-25-000783"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000012659-common-001",
+      "cik": "0000012659",
+      "issuer": null,
+      "share_class": "Common Stock, without par value",
+      "ticker": "HRB",
+      "exchange": "New York Stock Exchange",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000012659-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0001838862-25-000011",
+        "cover:0001605297-25-000005"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000014177-common-001",
+      "cik": "0000014177",
+      "issuer": null,
+      "share_class": "Common Stock",
+      "ticker": "BRID",
+      "exchange": "Nasdaq Global Market",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000014177-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0001493152-25-009592",
+        "cover:0001641172-25-013252"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000016040-common-001",
+      "cik": "0000016040",
+      "issuer": null,
+      "share_class": "Common Stock, $1 par value per share",
+      "ticker": "CBT",
+      "exchange": "New York Stock Exchange",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000016040-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0000950170-25-015513",
+        "cover:0000950170-25-065336"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000016058-common-001",
+      "cik": "0000016058",
+      "issuer": null,
+      "share_class": "Common Stock",
+      "ticker": "CACI",
+      "exchange": "New York Stock Exchange",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000016058-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0000016058-25-000032",
+        "cover:0000016058-25-000053"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000016160-common-001",
+      "cik": "0000016160",
+      "issuer": null,
+      "share_class": "Common Stock, $0.01 par value per share",
+      "ticker": "CALM",
+      "exchange": "NASDAQ",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000016160-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0001562762-25-000004",
+        "cover:0001562762-25-000084"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000016732-common-001",
+      "cik": "0000016732",
+      "issuer": null,
+      "share_class": "Capital Stock, par value $.0375",
+      "ticker": "CPB",
+      "exchange": "The Nasdaq Stock Market LLC",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000016732-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0000016732-25-000026",
+        "cover:0000016732-25-000064"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000017843-common-001",
+      "cik": "0000017843",
+      "issuer": null,
+      "share_class": "Common Stock, $5 Par Value",
+      "ticker": "CRS",
+      "exchange": "New York Stock Exchange",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000017843-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0000017843-25-000003",
+        "cover:0000017843-25-000011"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000021076-common-001",
+      "cik": "0000021076",
+      "issuer": null,
+      "share_class": "Common Stock - $1.00 par value",
+      "ticker": "CLX",
+      "exchange": "New York Stock Exchange",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000021076-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0000021076-25-000013",
+        "cover:0000021076-25-000023"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000022444-common-001",
+      "cik": "0000022444",
+      "issuer": null,
+      "share_class": "Common Stock, $0.01 par value",
+      "ticker": "CMC",
+      "exchange": "New York Stock Exchange",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000022444-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0000022444-25-000013",
+        "cover:0000022444-25-000060"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000023197-common-001",
+      "cik": "0000023197",
+      "issuer": null,
+      "share_class": "Common Stock, par value $0.10 per share",
+      "ticker": "CMTL",
+      "exchange": "Nasdaq Stock Market LLC",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000023197-reported-common-class",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "cover:0000023197-25-000009",
+        "cover:0000023197-25-000039"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    },
+    {
+      "instrument_id": "research:cik-0000884394-unit-001",
+      "cik": "0000884394",
+      "issuer": "SPDR S&P 500 ETF Trust",
+      "share_class": "Units of fractional undivided beneficial interest in SPDR S&P 500 ETF Trust",
+      "ticker": "SPY",
+      "exchange": "NYSE Arca",
+      "valid_from": null,
+      "valid_to": null,
+      "lineage_id": "cik-0000884394-unit",
+      "id_authority": "INTERNAL_RESEARCH",
+      "evidence_ids": [
+        "spy_identity"
+      ],
+      "record_type": "PARTIAL_IDENTITY_ANCHOR_NOT_A_VALIDATED_INTERVAL"
+    }
+  ],
   "evidence": [
     {
       "id": "owner_access",
@@ -90,268 +1361,816 @@
       "sha256": "2dc774d4aeeafbe4c7f0565e7842d932bc8bc10488af805fce43b8734e7b9859",
       "kind": "official_capture",
       "url": "https://files.alpaca.markets/disclosures/library/TermsAndConditions.pdf"
+    },
+    {
+      "id": "sip_review",
+      "path": "research/sip_quote_review_20260916.json",
+      "sha256": "f72b81cebc9ceb3ba3f62b59dbb82539b11cd84366fc738990425aaeabd15f16",
+      "kind": "source_review"
+    },
+    {
+      "id": "quote_policy",
+      "path": "research/historical_quote_policy_v1.json",
+      "sha256": "8bac4acd729447a68117d98590da35e9bf38cef0c18827a7ce629b2c40f177ad",
+      "kind": "source_review"
+    },
+    {
+      "id": "identity_anchors",
+      "path": "research/cohort_identity_anchors_20260916.json",
+      "sha256": "8106c6a25efa0ed7aa13f5d836b7ab1539592880c0a46ab0cc0b34504502c548",
+      "kind": "source_review"
+    },
+    {
+      "id": "spy_identity",
+      "path": "research/cohort_spy_identity_20260916.json",
+      "sha256": "518689d34497decd88c212727e1d29289cbde5d75623b9b99ab9946bf65d987f",
+      "kind": "source_review"
+    },
+    {
+      "id": "action_review",
+      "path": "research/cohort_action_review_20260916.json",
+      "sha256": "244820cf39e5ac7b991846393c9ec60551b2be35874890d752d6181252abb0a4",
+      "kind": "source_review"
+    },
+    {
+      "id": "cohort_manifest",
+      "path": "research/cohort_2025h1_frozen.json",
+      "sha256": "978370a61119b34ca5a37cdd65ea25c217d813519590bb5a07d0bc8222abb39a",
+      "kind": "source_review"
+    },
+    {
+      "id": "selection_registration",
+      "path": "research/cohort_selection_registration_20260916.json",
+      "sha256": "c655adcf1924a1ea71d5edcb487bcb47279edd80243e5acb7db0517bc3be7ca4",
+      "kind": "source_review"
+    },
+    {
+      "id": "cover:0001410578-25-000003",
+      "path": "runs/cohort_metadata/0000001750/objects/1c1167958ce7eb300a64e29383bd655c973786df0cde9b44dc977af09b24bc8a",
+      "sha256": "1c1167958ce7eb300a64e29383bd655c973786df0cde9b44dc977af09b24bc8a",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0001410578-25-000519",
+      "path": "runs/cohort_metadata/0000001750/objects/c5e195fa96defd3aca3332747e8b334d7d27a91f2fd6920a6277377471dc9647",
+      "sha256": "c5e195fa96defd3aca3332747e8b334d7d27a91f2fd6920a6277377471dc9647",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000002969-25-000013",
+      "path": "runs/cohort_metadata/0000002969/objects/f5b66e8091e2ce36362bb3f8b164d9dbe83ce414a5e34d2288c8c4a5566b1461",
+      "sha256": "f5b66e8091e2ce36362bb3f8b164d9dbe83ce414a5e34d2288c8c4a5566b1461",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000002969-25-000027",
+      "path": "runs/cohort_metadata/0000002969/objects/1d08289180bb80498c842b654755b3e53506ec2079a9cbf9e68e14a4f3bd490c",
+      "sha256": "1d08289180bb80498c842b654755b3e53506ec2079a9cbf9e68e14a4f3bd490c",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000950170-25-014213",
+      "path": "runs/cohort_metadata/0000003146/objects/4c835b01305f86786ae1eca3a2854de36a8a96f1c840986c68fa285f3cb6026c",
+      "sha256": "4c835b01305f86786ae1eca3a2854de36a8a96f1c840986c68fa285f3cb6026c",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000950170-25-060698",
+      "path": "runs/cohort_metadata/0000003146/objects/2c0934a76e23e6664e0fd9dadcc2cab71e152b9ee0f83578e7a0adb69f5514ea",
+      "sha256": "2c0934a76e23e6664e0fd9dadcc2cab71e152b9ee0f83578e7a0adb69f5514ea",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000003545-25-000030",
+      "path": "runs/cohort_metadata/0000003545/objects/44e8ccdbae3c0268f137aa450c5b2fb8a8398b508e5998e640c648d05d611cbc",
+      "sha256": "44e8ccdbae3c0268f137aa450c5b2fb8a8398b508e5998e640c648d05d611cbc",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000003545-25-000079",
+      "path": "runs/cohort_metadata/0000003545/objects/5d9de2cffb7edc7d6b4050c708a14df1927639c22d4d955e104aa6e275f6a14c",
+      "sha256": "5d9de2cffb7edc7d6b4050c708a14df1927639c22d4d955e104aa6e275f6a14c",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000004127-25-000010",
+      "path": "runs/cohort_metadata/0000004127/objects/98c14c80ea7bb5f060b316b053b1475b184bb6a4fb0ee6b8dbe8d529dc9610dd",
+      "sha256": "98c14c80ea7bb5f060b316b053b1475b184bb6a4fb0ee6b8dbe8d529dc9610dd",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000004127-25-000040",
+      "path": "runs/cohort_metadata/0000004127/objects/4b6ca1c8430ebb09db7e6f3d4655c1bd9fcef3687d6025ae088688af8c5f13b3",
+      "sha256": "4b6ca1c8430ebb09db7e6f3d4655c1bd9fcef3687d6025ae088688af8c5f13b3",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000006281-25-000023",
+      "path": "runs/cohort_metadata/0000006281/objects/f0b933b2462154c65020023a624b1442a36dd7ebd88a3205dfa0c9ebc8f7973c",
+      "sha256": "f0b933b2462154c65020023a624b1442a36dd7ebd88a3205dfa0c9ebc8f7973c",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000006281-25-000125",
+      "path": "runs/cohort_metadata/0000006281/objects/52275f92c268050e951e8565a68c24483147ce48810c024a98be59d624a70b30",
+      "sha256": "52275f92c268050e951e8565a68c24483147ce48810c024a98be59d624a70b30",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000006951-25-000011",
+      "path": "runs/cohort_metadata/0000006951/objects/3081b3aeb58b87de985d4357117913f6830c2bba8e5374a62db904bce3a976a9",
+      "sha256": "3081b3aeb58b87de985d4357117913f6830c2bba8e5374a62db904bce3a976a9",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000006951-25-000024",
+      "path": "runs/cohort_metadata/0000006951/objects/ac23ccfa639996123f2f4452c0beab68b6fcff067fb9e6954099b189911d64d5",
+      "sha256": "ac23ccfa639996123f2f4452c0beab68b6fcff067fb9e6954099b189911d64d5",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000006955-25-000008",
+      "path": "runs/cohort_metadata/0000006955/objects/88a17fd29d8cf816a967512e8f2f75ad56bbd52d19e6fdc808bbfc2bc18f8477",
+      "sha256": "88a17fd29d8cf816a967512e8f2f75ad56bbd52d19e6fdc808bbfc2bc18f8477",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000006955-25-000014",
+      "path": "runs/cohort_metadata/0000006955/objects/cb38992ff1dec288de97003b1834d3f5686de8a8ffe9d08dee7789510553918c",
+      "sha256": "cb38992ff1dec288de97003b1834d3f5686de8a8ffe9d08dee7789510553918c",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000008670-25-000007",
+      "path": "runs/cohort_metadata/0000008670/objects/12374edc98d6ad4bf7c6010c6966ff66d89124d166653530bc198ee5dae52a22",
+      "sha256": "12374edc98d6ad4bf7c6010c6966ff66d89124d166653530bc198ee5dae52a22",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000008670-25-000015",
+      "path": "runs/cohort_metadata/0000008670/objects/12b370a25dfb53537c67b5e886291a8b7509f72e4aa8b489647a7a09dc1163ed",
+      "sha256": "12b370a25dfb53537c67b5e886291a8b7509f72e4aa8b489647a7a09dc1163ed",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000008858-25-000009",
+      "path": "runs/cohort_metadata/0000008858/objects/d0f44cade76d597e2a55a639099d5586e96a734df65ae120c46bebcdc332569d",
+      "sha256": "d0f44cade76d597e2a55a639099d5586e96a734df65ae120c46bebcdc332569d",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000008858-25-000018",
+      "path": "runs/cohort_metadata/0000008858/objects/293f8bb64d3109648a426115f798a7af0c9d861d904ba7773f372fd19b72b2d3",
+      "sha256": "293f8bb64d3109648a426115f798a7af0c9d861d904ba7773f372fd19b72b2d3",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000010048-25-000009",
+      "path": "runs/cohort_metadata/0000010048/objects/af667f4c1a5acae8836cc98c1503492296ec31046c36a2fff9ea742eeef672c5",
+      "sha256": "af667f4c1a5acae8836cc98c1503492296ec31046c36a2fff9ea742eeef672c5",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000010048-25-000019",
+      "path": "runs/cohort_metadata/0000010048/objects/e304507aa63ffb56d6e8c272a035e1c3f8a2828dc8e526dece8325fd72943de9",
+      "sha256": "e304507aa63ffb56d6e8c272a035e1c3f8a2828dc8e526dece8325fd72943de9",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000010795-25-000022",
+      "path": "runs/cohort_metadata/0000010795/objects/3abdf49f31b077027b5513978d940021593f1aefeb62d05d60296005748ab383",
+      "sha256": "3abdf49f31b077027b5513978d940021593f1aefeb62d05d60296005748ab383",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000010795-25-000039",
+      "path": "runs/cohort_metadata/0000010795/objects/4882433626bdd9d2b8f1d1816476a8a30e328b308c4b5211d7bc40aebd7210d6",
+      "sha256": "4882433626bdd9d2b8f1d1816476a8a30e328b308c4b5211d7bc40aebd7210d6",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0001174947-25-000152",
+      "path": "runs/cohort_metadata/0000012040/objects/75cf6ad217dc886fa690bd66a1f93542505871fd944159cbed16a5cf16b71474",
+      "sha256": "75cf6ad217dc886fa690bd66a1f93542505871fd944159cbed16a5cf16b71474",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0001174947-25-000783",
+      "path": "runs/cohort_metadata/0000012040/objects/43af46974cdfd01f17257202fed177fbafc1e36751fb15919646021b212eb3fd",
+      "sha256": "43af46974cdfd01f17257202fed177fbafc1e36751fb15919646021b212eb3fd",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0001838862-25-000011",
+      "path": "runs/cohort_metadata/0000012659/objects/4920dbfeb609f4e470062cb1da27d34bc63b73aa2f08037e38c27f30e616ad9e",
+      "sha256": "4920dbfeb609f4e470062cb1da27d34bc63b73aa2f08037e38c27f30e616ad9e",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0001605297-25-000005",
+      "path": "runs/cohort_metadata/0000012659/objects/20a2439ea215df8fd80a32223ffc15670bed2cf46b1585bd22862313bda53818",
+      "sha256": "20a2439ea215df8fd80a32223ffc15670bed2cf46b1585bd22862313bda53818",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0001493152-25-009592",
+      "path": "runs/cohort_metadata/0000014177/objects/c64b3f824ec71e1399425edc5e0901fbcb25f2981e4ada2162b44f1576c2ec3d",
+      "sha256": "c64b3f824ec71e1399425edc5e0901fbcb25f2981e4ada2162b44f1576c2ec3d",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0001641172-25-013252",
+      "path": "runs/cohort_metadata/0000014177/objects/87e0b926a1692370c79dd20f8d660e883c1a23c7b7df7ace0128688ea39455a8",
+      "sha256": "87e0b926a1692370c79dd20f8d660e883c1a23c7b7df7ace0128688ea39455a8",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0001558370-25-000645",
+      "path": "runs/cohort_metadata/0000015357/objects/fc90cd63e02fda4bef3b757d156c13e4b5920af0d2ff3533e1035484124bce77",
+      "sha256": "fc90cd63e02fda4bef3b757d156c13e4b5920af0d2ff3533e1035484124bce77",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0001558370-25-007111",
+      "path": "runs/cohort_metadata/0000015357/objects/087f07f891a43a4948c830346b7474ea478c5e3b82466a08ea9bd7da705c3c36",
+      "sha256": "087f07f891a43a4948c830346b7474ea478c5e3b82466a08ea9bd7da705c3c36",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000950170-25-015513",
+      "path": "runs/cohort_metadata/0000016040/objects/d9a87c863e52c1e3fd81939da69df2bc5c2117fb4dc4b0ea4b10108ce70e0d99",
+      "sha256": "d9a87c863e52c1e3fd81939da69df2bc5c2117fb4dc4b0ea4b10108ce70e0d99",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000950170-25-065336",
+      "path": "runs/cohort_metadata/0000016040/objects/4f83b1064988710e425f86244ecc7d4a80c63dbaf73d20b572f258ae3d6e5f5b",
+      "sha256": "4f83b1064988710e425f86244ecc7d4a80c63dbaf73d20b572f258ae3d6e5f5b",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000016058-25-000032",
+      "path": "runs/cohort_metadata/0000016058/objects/2a5c1519251a181ae4292af21f7ad1360ce3a6208f08de51814022ca6871b0a1",
+      "sha256": "2a5c1519251a181ae4292af21f7ad1360ce3a6208f08de51814022ca6871b0a1",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000016058-25-000053",
+      "path": "runs/cohort_metadata/0000016058/objects/eacf01a640a6f61e57321cba449819b2641e3b6e49bcff98eb804333886fb49c",
+      "sha256": "eacf01a640a6f61e57321cba449819b2641e3b6e49bcff98eb804333886fb49c",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0001562762-25-000004",
+      "path": "runs/cohort_metadata/0000016160/objects/2c3d9689664f00d5d54256a86032248e4bb5667fde4298a61b1d2344c18b7cd5",
+      "sha256": "2c3d9689664f00d5d54256a86032248e4bb5667fde4298a61b1d2344c18b7cd5",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0001562762-25-000084",
+      "path": "runs/cohort_metadata/0000016160/objects/c76325479da5682c89099da661fc962fb3ff93fc483642eb9944ec54181c67c2",
+      "sha256": "c76325479da5682c89099da661fc962fb3ff93fc483642eb9944ec54181c67c2",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000016732-25-000026",
+      "path": "runs/cohort_metadata/0000016732/objects/07e05d68317c78943efc1bdb3420046c61b1f2c1381b814ecf6903c8eaa154c8",
+      "sha256": "07e05d68317c78943efc1bdb3420046c61b1f2c1381b814ecf6903c8eaa154c8",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000016732-25-000064",
+      "path": "runs/cohort_metadata/0000016732/objects/eda99ef3b67721fa2a5a4de627f5c3ffced68eb76b92b0b52293b53ee0a3335d",
+      "sha256": "eda99ef3b67721fa2a5a4de627f5c3ffced68eb76b92b0b52293b53ee0a3335d",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000017843-25-000003",
+      "path": "runs/cohort_metadata/0000017843/objects/7176ce7fa26c56fbed0ac7a97084ee3951eeca2d912999822e556bda56efe6d4",
+      "sha256": "7176ce7fa26c56fbed0ac7a97084ee3951eeca2d912999822e556bda56efe6d4",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000017843-25-000011",
+      "path": "runs/cohort_metadata/0000017843/objects/5166cc27bf1d17809935aa388e3d930ae084e26dbe550879615f8c2f5253bf4d",
+      "sha256": "5166cc27bf1d17809935aa388e3d930ae084e26dbe550879615f8c2f5253bf4d",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000021076-25-000013",
+      "path": "runs/cohort_metadata/0000021076/objects/74ab905ee3b1d9f1fa8e69776525411a0a578ab12df8d4d4a88c1567e59ec77f",
+      "sha256": "74ab905ee3b1d9f1fa8e69776525411a0a578ab12df8d4d4a88c1567e59ec77f",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000021076-25-000023",
+      "path": "runs/cohort_metadata/0000021076/objects/f1d0bbb44789571ec453831cc5699ca79089e5b08907ea4005f2bf63799baff5",
+      "sha256": "f1d0bbb44789571ec453831cc5699ca79089e5b08907ea4005f2bf63799baff5",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000022444-25-000013",
+      "path": "runs/cohort_metadata/0000022444/objects/de3188a619dc20c04a3278adcf3c53b5ddad61c2c91af9418fb1d8d49ad36fad",
+      "sha256": "de3188a619dc20c04a3278adcf3c53b5ddad61c2c91af9418fb1d8d49ad36fad",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000022444-25-000060",
+      "path": "runs/cohort_metadata/0000022444/objects/96542dc445e3091882a32533c047367b4886305b3ab1c21e1b2feff0b3d5fd42",
+      "sha256": "96542dc445e3091882a32533c047367b4886305b3ab1c21e1b2feff0b3d5fd42",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000023197-25-000009",
+      "path": "runs/cohort_metadata/0000023197/objects/62d26bc3b4fa314b7ec7bd9af3ddc73d774ce9e766523eeddc5c7b4de667c5a8",
+      "sha256": "62d26bc3b4fa314b7ec7bd9af3ddc73d774ce9e766523eeddc5c7b4de667c5a8",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0000023197-25-000039",
+      "path": "runs/cohort_metadata/0000023197/objects/12239cd43bf9692579ea5cf972888eee0993ee304ad10acb05fd0afdc4267296",
+      "sha256": "12239cd43bf9692579ea5cf972888eee0993ee304ad10acb05fd0afdc4267296",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0001558370-25-001716",
+      "path": "runs/cohort_metadata/0000027673/objects/bb152296ced50d642d8c6460b4eda7b27d366e9f5ce2bed40bbb1bf1db1e4cd8",
+      "sha256": "bb152296ced50d642d8c6460b4eda7b27d366e9f5ce2bed40bbb1bf1db1e4cd8",
+      "kind": "official_capture"
+    },
+    {
+      "id": "cover:0001558370-25-008226",
+      "path": "runs/cohort_metadata/0000027673/objects/5c412fa5ed440a915aeda7ca26af0bccee7cd85b15076feab51bd66b141ef8a6",
+      "sha256": "5c412fa5ed440a915aeda7ca26af0bccee7cd85b15076feab51bd66b141ef8a6",
+      "kind": "official_capture"
+    },
+    {
+      "id": "spy:0001193125-24-266771",
+      "path": "runs/cohort_spy/objects/5b2045f97a940121fbdd50b44ccd3bd92f89264db7f6f0b11043c47496a774ac",
+      "sha256": "5b2045f97a940121fbdd50b44ccd3bd92f89264db7f6f0b11043c47496a774ac",
+      "kind": "official_capture"
+    },
+    {
+      "id": "spy:0001193125-25-013181",
+      "path": "runs/cohort_spy/objects/358775f668addffc4282033eec2a5e231be59bdc3b015754fcedf24c619e4067",
+      "sha256": "358775f668addffc4282033eec2a5e231be59bdc3b015754fcedf24c619e4067",
+      "kind": "official_capture"
+    },
+    {
+      "id": "closure:sec_master_2025q1",
+      "path": "runs/cohort_closure_sources/objects/33b2b44397e789306ee75953280b42ea5ffc07b52ec47bb58667b8881f0bb134",
+      "sha256": "33b2b44397e789306ee75953280b42ea5ffc07b52ec47bb58667b8881f0bb134",
+      "kind": "official_capture"
+    },
+    {
+      "id": "closure:sec_master_2025q2",
+      "path": "runs/cohort_closure_sources/objects/7c53326ee24e96cab8df014d76b839b27d205c82c722e809d94a53ff3af48aa8",
+      "sha256": "7c53326ee24e96cab8df014d76b839b27d205c82c722e809d94a53ff3af48aa8",
+      "kind": "official_capture"
+    },
+    {
+      "id": "closure:nasdaq_mourning_2025",
+      "path": "runs/cohort_closure_sources/objects/4ed869089ac681487820bc7e404e572b75a084b431e21dc65b62e769dbfb7f81",
+      "sha256": "4ed869089ac681487820bc7e404e572b75a084b431e21dc65b62e769dbfb7f81",
+      "kind": "official_capture"
+    },
+    {
+      "id": "closure:utp_quotes_2015",
+      "path": "runs/cohort_closure_sources/objects/3ed450896ea03e31eb323f5998bbd433fcc42983d49f7d0f3d0929674f36a4ae",
+      "sha256": "3ed450896ea03e31eb323f5998bbd433fcc42983d49f7d0f3d0929674f36a4ae",
+      "kind": "official_capture"
+    },
+    {
+      "id": "closure:utp_quotes_current",
+      "path": "runs/cohort_closure_sources/objects/68659d2f3ab4057adfad52cc20fb1c51c5b69481865d365014cec237a5399401",
+      "sha256": "68659d2f3ab4057adfad52cc20fb1c51c5b69481865d365014cec237a5399401",
+      "kind": "official_capture"
+    },
+    {
+      "id": "closure:cta_quotes_current",
+      "path": "runs/cohort_closure_sources/objects/57a88227590f136ecc64a1488aa611f88295ab1fe7b569bc59bd656abbb30dc6",
+      "sha256": "57a88227590f136ecc64a1488aa611f88295ab1fe7b569bc59bd656abbb30dc6",
+      "kind": "official_capture"
+    },
+    {
+      "id": "closure:cta_quotes_2015",
+      "path": "runs/cohort_closure_sources/objects/79a61290dacb91bfee28780f210623325777deb60bca6094c8d289cbf29ae3a7",
+      "sha256": "79a61290dacb91bfee28780f210623325777deb60bca6094c8d289cbf29ae3a7",
+      "kind": "official_capture"
+    },
+    {
+      "id": "closure:alpaca_quote_conditions",
+      "path": "runs/cohort_closure_sources/objects/007a525e817c735fbf6df4e81e8215341c22cf6792819862bb8df485a13aec4c",
+      "sha256": "007a525e817c735fbf6df4e81e8215341c22cf6792819862bb8df485a13aec4c",
+      "kind": "official_capture"
+    },
+    {
+      "id": "closure:alpaca_quote_exchanges",
+      "path": "runs/cohort_closure_sources/objects/704976678db4afa1bfa7ed8753ce7ee5c89cba576d67c153a30ac0ffc1cb09f7",
+      "sha256": "704976678db4afa1bfa7ed8753ce7ee5c89cba576d67c153a30ac0ffc1cb09f7",
+      "kind": "official_capture"
+    },
+    {
+      "id": "closure:nyse_calendar_2025_pdf",
+      "path": "runs/cohort_closure_sources/objects/a379433b12a84c1b898075be0c04343ffaef45b6d47a2fd4283747cdcd2bd64f",
+      "sha256": "a379433b12a84c1b898075be0c04343ffaef45b6d47a2fd4283747cdcd2bd64f",
+      "kind": "official_capture"
+    },
+    {
+      "id": "closure:nasdaq_rss_01062025",
+      "path": "runs/cohort_closure_sources/objects/8de87d78819173f27486b7efde468c0b0e686c907b52ac1d71276ff5ba55a117",
+      "sha256": "8de87d78819173f27486b7efde468c0b0e686c907b52ac1d71276ff5ba55a117",
+      "kind": "official_capture"
+    },
+    {
+      "id": "sip:8fc9cf4e7fa74781936938ad1f6ee2f6",
+      "path": "runs/owner_sip_24351e17/objects/24d4a87315a915fd07300cfc9723edb405837b32c19c602cbb4b34e50a57b590",
+      "sha256": "24d4a87315a915fd07300cfc9723edb405837b32c19c602cbb4b34e50a57b590",
+      "kind": "official_capture"
+    },
+    {
+      "id": "sip:b5ec83ef15774cdb9e3e954f15573c2e",
+      "path": "runs/owner_sip_24351e17/objects/34715cde7140dd82f5d7c8f1ce758375ea324f8c2405a18665b2b42f1fec33c0",
+      "sha256": "34715cde7140dd82f5d7c8f1ce758375ea324f8c2405a18665b2b42f1fec33c0",
+      "kind": "official_capture"
+    },
+    {
+      "id": "sip:5f83177d28ab48c199639148f9e50b1b",
+      "path": "runs/owner_sip_24351e17/objects/878b171976ea94c2919283356fc619da564147ae6e52b7e0fc8cb639cdf98d08",
+      "sha256": "878b171976ea94c2919283356fc619da564147ae6e52b7e0fc8cb639cdf98d08",
+      "kind": "official_capture"
+    },
+    {
+      "id": "sip:449503f973624cd5b793168e1ae6e136",
+      "path": "runs/owner_sip_24351e17/objects/1ea09a8fbbd2d4b225d122e0c33c5a7dfea2a66f0d1338164000e014a293fc65",
+      "sha256": "1ea09a8fbbd2d4b225d122e0c33c5a7dfea2a66f0d1338164000e014a293fc65",
+      "kind": "official_capture"
+    },
+    {
+      "id": "sip:85882480795140e6a94d4b005d7c3471",
+      "path": "runs/owner_sip_24351e17/objects/1f14831b60cbc946961d924a0fede36f5cd0f7aa502d19ba9b5a2a5da3407c7d",
+      "sha256": "1f14831b60cbc946961d924a0fede36f5cd0f7aa502d19ba9b5a2a5da3407c7d",
+      "kind": "official_capture"
+    },
+    {
+      "id": "sip:8907ec5366cf4bdfb3fccf081b04c3aa",
+      "path": "runs/owner_sip_24351e17/objects/18197384bc21198974c481faeea8af133ba565944b6ca1c773f2f4188aa9b880",
+      "sha256": "18197384bc21198974c481faeea8af133ba565944b6ca1c773f2f4188aa9b880",
+      "kind": "official_capture"
+    },
+    {
+      "id": "sip:7d73b499c3ed4e9f9500eb6273ecadc2",
+      "path": "runs/owner_sip_24351e17/objects/3714b992b648cf63938c5ef94f771afa2a95c3e0364d66bb09277321fc0a6945",
+      "sha256": "3714b992b648cf63938c5ef94f771afa2a95c3e0364d66bb09277321fc0a6945",
+      "kind": "official_capture"
+    },
+    {
+      "id": "sip:d7636817d7b94ec39074dc3c831bcfa7",
+      "path": "runs/owner_sip_24351e17/objects/7c283d7c19052a6e3e924f81287d2261390ee241af404562eb0fbe7711285ee9",
+      "sha256": "7c283d7c19052a6e3e924f81287d2261390ee241af404562eb0fbe7711285ee9",
+      "kind": "official_capture"
+    },
+    {
+      "id": "exceptions",
+      "path": "research/cohort_closure_exceptions_20260916.json",
+      "sha256": "a2b4e08538e089de751f57023f16b92eb44c15ad3232e11a2ff4f53028a1bd9a",
+      "kind": "source_review"
+    },
+    {
+      "id": "rights_closure",
+      "path": "research/source_rights_20260916.json",
+      "sha256": "f9efa6842f96de418564b3d883a797435e20c218dcb93690b87befe2bc69857a",
+      "kind": "source_review"
     }
   ],
   "reviews": {
     "historical_sip_access": {
       "reviewed_by": "Codex source validation, owner observations attributed separately",
-      "reviewed_at": "2026-09-15T23:48:50.486596+00:00",
-      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "reviewed_at": "2026-09-16T09:43:27.433356+00:00",
+      "scope_sha256": "34af6e2c1d930d89eb956e77ee2aca43ba39daaf8b1276befc2243120e92faca",
       "criteria": {
         "bars_rows": {
           "value": true,
           "evidence_ids": [
-            "owner_access"
+            "sip_review",
+            "sip:8fc9cf4e7fa74781936938ad1f6ee2f6",
+            "sip:b5ec83ef15774cdb9e3e954f15573c2e",
+            "sip:5f83177d28ab48c199639148f9e50b1b",
+            "sip:449503f973624cd5b793168e1ae6e136",
+            "sip:85882480795140e6a94d4b005d7c3471",
+            "sip:8907ec5366cf4bdfb3fccf081b04c3aa",
+            "sip:7d73b499c3ed4e9f9500eb6273ecadc2",
+            "sip:d7636817d7b94ec39074dc3c831bcfa7"
           ],
-          "rationale": "Accepted owner local authenticated historical SIP bars/quotes result; no independent account run or quality claim."
+          "rationale": "Supplied authenticated SIP response archive verifies: 1 bars and 7 quote HTTP 200 pages, both symbols nonempty, no provider restriction; quality never changes access."
         },
         "quotes_rows": {
           "value": true,
           "evidence_ids": [
-            "owner_access"
+            "sip_review",
+            "sip:8fc9cf4e7fa74781936938ad1f6ee2f6",
+            "sip:b5ec83ef15774cdb9e3e954f15573c2e",
+            "sip:5f83177d28ab48c199639148f9e50b1b",
+            "sip:449503f973624cd5b793168e1ae6e136",
+            "sip:85882480795140e6a94d4b005d7c3471",
+            "sip:8907ec5366cf4bdfb3fccf081b04c3aa",
+            "sip:7d73b499c3ed4e9f9500eb6273ecadc2",
+            "sip:d7636817d7b94ec39074dc3c831bcfa7"
           ],
-          "rationale": "Accepted owner local authenticated historical SIP bars/quotes result; no independent account run or quality claim."
+          "rationale": "Supplied authenticated SIP response archive verifies: 1 bars and 7 quote HTTP 200 pages, both symbols nonempty, no provider restriction; quality never changes access."
         },
         "sip_only": {
           "value": true,
           "evidence_ids": [
-            "owner_access"
+            "sip_review",
+            "sip:8fc9cf4e7fa74781936938ad1f6ee2f6",
+            "sip:b5ec83ef15774cdb9e3e954f15573c2e",
+            "sip:5f83177d28ab48c199639148f9e50b1b",
+            "sip:449503f973624cd5b793168e1ae6e136",
+            "sip:85882480795140e6a94d4b005d7c3471",
+            "sip:8907ec5366cf4bdfb3fccf081b04c3aa",
+            "sip:7d73b499c3ed4e9f9500eb6273ecadc2",
+            "sip:d7636817d7b94ec39074dc3c831bcfa7"
           ],
-          "rationale": "Accepted owner local authenticated historical SIP bars/quotes result; no independent account run or quality claim."
+          "rationale": "Supplied authenticated SIP response archive verifies: 1 bars and 7 quote HTTP 200 pages, both symbols nonempty, no provider restriction; quality never changes access."
         },
         "no_provider_restriction": {
           "value": true,
           "evidence_ids": [
-            "owner_access"
+            "sip_review",
+            "sip:8fc9cf4e7fa74781936938ad1f6ee2f6",
+            "sip:b5ec83ef15774cdb9e3e954f15573c2e",
+            "sip:5f83177d28ab48c199639148f9e50b1b",
+            "sip:449503f973624cd5b793168e1ae6e136",
+            "sip:85882480795140e6a94d4b005d7c3471",
+            "sip:8907ec5366cf4bdfb3fccf081b04c3aa",
+            "sip:7d73b499c3ed4e9f9500eb6273ecadc2",
+            "sip:d7636817d7b94ec39074dc3c831bcfa7"
           ],
-          "rationale": "Accepted owner local authenticated historical SIP bars/quotes result; no independent account run or quality claim."
+          "rationale": "Supplied authenticated SIP response archive verifies: 1 bars and 7 quote HTTP 200 pages, both symbols nonempty, no provider restriction; quality never changes access."
         }
       }
     },
     "instrument_identity": {
       "reviewed_by": "Codex source validation, owner observations attributed separately",
-      "reviewed_at": "2026-09-15T23:48:50.486612+00:00",
-      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "reviewed_at": "2026-09-16T09:43:27.433356+00:00",
+      "scope_sha256": "34af6e2c1d930d89eb956e77ee2aca43ba39daaf8b1276befc2243120e92faca",
       "criteria": {
         "dated_intervals": {
           "value": null,
           "evidence_ids": [
-            "findings"
+            "identity_anchors",
+            "spy_identity",
+            "exceptions"
           ],
-          "rationale": "Captured COST/UAA/UA historical cover anchors, but no reviewed bounded identity intervals for proposed cohort and SPY."
+          "rationale": "Exact unresolved instrument/action/field/source rows are in exceptions; 22 common-class cover bindings plus SPY are partial anchors, not complete intervals. Missing coverage remains UNRESOLVED."
         },
         "share_class_lineage": {
           "value": null,
           "evidence_ids": [
-            "findings"
+            "identity_anchors",
+            "spy_identity",
+            "exceptions"
           ],
-          "rationale": "Captured COST/UAA/UA historical cover anchors, but no reviewed bounded identity intervals for proposed cohort and SPY."
+          "rationale": "Exact unresolved instrument/action/field/source rows are in exceptions; 22 common-class cover bindings plus SPY are partial anchors, not complete intervals. Missing coverage remains UNRESOLVED."
         },
         "scope_coverage": {
           "value": null,
           "evidence_ids": [
-            "findings"
+            "identity_anchors",
+            "spy_identity",
+            "exceptions"
           ],
-          "rationale": "Captured COST/UAA/UA historical cover anchors, but no reviewed bounded identity intervals for proposed cohort and SPY."
+          "rationale": "Exact unresolved instrument/action/field/source rows are in exceptions; 22 common-class cover bindings plus SPY are partial anchors, not complete intervals. Missing coverage remains UNRESOLVED."
         }
       }
     },
     "lifecycle": {
       "reviewed_by": "Codex source validation, owner observations attributed separately",
-      "reviewed_at": "2026-09-15T23:48:50.486620+00:00",
-      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "reviewed_at": "2026-09-16T09:43:27.433356+00:00",
+      "scope_sha256": "34af6e2c1d930d89eb956e77ee2aca43ba39daaf8b1276befc2243120e92faca",
       "criteria": {
         "listing_delisting_bounds": {
-          "value": null,
+          "value": false,
           "evidence_ids": [
-            "findings"
+            "cover:0000950170-25-014213",
+            "cover:0000950170-25-060698",
+            "cover:0001558370-25-000645",
+            "cover:0001558370-25-007111",
+            "cover:0001558370-25-001716",
+            "cover:0001558370-25-008226",
+            "exceptions"
           ],
-          "rationale": "No complete scoped listing/delisting or ticker/name-change evidence inventory; cover/report periods are not listing bounds."
+          "rationale": "Selected Spire Alabama and John Deere Capital common shares are wholly owned and unlisted; Chase covers explicitly show no listed class. These six fixed targets cannot satisfy a listed-common actionability claim."
         },
         "ticker_name_changes": {
           "value": null,
           "evidence_ids": [
-            "findings"
+            "identity_anchors",
+            "exceptions"
           ],
-          "rationale": "No complete scoped listing/delisting or ticker/name-change evidence inventory; cover/report periods are not listing bounds."
+          "rationale": "Exact interval exceptions are enumerated by instrument/action. No fiscal context is treated as a listing bound."
         },
         "scope_coverage": {
           "value": null,
           "evidence_ids": [
-            "findings"
+            "identity_anchors",
+            "exceptions"
           ],
-          "rationale": "No complete scoped listing/delisting or ticker/name-change evidence inventory; cover/report periods are not listing bounds."
+          "rationale": "Exact interval exceptions are enumerated by instrument/action. No fiscal context is treated as a listing bound."
         }
       }
     },
     "corporate_actions": {
       "reviewed_by": "Codex source validation, owner observations attributed separately",
-      "reviewed_at": "2026-09-15T23:48:50.486626+00:00",
-      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "reviewed_at": "2026-09-16T09:43:27.433356+00:00",
+      "scope_sha256": "34af6e2c1d930d89eb956e77ee2aca43ba39daaf8b1276befc2243120e92faca",
       "criteria": {
         "splits": {
           "value": null,
           "evidence_ids": [
-            "findings"
+            "action_review",
+            "exceptions"
           ],
-          "rationale": "No scoped action completeness review separating announcement/effective dates; current downloader omits non-99 exhibits."
+          "rationale": "Thirteen scoped action filings reviewed. BRN rights, CALM conditional conversion and CMTL deficiency/convertible terms have exact unresolved fields; incomplete item-filter coverage cannot prove absence."
         },
         "mergers_reorganizations": {
           "value": null,
           "evidence_ids": [
-            "findings"
+            "action_review",
+            "exceptions"
           ],
-          "rationale": "No scoped action completeness review separating announcement/effective dates; current downloader omits non-99 exhibits."
+          "rationale": "Thirteen scoped action filings reviewed. BRN rights, CALM conditional conversion and CMTL deficiency/convertible terms have exact unresolved fields; incomplete item-filter coverage cannot prove absence."
         },
         "distributions_class_changes": {
           "value": null,
           "evidence_ids": [
-            "findings"
+            "action_review",
+            "exceptions"
           ],
-          "rationale": "No scoped action completeness review separating announcement/effective dates; current downloader omits non-99 exhibits."
+          "rationale": "Thirteen scoped action filings reviewed. BRN rights, CALM conditional conversion and CMTL deficiency/convertible terms have exact unresolved fields; incomplete item-filter coverage cannot prove absence."
         },
         "announcement_effective_separate": {
-          "value": null,
+          "value": true,
           "evidence_ids": [
-            "findings"
+            "action_review"
           ],
-          "rationale": "No scoped action completeness review separating announcement/effective dates; current downloader omits non-99 exhibits."
+          "rationale": "Each source stores SEC availability separately from reported authorization/event and effective dates; unavailable announcement/actual effective times remain null."
         },
         "no_unresolved_conflicts": {
           "value": null,
           "evidence_ids": [
-            "findings"
+            "action_review",
+            "exceptions"
           ],
-          "rationale": "No scoped action completeness review separating announcement/effective dates; current downloader omits non-99 exhibits."
+          "rationale": "Thirteen scoped action filings reviewed. BRN rights, CALM conditional conversion and CMTL deficiency/convertible terms have exact unresolved fields; incomplete item-filter coverage cannot prove absence."
         }
       }
     },
     "historical_halt_tradability": {
       "reviewed_by": "Codex source validation, owner observations attributed separately",
-      "reviewed_at": "2026-09-15T23:48:50.486631+00:00",
-      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "reviewed_at": "2026-09-16T09:43:27.433356+00:00",
+      "scope_sha256": "34af6e2c1d930d89eb956e77ee2aca43ba39daaf8b1276befc2243120e92faca",
       "criteria": {
         "known_sessions": {
-          "value": null,
+          "value": true,
           "evidence_ids": [
-            "findings"
+            "closure:nyse_calendar_2025_pdf",
+            "closure:nasdaq_mourning_2025",
+            "cohort_manifest"
           ],
-          "rationale": "RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved."
+          "rationale": "Official 2025 calendar plus January 9 closure pinned; scenario clock fixed before source review."
         },
         "halt_history_coverage": {
           "value": null,
           "evidence_ids": [
-            "findings"
+            "exceptions"
           ],
-          "rationale": "RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved."
+          "rationale": "Exact missing action-window quote and symbol/date halt/carry-in/suspension evidence enumerated. No live stream is required and no quote clears a halt."
         },
         "carry_in_resolved": {
           "value": null,
           "evidence_ids": [
-            "findings"
+            "exceptions"
           ],
-          "rationale": "RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved."
+          "rationale": "Exact missing action-window quote and symbol/date halt/carry-in/suspension evidence enumerated. No live stream is required and no quote clears a halt."
         },
         "suspension_coverage": {
           "value": null,
           "evidence_ids": [
-            "findings"
+            "exceptions"
           ],
-          "rationale": "RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved."
+          "rationale": "Exact missing action-window quote and symbol/date halt/carry-in/suspension evidence enumerated. No live stream is required and no quote clears a halt."
         },
         "rule_registered": {
-          "value": null,
+          "value": true,
           "evidence_ids": [
-            "findings"
+            "cohort_manifest",
+            "exceptions"
           ],
-          "rationale": "RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved."
+          "rationale": "HISTORICAL_TRADABILITY_RECONSTRUCTION: active listing, known session, no covering authoritative halt/suspension with reviewed carry-in coverage, contemporaneous valid SIP and no unresolved action conflict. Original live receipt is not asserted."
         },
         "nbbo_context_available": {
           "value": null,
           "evidence_ids": [
-            "findings"
+            "exceptions"
           ],
-          "rationale": "RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved."
+          "rationale": "Exact missing action-window quote and symbol/date halt/carry-in/suspension evidence enumerated. No live stream is required and no quote clears a halt."
         }
       }
     },
     "source_rights": {
       "reviewed_by": "Codex source validation, owner observations attributed separately",
-      "reviewed_at": "2026-09-15T23:48:50.486637+00:00",
-      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "reviewed_at": "2026-09-16T09:43:27.433356+00:00",
+      "scope_sha256": "34af6e2c1d930d89eb956e77ee2aca43ba39daaf8b1276befc2243120e92faca",
       "criteria": {
         "terms_snapshots": {
           "value": true,
           "evidence_ids": [
-            "rights_review",
+            "rights_closure",
+            "alpaca_terms",
             "nasdaq_rss_terms",
-            "sec_access",
-            "alpaca_terms"
+            "sec_access"
           ],
-          "rationale": "Retrieved version/hash pins are recorded; this criterion alone does not grant usage rights."
+          "rationale": "Reference/terms versions or retrieved hashes and restrictions are recorded; this does not imply an account-specific grant."
         },
         "internal_research_use": {
           "value": null,
           "evidence_ids": [
-            "findings"
+            "rights_closure",
+            "exceptions"
           ],
-          "rationale": "Terms hashes captured; applicable account agreements/internal retention and scope reviews unresolved."
+          "rationale": "Exact account-agreement and Nasdaq historical-retention applicability evidence is enumerated per required instrument/date; no paid product is recommended."
         },
         "automated_retrieval": {
           "value": null,
           "evidence_ids": [
-            "findings"
+            "rights_closure",
+            "exceptions"
           ],
-          "rationale": "Terms hashes captured; applicable account agreements/internal retention and scope reviews unresolved."
+          "rationale": "Exact account-agreement and Nasdaq historical-retention applicability evidence is enumerated per required instrument/date; no paid product is recommended."
         },
         "retention": {
           "value": null,
           "evidence_ids": [
-            "findings"
+            "rights_closure",
+            "exceptions"
           ],
-          "rationale": "Terms hashes captured; applicable account agreements/internal retention and scope reviews unresolved."
+          "rationale": "Exact account-agreement and Nasdaq historical-retention applicability evidence is enumerated per required instrument/date; no paid product is recommended."
         },
         "redistribution_restrictions_recorded": {
-          "value": null,
+          "value": true,
           "evidence_ids": [
-            "findings"
+            "rights_closure",
+            "alpaca_terms",
+            "nasdaq_rss_terms",
+            "sec_access"
           ],
-          "rationale": "Terms hashes captured; applicable account agreements/internal retention and scope reviews unresolved."
+          "rationale": "Reference/terms versions or retrieved hashes and restrictions are recorded; this does not imply an account-specific grant."
         }
       }
     },
     "quote_policy_review": {
       "reviewed_by": "Codex source validation, owner observations attributed separately",
-      "reviewed_at": "2026-09-15T23:48:50.486643+00:00",
-      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "reviewed_at": "2026-09-16T09:43:27.433356+00:00",
+      "scope_sha256": "34af6e2c1d930d89eb956e77ee2aca43ba39daaf8b1276befc2243120e92faca",
       "criteria": {
         "real_sample_review": {
-          "value": null,
+          "value": true,
           "evidence_ids": [
-            "findings"
+            "sip_review",
+            "quote_policy",
+            "closure:utp_quotes_2015",
+            "closure:cta_quotes_2015"
           ],
-          "rationale": "Successful owner local quote archive absent; frequencies/pass rates and tape-specific definitions cannot yet justify policy freeze."
+          "rationale": "Real sample measured and unchanged R-only conservative historical screen frozen against source definitions; not proof of live receipt, halt status or fills."
         },
         "provider_definitions_review": {
-          "value": null,
+          "value": true,
           "evidence_ids": [
-            "findings"
+            "sip_review",
+            "quote_policy",
+            "closure:utp_quotes_2015",
+            "closure:cta_quotes_2015"
           ],
-          "rationale": "Successful owner local quote archive absent; frequencies/pass rates and tape-specific definitions cannot yet justify policy freeze."
+          "rationale": "Real sample measured and unchanged R-only conservative historical screen frozen against source definitions; not proof of live receipt, halt status or fills."
         },
         "policy_frozen": {
-          "value": null,
+          "value": true,
           "evidence_ids": [
-            "findings"
+            "sip_review",
+            "quote_policy",
+            "closure:utp_quotes_2015",
+            "closure:cta_quotes_2015"
           ],
-          "rationale": "Successful owner local quote archive absent; frequencies/pass rates and tape-specific definitions cannot yet justify policy freeze."
+          "rationale": "Real sample measured and unchanged R-only conservative historical screen frozen against source definitions; not proof of live receipt, halt status or fills."
         }
       }
     },
     "fiscal_comparator_review": {
       "reviewed_by": "Codex source validation, owner observations attributed separately",
-      "reviewed_at": "2026-09-15T23:48:50.486648+00:00",
-      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "reviewed_at": "2026-09-16T09:43:27.433356+00:00",
+      "scope_sha256": "34af6e2c1d930d89eb956e77ee2aca43ba39daaf8b1276befc2243120e92faca",
       "criteria": {
         "real_53_week_sample": {
           "value": true,
@@ -409,8 +2228,8 @@
     },
     "prospective_readiness": {
       "reviewed_by": "Codex source validation, owner observations attributed separately",
-      "reviewed_at": "2026-09-15T23:48:50.486654+00:00",
-      "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+      "reviewed_at": "2026-09-16T09:43:27.433356+00:00",
+      "scope_sha256": "34af6e2c1d930d89eb956e77ee2aca43ba39daaf8b1276befc2243120e92faca",
       "criteria": {
         "realtime_sip": {
           "value": false,
@@ -450,7 +2269,13 @@
       }
     }
   },
-  "rights_ledger": "research/source_rights_20260915.json",
+  "rights_ledger": "research/source_rights_20260916.json",
   "no_purchase": true,
-  "no_execution": true
+  "no_execution": true,
+  "frozen_manifest": {
+    "path": "research/cohort_2025h1_frozen.json",
+    "sha256": "978370a61119b34ca5a37cdd65ea25c217d813519590bb5a07d0bc8222abb39a"
+  },
+  "closure_exception_manifest": "research/cohort_closure_exceptions_20260916.json",
+  "quote_policy_code_sha256": "1d97fac3173a430232e9b7dc7554921ad010654883bae186517c99e9c5eb672c"
 }

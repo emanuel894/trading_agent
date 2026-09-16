@@ -1,3 +1,5 @@
+Current scoped closure: [COHORT_CLOSURE_20260916.md](COHORT_CLOSURE_20260916.md). The 50-filing audit remains unrun. Earlier measurements below retain their original dates and scope.
+
 # Read-only 10-Q evidence and actionability audit
 
 This implements ADR 001's acquisition milestone. It does not run an LLM, calculate

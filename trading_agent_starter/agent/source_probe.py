@@ -18,6 +18,17 @@ from .audit_http import NoRedirect
 from .audit_store import AuditFailure, EvidenceStore, canonical, timestamp, utc_now
 
 PUBLIC_URLS = {
+    "sec_master_2025q1": "https://www.sec.gov/Archives/edgar/full-index/2025/QTR1/master.zip",
+    "sec_master_2025q2": "https://www.sec.gov/Archives/edgar/full-index/2025/QTR2/master.zip",
+    "utp_quotes_2015": "https://www.utpplan.com/DOC/uqdfspecification.pdf",
+    "utp_quotes_current": "https://www.utpplan.com/DOC/UtpBinaryOutputSpec.pdf",
+    "cta_quotes_current": "https://www.ctaplan.com/publicdocs/ctaplan/CQS_Pillar_Output_Specification.pdf",
+    "cta_quotes_2015": "https://www.nyse.com/publicdocs/ctaplan/notifications/trader-update/cqs_output_spec_v62_11062015.pdf",
+    "alpaca_quote_conditions": "https://docs.alpaca.markets/us/reference/stockmetaconditions-1",
+    "alpaca_quote_exchanges": "https://docs.alpaca.markets/us/reference/stockmetaexchanges-1",
+    "nyse_calendar_2025": "https://ir.theice.com/press/news-details/2024/NYSE-Group-Announces-2025-2026-and-2027-Holiday-and-Early-Closings-Calendar/default.aspx",
+    "nyse_calendar_2025_pdf": "https://s2.q4cdn.com/154085107/files/doc_news/NYSE-Group-Announces-2024-2025-and-2026-Holiday-and-Early-Closings-Calendar-2023.pdf",
+    "nasdaq_mourning_2025": "https://www.nasdaqtrader.com/TraderNews.aspx?id=UTP2024-20",
     "nasdaq_search": "https://www.nasdaqtrader.com/Trader.aspx?id=TradingHaltSearch",
     "nasdaq_history": "https://www.nasdaqtrader.com/trader.aspx?id=TradingHaltHistory",
     "nasdaq_rpcclient": "https://www.nasdaqtrader.com/rpcclient.axd",
@@ -33,6 +44,8 @@ PUBLIC_URLS = {
     "alpaca_terms": "https://files.alpaca.markets/disclosures/library/TermsAndConditions.pdf",
     "alpaca_stock_schema": "https://docs.alpaca.markets/us/docs/real-time-stock-pricing-data",
 }
+LARGE_SOURCES = {PUBLIC_URLS[k] for k in ("sec_master_2025q1", "sec_master_2025q2", "utp_quotes_2015",
+                 "utp_quotes_current", "cta_quotes_current", "cta_quotes_2015")}
 
 
 def check_public_url(url):
@@ -72,6 +85,7 @@ class PublicProbe:
                 raise AuditFailure("NASDAQ_RSS_ONE_REQUEST_PER_MINUTE")
         self.remaining -= 1
         started, tick = utc_now(), time.monotonic()
+        byte_cap = 8_000_000 if url in LARGE_SOURCES else 2_000_000
         raw, status, headers, failure = b"", None, {}, None
         try:
             request = Request(url, method="GET", headers={
@@ -81,9 +95,9 @@ class PublicProbe:
                 status = response.status
                 headers = {k.lower(): v for k, v in response.headers.items()
                            if k.lower() in {"content-type", "last-modified", "date", "etag"}}
-                raw = response.read(2_000_001)
-                if len(raw) > 2_000_000:
-                    failure, raw = "PUBLIC_SOURCE_BYTE_CAP", raw[:2_000_000]
+                raw = response.read(byte_cap + 1)
+                if len(raw) > byte_cap:
+                    failure, raw = "PUBLIC_SOURCE_BYTE_CAP", raw[:byte_cap]
         except HTTPError as exc:
             status, failure, raw = exc.code, "HTTP_" + str(exc.code), exc.read(65536)
         except AuditFailure as exc:
@@ -96,6 +110,7 @@ class PublicProbe:
             "url": url, "method": "GET", "started_at": started, "received_at": utc_now(),
             "elapsed_seconds": time.monotonic() - tick, "http_status": status,
             "headers": headers, "failure": failure, "untrusted": True,
+            "byte_cap": byte_cap,
             "access_is_rights_grant": False}, raw)
         return record
 

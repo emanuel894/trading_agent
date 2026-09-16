@@ -15,6 +15,7 @@ import uuid
 from .access_fastpath import captured_sip_quality
 from .audit_store import AuditFailure, EvidenceStore, canonical, digest, utc_now
 from .audit_text import verify_comparable
+from .entitlement_probe import _collect_quality, _recover_rows
 from .source_probe import parse_halt_rss
 
 SAMPLE = ("0000909832-23-000065", "0000909832-22-000035", "0000909832-23-000042",
@@ -131,7 +132,20 @@ def sip_review(source):
     quality["strict_policy_pass_rate_at_row_timestamp"] = quality["strict_execution_quality_pass_rows"] / count
     quality["strict_policy_pass_rate_by_symbol"] = {
         s: quality["strict_execution_quality_pass_rows_by_symbol"][s] / n if n else None for s, n in counts.items()}
+    records = [r for r in source.records("http")
+               if r["source_key"].startswith("https://data.alpaca.markets/v2/stocks/quotes?")]
+    rows = _recover_rows(source, records, "quotes")
+    by_symbol = {}
+    for symbol, values in rows.items():
+        part = _collect_quality("quotes", {symbol: values})
+        part["strict_policy_pass_rate_at_row_timestamp"] = (
+            part["strict_execution_quality_pass_rows"] / len(values) if values else None)
+        part["zero_fields"] = {field: sum(isinstance(row, dict) and row.get(field) == 0
+                                          for row, _, _ in values) for field in ("bp", "ap", "bs", "as")}
+        by_symbol[symbol] = part
     return {"status": "MEASURED_REVIEW_REQUIRED", "data_quality": quality, **report,
+            "data_quality_by_symbol": by_symbol,
+            "quote_response_hashes": [{"record_id": r["id"], "sha256": r["blob_sha"]} for r in records],
             "scope": "ALL_CAPTURED_PAGES_IN_SUPPLIED_ARCHIVE; NOT_A_POPULATION_SAMPLE",
             "repeated_requests_may_repeat_observations": True,
             "historical_entitlement_changed": False,
