@@ -104,19 +104,44 @@ def frozen_scope_check(packet, root):
         raise AuditFailure("INVALID_MANIFEST_PATH")
     if not path.is_file():
         return {"status": "UNRESOLVED", "reason": "FROZEN_MANIFEST_UNAVAILABLE"}
-    if path.stat().st_size > 2_000_000:
+    if path.stat().st_size > 10_000_000:
         raise AuditFailure("MANIFEST_BYTE_CAP")
     raw = path.read_bytes()
     if digest(raw) != ref["sha256"]:
         return {"status": "FAIL", "reason": "FROZEN_MANIFEST_HASH_MISMATCH"}
     document = strict_json(raw)
-    if (document.get("version") != "historical-cohort-v1"
+    if (document.get("version") not in {"historical-cohort-v1", "historical-cohort-v2"}
             or document.get("scope_sha256") != digest(canonical(document.get("scope")))
             or not document.get("frozen_at")):
         return {"status": "FAIL", "reason": "INVALID_FROZEN_MANIFEST"}
     timestamp(document["frozen_at"])
     if document["scope"] != packet.get("scope"):
         return {"status": "UNRESOLVED", "reason": "SCOPE_CHANGED_EXPLICIT_AMENDMENT_AND_NEW_REVIEWS_REQUIRED"}
+    registry_path = root / "config/cohort_scope_registry.json"
+    if registry_path.is_file():
+        from .cohort_selector import read_registry
+        _, registry = read_registry(root)
+        if any(r["scope_sha256"] == document["scope_sha256"] for r in registry["superseded_scopes"]):
+            return {"status": "FAIL", "reason": "SUPERSEDED_SELECTION_ALGORITHM_DEFECT"}
+        if registry.get("active_scope_sha256") != document["scope_sha256"]:
+            return {"status": "UNRESOLVED", "reason": "NO_ACTIVE_CORRECTED_SCOPE_FOR_THIS_MANIFEST"}
+        if registry.get("active_manifest_file_sha256") != ref["sha256"]:
+            return {"status": "FAIL", "reason": "ACTIVE_MANIFEST_REGISTRY_HASH_MISMATCH"}
+    if document["version"] == "historical-cohort-v2":
+        from .cohort_selector import verify_frozen_inputs
+        if not registry_path.is_file():
+            return {"status": "UNRESOLVED", "reason": "CORRECTED_SCOPE_REGISTRY_UNAVAILABLE"}
+        source_ref = packet.get("selection_inputs", {})
+        source_path = (root / source_ref.get("path", "")).resolve()
+        if not source_path.is_relative_to(root):
+            raise AuditFailure("INVALID_SELECTION_INPUT_PATH")
+        if not source_path.is_file():
+            return {"status": "UNRESOLVED", "reason": "CORRECTED_UNIVERSE_INPUTS_UNAVAILABLE"}
+        raw_inputs = source_path.read_bytes()
+        if digest(raw_inputs) != source_ref.get("sha256"):
+            return {"status": "FAIL", "reason": "CORRECTED_UNIVERSE_INPUT_HASH_MISMATCH"}
+        registration = (root / registry["active_selection_registration_path"]).read_bytes()
+        verify_frozen_inputs(document, strict_json(raw_inputs), root, registration)
     return {"status": "PASS", "reason": None, "file_sha256": ref["sha256"]}
 
 

@@ -98,6 +98,20 @@ class DatedGateTests(unittest.TestCase):
     def test_quote_rule_change_invalidates_the_frozen_policy_review(self):
         self.packet["quote_policy_code_sha256"] = "0" * 64
         self.assertEqual(self.result()["gates"]["quote_policy_review"]["status"], "UNRESOLVED")
+
+    def test_superseded_manifest_cannot_pass_by_clearing_old_ledger(self):
+        project = Path(__file__).parents[1]
+        registry = __import__("json").loads((project / "config/cohort_scope_registry.json").read_bytes())
+        registry["superseded_scopes"].append({"scope_sha256": digest(canonical(self.packet["scope"]))})
+        for relative in ("research/cohort_scope_amendment_002.json", "research/cohort_selection_registration_002.json"):
+            path = self.root / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes((project / relative).read_bytes())
+        (self.root / "config").mkdir()
+        (self.root / "config/cohort_scope_registry.json").write_bytes(canonical(registry))
+        result = self.result()
+        self.assertEqual(result["frozen_manifest"]["reason"], "SUPERSEDED_SELECTION_ALGORITHM_DEFECT")
+        self.assertEqual(result["historical_recommendation"], "BLOCK_HISTORICAL_AUDIT")
         self.assertEqual(self.result()["historical_recommendation"], "BLOCK_HISTORICAL_AUDIT")
 
     def test_owner_access_does_not_prove_quote_quality_or_rights(self):

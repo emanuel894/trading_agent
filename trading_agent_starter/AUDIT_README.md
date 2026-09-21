@@ -1,4 +1,4 @@
-Current scoped closure: [COHORT_CLOSURE_20260916.md](COHORT_CLOSURE_20260916.md). The 50-filing audit remains unrun. Earlier measurements below retain their original dates and scope.
+Current status: [COHORT_CORRECTION_002.md](COHORT_CORRECTION_002.md). The old H1 cohort is superseded for omitting ADR universe eligibility; its closure packet remains unchanged as historical evidence. The replacement algorithm is registered, but missing dated universe/liquidity inputs prevent a corrected freeze. The 50-filing audit remains unrun. Earlier measurements below retain their original dates and scope.
 
 # Read-only 10-Q evidence and actionability audit
 

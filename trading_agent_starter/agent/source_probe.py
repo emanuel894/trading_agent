@@ -20,6 +20,12 @@ from .audit_store import AuditFailure, EvidenceStore, canonical, timestamp, utc_
 PUBLIC_URLS = {
     "sec_master_2025q1": "https://www.sec.gov/Archives/edgar/full-index/2025/QTR1/master.zip",
     "sec_master_2025q2": "https://www.sec.gov/Archives/edgar/full-index/2025/QTR2/master.zip",
+    "sec_master_2025q3": "https://www.sec.gov/Archives/edgar/full-index/2025/QTR3/master.zip",
+    "sec_master_2025q4": "https://www.sec.gov/Archives/edgar/full-index/2025/QTR4/master.zip",
+    "nasdaq_symbol_definitions": "https://www.nasdaqtrader.com/Trader.aspx?id=SymbolDirDefs",
+    "nasdaq_daily_list_description": "https://www.nasdaqtrader.com/Trader.aspx?id=DailyList",
+    "alpaca_historical_bars_definition": "https://docs.alpaca.markets/us/reference/stockbars",
+    "alpaca_market_data_faq": "https://docs.alpaca.markets/us/docs/market-data-faq",
     "utp_quotes_2015": "https://www.utpplan.com/DOC/uqdfspecification.pdf",
     "utp_quotes_current": "https://www.utpplan.com/DOC/UtpBinaryOutputSpec.pdf",
     "cta_quotes_current": "https://www.ctaplan.com/publicdocs/ctaplan/CQS_Pillar_Output_Specification.pdf",
@@ -44,7 +50,7 @@ PUBLIC_URLS = {
     "alpaca_terms": "https://files.alpaca.markets/disclosures/library/TermsAndConditions.pdf",
     "alpaca_stock_schema": "https://docs.alpaca.markets/us/docs/real-time-stock-pricing-data",
 }
-LARGE_SOURCES = {PUBLIC_URLS[k] for k in ("sec_master_2025q1", "sec_master_2025q2", "utp_quotes_2015",
+LARGE_SOURCES = {PUBLIC_URLS[k] for k in ("sec_master_2025q1", "sec_master_2025q2", "sec_master_2025q3", "sec_master_2025q4", "utp_quotes_2015",
                  "utp_quotes_current", "cta_quotes_current", "cta_quotes_2015")}
 
 

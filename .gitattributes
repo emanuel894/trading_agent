@@ -3,3 +3,5 @@ trading_agent_starter/research/*.json -text
 trading_agent_starter/config/dated_source_packet.json -text
 trading_agent_starter/agent/audit_market.py text eol=lf
 trading_agent_starter/agent/dated_source_gate.py text eol=lf
+trading_agent_starter/config/cohort_scope_registry.json -text
+trading_agent_starter/agent/cohort_selector.py text eol=lf
