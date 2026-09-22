@@ -1,0 +1,33 @@
+{
+  "accepted_as_verified_local_account_evidence": true,
+  "actual_daily_bars_by_symbol": {
+    "AAPL": 3,
+    "SPY": 3
+  },
+  "duplicate_dates": 0,
+  "evidence_basis": "EXPLICIT_OWNER_REPORT_IN_CONVERSATION",
+  "evidence_store_verification": "VERIFIED",
+  "expected_daily_bars_by_symbol": {
+    "AAPL": 3,
+    "SPY": 3
+  },
+  "historical_sip_access": "SUCCEEDED_WITH_ROWS",
+  "independently_replayed_in_this_environment": false,
+  "liquidity_definition_version": "alpaca-sip-1day-ny-calendar-v1",
+  "missing_dates": 0,
+  "raw_archive_supplied_this_milestone": false,
+  "realtime_sip": "NOT_ENTITLED",
+  "recorded_at": "2026-09-22T09:55:08.328680+00:00",
+  "registration_changed": false,
+  "registration_sha256": "af7e721326576b0e6b131debd1b5f8665c474adc2472ab75d483fb654f35eed2",
+  "rejected_ohlcv_rows": 0,
+  "request": {
+    "adjustment": "raw",
+    "asof": "-",
+    "feed": "sip",
+    "timeframe": "1Day"
+  },
+  "source_commit": "06cdfef54ed51d4fa5320457455ce87d98f21440",
+  "status": "PASS",
+  "version": "owner-local-evidence-attestation-v1"
+}
