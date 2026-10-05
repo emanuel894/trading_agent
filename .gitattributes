@@ -9,3 +9,5 @@ trading_agent_starter/agent/cohort_selector.py text eol=lf
 trading_agent_starter/agent/cohort_selector_v3.py text eol=lf
 trading_agent_starter/agent/alpaca_daily_contract.py text eol=lf
 trading_agent_starter/agent/daily_liquidity_probe.py text eol=lf
+trading_agent_starter/agent/acquisition_registration.py text eol=lf
+trading_agent_starter/STRUCTURAL_IDENTITY_AMENDMENT_005.md text eol=lf
