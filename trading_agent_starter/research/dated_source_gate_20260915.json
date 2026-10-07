@@ -1,0 +1,151 @@
+{
+  "audit_executed": false,
+  "evaluated_at": "2026-09-15T23:53:04.708158+00:00",
+  "gate_code_sha256": "d3e6db2d94f607c8cf1b1be6956ca0b79af7f8d11ac571770da8a3fad0d0cda4",
+  "gates": {
+    "corporate_actions": {
+      "criteria": {
+        "announcement_effective_separate": "UNRESOLVED",
+        "distributions_class_changes": "UNRESOLVED",
+        "mergers_reorganizations": "UNRESOLVED",
+        "no_unresolved_conflicts": "UNRESOLVED",
+        "splits": "UNRESOLVED"
+      },
+      "reasons": [
+        "splits:No scoped action completeness review separating announcement/effective dates; current downloader omits non-99 exhibits.",
+        "mergers_reorganizations:No scoped action completeness review separating announcement/effective dates; current downloader omits non-99 exhibits.",
+        "distributions_class_changes:No scoped action completeness review separating announcement/effective dates; current downloader omits non-99 exhibits.",
+        "announcement_effective_separate:No scoped action completeness review separating announcement/effective dates; current downloader omits non-99 exhibits.",
+        "no_unresolved_conflicts:No scoped action completeness review separating announcement/effective dates; current downloader omits non-99 exhibits.",
+        "PROPOSED_COHORT_SCOPE_MISSING_OR_INVALID"
+      ],
+      "status": "UNRESOLVED"
+    },
+    "fiscal_comparator_review": {
+      "criteria": {
+        "real_53_week_sample": "PASS",
+        "real_transition_sample": "PASS",
+        "rule_decision_registered": "PASS",
+        "week_based_sample": "PASS"
+      },
+      "reasons": [],
+      "status": "PASS"
+    },
+    "historical_halt_tradability": {
+      "criteria": {
+        "carry_in_resolved": "UNRESOLVED",
+        "halt_history_coverage": "UNRESOLVED",
+        "known_sessions": "UNRESOLVED",
+        "nbbo_context_available": "UNRESOLVED",
+        "rule_registered": "UNRESOLVED",
+        "suspension_coverage": "UNRESOLVED"
+      },
+      "reasons": [
+        "known_sessions:RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved.",
+        "halt_history_coverage:RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved.",
+        "carry_in_resolved:RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved.",
+        "suspension_coverage:RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved.",
+        "rule_registered:RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved.",
+        "nbbo_context_available:RSS works on three historic dates, but carry-in, suspension enumeration, resumed-trading confirmation and scoped negative coverage remain unresolved.",
+        "PROPOSED_COHORT_SCOPE_MISSING_OR_INVALID"
+      ],
+      "status": "UNRESOLVED"
+    },
+    "historical_sip_access": {
+      "criteria": {
+        "bars_rows": "PASS",
+        "no_provider_restriction": "PASS",
+        "quotes_rows": "PASS",
+        "sip_only": "PASS"
+      },
+      "reasons": [],
+      "status": "PASS"
+    },
+    "instrument_identity": {
+      "criteria": {
+        "dated_intervals": "UNRESOLVED",
+        "scope_coverage": "UNRESOLVED",
+        "share_class_lineage": "UNRESOLVED"
+      },
+      "reasons": [
+        "dated_intervals:Captured COST/UAA/UA historical cover anchors, but no reviewed bounded identity intervals for proposed cohort and SPY.",
+        "share_class_lineage:Captured COST/UAA/UA historical cover anchors, but no reviewed bounded identity intervals for proposed cohort and SPY.",
+        "scope_coverage:Captured COST/UAA/UA historical cover anchors, but no reviewed bounded identity intervals for proposed cohort and SPY.",
+        "PROPOSED_COHORT_SCOPE_MISSING_OR_INVALID"
+      ],
+      "status": "UNRESOLVED"
+    },
+    "lifecycle": {
+      "criteria": {
+        "listing_delisting_bounds": "UNRESOLVED",
+        "scope_coverage": "UNRESOLVED",
+        "ticker_name_changes": "UNRESOLVED"
+      },
+      "reasons": [
+        "listing_delisting_bounds:No complete scoped listing/delisting or ticker/name-change evidence inventory; cover/report periods are not listing bounds.",
+        "ticker_name_changes:No complete scoped listing/delisting or ticker/name-change evidence inventory; cover/report periods are not listing bounds.",
+        "scope_coverage:No complete scoped listing/delisting or ticker/name-change evidence inventory; cover/report periods are not listing bounds.",
+        "PROPOSED_COHORT_SCOPE_MISSING_OR_INVALID"
+      ],
+      "status": "UNRESOLVED"
+    },
+    "prospective_readiness": {
+      "criteria": {
+        "clock_and_continuity": "UNRESOLVED",
+        "decision_receipt_cutoff": "UNRESOLVED",
+        "live_status": "UNRESOLVED",
+        "pre_event_warm_evidence": "UNRESOLVED",
+        "realtime_sip": "FAIL"
+      },
+      "reasons": [
+        "realtime_sip:Realtime SIP NOT_ENTITLED; status subscription not reached; prospective capture/clock/decision receipt not validated.",
+        "live_status:Realtime SIP NOT_ENTITLED; status subscription not reached; prospective capture/clock/decision receipt not validated.",
+        "pre_event_warm_evidence:Realtime SIP NOT_ENTITLED; status subscription not reached; prospective capture/clock/decision receipt not validated.",
+        "decision_receipt_cutoff:Realtime SIP NOT_ENTITLED; status subscription not reached; prospective capture/clock/decision receipt not validated.",
+        "clock_and_continuity:Realtime SIP NOT_ENTITLED; status subscription not reached; prospective capture/clock/decision receipt not validated."
+      ],
+      "status": "FAIL"
+    },
+    "quote_policy_review": {
+      "criteria": {
+        "policy_frozen": "UNRESOLVED",
+        "provider_definitions_review": "UNRESOLVED",
+        "real_sample_review": "UNRESOLVED"
+      },
+      "reasons": [
+        "real_sample_review:Successful owner local quote archive absent; frequencies/pass rates and tape-specific definitions cannot yet justify policy freeze.",
+        "provider_definitions_review:Successful owner local quote archive absent; frequencies/pass rates and tape-specific definitions cannot yet justify policy freeze.",
+        "policy_frozen:Successful owner local quote archive absent; frequencies/pass rates and tape-specific definitions cannot yet justify policy freeze."
+      ],
+      "status": "UNRESOLVED"
+    },
+    "source_rights": {
+      "criteria": {
+        "automated_retrieval": "UNRESOLVED",
+        "internal_research_use": "UNRESOLVED",
+        "redistribution_restrictions_recorded": "UNRESOLVED",
+        "retention": "UNRESOLVED",
+        "terms_snapshots": "PASS"
+      },
+      "reasons": [
+        "internal_research_use:Terms hashes captured; applicable account agreements/internal retention and scope reviews unresolved.",
+        "automated_retrieval:Terms hashes captured; applicable account agreements/internal retention and scope reviews unresolved.",
+        "retention:Terms hashes captured; applicable account agreements/internal retention and scope reviews unresolved.",
+        "redistribution_restrictions_recorded:Terms hashes captured; applicable account agreements/internal retention and scope reviews unresolved.",
+        "PROPOSED_COHORT_SCOPE_MISSING_OR_INVALID"
+      ],
+      "status": "UNRESOLVED"
+    }
+  },
+  "historical_does_not_require_live_sip": true,
+  "historical_recommendation": "BLOCK_HISTORICAL_AUDIT",
+  "packet_record_id": "c6163effa9dc4c6abcb109cf1be0d2e3",
+  "packet_sha256": "63729f1d278226ee944e2a9e80202e76435b316513a446cbc8d985ddecc7c51f",
+  "prospective_recommendation": "PROSPECTIVE_ACTIONABILITY_BLOCKED",
+  "review_semantics": "Evidence-linked reviews are assertions; hashes establish identity, not factual/legal truth.",
+  "scope_sha256": "390d4f73cc6f0f86818544e7f21ee5adad200cf5658b2dbf66f390f6c0c02019",
+  "unresolved_or_failed_evidence": {},
+  "version": "dated-source-gate-v1",
+  "result_record_id": "7d43c0876fc541d4a76ce582afc531f2",
+  "result_record_hash": "3f6f9b25bb8b84fd9551050139fbbe4d1d6af38b6b6b5ef01c365c075d3c8065"
+}

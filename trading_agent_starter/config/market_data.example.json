@@ -1,0 +1,4 @@
+{
+  "symbols": ["SPY", "QQQ", "IWM", "DIA", "XLK", "XLF", "XLE", "XLV", "AAPL", "MSFT", "AMZN", "GOOGL"],
+  "publication_delay_seconds": 60
+}

@@ -1,0 +1,896 @@
+{
+  "captures": [
+    {
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Tue, 15 Sep 2026 15:59:41 GMT"
+      },
+      "http_status": 200,
+      "id": "8f9be9dda35e4d829cb5c5fb80745c12",
+      "key": "nasdaq_search",
+      "method": "GET",
+      "received_at": "2026-09-15T15:59:41.604706+00:00",
+      "sha256": "b6763d2e6c9db04217cd55203d19bd69f7572e4d3ae94df924a573fbbd8891ae",
+      "started_at": "2026-09-15T15:59:29.598656+00:00",
+      "untrusted": true,
+      "url": "https://www.nasdaqtrader.com/Trader.aspx?id=TradingHaltSearch"
+    },
+    {
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Tue, 15 Sep 2026 15:59:51 GMT"
+      },
+      "http_status": 200,
+      "id": "17878a4343164c86a8a71f86eaa57727",
+      "key": "nasdaq_history",
+      "method": "GET",
+      "received_at": "2026-09-15T15:59:52.363770+00:00",
+      "sha256": "6919b990aa860aa50a55d5cf366f6ae808cc0e2596c4e7454acd3b324527afa7",
+      "started_at": "2026-09-15T15:59:41.608171+00:00",
+      "untrusted": true,
+      "url": "https://www.nasdaqtrader.com/trader.aspx?id=TradingHaltHistory"
+    },
+    {
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Tue, 15 Sep 2026 16:00:00 GMT"
+      },
+      "http_status": 200,
+      "id": "2c370565759a490584abc4212615ad12",
+      "key": "nasdaq_rss_docs",
+      "method": "GET",
+      "received_at": "2026-09-15T16:00:02.236809+00:00",
+      "sha256": "09ac583d31eed3212dfb8cd5d2cfa52578cef60b3aaffe655a65c969a398fbd4",
+      "started_at": "2026-09-15T15:59:52.364476+00:00",
+      "untrusted": true,
+      "url": "https://www.nasdaqtrader.com/Trader.aspx?id=TradeHaltRSS"
+    },
+    {
+      "headers": {
+        "Content-Type": "application/pdf",
+        "Date": "Tue, 15 Sep 2026 16:00:11 GMT",
+        "Last-Modified": "Tue, 23 Sep 2025 14:20:57 GMT"
+      },
+      "http_status": 200,
+      "id": "e77364b81b0049179ae901f8b5710750",
+      "key": "nasdaq_rss_terms",
+      "method": "GET",
+      "received_at": "2026-09-15T16:00:11.983047+00:00",
+      "sha256": "9f3e25671be08d33b81785dac0eae63fc374904debcf2452aa1752964b3751b1",
+      "started_at": "2026-09-15T16:00:02.237421+00:00",
+      "untrusted": true,
+      "url": "https://www.nasdaqtrader.com/content/administrationsupport/agreementstrading/THRSSFeedTermsCond.pdf"
+    },
+    {
+      "http_status": 200,
+      "id": "e67ae9ca0514458f86ad856a143770a6",
+      "key": "nasdaq_rpcclient",
+      "method": "GET",
+      "received_at": "2026-09-15T16:01:58.059507+00:00",
+      "sha256": "896eb072a09d6e11b168b79088844057b18cf4c8ea674b928fa3c3f14b95cfe7",
+      "started_at": "2026-09-15T16:01:42.672412+00:00",
+      "untrusted": true,
+      "url": "https://www.nasdaqtrader.com/rpcclient.axd"
+    },
+    {
+      "http_status": 200,
+      "id": "2ab4ed00b3074151a976fb4b15d08581",
+      "key": "nasdaq_rss_20250131",
+      "method": "GET",
+      "received_at": "2026-09-15T16:02:08.378436+00:00",
+      "sha256": "23aebac57e32c9ceee34e6768ad1dbfd883686a3da0cee060c3498b921b9f4de",
+      "started_at": "2026-09-15T16:01:58.060554+00:00",
+      "untrusted": true,
+      "url": "https://www.nasdaqtrader.com/rss.aspx?feed=tradehalts&haltdate=01312025"
+    },
+    {
+      "access_is_rights_grant": false,
+      "elapsed_seconds": 12.652327348999734,
+      "failure": null,
+      "headers": {
+        "content-type": "text/xml",
+        "date": "Tue, 15 Sep 2026 16:05:10 GMT",
+        "last-modified": "Tue, 15 Sep 2026 16:05:10 GMT"
+      },
+      "http_status": 200,
+      "id": "a51d73b18264412baa04fc7eb365fdbb",
+      "key": "nasdaq_rss_06032024",
+      "method": "GET",
+      "received_at": "2026-09-15T16:05:11.370128+00:00",
+      "sha256": "d044548244a10ae5c7be94b92cd000b777e96591291b9281c5c0c8b9a13766f5",
+      "started_at": "2026-09-15T16:04:58.717820+00:00",
+      "untrusted": true,
+      "url": "https://www.nasdaqtrader.com/rss.aspx?feed=tradehalts&haltdate=06032024"
+    },
+    {
+      "access_is_rights_grant": false,
+      "elapsed_seconds": 11.91675075000012,
+      "failure": null,
+      "headers": {
+        "content-type": "text/html",
+        "date": "Tue, 15 Sep 2026 16:05:39 GMT",
+        "etag": "\"b23040b7952cdc1:0\"",
+        "last-modified": "Tue, 23 Sep 2025 14:24:05 GMT"
+      },
+      "http_status": 200,
+      "id": "10fd0b9b2b9b44d9a33a4e8808fe7931",
+      "key": "nasdaq_rss_query_semantics",
+      "method": "GET",
+      "received_at": "2026-09-15T16:05:40.153371+00:00",
+      "sha256": "2bfde036115ea1c1b966444a1348f69b5d68f3b402206173a9ee00cd7a7bee00",
+      "started_at": "2026-09-15T16:05:28.236631+00:00",
+      "untrusted": true,
+      "url": "https://www.nasdaqtrader.com/snippets/tradehaltaccordion.html"
+    },
+    {
+      "access_is_rights_grant": false,
+      "elapsed_seconds": 11.20544646999997,
+      "failure": null,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 15 Sep 2026 16:05:50 GMT"
+      },
+      "http_status": 200,
+      "id": "e82a548fbd1348c2aa59c628201b0180",
+      "key": "nasdaq_halt_fields",
+      "method": "GET",
+      "received_at": "2026-09-15T16:05:51.359739+00:00",
+      "sha256": "4329f43b69b855a1d79a611c3d51c8dd6ab99741ee6d744515bb54fdb4db26e1",
+      "started_at": "2026-09-15T16:05:40.154305+00:00",
+      "untrusted": true,
+      "url": "https://www.nasdaqtrader.com/Trader.aspx?id=TradeHaltCodes"
+    },
+    {
+      "access_is_rights_grant": false,
+      "elapsed_seconds": 11.255057854999905,
+      "failure": null,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 15 Sep 2026 16:06:02 GMT",
+        "etag": "\"1789488105-gzip\"",
+        "last-modified": "Tue, 15 Sep 2026 16:01:45 GMT"
+      },
+      "http_status": 200,
+      "id": "383a9d57c2d34cf39a31aae4ed28d030",
+      "key": "sec_privacy",
+      "method": "GET",
+      "received_at": "2026-09-15T16:06:02.615563+00:00",
+      "sha256": "c11a1ce03500625a693b0a3fc851a6d58eb45693567749ed902c24c1c62de5b4",
+      "started_at": "2026-09-15T16:05:51.360524+00:00",
+      "untrusted": true,
+      "url": "https://www.sec.gov/about/privacy-information"
+    },
+    {
+      "access_is_rights_grant": false,
+      "elapsed_seconds": 11.569443294999928,
+      "failure": null,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 15 Sep 2026 16:06:14 GMT",
+        "etag": "\"1789488152-gzip\"",
+        "last-modified": "Tue, 15 Sep 2026 16:02:32 GMT"
+      },
+      "http_status": 200,
+      "id": "ac3fe39d6a3546ef8c39d333d5e71921",
+      "key": "sec_developer",
+      "method": "GET",
+      "received_at": "2026-09-15T16:06:14.185796+00:00",
+      "sha256": "7dd8cdf16635bc2a18cba121de6d7ff57ea9aa9f0e9df6587577f8e6d65ddd96",
+      "started_at": "2026-09-15T16:06:02.616368+00:00",
+      "untrusted": true,
+      "url": "https://www.sec.gov/about/developer-resources"
+    },
+    {
+      "access_is_rights_grant": false,
+      "elapsed_seconds": 11.46176440399995,
+      "failure": null,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 15 Sep 2026 16:06:25 GMT",
+        "etag": "\"1789488131-gzip\"",
+        "last-modified": "Tue, 15 Sep 2026 16:02:11 GMT"
+      },
+      "http_status": 200,
+      "id": "5a8fe9d1deb44958bf9ab48a429493e8",
+      "key": "sec_access",
+      "method": "GET",
+      "received_at": "2026-09-15T16:06:25.648196+00:00",
+      "sha256": "7b8a92147bae67dd2b5263884a3cfd8c88cc710c744d037dc2705cf3ba58b1c5",
+      "started_at": "2026-09-15T16:06:14.186445+00:00",
+      "untrusted": true,
+      "url": "https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data"
+    },
+    {
+      "access_is_rights_grant": false,
+      "elapsed_seconds": 11.575282008000158,
+      "failure": null,
+      "headers": {
+        "content-type": "application/pdf",
+        "date": "Tue, 15 Sep 2026 16:06:37 GMT",
+        "etag": "\"a81636b106159be30794fd389969c0af\"",
+        "last-modified": "Wed, 15 Sep 2021 19:40:32 GMT"
+      },
+      "http_status": 200,
+      "id": "485a9fedf1b44ee5802780ed66bc5265",
+      "key": "alpaca_terms",
+      "method": "GET",
+      "received_at": "2026-09-15T16:06:37.224096+00:00",
+      "sha256": "2dc774d4aeeafbe4c7f0565e7842d932bc8bc10488af805fce43b8734e7b9859",
+      "started_at": "2026-09-15T16:06:25.648830+00:00",
+      "untrusted": true,
+      "url": "https://files.alpaca.markets/disclosures/library/TermsAndConditions.pdf"
+    },
+    {
+      "access_is_rights_grant": false,
+      "elapsed_seconds": 12.498554192000029,
+      "failure": null,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 15 Sep 2026 16:06:49 GMT"
+      },
+      "http_status": 200,
+      "id": "816909c80fad4d818f8251d016a7ea2a",
+      "key": "alpaca_stock_schema",
+      "method": "GET",
+      "received_at": "2026-09-15T16:06:49.723238+00:00",
+      "sha256": "9b5a93fb5fcaa314792e1822bfc697d660c3b571abac17dd1eae5da7b3ce2576",
+      "started_at": "2026-09-15T16:06:37.224697+00:00",
+      "untrusted": true,
+      "url": "https://docs.alpaca.markets/us/docs/real-time-stock-pricing-data"
+    },
+    {
+      "access_is_rights_grant": false,
+      "elapsed_seconds": 13.358533285000249,
+      "failure": null,
+      "headers": {
+        "content-type": "text/xml",
+        "date": "Tue, 15 Sep 2026 16:07:26 GMT",
+        "last-modified": "Tue, 15 Sep 2026 16:07:26 GMT"
+      },
+      "http_status": 200,
+      "id": "f7a54e5fe40e4077a3dcc3b334681868",
+      "key": "nasdaq_rss_10112010",
+      "method": "GET",
+      "received_at": "2026-09-15T16:07:27.314249+00:00",
+      "sha256": "ec20852e7de2ec3f9ca6ed613bdda3b157ff9c6241b78f0e225378793d11e98e",
+      "started_at": "2026-09-15T16:07:13.955733+00:00",
+      "untrusted": true,
+      "url": "https://www.nasdaqtrader.com/rss.aspx?feed=tradehalts&haltdate=10112010"
+    },
+    {
+      "access_is_rights_grant": false,
+      "elapsed_seconds": 9.296425494000005,
+      "failure": null,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 15 Sep 2026 23:46:14 GMT",
+        "etag": "\"1789510496-gzip\"",
+        "last-modified": "Tue, 15 Sep 2026 22:14:56 GMT"
+      },
+      "http_status": 200,
+      "id": "80ada9185d6a4bac88eb5733c366af47",
+      "key": "sec_suspensions",
+      "method": "GET",
+      "received_at": "2026-09-15T23:46:14.146343+00:00",
+      "sha256": "0e02634a067c6a44c21d76249f91c0dc9758cccf184f66aee355fc6b6b07a2c5",
+      "started_at": "2026-09-15T23:46:04.849928+00:00",
+      "untrusted": true,
+      "url": "https://www.sec.gov/enforcement-litigation/trading-suspensions"
+    },
+    {
+      "access_is_rights_grant": false,
+      "elapsed_seconds": 13.200716542999999,
+      "failure": null,
+      "headers": {
+        "content-type": "application/pdf",
+        "date": "Tue, 15 Sep 2026 23:46:27 GMT",
+        "last-modified": "Mon, 02 Jun 2025 16:58:24 GMT"
+      },
+      "http_status": 200,
+      "id": "c1f68694f7634ca3b163ac2e8f922baf",
+      "key": "sec_form25",
+      "method": "GET",
+      "received_at": "2026-09-15T23:46:27.348220+00:00",
+      "sha256": "874f202cbabd0df65b97c9272164ddde8604c4d894ee8a60e6671657d9036920",
+      "started_at": "2026-09-15T23:46:14.147517+00:00",
+      "untrusted": true,
+      "url": "https://www.sec.gov/files/form25.pdf"
+    }
+  ],
+  "fiscal_review": {
+    "decision": "KEEP_350_380_AND_FISCAL_TAG_VERIFICATION; CAPTURE_TRANSITION_DISCLOSURES; TRANSITION_REVIEW_REQUIRED",
+    "documents": [
+      {
+        "accepted_at": "2023-12-20T21:49:22.000Z",
+        "accession": "0000909832-23-000065",
+        "cik": "0000909832",
+        "cover_tags": [
+          {
+            "context_ref": "c-1",
+            "tag": "EntityRegistrantName",
+            "text": "COSTCO WHOLESALE CORP /NEW"
+          },
+          {
+            "context_ref": "c-1",
+            "tag": "Security12bTitle",
+            "text": "Common Stock, $.005 Par Value"
+          },
+          {
+            "context_ref": "c-1",
+            "tag": "TradingSymbol",
+            "text": "COST"
+          },
+          {
+            "context_ref": "c-1",
+            "tag": "SecurityExchangeName",
+            "text": "The Nasdaq Global Select Market"
+          }
+        ],
+        "cover_tags_prove_full_active_interval": false,
+        "document_id": "9f16f723f6c147f79c67bcad9560fcab",
+        "fiscal": {
+          "DocumentFiscalPeriodFocus": "Q1",
+          "DocumentFiscalYearFocus": "2024"
+        },
+        "form": "10-Q",
+        "raw_sha256": "595c7328f4b7c43507794cb1a9f627a39483a9be383d83c892b55ce4977d479f",
+        "report_date": "2023-11-26",
+        "review_spans": [
+          {
+            "search_phrase": "52/53",
+            "span": [
+              12321,
+              12741
+            ]
+          },
+          {
+            "search_phrase": "fiscal year end",
+            "span": [
+              12242,
+              12662
+            ]
+          },
+          {
+            "search_phrase": "transition period",
+            "span": [
+              2058,
+              2478
+            ]
+          },
+          {
+            "search_phrase": "12 weeks",
+            "span": [
+              3601,
+              4021
+            ]
+          },
+          {
+            "search_phrase": "12-week",
+            "span": [
+              12537,
+              12957
+            ]
+          }
+        ],
+        "text_sha256": "0c0aa7048d22b2a1ad124874a440403d0f25758bce0423aff2c36f743090caef",
+        "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983223000065/0000909832-23-000065.txt",
+        "view_id": "66e728f0cac749459a070d2bd1f5971d"
+      },
+      {
+        "accepted_at": "2022-12-29T21:26:51.000Z",
+        "accession": "0000909832-22-000035",
+        "cik": "0000909832",
+        "cover_tags": [
+          {
+            "context_ref": "i42362ec6081b44c0923d53e34648431c_D20220829-20221120",
+            "tag": "EntityRegistrantName",
+            "text": "COSTCO WHOLESALE CORP /NEW"
+          },
+          {
+            "context_ref": "i42362ec6081b44c0923d53e34648431c_D20220829-20221120",
+            "tag": "Security12bTitle",
+            "text": "Common Stock, $.005 Par Value"
+          },
+          {
+            "context_ref": "i42362ec6081b44c0923d53e34648431c_D20220829-20221120",
+            "tag": "TradingSymbol",
+            "text": "COST"
+          },
+          {
+            "context_ref": "i42362ec6081b44c0923d53e34648431c_D20220829-20221120",
+            "tag": "SecurityExchangeName",
+            "text": "The Nasdaq Global Select Market"
+          }
+        ],
+        "cover_tags_prove_full_active_interval": false,
+        "document_id": "9b6f13df95c944b49d6eb035e052bb30",
+        "fiscal": {
+          "DocumentFiscalPeriodFocus": "Q1",
+          "DocumentFiscalYearFocus": "2023"
+        },
+        "form": "10-Q",
+        "raw_sha256": "20edea4ad7af90f87df385e673aaf600e1a979e3ccfe5ba0b50dcec7faef93a2",
+        "report_date": "2022-11-20",
+        "review_spans": [
+          {
+            "search_phrase": "53-week",
+            "span": [
+              12840,
+              13260
+            ]
+          },
+          {
+            "search_phrase": "52/53",
+            "span": [
+              12729,
+              13149
+            ]
+          },
+          {
+            "search_phrase": "fiscal year end",
+            "span": [
+              12652,
+              13072
+            ]
+          },
+          {
+            "search_phrase": "transition period",
+            "span": [
+              2058,
+              2478
+            ]
+          },
+          {
+            "search_phrase": "12 weeks",
+            "span": [
+              3561,
+              3981
+            ]
+          },
+          {
+            "search_phrase": "12-week",
+            "span": [
+              12945,
+              13365
+            ]
+          }
+        ],
+        "text_sha256": "e97df7fbc996493af3a9102f9630a9addddb406001997786a42e16bce8dc19eb",
+        "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983222000035/0000909832-22-000035.txt",
+        "view_id": "851d5272e1b549f6934667ce38c84be7"
+      },
+      {
+        "accepted_at": "2023-10-10T23:13:15.000Z",
+        "accession": "0000909832-23-000042",
+        "cik": "0000909832",
+        "cover_tags": [
+          {
+            "context_ref": "c-1",
+            "tag": "EntityRegistrantName",
+            "text": "COSTCO WHOLESALE CORP /NEW"
+          },
+          {
+            "context_ref": "c-1",
+            "tag": "Security12bTitle",
+            "text": "Common Stock, $.005 Par Value"
+          },
+          {
+            "context_ref": "c-1",
+            "tag": "TradingSymbol",
+            "text": "COST"
+          },
+          {
+            "context_ref": "c-1",
+            "tag": "SecurityExchangeName",
+            "text": "The NASDAQ Global Select Market"
+          }
+        ],
+        "cover_tags_prove_full_active_interval": false,
+        "document_id": "760fb606aac0489bb00a4d56435c7585",
+        "fiscal": {
+          "DocumentFiscalPeriodFocus": "FY",
+          "DocumentFiscalYearFocus": "2023"
+        },
+        "form": "10-K",
+        "raw_sha256": "4c81ec24c12bf8c3dab56e0641bf9cc3446fb0eb63e03c6e5cb6a346164d4be4",
+        "report_date": "2023-09-03",
+        "review_spans": [
+          {
+            "search_phrase": "53-week",
+            "span": [
+              8030,
+              8450
+            ]
+          },
+          {
+            "search_phrase": "52/53",
+            "span": [
+              8027,
+              8447
+            ]
+          },
+          {
+            "search_phrase": "fiscal year end",
+            "span": [
+              75,
+              495
+            ]
+          },
+          {
+            "search_phrase": "transition period",
+            "span": [
+              2382,
+              2802
+            ]
+          }
+        ],
+        "text_sha256": "6c49ed093c437b0b2bd9ed65c5d7ed59ab36e23ead1abb6e5a4bf16e43192888",
+        "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983223000042/0000909832-23-000042.txt",
+        "view_id": "cdb5ebae33194988bd760d056343c6e5"
+      },
+      {
+        "accepted_at": "2022-05-09T21:08:45.000Z",
+        "accession": "0001336917-22-000017",
+        "cik": "0001336917",
+        "cover_tags": [
+          {
+            "context_ref": "i28424200a348469e879d6cc1df04de57_D20220101-20220331",
+            "tag": "EntityRegistrantName",
+            "text": "UNDER ARMOUR, INC."
+          },
+          {
+            "context_ref": "ib2a654fc187d473cbc78d81998f39110_D20220101-20220331",
+            "tag": "Security12bTitle",
+            "text": "Class A Common Stock"
+          },
+          {
+            "context_ref": "ib2a654fc187d473cbc78d81998f39110_D20220101-20220331",
+            "tag": "TradingSymbol",
+            "text": "UAA"
+          },
+          {
+            "context_ref": "ib2a654fc187d473cbc78d81998f39110_D20220101-20220331",
+            "tag": "SecurityExchangeName",
+            "text": "New York Stock Exchange"
+          },
+          {
+            "context_ref": "ie1230fb929834539b81142339e44843a_D20220101-20220331",
+            "tag": "Security12bTitle",
+            "text": "Class C Common Stock"
+          },
+          {
+            "context_ref": "ie1230fb929834539b81142339e44843a_D20220101-20220331",
+            "tag": "TradingSymbol",
+            "text": "UA"
+          },
+          {
+            "context_ref": "ie1230fb929834539b81142339e44843a_D20220101-20220331",
+            "tag": "SecurityExchangeName",
+            "text": "New York Stock Exchange"
+          }
+        ],
+        "cover_tags_prove_full_active_interval": false,
+        "document_id": "2b0d9db6a26943ce9fc91c623fc0eb0f",
+        "fiscal": {
+          "DocumentFiscalPeriodFocus": "Q1",
+          "DocumentFiscalYearFocus": "2022"
+        },
+        "form": "10-QT",
+        "raw_sha256": "f1f397512d68f0e912e9347b729739ec04d5624ca8718cd7275c2a9557816741",
+        "report_date": "2022-03-31",
+        "review_spans": [
+          {
+            "search_phrase": "fiscal year end",
+            "span": [
+              14337,
+              14757
+            ]
+          },
+          {
+            "search_phrase": "transition period",
+            "span": [
+              290,
+              710
+            ]
+          },
+          {
+            "search_phrase": "no fiscal 2022",
+            "span": [
+              15377,
+              15797
+            ]
+          }
+        ],
+        "text_sha256": "1243768fb79e641ff1e6752a2759aeb3d8fe9e83ac12a636af1af55e59f6ff9c",
+        "url": "https://www.sec.gov/Archives/edgar/data/1336917/000133691722000017/0001336917-22-000017.txt",
+        "view_id": "1cd8b9c8f45c4647bda1fcbf06a0da9d"
+      },
+      {
+        "accepted_at": "2022-08-04T20:31:16.000Z",
+        "accession": "0001336917-22-000029",
+        "cik": "0001336917",
+        "cover_tags": [
+          {
+            "context_ref": "i6fe516430afa4b9692f46484764a6501_D20220401-20220630",
+            "tag": "EntityRegistrantName",
+            "text": "UNDER ARMOUR, INC."
+          },
+          {
+            "context_ref": "iaf80aef7ce8b427d8a34b6af6b139a28_D20220401-20220630",
+            "tag": "Security12bTitle",
+            "text": "Class A Common Stock"
+          },
+          {
+            "context_ref": "iaf80aef7ce8b427d8a34b6af6b139a28_D20220401-20220630",
+            "tag": "TradingSymbol",
+            "text": "UAA"
+          },
+          {
+            "context_ref": "iaf80aef7ce8b427d8a34b6af6b139a28_D20220401-20220630",
+            "tag": "SecurityExchangeName",
+            "text": "New York Stock Exchange"
+          },
+          {
+            "context_ref": "i7e98e3aba34a4f22849ea36366aa6f87_D20220401-20220630",
+            "tag": "Security12bTitle",
+            "text": "Class C Common Stock"
+          },
+          {
+            "context_ref": "i7e98e3aba34a4f22849ea36366aa6f87_D20220401-20220630",
+            "tag": "TradingSymbol",
+            "text": "UA"
+          },
+          {
+            "context_ref": "i7e98e3aba34a4f22849ea36366aa6f87_D20220401-20220630",
+            "tag": "SecurityExchangeName",
+            "text": "New York Stock Exchange"
+          }
+        ],
+        "cover_tags_prove_full_active_interval": false,
+        "document_id": "bcff8e7f4dbd40da8ee51c5f671d8adc",
+        "fiscal": {
+          "DocumentFiscalPeriodFocus": "Q1",
+          "DocumentFiscalYearFocus": "2023"
+        },
+        "form": "10-Q",
+        "raw_sha256": "3c9166a39893bec53728de30e28ba6a1a9fe928c8522c63cac8d7d3702c926b3",
+        "report_date": "2022-06-30",
+        "review_spans": [
+          {
+            "search_phrase": "fiscal year end",
+            "span": [
+              12643,
+              13063
+            ]
+          },
+          {
+            "search_phrase": "transition period",
+            "span": [
+              304,
+              724
+            ]
+          },
+          {
+            "search_phrase": "no fiscal 2022",
+            "span": [
+              12944,
+              13364
+            ]
+          }
+        ],
+        "text_sha256": "265e5095a898407f26f3d5e2eb9220d99827a77f439e743cbb4fe7d1db4a5930",
+        "url": "https://www.sec.gov/Archives/edgar/data/1336917/000133691722000029/0001336917-22-000029.txt",
+        "view_id": "a6eef654444343d0b88842d86efdbfc1"
+      },
+      {
+        "accepted_at": "2021-08-05T20:27:12.000Z",
+        "accession": "0001336917-21-000040",
+        "cik": "0001336917",
+        "cover_tags": [
+          {
+            "context_ref": "ic8e92ce65d234478b55fdc932d1f2784_D20210101-20210630",
+            "tag": "EntityRegistrantName",
+            "text": "UNDER ARMOUR, INC."
+          },
+          {
+            "context_ref": "i1bb0d547103d4b31afa393a31cc212df_D20210101-20210630",
+            "tag": "Security12bTitle",
+            "text": "Class A Common Stock"
+          },
+          {
+            "context_ref": "i1bb0d547103d4b31afa393a31cc212df_D20210101-20210630",
+            "tag": "TradingSymbol",
+            "text": "UAA"
+          },
+          {
+            "context_ref": "i1bb0d547103d4b31afa393a31cc212df_D20210101-20210630",
+            "tag": "SecurityExchangeName",
+            "text": "New York Stock Exchange"
+          },
+          {
+            "context_ref": "iaa544900655b4add902fde393452fe8f_D20210101-20210630",
+            "tag": "Security12bTitle",
+            "text": "Class C Common Stock"
+          },
+          {
+            "context_ref": "iaa544900655b4add902fde393452fe8f_D20210101-20210630",
+            "tag": "TradingSymbol",
+            "text": "UA"
+          },
+          {
+            "context_ref": "iaa544900655b4add902fde393452fe8f_D20210101-20210630",
+            "tag": "SecurityExchangeName",
+            "text": "New York Stock Exchange"
+          }
+        ],
+        "cover_tags_prove_full_active_interval": false,
+        "document_id": "b0546f3d113942d1bf6866e192522c0b",
+        "fiscal": {
+          "DocumentFiscalPeriodFocus": "Q2",
+          "DocumentFiscalYearFocus": "2021"
+        },
+        "form": "10-Q",
+        "raw_sha256": "1a96a1c09b83231e3fec7d94e5f7fadb80f3e47fa5bd3677d3d06a0b27eadbea",
+        "report_date": "2021-06-30",
+        "review_spans": [
+          {
+            "search_phrase": "fiscal year end",
+            "span": [
+              16426,
+              16846
+            ]
+          },
+          {
+            "search_phrase": "transition period",
+            "span": [
+              304,
+              724
+            ]
+          },
+          {
+            "search_phrase": "no fiscal 2022",
+            "span": [
+              125211,
+              125631
+            ]
+          }
+        ],
+        "text_sha256": "0f8e325edce9921767d65c426d75526737ee10393cf21a17234c7f13268aa87f",
+        "url": "https://www.sec.gov/Archives/edgar/data/1336917/000133691721000040/0001336917-21-000040.txt",
+        "view_id": "d1bcd9916c9a4d618ee74f00a7090fc3"
+      }
+    ],
+    "legitimate_comparator_pairs": 1,
+    "measured_day_prefilter_false_abstentions": 0,
+    "pairs": [
+      {
+        "current": "0000909832-23-000065",
+        "current_fiscal": {
+          "DocumentFiscalPeriodFocus": "Q1",
+          "DocumentFiscalYearFocus": "2024"
+        },
+        "day_distance": 371,
+        "day_prefilter_accepts": true,
+        "false_abstention_from_day_prefilter": false,
+        "prior": "0000909832-22-000035",
+        "prior_fiscal": {
+          "DocumentFiscalPeriodFocus": "Q1",
+          "DocumentFiscalYearFocus": "2023"
+        },
+        "source_tag_comparable": true
+      },
+      {
+        "current": "0001336917-22-000029",
+        "current_fiscal": {
+          "DocumentFiscalPeriodFocus": "Q1",
+          "DocumentFiscalYearFocus": "2023"
+        },
+        "day_distance": 365,
+        "day_prefilter_accepts": true,
+        "false_abstention_from_day_prefilter": false,
+        "prior": "0001336917-21-000040",
+        "prior_fiscal": {
+          "DocumentFiscalPeriodFocus": "Q2",
+          "DocumentFiscalYearFocus": "2021"
+        },
+        "source_tag_comparable": false
+      }
+    ],
+    "population_false_abstention_rate": null,
+    "selected_issuers": 2,
+    "transition_tags_alone_prove_comparability": false
+  },
+  "halt_diagnostics": [
+    {
+      "count": 53,
+      "halt_dates": [
+        "01/31/2025"
+      ],
+      "live_status_reconstructed": false,
+      "market_frequencies": {
+        "A": 26,
+        "Q": 27
+      },
+      "missing_trade_resumption": 0,
+      "negative_coverage_certified": false,
+      "record_id": "2ab4ed00b3074151a976fb4b15d08581",
+      "sha256": "23aebac57e32c9ceee34e6768ad1dbfd883686a3da0cee060c3498b921b9f4de",
+      "url": "https://www.nasdaqtrader.com/rss.aspx?feed=tradehalts&haltdate=01312025"
+    },
+    {
+      "count": 91,
+      "halt_dates": [
+        "06/03/2024"
+      ],
+      "live_status_reconstructed": false,
+      "market_frequencies": {
+        "A": 16,
+        "N": 36,
+        "P": 5,
+        "Q": 33,
+        "Z": 1
+      },
+      "missing_trade_resumption": 0,
+      "negative_coverage_certified": false,
+      "record_id": "a51d73b18264412baa04fc7eb365fdbb",
+      "sha256": "d044548244a10ae5c7be94b92cd000b777e96591291b9281c5c0c8b9a13766f5",
+      "url": "https://www.nasdaqtrader.com/rss.aspx?feed=tradehalts&haltdate=06032024"
+    },
+    {
+      "count": 7,
+      "halt_dates": [
+        "10/11/2010"
+      ],
+      "live_status_reconstructed": false,
+      "market_frequencies": {
+        "C": 1,
+        "Q": 6
+      },
+      "missing_trade_resumption": 0,
+      "negative_coverage_certified": false,
+      "record_id": "f7a54e5fe40e4077a3dcc3b334681868",
+      "sha256": "ec20852e7de2ec3f9ca6ed613bdda3b157ff9c6241b78f0e225378793d11e98e",
+      "url": "https://www.nasdaqtrader.com/rss.aspx?feed=tradehalts&haltdate=10112010"
+    }
+  ],
+  "policy_frozen": false,
+  "review_code_sha256": "c228f5081648ba44da59a1d3d9a52206a816cf09e6b9880a4e6fac1dddf038d8",
+  "reviewed_at": "2026-09-15T23:47:10.365339+00:00",
+  "source_integrity": {
+    "records": 41,
+    "head_hash": "52763e9e6ce7d32382cfe61e24ee5807e29c2c24e17be05c4b8bd40c9cfe6b7d",
+    "status": "VERIFIED"
+  },
+  "version": "dated-source-review-v1",
+  "browser_search_test": {
+    "attempted_at_date": "2026-09-15",
+    "classification": "SEARCH_RESULT_UNVERIFIED",
+    "end": "01/31/2025",
+    "final_observation": "Runtime.evaluate timed out",
+    "last_visible_result": "...working, please wait",
+    "negative_halt_evidence": false,
+    "observed_by": "Codex browser interaction; browser transport failure does not establish site failure",
+    "start": "01/31/2025",
+    "symbol": "*",
+    "url": "https://www.nasdaqtrader.com/Trader.aspx?id=TradingHaltSearch"
+  },
+  "sip_sample_review": {
+    "status": "UNRESOLVED",
+    "reason": "SUCCESSFUL_OWNER_LOCAL_ARCHIVE_NOT_SUPPLIED",
+    "http_quote_records_available_here": 0,
+    "total_rows_by_symbol": null,
+    "quote_condition_frequencies": null,
+    "tape_frequencies": null,
+    "exchange_frequencies": null,
+    "locked_quotes": null,
+    "crossed_quotes": null,
+    "zero_bid_ask": null,
+    "zero_size": null,
+    "malformed_rows": null,
+    "strict_policy_pass_rate": null,
+    "historical_entitlement": "PASS_OWNER_OBSERVATION",
+    "policy_frozen": false
+  },
+  "measurement_scope": "SOURCE_ACQUISITION_AND_FISCAL_EXCEPTIONS_ONLY; NO_COHORT_NO_RETURNS_NO_ALPHA",
+  "current_samples_are_latency_distribution": false
+}

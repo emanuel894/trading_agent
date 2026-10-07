@@ -1,3 +1,27 @@
+Phase A verification — 2026-09-14
+Local runtime: Python 3.12.14 / Linux, alpaca-py 0.42.2 installed.
+
+Before changes: 27 tests passed.
+After changes: 55 tests passed, zero failures, zero skips.
+Command: .venv/bin/python -m unittest discover -s tests -v
+SDK pagination, parsing, calendar handling and CLI exercised with fake responses;
+no network calls or real credentials used by tests.
+Synthetic demo: 300 daily bars processed successfully.
+CLI help and pip check: passed.
+
+Real read-only broker connectivity: reported passed by project owner;
+not repeated during this implementation.
+Real historical download: NOT RUN; local Windows data gate remains.
+Broker orders sent/modified: NONE.
+Historical market performance: NOT TESTED; no alpha claim.
+Python 3.13 / Windows CI: workflow added; consult the PR checks for actual status.
+An upstream websockets.legacy deprecation warning occurs during SDK import;
+it does not fail the suite.
+
+SHA256SUMS.json covers repository files using repository-root-relative paths,
+excluding the checksum file itself. It contains no runtime data or secrets.
+
+Archived Foundation 0.1 verification follows.
 Verified 2026-09-14
 Python 3.12.14 / Linux
 
