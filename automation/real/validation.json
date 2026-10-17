@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-17T19:00:07.438374+00:00",
+  "branch": "feat/issue-5-real-automation-qualification",
+  "base_sha": "42013189c47a48014f0ad8658a868f6caa6a68f5",
+  "scope": "documentation, source evidence, exact blocked activation state and non-executable routing-policy draft",
+  "suite": [
+    {
+      "python": "3.13.5",
+      "platform": "Linux",
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "duration_seconds": 8.443,
+      "log_sha256": "ad28015a5b48b55a46d5b9e236d2a9ba1050b0ac120c05a546403b8fae56e1a0",
+      "tests": 240,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "python": "3.12.14",
+      "platform": "Linux",
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "duration_seconds": 8.699,
+      "log_sha256": "807946fc963d2975aa67c520a7aa80bb09dc0523c137340b129ed87064182903",
+      "tests": 240,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "demo": {
+    "command": "python -m agent demo --output /workspace/audit-upstreams/issue-5/demo",
+    "bars": 300,
+    "exit_code": 0,
+    "broker_orders": 0
+  },
+  "registrations": {
+    "004": "REGISTRATION_VERIFIED; --verify-only",
+    "005": "registration() returned successfully"
+  },
+  "workflow_lint": {
+    "version": "actionlint 1.7.7",
+    "command": "actionlint -shellcheck= .github/workflows/autonomous-dev-dry-run.yml",
+    "exit_code": 0,
+    "shellcheck_run": false,
+    "workflow_changes": false
+  },
+  "metadata_checks": {
+    "json_parse": "passed",
+    "issue_snapshot_and_body_hashes": "passed",
+    "activation_context_binding": "passed",
+    "upstream_file_hashes_verified": 36,
+    "upstream_repositories": 7
+  },
+  "protected_paths_unchanged": [
+    "AI_PROJECT_POLICY.md",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "GEMINI.md",
+    ".github",
+    "trading_agent_starter",
+    "automation/control.json",
+    "automation/validation.json",
+    "automation/dedup_validation_20261017.json"
+  ],
+  "foundation_ci_sha256": "4bc704a519de01468bb80d6fb1fac8e93ae33f7bcd23bfc11f14c01534f0ceba",
+  "review": {
+    "type": "fresh-context same-provider review; not real Gemini pilot acceptance",
+    "blocking_findings": 0,
+    "minor_findings_addressed": [
+      "Clarified publication/calls block pending reconciliation",
+      "Distinguished legacy OpenHands secret allowlisting from current profile-resolved worker secrets"
+    ],
+    "source_hashes_verified": 36
+  },
+  "stop_state": "PAUSED_BUDGET",
+  "live_acceptance": "NOT_RUN",
+  "paid_pilot_provider_calls": 0,
+  "broker_or_data_calls": 0,
+  "limitations": [
+    "Real autonomous loop has not been implemented or activated; this branch preserves qualification and blocked state",
+    "Authoritative cost/reservation state and exact enforced hard caps unavailable",
+    "GitHub API denied; protected environments and their provider bindings unverified",
+    "Windows/hosted CI and real provider isolation not exercised",
+    "No fixture result substitutes for real Codex/Gemini acceptance"
+  ],
+  "artifact_sha256": {
+    "ISSUE_5_ACTIVATION.md": "01308f206929a24e5dcf7c8631a90e0a6203484ec76138477930b9746040b23b",
+    "activation_record.json": "0fb0f947a809788f1b87bd869a451ed6cba156e37f571161429d6c56490e4874",
+    "issue_snapshot.json": "a33b4f3f9824df44ffff51942fc3fcf6c05a9978b00f38eb92bdce37768105ad",
+    "routing_policy.json": "4197dfc8c023e2fb0597eae6da15ec03beed220d43c9b4bc663b6b2d671af484",
+    "upstream_sources.json": "1024cf414f81ed5f3e90c50c1dc0ae0e2f6ed056855339a71741d653e87a8d35"
+  }
+}

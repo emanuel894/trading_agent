@@ -1,5 +1,10 @@
 # Issue #3 — synthetic autonomous development control
 
+Issue #5's real-provider activation is tracked separately in the
+[activation qualification](real/ISSUE_5_ACTIVATION.md). It is currently
+`PAUSED_BUDGET`; the draft routing policy does not enable provider execution.
+This existing synthetic harness and its limits remain unchanged.
+
 This implements the **dry-run milestone** of
 [Issue #3](https://github.com/emanuel894/trading_agent/issues/3), under
 [AI_PROJECT_POLICY.md](../AI_PROJECT_POLICY.md). The owner explicitly selects
