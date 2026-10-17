@@ -1,0 +1,154 @@
+{
+  "control_commit": "66131f866de3347784525ed30199988a22960280",
+  "scenarios": [
+    {
+      "scenario": "happy",
+      "state": "READY_FOR_HUMAN",
+      "repair_cycles": 0,
+      "provider_calls": 2,
+      "reason": "SYNTHETIC_ACCEPTANCE_ONLY",
+      "exit_code": 0
+    },
+    {
+      "scenario": "repair-once",
+      "state": "READY_FOR_HUMAN",
+      "repair_cycles": 1,
+      "provider_calls": 4,
+      "reason": "SYNTHETIC_ACCEPTANCE_ONLY",
+      "exit_code": 0
+    },
+    {
+      "scenario": "repair-cap",
+      "state": "BLOCKED",
+      "repair_cycles": 2,
+      "provider_calls": 6,
+      "reason": "REPAIR_CAP_REACHED",
+      "exit_code": 2
+    },
+    {
+      "scenario": "provider-failure",
+      "state": "BLOCKED",
+      "repair_cycles": 0,
+      "provider_calls": 1,
+      "reason": "PROVIDER_FAILED",
+      "exit_code": 2
+    },
+    {
+      "scenario": "budget",
+      "state": "PAUSED_BUDGET",
+      "repair_cycles": 0,
+      "provider_calls": 0,
+      "reason": "PER_RUN_BUDGET_EXHAUSTED",
+      "exit_code": 2
+    },
+    {
+      "scenario": "stale-review",
+      "state": "BLOCKED",
+      "repair_cycles": 0,
+      "provider_calls": 2,
+      "reason": "STALE_OR_INVALID_REVIEW",
+      "exit_code": 2
+    },
+    {
+      "scenario": "stale-ci",
+      "state": "BLOCKED",
+      "repair_cycles": 0,
+      "provider_calls": 1,
+      "reason": "STALE_OR_INVALID_CI",
+      "exit_code": 2
+    },
+    {
+      "scenario": "path-escape",
+      "state": "BLOCKED",
+      "repair_cycles": 0,
+      "provider_calls": 1,
+      "reason": "PATH_ESCAPE",
+      "exit_code": 2
+    },
+    {
+      "scenario": "control-path",
+      "state": "BLOCKED",
+      "repair_cycles": 0,
+      "provider_calls": 1,
+      "reason": "CONTROL_PATH_REJECTED",
+      "exit_code": 2
+    },
+    {
+      "scenario": "ci-failure",
+      "state": "BLOCKED",
+      "repair_cycles": 2,
+      "provider_calls": 3,
+      "reason": "REPAIR_CAP_REACHED",
+      "exit_code": 2
+    },
+    {
+      "scenario": "partial-resume",
+      "first_state": "REVIEWING",
+      "final_state": "READY_FOR_HUMAN",
+      "preserved_journal_prefix": true,
+      "repair_cycles": 1
+    }
+  ],
+  "issue": "https://github.com/emanuel894/trading_agent/issues/3",
+  "base_branch": "feat/alpaca-paper-foundation",
+  "base_commit": "fb9b2c0df92c4b1f2cad9d129d3630dd8db13bd7",
+  "branch": "feat/issue-3-autonomous-dev-loop",
+  "recorded_at_utc": "2026-10-17T17:03:33.698533+00:00",
+  "suite": [
+    {
+      "python": "3.12.14",
+      "platform": "Linux",
+      "tests": 234,
+      "existing_tests": 204,
+      "automation_tests": 30,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "duration_seconds": 8.272,
+      "exit_code": 0,
+      "command": "python -m unittest discover -s tests -v",
+      "log_sha256": "5215d41355f0970b6852b1380e3f66bd8005a3dac4b41edc7600176730a666f4"
+    },
+    {
+      "python": "3.13.5",
+      "platform": "Linux",
+      "tests": 234,
+      "existing_tests": 204,
+      "automation_tests": 30,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "duration_seconds": 8.095,
+      "exit_code": 0,
+      "command": "python -m unittest discover -s tests -v",
+      "log_sha256": "f85109f0fba7fabc8bd884f3180252cd93e4881b5dfa91613ce8dde103a814bd"
+    }
+  ],
+  "stop_state": "AUTOMATION_DRY_RUN_READY",
+  "stop_state_scope": "local synthetic acceptance only; GitHub publication/CI reported separately",
+  "paid_model_requests": 0,
+  "broker_or_data_requests": 0,
+  "orders": 0,
+  "issue_body_sha256": "1900c158054dcf95894941d9f82c40674178a4f052b38358eb39924318a17d9e",
+  "workflow_checks": {
+    "actionlint_version": "1.7.7",
+    "actionlint_archive_sha256": "023070a287cd8cccd71515fedc843f1985bf96c436b7effaecce67290e7e0757",
+    "actionlint_exit_code": 0,
+    "shellcheck_run": false,
+    "yaml_parse": "passed",
+    "inline_python_ast": "passed"
+  },
+  "synthetic_demo_bars": 300,
+  "protected_registrations": {
+    "004": "REGISTRATION_VERIFIED",
+    "005": "ADR001-STRUCTURAL-005 verified"
+  },
+  "existing_ci_sha256": "4bc704a519de01468bb80d6fb1fac8e93ae33f7bcd23bfc11f14c01534f0ceba",
+  "limitations": [
+    "Windows CI not executed locally",
+    "Hosted workflow not dispatched; requires reviewed control workflow on default/trusted base branch",
+    "No real PR or independent model review in synthetic controller",
+    "API-backed workers and real publishing remain inactive",
+    "GitHub API was denied by the runtime proxy at task start"
+  ]
+}
