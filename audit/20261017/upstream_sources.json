@@ -1,0 +1,1773 @@
+{
+  "audit_date": "2026-10-17",
+  "repository_baseline": "9ff6aa4c5fcedd1051ee3265a7d7982fa4215f9b",
+  "method": "Public HTTPS GET of commit-pinned upstream files; Git ls-remote HEAD/tags; public PyPI JSON. Static inspection only, no third-party code executed. Tags do not establish GitHub release publication. HTTP 404 paths are recorded as failed guesses, not absence proofs. Full tree absence is stated only where a source archive listing was inspected. Hashes establish retrieved-byte identity, not correctness or historical availability.",
+  "repositories": [
+    {
+      "repository": "TauricResearch/TradingAgents",
+      "checked_at_utc": "2026-10-17T15:59:19.047285+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/README.md",
+          "status": 200,
+          "bytes": 27258,
+          "sha256": "fa3c3b517208e804b880c447f72a9f4730d856bc2f414d4618cf41e8c44d0cd7"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/LICENSE",
+          "status": 200,
+          "bytes": 11357,
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/pyproject.toml",
+          "status": 200,
+          "bytes": 2477,
+          "sha256": "670cd3552c10b5dbb2ea4c420336c7b58af455c27b1a65599727ecbefb4f375c"
+        },
+        {
+          "path": "tradingagents/graph/trading_graph.py",
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/graph/trading_graph.py",
+          "status": 200,
+          "bytes": 23956,
+          "sha256": "7cbd1602cd30026b7ced30fcd1478fbaef274466cf710b248f1f2cd701eca020"
+        },
+        {
+          "path": "tradingagents/agents/utils/agent_states.py",
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/agents/utils/agent_states.py",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/CHANGELOG.md",
+          "status": 200,
+          "bytes": 50340,
+          "sha256": "11a3c7e8666de15e53eadc91599ed84dda407e3c45400d4316b020dbcf1ef125"
+        },
+        {
+          "path": "tradingagents/dataflows/interface.py",
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/interface.py",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "tradingagents/dataflows/instrument_identity.py",
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/instrument_identity.py",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "tradingagents/backtest.py",
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/backtest.py",
+          "status": 200,
+          "bytes": 9445,
+          "sha256": "c25623d2acb22ff2bd0c144305c099b5858ba7dbf250e7c636a009109b2b805f"
+        },
+        {
+          "path": "tradingagents/dataflows/edgar.py",
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/edgar.py",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "tradingagents/agents/context.py",
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/agents/context.py",
+          "status": 200,
+          "bytes": 9021,
+          "sha256": "b039623a86856206ce397fcbafd8ef0d9de161d6042772bea2dfc6fec95233dd"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/sec_edgar.py",
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/sec_edgar.py",
+          "status": 200,
+          "bytes": 12571,
+          "sha256": "0189154cb5c76082e3aca5e0e187c677a857e56bd1a5aee49dddb10f1f989f9c"
+        },
+        {
+          "path": "tests/test_instrument_identity.py",
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tests/test_instrument_identity.py",
+          "status": 200,
+          "bytes": 5481,
+          "sha256": "16533939633c1fdd9adda2fe893cead4d15e4074c2464502cff8d6b081d62b5a"
+        },
+        {
+          "path": "tests/test_sec_edgar.py",
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tests/test_sec_edgar.py",
+          "status": 200,
+          "bytes": 14928,
+          "sha256": "6c81682256cba8f5744672404f6b93263589f5cde08e41fde910c69a64ea369a"
+        },
+        {
+          "path": "tradingagents/memory/settlement.py",
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/memory/settlement.py",
+          "status": 200,
+          "bytes": 8418,
+          "sha256": "809ad32352742834ed1d1a0491dc6046bc1b899dcffd8efddd0a46840a977c0f"
+        },
+        {
+          "path": "tests/test_alpha_vantage_hardening.py",
+          "sha256": "1c6a15ae063277be0e91c705017783de137dd509d9a5f38da2aff10a7f4d0b09",
+          "bytes": 9799,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tests/test_alpha_vantage_hardening.py"
+        },
+        {
+          "path": "tests/test_backtest.py",
+          "sha256": "85e934f027ea33316040fb8cdb45a6c6923fa164cd2b471ea8d7bd91b51fc28d",
+          "bytes": 11485,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tests/test_backtest.py"
+        },
+        {
+          "path": "tests/test_vendor_errors.py",
+          "sha256": "29759e7d8ad79f53318ad7ba05165de62a4f7241c8ea5818332510593d4c20b5",
+          "bytes": 5055,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tests/test_vendor_errors.py"
+        },
+        {
+          "path": "tests/test_vendor_routing.py",
+          "sha256": "bcf41f71fbba72ab902f484a97b3857b4d04153c36879670e1798e2d477eb236",
+          "bytes": 5390,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tests/test_vendor_routing.py"
+        },
+        {
+          "path": "tests/test_yfinance_stale_ohlcv_guard.py",
+          "sha256": "dee9d3dc24dda4c9153726e6e74dc8df6013c482cb4e9b072ebb6f2aeb5a17e1",
+          "bytes": 3917,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tests/test_yfinance_stale_ohlcv_guard.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/__init__.py",
+          "sha256": "a867066a8b045938c175d598c2a5108275a8c825cc6d939d990aa9d053d79b8e",
+          "bytes": 84,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/__init__.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/alpha_vantage/__init__.py",
+          "sha256": "1e21b5bae37737cba9e0c2e87132487332275a38b925f6fabc868e7b9d41f7d1",
+          "bytes": 825,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/alpha_vantage/__init__.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/alpha_vantage/common.py",
+          "sha256": "225c2651a636c4a6b0733cd3a66feacaff1732fce7b2f512a16140bd483bd82a",
+          "bytes": 6355,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/alpha_vantage/common.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/alpha_vantage/fundamentals.py",
+          "sha256": "e7ecb7f3af77dd78ca8d334e925af3325d1cb06a20eae6e1c1be03740b781b66",
+          "bytes": 2105,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/alpha_vantage/fundamentals.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/alpha_vantage/indicator.py",
+          "sha256": "d5f8ccc72aff89559611febf7eb543d54b6efb303d270049f300fcd5e0bf756b",
+          "bytes": 10529,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/alpha_vantage/indicator.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/alpha_vantage/news.py",
+          "sha256": "5aa9639cba6735d52cb02f14ccce3e78e42b0f287b1d9333fe5142cb4da66fc6",
+          "bytes": 3256,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/alpha_vantage/news.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/alpha_vantage/stock.py",
+          "sha256": "17633620192f0005f58de3f7dc1671ac3ee8b7d96cf20283e74648b70225cd5c",
+          "bytes": 1315,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/alpha_vantage/stock.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/fred.py",
+          "sha256": "905ea6412067145a10c71f0e07b83624769d6e3379dd10391a47b045857ef6d7",
+          "bytes": 11106,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/fred.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/polymarket.py",
+          "sha256": "2a50bbe8dc9daec7a029ed2c024d3a00268ca83cabbfa2271e7e8f5b6633a75c",
+          "bytes": 5325,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/polymarket.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/reddit.py",
+          "sha256": "0b7f56fc3c757202cca3fd7cc3ed4390d5d3519fa5be6d7e38fe157c00e3186c",
+          "bytes": 14593,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/reddit.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/stocktwits.py",
+          "sha256": "675c41346d41cd8e21f283dfaff592ee047f4ac245a3e47a1a709a6073d3006e",
+          "bytes": 6380,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/stocktwits.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/yahoo/__init__.py",
+          "sha256": "4edf2362854ee40ec5fa7e769d64bde32b7070b42c5dfa2abb728267884d6552",
+          "bytes": 79,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/yahoo/__init__.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/yahoo/common.py",
+          "sha256": "6f75f46575fef14ad8fc3212b7c3a8d2ee00d2bd73de9a473c78ce02926e0821",
+          "bytes": 3419,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/yahoo/common.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/yahoo/fundamentals.py",
+          "sha256": "d0f7eb8d3d4e8798bd8c4d47a59299fe8f40479f936aa7c0008f9b8cd9acc7c2",
+          "bytes": 7543,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/yahoo/fundamentals.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/yahoo/market.py",
+          "sha256": "7f406c9c5109a4de818a33827bba747673f5e56db62fe4b9b6c88c81b5228979",
+          "bytes": 12447,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/yahoo/market.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/yahoo/news.py",
+          "sha256": "9f56dcc58bae002a4e7c19e0f659504fabfb7132aef535e248bc7d080b30b7eb",
+          "bytes": 8531,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/yahoo/news.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/yahoo/ohlcv.py",
+          "sha256": "0de8de042d903912711fa66e9f6e08d644bc474a54783ebf6ebbfc79892ff77d",
+          "bytes": 11130,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/yahoo/ohlcv.py"
+        },
+        {
+          "path": "tradingagents/dataflows/vendors/yahoo/snapshot.py",
+          "sha256": "e84e4049516e88f5dd8eb70540f2356a498532b84cca16fc97e9df478ae58615",
+          "bytes": 5106,
+          "url": "https://raw.githubusercontent.com/TauricResearch/TradingAgents/e8f5503e9b86d5c2710b0c76b1f686703968c9df/tradingagents/dataflows/vendors/yahoo/snapshot.py"
+        }
+      ],
+      "refs_sha256": "8a157ebbebdf8c8f1971c6b2dece1efcea9133e48af5edeb4088d3a57d36214b",
+      "head": "e8f5503e9b86d5c2710b0c76b1f686703968c9df",
+      "default_branch": "refs/heads/main",
+      "tag_count": 16,
+      "highest_numeric_version_tags_observed": [
+        "v0.5.2",
+        "v0.6.0",
+        "v0.7.0"
+      ],
+      "source_archive": {
+        "repository": "TauricResearch/TradingAgents",
+        "url": "https://codeload.github.com/TauricResearch/TradingAgents/zip/e8f5503e9b86d5c2710b0c76b1f686703968c9df",
+        "sha256": "7f07e3e636496ce69a8cfa29cc42df4850718d79a0d3260d8d5bd56ae168c8de",
+        "bytes": 3698501
+      },
+      "archive_file_listing_sha256": "cd566aea4239e19b8af843c4361746662c297b507f69349fe78c425894ff3f1e"
+    },
+    {
+      "repository": "QuantConnect/Lean",
+      "checked_at_utc": "2026-10-17T15:59:19.047486+00:00",
+      "files": [
+        {
+          "path": "readme.md",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/readme.md",
+          "status": 200,
+          "bytes": 11001,
+          "sha256": "c93d2d649740ffdbfeca35ee5035eff668dc1f0a6b97873756addb70f4f4b91e"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/LICENSE",
+          "status": 200,
+          "bytes": 10737,
+          "sha256": "522cf0a716ce03f67d46f8fceb5bf78c5b84400ec5cd8d14bf9f02cddc1cb6ba"
+        },
+        {
+          "path": "Algorithm.Python/BasicTemplateAlgorithm.py",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Algorithm.Python/BasicTemplateAlgorithm.py",
+          "status": 200,
+          "bytes": 2028,
+          "sha256": "6494f3c2779fb1b59b140408b3291600694cb32816dc1271289c4d3e66c430a9"
+        },
+        {
+          "path": "Engine/DataFeeds/Enumerators/SubscriptionDataReaderHistoryProvider.cs",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Engine/DataFeeds/Enumerators/SubscriptionDataReaderHistoryProvider.cs",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "Common/Data/Auxiliary/MapFile.cs",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Auxiliary/MapFile.cs",
+          "status": 200,
+          "bytes": 9650,
+          "sha256": "47a177002507105948617fa7313a21d7dd3d764b07233631a1f2c3bb2bf080a7"
+        },
+        {
+          "path": "Common/Data/UniverseSelection/FineFundamental.cs",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/UniverseSelection/FineFundamental.cs",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "Algorithm.Python/readme.md",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Algorithm.Python/readme.md",
+          "status": 200,
+          "bytes": 6366,
+          "sha256": "aadc48a8c6c1fc64dd7b875c57cabe03b726fa9ec9475b8582a6d45a28226023"
+        },
+        {
+          "path": "Common/Securities/Security.cs",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Securities/Security.cs",
+          "status": 200,
+          "bytes": 44604,
+          "sha256": "d8a514de7d67a6aa3abf72bdf049a0bc098bfbd64576f0926182fc0588a761e9"
+        },
+        {
+          "path": "Engine/HistoricalData/SubscriptionDataReaderHistoryProvider.cs",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Engine/HistoricalData/SubscriptionDataReaderHistoryProvider.cs",
+          "status": 200,
+          "bytes": 10344,
+          "sha256": "a700f85a0448fe3a2516955f5a9a98ad27b695128f48538aad17259611492842"
+        },
+        {
+          "path": "Common/Data/Auxiliary/MapFileRow.cs",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Auxiliary/MapFileRow.cs",
+          "status": 200,
+          "bytes": 8215,
+          "sha256": "0837d8ac38e6851042350cf254eac14db196a88a06d7d02569db0ddc097d43c3"
+        },
+        {
+          "path": "Engine/TransactionHandlers/BrokerageTransactionHandler.cs",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Engine/TransactionHandlers/BrokerageTransactionHandler.cs",
+          "status": 200,
+          "bytes": 98933,
+          "sha256": "7eb8d10b2582c8f4d1a4578eaa4db66c021b70305abcbff378f0c899be95a00c"
+        },
+        {
+          "path": "Engine/Setup/BacktestingSetupHandler.cs",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Engine/Setup/BacktestingSetupHandler.cs",
+          "status": 200,
+          "bytes": 12667,
+          "sha256": "7466e15a9268fdc2c29e1d3c893e788105483dbc0fac0a33f4dabd662aa23c35"
+        },
+        {
+          "path": "Dockerfile",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Dockerfile",
+          "status": 200,
+          "bytes": 1000,
+          "sha256": "a5cf67340ae7749504d680136e7a2418d118118e26667e95ab3b049b6b9e3557"
+        },
+        {
+          "path": "Launcher/QuantConnect.Lean.Launcher.csproj",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Launcher/QuantConnect.Lean.Launcher.csproj",
+          "status": 200,
+          "bytes": 3691,
+          "sha256": "f28d2312a4f718a22128c9abe49850aa1b69e39cfc48b4c9dfb4b1f4c161356b"
+        }
+      ],
+      "refs_sha256": "320218ee801ef95173eac39f4c295d176f5b95427dae5193f68a4489aa848619",
+      "head": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
+      "default_branch": "refs/heads/master",
+      "tag_count": 4443,
+      "highest_numeric_version_tags_observed": [
+        "v2.3.0.3",
+        "v2.4.0.0",
+        "v2.4.0.1"
+      ],
+      "highest_numeric_build_tags_observed": [
+        18188,
+        18189,
+        18192
+      ]
+    },
+    {
+      "repository": "nautechsystems/nautilus_trader",
+      "checked_at_utc": "2026-10-17T15:59:19.047914+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/README.md",
+          "status": 200,
+          "bytes": 39775,
+          "sha256": "a9ea229350a74cc32b06021ab87b32ebcc8b99e876b9ec5bfe28e6a8e96e4435"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/LICENSE",
+          "status": 200,
+          "bytes": 7651,
+          "sha256": "ee907919ec88c9c017b1f8b608db20960b6598aefcc4fe58820bde955d65ed3c"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/pyproject.toml",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "nautilus_trader/adapters/alpaca/__init__.py",
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/nautilus_trader/adapters/alpaca/__init__.py",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "RELEASES.md",
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/RELEASES.md",
+          "status": 200,
+          "bytes": 639081,
+          "sha256": "e50ab46bd92d727051f574b14c6ad0be2e26fa8f685c12fabce70ef3ae7e88d0"
+        },
+        {
+          "path": "python/pyproject.toml",
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/python/pyproject.toml",
+          "status": 200,
+          "bytes": 12497,
+          "sha256": "8f2febbd835c3108f9609ad260e1e032e6eb2a7a298f02890d79fb33e5cf9e63"
+        },
+        {
+          "path": "version.json",
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/version.json",
+          "status": 200,
+          "bytes": 87,
+          "sha256": "90b5a937343c80d3040b76aec9a31337c1c7bee9724e651e142f2a6e24d73de2"
+        },
+        {
+          "path": "docs/integrations/alpaca.md",
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/docs/integrations/alpaca.md",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "docs/integrations/overview.md",
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/docs/integrations/overview.md",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "docs/concepts/live.md",
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/docs/concepts/live.md",
+          "status": 200,
+          "bytes": 28230,
+          "sha256": "23e68f7edb5a804a2a628b6f289b3fb92815c8bda18cf3616631c30fee45ad2b"
+        },
+        {
+          "path": "crates/risk/src/engine.rs",
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/crates/risk/src/engine.rs",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "crates/backtest/src/engine.rs",
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/crates/backtest/src/engine.rs",
+          "status": 200,
+          "bytes": 164029,
+          "sha256": "5bb3d64d0af240fd839e3bd1bbe431edc63f5d3241ffa31a5d65d5d60df077ce"
+        },
+        {
+          "path": "crates/adapters/alpaca/Cargo.toml",
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/crates/adapters/alpaca/Cargo.toml",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "ADAPTERS.md",
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/ADAPTERS.md",
+          "status": 200,
+          "bytes": 5694,
+          "sha256": "6b59cdf3fd77fafca270acd0a72cd63389b08aaca0fc7d83671c969c96a4e02a"
+        },
+        {
+          "path": "docs/integrations/index.md",
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/docs/integrations/index.md",
+          "status": 200,
+          "bytes": 7248,
+          "sha256": "6b46ecc2d24bbcc3e3c68c91420a1135927e061f346a98b2a0000295d664abd2"
+        },
+        {
+          "path": "docs/integrations/interactive_brokers.md",
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/docs/integrations/interactive_brokers.md",
+          "status": 200,
+          "bytes": 52786,
+          "sha256": "a71e4be8efe0c61bae892bf70ec75f124ffc45df13930fb4cbaf20147108491f"
+        },
+        {
+          "path": "crates/risk/src/engine/mod.rs",
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/crates/risk/src/engine/mod.rs",
+          "status": 200,
+          "bytes": 102927,
+          "sha256": "ae09d7fda2b817760e529c355f9a188b66d62a818a7946b4a6783e9e52ad2803"
+        },
+        {
+          "path": "crates/analysis/src/python/statistics/value_at_risk.rs",
+          "sha256": "1e2a79db84d4486c3a19b73269027f1a1819693c960e375275ca13e3b10ec7f0",
+          "bytes": 3211,
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/crates/analysis/src/python/statistics/value_at_risk.rs"
+        },
+        {
+          "path": "crates/analysis/src/statistics/value_at_risk.rs",
+          "sha256": "a15c1ca721dc8799594664243f95b9d68a46534b15de2093c07565215a455cfa",
+          "bytes": 7189,
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/crates/analysis/src/statistics/value_at_risk.rs"
+        },
+        {
+          "path": "crates/risk/tests/risk_engine.rs",
+          "sha256": "39d2d56105f2bb8e38c61eb27373c917bb9e328a52b1b861610a3d3a9018f35d",
+          "bytes": 564304,
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/crates/risk/tests/risk_engine.rs"
+        },
+        {
+          "path": "python/nautilus_trader/adapters/binance/instruments.py",
+          "sha256": "5cb3ffdcef518bcaf0ea866124bf55e55baf252735d620d1c5d35bad5a82ddb4",
+          "bytes": 1576,
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/python/nautilus_trader/adapters/binance/instruments.py"
+        },
+        {
+          "path": "python/tests/unit/model/test_instruments.py",
+          "sha256": "d2177c3368ef02631e1d18707988d206d014b4cd00383dca4c92712360db656a",
+          "bytes": 47607,
+          "url": "https://raw.githubusercontent.com/nautechsystems/nautilus_trader/68bcfc778cf1635ee26e96225b2cb596b721c8cb/python/tests/unit/model/test_instruments.py"
+        }
+      ],
+      "refs_sha256": "7dd68d93810aa32d4a6f61da99011d5715b2b8108c11feca1c6c0313281f200e",
+      "head": "68bcfc778cf1635ee26e96225b2cb596b721c8cb",
+      "default_branch": "refs/heads/develop",
+      "tag_count": 217,
+      "highest_numeric_version_tags_observed": [
+        "v1.229.0",
+        "v1.230.0",
+        "v1.231.0"
+      ],
+      "source_archive": {
+        "repository": "nautechsystems/nautilus_trader",
+        "url": "https://codeload.github.com/nautechsystems/nautilus_trader/zip/68bcfc778cf1635ee26e96225b2cb596b721c8cb",
+        "sha256": "4860f302b41e9abfe409fb0e48b8f5bda7582b998eae091d98a47196a6fff8c3",
+        "bytes": 33134437
+      },
+      "archive_file_listing_sha256": "0871b26e7a9608b61bfa8e40d63f25cd4852a63fa9b9c1870cf17c7f5fc34a0c"
+    },
+    {
+      "repository": "microsoft/qlib",
+      "checked_at_utc": "2026-10-17T15:59:19.048185+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/microsoft/qlib/54355232463878d2eebb91fe0ee5fa7fa1f5976c/README.md",
+          "status": 200,
+          "bytes": 44277,
+          "sha256": "e9f7cc8eeb60e3fe3784ec496e350ecb584157c3240cda0651c20acb26fd9037"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/microsoft/qlib/54355232463878d2eebb91fe0ee5fa7fa1f5976c/LICENSE",
+          "status": 200,
+          "bytes": 1141,
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/microsoft/qlib/54355232463878d2eebb91fe0ee5fa7fa1f5976c/pyproject.toml",
+          "status": 200,
+          "bytes": 3861,
+          "sha256": "c47849f143278fef2c114513ca123c6100f007947cdf051928e734985f35a4e9"
+        },
+        {
+          "path": "qlib/data/dataset/processor.py",
+          "url": "https://raw.githubusercontent.com/microsoft/qlib/54355232463878d2eebb91fe0ee5fa7fa1f5976c/qlib/data/dataset/processor.py",
+          "status": 200,
+          "bytes": 14534,
+          "sha256": "424af44e81c99467171c2d0b7978fb9f95d3b4c8b743a535ff4fe45d708cf517"
+        },
+        {
+          "path": "qlib/data/dataset/handler.py",
+          "url": "https://raw.githubusercontent.com/microsoft/qlib/54355232463878d2eebb91fe0ee5fa7fa1f5976c/qlib/data/dataset/handler.py",
+          "status": 200,
+          "bytes": 28357,
+          "sha256": "bb2407ca6c4a73ad53fb12311ccae34a29792ee4c45d93c99b427779c43011b3"
+        },
+        {
+          "path": "qlib/workflow/__init__.py",
+          "url": "https://raw.githubusercontent.com/microsoft/qlib/54355232463878d2eebb91fe0ee5fa7fa1f5976c/qlib/workflow/__init__.py",
+          "status": 200,
+          "bytes": 25783,
+          "sha256": "aaeae09926656524b3a9e4d3f661feaacb3257a71cd85cc85ca67a21b1d1bfef"
+        },
+        {
+          "path": "qlib/data/ops.py",
+          "url": "https://raw.githubusercontent.com/microsoft/qlib/54355232463878d2eebb91fe0ee5fa7fa1f5976c/qlib/data/ops.py",
+          "status": 200,
+          "bytes": 45712,
+          "sha256": "f563394c3b4fd1130774d171ff1e0c3dac49028cdc28a64bbf42c85e4a2d3e9e"
+        },
+        {
+          "path": "examples/benchmarks/LightGBM/workflow_config_lightgbm_Alpha158.yaml",
+          "url": "https://raw.githubusercontent.com/microsoft/qlib/54355232463878d2eebb91fe0ee5fa7fa1f5976c/examples/benchmarks/LightGBM/workflow_config_lightgbm_Alpha158.yaml",
+          "status": 200,
+          "bytes": 2080,
+          "sha256": "0cbe1f729f43a2b8cd735759e6244c2e9f8db967555bfe24a7143fce4605d680"
+        },
+        {
+          "path": "docs/start/artifact_migration.rst",
+          "url": "https://raw.githubusercontent.com/microsoft/qlib/54355232463878d2eebb91fe0ee5fa7fa1f5976c/docs/start/artifact_migration.rst",
+          "status": 200,
+          "bytes": 26528,
+          "sha256": "8dd99a4501cae1c192ca224e2f2cbe1bcc7ba5adcadb1d951e6c7388e2607f8e"
+        }
+      ],
+      "refs_sha256": "52c599f872fcf29549b02ef943fa6c497c935b2f7645e7adc5cdeef70aa0725b",
+      "head": "54355232463878d2eebb91fe0ee5fa7fa1f5976c",
+      "default_branch": "refs/heads/main",
+      "tag_count": 27,
+      "highest_numeric_version_tags_observed": [
+        "v0.9.6",
+        "v0.9.7",
+        "v0.9.8"
+      ]
+    },
+    {
+      "repository": "microsoft/RD-Agent",
+      "checked_at_utc": "2026-10-17T15:59:19.048551+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/microsoft/RD-Agent/484776c211e4fbbeef03e0ec00d6bbee7362a4f4/README.md",
+          "status": 200,
+          "bytes": 41910,
+          "sha256": "b68ff14551944e1821023ae54a090fc0aabaad58170165cc9c17c6e0e7290c13"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/microsoft/RD-Agent/484776c211e4fbbeef03e0ec00d6bbee7362a4f4/LICENSE",
+          "status": 200,
+          "bytes": 1141,
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/microsoft/RD-Agent/484776c211e4fbbeef03e0ec00d6bbee7362a4f4/pyproject.toml",
+          "status": 200,
+          "bytes": 2651,
+          "sha256": "e77338c6f024c70adfeab8518227774fa5ecd14b421eba139d2c20f6148b3352"
+        },
+        {
+          "path": "rdagent/scenarios/qlib/README.md",
+          "url": "https://raw.githubusercontent.com/microsoft/RD-Agent/484776c211e4fbbeef03e0ec00d6bbee7362a4f4/rdagent/scenarios/qlib/README.md",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "rdagent/scenarios/qlib/experiment/factor_experiment.py",
+          "url": "https://raw.githubusercontent.com/microsoft/RD-Agent/484776c211e4fbbeef03e0ec00d6bbee7362a4f4/rdagent/scenarios/qlib/experiment/factor_experiment.py",
+          "status": 200,
+          "bytes": 3884,
+          "sha256": "451bc9a4b01c73f5d8d30d071c0e54f27f87d001898dbed853e7264b5332af79"
+        },
+        {
+          "path": "rdagent/app/qlib_rd_loop/factor.py",
+          "url": "https://raw.githubusercontent.com/microsoft/RD-Agent/484776c211e4fbbeef03e0ec00d6bbee7362a4f4/rdagent/app/qlib_rd_loop/factor.py",
+          "status": 200,
+          "bytes": 1999,
+          "sha256": "819bbdab43888682735766ad3842b0e15b83d9286af59b5e96072da75e5db2d0"
+        }
+      ],
+      "refs_sha256": "59f4af8c27eed0ab85c4ec1e5e40c5c965f351cde529191fb38bd18effeccd11",
+      "head": "484776c211e4fbbeef03e0ec00d6bbee7362a4f4",
+      "default_branch": "refs/heads/main",
+      "tag_count": 12,
+      "highest_numeric_version_tags_observed": [
+        "v0.7.0",
+        "v0.8.0",
+        "v1.0.0"
+      ]
+    },
+    {
+      "repository": "AI4Finance-Foundation/FinGPT",
+      "checked_at_utc": "2026-10-17T15:59:19.049934+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/AI4Finance-Foundation/FinGPT/fdb04c9a273d1ccc3764b09b8e3ed1e708e57566/README.md",
+          "status": 200,
+          "bytes": 32497,
+          "sha256": "8f2b9963d39c4a6e9ef558db018cfa1abf66126906912a55a8dc261647140aaf"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/AI4Finance-Foundation/FinGPT/fdb04c9a273d1ccc3764b09b8e3ed1e708e57566/LICENSE",
+          "status": 200,
+          "bytes": 1083,
+          "sha256": "2a3183a35138275582698c16b07e9b33992d822434bb4c7728673c6204bb1848"
+        },
+        {
+          "path": "requirements.txt",
+          "url": "https://raw.githubusercontent.com/AI4Finance-Foundation/FinGPT/fdb04c9a273d1ccc3764b09b8e3ed1e708e57566/requirements.txt",
+          "status": 200,
+          "bytes": 422,
+          "sha256": "676a55ce6d84759cf2889f360e62e20e977a5fa59c19c653dd29fb9c372f9b3d"
+        },
+        {
+          "path": "fingpt/FinGPT_Forecaster/README.md",
+          "url": "https://raw.githubusercontent.com/AI4Finance-Foundation/FinGPT/fdb04c9a273d1ccc3764b09b8e3ed1e708e57566/fingpt/FinGPT_Forecaster/README.md",
+          "status": 200,
+          "bytes": 9079,
+          "sha256": "ed730a1b12d03532f86696a0e8cdca2c877ceb893884578f5f13eed039222e1e"
+        },
+        {
+          "path": "fingpt/FinGPT_Forecaster/data.py",
+          "url": "https://raw.githubusercontent.com/AI4Finance-Foundation/FinGPT/fdb04c9a273d1ccc3764b09b8e3ed1e708e57566/fingpt/FinGPT_Forecaster/data.py",
+          "status": 200,
+          "bytes": 11907,
+          "sha256": "a1e077f4c3ba4b31fd8c21cb14f64a4289f333c77b7f4d3148171228c179a851"
+        },
+        {
+          "path": "fingpt/FinGPT_Benchmark/README.md",
+          "url": "https://raw.githubusercontent.com/AI4Finance-Foundation/FinGPT/fdb04c9a273d1ccc3764b09b8e3ed1e708e57566/fingpt/FinGPT_Benchmark/README.md",
+          "error": "HTTP Error 404: Not Found"
+        }
+      ],
+      "refs_sha256": "85a1b8fa378d87eea193ea706dfd42d9fafc5d2437e818f5fa277192323ffdc5",
+      "head": "fdb04c9a273d1ccc3764b09b8e3ed1e708e57566",
+      "default_branch": "refs/heads/master",
+      "tag_count": 1,
+      "highest_numeric_version_tags_observed": [
+        "v1.0.0"
+      ]
+    },
+    {
+      "repository": "alpacahq/alpaca-mcp-server",
+      "checked_at_utc": "2026-10-17T15:59:19.050127+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/alpacahq/alpaca-mcp-server/2a973a046607c42742bf141184b71f1990fa1809/README.md",
+          "status": 200,
+          "bytes": 31779,
+          "sha256": "0f52cb9f51a74d0fad1438a7c2e212889a41a487ec59a82bd19526ebce7fc100"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/alpacahq/alpaca-mcp-server/2a973a046607c42742bf141184b71f1990fa1809/LICENSE",
+          "status": 200,
+          "bytes": 1068,
+          "sha256": "283a08c2428771776cce906ac475ac0cc2fa14559f72674faa5f7aa4d87f13b2"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/alpacahq/alpaca-mcp-server/2a973a046607c42742bf141184b71f1990fa1809/pyproject.toml",
+          "status": 200,
+          "bytes": 2077,
+          "sha256": "3f74dbc05f40ed53fca4d8e86fc266264c57dc19c2f984f32d9d4264a4e74f15"
+        },
+        {
+          "path": "src/alpaca_mcp_server/server.py",
+          "url": "https://raw.githubusercontent.com/alpacahq/alpaca-mcp-server/2a973a046607c42742bf141184b71f1990fa1809/src/alpaca_mcp_server/server.py",
+          "status": 200,
+          "bytes": 7617,
+          "sha256": "c19963b6d923de9f341f80fc1d604cadcbc8ffe9d70d99f0c0a11ffa364bb736"
+        },
+        {
+          "path": "src/alpaca_mcp_server/toolsets.py",
+          "url": "https://raw.githubusercontent.com/alpacahq/alpaca-mcp-server/2a973a046607c42742bf141184b71f1990fa1809/src/alpaca_mcp_server/toolsets.py",
+          "status": 200,
+          "bytes": 4378,
+          "sha256": "94478057b38e087925fac76e08d387cf496cc7c09753002caf9bb8f6da548428"
+        },
+        {
+          "path": "src/alpaca_mcp_server/overrides.py",
+          "url": "https://raw.githubusercontent.com/alpacahq/alpaca-mcp-server/2a973a046607c42742bf141184b71f1990fa1809/src/alpaca_mcp_server/overrides.py",
+          "status": 200,
+          "bytes": 14360,
+          "sha256": "548d83643943bf7ffeb854d608b9f9bc1e0684f943cd56a856259b01498679ad"
+        }
+      ],
+      "refs_sha256": "2d5f9d80f38e3cf883854a836087e68bd973b49302be387983bf574156a8e775",
+      "head": "2a973a046607c42742bf141184b71f1990fa1809",
+      "default_branch": "refs/heads/main",
+      "tag_count": 2,
+      "highest_numeric_version_tags_observed": [
+        "v2.3.2",
+        "v2.4.0"
+      ]
+    },
+    {
+      "repository": "alpacahq/alpaca-py",
+      "checked_at_utc": "2026-10-17T15:59:19.050283+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/alpacahq/alpaca-py/6c15a94e92558b337620d31d6b891e40e85bfef4/README.md",
+          "status": 200,
+          "bytes": 15752,
+          "sha256": "3c59a91311c55e4dccbbdc68f6e38e9456bd710802c09156b7e2baa7393f3eba"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/alpacahq/alpaca-py/6c15a94e92558b337620d31d6b891e40e85bfef4/LICENSE",
+          "status": 200,
+          "bytes": 10873,
+          "sha256": "bc84da682744c6dd008cf9ad3306caf18444d613a80c1bcc3de0dd46094787ef"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/alpacahq/alpaca-py/6c15a94e92558b337620d31d6b891e40e85bfef4/pyproject.toml",
+          "status": 200,
+          "bytes": 1362,
+          "sha256": "523e6133cb66b23b0956b2f33748a51ef2a90263295b91a4311bf38ee027cd62"
+        },
+        {
+          "path": "alpaca/trading/client.py",
+          "url": "https://raw.githubusercontent.com/alpacahq/alpaca-py/6c15a94e92558b337620d31d6b891e40e85bfef4/alpaca/trading/client.py",
+          "status": 200,
+          "bytes": 25728,
+          "sha256": "ecb4e92065b517cfdba0cf233d668294f05c2f81bd4c0fe3249e56a5f6b7fbc0"
+        }
+      ],
+      "refs_sha256": "662435fbe864ce678429811fe17a146fcb02dfeeafa2036148a69e57b0589a25",
+      "head": "6c15a94e92558b337620d31d6b891e40e85bfef4",
+      "default_branch": "refs/heads/master",
+      "tag_count": 95,
+      "highest_numeric_version_tags_observed": [
+        "v0.43.4",
+        "v0.43.5",
+        "v0.44.0"
+      ]
+    },
+    {
+      "repository": "openai/codex",
+      "checked_at_utc": "2026-10-17T15:59:22.925496+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/openai/codex/ce0323f2f2d3b25e82806cd555237da3db4e1897/README.md",
+          "status": 200,
+          "bytes": 3334,
+          "sha256": "ba4e1f69ff48386e72a9c5e1edaf76aad64a475c2d51af79ccba6d1128261ba7"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/openai/codex/ce0323f2f2d3b25e82806cd555237da3db4e1897/LICENSE",
+          "status": 200,
+          "bytes": 10926,
+          "sha256": "d17f227e4df5da1600391338865ce0f3055211760a36688f816941d58232d8dc"
+        },
+        {
+          "path": "codex-rs/README.md",
+          "url": "https://raw.githubusercontent.com/openai/codex/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/README.md",
+          "status": 200,
+          "bytes": 84,
+          "sha256": "5b059ff5ce6c2252ddaeb52d466ef41f331e0e3abcad6f7ce204314b92be9294"
+        },
+        {
+          "path": "docs/getting-started.md",
+          "url": "https://raw.githubusercontent.com/openai/codex/ce0323f2f2d3b25e82806cd555237da3db4e1897/docs/getting-started.md",
+          "status": 200,
+          "bytes": 177,
+          "sha256": "210187b0199e42d71beabab773f6b8f3c01fe897037df1b16f88dd4efe007e90"
+        },
+        {
+          "path": "docs/agents_md.md",
+          "url": "https://raw.githubusercontent.com/openai/codex/ce0323f2f2d3b25e82806cd555237da3db4e1897/docs/agents_md.md",
+          "status": 200,
+          "bytes": 126,
+          "sha256": "56f5b6026b15fad40fe8b1f6f8910b9fccdf66da3b39dd943c91877e2299619e"
+        },
+        {
+          "path": "docs/sandbox.md",
+          "url": "https://raw.githubusercontent.com/openai/codex/ce0323f2f2d3b25e82806cd555237da3db4e1897/docs/sandbox.md",
+          "status": 200,
+          "bytes": 150,
+          "sha256": "61d4dd0ccda2a0cbbde78832e752cdf56b1eb8cf7a54f1d46b52a2824c911249"
+        }
+      ],
+      "refs_sha256": "27d02ea9aa4b33b5fc9d9909a26bb97903775811301ddc84651624e808450137",
+      "head": "ce0323f2f2d3b25e82806cd555237da3db4e1897",
+      "default_branch": "refs/heads/main",
+      "tag_count": 1494,
+      "highest_numeric_version_tags_observed": [
+        "rust-v0.162.0",
+        "rust-v0.162.1",
+        "rust-v0.163.0"
+      ]
+    },
+    {
+      "repository": "openai/codex-action",
+      "checked_at_utc": "2026-10-17T15:59:23.230058+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/openai/codex-action/a8d8be6ee028bea4525bc722d16f36687b408c81/README.md",
+          "status": 200,
+          "bytes": 17938,
+          "sha256": "00083d3f3b7ab6b887e1efa198c79a3791e53c5aae534588c9eba6c7b056b741"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/openai/codex-action/a8d8be6ee028bea4525bc722d16f36687b408c81/LICENSE",
+          "status": 200,
+          "bytes": 10926,
+          "sha256": "d17f227e4df5da1600391338865ce0f3055211760a36688f816941d58232d8dc"
+        },
+        {
+          "path": "action.yml",
+          "url": "https://raw.githubusercontent.com/openai/codex-action/a8d8be6ee028bea4525bc722d16f36687b408c81/action.yml",
+          "status": 200,
+          "bytes": 16776,
+          "sha256": "448852e9e59565440bf25174b54bbf661bd66102be295af2e526fa09eaaf3bd7"
+        },
+        {
+          "path": "docs/security.md",
+          "url": "https://raw.githubusercontent.com/openai/codex-action/a8d8be6ee028bea4525bc722d16f36687b408c81/docs/security.md",
+          "status": 200,
+          "bytes": 7227,
+          "sha256": "06d1039180fc0a40515f23b68bb980c30c5430116389e904d57500a47694aa05"
+        }
+      ],
+      "refs_sha256": "2be5bc47fc7b9c7d3a0a95b04d98edcb22319d405e30b39d68f3edfed0fc7458",
+      "head": "a8d8be6ee028bea4525bc722d16f36687b408c81",
+      "default_branch": "refs/heads/main",
+      "tag_count": 15,
+      "highest_numeric_version_tags_observed": [
+        "v1.11",
+        "v1.12",
+        "v1.13"
+      ]
+    },
+    {
+      "repository": "anthropics/claude-code",
+      "checked_at_utc": "2026-10-17T15:59:23.232946+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/anthropics/claude-code/c017428c8c27e604840435048d5bce6a9a22c040/README.md",
+          "status": 200,
+          "bytes": 2873,
+          "sha256": "aa0d8b80ac083e1591be0789273f447058cc9187b4331634a5614155da27778d"
+        },
+        {
+          "path": "LICENSE.md",
+          "url": "https://raw.githubusercontent.com/anthropics/claude-code/c017428c8c27e604840435048d5bce6a9a22c040/LICENSE.md",
+          "status": 200,
+          "bytes": 150,
+          "sha256": "728158fd1037143fad6907e8fa34804177e598b7326519503fe83cafdef849e6"
+        },
+        {
+          "path": "SECURITY.md",
+          "url": "https://raw.githubusercontent.com/anthropics/claude-code/c017428c8c27e604840435048d5bce6a9a22c040/SECURITY.md",
+          "status": 200,
+          "bytes": 674,
+          "sha256": "682ab87da77179b60028989b97fa03f0caa063ef16cb9b6cc7b3317146d04503"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "url": "https://raw.githubusercontent.com/anthropics/claude-code/c017428c8c27e604840435048d5bce6a9a22c040/CHANGELOG.md",
+          "status": 200,
+          "bytes": 1046331,
+          "sha256": "57fde96b3318543cfe7ba6622950620a81d4d40e3e0e196ae1de49ccd1fd00da"
+        }
+      ],
+      "refs_sha256": "50b63c05322b5b9f8055713b4afefcbc6a0671de7d049e115147b24f6c8288bc",
+      "head": "c017428c8c27e604840435048d5bce6a9a22c040",
+      "default_branch": "refs/heads/main",
+      "tag_count": 249,
+      "highest_numeric_version_tags_observed": [
+        "v2.1.300",
+        "v2.1.301",
+        "v2.1.302"
+      ]
+    },
+    {
+      "repository": "anthropics/claude-code-action",
+      "checked_at_utc": "2026-10-17T15:59:23.249494+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/anthropics/claude-code-action/f27be6b65a4652f08a2ba3cff79114829b588967/README.md",
+          "status": 200,
+          "bytes": 4896,
+          "sha256": "a381c47399445c97480d025a406f485644fdd5f4f7ffd880be0567ac2f7b4640"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/anthropics/claude-code-action/f27be6b65a4652f08a2ba3cff79114829b588967/LICENSE",
+          "status": 200,
+          "bytes": 1070,
+          "sha256": "cebdde8a8fb9ee59e5eaaed19578bf8085aa7047562259c31f38f225c26f6812"
+        },
+        {
+          "path": "action.yml",
+          "url": "https://raw.githubusercontent.com/anthropics/claude-code-action/f27be6b65a4652f08a2ba3cff79114829b588967/action.yml",
+          "status": 200,
+          "bytes": 23689,
+          "sha256": "87b706489e63483c9c32c12af36467dd34e309becca35f7a8ead4d1e0664c4df"
+        },
+        {
+          "path": "docs/security.md",
+          "url": "https://raw.githubusercontent.com/anthropics/claude-code-action/f27be6b65a4652f08a2ba3cff79114829b588967/docs/security.md",
+          "status": 200,
+          "bytes": 14238,
+          "sha256": "2dd090ea8027eda1b4148bc46d00767c1bb5fdd78203a5c53525580e8e9cfc5c"
+        },
+        {
+          "path": "docs/configuration.md",
+          "url": "https://raw.githubusercontent.com/anthropics/claude-code-action/f27be6b65a4652f08a2ba3cff79114829b588967/docs/configuration.md",
+          "status": 200,
+          "bytes": 13611,
+          "sha256": "d7b0d1381e846eb6504d452459b450a267858759b565bd4744e88f6470cd75ec"
+        },
+        {
+          "path": "docs/usage.md",
+          "url": "https://raw.githubusercontent.com/anthropics/claude-code-action/f27be6b65a4652f08a2ba3cff79114829b588967/docs/usage.md",
+          "status": 200,
+          "bytes": 21275,
+          "sha256": "70f62d0f2f42b9b1945e42ea064debcdfdb7aae0ad6c784ca9a984254327633f"
+        }
+      ],
+      "refs_sha256": "06970d5932477a6713985e6f0c4e78d9ceb35c7e898ebcf9bb7ed5b93025f4ab",
+      "head": "f27be6b65a4652f08a2ba3cff79114829b588967",
+      "default_branch": "refs/heads/main",
+      "tag_count": 319,
+      "highest_numeric_version_tags_observed": [
+        "v1.0.250",
+        "v1.0.251",
+        "v1.0.252"
+      ]
+    },
+    {
+      "repository": "google-gemini/gemini-cli",
+      "checked_at_utc": "2026-10-17T15:59:23.442765+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/google-gemini/gemini-cli/ed96faedfd5571f055c44f2c9509d62321d1138d/README.md",
+          "status": 200,
+          "bytes": 12107,
+          "sha256": "7235196f55461732c246c20ce9996cc56ba2e52641f183ccf4e6493bd93c1c94"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/google-gemini/gemini-cli/ed96faedfd5571f055c44f2c9509d62321d1138d/LICENSE",
+          "status": 200,
+          "bytes": 11357,
+          "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+        },
+        {
+          "path": "package.json",
+          "url": "https://raw.githubusercontent.com/google-gemini/gemini-cli/ed96faedfd5571f055c44f2c9509d62321d1138d/package.json",
+          "status": 200,
+          "bytes": 8002,
+          "sha256": "ca3da9c3b2bb86bfa66917fefbedd21731f62ad7de5923a5413df4e6895cf8ee"
+        },
+        {
+          "path": "docs/cli/gemini-md.md",
+          "url": "https://raw.githubusercontent.com/google-gemini/gemini-cli/ed96faedfd5571f055c44f2c9509d62321d1138d/docs/cli/gemini-md.md",
+          "status": 200,
+          "bytes": 3807,
+          "sha256": "d00eeaef22453de4756a9862d8467750f772e239c4ee9b6f755709429b47c2cf"
+        },
+        {
+          "path": "docs/cli/sandbox.md",
+          "url": "https://raw.githubusercontent.com/google-gemini/gemini-cli/ed96faedfd5571f055c44f2c9509d62321d1138d/docs/cli/sandbox.md",
+          "status": 200,
+          "bytes": 14127,
+          "sha256": "2d2c13347d2d6e26dfdc3a33d7b43f12d242fa679eb1220c85153b824e8c0df4"
+        }
+      ],
+      "refs_sha256": "1d90e3bd55340cf74bf56ee15c503b17b0eee66d7e7394c5b77150355f19d9a5",
+      "head": "ed96faedfd5571f055c44f2c9509d62321d1138d",
+      "default_branch": "refs/heads/main",
+      "tag_count": 681,
+      "highest_numeric_version_tags_observed": [
+        "v0.62.0",
+        "v0.63.0",
+        "v0.64.0"
+      ]
+    },
+    {
+      "repository": "google-github-actions/run-gemini-cli",
+      "checked_at_utc": "2026-10-17T15:59:23.998888+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/README.md",
+          "status": 200,
+          "bytes": 19295,
+          "sha256": "9c49d5dfb35c9bacf34288837d1b3aba682cf4eb5cf334f1a6e82e91850cca7c"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/LICENSE",
+          "status": 200,
+          "bytes": 11357,
+          "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+        },
+        {
+          "path": "action.yml",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/action.yml",
+          "status": 200,
+          "bytes": 22149,
+          "sha256": "deace8fe05c2a99af825d7145ebef313c80463542945dacc45cadeb94763728d"
+        },
+        {
+          "path": "docs/authentication.md",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/docs/authentication.md",
+          "status": 200,
+          "bytes": 15041,
+          "sha256": "fe5f07ff3117cc5eced9628d0226b9b5f9c12530e826201444b70829722f9916"
+        },
+        {
+          "path": "docs/getting-started.md",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/docs/getting-started.md",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "docs/configuration.md",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/docs/configuration.md",
+          "error": "HTTP Error 404: Not Found"
+        }
+      ],
+      "refs_sha256": "92e4c22008a4a0d785016e6c7c9be205fb0227661570de0b5b668cd49a4efe31",
+      "head": "387c8ddb7a72078825da941758b811b9153c71e8",
+      "default_branch": "refs/heads/main",
+      "tag_count": 23,
+      "highest_numeric_version_tags_observed": [
+        "v0.1.20",
+        "v0.1.21",
+        "v0.1.22"
+      ]
+    },
+    {
+      "repository": "dgunning/edgartools",
+      "checked_at_utc": "2026-10-17T15:59:24.112969+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/dgunning/edgartools/cb4f34cb42a9cdfb44e52e47067580e0b97daa69/README.md",
+          "status": 200,
+          "bytes": 12161,
+          "sha256": "dcba0ff3573f67d1107eee57fd4944f86c02e650472dadc9226362e6627bef1e"
+        },
+        {
+          "path": "LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/dgunning/edgartools/cb4f34cb42a9cdfb44e52e47067580e0b97daa69/LICENSE.txt",
+          "status": 200,
+          "bytes": 1100,
+          "sha256": "249fb5021f07689c5fb17925c4d8bcd04fd9e2cee4b4b789499fb80b1e9dfe0c"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/dgunning/edgartools/cb4f34cb42a9cdfb44e52e47067580e0b97daa69/pyproject.toml",
+          "status": 200,
+          "bytes": 17358,
+          "sha256": "9f3b6536d5588e4b7538617ebe496dd814970bb327dfa35df9fe55f8c234d312"
+        },
+        {
+          "path": "edgar/httprequests.py",
+          "url": "https://raw.githubusercontent.com/dgunning/edgartools/cb4f34cb42a9cdfb44e52e47067580e0b97daa69/edgar/httprequests.py",
+          "status": 200,
+          "bytes": 60605,
+          "sha256": "f3438726041a109bfd5a24623764a174c24a37cd67a9192997395b3e6589886d"
+        },
+        {
+          "path": "edgar/company_reports.py",
+          "url": "https://raw.githubusercontent.com/dgunning/edgartools/cb4f34cb42a9cdfb44e52e47067580e0b97daa69/edgar/company_reports.py",
+          "error": "HTTP Error 404: Not Found"
+        }
+      ],
+      "refs_sha256": "430524f820585af1ec035310d171596320796aa56c25bdc7aa4b7c2a7a033914",
+      "head": "cb4f34cb42a9cdfb44e52e47067580e0b97daa69",
+      "default_branch": "refs/heads/main",
+      "tag_count": 203,
+      "highest_numeric_version_tags_observed": [
+        "v5.61.0",
+        "v5.61.1",
+        "v5.62.0"
+      ]
+    },
+    {
+      "repository": "mlflow/mlflow",
+      "checked_at_utc": "2026-10-17T15:59:25.059979+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/mlflow/mlflow/9385162c11b44c61af49ea805d0783d15e65949f/README.md",
+          "status": 200,
+          "bytes": 33107,
+          "sha256": "e9b30b8aee35e78fb87bdbbfcf837e8739f596aef5f6def89e735680d7d8b00e"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/mlflow/mlflow/9385162c11b44c61af49ea805d0783d15e65949f/LICENSE",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/mlflow/mlflow/9385162c11b44c61af49ea805d0783d15e65949f/pyproject.toml",
+          "status": 200,
+          "bytes": 20098,
+          "sha256": "0388dd3eb1b228fa20d246d28a261302e5d403e5df4eb5a4477c8884081c84e0"
+        },
+        {
+          "path": "LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/mlflow/mlflow/9385162c11b44c61af49ea805d0783d15e65949f/LICENSE.txt",
+          "status": 200,
+          "bytes": 11382,
+          "sha256": "6395355de6f391afff35996a30fb41b189b4991a4cb54993ace35ab69a0bfa28"
+        },
+        {
+          "path": "mlflow/version.py",
+          "url": "https://raw.githubusercontent.com/mlflow/mlflow/9385162c11b44c61af49ea805d0783d15e65949f/mlflow/version.py",
+          "status": 200,
+          "bytes": 974,
+          "sha256": "7a04a2aa0b7bc109cd26f800879ca2c452ed4c110e7907669b82c3e6eeb2d2d1"
+        }
+      ],
+      "refs_sha256": "83a53df87ec5dfaf006274e455cbceb27dd4b193af9301abe21de047b7b80190",
+      "head": "9385162c11b44c61af49ea805d0783d15e65949f",
+      "default_branch": "refs/heads/master",
+      "tag_count": 237,
+      "highest_numeric_version_tags_observed": [
+        "v3.16.1",
+        "v3.17.0",
+        "v3.17.1"
+      ]
+    },
+    {
+      "repository": "iterative/dvc",
+      "checked_at_utc": "2026-10-17T15:59:25.750616+00:00",
+      "files": [
+        {
+          "path": "README.rst",
+          "url": "https://raw.githubusercontent.com/iterative/dvc/56e59829512ff134aa269099a2099587b810b4dd/README.rst",
+          "status": 200,
+          "bytes": 12874,
+          "sha256": "d10985fd1a1efb7ee4a28c0a4dac8a3f40cebe564dc86404aa5300e659ddeb39"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/iterative/dvc/56e59829512ff134aa269099a2099587b810b4dd/LICENSE",
+          "status": 200,
+          "bytes": 11340,
+          "sha256": "e817a2cc039b0cf9902431510648773913ccc942dc01a07697cd6f88cf479e15"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/iterative/dvc/56e59829512ff134aa269099a2099587b810b4dd/pyproject.toml",
+          "status": 200,
+          "bytes": 8705,
+          "sha256": "7c9a77d69f45b5d260c374c49132cb60439cb1e5d19c739987c693beba92b9ac"
+        }
+      ],
+      "refs_sha256": "7128af868fe2f2c57d639d302df60f442949afe7887f49b4101c78dc2b672927",
+      "head": "56e59829512ff134aa269099a2099587b810b4dd",
+      "default_branch": "refs/heads/main",
+      "tag_count": 579,
+      "highest_numeric_version_tags_observed": [
+        "3.66.1",
+        "3.67.0",
+        "3.67.1"
+      ]
+    },
+    {
+      "repository": "gerrymanoim/exchange_calendars",
+      "checked_at_utc": "2026-10-17T15:59:25.790569+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/gerrymanoim/exchange_calendars/bbda29fed902374bdb75acab008f421fbd567823/README.md",
+          "status": 200,
+          "bytes": 25069,
+          "sha256": "bdd51a148fa734a951941d64c84e491b73496b6d88b4c7a8480cba5cf924c25a"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/gerrymanoim/exchange_calendars/bbda29fed902374bdb75acab008f421fbd567823/LICENSE",
+          "status": 200,
+          "bytes": 11347,
+          "sha256": "e35c4578f7db4498e62e278978f6c42e0fce6f21f9993a060b08a33549cd3044"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/gerrymanoim/exchange_calendars/bbda29fed902374bdb75acab008f421fbd567823/pyproject.toml",
+          "status": 200,
+          "bytes": 3524,
+          "sha256": "7915a8c83d1039992e26c344397b4a5c158b093fdf9c9f971f87b9e13e7066d3"
+        },
+        {
+          "path": "exchange_calendars/exchange_calendar_xnys.py",
+          "url": "https://raw.githubusercontent.com/gerrymanoim/exchange_calendars/bbda29fed902374bdb75acab008f421fbd567823/exchange_calendars/exchange_calendar_xnys.py",
+          "status": 200,
+          "bytes": 9403,
+          "sha256": "baa39f07163abafcf2800b69edc5d920c3db0a64f8bbb30dc7d522883d0b5bd7"
+        }
+      ],
+      "refs_sha256": "d998fd4bd5825bcc0306bb3cb759ec34a3d220c056cbc1097cef414bff83a3f9",
+      "head": "bbda29fed902374bdb75acab008f421fbd567823",
+      "default_branch": "refs/heads/master",
+      "tag_count": 87,
+      "highest_numeric_version_tags_observed": [
+        "4.13",
+        "4.13.1",
+        "4.13.2"
+      ]
+    },
+    {
+      "repository": "duckdb/duckdb",
+      "checked_at_utc": "2026-10-17T15:59:26.228624+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/duckdb/duckdb/1b4c3e54ba3625bac56ad184f0ce642a8d2bfbd5/README.md",
+          "status": 200,
+          "bytes": 3480,
+          "sha256": "907b44f4727089c4475a5f9342e76ed2cdb39cac5619feb4ed9c5c065f5cc559"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/duckdb/duckdb/1b4c3e54ba3625bac56ad184f0ce642a8d2bfbd5/LICENSE",
+          "status": 200,
+          "bytes": 1072,
+          "sha256": "075c33400ffcb0c586dd106a029d3e733e9da3693f8fcb9cebfc651c8a2f14e3"
+        }
+      ],
+      "refs_sha256": "9e936c3e9dc79f8bb2aec1dba63136b1a1c18a5ca3801a358e648f7c1e50eb4c",
+      "head": "1b4c3e54ba3625bac56ad184f0ce642a8d2bfbd5",
+      "default_branch": "refs/heads/main",
+      "tag_count": 65,
+      "highest_numeric_version_tags_observed": [
+        "v1.5.4",
+        "v1.5.5",
+        "v1.5.6"
+      ]
+    },
+    {
+      "repository": "scikit-learn/scikit-learn",
+      "checked_at_utc": "2026-10-17T15:59:26.392735+00:00",
+      "files": [
+        {
+          "path": "README.rst",
+          "url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/85593ca7a07a9956ac891f6bfc3fedca53b74f72/README.rst",
+          "status": 200,
+          "bytes": 7676,
+          "sha256": "3e0c151adde02aa2501477a7c2a17a87888abe58178c09a2a8eff794bbee3221"
+        },
+        {
+          "path": "COPYING",
+          "url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/85593ca7a07a9956ac891f6bfc3fedca53b74f72/COPYING",
+          "status": 200,
+          "bytes": 1532,
+          "sha256": "50d6a9d340f19ab355609917993114daf5f47e3161067bcf34955bbd05cd9cb0"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/85593ca7a07a9956ac891f6bfc3fedca53b74f72/pyproject.toml",
+          "status": 200,
+          "bytes": 13812,
+          "sha256": "60076dfc0b7bef4471363947873317e288767cd1271b0eba81eccb5ac6e897f2"
+        }
+      ],
+      "refs_sha256": "bf254a67deb23dc0a010c1e40a6c94ef4ba695191540377f4762de4a24b82eae",
+      "head": "85593ca7a07a9956ac891f6bfc3fedca53b74f72",
+      "default_branch": "refs/heads/main",
+      "tag_count": 156,
+      "highest_numeric_version_tags_observed": [
+        "1.8.0",
+        "1.9.0",
+        "1.9.1"
+      ]
+    },
+    {
+      "repository": "open-telemetry/opentelemetry-python",
+      "checked_at_utc": "2026-10-17T15:59:26.661520+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/open-telemetry/opentelemetry-python/2fa016b27d9b817aee88ea58be1bd0bc10fd2a40/README.md",
+          "status": 200,
+          "bytes": 8336,
+          "sha256": "bc0f84c6665d4ff2c0b7ea8f7ab614c86eceb9c076e4c26720f7ba286a8acb3d"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/open-telemetry/opentelemetry-python/2fa016b27d9b817aee88ea58be1bd0bc10fd2a40/LICENSE",
+          "status": 200,
+          "bytes": 11357,
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ],
+      "refs_sha256": "b78e7164cc9236d53e02b93961367f562aa177bdcd4715bebfdad5225f110426",
+      "head": "2fa016b27d9b817aee88ea58be1bd0bc10fd2a40",
+      "default_branch": "refs/heads/main",
+      "tag_count": 89,
+      "highest_numeric_version_tags_observed": [
+        "v1.44.0",
+        "v1.45.0",
+        "v1.45.1"
+      ]
+    },
+    {
+      "repository": "langchain-ai/langgraph",
+      "checked_at_utc": "2026-10-17T15:59:26.722041+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/langchain-ai/langgraph/41c9c22fdc83d68a2859d0c9a2b627c8615a792f/README.md",
+          "status": 200,
+          "bytes": 6395,
+          "sha256": "3a13e257af1216962d53d72414a7f44ac1fc5cea34d994bdff60ea2a3b045933"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/langchain-ai/langgraph/41c9c22fdc83d68a2859d0c9a2b627c8615a792f/LICENSE",
+          "status": 200,
+          "bytes": 1072,
+          "sha256": "d9bb52f2e3540d60ff50d8f0f5b6ba649b7fd346948c4c3d086c8afb120763c7"
+        },
+        {
+          "path": "libs/langgraph/pyproject.toml",
+          "url": "https://raw.githubusercontent.com/langchain-ai/langgraph/41c9c22fdc83d68a2859d0c9a2b627c8615a792f/libs/langgraph/pyproject.toml",
+          "status": 200,
+          "bytes": 4466,
+          "sha256": "8c8bf8b26f77f3949a221217b04ff68297cf52e07733dce43c0bf9db92944e53"
+        }
+      ],
+      "refs_sha256": "7acbc6ae80c304e8a3a4b7afec52f0be36abfdca1a8bba9912451faa1743387e",
+      "head": "41c9c22fdc83d68a2859d0c9a2b627c8615a792f",
+      "default_branch": "refs/heads/main",
+      "tag_count": 592,
+      "highest_numeric_version_tags_observed": [
+        "1.2.14",
+        "1.2.15",
+        "1.2.16"
+      ]
+    },
+    {
+      "repository": "databento/databento-python",
+      "checked_at_utc": "2026-10-17T15:59:26.996744+00:00",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/README.md",
+          "status": 200,
+          "bytes": 5011,
+          "sha256": "5b494741354dc3f6aef08daffa1af1d4d3ddffc755b4b43543abb1141867a229"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/LICENSE",
+          "status": 200,
+          "bytes": 9694,
+          "sha256": "d3174ad63e721d4c9dccb8ad4320848992d314369bc46319720b5802c9153fe9"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/pyproject.toml",
+          "status": 200,
+          "bytes": 2131,
+          "sha256": "0e4d9ae77ec5bcf785beb940987b077e149faacadfc3fdfe68d689d0b4f65855"
+        },
+        {
+          "path": "databento/historical/api/symbology.py",
+          "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/databento/historical/api/symbology.py",
+          "status": 200,
+          "bytes": 3212,
+          "sha256": "92d919e7d62381c00e06adf42215fb95d11a77740eec6d37f202661e43725ef4"
+        },
+        {
+          "path": "databento/historical/api/metadata.py",
+          "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/databento/historical/api/metadata.py",
+          "status": 200,
+          "bytes": 17739,
+          "sha256": "f6e0d1dac704b017597b270a6ef5c7f21d8b446b4bb3b35d4fceddfae524d890"
+        }
+      ],
+      "refs_sha256": "f25f10abc834ff5b30c70059e37bcd9e4ef22957d6e9dbf5679bcd7d9d1ca2ff",
+      "head": "25eef4ee8e66559e2370166a57c20925ce244d49",
+      "default_branch": "refs/heads/main",
+      "tag_count": 111,
+      "highest_numeric_version_tags_observed": [
+        "v0.85.0",
+        "v0.86.0",
+        "v0.87.0"
+      ]
+    },
+    {
+      "repository": "QuantConnect/Lean.Brokerages.Alpaca",
+      "head": "f186471dc3a9b349e516a69fd75a603ffb5e1050",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean.Brokerages.Alpaca/f186471dc3a9b349e516a69fd75a603ffb5e1050/README.md",
+          "status": 200,
+          "sha256": "0d0712cf23c0897fdcbd01b25189e7387c07670d5566759053716f823837c459",
+          "bytes": 13416
+        },
+        {
+          "path": "readme.md",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean.Brokerages.Alpaca/f186471dc3a9b349e516a69fd75a603ffb5e1050/readme.md",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean.Brokerages.Alpaca/f186471dc3a9b349e516a69fd75a603ffb5e1050/LICENSE",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "QuantConnect.AlpacaBrokerage/AlpacaBrokerage.cs",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean.Brokerages.Alpaca/f186471dc3a9b349e516a69fd75a603ffb5e1050/QuantConnect.AlpacaBrokerage/AlpacaBrokerage.cs",
+          "status": 200,
+          "sha256": "50686e8ac32823750a4e9e853d058af52625a486b00619a88a0459ffbe196cbd",
+          "bytes": 80624
+        },
+        {
+          "path": "QuantConnect.AlpacaBrokerage/QuantConnect.AlpacaBrokerage.csproj",
+          "url": "https://raw.githubusercontent.com/QuantConnect/Lean.Brokerages.Alpaca/f186471dc3a9b349e516a69fd75a603ffb5e1050/QuantConnect.AlpacaBrokerage/QuantConnect.AlpacaBrokerage.csproj",
+          "status": 200,
+          "sha256": "3c80485ab301f422c3cd1e45f2fa184b0583dea24a2b120ae3512cd03cdf2f38",
+          "bytes": 2394
+        }
+      ],
+      "tag_count": 0,
+      "highest_numeric_version_tags_observed": [],
+      "checked_at_utc": "2026-10-17T16:04:22.416364+00:00"
+    }
+  ],
+  "packages": [
+    {
+      "name": "tradingagents",
+      "url": "https://pypi.org/pypi/tradingagents/json",
+      "retrieved_at_utc": "2026-10-17T16:01:24.362455+00:00",
+      "error": "HTTP Error 404: Not Found",
+      "file_count": 0,
+      "first_upload_time_utc": null,
+      "any_yanked": false
+    },
+    {
+      "name": "nautilus_trader",
+      "url": "https://pypi.org/pypi/nautilus_trader/json",
+      "retrieved_at_utc": "2026-10-17T16:01:24.363051+00:00",
+      "sha256": "2d197b7d124b245fe460d147bb71f75501542f5dc9786b16b35b3b7b8e5e781d",
+      "version": "1.231.0",
+      "requires_python": "<3.15,>=3.12",
+      "license_expression": null,
+      "file_count": 13,
+      "first_upload_time_utc": "2026-08-02T18:47:40.645057Z",
+      "any_yanked": false
+    },
+    {
+      "name": "pyqlib",
+      "url": "https://pypi.org/pypi/pyqlib/json",
+      "retrieved_at_utc": "2026-10-17T16:01:24.363497+00:00",
+      "sha256": "ab52cf3ef958c809d125d2b711b09128d9e4b2a73c7ef46bc5447305c484da8a",
+      "version": "0.9.7",
+      "requires_python": ">=3.8.0",
+      "license_expression": null,
+      "file_count": 18,
+      "first_upload_time_utc": "2025-08-15T09:51:02.873651Z",
+      "any_yanked": false
+    },
+    {
+      "name": "rdagent",
+      "url": "https://pypi.org/pypi/rdagent/json",
+      "retrieved_at_utc": "2026-10-17T16:01:24.364017+00:00",
+      "sha256": "364ffaeb403c39107afe26db9c1e79753d9c7ba9e2efcc18bbe8844c7f17dc29",
+      "version": "1.0.0",
+      "requires_python": ">=3.10",
+      "license_expression": null,
+      "file_count": 2,
+      "first_upload_time_utc": "2026-09-23T11:07:37.882937Z",
+      "any_yanked": false
+    },
+    {
+      "name": "alpaca-py",
+      "url": "https://pypi.org/pypi/alpaca-py/json",
+      "retrieved_at_utc": "2026-10-17T16:01:24.364353+00:00",
+      "sha256": "307ab2dec1484d06935a61f7a08ee302a51f12e0e560b13ec8491ede623e9a20",
+      "version": "0.44.0",
+      "requires_python": "<4.0.0,>=3.10.0",
+      "license_expression": null,
+      "file_count": 2,
+      "first_upload_time_utc": "2026-08-11T10:15:05.960928Z",
+      "any_yanked": false
+    },
+    {
+      "name": "alpaca-mcp-server",
+      "url": "https://pypi.org/pypi/alpaca-mcp-server/json",
+      "retrieved_at_utc": "2026-10-17T16:01:24.364797+00:00",
+      "sha256": "90433a14a835af8401f17539b958b2e782518840c4c9df884e831760e09b72f2",
+      "version": "2.4.0",
+      "requires_python": ">=3.10",
+      "license_expression": null,
+      "file_count": 2,
+      "first_upload_time_utc": "2026-10-12T10:42:25.746927Z",
+      "any_yanked": false
+    },
+    {
+      "name": "edgartools",
+      "url": "https://pypi.org/pypi/edgartools/json",
+      "retrieved_at_utc": "2026-10-17T16:01:24.366033+00:00",
+      "sha256": "7cf2d5f56d372b7fe953cf2c261dd87fb26422ea5e95f9f62f625a764ac86150",
+      "version": "5.62.0",
+      "requires_python": ">=3.10",
+      "license_expression": "MIT",
+      "file_count": 2,
+      "first_upload_time_utc": "2026-10-11T18:22:22.010716Z",
+      "any_yanked": false
+    },
+    {
+      "name": "mlflow",
+      "url": "https://pypi.org/pypi/mlflow/json",
+      "retrieved_at_utc": "2026-10-17T16:01:24.381768+00:00",
+      "sha256": "555937a6b8d64fc6b1c2166eb80fb40562d66c0a3859f49fd3176cea5d72258c",
+      "version": "3.17.1",
+      "requires_python": ">=3.10",
+      "license_expression": null,
+      "file_count": 2,
+      "first_upload_time_utc": "2026-10-13T09:00:14.749497Z",
+      "any_yanked": false
+    },
+    {
+      "name": "dvc",
+      "url": "https://pypi.org/pypi/dvc/json",
+      "retrieved_at_utc": "2026-10-17T16:01:24.999180+00:00",
+      "sha256": "6065382cd138bb3fda382cf87cf2960807b813cb3ed668d5d19f66826a748711",
+      "version": "3.67.1",
+      "requires_python": ">=3.9",
+      "license_expression": "Apache-2.0",
+      "file_count": 2,
+      "first_upload_time_utc": "2026-03-31T05:07:27.996603Z",
+      "any_yanked": false
+    },
+    {
+      "name": "exchange-calendars",
+      "url": "https://pypi.org/pypi/exchange-calendars/json",
+      "retrieved_at_utc": "2026-10-17T16:01:25.209382+00:00",
+      "sha256": "91efd757fdcec580e2a5cdf5a62f97595717f12539e4412fa5e84c79563524b5",
+      "version": "4.13.2",
+      "requires_python": "<4,>=3.10",
+      "license_expression": "Apache-2.0",
+      "file_count": 2,
+      "first_upload_time_utc": "2026-03-10T03:24:37.055242Z",
+      "any_yanked": false
+    },
+    {
+      "name": "scikit-learn",
+      "url": "https://pypi.org/pypi/scikit-learn/json",
+      "retrieved_at_utc": "2026-10-17T16:01:25.283494+00:00",
+      "sha256": "7f2c77f9da0b1765ccd00fe236628488f1645a0e8d14e2f38bdcc85d2ea477dd",
+      "version": "1.9.1",
+      "requires_python": ">=3.11",
+      "license_expression": "BSD-3-Clause",
+      "file_count": 43,
+      "first_upload_time_utc": "2026-09-10T18:32:29.891551Z",
+      "any_yanked": false
+    },
+    {
+      "name": "databento",
+      "url": "https://pypi.org/pypi/databento/json",
+      "retrieved_at_utc": "2026-10-17T16:01:25.331255+00:00",
+      "sha256": "9fd7bcb1c7e9477ecaea9fb7689d62e772d916c7b290cb59f58d8d58523a04b9",
+      "version": "0.87.0",
+      "requires_python": ">=3.10",
+      "license_expression": "Apache-2.0",
+      "file_count": 2,
+      "first_upload_time_utc": "2026-09-22T20:24:38.880086Z",
+      "any_yanked": false
+    },
+    {
+      "name": "duckdb",
+      "url": "https://pypi.org/pypi/duckdb/json",
+      "retrieved_at_utc": "2026-10-17T16:01:25.356637+00:00",
+      "sha256": "b3e08eb8cc326f89557f2be8ebbf4e3c1e411a6d5d8319cd5a65ce1e210ae47a",
+      "version": "1.5.6",
+      "requires_python": ">=3.10.0",
+      "license_expression": null,
+      "file_count": 35,
+      "first_upload_time_utc": "2026-09-28T13:37:14.588282Z",
+      "any_yanked": false
+    }
+  ],
+  "blocked_documentation": [
+    {
+      "id": "codex_cloud",
+      "url": "https://developers.openai.com/codex/cloud/",
+      "retrieved_at_utc": "2026-10-17T16:00:35.519605+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "codex_cloud_environment",
+      "url": "https://developers.openai.com/codex/cloud/environments/",
+      "retrieved_at_utc": "2026-10-17T16:00:35.520167+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "claude_actions",
+      "url": "https://code.claude.com/docs/en/github-actions",
+      "retrieved_at_utc": "2026-10-17T16:00:35.520583+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "claude_security",
+      "url": "https://code.claude.com/docs/en/security",
+      "retrieved_at_utc": "2026-10-17T16:00:35.520965+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "gemini_policy",
+      "url": "https://geminicli.com/docs/core/policy-engine/",
+      "retrieved_at_utc": "2026-10-17T16:00:35.522184+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "alpaca_agents",
+      "url": "https://alpaca.markets/agents",
+      "retrieved_at_utc": "2026-10-17T16:00:35.528037+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "alpaca_mcp",
+      "url": "https://docs.alpaca.markets/docs/alpaca-mcp-server",
+      "retrieved_at_utc": "2026-10-17T16:00:35.528387+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "qc_security_master",
+      "url": "https://www.quantconnect.com/docs/v2/writing-algorithms/datasets/quantconnect/us-equity-security-master",
+      "retrieved_at_utc": "2026-10-17T16:00:35.528897+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "qc_alpaca",
+      "url": "https://www.quantconnect.com/docs/v2/cloud-platform/live-trading/brokerages/alpaca",
+      "retrieved_at_utc": "2026-10-17T16:00:35.536020+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "nautilus_alpaca",
+      "url": "https://nautilustrader.io/docs/latest/integrations/alpaca/",
+      "retrieved_at_utc": "2026-10-17T16:00:35.538932+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "databento_definitions",
+      "url": "https://databento.com/docs/schemas-and-data-formats/instrument-definitions",
+      "retrieved_at_utc": "2026-10-17T16:00:35.539079+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "databento_symbology",
+      "url": "https://databento.com/docs/api-reference-historical/symbology/symbology-resolve",
+      "retrieved_at_utc": "2026-10-17T16:00:35.539638+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "crsp",
+      "url": "https://www.crsp.org/research/crsp-us-stock-databases/",
+      "retrieved_at_utc": "2026-10-17T16:00:35.541633+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "norgate",
+      "url": "https://norgatedata.com/data-content-tables.php",
+      "retrieved_at_utc": "2026-10-17T16:00:35.543643+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "sec_access",
+      "url": "https://www.sec.gov/about/developer-resources",
+      "retrieved_at_utc": "2026-10-17T16:00:35.544827+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "massive_tickers",
+      "url": "https://massive.com/docs/rest/stocks/tickers/all-tickers",
+      "retrieved_at_utc": "2026-10-17T16:00:35.546508+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    }
+  ]
+}
