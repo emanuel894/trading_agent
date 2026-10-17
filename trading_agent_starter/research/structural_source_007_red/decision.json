@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "reviewed_commit": "090e8bbb80ceec58bb76e75a3e69fd79719b8737",
+  "review_date": "2026-10-18",
+  "timezone": "Asia/Jerusalem",
+  "recorded_at_utc": "2026-10-17T21:22:30.516133+00:00",
+  "primary_outcome": "DATABENTO_QUALIFICATION_NEXT",
+  "candidate_eligibility": "UNRESOLVED",
+  "issue": 7,
+  "branch": "research/issue-7-red-review-20261018",
+  "recommendation": "Free static FMBH sample and written Reference coverage/temporal specification; qualify assembled maintained-master + SEC/exchange evidence, not a new master implementation",
+  "not_a_purchase_or_supplier_selection": true,
+  "amendment_005_unchanged": true,
+  "current_contract_must_be_preserved": true,
+  "scientific_findings": [
+    "Complete potentially qualifying common classes required; exhaustive unrelated private/debt capital structure not required",
+    "Required-instant validity can follow from documented intervals with independently grounded corroboration; native timestamp precision alone is insufficient and need not be subsecond",
+    "A combined source method may satisfy the contract; each supplier need not prove every component",
+    "005 retrospective exception is acquisition-feasibility-only and does not authorize performance use",
+    "Broker-agnostic architecture cannot silently replace frozen003/004 Alpaca provider-native liquidity measure",
+    "Historical population coverage including delistings and2017warmup is a long-term vendor admission gate"
+  ],
+  "prior_research_assessment": "Correct preservation of uncertainty and clock distinctions; class-census/single-product wording should be narrowed; qualifying a candidate product is preferable to interpreting no-method-qualified as an architecture dead end",
+  "free_path_proved": false,
+  "databento_actual_fmbh_sample_acquired": false,
+  "historical_coverage_start_verified": false,
+  "reference_price_or_free_trial_verified": false,
+  "minimum_next_action_document": "PROVIDER_REQUEST.md",
+  "provider_request_sent": false,
+  "data_spend_now_usd": 0,
+  "suggested_future_total_incremental_pre_alpha_data_cap_usd": 250,
+  "budget_note": "Recommendation only, requires owner approval, after free qualification; not a vendor quote or permission to spend",
+  "no_purchases_subscriptions_paid_api_or_massive_calls": true,
+  "no_candidate2_alpha_trading_or_registration_changes": true,
+  "source_capture_counts": {
+    "public_successes": 43,
+    "access_failures": 24
+  },
+  "limitations": [
+    "Primary provider, SEC and exchange origins remain proxy-blocked; no capability failure inferred",
+    "Public SDKs and demonstration records establish interfaces, not FMBH production coverage or commercial rights",
+    "No authenticated data/API calls, provider contact, purchase, subscription or broker use"
+  ],
+  "resume": "Read RED review and unsent provider request; obtain free semantics/sample before adapters or purchase. Direct primary origins blocked; no bypass. Existing007packet remains unchanged."
+}

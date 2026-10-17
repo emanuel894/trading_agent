@@ -1,0 +1,680 @@
+{
+  "reviewed_commit": "090e8bbb80ceec58bb76e75a3e69fd79719b8737",
+  "recorded_at_utc": "2026-10-17T21:17:20.512671+00:00",
+  "user_facing_date": "2026-10-18",
+  "user_timezone": "Asia/Jerusalem",
+  "sources": [
+    {
+      "url": "https://github.com/emanuel894/trading_agent/issues/7",
+      "retrieved_at_utc": "2026-10-17T21:13:40.452312+00:00",
+      "status": 200,
+      "final_url": "https://github.com/emanuel894/trading_agent/issues/7",
+      "bytes": 257027,
+      "sha256": "5247a99533ad09ea682df2435bf8b43c02107c5379edfdf740af6ee9c98779d5",
+      "path": "/workspace/audit-upstreams/issue-7-red/5d4dec7d15800f4a1c14.raw",
+      "source_id": "red-5d4dec7d1580"
+    },
+    {
+      "url": "https://github.com/orgs/LSEG-API-Samples/repositories?type=all",
+      "retrieved_at_utc": "2026-10-17T21:13:40.453034+00:00",
+      "status": 200,
+      "final_url": "https://github.com/orgs/LSEG-API-Samples/repositories?type=all",
+      "bytes": 427735,
+      "sha256": "53f978de1ac7f0554def39344bbe073d72a1a68c4fff0d56f07a7760a790a38f",
+      "path": "/workspace/audit-upstreams/issue-7-red/1cabe28933f932a0141b.raw",
+      "source_id": "red-1cabe28933f9"
+    },
+    {
+      "url": "https://github.com/orgs/Refinitiv-API-Samples/repositories?type=all",
+      "retrieved_at_utc": "2026-10-17T21:13:40.453539+00:00",
+      "status": 200,
+      "final_url": "https://github.com/orgs/Refinitiv-API-Samples/repositories?type=all",
+      "bytes": 189826,
+      "sha256": "bc1d26366c1b3515fa287c6ff9ff5fdd62e8b8d759396c169d5f6c3a5c41fee8",
+      "path": "/workspace/audit-upstreams/issue-7-red/4f89d7bdc1730abb473e.raw",
+      "source_id": "red-4f89d7bdc173"
+    },
+    {
+      "url": "https://github.com/orgs/databento/repositories?type=all",
+      "retrieved_at_utc": "2026-10-17T21:13:40.453912+00:00",
+      "status": 200,
+      "final_url": "https://github.com/orgs/databento/repositories?type=all",
+      "bytes": 289067,
+      "sha256": "968b4d6a89a399c2a8c4a186fa24e884d586747021f6e97cb6e3eeacddcee0c8",
+      "path": "/workspace/audit-upstreams/issue-7-red/c8e7c3e3ff39787b4e64.raw",
+      "source_id": "red-c8e7c3e3ff39"
+    },
+    {
+      "url": "https://github.com/search?q=Nasdaq+Daily+List&type=repositories",
+      "retrieved_at_utc": "2026-10-17T21:13:40.454498+00:00",
+      "status": 200,
+      "final_url": "https://github.com/search?q=Nasdaq+Daily+List&type=repositories",
+      "bytes": 257022,
+      "sha256": "5a0098f844792226f087446b522eb9145bf49a124427906f27e300ba2c0c225e",
+      "path": "/workspace/audit-upstreams/issue-7-red/358755a833bbc723bb21.raw",
+      "source_id": "red-358755a833bb"
+    },
+    {
+      "url": "https://github.com/search?q=CRSP+Stock+Guide&type=repositories",
+      "retrieved_at_utc": "2026-10-17T21:13:40.460359+00:00",
+      "status": 200,
+      "final_url": "https://github.com/search?q=CRSP+Stock+Guide&type=repositories",
+      "bytes": 175291,
+      "sha256": "4024dbb76ac15323a92143955fea20c682cfdacb938d4b49ec9bbf202f61c1de",
+      "path": "/workspace/audit-upstreams/issue-7-red/cad817d1dd1a633a926a.raw",
+      "source_id": "red-cad817d1dd1a"
+    },
+    {
+      "url": "https://github.com/search?q=Exchange+Data+International+security+master&type=repositories",
+      "retrieved_at_utc": "2026-10-17T21:13:40.467976+00:00",
+      "status": 200,
+      "final_url": "https://github.com/search?q=Exchange+Data+International+security+master&type=repositories",
+      "bytes": 200082,
+      "sha256": "5ab52ae37a36915b6f7470cc09be1996510a4714067e46f709e738bb09788f0f",
+      "path": "/workspace/audit-upstreams/issue-7-red/dfa2331f03da854342b2.raw",
+      "source_id": "red-dfa2331f03da"
+    },
+    {
+      "url": "https://pypi.org/pypi/norgatedata/json",
+      "retrieved_at_utc": "2026-10-17T21:13:40.470046+00:00",
+      "status": 200,
+      "final_url": "https://pypi.org/pypi/norgatedata/json",
+      "bytes": 115010,
+      "sha256": "4748a39cc97039a42469ecc76647c483a21b6b9854b979f47621b3cf4c0a3f14",
+      "path": "/workspace/audit-upstreams/issue-7-red/7389a8bafc25e3cafb99.raw",
+      "source_id": "red-7389a8bafc25"
+    },
+    {
+      "url": "https://github.com/orgs/LSEG-API-Samples/repositories?q=DataScope&type=all",
+      "retrieved_at_utc": "2026-10-17T21:14:27.493840+00:00",
+      "status": 200,
+      "final_url": "https://github.com/orgs/LSEG-API-Samples/repositories?q=DataScope&type=all",
+      "bytes": 210764,
+      "sha256": "63dfc6b4ec4b41d7a50fff63ceb9ac585806160734b963f2095cb73aac08704f",
+      "path": "/workspace/audit-upstreams/issue-7-red/bfdce3db98241454a0e4.raw",
+      "source_id": "red-bfdce3db9824"
+    },
+    {
+      "url": "https://github.com/orgs/LSEG-API-Samples/repositories?q=TickHistory&type=all",
+      "retrieved_at_utc": "2026-10-17T21:14:27.494439+00:00",
+      "status": 200,
+      "final_url": "https://github.com/orgs/LSEG-API-Samples/repositories?q=TickHistory&type=all",
+      "bytes": 311920,
+      "sha256": "fa92057dee250676e0a0cc91b2e95335075f7a016b8b2780e0c5aaf6c1c8950a",
+      "path": "/workspace/audit-upstreams/issue-7-red/cc4edd656b3a95b14e00.raw",
+      "source_id": "red-cc4edd656b3a"
+    },
+    {
+      "url": "https://github.com/orgs/factset/repositories?q=reference&type=all",
+      "retrieved_at_utc": "2026-10-17T21:14:27.494922+00:00",
+      "status": 200,
+      "final_url": "https://github.com/orgs/factset/repositories?q=reference&type=all",
+      "bytes": 194182,
+      "sha256": "fc55ac3fad52a024015ffe5b801a8ec5a6c9e28d6e0e0dd2404b174615db0d42",
+      "path": "/workspace/audit-upstreams/issue-7-red/193443455e52f84aa471.raw",
+      "source_id": "red-193443455e52"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/LSEG-API-Samples/Example.DataLibrary.Python/efba8aebd01900fd53ddf5fb13d1a0935089e101/README.md",
+      "retrieved_at_utc": "2026-10-17T21:14:27.495447+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/LSEG-API-Samples/Example.DataLibrary.Python/efba8aebd01900fd53ddf5fb13d1a0935089e101/README.md",
+      "bytes": 3444,
+      "sha256": "a0aa138e904820354a2a71dc3fe9b90a788c7075554399cdfd0711956fbe9077",
+      "path": "/workspace/audit-upstreams/issue-7-red/378b53b32f653cb3dcc0.raw",
+      "source_id": "red-378b53b32f65"
+    },
+    {
+      "url": "https://github.com/LSEG-API-Samples/Example.DataLibrary.Python/tree/efba8aebd01900fd53ddf5fb13d1a0935089e101",
+      "retrieved_at_utc": "2026-10-17T21:14:27.496180+00:00",
+      "status": 200,
+      "final_url": "https://github.com/LSEG-API-Samples/Example.DataLibrary.Python/tree/efba8aebd01900fd53ddf5fb13d1a0935089e101",
+      "bytes": 272048,
+      "sha256": "ea155f257e389874e619b4815d0b797c3a6dbc099b8c1c06f68cc45d852681c9",
+      "path": "/workspace/audit-upstreams/issue-7-red/7f2421ddc58b97664cde.raw",
+      "source_id": "red-7f2421ddc58b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Nasdaq/data-link-python/431094f87292c3c566ddbd647296f65957ac2254/README.md",
+      "retrieved_at_utc": "2026-10-17T21:14:27.496695+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/Nasdaq/data-link-python/431094f87292c3c566ddbd647296f65957ac2254/README.md",
+      "bytes": 6999,
+      "sha256": "f92eefecfbda311909517e783b1b441153c2c20b15a3baed65624497fb718e0f",
+      "path": "/workspace/audit-upstreams/issue-7-red/af0b8a58e1771f2596f8.raw",
+      "source_id": "red-af0b8a58e177"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/EodHistoricalData/python-eodhistoricaldata/dcd73e5b3237152b8a0e1d333e03d29ec8db7146/README.md",
+      "retrieved_at_utc": "2026-10-17T21:14:27.499856+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/EodHistoricalData/python-eodhistoricaldata/dcd73e5b3237152b8a0e1d333e03d29ec8db7146/README.md",
+      "bytes": 3190,
+      "sha256": "652433da95fc0cda453f176120c891f88a5205a57af84f0ee6768e2cb2a0d321",
+      "path": "/workspace/audit-upstreams/issue-7-red/af30a68820286e9ff6c2.raw",
+      "source_id": "red-af30a6882028"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/README.md",
+      "retrieved_at_utc": "2026-10-17T21:14:27.506381+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/README.md",
+      "bytes": 5011,
+      "sha256": "5b494741354dc3f6aef08daffa1af1d4d3ddffc755b4b43543abb1141867a229",
+      "path": "/workspace/audit-upstreams/issue-7-red/a69ec764b527c64f18b2.raw",
+      "source_id": "red-a69ec764b527"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/databento/reference/api/security.py",
+      "retrieved_at_utc": "2026-10-17T21:14:28.156714+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/databento/reference/api/security.py",
+      "bytes": 9007,
+      "sha256": "31ad5930fee63d7e2e1f595b5b91fc34af4142184d14c3317b5b9070f1201c91",
+      "path": "/workspace/audit-upstreams/issue-7-red/4e4038f7bfc48f52d8d2.raw",
+      "source_id": "red-4e4038f7bfc4"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/databento/databento-rs/72316bd104b47a2a9c24d10eb10f6daad9b36735/src/reference/security.rs",
+      "retrieved_at_utc": "2026-10-17T21:14:28.293783+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/databento/databento-rs/72316bd104b47a2a9c24d10eb10f6daad9b36735/src/reference/security.rs",
+      "bytes": 16318,
+      "sha256": "193ba63a6258239d663e2984be92aa1756b236a55892509ab0261beb0ce66401",
+      "path": "/workspace/audit-upstreams/issue-7-red/f205917d97a93c3dba0e.raw",
+      "source_id": "red-f205917d97a9"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/tests/data/REFERENCE/test_data.security-master.jsonl",
+      "retrieved_at_utc": "2026-10-17T21:14:28.298312+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/tests/data/REFERENCE/test_data.security-master.jsonl",
+      "bytes": 2426,
+      "sha256": "c527184e7f59974e4d9878a9aaeb6193e890409ad10d707805aae14ae0e84dc2",
+      "path": "/workspace/audit-upstreams/issue-7-red/0fde31f4a3960e0f668f.raw",
+      "source_id": "red-0fde31f4a396"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/databento/reference/api/corporate.py",
+      "retrieved_at_utc": "2026-10-17T21:14:28.312066+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/databento/reference/api/corporate.py",
+      "bytes": 9783,
+      "sha256": "9ec588b95db94297e870faf4a8f31f1392dc0d322c8375de08e9900574d53eb3",
+      "path": "/workspace/audit-upstreams/issue-7-red/88cfb19925f234a79187.raw",
+      "source_id": "red-88cfb19925f2"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/databento/databento-rs/72316bd104b47a2a9c24d10eb10f6daad9b36735/src/reference/corporate.rs",
+      "retrieved_at_utc": "2026-10-17T21:14:28.380214+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/databento/databento-rs/72316bd104b47a2a9c24d10eb10f6daad9b36735/src/reference/corporate.rs",
+      "bytes": 33751,
+      "sha256": "1c298d2db339f9673042bdd513e697eca7571cee98d954f683db1d66a453ff1b",
+      "path": "/workspace/audit-upstreams/issue-7-red/f006e0ae322ec1a51846.raw",
+      "source_id": "red-f006e0ae322e"
+    },
+    {
+      "url": "https://github.com/factset/enterprise-sdk/tree/814439cdd02f3c2d90735e56dd90568ce9385631/code/python",
+      "retrieved_at_utc": "2026-10-17T21:14:28.490216+00:00",
+      "status": 200,
+      "final_url": "https://github.com/factset/enterprise-sdk/tree/814439cdd02f3c2d90735e56dd90568ce9385631/code/python",
+      "bytes": 483588,
+      "sha256": "0094401409f480cfbf8d64645a08e404f72d574c0ba88b8e571d93793c40f510",
+      "path": "/workspace/audit-upstreams/issue-7-red/a0233f18c442bf3741dc.raw",
+      "source_id": "red-a0233f18c442"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/FactSetGlobalPrices/v1/README.md",
+      "retrieved_at_utc": "2026-10-17T21:14:56.730192+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/FactSetGlobalPrices/v1/README.md",
+      "bytes": 28166,
+      "sha256": "34d69af8ee551bff873c5b07f6f77e56e6d25b931be3d20aa2c8af7daacb4781",
+      "path": "/workspace/audit-upstreams/issue-7-red/928335dad8718088e871.raw",
+      "source_id": "red-928335dad871"
+    },
+    {
+      "url": "https://github.com/factset/enterprise-sdk/tree/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/FactSetGlobalPrices",
+      "retrieved_at_utc": "2026-10-17T21:14:56.730810+00:00",
+      "status": 200,
+      "final_url": "https://github.com/factset/enterprise-sdk/tree/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/FactSetGlobalPrices",
+      "bytes": 222458,
+      "sha256": "e83076b5b56b94aeebc42ae8db3574200d9788b978a8ff4673eda33530d4dc0f",
+      "path": "/workspace/audit-upstreams/issue-7-red/5ff8c2416c5faacba3f3.raw",
+      "source_id": "red-5ff8c2416c5f"
+    },
+    {
+      "url": "https://github.com/factset/enterprise-sdk/tree/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/ContentFeedsDataDictionary",
+      "retrieved_at_utc": "2026-10-17T21:14:56.731243+00:00",
+      "status": 200,
+      "final_url": "https://github.com/factset/enterprise-sdk/tree/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/ContentFeedsDataDictionary",
+      "bytes": 222647,
+      "sha256": "780528501fff3ea9f026105a1e578fe25f73fe6372e56e49c16c415d3cba0906",
+      "path": "/workspace/audit-upstreams/issue-7-red/6a8c766386c0178bad8f.raw",
+      "source_id": "red-6a8c766386c0"
+    },
+    {
+      "url": "https://github.com/factset/enterprise-sdk/tree/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/StandardDatafeed",
+      "retrieved_at_utc": "2026-10-17T21:14:56.731582+00:00",
+      "status": 200,
+      "final_url": "https://github.com/factset/enterprise-sdk/tree/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/StandardDatafeed",
+      "bytes": 224634,
+      "sha256": "bdc07d4e3d1494d845b40f78315121e9fb29b4933892cc268f35635209a61136",
+      "path": "/workspace/audit-upstreams/issue-7-red/e161aa0e2a0f6df7d11d.raw",
+      "source_id": "red-e161aa0e2a0f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/LSEG-API-Samples/Example.DataLibrary.Python/efba8aebd01900fd53ddf5fb13d1a0935089e101/Examples/2-Content/2.05-Symbology/EX-2.05.01-Symbology.ipynb",
+      "retrieved_at_utc": "2026-10-17T21:15:32.345255+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/LSEG-API-Samples/Example.DataLibrary.Python/efba8aebd01900fd53ddf5fb13d1a0935089e101/Examples/2-Content/2.05-Symbology/EX-2.05.01-Symbology.ipynb",
+      "bytes": 13742,
+      "sha256": "034d97cf92d4d74912bc39f575580ec3471bcd1856f6d98ba2793ba62e256100",
+      "path": "/workspace/audit-upstreams/issue-7-red/51f2c112aff72a65627f.raw",
+      "source_id": "red-51f2c112aff7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/LSEG-API-Samples/Example.DataLibrary.Python/efba8aebd01900fd53ddf5fb13d1a0935089e101/Examples/2-Content/2.06-Search/EX-2.06.01-Search.ipynb",
+      "retrieved_at_utc": "2026-10-17T21:15:32.346022+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/LSEG-API-Samples/Example.DataLibrary.Python/efba8aebd01900fd53ddf5fb13d1a0935089e101/Examples/2-Content/2.06-Search/EX-2.06.01-Search.ipynb",
+      "bytes": 59268,
+      "sha256": "ba8f6e39837bd37a5c69c0768b594ce307711278448fc86dc863c724fb860a8d",
+      "path": "/workspace/audit-upstreams/issue-7-red/73247698866b31b32b6f.raw",
+      "source_id": "red-73247698866b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/LSEG-API-Samples/Example.DataLibrary.Python/efba8aebd01900fd53ddf5fb13d1a0935089e101/Examples/2-Content/2.09-FundamentalAndReference/EX-2.09.01-FundamentalAndReference.ipynb",
+      "retrieved_at_utc": "2026-10-17T21:15:32.346558+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/LSEG-API-Samples/Example.DataLibrary.Python/efba8aebd01900fd53ddf5fb13d1a0935089e101/Examples/2-Content/2.09-FundamentalAndReference/EX-2.09.01-FundamentalAndReference.ipynb",
+      "bytes": 25598,
+      "sha256": "3ba2320f6f6c10f60269850e2107187e2cdd28c6a4d6fe53133985c071177268",
+      "path": "/workspace/audit-upstreams/issue-7-red/e7ff591999748eca94e3.raw",
+      "source_id": "red-e7ff59199974"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/LSEG-API-Samples/Article.TickHistory.Postman.ISINToRIC/5a0db3ad89edac61a2b539423986cc2e5dbd08e0/README.md",
+      "retrieved_at_utc": "2026-10-17T21:15:32.346958+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/LSEG-API-Samples/Article.TickHistory.Postman.ISINToRIC/5a0db3ad89edac61a2b539423986cc2e5dbd08e0/README.md",
+      "bytes": 699,
+      "sha256": "1d11b77e86771bea5464d3c1084d669c414f1a4c432ea8bf07ee86e961f92ab2",
+      "path": "/workspace/audit-upstreams/issue-7-red/a005aff146964c0c063d.raw",
+      "source_id": "red-a005aff14696"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/LSEG-API-Samples/Article.TickHistory.Postman.ISINToRIC/5a0db3ad89edac61a2b539423986cc2e5dbd08e0/Tick%20History%20REST%20ISIN%20TO%20RICS.postman_collection_v2.json",
+      "retrieved_at_utc": "2026-10-17T21:15:32.347357+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/LSEG-API-Samples/Article.TickHistory.Postman.ISINToRIC/5a0db3ad89edac61a2b539423986cc2e5dbd08e0/Tick%20History%20REST%20ISIN%20TO%20RICS.postman_collection_v2.json",
+      "bytes": 41962,
+      "sha256": "335a4e2450fbd1d2a9d2b33581657975ac42e202521aac6aa11864016e834835",
+      "path": "/workspace/audit-upstreams/issue-7-red/0611ccfb6cf0bab047bd.raw",
+      "source_id": "red-0611ccfb6cf0"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/EodHistoricalData/EODHD-APIs-Python-Financial-Library/440e028dea70fd726bf9da3dddb6031bf42e88f6/README.md",
+      "retrieved_at_utc": "2026-10-17T21:15:32.347904+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/EodHistoricalData/EODHD-APIs-Python-Financial-Library/440e028dea70fd726bf9da3dddb6031bf42e88f6/README.md",
+      "bytes": 3949,
+      "sha256": "33de4be8f57cbe60828f25aa9567924bb56b35a7fc6076c9bc92a6216da78a05",
+      "path": "/workspace/audit-upstreams/issue-7-red/88026030a61342fb9a38.raw",
+      "source_id": "red-88026030a613"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/EodHistoricalData/EODHD-APIs-Python-Financial-Library/440e028dea70fd726bf9da3dddb6031bf42e88f6/eodhd/APIs/TradingHours_StockMarketHolidays_SymbolsChangeHistoryAPI.py",
+      "retrieved_at_utc": "2026-10-17T21:15:32.354091+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/EodHistoricalData/EODHD-APIs-Python-Financial-Library/440e028dea70fd726bf9da3dddb6031bf42e88f6/eodhd/APIs/TradingHours_StockMarketHolidays_SymbolsChangeHistoryAPI.py",
+      "bytes": 1087,
+      "sha256": "93d5b49c22ab9ac06d8fcb6dc56cc03c1a7558e521627cc87f4eb4ad900017ff",
+      "path": "/workspace/audit-upstreams/issue-7-red/8d842a275a73a9a8270d.raw",
+      "source_id": "red-8d842a275a73"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/StandardDatafeed/v2/README.md",
+      "retrieved_at_utc": "2026-10-17T21:15:32.354497+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/StandardDatafeed/v2/README.md",
+      "bytes": 18699,
+      "sha256": "82d502d185e837df066547d2d887bbe8ae00a6c095cd185e0737e06c90512828",
+      "path": "/workspace/audit-upstreams/issue-7-red/df3c1235908dcbf7602e.raw",
+      "source_id": "red-df3c1235908d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/ContentFeedsDataDictionary/v1/README.md",
+      "retrieved_at_utc": "2026-10-17T21:15:32.990491+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/ContentFeedsDataDictionary/v1/README.md",
+      "bytes": 13924,
+      "sha256": "21c00896ceb8eda78f990611e3fdb05d5993bcfefe734119827b67b91c34968a",
+      "path": "/workspace/audit-upstreams/issue-7-red/a96efb6029349e20d0c1.raw",
+      "source_id": "red-a96efb602934"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/FactSetGlobalPrices/v1/docs/CorporateActionsApi.md",
+      "retrieved_at_utc": "2026-10-17T21:15:33.076428+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/FactSetGlobalPrices/v1/docs/CorporateActionsApi.md",
+      "bytes": 49327,
+      "sha256": "664a598d1a90f2a5dec8b52ddffcf24900f07159040244eca07e0147775e8484",
+      "path": "/workspace/audit-upstreams/issue-7-red/8702edaa1ff38f9350ee.raw",
+      "source_id": "red-8702edaa1ff3"
+    },
+    {
+      "url": "https://pypi.org/pypi/databento/json",
+      "retrieved_at_utc": "2026-10-17T21:16:11.472402+00:00",
+      "status": 200,
+      "final_url": "https://pypi.org/pypi/databento/json",
+      "bytes": 181920,
+      "sha256": "9fd7bcb1c7e9477ecaea9fb7689d62e772d916c7b290cb59f58d8d58523a04b9",
+      "path": "/workspace/audit-upstreams/issue-7-red/eb1a4f4b0ffbf55118d9.raw",
+      "source_id": "red-eb1a4f4b0ffb"
+    },
+    {
+      "url": "https://pypi.org/pypi/lseg-data/json",
+      "retrieved_at_utc": "2026-10-17T21:16:11.473106+00:00",
+      "status": 200,
+      "final_url": "https://pypi.org/pypi/lseg-data/json",
+      "bytes": 18576,
+      "sha256": "554facabadc0e3592542b597eea1f7e9fb7d900715ddf4825d801240c81d0f8d",
+      "path": "/workspace/audit-upstreams/issue-7-red/5eb2b8b476ec70ec21b8.raw",
+      "source_id": "red-5eb2b8b476ec"
+    },
+    {
+      "url": "https://pypi.org/pypi/wrds/json",
+      "retrieved_at_utc": "2026-10-17T21:16:11.473647+00:00",
+      "status": 200,
+      "final_url": "https://pypi.org/pypi/wrds/json",
+      "bytes": 42718,
+      "sha256": "edd6802b5822f1bca6221315da401b565629f9007539b649e038ad2bb97bf37b",
+      "path": "/workspace/audit-upstreams/issue-7-red/4060590e3cf5bdfed725.raw",
+      "source_id": "red-4060590e3cf5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/CHANGELOG.md",
+      "retrieved_at_utc": "2026-10-17T21:16:11.474287+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/CHANGELOG.md",
+      "bytes": 54801,
+      "sha256": "10e57aede23136f6070961961e7db5b6a29f6f24075063ca304c095d3b28c3de",
+      "path": "/workspace/audit-upstreams/issue-7-red/d4c5202ed6ffff8801c6.raw",
+      "source_id": "red-d4c5202ed6ff"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/wharton/wrds/5d7bf38de5bd367852b7ccdd05079c1a1820f888/README.md",
+      "retrieved_at_utc": "2026-10-17T21:16:11.474769+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/wharton/wrds/5d7bf38de5bd367852b7ccdd05079c1a1820f888/README.md",
+      "bytes": 4379,
+      "sha256": "a4687ac351d97e18f774cd2687f53ea171339c8342d6e2cabf24f6a0d88ade04",
+      "path": "/workspace/audit-upstreams/issue-7-red/0781b49575520dac4a31.raw",
+      "source_id": "red-0781b4957552"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/FactSetEntity/v1/docs/EntitySecuritiesApi.md",
+      "retrieved_at_utc": "2026-10-17T21:16:11.475066+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/FactSetEntity/v1/docs/EntitySecuritiesApi.md",
+      "bytes": 12339,
+      "sha256": "a72c9e08d2a02c43248fcde5ffa27cb7ac328893069c2221a20be9e49fe91d85",
+      "path": "/workspace/audit-upstreams/issue-7-red/0d26a51aa18f77492627.raw",
+      "source_id": "red-0d26a51aa18f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/Symbology/v3/docs/HistoricalIdentifierResolutionApi.md",
+      "retrieved_at_utc": "2026-10-17T21:16:11.475450+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/Symbology/v3/docs/HistoricalIdentifierResolutionApi.md",
+      "bytes": 17820,
+      "sha256": "b07ff9f42e6ac5e219fca5678e33c456a82b155a639f30f62d55608abe9defd1",
+      "path": "/workspace/audit-upstreams/issue-7-red/ce7215903908824eda12.raw",
+      "source_id": "red-ce7215903908"
+    }
+  ],
+  "access_failures": [
+    {
+      "url": "https://databento.com/docs/api-reference-reference/security-master/get-range",
+      "retrieved_at_utc": "2026-10-17T21:13:41.351228+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-aa327fedca0a"
+    },
+    {
+      "url": "https://databento.com/pricing",
+      "retrieved_at_utc": "2026-10-17T21:13:41.354591+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-ab7fa2cb73b3"
+    },
+    {
+      "url": "https://www.nasdaqtrader.com/Trader.aspx?id=DailyList",
+      "retrieved_at_utc": "2026-10-17T21:13:41.356917+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-0b15018d445d"
+    },
+    {
+      "url": "https://www.nyse.com/market-data/reference",
+      "retrieved_at_utc": "2026-10-17T21:13:41.359169+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-0c2e97a4d86f"
+    },
+    {
+      "url": "https://www.crsp.org/research/crsp-us-stock-databases/",
+      "retrieved_at_utc": "2026-10-17T21:13:41.361431+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-a7e499b2c935"
+    },
+    {
+      "url": "https://wrds-www.wharton.upenn.edu/pages/about/data-vendors/crsp/",
+      "retrieved_at_utc": "2026-10-17T21:13:41.363719+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-66db5f4fe731"
+    },
+    {
+      "url": "https://www.exchange-data.com/products/security-reference-data",
+      "retrieved_at_utc": "2026-10-17T21:13:41.366061+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-6316f393c688"
+    },
+    {
+      "url": "https://www.theice.com/market-data/reference-data",
+      "retrieved_at_utc": "2026-10-17T21:13:41.368654+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-cdf1027a3daa"
+    },
+    {
+      "url": "https://www.norgatedata.com/data-content-tables.php",
+      "retrieved_at_utc": "2026-10-17T21:13:41.370941+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-fc807f51f7ea"
+    },
+    {
+      "url": "https://www.openfigi.com/api/documentation",
+      "retrieved_at_utc": "2026-10-17T21:13:41.373238+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-b5406b1000ac"
+    },
+    {
+      "url": "https://developers.lseg.com/en/api-catalog/datascope-select/datascope-select-rest-api",
+      "retrieved_at_utc": "2026-10-17T21:13:41.375640+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-37530e97601e"
+    },
+    {
+      "url": "https://developer.factset.com/api-catalog/factset-global-prices-api",
+      "retrieved_at_utc": "2026-10-17T21:13:41.378000+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-e57962885f97"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/700565/000095017025073121/fmbh-ex3_1.htm",
+      "retrieved_at_utc": "2026-10-17T21:13:41.380330+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-3c0937c634b0"
+    },
+    {
+      "url": "https://docs.data.nasdaq.com/docs/sharadar-equity-prices",
+      "retrieved_at_utc": "2026-10-17T21:14:56.732024+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-ff80d367ec35"
+    },
+    {
+      "url": "https://www.nasdaq.com/solutions/data/equities/reference-data",
+      "retrieved_at_utc": "2026-10-17T21:14:56.732461+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-5c81d5c18ae4"
+    },
+    {
+      "url": "https://www.six-group.com/en/products-services/financial-information/display-and-delivery/data-delivery/reference-data.html",
+      "retrieved_at_utc": "2026-10-17T21:14:56.732914+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-c4b740378609"
+    },
+    {
+      "url": "https://www.spglobal.com/market-intelligence/en/solutions/products/compustat",
+      "retrieved_at_utc": "2026-10-17T21:14:56.733758+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-fe96b0c86533"
+    },
+    {
+      "url": "https://databento.com/docs/api-reference-reference/basics/overview",
+      "retrieved_at_utc": "2026-10-17T21:14:56.752010+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-814c3e6c2142"
+    },
+    {
+      "url": "https://databento.com/docs/api-reference-reference/security-master/schema",
+      "retrieved_at_utc": "2026-10-17T21:14:56.757854+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-e14d827e240b"
+    },
+    {
+      "url": "https://databento.com/docs/api-reference-reference/security-master/get-last",
+      "retrieved_at_utc": "2026-10-17T21:14:56.763206+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-dad9e10c245a"
+    },
+    {
+      "url": "https://data.sec.gov/submissions/CIK0000700565.json",
+      "retrieved_at_utc": "2026-10-17T21:14:56.765207+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-2f1b500110a7"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/700565/000095017025073121/fmbh-ex3_2.htm",
+      "retrieved_at_utc": "2026-10-17T21:14:56.766560+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "source_id": "red-ce4e721e410d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/FactSetGlobalPrices/v1/docs/SecurityReferenceApi.md",
+      "retrieved_at_utc": "2026-10-17T21:15:33.021535+00:00",
+      "error": "HTTP Error 404: Not Found",
+      "source_id": "red-510561f224b6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/FactSetGlobalPrices/v1/docs/SecurityReference.md",
+      "retrieved_at_utc": "2026-10-17T21:15:33.070066+00:00",
+      "error": "HTTP Error 404: Not Found",
+      "source_id": "red-f70c214c3ec0"
+    }
+  ],
+  "current_heads": [
+    {
+      "repository": "databento/databento-python",
+      "retrieved_at_utc": "2026-10-17T21:13:58.251776+00:00",
+      "result": "25eef4ee8e66559e2370166a57c20925ce244d49\tHEAD",
+      "error": null
+    },
+    {
+      "repository": "databento/databento-rs",
+      "retrieved_at_utc": "2026-10-17T21:13:58.067291+00:00",
+      "result": "72316bd104b47a2a9c24d10eb10f6daad9b36735\tHEAD",
+      "error": null
+    },
+    {
+      "repository": "factset/enterprise-sdk",
+      "retrieved_at_utc": "2026-10-17T21:13:57.875285+00:00",
+      "result": "814439cdd02f3c2d90735e56dd90568ce9385631\tHEAD",
+      "error": null
+    },
+    {
+      "repository": "wharton/wrds",
+      "retrieved_at_utc": "2026-10-17T21:13:58.131461+00:00",
+      "result": "5d7bf38de5bd367852b7ccdd05079c1a1820f888\tHEAD",
+      "error": null
+    },
+    {
+      "repository": "OpenFIGI/api-examples",
+      "retrieved_at_utc": "2026-10-17T21:13:57.877990+00:00",
+      "result": "f847dce9492a6bac685f9fdf1d9450e57280a9c4\tHEAD",
+      "error": null
+    },
+    {
+      "repository": "Nasdaq/data-link-python",
+      "retrieved_at_utc": "2026-10-17T21:13:58.246429+00:00",
+      "result": "431094f87292c3c566ddbd647296f65957ac2254\tHEAD",
+      "error": null
+    },
+    {
+      "repository": "LSEG-API-Samples/Example.DataLibrary.Python",
+      "retrieved_at_utc": "2026-10-17T21:13:58.887619+00:00",
+      "result": "efba8aebd01900fd53ddf5fb13d1a0935089e101\tHEAD",
+      "error": null
+    },
+    {
+      "repository": "LSEG-API-Samples/Example.DataScope.Python.Extraction",
+      "retrieved_at_utc": "2026-10-17T21:13:58.361850+00:00",
+      "result": "",
+      "error": "remote: Repository not found.\nfatal: repository 'https://github.com/LSEG-API-Samples/Example.DataScope.Python.Extraction.git/' not found"
+    },
+    {
+      "repository": "NorgateData/norgatedata",
+      "retrieved_at_utc": "2026-10-17T21:13:58.655392+00:00",
+      "result": "",
+      "error": "remote: Repository not found.\nfatal: repository 'https://github.com/NorgateData/norgatedata.git/' not found"
+    },
+    {
+      "repository": "EodHistoricalData/python-eodhistoricaldata",
+      "retrieved_at_utc": "2026-10-17T21:13:59.121049+00:00",
+      "result": "dcd73e5b3237152b8a0e1d333e03d29ec8db7146\tHEAD",
+      "error": null
+    },
+    {
+      "repository": "QuantConnect/Documentation",
+      "retrieved_at_utc": "2026-10-17T21:13:59.257540+00:00",
+      "result": "697eaf38f1d9b257aabb45e3a3210318276c2212\tHEAD",
+      "error": null
+    },
+    {
+      "local_research_clone": "lseg-library",
+      "commit": "efba8aebd01900fd53ddf5fb13d1a0935089e101",
+      "last_commit": "2026-09-03T11:02:17+07:00 Update EX-2.02.09-Pricing-Contribution.ipynb"
+    },
+    {
+      "local_research_clone": "lseg-trth",
+      "commit": "5a0db3ad89edac61a2b539423986cc2e5dbd08e0",
+      "last_commit": "2026-01-21T13:20:47+07:00 Update README.md"
+    },
+    {
+      "local_research_clone": "eodhd",
+      "commit": "440e028dea70fd726bf9da3dddb6031bf42e88f6",
+      "last_commit": "2026-10-15T12:55:30+02:00 docs: news offset max 9000 (#84)"
+    }
+  ],
+  "limitations": [
+    "Primary provider, SEC and exchange origins remain proxy-blocked; no capability failure inferred",
+    "Public SDKs and demonstration records establish interfaces, not FMBH production coverage or commercial rights",
+    "No authenticated data/API calls, provider contact, purchase, subscription or broker use"
+  ],
+  "raw_retention": {
+    "path": "/workspace/audit-upstreams/issue-7-red/public-source-captures.zip",
+    "sha256": "035cdaf3e411ad2cb06442408c7a92aef2e16fc7c57de7c33a30456b852ac9a6",
+    "bytes": 723828,
+    "files": 43,
+    "in_git": false,
+    "reproducibility": "Pinned raw URLs plus hashes; public mutable-page extracts included in review_excerpts.json; unavailable origins are not captured."
+  }
+}
