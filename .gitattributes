@@ -11,3 +11,9 @@ trading_agent_starter/agent/alpaca_daily_contract.py text eol=lf
 trading_agent_starter/agent/daily_liquidity_probe.py text eol=lf
 trading_agent_starter/agent/acquisition_registration.py text eol=lf
 trading_agent_starter/STRUCTURAL_IDENTITY_AMENDMENT_005.md text eol=lf
+# Trusted development-control bytes must match their Git objects on Windows too.
+AI_PROJECT_POLICY.md text eol=lf
+AGENTS.md text eol=lf
+CLOUD_AUTOMATION_PLAN_20261017.md text eol=lf
+automation/control.json text eol=lf
+trading_agent_starter/devloop/*.py text eol=lf

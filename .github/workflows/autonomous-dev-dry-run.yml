@@ -1,0 +1,188 @@
+name: Autonomous development dry run
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: Maintainer-authorized issue number (synthetic work only)
+        required: true
+        type: string
+      base_sha:
+        description: Exact current feat/alpaca-paper-foundation commit (40 lowercase hex)
+        required: true
+        type: string
+      scenario:
+        description: Fixture scenario; failures deliberately stop closed
+        required: true
+        default: happy
+        type: choice
+        options: [happy, repair-once, repair-cap, provider-failure, budget, stale-review, stale-ci, path-escape, control-path, ci-failure]
+      resume_run_id:
+        description: Optional completed run ID from this workflow/issue/base
+        required: false
+        default: ''
+        type: string
+      max_steps:
+        description: Controller steps; use 3 to demonstrate partial-run resume
+        required: true
+        default: '50'
+        type: string
+
+permissions:
+  contents: read
+  issues: read
+  actions: read
+
+# A task owns the controller for its entire run. This is stricter than one
+# implementer + one reviewer per (synthetic) PR. Do not cancel a journal writer.
+concurrency:
+  group: autonomous-dev-${{ github.repository }}-issue-${{ inputs.issue_number }}
+  cancel-in-progress: false
+
+jobs:
+  synthetic-control:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      TRADING_ENABLED: 'false'
+      ALLOW_PAPER_ORDERS: 'false'
+      ALPACA_LIVE_TRADE: 'false'
+    steps:
+      # No checkout-controlled executable runs before this inline bootstrap.
+      - name: Validate trusted dispatch and snapshot GitHub issue
+        id: trust
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        env:
+          REPOSITORY: ${{ github.repository }}
+          REQUESTED_BASE: ${{ inputs.base_sha }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+          RESUME_RUN: ${{ inputs.resume_run_id }}
+          MAX_STEPS: ${{ inputs.max_steps }}
+          WORKFLOW_SHA: ${{ github.workflow_sha }}
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const {REPOSITORY, REQUESTED_BASE: base, ISSUE_NUMBER: issue,
+                   RESUME_RUN: previous, MAX_STEPS, GITHUB_REF, GITHUB_SHA, WORKFLOW_SHA} = process.env;
+            if (REPOSITORY !== 'emanuel894/trading_agent' || !/^[0-9a-f]{40}$/.test(base)
+                || !/^[1-9][0-9]{0,8}$/.test(issue)
+                || GITHUB_REF !== 'refs/heads/feat/alpaca-paper-foundation'
+                || GITHUB_SHA !== base || WORKFLOW_SHA !== base
+                || !/^(?:[1-9]|[1-4][0-9]|50)$/.test(MAX_STEPS)
+                || !/^(?:[1-9][0-9]{0,14})?$/.test(previous)) throw new Error('UNTRUSTED_DISPATCH');
+            const repo = context.repo;
+            const ref = await github.rest.git.getRef({...repo, ref:'heads/feat/alpaca-paper-foundation'});
+            if (ref.data.object.sha !== base) throw new Error('STALE_BASE_SHA');
+            const actor = await github.rest.repos.getCollaboratorPermissionLevel({...repo, username:context.actor});
+            if (!['admin','maintain','write'].includes(actor.data.permission)) throw new Error('MAINTAINER_REQUIRED');
+            const {data: source} = await github.rest.issues.get({...repo, issue_number:Number(issue)});
+            if (source.number !== Number(issue) || source.state !== 'open' || source.pull_request)
+              throw new Error('OPEN_ISSUE_REQUIRED');
+            const snapshot = Object.fromEntries(['number','title','body','updated_at'].map(k => [k,source[k]]));
+            core.setOutput('issue_hash', require('node:crypto').createHash('sha256').update(JSON.stringify(snapshot)).digest('hex'));
+            if (previous) {
+              const {data: run} = await github.rest.actions.getWorkflowRun({...repo, run_id:Number(previous)});
+              if (run.head_sha !== base || run.status !== 'completed' || run.event !== 'workflow_dispatch'
+                  || run.path !== '.github/workflows/autonomous-dev-dry-run.yml'
+                  || run.head_branch !== 'feat/alpaca-paper-foundation'
+                  || !Number.isSafeInteger(run.run_attempt) || run.run_attempt < 1)
+                throw new Error('UNTRUSTED_RESUME_RUN');
+              core.setOutput('artifact_name', `autonomous-dev-issue-${issue}-${previous}-${run.run_attempt}`);
+            }
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ inputs.base_sha }}
+          persist-credentials: false
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.13'
+
+      - name: Run complete secretless acceptance tests
+        working-directory: trading_agent_starter
+        run: |
+          python -m pip install -r requirements.txt
+          python -m unittest discover -s tests -v
+          python -m agent demo --output "$RUNNER_TEMP/dev-loop-demo"
+
+      - name: Restore verified journal with the maintained artifact client
+        if: inputs.resume_run_id != ''
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
+        with:
+          name: ${{ steps.trust.outputs.artifact_name }}
+          run-id: ${{ inputs.resume_run_id }}
+          repository: ${{ github.repository }}
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/dev-loop-state
+
+      - name: Bind local task identity to the restored journal
+        id: resume
+        env:
+          RESUME_RUN: ${{ inputs.resume_run_id }}
+        run: |
+          python - <<'PY'
+          import json, os, re
+          from pathlib import Path
+          target = Path(os.environ['RUNNER_TEMP']) / 'dev-loop-state'
+          target.mkdir(exist_ok=True)
+          task = os.environ['GITHUB_RUN_ID']
+          previous = os.environ['RESUME_RUN']
+          if previous:
+              state = target/'state.json'
+              if state.is_symlink() or not state.is_file() or state.stat().st_size > 1000000:
+                  raise SystemExit('INVALID_RESUME_ARTIFACT')
+              task = json.loads(state.read_text())['task']['run_id']
+          if not isinstance(task, str) or not re.fullmatch(r'[A-Za-z0-9_-]{1,80}', task):
+              raise SystemExit('INVALID_TASK_ID')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write('task_id=' + task + '\n')
+          PY
+
+      - name: Run synthetic worker, CI, reviewer and bounded repairs
+        id: run
+        working-directory: trading_agent_starter
+        env:
+          BASE_SHA: ${{ inputs.base_sha }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+          SCENARIO: ${{ inputs.scenario }}
+          MAX_STEPS: ${{ inputs.max_steps }}
+          TASK_ID: ${{ steps.resume.outputs.task_id }}
+          ISSUE_HASH: ${{ steps.trust.outputs.issue_hash }}
+        run: |
+          python -m devloop --base-sha "$BASE_SHA" --issue-number "$ISSUE_NUMBER" \
+            --scenario "$SCENARIO" --task-id "$TASK_ID" --issue-snapshot-hash "$ISSUE_HASH" \
+            --max-steps "$MAX_STEPS" --output "$RUNNER_TEMP/dev-loop-state"
+
+      - name: Publish synthetic journal and summary
+        if: always() && steps.resume.outcome == 'success'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: autonomous-dev-issue-${{ inputs.issue_number }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/dev-loop-state/state.json
+            ${{ runner.temp }}/dev-loop-state/summary.json
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Display auditable synthetic state transitions
+        if: always() && steps.resume.outcome == 'success'
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        env:
+          CONTROLLER_OUTCOME: ${{ steps.run.outcome }}
+        with:
+          script: |
+            const fs = require('node:fs');
+            const path = require('node:path').join(process.env.RUNNER_TEMP,'dev-loop-state','state.json');
+            const admitted = process.env.CONTROLLER_OUTCOME === 'success';
+            core.summary.addHeading('Synthetic guard acceptance',3)
+              .addRaw('No real PR, independent model review, broker or data call was performed.\n\n');
+            if (fs.existsSync(path)) {
+              const record = JSON.parse(fs.readFileSync(path,'utf8'));
+              const states = record.events.map(e => e.snapshot.state).filter((s,i,a) => i === 0 || s !== a[i-1]);
+              core.summary.addRaw(states.join(' → ')+'\n\n');
+            }
+            core.summary.addRaw(admitted ? 'Synthetic acceptance passed. Human merge remains mandatory.'
+                                         : 'NOT READY: controller failed or is incomplete; restored history is not a new acceptance.');
+            await core.summary.write();
