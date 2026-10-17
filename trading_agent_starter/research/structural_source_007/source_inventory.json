@@ -1,0 +1,1215 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-17T19:23:54.294469+00:00",
+  "issue_number": 7,
+  "scope": "Current public documentation/code/schema/demo fixtures; no actual FMBH acquisition in this issue",
+  "sources": [
+    {
+      "id": "src-77b4c4ad91abcc59",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Auxiliary/MapFile.cs",
+      "sha256": "47a177002507105948617fa7313a21d7dd3d764b07233631a1f2c3bb2bf080a7",
+      "bytes": 9650,
+      "retrieved_at_utc": "2026-10-17T19:18:40.458071+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-4f19f23fa3ade250",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Auxiliary/MapFileRow.cs",
+      "sha256": "0837d8ac38e6851042350cf254eac14db196a88a06d7d02569db0ddc097d43c3",
+      "bytes": 8215,
+      "retrieved_at_utc": "2026-10-17T19:18:40.458515+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-6ce3bfb080238de9",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/SecurityIdentifier.cs",
+      "sha256": "802ff0f0493ee990a5d1917632482f94fe4e267874d034864d03b1aca5574302",
+      "bytes": 48918,
+      "retrieved_at_utc": "2026-10-17T19:18:40.458984+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-59510d5a5f3f81f4",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Fundamental/Fundamental.cs",
+      "sha256": "89c885e5d5020cf24c6270a3515d1b7d57b634dd369bee861be960a89bfc5343",
+      "bytes": 5599,
+      "retrieved_at_utc": "2026-10-17T19:18:40.460789+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-5a5c12751909faea",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Fundamental/FineFundamental.cs",
+      "sha256": "dd9d2723064ab5f985a5882acb341312a9add1a695227d5c7aee72c7ec5867f8",
+      "bytes": 3166,
+      "retrieved_at_utc": "2026-10-17T19:18:40.793660+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-79b6820197b34b8c",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Auxiliary/FactorFile.cs",
+      "sha256": "fa0c953fe65c42382b969c61aea95c14f46826661d193392251efa3f24f8907c",
+      "bytes": 5488,
+      "retrieved_at_utc": "2026-10-17T19:18:40.829513+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-512b983bda7ee1d1",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Data/equity/usa/map_files/aapl.csv",
+      "sha256": "e9def8800d5d5553675cbe4c1955f264ae0bb9bd9e5f9d2faada780529b547c5",
+      "bytes": 32,
+      "retrieved_at_utc": "2026-10-17T19:18:40.885053+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-8a2729af1a3d5cd4",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Auxiliary/MapFilePrimaryExchangeProvider.cs",
+      "sha256": "a5a2ab1612e72b01cd694053f115b2070f3dc4d2e5a842b21f9ae3ab3f8ed258",
+      "bytes": 2637,
+      "retrieved_at_utc": "2026-10-17T19:18:41.177126+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-789a93b30db82fb6",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/04%20Morningstar/01%20US%20Fundamental%20Data/01%20Introduction.html",
+      "sha256": "daa0b8382df8fc985d1b75fad283e373ef7ee76e9b683ca3f37b306008c27e78",
+      "bytes": 2196,
+      "retrieved_at_utc": "2026-10-17T19:20:01.563233+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-6676d70f35ad817b",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/04%20Morningstar/01%20US%20Fundamental%20Data/02%20About%20the%20Provider.html",
+      "sha256": "8770de5936f2e75786b69dee8810bf258badd2e7c84168cf913c7fd6da7bc520",
+      "bytes": 809,
+      "retrieved_at_utc": "2026-10-17T19:20:01.563821+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-cfea07b0e01795e3",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/04%20Morningstar/01%20US%20Fundamental%20Data/03%20Getting%20Started.html",
+      "sha256": "7b0fd6e41091f13f9c973f459b7ca82ede7f000ac386b07c6075c07e16fb6863",
+      "bytes": 1838,
+      "retrieved_at_utc": "2026-10-17T19:20:01.564237+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-39c68aa8a4e1bed3",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/04%20Morningstar/01%20US%20Fundamental%20Data/04%20Data%20Summary.html",
+      "sha256": "fcdcf170ee07a7d734d012742b7b3a18be082b2dc843be3a92fb0d2fe6085fd6",
+      "bytes": 714,
+      "retrieved_at_utc": "2026-10-17T19:20:01.564636+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-ae0a8634cf2d6bbb",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/04%20Morningstar/01%20US%20Fundamental%20Data/05%20Migration.html",
+      "sha256": "ca8a92b8df7746ec2f7eaa292f0e123ad37cd9d02fd2a2608c6f7e48a85f7cf9",
+      "bytes": 1409,
+      "retrieved_at_utc": "2026-10-17T19:20:01.565007+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-e26fc3b9e1a78194",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/04%20Morningstar/01%20US%20Fundamental%20Data/06%20Requesting%20Data.html",
+      "sha256": "c4fbbbb4a90d882017ec5df2d18ea3eea8e38c905698a19612505e8de7ed692b",
+      "bytes": 1754,
+      "retrieved_at_utc": "2026-10-17T19:20:01.565403+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-d8330f12f1da674d",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/04%20Morningstar/01%20US%20Fundamental%20Data/07%20Accessing%20Data.html",
+      "sha256": "ab4c7e785f7d10934ec2af915083eaf1eeb8cf487722dd9b08a5d1c00c7e0968",
+      "bytes": 2295,
+      "retrieved_at_utc": "2026-10-17T19:20:01.566233+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-39a509275bf02e52",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/04%20Morningstar/01%20US%20Fundamental%20Data/08%20Historical%20Data.html",
+      "sha256": "81526affb9b85b49f3345a8a28bb716b742c71db9af473d295e07a574ca0c7bc",
+      "bytes": 4080,
+      "retrieved_at_utc": "2026-10-17T19:20:01.575256+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-d99941cbbaaa172f",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/04%20Morningstar/01%20US%20Fundamental%20Data/98%20Example%20Applications.html",
+      "sha256": "76ff314a7e12dc128752a8d0304bc52a83ab430f8e87c316f9f277defad011c7",
+      "bytes": 11407,
+      "retrieved_at_utc": "2026-10-17T19:20:01.933186+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-26970b6c1ee38184",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/04%20Morningstar/01%20US%20Fundamental%20Data/99%20Data%20Point%20Attributes.html",
+      "sha256": "521330bd4f5024568caaf1b253d77159e6aa31a794323d48113c24f23974c013",
+      "bytes": 8666,
+      "retrieved_at_utc": "2026-10-17T19:20:02.220682+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-8e31fd6dc6c07dd7",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/04%20Morningstar/01%20US%20Fundamental%20Data/metadata.json",
+      "sha256": "e7cbfc9f0b0907264623ff162e65d6d69937a36fdc49af7499a9c54342562950",
+      "bytes": 555,
+      "retrieved_at_utc": "2026-10-17T19:20:02.223364+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-4d63a911e7f93c96",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/02%20QuantConnect/23%20US%20Equity%20Security%20Master/01%20Introduction.html",
+      "sha256": "6dbaa71a7057484916a24498c45f116ba41ee3b81a2ac448fceec42d8c668dff",
+      "bytes": 1084,
+      "retrieved_at_utc": "2026-10-17T19:20:02.235832+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-54d89cabca50a910",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/02%20QuantConnect/23%20US%20Equity%20Security%20Master/02%20About%20the%20Provider.html",
+      "sha256": "e9ef55b3d3f54c1f402cd96a71ac99e41b89de286ea7bd4c7ea75c7acf0f6a79",
+      "bytes": 345,
+      "retrieved_at_utc": "2026-10-17T19:20:02.237453+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-2e7a05f6f1a4fa9d",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/02%20QuantConnect/23%20US%20Equity%20Security%20Master/03%20Data%20Summary.html",
+      "sha256": "779820cde64d7723dcca440b1ced1c1bbd95d820dd2c1ae60847bdc075d20c9d",
+      "bytes": 1038,
+      "retrieved_at_utc": "2026-10-17T19:20:02.358250+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-33af5a5abc0b41b3",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/02%20QuantConnect/23%20US%20Equity%20Security%20Master/04%20Getting%20Started.html",
+      "sha256": "1e0bfd1b3237de52f10adb81241ee239fe20e68fe57be97799f08e9c5dc2d67b",
+      "bytes": 231,
+      "retrieved_at_utc": "2026-10-17T19:20:02.363050+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-e56ff6a9a5fd5405",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/02%20QuantConnect/23%20US%20Equity%20Security%20Master/05%20Accessing%20Splits.html",
+      "sha256": "a3e86762a7c89192918224319b807281a738eef295b75e5c74e98441952883e8",
+      "bytes": 1525,
+      "retrieved_at_utc": "2026-10-17T19:20:02.458168+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-380b06911e45b44e",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/02%20QuantConnect/23%20US%20Equity%20Security%20Master/06%20Accessing%20Dividends.html",
+      "sha256": "c3ad5f420d1958c5b91c027c4d3d7be839a24e9c41330b745ab659b102284155",
+      "bytes": 1416,
+      "retrieved_at_utc": "2026-10-17T19:20:02.516197+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-fa672f254afea80c",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/02%20QuantConnect/23%20US%20Equity%20Security%20Master/07%20Accessing%20Delistings.html",
+      "sha256": "d005598b4ab25c1aa2ea06d0f1705fa64ca0d06a0cc072f231129cc4f3d247bf",
+      "bytes": 1405,
+      "retrieved_at_utc": "2026-10-17T19:20:02.522092+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-353f02a4912854c2",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/02%20QuantConnect/23%20US%20Equity%20Security%20Master/08%20Accessing%20Symbol%20Change%20Events.html",
+      "sha256": "4843fcc85cd3ba1495e02f87edfe54ea908dc08354cb3555c4f891929af35f49",
+      "bytes": 1585,
+      "retrieved_at_utc": "2026-10-17T19:20:02.574493+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-385c6fe517e9f200",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/02%20QuantConnect/23%20US%20Equity%20Security%20Master/09%20Historical%20Data.html",
+      "sha256": "3456775494b4ee9884903a7cb92a4c319ace4e1578df4f3344bbedbd87109a3a",
+      "bytes": 1600,
+      "retrieved_at_utc": "2026-10-17T19:20:02.599648+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-d2ee7f2d5a8c8e57",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/02%20QuantConnect/23%20US%20Equity%20Security%20Master/10%20Live%20Trading%20Considerations.html",
+      "sha256": "b27cb147e1ceff160aea1e5445e991a300f33992f9b5b8199367dbae2b963343",
+      "bytes": 167,
+      "retrieved_at_utc": "2026-10-17T19:20:02.731698+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-fa5befdda40c4443",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/02%20QuantConnect/23%20US%20Equity%20Security%20Master/11%20Supported%20Assets.html",
+      "sha256": "6a4d5ac93561f54a6ebcc566d033ff0390ce79fe41cb7efab1866c6339373efa",
+      "bytes": 214,
+      "retrieved_at_utc": "2026-10-17T19:20:02.807702+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-07f3a766f113c856",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/02%20QuantConnect/23%20US%20Equity%20Security%20Master/98%20Example%20Applications.html",
+      "sha256": "22bc8e293f5311db0daee2bb1a1c003537cd8635b5254edc5d2b8fba7d732d60",
+      "bytes": 12585,
+      "retrieved_at_utc": "2026-10-17T19:20:02.883345+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-cd7d85f0cb9ecf1b",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/02%20QuantConnect/23%20US%20Equity%20Security%20Master/99%20Data%20Point%20Attributes.html",
+      "sha256": "38aca295ea147bae1c6cd7b560bc28a06d62ecc945100c65c516b5df6666d424",
+      "bytes": 1080,
+      "retrieved_at_utc": "2026-10-17T19:20:02.890265+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-2b8c22b320a41d20",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/03%20Writing%20Algorithms/14%20Datasets/02%20QuantConnect/23%20US%20Equity%20Security%20Master/metadata.json",
+      "sha256": "c5d0fc572fc75f62e220dbbc1f607b49cdd8fc06560efe163e6fb3aa82517144",
+      "bytes": 588,
+      "retrieved_at_utc": "2026-10-17T19:20:02.899393+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-09310d7ccbcb9229",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/06%20LEAN%20Engine/03%20Data%20Format/03%20US%20Equity/01%20Introduction.html",
+      "sha256": "f7004c260ffbbcbf8b1bbb2c5bac0a7157659e37f6f471e2fccf86f4f9bb0be0",
+      "bytes": 344,
+      "retrieved_at_utc": "2026-10-17T19:20:02.961805+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-6f8e5d77ab8e1c88",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/06%20LEAN%20Engine/03%20Data%20Format/03%20US%20Equity/02%20Folder%20Structure.html",
+      "sha256": "8a3135d3092b43ccec6a9aaaf7b2025e5cb8036426ce592cec3d4f92b22a43a5",
+      "bytes": 1557,
+      "retrieved_at_utc": "2026-10-17T19:20:02.964052+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-9ce9c3c03b6a2a75",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/06%20LEAN%20Engine/03%20Data%20Format/03%20US%20Equity/03%20Bar%20Data.html",
+      "sha256": "8b35d8eb94c10581f8a87d8a9c614ba49abde29ccdd1fda48c43adabe77ac50a",
+      "bytes": 879,
+      "retrieved_at_utc": "2026-10-17T19:20:03.048157+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-32109aa48824ecbb",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/06%20LEAN%20Engine/03%20Data%20Format/03%20US%20Equity/04%20Tick%20Data.php",
+      "sha256": "2c7270d4b2da86dbfa3878dee6ba4b565b9a57fde92d7e05fb16c14edb963f35",
+      "bytes": 4569,
+      "retrieved_at_utc": "2026-10-17T19:20:03.188848+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-ac08e78ee7b283ab",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/06%20LEAN%20Engine/03%20Data%20Format/03%20US%20Equity/metadata.json",
+      "sha256": "52dffd3056d1bfca844ebaf423f67527899ad7e3c108988800de54e697467fdc",
+      "bytes": 651,
+      "retrieved_at_utc": "2026-10-17T19:20:03.200805+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-4604f31572daf162",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/Resources/datasets/us-equity-security-master-price.html",
+      "sha256": "fd609e1352b3c191f16cf4ceacccdc069f44f60cbd0baf9a35adeeeaa070a8f9",
+      "bytes": 780,
+      "retrieved_at_utc": "2026-10-17T19:20:03.280502+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-24f323a28ba6a4cb",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Fundamental/Generated/SecurityReference.cs",
+      "sha256": "49fbb6ea0c2966fa738da9064f18c8b22d41f6ad0589f8d95ec33ab17add02ce",
+      "bytes": 14773,
+      "retrieved_at_utc": "2026-10-17T19:20:25.526479+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-7ebe0b6e3ad98cae",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Fundamental/Generated/CompanyReference.cs",
+      "sha256": "43bf63efa3851b6e44788bf09f3181f1f556b40910e41f0c8a497920fbe6b583",
+      "bytes": 17699,
+      "retrieved_at_utc": "2026-10-17T19:20:25.526979+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-5b69f9f808e3e62c",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Exchange.cs",
+      "sha256": "d157c2ac9d590cafbb3dfbaca1cb31ca2938af7917841abeb3cebe4700616f55",
+      "bytes": 19107,
+      "retrieved_at_utc": "2026-10-17T19:20:25.529220+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-556970934cb605fb",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/Resources/datasets/licensing/free.html",
+      "sha256": "11220f7f601de0677bbc57aa7842000b9c3f42dbc24abecdd15c2ee2763c33bc",
+      "bytes": 273,
+      "retrieved_at_utc": "2026-10-17T19:21:02.542266+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-547277c111dc546b",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/Resources/datasets/licensing/cloud.php",
+      "sha256": "e7ece89fc859135472f1cdd038c5fe6f6f919e4698b5a7a43c9f921b8205f3bd",
+      "bytes": 2143,
+      "retrieved_at_utc": "2026-10-17T19:21:02.542687+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-c53c0b563a8dfed3",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Documentation/697eaf38f1d9b257aabb45e3a3210318276c2212/Resources/datasets/licensing/download.php",
+      "sha256": "2a2e0c17eb617af13c56235b2df251b04800a9d4585b7a58192978a778b3719b",
+      "bytes": 803,
+      "retrieved_at_utc": "2026-10-17T19:21:02.543058+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-2ba21b8ceea0c736",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Engine/DataFeeds/Enumerators/MappingEventProvider.cs",
+      "sha256": "8a04a78d43d348e31fe9b5aca99a45905b56677496a62ad5afbd3f50dae8f730",
+      "bytes": 3824,
+      "retrieved_at_utc": "2026-10-17T19:21:02.543436+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-857eb5c3d8241ad4",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Engine/DataFeeds/Enumerators/DelistingEventProvider.cs",
+      "sha256": "126381c5a9ab91c7eb7362a618586cf3f4ec63767aa816d4b63325a20cd74721",
+      "bytes": 4812,
+      "retrieved_at_utc": "2026-10-17T19:21:02.543809+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-e335600efc479fd3",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Auxiliary/MapFileResolver.cs",
+      "sha256": "39fec32f3da320ca062ef9b2d2c01712878035c88684616ee39ca4cb909a666a",
+      "bytes": 9614,
+      "retrieved_at_utc": "2026-10-17T19:21:02.544583+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-74bb8673ce11963a",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Auxiliary/CorporateFactorRow.cs",
+      "sha256": "36758a669c139e4321d2209d7f7ba02ea4970d8d9da2d572e14aa24acb5c0117",
+      "bytes": 12779,
+      "retrieved_at_utc": "2026-10-17T19:21:02.930843+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-f83cb8b435854b5c",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Data/equity/usa/map_files/goog.csv",
+      "sha256": "a397648cb43ac7be715c6bdf53a1b098a6b850af0fbd9cfb06d7b7d8b0bea879",
+      "bytes": 50,
+      "retrieved_at_utc": "2026-10-17T19:21:02.957083+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-90a8d973b0b45584",
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Data/equity/usa/map_files/googl.csv",
+      "sha256": "218a3d757d7b4af92cf2d5a496bc33cc381289a9967ad4691b0bf47aaf73b732",
+      "bytes": 49,
+      "retrieved_at_utc": "2026-10-17T19:21:03.180326+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-f205917d97a93c3d",
+      "group": "Databento",
+      "url": "https://raw.githubusercontent.com/databento/databento-rs/72316bd104b47a2a9c24d10eb10f6daad9b36735/src/reference/security.rs",
+      "sha256": "193ba63a6258239d663e2984be92aa1756b236a55892509ab0261beb0ce66401",
+      "bytes": 16318,
+      "retrieved_at_utc": "2026-10-17T19:18:59.164413+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-4e4038f7bfc48f52",
+      "group": "Databento",
+      "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/databento/reference/api/security.py",
+      "sha256": "31ad5930fee63d7e2e1f595b5b91fc34af4142184d14c3317b5b9070f1201c91",
+      "bytes": 9007,
+      "retrieved_at_utc": "2026-10-17T19:18:59.793917+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-0fde31f4a3960e0f",
+      "group": "Databento",
+      "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/tests/data/REFERENCE/test_data.security-master.jsonl",
+      "sha256": "c527184e7f59974e4d9878a9aaeb6193e890409ad10d707805aae14ae0e84dc2",
+      "bytes": 2426,
+      "retrieved_at_utc": "2026-10-17T19:19:00.443366+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-bccc137a7fa83f60",
+      "group": "Databento",
+      "url": "https://raw.githubusercontent.com/databento/dbn/82f76c1de6f5c8a1f4b3711fac423f88a3f91d67/rust/dbn/src/record.rs",
+      "sha256": "2617f6db93abb318a0a9e0ecabdd08876ca8c969e82d5341f102cbc58106f660",
+      "bytes": 55940,
+      "retrieved_at_utc": "2026-10-17T19:19:00.835120+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-8c93c0a3f20c8314",
+      "group": "Databento",
+      "url": "https://raw.githubusercontent.com/databento/databento-rs/72316bd104b47a2a9c24d10eb10f6daad9b36735/src/reference/enums.rs",
+      "sha256": "4e313af6d662c92c76b6c608dc2660856941a33b970e913ef0886791383fc64f",
+      "bytes": 88519,
+      "retrieved_at_utc": "2026-10-17T19:19:25.203108+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-303c0dfef0bdab72",
+      "group": "Databento",
+      "url": "https://raw.githubusercontent.com/databento/databento-rs/72316bd104b47a2a9c24d10eb10f6daad9b36735/src/reference.rs",
+      "sha256": "8de7d6482b60c225d6493602acfa23f66bb35e5dbf0427a6244b78dcbaaf5555",
+      "bytes": 9352,
+      "retrieved_at_utc": "2026-10-17T19:19:26.091425+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-a7f61df51c601adc",
+      "group": "Databento",
+      "url": "https://raw.githubusercontent.com/databento/databento-rs/72316bd104b47a2a9c24d10eb10f6daad9b36735/CHANGELOG.md",
+      "sha256": "535d6b87cd8b1f25e9ca9e6e3f91fbf513b4f69c921e12e4f1bf203c432e3004",
+      "bytes": 47116,
+      "retrieved_at_utc": "2026-10-17T19:19:26.893553+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-6ce6f50dc6e772ad",
+      "group": "Databento",
+      "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/databento/historical/api/timeseries.py",
+      "sha256": "c392df431654306eb50c66cacffacae48690443f182cfe7630848b7173a1bdda",
+      "bytes": 10419,
+      "retrieved_at_utc": "2026-10-17T19:19:27.270004+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-633c9e713b7e5218",
+      "group": "Databento",
+      "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/databento/historical/api/symbology.py",
+      "sha256": "92d919e7d62381c00e06adf42215fb95d11a77740eec6d37f202661e43725ef4",
+      "bytes": 3212,
+      "retrieved_at_utc": "2026-10-17T19:19:27.659471+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-f4b097b0e94b329d",
+      "group": "Databento",
+      "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/databento/historical/api/metadata.py",
+      "sha256": "f6e0d1dac704b017597b270a6ef5c7f21d8b446b4bb3b35d4fceddfae524d890",
+      "bytes": 17739,
+      "retrieved_at_utc": "2026-10-17T19:19:27.990697+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-f92a2482595b10a1",
+      "group": "Databento",
+      "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/databento/live/client.py",
+      "sha256": "1dc66b1d906ef675774356687eaf75579df20f139a13c0f97829a24ffe34e677",
+      "bytes": 26174,
+      "retrieved_at_utc": "2026-10-17T19:19:28.636314+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-d4c5202ed6ffff88",
+      "group": "Databento",
+      "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/CHANGELOG.md",
+      "sha256": "10e57aede23136f6070961961e7db5b6a29f6f24075063ca304c095d3b28c3de",
+      "bytes": 54801,
+      "retrieved_at_utc": "2026-10-17T19:19:28.989494+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-39a7cec94abe97db",
+      "group": "Databento",
+      "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/tests/data/XNAS.ITCH/test_data.definition.dbn.zst",
+      "sha256": "76b6db13d731ea61eabb5f0acb9da1bf85eee9c29c2882dc30b0ecf41b2d69ae",
+      "bytes": 223,
+      "retrieved_at_utc": "2026-10-17T19:19:29.440281+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-a64fff918266c442",
+      "group": "Databento",
+      "url": "https://raw.githubusercontent.com/databento/dbn/82f76c1de6f5c8a1f4b3711fac423f88a3f91d67/rust/dbn/src/enums.rs",
+      "sha256": "1b5a21fdbe48d7c2a142c62f02938d0f7da376fa01e45b2b88cf032026625eb7",
+      "bytes": 60360,
+      "retrieved_at_utc": "2026-10-17T19:19:29.753660+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-e60b3279f4c2bdfa",
+      "group": "Databento",
+      "url": "https://raw.githubusercontent.com/databento/dbn/82f76c1de6f5c8a1f4b3711fac423f88a3f91d67/rust/dbn/src/metadata.rs",
+      "sha256": "5beda2614348b4fc386a86ab5131c8a7174465e4a86c31807157b6f5a615fcdd",
+      "bytes": 17675,
+      "retrieved_at_utc": "2026-10-17T19:19:30.519643+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-de37738b941052be",
+      "group": "OpenFIGI/api-examples",
+      "url": "https://raw.githubusercontent.com/OpenFIGI/api-examples/f847dce9492a6bac685f9fdf1d9450e57280a9c4/README.md",
+      "sha256": "3257bf0fcd230ca6e26e64d7336c1e4186d2d76853639e9dc526620a16c2b680",
+      "bytes": 1162,
+      "retrieved_at_utc": "2026-10-17T19:18:30.988245+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-3f63c11818e3a635",
+      "group": "OpenFIGI/api-examples",
+      "url": "https://raw.githubusercontent.com/OpenFIGI/api-examples/f847dce9492a6bac685f9fdf1d9450e57280a9c4/LICENSE",
+      "sha256": "32bb5d8014dc9178975b7983e078ff0589d7949bed37cc1d73c1cb6d31f18871",
+      "bytes": 11353,
+      "retrieved_at_utc": "2026-10-17T19:18:30.988245+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-8eb2f94ae141a8d5",
+      "group": "massive-com/client-python",
+      "url": "https://raw.githubusercontent.com/massive-com/client-python/670c2cc5f4ec3776f18318baf84eae93d421369f/README.md",
+      "sha256": "9affc784767717a9924014ee7706a877f39cb66f57dab676cc2b4ed4f868458f",
+      "bytes": 14913,
+      "retrieved_at_utc": "2026-10-17T19:18:31.917207+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-3c1ca08f92172590",
+      "group": "massive-com/client-python",
+      "url": "https://raw.githubusercontent.com/massive-com/client-python/670c2cc5f4ec3776f18318baf84eae93d421369f/LICENSE",
+      "sha256": "ec423cc5506eea1ffbfc9955c3ec8f86139996963d84ff306a5ee41eda8a4ff1",
+      "bytes": 1074,
+      "retrieved_at_utc": "2026-10-17T19:18:31.917207+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-04bf52a78acf3dea",
+      "group": "massive-com/client-python",
+      "url": "https://raw.githubusercontent.com/massive-com/client-python/670c2cc5f4ec3776f18318baf84eae93d421369f/massive/rest/reference.py",
+      "sha256": "4d6d6871ae966be1f873bbe15a0ebe8877511b0f433fc42d4cb45662fb4852fb",
+      "bytes": 53077,
+      "retrieved_at_utc": "2026-10-17T19:18:31.917207+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-24c212c1b3aa1b7a",
+      "group": "massive-com/client-python",
+      "url": "https://raw.githubusercontent.com/massive-com/client-python/670c2cc5f4ec3776f18318baf84eae93d421369f/massive/rest/models/tickers.py",
+      "sha256": "f13b8da82715ba4f3e32178a96b4ca0484002a95881283a6675ef80739b8884c",
+      "bytes": 12252,
+      "retrieved_at_utc": "2026-10-17T19:18:31.917207+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-0781b49575520dac",
+      "group": "wharton/wrds",
+      "url": "https://raw.githubusercontent.com/wharton/wrds/5d7bf38de5bd367852b7ccdd05079c1a1820f888/README.md",
+      "sha256": "a4687ac351d97e18f774cd2687f53ea171339c8342d6e2cabf24f6a0d88ade04",
+      "bytes": 4379,
+      "retrieved_at_utc": "2026-10-17T19:18:31.917842+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-da3aefcd594ef2fc",
+      "group": "wharton/wrds",
+      "url": "https://raw.githubusercontent.com/wharton/wrds/5d7bf38de5bd367852b7ccdd05079c1a1820f888/wrds/sql.py",
+      "sha256": "458277a56bcea7d75f6457c3d848e126ddabc7722cc1001bc93d8a37792ccd74",
+      "bytes": 27233,
+      "retrieved_at_utc": "2026-10-17T19:18:31.917842+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-3ea1d71f4154e8cc",
+      "group": "OpenFIGI/api-examples",
+      "url": "https://raw.githubusercontent.com/OpenFIGI/api-examples/f847dce9492a6bac685f9fdf1d9450e57280a9c4/python/example.py",
+      "sha256": "10d3f123698c82a197bebeeff6934a5916ae76aff0d981ad3b02435bd49ded01",
+      "bytes": 2997,
+      "retrieved_at_utc": "2026-10-17T19:22:07.352929+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-ce12de3e1b92e00a",
+      "group": "factset/enterprise-sdk",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/README.md",
+      "sha256": "02440c8e78df7bc74cc5b3fe0d67d052cbb98607821d7a8486f4d276bc570900",
+      "bytes": 5596,
+      "retrieved_at_utc": "2026-10-17T19:19:26.658855+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-0d7f732af99fe9c5",
+      "group": "factset/enterprise-sdk",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/LICENSE",
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+      "bytes": 11357,
+      "retrieved_at_utc": "2026-10-17T19:19:26.658855+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-42271df90817d20f",
+      "group": "factset/enterprise-sdk",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/FactSetEntity/v1/README.md",
+      "sha256": "6e353c4a8da8894af793c9866fe4321145cd9a13e44a55b4e729b7e6740bb016",
+      "bytes": 17526,
+      "retrieved_at_utc": "2026-10-17T19:20:38.044808+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-72b3baac3b1ab477",
+      "group": "factset/enterprise-sdk",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/Symbology/v3/README.md",
+      "sha256": "41caa2f48a50e265161f64b42004010fa80f4d5fe75c25c408c8eec432412645",
+      "bytes": 14273,
+      "retrieved_at_utc": "2026-10-17T19:20:38.045294+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-bd7a52a0aeb992d1",
+      "group": "factset/enterprise-sdk",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/Symbology/v2/README.md",
+      "sha256": "133f25599491f736bc0fe3574c60bd8a75eeb93867c86cadf763b8bf1cb7599e",
+      "bytes": 21049,
+      "retrieved_at_utc": "2026-10-17T19:20:38.045626+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-720d57a9393e5f0a",
+      "group": "factset/enterprise-sdk",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/FactSetEntity/v1/docs/EntityReferenceApi.md",
+      "sha256": "974a4aa72b31fa19d33e741030f82b27a1b9f0239c8a8ad4f810cfb807900fa7",
+      "bytes": 11173,
+      "retrieved_at_utc": "2026-10-17T19:20:38.046663+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-0d26a51aa18f7749",
+      "group": "factset/enterprise-sdk",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/FactSetEntity/v1/docs/EntitySecuritiesApi.md",
+      "sha256": "a72c9e08d2a02c43248fcde5ffa27cb7ac328893069c2221a20be9e49fe91d85",
+      "bytes": 12339,
+      "retrieved_at_utc": "2026-10-17T19:20:38.388066+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-5c357224afcd567e",
+      "group": "factset/enterprise-sdk",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/Symbology/v3/docs/IdentifierResolutionApi.md",
+      "sha256": "96cf22c0f3458e8d7db2aa1f0d94611022555fa6f6c9c01273c96859d0b9d624",
+      "bytes": 16361,
+      "retrieved_at_utc": "2026-10-17T19:20:38.430746+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-ce7215903908824e",
+      "group": "factset/enterprise-sdk",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/Symbology/v3/docs/HistoricalIdentifierResolutionApi.md",
+      "sha256": "b07ff9f42e6ac5e219fca5678e33c456a82b155a639f30f62d55608abe9defd1",
+      "bytes": 17820,
+      "retrieved_at_utc": "2026-10-17T19:22:19.354943+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-a986bf14e151c7f2",
+      "group": "Nasdaq/nasdaq-protocols",
+      "url": "https://raw.githubusercontent.com/Nasdaq/nasdaq-protocols/0fc7f0d0e27cd5083a2d9d166e17ef72bb233a7a/LICENSE",
+      "sha256": "dba42f5987ead92fdac6f5c7056ecd217d981a24fbf87ef3e0b5e848319f7ffa",
+      "bytes": 1063,
+      "retrieved_at_utc": "2026-10-17T19:20:05.812929+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-f4cb46fa34e98f9c",
+      "group": "Nasdaq/nasdaq-protocols",
+      "url": "https://raw.githubusercontent.com/Nasdaq/nasdaq-protocols/0fc7f0d0e27cd5083a2d9d166e17ef72bb233a7a/README.md",
+      "sha256": "406261cb4b5b269aa649b11755abd6c70922043cf8ae54eccbe692eaeb8b5b2f",
+      "bytes": 4463,
+      "retrieved_at_utc": "2026-10-17T19:20:05.812929+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    },
+    {
+      "id": "src-a5121899f887034f",
+      "group": "Nasdaq/nasdaq-protocols",
+      "url": "https://raw.githubusercontent.com/Nasdaq/nasdaq-protocols/0fc7f0d0e27cd5083a2d9d166e17ef72bb233a7a/docs/user_guide_itch.md",
+      "sha256": "5b958d11b811bf72d3deb5c53370518b4f514f85dc3252e2000d901d0c2d6658",
+      "bytes": 3578,
+      "retrieved_at_utc": "2026-10-17T19:20:05.812929+00:00",
+      "capture": "raw immutable-commit GitHub file",
+      "historical_knowledge_time_claimed": false
+    }
+  ],
+  "unsuccessful_attempts": [
+    {
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Fundamental/SecurityReference.cs",
+      "path": "Common/Data/Fundamental/SecurityReference.cs",
+      "error": "HTTP Error 404: Not Found",
+      "retrieved_at_utc": "2026-10-17T19:18:40.459427+00:00"
+    },
+    {
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Fundamental/CompanyReference.cs",
+      "path": "Common/Data/Fundamental/CompanyReference.cs",
+      "error": "HTTP Error 404: Not Found",
+      "retrieved_at_utc": "2026-10-17T19:18:40.459805+00:00"
+    },
+    {
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Auxiliary/PrimaryExchangeProvider.cs",
+      "path": "Common/Data/Auxiliary/PrimaryExchangeProvider.cs",
+      "error": "HTTP Error 404: Not Found",
+      "retrieved_at_utc": "2026-10-17T19:18:41.045703+00:00"
+    },
+    {
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Securities/Equity/EquityPrimaryExchangeProvider.cs",
+      "path": "Common/Securities/Equity/EquityPrimaryExchangeProvider.cs",
+      "error": "HTTP Error 404: Not Found",
+      "retrieved_at_utc": "2026-10-17T19:18:41.157579+00:00"
+    },
+    {
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Fundamental/Generated/FundamentalTimeDependentProperty.cs",
+      "path": "Common/Data/Fundamental/Generated/FundamentalTimeDependentProperty.cs",
+      "error": "HTTP Error 404: Not Found",
+      "retrieved_at_utc": "2026-10-17T19:20:25.527313+00:00"
+    },
+    {
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Auxiliary/MappingEventProvider.cs",
+      "path": "Common/Data/Auxiliary/MappingEventProvider.cs",
+      "error": "HTTP Error 404: Not Found",
+      "retrieved_at_utc": "2026-10-17T19:20:25.527678+00:00"
+    },
+    {
+      "group": "QuantConnect",
+      "url": "https://raw.githubusercontent.com/QuantConnect/Lean/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Auxiliary/DelistingEventProvider.cs",
+      "path": "Common/Data/Auxiliary/DelistingEventProvider.cs",
+      "error": "HTTP Error 404: Not Found",
+      "retrieved_at_utc": "2026-10-17T19:20:25.528171+00:00"
+    },
+    {
+      "group": "wharton/wrds",
+      "url": "https://raw.githubusercontent.com/wharton/wrds/5d7bf38de5bd367852b7ccdd05079c1a1820f888/LICENSE.md",
+      "path": "LICENSE.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "group": "factset/enterprise-sdk",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/FactSetEntity/api/factset_entity_api.py",
+      "path": "code/python/FactSetEntity/api/factset_entity_api.py",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "group": "factset/enterprise-sdk",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/FactSetSymbology/README.md",
+      "path": "code/python/FactSetSymbology/README.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "group": "factset/enterprise-sdk",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/FactSetEntity/README.md",
+      "path": "code/python/FactSetEntity/README.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "group": "factset/enterprise-sdk",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/Symbology/v1/README.md",
+      "path": "code/python/Symbology/v1/README.md",
+      "error": "HTTP Error 404: Not Found",
+      "retrieved_at_utc": "2026-10-17T19:20:38.045974+00:00"
+    },
+    {
+      "group": "factset/enterprise-sdk",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/Symbology/README.md",
+      "path": "code/python/Symbology/README.md",
+      "error": "HTTP Error 404: Not Found",
+      "retrieved_at_utc": "2026-10-17T19:20:38.046361+00:00"
+    },
+    {
+      "group": "factset/enterprise-sdk",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/Symbology/v3/docs/IdentifierResolutionHistoricalRequestData.md",
+      "path": "code/python/Symbology/v3/docs/IdentifierResolutionHistoricalRequestData.md",
+      "error": "HTTP Error 404: Not Found",
+      "retrieved_at_utc": "2026-10-17T19:22:20.165956+00:00"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "sec_submissions",
+      "url": "https://data.sec.gov/submissions/CIK0000700565.json",
+      "retrieved_at_utc": "2026-10-17T19:15:38.809931+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "nasdaq_symbol_definitions",
+      "url": "https://www.nasdaqtrader.com/trader.aspx?id=symboldirdefs",
+      "retrieved_at_utc": "2026-10-17T19:15:38.810589+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "nasdaq_dailylist",
+      "url": "https://www.nasdaqtrader.com/Trader.aspx?id=DailyList",
+      "retrieved_at_utc": "2026-10-17T19:15:38.810981+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "nasdaq_itch_spec",
+      "url": "https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf",
+      "retrieved_at_utc": "2026-10-17T19:15:38.811360+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "databento_xnas",
+      "url": "https://databento.com/docs/venues-and-datasets/xnas-itch",
+      "retrieved_at_utc": "2026-10-17T19:15:38.811782+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "databento_definitions",
+      "url": "https://databento.com/docs/schemas-and-data-formats/instrument-definitions",
+      "retrieved_at_utc": "2026-10-17T19:15:38.812531+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "qc_security_master",
+      "url": "https://www.quantconnect.com/docs/v2/writing-algorithms/datasets/quantconnect/us-equity-security-master",
+      "retrieved_at_utc": "2026-10-17T19:15:38.813140+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "massive_all_tickers",
+      "url": "https://massive.com/docs/rest/stocks/tickers/all-tickers",
+      "retrieved_at_utc": "2026-10-17T19:15:38.813530+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "openfigi_mapping",
+      "url": "https://www.openfigi.com/api/documentation",
+      "retrieved_at_utc": "2026-10-17T19:15:38.823564+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "sec_submissions_retry",
+      "url": "https://data.sec.gov/submissions/CIK0000700565.json",
+      "retrieved_at_utc": "2026-10-17T19:21:01.542919+00:00",
+      "reason": "retry after supported turn network permission granted",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "databento_securitymaster_retry",
+      "url": "https://databento.com/docs/api-reference-reference/security-master/get-range",
+      "retrieved_at_utc": "2026-10-17T19:21:01.543573+00:00",
+      "reason": "retry after supported turn network permission granted",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "nasdaq_dailylist_retry",
+      "url": "https://www.nasdaqtrader.com/Trader.aspx?id=DailyList",
+      "retrieved_at_utc": "2026-10-17T19:21:01.543950+00:00",
+      "reason": "retry after supported turn network permission granted",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "sec_charter_retry",
+      "url": "https://www.sec.gov/Archives/edgar/data/700565/000095017025073121/fmbh-ex3_1.htm",
+      "retrieved_at_utc": "2026-10-17T19:21:01.544298+00:00",
+      "reason": "retry after supported turn network permission granted",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "sec_10k_cover",
+      "url": "https://www.sec.gov/Archives/edgar/data/700565/000095017025029793/R1.htm",
+      "retrieved_at_utc": "2026-10-17T19:21:34.957232+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "sec_8k_april30",
+      "url": "https://www.sec.gov/Archives/edgar/data/700565/000117184325002652/f8k_042925.htm",
+      "retrieved_at_utc": "2026-10-17T19:21:34.957604+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "sec_charter_bylaws",
+      "url": "https://www.sec.gov/Archives/edgar/data/700565/000095017025073121/fmbh-ex3_2.htm",
+      "retrieved_at_utc": "2026-10-17T19:21:34.957926+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "issuer_filings",
+      "url": "https://investors.firstmid.com/financials/sec-filings/default.aspx",
+      "retrieved_at_utc": "2026-10-17T19:21:34.958248+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "issuer_alternate_ir",
+      "url": "https://ir.firstmid.com/financials/sec-filings/default.aspx",
+      "retrieved_at_utc": "2026-10-17T19:21:34.958618+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "nasdaq_current_directory",
+      "url": "https://ftp.nasdaqtrader.com/SymbolDirectory/nasdaqlisted.txt",
+      "retrieved_at_utc": "2026-10-17T19:21:34.958921+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "nasdaq_otherlisted",
+      "url": "https://ftp.nasdaqtrader.com/SymbolDirectory/otherlisted.txt",
+      "retrieved_at_utc": "2026-10-17T19:21:34.976631+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "crsp_stock_guide",
+      "url": "https://www.crsp.org/research/crsp-us-stock-databases/",
+      "retrieved_at_utc": "2026-10-17T19:21:34.978532+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "wrds_crsp_docs",
+      "url": "https://wrds-www.wharton.upenn.edu/pages/grid-items/crsp-data/",
+      "retrieved_at_utc": "2026-10-17T19:21:34.980463+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "factset_docs",
+      "url": "https://developer.factset.com/api-catalog/factset-entity-api",
+      "retrieved_at_utc": "2026-10-17T19:21:34.982721+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "lseg_reference",
+      "url": "https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis",
+      "retrieved_at_utc": "2026-10-17T19:21:34.984812+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "group": "primary-origin-access",
+      "id": "archive_directory_index",
+      "url": "https://web.archive.org/cdx/search/cdx?url=nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt&from=2025&to=2025&output=json&filter=statuscode:200",
+      "retrieved_at_utc": "2026-10-17T19:21:34.987128+00:00",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    }
+  ],
+  "raw_retention": {
+    "path": "/workspace/audit-upstreams/issue-7/retained_raw_sources.zip",
+    "sha256": "8050b7592be1a1da83595c18dcd9b1702fb1eba449a0e7bae4c7c733ea172dd9",
+    "bytes": 234034,
+    "files": 87,
+    "committed_to_git": false,
+    "note": "Exact raw bytes retained in cloud workspace. Git stores this manifest, grounded excerpts and findings; pinned public files can be re-fetched/hash-checked on another machine. No inaccessible primary body or unavailable earlier archive is claimed retained."
+  },
+  "primary_access_limits_are_not_scientific_failure_evidence": true,
+  "failed_guessed_paths_are_not_capability_absence_evidence": true,
+  "native_git_revisions": [
+    {
+      "repository": "QuantConnect/Lean",
+      "retrieved_at_utc": "2026-10-17T19:16:48.037378+00:00",
+      "commit": "d4cac37514427c84d40064cecbf3f0e6be4b0137"
+    },
+    {
+      "repository": "QuantConnect/Data",
+      "retrieved_at_utc": "2026-10-17T19:16:48.037647+00:00",
+      "error": "refs unavailable"
+    },
+    {
+      "repository": "QuantConnect/Documentation",
+      "retrieved_at_utc": "2026-10-17T19:16:48.038107+00:00",
+      "commit": "697eaf38f1d9b257aabb45e3a3210318276c2212"
+    },
+    {
+      "repository": "databento/dbn",
+      "retrieved_at_utc": "2026-10-17T19:16:48.038406+00:00",
+      "commit": "82f76c1de6f5c8a1f4b3711fac423f88a3f91d67"
+    },
+    {
+      "repository": "databento/databento-python",
+      "retrieved_at_utc": "2026-10-17T19:16:48.038749+00:00",
+      "commit": "25eef4ee8e66559e2370166a57c20925ce244d49"
+    },
+    {
+      "repository": "databento/databento-docs",
+      "retrieved_at_utc": "2026-10-17T19:16:48.038951+00:00",
+      "error": "refs unavailable"
+    },
+    {
+      "repository": "OpenFIGI/api-examples",
+      "retrieved_at_utc": "2026-10-17T19:16:48.039162+00:00",
+      "commit": "f847dce9492a6bac685f9fdf1d9450e57280a9c4"
+    },
+    {
+      "repository": "Nasdaq/NasdaqProtocol",
+      "retrieved_at_utc": "2026-10-17T19:16:48.040073+00:00",
+      "error": "refs unavailable"
+    },
+    {
+      "repository": "massive-com/client-python",
+      "retrieved_at_utc": "2026-10-17T19:16:48.555078+00:00",
+      "commit": "670c2cc5f4ec3776f18318baf84eae93d421369f"
+    },
+    {
+      "repository": "polygon-io/client-python",
+      "retrieved_at_utc": "2026-10-17T19:16:48.735423+00:00",
+      "commit": "670c2cc5f4ec3776f18318baf84eae93d421369f"
+    }
+  ]
+}

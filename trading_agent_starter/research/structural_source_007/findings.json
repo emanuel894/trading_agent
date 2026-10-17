@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-17T19:27:24.799277+00:00",
+  "issue": 7,
+  "scientific_path_status": "GENUINE_SOURCE_BLOCKER",
+  "status_scope": "No complete current source/method qualified from inspected evidence; not proof that all possible sources fail, and not an eligibility decision",
+  "base_sha": "aa461c02b69115d4919c81da7afd5443f1f71c2a",
+  "branch": "research/issue-7-fmbh-structural-source",
+  "candidate": {
+    "cik": "0000700565",
+    "issuer": "First Mid Bancshares, Inc.",
+    "observed_ticker": "FMBH",
+    "rank": 1,
+    "priority_digest": "00004f5851fcd2d7cd1ba3e1dfe1e225fa7d8b4fd50a675cc1bc44a552c0f2e6",
+    "eligibility": "UNRESOLVED"
+  },
+  "amendment_005_sha256": "26eeca3bc843f0de0dab53b61fa2008773e1616d888bb165111fabe8a2c38cc5",
+  "prior_massive_review_sha256": "7775d0fc47bfb899d59222b25f247f40fb71fd4c82a1606a7b3714a8ace0a293",
+  "earlier_owner_raw_archive_reverified": false,
+  "earlier_raw_archive_limitation": "Earlier owner ZIP and raw SEC store not present; reused hash-bound recorded reviews only",
+  "requirements": [
+    {
+      "field": "same issuer/legal-class/ticker/type/primary listing",
+      "scope": "60 registered sessions 2025-02-04 through 2025-04-30",
+      "status": "UNRESOLVED",
+      "missing": "Actual FMBH records and source-backed complete legal-class/field lineage, not sparse-date interpolation"
+    },
+    {
+      "field": "issuer-wide qualifying-class completeness",
+      "scope": "CIK0000700565 at May2025 cutoff",
+      "status": "UNRESOLVED",
+      "missing": "Historical full issuer census and authoritative legal-class reconciliation; ID-link schema/current enumeration insufficient"
+    },
+    {
+      "field": "exact structural validity and carry-in",
+      "instants_utc": [
+        "2025-05-01T04:00:00Z",
+        "2025-05-09T13:52:26Z",
+        "2025-05-09T14:03:00Z"
+      ],
+      "status": "UNRESOLVED",
+      "missing": "Documented prior baseline plus complete effective changes or independently source-grounded exact intervals; field-native precision and primary-exchange semantics"
+    }
+  ],
+  "knowledge_time_rule": {
+    "later_structural_retrieval_allowed": true,
+    "unknown_historical_first_publication_not_alone_a_rejection": true,
+    "date_to_instant_promotion_allowed": false,
+    "predictive_or_actionability_exception": false
+  },
+  "sources": {
+    "databento_reference_master": {
+      "finding": "STRONG_DOCUMENTED_EFFECTIVE_TIME_LEAD_NOT_FULLY_QUALIFIED",
+      "positive": [
+        "UTC ts_effective effective-from explicitly documented",
+        "ts_record and ts_created distinct clocks",
+        "issuer/security/listing IDs and optional CIK",
+        "issuer-ID input supported"
+      ],
+      "unresolved": [
+        "native economic precision for each structural field",
+        "historical FMBH coverage and baseline",
+        "carry-in and complete transition/correction history",
+        "complete issuer-wide historical legal classes",
+        "minimum entitlement/price/rights"
+      ],
+      "allocation_warning": "allocate_isins=False drops some rows; true may allocate. Neither executed.",
+      "public_fixture": "Apple, not FMBH"
+    },
+    "databento_xnas_definitions": {
+      "finding": "NOT_SUFFICIENT_ALONE",
+      "reason": "event/receive clocks and optional equity activation/expiration do not establish complete legal class/CIK/effective intervals",
+      "public_fixture": "NVDA December2020, not FMBH"
+    },
+    "quantconnect_lean": {
+      "finding": "DAILY_CORROBORATION_ONLY_FULL_PATH_UNQUALIFIED",
+      "reason": "daily map/factor and Morningstar fields useful; simulation midnight/latest-exchange helpers do not prove historical exact validity or full legal-class census",
+      "survivor_only_claim_made": false,
+      "actual_FMBH_rows_acquired": 0,
+      "minimum_total_cost_verified": false,
+      "published_master_researcher_annual_usd": 600
+    },
+    "massive": {
+      "finding": "PRIOR_DATE_LEVEL_ADMISSION_REUSED_UNCHANGED",
+      "new_api_calls": 0,
+      "remaining_session_calls_deferred": 58,
+      "issuer_query_not_executed": true,
+      "intraday_or_class_completeness_inferred": false
+    },
+    "sec_legal": {
+      "finding": "PRIOR_ANCHORS_REUSED_ADDITIONAL_FREE_EXHIBITS_UNINSPECTED",
+      "005_later_valid_facts_rule_preserved": true,
+      "new_origin_access": "proxy403",
+      "absence_of_useful_exhibit_facts_claimed": false
+    },
+    "nasdaq_exchange": {
+      "finding": "POSSIBLE_BASELINE_CHANGE_LEDGER_UNQUALIFIED",
+      "new_origin_access": "proxy403",
+      "official_open_code": "core transport only, no concrete messages/history",
+      "archive_absence_or_exchange_incapacity_claimed": false
+    },
+    "factset": {
+      "finding": "HISTORICAL_IDENTIFIERS_AND_ENTITY_SCOPE_USEFUL_NOT_FULL_METHOD",
+      "positive": [
+        "CIK historical identifier input and asOfDate supported",
+        "separate entity-securities related-listings endpoint"
+      ],
+      "unresolved": [
+        "exact-instant field validity",
+        "complete historical legal-class census",
+        "FMBH sample/rights/minimum quote"
+      ]
+    },
+    "wrds_crsp": {
+      "finding": "DATE_LEVEL_IDENTIFIER_LEAD_UNQUALIFIED",
+      "account_or_sample_coverage_verified": false
+    },
+    "openfigi": {
+      "finding": "IDENTIFIER_CORROBORATION_ONLY_FROM_INSPECTED_EXAMPLE",
+      "all_historical_endpoints_ruled_out": false
+    },
+    "lseg_other_enterprise": {
+      "finding": "PRIMARY_DOCUMENTATION_UNAVAILABLE_NOT_DISPROVEN"
+    }
+  },
+  "paid_source_recommended": false,
+  "paid_necessity_established": false,
+  "credible_free_primary_paths_globally_exhausted": false,
+  "minimum_complete_solution_cost_usd": null,
+  "why_not_buy": "No named product has both qualified full semantics and bounded FMBH coverage/sample/minimum quote; free primary-document paths remain unverified, so paid-recommendation prerequisites are unmet",
+  "build_vs_buy": "Keep contract/evidence layer; integrate a qualified reference provider. Do not build broad security master or ITCH reconstruction platform.",
+  "minimum_next_action": "Restore primary access, inspect free SEC/exchange semantics, and obtain free Databento Reference baseline/precision/completeness/FMBH sample qualification; NEXT_ACTION.md is exact draft, not sent",
+  "research_access": {
+    "github_raw_and_native_git": "succeeded",
+    "primary_origins": "proxy403 recorded separately from scientific findings",
+    "supported_network_draft_saved": true,
+    "draft_applied_or_published_claimed": false,
+    "turn_network_permission_granted_but_origin_retry_denied": true,
+    "proxy_bypass_attempted": false
+  },
+  "usage": {
+    "included_usage_unavailable": false,
+    "paid_api_fallback": false,
+    "goal_mode_exposed": false,
+    "thread_automation_exposed": false,
+    "heartbeat_created": false
+  },
+  "safety": {
+    "money_spent_usd": 0,
+    "purchases": 0,
+    "subscriptions": 0,
+    "authenticated_data_calls": 0,
+    "new_Massive_calls": 0,
+    "broker_calls": 0,
+    "orders": 0,
+    "candidate_2_advanced": false,
+    "alpha_experiments_started": false,
+    "scientific_registration_changes": false,
+    "ledger_mutation": false,
+    "trading_enabled": false
+  },
+  "source_inventory_sha256": "3375b753672a0645ea560033150cc0f53eb88702df633a8a07be0ab7aa639885",
+  "grounded_excerpt_count": 18,
+  "raw_source_files_indexed": 87
+}

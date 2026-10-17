@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-17T19:29:18.905986+00:00",
+  "scientific_path_status": "GENUINE_SOURCE_BLOCKER",
+  "candidate_eligibility": "UNRESOLVED",
+  "base_sha": "aa461c02b69115d4919c81da7afd5443f1f71c2a",
+  "suite": [
+    {
+      "python": "3.13.5",
+      "platform": "Linux",
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "duration_seconds": 8.547,
+      "log_sha256": "1bf4f931077a43f3686d919540ad3b16cd42a3308f5c5ac3fbafacb134eba11e",
+      "tests": 240,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "python": "3.12.14",
+      "platform": "Linux",
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "duration_seconds": 8.816,
+      "log_sha256": "0fe67cb6c952321066dde2e8db7db549a8403d883777f63613454f67ad804fc1",
+      "tests": 240,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "registrations": {
+    "004": "REGISTRATION_VERIFIED; SHA-256 c4dfc00f202ef93a3b87cfb8928f75c4a7e152db6a3253260187bdb9b0173409",
+    "005": "registration() returned successfully; all protected hashes match"
+  },
+  "protected_sha256_verified": {
+    "STRUCTURAL_IDENTITY_AMENDMENT_005.md": "5d7a7526863fb5cc2d4a5bc91a6ca161b3989ae1d3e0086db6e0be1cc3ae55eb",
+    "agent/acquisition_registration.py": "b790d2ac19df6e5c2576418f3a8bf6df252cce9d9782d5e1a80c9204fb7b923c",
+    "agent/alpaca_daily_contract.py": "8fc983b89af15e5d8528474e859edd3c8a67f1706914c3d4f3b793615259a561",
+    "agent/cohort_selector.py": "f6318d8c47f02f4fcbe32d5efb6f884fe912419dca38b651273b34ba7fad2d37",
+    "agent/cohort_selector_v3.py": "22bebe7390f09711197cb2dd448586a4e8ba10bc633588095bb5bdb0130b0bae",
+    "research/acquisition_candidate_001_004_ledger.json": "ed0ecce6d50be2b11372e1734e0d336e6d8c268c5640cb42814e5d323b3b2a94",
+    "research/acquisition_frame_registration_004.json": "c4dfc00f202ef93a3b87cfb8928f75c4a7e152db6a3253260187bdb9b0173409",
+    "research/acquisition_priority_order_004.json": "f90430aeb8c92031317e376080142e3513bb648dc64522cec6c0d526fdc59a69",
+    "research/cohort_selection_registration_003.json": "af7e721326576b0e6b131debd1b5f8665c474adc2472ab75d483fb654f35eed2",
+    "AI_PROJECT_POLICY.md": "92031d4c363964ff3b2bc47e7b39d2d7b3a2dd04baae159068f30e74e50f9765",
+    "AGENTS.md": "6f41fa1e3cf2cf4b46153954ad341a6513cd1dd45fc3791d3cee9a4c2814dbf2",
+    ".github/workflows/tests.yml": "4bc704a519de01468bb80d6fb1fac8e93ae33f7bcd23bfc11f14c01534f0ceba",
+    ".github/workflows/autonomous-dev-dry-run.yml": "9b4cb1422005f87c92e91e9b4cb15ab08ec3247a6a75d3fc9886a8dd8a393fff",
+    "automation/control.json": "6b978c57fb70f2a72e4c5139ebea06552a07d7e5fa94040c0e9503c84e5547f3",
+    "trading_agent_starter/agent/acquisition_identity.py": "fa7f195015f85bb5d80cca8acdc4de86fe7ae236835739acea9bb7be61983692",
+    "trading_agent_starter/research/structural_identity_registration_005.json": "26eeca3bc843f0de0dab53b61fa2008773e1616d888bb165111fabe8a2c38cc5",
+    "trading_agent_starter/research/structural_identity_registration_005.sha256": "e403ba7d5ae1dfd97b0785b342796c267b9f454c295ab4d11069a28f580d2d9a"
+  },
+  "synthetic_demo": {
+    "bars": 300,
+    "exit_code": 0,
+    "orders": 0,
+    "purpose": "engineering regression demonstration, not an alpha experiment"
+  },
+  "source_verification": {
+    "raw_files": 87,
+    "all_hashes_and_lengths_match": true,
+    "grounded_raw_byte_excerpts": 18,
+    "all_excerpt_spans_match": true,
+    "retained_zip_sha256_verified": true
+  },
+  "scientific_review": {
+    "type": "fresh-context included-model review; not additional source authority",
+    "blocking_findings": 0,
+    "reviewer_independently_verified_raw_files": 87,
+    "reviewer_independently_verified_excerpts": 18,
+    "finding": "No complete source path contrary to report; bounded no-qualified-path status supported, no global absence claim"
+  },
+  "source_qualification_limits": [
+    "No actual new FMBH production reference/class record acquired",
+    "Prior owner raw archive not present for fresh independent verification",
+    "Primary SEC/exchange/issuer/provider sites blocked by proxy, not proven scientifically incapable",
+    "Credible free primary/sample paths not claimed globally exhausted; no paid recommendation",
+    "Databento Reference baseline/effective precision/class census/FMBH coverage and minimum price remain unverified",
+    "Windows/hosted CI not run locally; test success does not establish source facts"
+  ],
+  "source_queries": {
+    "new_Massive_api_calls": 0,
+    "authenticated_provider_calls": 0,
+    "broker_calls": 0,
+    "paid_fallback_model_api_calls": 0,
+    "spending_usd": 0,
+    "orders": 0
+  },
+  "invariants": {
+    "amendment_005_changed": false,
+    "ledger_changed": false,
+    "priority_changed": false,
+    "candidate_2_advanced": false,
+    "alpha_tests_started": false,
+    "trading_enabled": false,
+    "purchase_or_subscription": false
+  },
+  "included_usage_reset_needed": false,
+  "thread_automation_created": false,
+  "goal_mode_available": false,
+  "artifact_sha256": {
+    "trading_agent_starter/research/structural_source_007/NEXT_ACTION.md": "8a8b75e014fcf86fb4501a1089b1ff58d1019ddf57e8d1d0a1304e988fb40702",
+    "trading_agent_starter/research/structural_source_007/PROGRESS.md": "09dec4facb5e929b24f111deca7e6af3bdc45ad826ef753ae83bf1af32f36ccd",
+    "trading_agent_starter/research/structural_source_007/findings.json": "652350f6ff5db52585abd3bdafd32c3f88f6df5990f18933f054ee52e33b74ff",
+    "trading_agent_starter/research/structural_source_007/issue_snapshot.json": "33ec5905846ca427cdb25442674d122eba7ab49ffaef7ef42296ac19722edcb7",
+    "trading_agent_starter/research/structural_source_007/source_excerpts.json": "6191bc8ca79f02af3e0742b527af6fdb2e1e0126783bfd6aba7b101bb6452f06",
+    "trading_agent_starter/research/structural_source_007/source_inventory.json": "3375b753672a0645ea560033150cc0f53eb88702df633a8a07be0ab7aa639885",
+    "trading_agent_starter/FMBH_STRUCTURAL_SOURCE_20261017.md": "fab987c313dbdcc9b6ab38fede61a0840351e75d6afd164a47047f8bc26c1114"
+  }
+}
