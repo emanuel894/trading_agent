@@ -6,6 +6,24 @@ and large artifacts. Agents are workers on bounded issues; GitHub controls and
 humans retain promotion/merge authority. No workflow, repository setting, secret,
 GitHub App, review bot or protected-branch rule was installed by this audit.
 
+## Issue #3 bootstrap amendment
+
+The owner's subsequent [Issue #3](https://github.com/emanuel894/trading_agent/issues/3)
+authorizes the synthetic development-control bootstrap before any FMBH work.
+For this implementation, **OpenAI/Codex is the future implementer target and
+Google/Gemini the first reviewer challenger**; Claude is deferred until its
+measured review value justifies cost. This supersedes the provider selection and
+development sequencing recommendations below, without changing the scientific
+contract or any registered experiment. The earlier two-provider design below
+remains architecture context, not permission to activate Claude or start FMBH.
+
+The [bootstrap runbook](automation/README.md) describes the implemented
+fixture-only controller and manually dispatched, trusted-base workflow. Real
+provider clients, GitHub mutation/publishing jobs and merge automation remain
+inactive. No provider key is required for acceptance; max automatic repairs is
+enforced at two. API-backed operation is a later owner-authorized activation,
+with protected environments, permissions and exact budgets reviewed first.
+
 The scientific contract remains in [AI_PROJECT_POLICY.md](AI_PROJECT_POLICY.md)
 and its registered references. This design cannot change FMBH's UNRESOLVED state,
 authorize the remaining 58 Massive requests or enable trading.
