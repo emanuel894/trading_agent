@@ -1,4 +1,4 @@
-"""Provider-neutral, fail-closed control state machine for synthetic tasks.
+"""Project guard acceptance harness; not a production agent orchestrator.
 
 Providers return data, never commands. No candidate code is executed here. Real
 API-backed providers, branch publication and real PR approval are not activated.
@@ -208,10 +208,6 @@ class Controller:
                      "tool_version": VERSION, "scenario": scenario, "run_id": run_id,
                      "mode": "synthetic", "providers": identities,
                      "allowed_paths": self.allowed,
-                     "pull_request": {"kind": "synthetic", "number": None,
-                                      "branch": f"ai/synthetic-issue-{issue_number}-{run_id}",
-                                      "base_branch": "feat/alpaca-paper-foundation",
-                                      "id": f"synthetic-{issue_number}-{run_id}"},
                      "max_repair_cycles": 2, "max_provider_calls": 6,
                      "max_cost_microusd": 0}
         self.snapshot = {"state": "QUEUED", "repair_cycles": 0, "provider_calls": 0, "provider_retries": 0,

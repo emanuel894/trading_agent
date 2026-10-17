@@ -10,13 +10,21 @@ without amending science or starting FMBH.
 
 ## Exactly what works
 
-`devloop` is a standard-library-only state machine with fixture implementer,
+`devloop` is a standard-library-only **project guard acceptance harness** with fixture implementer,
 fixture CI and fixture reviewer boundaries. The two role instances exchange typed,
 bounded data without a human relay. No CLI key is needed, no external provider is
 called, no candidate code is executed, and no candidate change is applied to the
-checkout. A synthetic branch/PR descriptor and synthetic content head are recorded
-as such; **they are not real GitHub objects or an independent model review**.
+checkout. A synthetic content head exercises stale-result rejection;
+**it is not a real GitHub commit or an independent model review**. The former
+synthetic branch/PR descriptor was removed in the
+[de-duplication review](../AUTOMATION_DEDUP_REVIEW_20261017.md).
 Creating real feature PRs and unattended API-backed work needs later activation.
+
+Do not evolve this harness into a custom issue scheduler, provider client,
+branch/PR publisher or agent conversation manager. Adopt maintained plumbing
+where its permission boundary qualifies; retain our project-specific guards.
+The source-pinned review documents the OpenHands lifecycle candidate,
+Superpowers development process and official Codex/Gemini runner choices.
 
 The existing Foundation PR test workflow remains unchanged. The new manual
 workflow separately runs the complete suite/demo before its synthetic controller.
@@ -68,6 +76,9 @@ the journal with the original counters. The partial invocation exits 2 because
 it is incomplete. Do not edit a saved record to make it pass. The exact issue,
 base, policy/config, scenario and task identity must match on resume. A local
 fixture issue hash is generated unless a verified GitHub snapshot hash is given.
+Tool version `synthetic-devloop-2` deliberately rejects journals from version 1;
+their task shape and policy binding differ. Use a fresh synthetic task on the new
+committed control revision. This is not permission to reset a real PR's counters.
 
 Negative scenarios, each using a distinct output directory:
 
@@ -119,6 +130,10 @@ approved retention policy before expiry, or stop if the trusted artifact is gone
 Hashes detect accidental/casual alteration, not a malicious party rewriting and
 rehashing a complete journal; trust also depends on the verified GitHub source
 run and branch controls. No external timestamp/WORM claim is made.
+The maintained downloader warns rather than fails on archive digest mismatch.
+Download success alone is not integrity evidence; the source-run/journal guards
+remain required. A future privileged publisher additionally needs a qualified
+hard integrity check against a trusted receipt of the patch/artifact bytes.
 
 Concurrency groups serialize all runs for an issue, across source SHAs; the
 controller lock also prevents concurrent local owners of the same journal. This
@@ -137,9 +152,19 @@ that base. `load_trust` reads policy/config Git objects, verifies source HEAD an
 matching local control bytes; it does not discover nested instructions or load
 candidate hooks, plugins or MCP configuration.
 
+Pinned `actions/github-script` supplies Octokit API transport and Actions summary
+formatting; pinned `actions/download-artifact` restores the verified run's exact
+artifact. Our code supplies the authorization/SHA/issue predicates and journal
+binding. It no longer shells out to `gh` for API transport or artifact download.
+Both new action pins run Node 24 and require Actions Runner >=2.327.1; this workflow
+uses GitHub-hosted Ubuntu, not an unqualified self-hosted image. Guard tests execute
+the actual JavaScript against synthetic Octokit responses with no credentials.
+The summary requires a successful current controller outcome; restored historical
+readiness cannot label a failed resume as a new acceptance.
+
 The workflow has **read-only** contents/issues/actions permissions, no `secrets`
 bindings, no publishing/merge/deployment jobs and no provider SDKs. Its short-lived
-GitHub token is passed only to the bootstrap/resume steps for metadata/artifacts,
+GitHub token is available only to trusted managed actions for metadata/artifacts,
 not to fixture roles. Contexts are an explicit allowlist without process env,
 untrusted issue text or implementation transcripts. These are controlled Python
 fixtures in one process, **not an OS sandbox for arbitrary plug-ins**. Never load
@@ -157,8 +182,9 @@ a possibly live lock or reset repair counters.
 
 Do not add keys merely to pass this PR. Actual OpenAI/Gemini execution first needs:
 
-* Human-reviewed provider adapters and isolated tools/runners, using the canonical
-  policy and trusted-base config. Prefer supported credential proxies/workload
+* Human-reviewed integration of the official Codex action and Gemini CLI action,
+  with isolated tools/runners and the canonical policy/trusted-base config. Do not
+  build parallel model clients. Prefer supported credential proxies/workload
   identity; no raw provider key may reach candidate code, prompts, logs or the
   artifact publisher. Fixture `synthetic` identity flags are not authentication.
 * Protected GitHub environments such as `ai-implementation` and `ai-review`, with
@@ -166,6 +192,11 @@ Do not add keys merely to pass this PR. Actual OpenAI/Gemini execution first nee
   Enter values in the secure environment UI only. Google access alone does not
   establish Gemini API billing/quotas; review GCP WIF if supported by the chosen
   adapter. No Alpaca/Massive/SEC-auth/deployment/admin keys belong in either job.
+* Qualify maintained issue-to-PR plumbing before implementing publication. Current
+  OpenHands `github-issue-to-pr` substantially overlaps this need, but gives the
+  coding agent a write-capable token and publication responsibility. Adopt only
+  after a supported configuration/integration preserves our separate publisher,
+  exact-base controls and durable caps. Do not fork its scheduler into this repo.
 * Exact monthly and per-run dollar/token/time limits, an authoritative cross-run
   spend/reservation ledger, idempotency/ambiguous request recovery, price/version
   snapshots and shutdown behavior. Max repairs stays 2 across resumes/retries.

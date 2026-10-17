@@ -43,7 +43,8 @@ class ControllerTests(unittest.TestCase):
                          ["QUEUED", "IMPLEMENTING", "TESTING", "REVIEWING", "READY_FOR_HUMAN"])
         self.assertEqual(result["snapshot"]["provider_calls"], 2)
         self.assertEqual(result["snapshot"]["estimated_cost_microusd"], 0)
-        self.assertIsNone(result["task"]["pull_request"]["number"])
+        self.assertNotIn("pull_request", result["task"])
+        self.assertNotIn("branch", result["task"])
         self.assertFalse((self.root / "automation").exists())
 
     def test_one_repair_includes_second_test_and_fresh_review(self):
@@ -294,6 +295,15 @@ class TrustedBaseTests(unittest.TestCase):
 
 
 class WorkflowBoundaryTests(unittest.TestCase):
+    def test_generic_transport_and_artifact_restore_use_maintained_actions(self):
+        text = (REPOSITORY/".github/workflows/autonomous-dev-dry-run.yml").read_text()
+        self.assertTrue("uses: actions/github-script@" in text,
+                        "GitHub REST transport must use the maintained Octokit action")
+        self.assertTrue("uses: actions/download-artifact@" in text,
+                        "Cross-run artifact download must use the maintained action")
+        self.assertFalse("'gh', 'api'" in text or "'gh', 'run', 'download'" in text,
+                         "Do not keep a second custom API/download client")
+
     def test_existing_ci_preserves_secretless_foundation_matrix(self):
         text = (REPOSITORY/".github/workflows/tests.yml").read_text()
         self.assertIn("os: [ubuntu-latest, windows-latest]", text)
