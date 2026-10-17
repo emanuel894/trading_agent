@@ -1,0 +1,337 @@
+{
+  "recorded_at_utc": "2026-10-17T18:54:34.758513+00:00",
+  "repositories": [
+    {
+      "repository": "openai/codex-action",
+      "retrieved_at_utc": "2026-10-17T18:53:49.827154+00:00",
+      "commit": "a8d8be6ee028bea4525bc722d16f36687b408c81",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/openai/codex-action/a8d8be6ee028bea4525bc722d16f36687b408c81/README.md",
+          "status": 200,
+          "bytes": 17938,
+          "sha256": "00083d3f3b7ab6b887e1efa198c79a3791e53c5aae534588c9eba6c7b056b741"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/openai/codex-action/a8d8be6ee028bea4525bc722d16f36687b408c81/LICENSE",
+          "status": 200,
+          "bytes": 10926,
+          "sha256": "d17f227e4df5da1600391338865ce0f3055211760a36688f816941d58232d8dc"
+        },
+        {
+          "path": "action.yml",
+          "url": "https://raw.githubusercontent.com/openai/codex-action/a8d8be6ee028bea4525bc722d16f36687b408c81/action.yml",
+          "status": 200,
+          "bytes": 16776,
+          "sha256": "448852e9e59565440bf25174b54bbf661bd66102be295af2e526fa09eaaf3bd7"
+        },
+        {
+          "path": "docs/security.md",
+          "url": "https://raw.githubusercontent.com/openai/codex-action/a8d8be6ee028bea4525bc722d16f36687b408c81/docs/security.md",
+          "status": 200,
+          "bytes": 7227,
+          "sha256": "06d1039180fc0a40515f23b68bb980c30c5430116389e904d57500a47694aa05"
+        },
+        {
+          "path": "src/main.ts",
+          "url": "https://raw.githubusercontent.com/openai/codex-action/a8d8be6ee028bea4525bc722d16f36687b408c81/src/main.ts",
+          "status": 200,
+          "bytes": 14739,
+          "sha256": "cd5ad02d75725b03fcdbf603ed9be7ef55bff81c41ef9ed86ee905643ebcdda2"
+        }
+      ],
+      "license_observed": "Apache-2.0"
+    },
+    {
+      "repository": "google-github-actions/run-gemini-cli",
+      "retrieved_at_utc": "2026-10-17T18:53:49.893285+00:00",
+      "commit": "387c8ddb7a72078825da941758b811b9153c71e8",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/README.md",
+          "status": 200,
+          "bytes": 19295,
+          "sha256": "9c49d5dfb35c9bacf34288837d1b3aba682cf4eb5cf334f1a6e82e91850cca7c"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/LICENSE",
+          "status": 200,
+          "bytes": 11357,
+          "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+        },
+        {
+          "path": "action.yml",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/action.yml",
+          "status": 200,
+          "bytes": 22149,
+          "sha256": "deace8fe05c2a99af825d7145ebef313c80463542945dacc45cadeb94763728d"
+        },
+        {
+          "path": "docs/authentication.md",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/docs/authentication.md",
+          "status": 200,
+          "bytes": 15041,
+          "sha256": "fe5f07ff3117cc5eced9628d0226b9b5f9c12530e826201444b70829722f9916"
+        },
+        {
+          "path": "examples/workflows/pr-review/gemini-review.yml",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/examples/workflows/pr-review/gemini-review.yml",
+          "status": 200,
+          "bytes": 4525,
+          "sha256": "dd07693609e29be793a7aca8ee17607551e5168745c25b150bffbcf452359c98"
+        }
+      ],
+      "license_observed": "Apache-2.0"
+    },
+    {
+      "repository": "OpenHands/extensions",
+      "retrieved_at_utc": "2026-10-17T18:53:48.967070+00:00",
+      "commit": "d05780951082d4d83f785cb1d4c7f2be6d1c14a5",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/LICENSE",
+          "status": 200,
+          "bytes": 1066,
+          "sha256": "fe425248fc51d1d1805ab1442ba8add98d770ad8a132051eaac8c93d7eee3ebe"
+        },
+        {
+          "path": "skills/github-issue-to-pr/README.md",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/skills/github-issue-to-pr/README.md",
+          "status": 200,
+          "bytes": 3792,
+          "sha256": "8777ce24a7c185022b902780ae396faf978272c910827d5fec7632a1b2147cbb"
+        },
+        {
+          "path": "skills/github-issue-to-pr/scripts/main.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/skills/github-issue-to-pr/scripts/main.py",
+          "status": 200,
+          "bytes": 49682,
+          "sha256": "c0b0cdec04df9db9f946efc005f6277ebceb638cd4ad0e71384f6f11582812bc"
+        },
+        {
+          "path": "skills/github-issue-to-pr/scripts/worker.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/skills/github-issue-to-pr/scripts/worker.py",
+          "status": 200,
+          "bytes": 6879,
+          "sha256": "e46e32537bdd904ec77f8d2bc12985351d206784d194c248f7eecbf2f2971173"
+        },
+        {
+          "path": "skills/github/scripts/agent_conversation.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/skills/github/scripts/agent_conversation.py",
+          "status": 200,
+          "bytes": 25443,
+          "sha256": "151990a5529297ec39f9592423c92853d81d992caabfc6e096e743cb6e9130a4"
+        },
+        {
+          "path": "skills/github/scripts/github_client.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/skills/github/scripts/github_client.py",
+          "status": 200,
+          "bytes": 15091,
+          "sha256": "7959665555b5178631799f9c8260ffea748e4e589dcc58613befb578255df0f3"
+        },
+        {
+          "path": "skills/github-issue-to-pr/references/state-schema.md",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/skills/github-issue-to-pr/references/state-schema.md",
+          "status": 200,
+          "bytes": 5447,
+          "sha256": "f752a504346669dba07dd54e3013ab2d626858d54b9d8a8fcaf97e9ba6d6b84c"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repository": "OpenHands/automation",
+      "retrieved_at_utc": "2026-10-17T18:53:48.933254+00:00",
+      "commit": "bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/OpenHands/automation/bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2/README.md",
+          "status": 200,
+          "bytes": 3302,
+          "sha256": "7e558b75a90df40760995a98c6a035958558558296dcc2591315779c0b3b2fe0"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/OpenHands/automation/bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2/LICENSE",
+          "status": 200,
+          "bytes": 1079,
+          "sha256": "14a9b631c658eee682c6c2973525fbdf808c3457176bc47513052c559cc5ce86"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/OpenHands/automation/bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2/pyproject.toml",
+          "status": 200,
+          "bytes": 3334,
+          "sha256": "6e9b253a1b7930020c01a2d54fabd59381f50f4671050541b58099d5fbc517cb"
+        },
+        {
+          "path": "openhands/automation/dispatcher.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/automation/bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2/openhands/automation/dispatcher.py",
+          "status": 200,
+          "bytes": 27045,
+          "sha256": "ff689319d0dc59f080bf3bcf335479be332840f088dd92ad67febd0b273d3c97"
+        },
+        {
+          "path": "openhands/automation/models.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/automation/bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2/openhands/automation/models.py",
+          "status": 200,
+          "bytes": 35969,
+          "sha256": "7c5f79f83e04a92e7a89c3977f15f8bb6ddb5c22f4471c2e0ba51051c4ad4c74"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repository": "obra/superpowers",
+      "retrieved_at_utc": "2026-10-17T18:53:49.892577+00:00",
+      "commit": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/LICENSE",
+          "status": 200,
+          "bytes": 1070,
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+        },
+        {
+          "path": "skills/subagent-driven-development/SKILL.md",
+          "url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/subagent-driven-development/SKILL.md",
+          "status": 200,
+          "bytes": 32577,
+          "sha256": "8dde5589ee083fb4999106d116f01c8fdaf3116a8a9813fdedeb80329de49046"
+        },
+        {
+          "path": "skills/test-driven-development/SKILL.md",
+          "url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/test-driven-development/SKILL.md",
+          "status": 200,
+          "bytes": 9578,
+          "sha256": "64b03fce4aee5a97a93160cea8111f3ba13a17b7c001db4bd5836d67fd10705d"
+        }
+      ],
+      "license_observed": "MIT"
+    },
+    {
+      "repository": "BerriAI/litellm",
+      "retrieved_at_utc": "2026-10-17T18:53:50.760216+00:00",
+      "commit": "b5037f28d172f6f6375ba3d08dcdf2c10deb8d2d",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/BerriAI/litellm/b5037f28d172f6f6375ba3d08dcdf2c10deb8d2d/README.md",
+          "status": 200,
+          "bytes": 38851,
+          "sha256": "f8ba764d53daa4996c9cfa98b166316c2c4b0be6db4d94cd620fcbc8465286d7"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/BerriAI/litellm/b5037f28d172f6f6375ba3d08dcdf2c10deb8d2d/LICENSE",
+          "status": 200,
+          "bytes": 1419,
+          "sha256": "b170d6bf8e8835dd357e011681db028f4d51e2fb0ea892058f56e01fb39b8273"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/BerriAI/litellm/b5037f28d172f6f6375ba3d08dcdf2c10deb8d2d/pyproject.toml",
+          "status": 200,
+          "bytes": 15934,
+          "sha256": "a8557caa1a96dd8423151e17eab5b991f16d985c4e2f466c3e5a420cc9109b9d"
+        },
+        {
+          "path": "docs/my-website/docs/proxy/cost_tracking.md",
+          "url": "https://raw.githubusercontent.com/BerriAI/litellm/b5037f28d172f6f6375ba3d08dcdf2c10deb8d2d/docs/my-website/docs/proxy/cost_tracking.md",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "docs/my-website/docs/proxy/users.md",
+          "url": "https://raw.githubusercontent.com/BerriAI/litellm/b5037f28d172f6f6375ba3d08dcdf2c10deb8d2d/docs/my-website/docs/proxy/users.md",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "docs/my-website/docs/proxy/virtual_keys.md",
+          "url": "https://raw.githubusercontent.com/BerriAI/litellm/b5037f28d172f6f6375ba3d08dcdf2c10deb8d2d/docs/my-website/docs/proxy/virtual_keys.md",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "litellm/proxy/auth/auth_checks.py",
+          "url": "https://raw.githubusercontent.com/BerriAI/litellm/b5037f28d172f6f6375ba3d08dcdf2c10deb8d2d/litellm/proxy/auth/auth_checks.py",
+          "status": 200,
+          "bytes": 300748,
+          "sha256": "721b249212f1f75ff549e8f3c67728ffc6bf4bdc05f8caee5fa81e08ae44d922"
+        },
+        {
+          "path": "litellm/proxy/hooks/proxy_track_cost_callback.py",
+          "url": "https://raw.githubusercontent.com/BerriAI/litellm/b5037f28d172f6f6375ba3d08dcdf2c10deb8d2d/litellm/proxy/hooks/proxy_track_cost_callback.py",
+          "status": 200,
+          "bytes": 42064,
+          "sha256": "1b0d9b819f9e62943d87688b4b85ec73a1d39c622946bc85ea327c45c52373b6"
+        },
+        {
+          "path": "litellm/proxy/spend_tracking/budget_reservation.py",
+          "url": "https://raw.githubusercontent.com/BerriAI/litellm/b5037f28d172f6f6375ba3d08dcdf2c10deb8d2d/litellm/proxy/spend_tracking/budget_reservation.py",
+          "status": 200,
+          "bytes": 67820,
+          "sha256": "d15f40187d1f272e1960b4a9e7cc4134332889fb84f4981b100cc0397d1bd20f"
+        },
+        {
+          "path": "litellm/proxy/spend_tracking/budget_reservation_store.py",
+          "url": "https://raw.githubusercontent.com/BerriAI/litellm/b5037f28d172f6f6375ba3d08dcdf2c10deb8d2d/litellm/proxy/spend_tracking/budget_reservation_store.py",
+          "error": "HTTP Error 404: Not Found"
+        }
+      ],
+      "license_observed": "MIT outside enterprise/; enterprise license separate"
+    },
+    {
+      "repository": "peter-evans/create-pull-request",
+      "retrieved_at_utc": "2026-10-17T18:53:49.829222+00:00",
+      "commit": "bd09a93810788ce61d2d5fb7d6b221b9b4a4aab7",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/peter-evans/create-pull-request/bd09a93810788ce61d2d5fb7d6b221b9b4a4aab7/README.md",
+          "status": 200,
+          "bytes": 17441,
+          "sha256": "e217de2d25dde10d90b305914bb1475790ae1141e056e3a3d730508a607e22a2"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/peter-evans/create-pull-request/bd09a93810788ce61d2d5fb7d6b221b9b4a4aab7/LICENSE",
+          "status": 200,
+          "bytes": 1068,
+          "sha256": "fdca6e81a2409e862b0ee5636a556bc7164fee09d523b7b3ca615126ab682bb7"
+        },
+        {
+          "path": "action.yml",
+          "url": "https://raw.githubusercontent.com/peter-evans/create-pull-request/bd09a93810788ce61d2d5fb7d6b221b9b4a4aab7/action.yml",
+          "status": 200,
+          "bytes": 4276,
+          "sha256": "497b8150b90e3771de7a8e6de08a370695b3a08b316b608609f9ea2ea28a1070"
+        },
+        {
+          "path": "docs/concepts-guidelines.md",
+          "url": "https://raw.githubusercontent.com/peter-evans/create-pull-request/bd09a93810788ce61d2d5fb7d6b221b9b4a4aab7/docs/concepts-guidelines.md",
+          "status": 200,
+          "bytes": 27234,
+          "sha256": "4ef3bb15f38c30e644ce0a66f07b041a573a3f1bcbe1edc04969614dbb4526c1"
+        },
+        {
+          "path": "src/create-pull-request.ts",
+          "url": "https://raw.githubusercontent.com/peter-evans/create-pull-request/bd09a93810788ce61d2d5fb7d6b221b9b4a4aab7/src/create-pull-request.ts",
+          "status": 200,
+          "bytes": 11472,
+          "sha256": "1735ef61c12fa0fc376ed886da7c6b12464c1e65717e5f6cd0ce4eec59019e5a"
+        }
+      ],
+      "license_observed": "MIT"
+    }
+  ],
+  "schema_version": 1,
+  "method": "Current HEAD refs resolved with native git ls-remote; exact-commit raw files fetched over verified HTTPS, inspected as data. No upstream agent installed or executed; no model API called. Reproduce by fetching recorded raw URLs and checking SHA-256/byte count. Guessed missing paths are not functionality evidence.",
+  "upstream_agents_executed": false,
+  "provider_api_calls": 0
+}

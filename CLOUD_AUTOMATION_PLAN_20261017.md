@@ -6,6 +6,21 @@ and large artifacts. Agents are workers on bounded issues; GitHub controls and
 humans retain promotion/merge authority. No workflow, repository setting, secret,
 GitHub App, review bot or protected-branch rule was installed by this audit.
 
+## Issue #5 activation status
+
+The owner now authorizes the real-provider activation task in
+[Issue #5](https://github.com/emanuel894/trading_agent/issues/5), with official
+Codex implementation, Gemini independent review, separate publication, hard
+budget admission, at most two repairs and human merge. This supersedes earlier
+sequencing text for automation only; it does not start FMBH or grant scientific
+or trading authority. The [activation record](automation/real/ISSUE_5_ACTIVATION.md)
+documents fresh maintained-tool qualification, `OPENHANDS_DEFER`, a small
+non-executable routing-policy draft and **PAUSED_BUDGET** before any provider call.
+Authoritative billing/reservation state and protected-environment/API access are
+not verified. No real pilot, protected environment or provider binding was created;
+the existing synthetic controller remains disabled for real providers. Complete
+the documented prerequisites before implementing/activating paid execution.
+
 ## Issue #3 bootstrap amendment
 
 The owner's subsequent [Issue #3](https://github.com/emanuel894/trading_agent/issues/3)

@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-17T18:58:00.666317+00:00",
+  "issue_url": "https://github.com/emanuel894/trading_agent/issues/5",
+  "issue_number": 5,
+  "branch": "feat/issue-5-real-automation-qualification",
+  "base_branch": "feat/alpaca-paper-foundation",
+  "base_sha": "42013189c47a48014f0ad8658a868f6caa6a68f5",
+  "issue_snapshot_sha256": "72c88d1c656d606bec25a0da7a4153f03481cec0be0b9964041a980aed4a65cc",
+  "state": "PAUSED_BUDGET",
+  "stop_state": "PAUSED_BUDGET",
+  "reason": "AUTHORITATIVE_COST_STATE_UNAVAILABLE",
+  "scope": "qualification and policy draft only; real loop implementation/activation/acceptance incomplete",
+  "routing_policy_status": "DRAFT_NOT_EXECUTED",
+  "real_provider_activation": false,
+  "observations": {
+    "native_git_read": "succeeded",
+    "authenticated_graphql_issue_read": "denied: Forbidden",
+    "protected_environment_rest_read": "denied: Forbidden",
+    "protected_environments": "UNVERIFIED",
+    "protected_environments_created_by_this_task": 0,
+    "runtime_binding_names_observed": [
+      "GH_TOKEN"
+    ],
+    "runtime_provider_binding_names_observed": [],
+    "github_environment_provider_bindings": "UNVERIFIED; runtime absence does not prove GitHub environment absence",
+    "budget_balance_and_reservation_ledger": "UNAVAILABLE",
+    "verified_monthly_hard_cap_microusd": null,
+    "verified_per_run_hard_cost_cap_microusd": null,
+    "verified_per_run_token_cap": null,
+    "verified_per_run_time_cap_seconds": null,
+    "provider_billing_enforcement": "UNVERIFIED",
+    "price_snapshot": null
+  },
+  "openhands_qualification": "OPENHANDS_DEFER",
+  "pilot_execution": {
+    "started": false,
+    "task_id": null,
+    "pr_number": null,
+    "pr_head_sha": null,
+    "implementer_provider_actually_used": null,
+    "implementer_model_actually_used": null,
+    "reviewer_provider_actually_used": null,
+    "reviewer_model_actually_used": null,
+    "reasoning_actually_used": null,
+    "provider_api_calls": 0,
+    "automatic_repair_rounds": 0,
+    "provider_retries": 0,
+    "provider_usage": null,
+    "provider_cost_microusd": null,
+    "cost_note": "No pilot model requests initiated. Unknown provider balances/prices/usage remain null, not assumed zero.",
+    "ci_for_pilot_head": "NOT_RUN",
+    "real_independent_review": "NOT_RUN",
+    "acceptance_items": {
+      "1": "NOT_RUN",
+      "2": "NOT_RUN",
+      "3": "NOT_RUN",
+      "4": "NOT_RUN",
+      "5": "NOT_RUN",
+      "6": "NOT_RUN",
+      "7": "NOT_RUN",
+      "8": "NOT_RUN",
+      "9": "NOT_RUN",
+      "10": "NOT_RUN"
+    }
+  },
+  "prohibited_actions_performed": {
+    "broker_or_data_calls": 0,
+    "orders": 0,
+    "scientific_registration_changes": 0,
+    "fmbh_work": false,
+    "auto_merge": false,
+    "secrets_added": false
+  },
+  "remaining_work": [
+    "Restore supported GitHub API access and verify protected environments/provider bindings",
+    "Qualify exact model/CLI versions, pricing and combined monthly/per-run hard budget enforcement/reservations",
+    "Implement and verify thin project guards around qualified maintained runners and fresh publishing jobs",
+    "Run one real Codex/PR/CI/Gemini/repair pilot with durable receipts and human merge only"
+  ],
+  "rules": [
+    "No provider call before trustworthy cost admission",
+    "No synthetic result substitutes for real acceptance",
+    "Two repairs maximum across all resumes/retries",
+    "No cap increase or budget/counter reset",
+    "No scientific/trading authority granted"
+  ]
+}
