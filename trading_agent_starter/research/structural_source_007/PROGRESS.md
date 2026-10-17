@@ -22,7 +22,7 @@ as-known vintage is not itself required by 005. The original owner archive is
 not present in this checkout; reuse its hash-bound recorded review, without
 claiming a fresh verification of unavailable raw bytes.
 
-Active work:
+Investigation tracks reviewed:
 
 1. SEC covers/legal charter and issuer-wide evidence, including retrospective
    statements only when they actually ground earlier valid facts.
@@ -43,6 +43,26 @@ claim a timer was attached. Included usage is currently available. If it becomes
 unavailable, preserve source inventories/findings and exact next action, then
 stop at WAITING_FOR_INCLUDED_USAGE_RESET; do not purchase credits or use paid API.
 
-No final path status has been selected at this checkpoint. Final output must
-choose exactly one of STRUCTURAL_PATH_FOUND, PAID_SOURCE_RECOMMENDED or
-GENUINE_SOURCE_BLOCKER, with unresolved factual fields still UNRESOLVED.
+## Completed source-qualification finding
+
+**GENUINE_SOURCE_BLOCKER**: no complete method qualified from inspected evidence;
+candidate FMBH remains UNRESOLVED. This does not assert global source impossibility
+or that blocked primary/free paths lack useful evidence. No paid recommendation
+is made because source completeness/sample/quote and free-path prerequisites
+are unmet. The new substantive lead is Databento Reference Security Master's
+explicit effective-from clock and issuer-ID scope, not another ITCH date probe.
+
+Read the main report `../../FMBH_STRUCTURAL_SOURCE_20261017.md`, structured
+`findings.json`, `source_inventory.json`, `source_excerpts.json`, and
+`NEXT_ACTION.md`. The inventory verifies 87 pinned raw public files; 18 byte-
+grounded excerpts persist the decisive assertions. Raw bytes remain in the
+workspace archive at its recorded path/hash; exact immutable URLs permit
+re-fetch/hash validation without chat history. No original October archive
+or inaccessible primary body is newly claimed captured.
+
+The exact next action is free SEC/exchange document inspection and Databento
+Reference baseline/effective-resolution/completeness/sample qualification after
+supported access is restored. No external message, new issue, purchase,
+subscription, Massive call, data credential or strategy experiment is needed
+to make or preserve this finding. A future acquisition is not preauthorized by
+the resume note. See `validation.json` for fresh verification once recorded.
