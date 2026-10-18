@@ -76,3 +76,8 @@ paid/provider/model calls, secrets, broker actions or ingestion platform.
   historical event feed by mere API reachability.
 - Authoring agent: Codex GPT-6, HIGH reasoning requested. No external model API
   will be called. Exact backend build is not exposed.
+
+
+## Integration refresh
+
+After Issue #11 / PR #15 was merged into `feat/alpaca-paper-foundation` as `110490c8f0d03ddc48b808a603bcade4fdbc945b`, this branch received this documentation-only synchronization commit solely to force fresh hosted PR validation against the advanced target. No event-contract content, source evidence, scientific registration, runtime code, provider access or trading boundary changed. Final merge requires both hosted OS jobs green on this new head.
