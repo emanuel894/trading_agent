@@ -70,7 +70,8 @@
       "universe": "user_defined",
       "mode": "unknown",
       "settlement_per_share": null,
-      "forward_delisting_notification": false
+      "forward_delisting_notification": false,
+      "settlement_records": []
     },
     {
       "case_id": "Q02_user_defined_known",
@@ -78,7 +79,33 @@
       "universe": "user_defined",
       "mode": "known",
       "settlement_per_share": "37.50",
-      "forward_delisting_notification": false
+      "forward_delisting_notification": false,
+      "settlement_records": [
+        {
+          "delivery_offset_seconds": 7200,
+          "payload": {
+            "event_id": "E-SETTLE",
+            "version": "v1",
+            "effective_offset_seconds": 90,
+            "available_offset_seconds": 7200,
+            "quantity": "10",
+            "action_fee": "0",
+            "per_share": "37.50"
+          }
+        },
+        {
+          "delivery_offset_seconds": 7200,
+          "payload": {
+            "event_id": "E-SETTLE",
+            "version": "v1",
+            "effective_offset_seconds": 90,
+            "available_offset_seconds": 7200,
+            "quantity": "10",
+            "action_fee": "0",
+            "per_share": "37.50"
+          }
+        }
+      ]
     },
     {
       "case_id": "Q02_user_defined_conflict",
@@ -86,7 +113,45 @@
       "universe": "user_defined",
       "mode": "conflict",
       "settlement_per_share": "37.50",
-      "forward_delisting_notification": false
+      "forward_delisting_notification": false,
+      "settlement_records": [
+        {
+          "delivery_offset_seconds": 7200,
+          "payload": {
+            "event_id": "E-SETTLE",
+            "version": "v1",
+            "effective_offset_seconds": 90,
+            "available_offset_seconds": 7200,
+            "quantity": "10",
+            "action_fee": "0",
+            "per_share": "37.50"
+          }
+        },
+        {
+          "delivery_offset_seconds": 7200,
+          "payload": {
+            "event_id": "E-SETTLE",
+            "version": "v1",
+            "effective_offset_seconds": 90,
+            "available_offset_seconds": 7200,
+            "quantity": "10",
+            "action_fee": "0",
+            "per_share": "37.50"
+          }
+        },
+        {
+          "delivery_offset_seconds": 7201,
+          "payload": {
+            "event_id": "E-SETTLE",
+            "version": "v1",
+            "effective_offset_seconds": 90,
+            "available_offset_seconds": 7200,
+            "quantity": "10",
+            "action_fee": "0",
+            "per_share": "38"
+          }
+        }
+      ]
     },
     {
       "case_id": "Q02_user_defined_zero",
@@ -94,7 +159,33 @@
       "universe": "user_defined",
       "mode": "zero",
       "settlement_per_share": "0",
-      "forward_delisting_notification": false
+      "forward_delisting_notification": false,
+      "settlement_records": [
+        {
+          "delivery_offset_seconds": 7200,
+          "payload": {
+            "event_id": "E-SETTLE",
+            "version": "v1",
+            "effective_offset_seconds": 90,
+            "available_offset_seconds": 7200,
+            "quantity": "10",
+            "action_fee": "0",
+            "per_share": "0"
+          }
+        },
+        {
+          "delivery_offset_seconds": 7200,
+          "payload": {
+            "event_id": "E-SETTLE",
+            "version": "v1",
+            "effective_offset_seconds": 90,
+            "available_offset_seconds": 7200,
+            "quantity": "10",
+            "action_fee": "0",
+            "per_share": "0"
+          }
+        }
+      ]
     },
     {
       "case_id": "Q03_user_defined_negative",
@@ -102,7 +193,8 @@
       "universe": "user_defined",
       "mode": "negative",
       "settlement_per_share": null,
-      "forward_delisting_notification": true
+      "forward_delisting_notification": true,
+      "settlement_records": []
     },
     {
       "case_id": "Q01_explicit_unknown",
@@ -110,7 +202,8 @@
       "universe": "explicit",
       "mode": "unknown",
       "settlement_per_share": null,
-      "forward_delisting_notification": false
+      "forward_delisting_notification": false,
+      "settlement_records": []
     },
     {
       "case_id": "Q02_explicit_known",
@@ -118,7 +211,33 @@
       "universe": "explicit",
       "mode": "known",
       "settlement_per_share": "37.50",
-      "forward_delisting_notification": false
+      "forward_delisting_notification": false,
+      "settlement_records": [
+        {
+          "delivery_offset_seconds": 7200,
+          "payload": {
+            "event_id": "E-SETTLE",
+            "version": "v1",
+            "effective_offset_seconds": 90,
+            "available_offset_seconds": 7200,
+            "quantity": "10",
+            "action_fee": "0",
+            "per_share": "37.50"
+          }
+        },
+        {
+          "delivery_offset_seconds": 7200,
+          "payload": {
+            "event_id": "E-SETTLE",
+            "version": "v1",
+            "effective_offset_seconds": 90,
+            "available_offset_seconds": 7200,
+            "quantity": "10",
+            "action_fee": "0",
+            "per_share": "37.50"
+          }
+        }
+      ]
     },
     {
       "case_id": "Q02_explicit_conflict",
@@ -126,7 +245,45 @@
       "universe": "explicit",
       "mode": "conflict",
       "settlement_per_share": "37.50",
-      "forward_delisting_notification": false
+      "forward_delisting_notification": false,
+      "settlement_records": [
+        {
+          "delivery_offset_seconds": 7200,
+          "payload": {
+            "event_id": "E-SETTLE",
+            "version": "v1",
+            "effective_offset_seconds": 90,
+            "available_offset_seconds": 7200,
+            "quantity": "10",
+            "action_fee": "0",
+            "per_share": "37.50"
+          }
+        },
+        {
+          "delivery_offset_seconds": 7200,
+          "payload": {
+            "event_id": "E-SETTLE",
+            "version": "v1",
+            "effective_offset_seconds": 90,
+            "available_offset_seconds": 7200,
+            "quantity": "10",
+            "action_fee": "0",
+            "per_share": "37.50"
+          }
+        },
+        {
+          "delivery_offset_seconds": 7201,
+          "payload": {
+            "event_id": "E-SETTLE",
+            "version": "v1",
+            "effective_offset_seconds": 90,
+            "available_offset_seconds": 7200,
+            "quantity": "10",
+            "action_fee": "0",
+            "per_share": "38"
+          }
+        }
+      ]
     },
     {
       "case_id": "Q02_explicit_zero",
@@ -134,7 +291,33 @@
       "universe": "explicit",
       "mode": "zero",
       "settlement_per_share": "0",
-      "forward_delisting_notification": false
+      "forward_delisting_notification": false,
+      "settlement_records": [
+        {
+          "delivery_offset_seconds": 7200,
+          "payload": {
+            "event_id": "E-SETTLE",
+            "version": "v1",
+            "effective_offset_seconds": 90,
+            "available_offset_seconds": 7200,
+            "quantity": "10",
+            "action_fee": "0",
+            "per_share": "0"
+          }
+        },
+        {
+          "delivery_offset_seconds": 7200,
+          "payload": {
+            "event_id": "E-SETTLE",
+            "version": "v1",
+            "effective_offset_seconds": 90,
+            "available_offset_seconds": 7200,
+            "quantity": "10",
+            "action_fee": "0",
+            "per_share": "0"
+          }
+        }
+      ]
     },
     {
       "case_id": "Q03_explicit_negative",
@@ -142,7 +325,8 @@
       "universe": "explicit",
       "mode": "negative",
       "settlement_per_share": null,
-      "forward_delisting_notification": true
+      "forward_delisting_notification": true,
+      "settlement_records": []
     }
   ]
 }

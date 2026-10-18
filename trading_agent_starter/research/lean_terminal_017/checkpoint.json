@@ -9,16 +9,18 @@
     "Q03"
   ],
   "status": "LEAN_TERMINAL_GATE_INCOMPLETE",
-  "phase": "implementing bounded fixture host, no fixture run",
+  "phase": "fixtures and bounded native-component host prepared; zero fixture runs",
   "completed": [
     "Read live issue17, merged design, Q01\u2013Q03 definitions and canonical policy/operating skill.",
     "Selected clean current protected base; created mandated branch only.",
     "Checked namespaces: bwrap/unshare denied uid-map by environment; Docker daemon available.",
     "Fetched exact LEAN source pin into separate host workspace.",
     "Pulled and pinned official .NET10 SDK container digest; first source build passed (0 errors).",
-    "Frozen ten exact Q01\u2013Q03 cases/oracles before fixture execution."
+    "Frozen ten exact Q01\u2013Q03 cases/oracles before fixture execution.",
+    "Fixture preparation revision makes duplicate/conflicting payload bytes explicit before execution; independent expected oracles unchanged.",
+    "C# compile corrected public API names/signatures; no runtime fixture or engine mismatch observed."
   ],
-  "next_action": "Use real SubscriptionSynchronizer/UniverseSelection, BacktestingTransactionHandler and AlgorithmManager; export exact events/state, then run first case offline and stop on any blocker.",
+  "next_action": "Compile latest host, freeze build/dependency/binary metadata, then execute only Q01_user_defined_unknown network-denied. Stop immediately if blocker observed; do not run another case after blocker.",
   "policy_and_design_sha256": {
     "AGENTS.md": "291514f0c3017fae9534ce9cd64f71928698e0c6e7faaac24989c035b3b0483c",
     "AI_PROJECT_POLICY.md": "69795c12456a1a7228d6936d433a256a829760453361d04b3686c2a2669237ce",
