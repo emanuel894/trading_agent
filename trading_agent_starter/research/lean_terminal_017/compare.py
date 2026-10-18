@@ -18,18 +18,34 @@ def assess(actual, expected):
     equal("execution_complete", actual.get("execution_complete"), True)
     if actual.get("blocker"):
         raise GateMismatch("native_terminal_state", None, actual["blocker"], True)
+    equal("case_id", actual["case_id"], expected["case_id"])
+    equal("external_identity", actual["external_identity"], expected["external_identity"])
+    equal("native_symbol.ticker", actual["native_symbol"]["ticker"], expected["external_identity"]["ticker"])
+    equal("native_symbol.instrument", actual["native_symbol"]["research_instrument_id"], "I1")
+    if not actual["native_symbol"]["sid"]: raise GateMismatch("native_sid", "nonempty", actual["native_symbol"]["sid"])
     events = actual["events"]
     kinds = [e["kind"] for e in events]
     # Mandatory initial orders are preconditions, never waived because holdings survived.
     for intent in ("buy2", "sell3"):
         equal("submitted:" + intent, kinds.count("OrderSubmitted:" + intent), 1)
     equal("ordered_business_events", kinds, expected["ordered_business_kinds"])
+    equal("ordered_business_event_times", [e["utc"] for e in events], expected["ordered_business_event_utc"])
+    for event in events: equal("event.instrument", event["instrument_id"], "I1")
+    native=actual["native_order_events"]
+    equal("native_order_count", len(native), len(expected["native_order_sequence"]))
+    for i,(event,oracle) in enumerate(zip(native,expected["native_order_sequence"])):
+        for k,v in oracle.items(): equal(f"native_event[{i}].{k}",event[k],v)
+        equal(f"native_event[{i}].utc",event["utc"],"2025-01-06T14:59:59.0000000Z" if event["status"]=="Submitted" else "2025-01-06T15:01:00.0000000Z")
+    equal("reservation_until_ack",actual["reservation_observations"],expected["reservation_observations"])
+    equal("nav_probe_count",len(actual["admission_probes"]),1)
+    equal("nav_entry_probe",actual["admission_probes"][0],expected["nav_entry_probe"])
     equal("network.non_loopback", actual["network_denied"]["non_loopback_interfaces"], 0)
     equal("network.sentinel", actual["network_denied"]["testnet_socket_result"], "NetworkUnreachable")
     equal("source_pin", actual["source_pin"], "d4cac37514427c84d40064cecbf3f0e6be4b0137")
     branch = "FuncUniverse" if "_explicit_" in actual["case_id"] else "UserDefinedUniverse"
     equal("native_universe_branch", actual["universe_branch"], branch)
     snapshots = actual["snapshots"]
+    equal("exact_snapshot_phases",[s["phase"] for s in snapshots],expected["required_snapshot_phases"])
     equal("initial.open_orders", snapshots[0]["open_orders"], 2)
     equal("initial.reserved_cash", snapshots[0]["reserved_cash"], "3")
     equal("initial.reserved_shares", snapshots[0]["reserved_shares"], "3")
@@ -56,6 +72,7 @@ def assess(actual, expected):
             equal(phase + ".claim", state["unresolved_claim"], None, True)
             equal(phase + ".pnl", state["realized_pnl"], oracle["realized_pnl"], True)
             equal(phase + ".settlements", state["action_settlements"], 1, True)
+            equal(phase + ".realized_proceeds",state["realized_proceeds"],oracle["amount"],True)
         else:
             equal(phase + ".claim", state["unresolved_claim"], oracle["unresolved_claim"], True)
             equal(phase + ".proceeds", state["realized_proceeds"], None, True)
@@ -89,4 +106,9 @@ def assess(actual, expected):
 
 
 def compare_files(actual_path, expected_path):
-    return assess(json.loads(Path(actual_path).read_text()), json.loads(Path(expected_path).read_text()))
+    import hashlib
+    actual=json.loads(Path(actual_path).read_text())
+    root=Path(expected_path).parent
+    equal("input_sha256",actual["input_sha256"],hashlib.sha256((root/"input.json").read_bytes()).hexdigest())
+    equal("fixture_manifest_sha256",actual["fixture_manifest_sha256"],hashlib.sha256((root/"manifest.json").read_bytes()).hexdigest())
+    return assess(actual,json.loads(Path(expected_path).read_text()))

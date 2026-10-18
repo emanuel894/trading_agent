@@ -1,5 +1,5 @@
 {
-  "recorded_utc": "2026-10-18T14:40:13.096811+00:00",
+  "recorded_utc": "2026-10-18T14:47:25.559257+00:00",
   "lean_source_sha": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
   "lean_source_tree": "6bdca864f7be86d7268d46328fd5f099db95b882",
   "tracked_source_unchanged": true,
@@ -262,7 +262,7 @@
     "LeanTerminal": "e5c513cf7679a2e0100d7b09fff30c5522653eae9e9873b5574903339ad20b42",
     "QuantConnect.Indicators.dll": "9043cbd76517a039af0aea0dd497b05c09c80fd9019fce772a3ca90f19c85e92",
     "QuantConnect.Brokerages.dll": "3179b9c1c2a11e6383753a19a17f8a739852aee78e20ddd9399f94b4c6773c61",
-    "LeanTerminal.pdb": "5478eac50e79d18d96e91ae3e13a97454354b67342adaef3b59cd9027dd3a537",
+    "LeanTerminal.pdb": "fd3bf7380bbc537c0405ae52beffa481e7f486ce7d88a0cfd5780f2e765f3e49",
     "Accord.dll.config": "3049e83f9b7fa9285a82fb3c7740e9c225b66a31f805d3582a9bfd34b5dd8e6e",
     "QuantConnect.AlgorithmFactory.pdb": "747bd36f3760e305b29c268d405884160ce6d752c06463a3bf222601a31aef57",
     "System.ComponentModel.Composition.dll": "8a699644d53e1c41b0eed5d51387473e33c42bba52bc95da5af55ffe7a831cc3",
@@ -303,7 +303,7 @@
     "QuantConnect.Indicators.xml": "01cad47925928ce2614a7af80bf0245899da7f5ee19e30ea88df988c8b0db7b8",
     "QuantConnect.Algorithm.Framework.pdb": "6fd56b2561db0e4ee64136cabb6c26a580cf88eb03ff8cb1f3c8cf224c486db4",
     "QuantConnect.Logging.dll": "319014ea80570636b0932af6b5511ac32aa74486d354950c46012be477956735",
-    "LeanTerminal.dll": "17b412276c66a4a19a1db8881b53e277396d9ec3beafc541684ee67919207719",
+    "LeanTerminal.dll": "abc065bc33e5a8e4eee0ba58e11d21ffb1d9e0b27dac89a13fceb4522b7e8449",
     "QuantConnect.Lean.Engine.pdb": "3495281c511ebe61f1d5e675017e9997e445b2254eb8bd710b206c9a34bd54bd",
     "Python.Runtime.dll": "ab62dc16df115d76bdb00bf8a02a5b27b35efdce57c69e9b268bf43c8e86b4a0",
     "QuantConnect.Api.pdb": "1746b497dff7e3c4169c06f36a91a3fdd6c8a69b29151c01e31e85aff5d18d72",
@@ -382,10 +382,10 @@
     "Orders/Slippage/VolumeShareSlippageModel.py": "1f1901ab87b9138e4fea5e317f22e5f1f574be28612339d6f77e91c339cc78a8"
   },
   "host_source_sha256": {
-    "Program.cs": "2ce5d79e6738786552889570909ae00e4ea60483be490ce0be6c48107749a430",
+    "Program.cs": "fe894dcbf87ad43fd3217dad20e0e0c16425e656508c45b3c5bda17672787861",
     "LeanTerminal.csproj": "b1fdb8d0ab49c3c7852f69c9db1c2cc8230b0175c503fd6912f7f32f244f3318"
   },
-  "fixture_manifest_sha256": "94954ba8333711009c00203c787d7b350c24f31c77b11bd73d2576056053755d",
+  "fixture_manifest_sha256": "fcca84dddad0042b448e611f66e38dfa0f577b2adfd700d372ca06eae706cd49",
   "integrity_note": "NuGet normalized contentHash (signature-independent) matches restored metadata/locks. Raw nupkg SHA512 separately matches cached .nupkg.sha512; SHA256 also frozen. These are distinct hashes and are never treated as equal. TLS/default NuGet validation was retained.",
   "dependency_warnings": "NU1903 DotNetZip1.16.0 / NU1904 System.Drawing.Common4.7.0 plus XML/ruleset warnings, preserved logs. No upstream package/source patch or audit suppression. Offline synthetic host is not production/security qualification.",
   "paid_entitlement_or_broker_plugins": false

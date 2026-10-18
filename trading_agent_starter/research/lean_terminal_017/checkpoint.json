@@ -9,7 +9,7 @@
     "Q03"
   ],
   "status": "LEAN_TERMINAL_GATE_INCOMPLETE",
-  "phase": "mandatory open-order precondition repaired; ordered callback oracle discrepancy awaiting independent boundary review",
+  "phase": "v2 strengthened fixtures/source-grounded oracle frozen before new run",
   "completed": [
     "Read live issue17, merged design, Q01\u2013Q03 definitions and canonical policy/operating skill.",
     "Selected clean current protected base; created mandated branch only.",
@@ -25,9 +25,11 @@
     "First network-none Q01 process proved real interception and retained10/cash9000 through4hour/end, but mandatory buy/sell were not admitted; NOT a passing fixture.",
     "Attempt01 rejected, root cause: equity quote data excluded from native last-data HasData. Corrected only native fixture seed to TradeBar; mandatory order response checks added.",
     "Attempt02 retained quantity10/cash9000 and canceled both admitted orders, but authored callback-order oracle diverged. Run stopped; no subsequent case executed.",
-    "Fresh independent high-reasoning boundary review requested before deciding whether any source-grounded callback-order correction is within the frozen design."
+    "Fresh independent high-reasoning boundary review requested before deciding whether any source-grounded callback-order correction is within the frozen design.",
+    "Independent RED review permits source-grounded versioned callback permutation; no economic/denominator/settlement changes.",
+    "Executable unknown-NAV admission probe and known-NAV positive control added; exact event/identity/hash/phase/reservation-until-ack checks strengthened."
   ],
-  "next_action": "Read issue17_oracle_boundary_review result. If correction inadmissible, finish INCOMPLETE with exact oracle discrepancy. If admissible, preserve original oracle and source-justify/freeze versioned callback-order correction before any more runs; otherwise do not proceed.",
+  "next_action": "Run v2 Q01 user-defined twice in clean network-none processes. Stop on first blocker/divergence. Only if passing proceed to remaining Q01\u2013Q03 variants.",
   "policy_and_design_sha256": {
     "AGENTS.md": "291514f0c3017fae9534ce9cd64f71928698e0c6e7faaac24989c035b3b0483c",
     "AI_PROJECT_POLICY.md": "69795c12456a1a7228d6936d433a256a829760453361d04b3686c2a2669237ce",
@@ -39,7 +41,7 @@
     "paid_provider_calls": 0,
     "purchases": 0,
     "framework_fixture_runs": 2,
-    "repair_cycles": 1
+    "repair_cycles": 2
   },
   "scheduling": {
     "available_tool": false,
@@ -54,5 +56,6 @@
   "attempts_evidence": [
     "attempts/01",
     "attempts/02"
-  ]
+  ],
+  "oracle_revision": "ORACLE_REVISION.md; v1 retained in fixtures; v2 corrects callback permutation and adds stronger probes/time/identity/assertions."
 }

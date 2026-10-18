@@ -49,6 +49,7 @@ public static class Program
             var input=JObject.Parse(System.Text.Encoding.UTF8.GetString(inputBytes));
             var test=(JObject)((JArray)input["cases"]!).Single(x => (string)x["case_id"]! == args[1]);
             output["case_id"]=args[1]; output["input_sha256"]=Hash(inputBytes);
+            output["external_identity"]=input["shared"]!["instrument"]!.DeepClone();
             output["fixture_manifest_sha256"]=Hash(File.ReadAllBytes(Path.Combine(fixtureRoot,"manifest.json")));
             var interfaces=NetworkInterface.GetAllNetworkInterfaces();
             if(interfaces.Any(x=>x.NetworkInterfaceType!=NetworkInterfaceType.Loopback))
@@ -66,6 +67,9 @@ public static class Program
             Config.Set("composer-dll-directory","/work/host/bin/Release/net10.0");
             var algorithm=new TerminalAlgorithm((JObject)input["shared"]!,test);
             output["events"]=algorithm.Events; output["snapshots"]=algorithm.Snapshots;
+            output["admission_probes"]=algorithm.AdmissionProbes;
+            output["reservation_observations"]=algorithm.ReservationObservations;
+            output["native_symbol"]=new JObject{["ticker"]=algorithm.Instrument.Value,["sid"]=algorithm.Instrument.ID.ToString(),["research_instrument_id"]="I1"};
             var hours=MarketHoursDatabase.FromDataFolder();
             var permissions=new DataPermissionManager();
             var service=new SecurityService(algorithm.Portfolio.CashBook,hours,SymbolPropertiesDatabase.FromDataFolder(),algorithm,
@@ -95,7 +99,7 @@ public static class Program
                 if(!algorithm.EndObserved) throw new InvalidOperationException("Native AlgorithmManager end callback not reached");
                 output["engine_status"]=algorithm.Status.ToString();
                 output["events"]=algorithm.Events; output["snapshots"]=algorithm.Snapshots;
-                output["native_order_events"]=JArray.FromObject(transaction.OrderEvents.Select(x=>new{order_id=x.OrderId,status=x.Status.ToString(),fill_quantity=Decimal(x.FillQuantity),fill_price=Decimal(x.FillPrice),fee=Decimal(x.OrderFee.Value.Amount),message=x.Message}));
+                output["native_order_events"]=JArray.FromObject(transaction.OrderEvents.Select(x=>new{order_id=x.OrderId,status=x.Status.ToString(),fill_quantity=Decimal(x.FillQuantity),fill_price=Decimal(x.FillPrice),fee=Decimal(x.OrderFee.Value.Amount),utc=x.UtcTime.ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ",CultureInfo.InvariantCulture),message=x.Message}));
                 output["universe_branch"]=algorithm.UniverseBranch;
                 output["conflict_blocked"]=algorithm.ConflictBlocked;
                 output["blocker"]=algorithm.BlockerMessage;
@@ -142,7 +146,13 @@ public sealed class FrozenClock : ITimeProvider
 public sealed class TerminalAlgorithm : QCAlgorithm
 {
     public readonly JObject Shared,Case;
-    public readonly JArray Events=new(),Snapshots=new();
+    public readonly JArray Events=new(),Snapshots=new(),AdmissionProbes=new(),ReservationObservations=new();
+    bool probeDone;
+    public static bool AdmitNavDependentEntry(decimal? scientificNav,Action submit)
+    {
+        if(scientificNav==null || scientificNav<=0m) return false;
+        submit(); return true;
+    }
     public DateTime Decision { get; }
     public readonly Symbol Instrument;
     public bool Forward => (bool)Case["forward_delisting_notification"]!;
@@ -162,6 +172,9 @@ public sealed class TerminalAlgorithm : QCAlgorithm
     }
     public override void Initialize()
     {
+        var positiveCalls=0;
+        if(!AdmitNavDependentEntry(10000m,()=>positiveCalls++) || positiveCalls!=1)
+            throw new InvalidOperationException("Known-NAV positive admission control failed");
         SetStartDate(2025,1,6);SetEndDate(2025,1,6);SetTimeZone(TimeZones.NewYork);SetCash(9000);
         SetBenchmark(time=>0m);SetDateTime(Decision.AddSeconds(-1));
         UniverseSettings.Resolution=Resolution.Minute;UniverseSettings.FillForward=false;
@@ -179,7 +192,7 @@ public sealed class TerminalAlgorithm : QCAlgorithm
     }
     public void Record(string kind,JObject payload=null)
     {
-        Events.Add(new JObject{["kind"]=kind,["utc"]=UtcTime.ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ",CultureInfo.InvariantCulture),["payload"]=payload});
+        Events.Add(new JObject{["kind"]=kind,["instrument_id"]="I1",["utc"]=UtcTime.ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ",CultureInfo.InvariantCulture),["payload"]=payload});
     }
     public override void OnData(Slice slice)
     {
@@ -218,6 +231,7 @@ public sealed class TerminalAlgorithm : QCAlgorithm
         }
         else if(e.Status==OrderStatus.Canceled) { Record("OrderCanceled:"+order.Tag);reservations.Remove(order.Tag); }
         else if(e.Status==OrderStatus.Invalid) throw new InvalidOperationException("Fixture order invalid: "+e.Message);
+        ReservationObservations.Add(new JObject{["order_id"]=e.OrderId,["status"]=e.Status.ToString(),["reserved_cash"]=Program.Decimal(reservations.Values.Sum(x=>decimal.Parse((string)x["reserved_cash"]!,CultureInfo.InvariantCulture))),["reserved_shares"]=Program.Decimal(reservations.Values.Sum(x=>decimal.Parse((string)x["reserved_shares"]!,CultureInfo.InvariantCulture)))});
     }
     void DeliverRecords(int offset)
     {
@@ -254,6 +268,20 @@ public sealed class TerminalAlgorithm : QCAlgorithm
             BlockerMessage="Unresolved holding/exposure disappeared through native removal or cleanup";
         if(!Forward && Terminal && !Resolved && Portfolio.CashBook["USD"].Amount!=9000m)
             BlockerMessage="Cash changed without admitted settlement evidence";
+        if(Terminal && !probeDone)
+        {
+            probeDone=true;
+            var request=(JObject)Shared["nav_entry_probe"]!;
+            var called=false;var before=Transactions.OrdersCount;
+            decimal? nav=Terminal&&!Resolved ? null : Portfolio.CashBook["USD"].Amount;
+            var accepted=AdmitNavDependentEntry(nav,()=>
+            {
+                called=true;
+                LimitOrder(Instrument,decimal.Parse((string)request["quantity"]!,CultureInfo.InvariantCulture),decimal.Parse((string)request["limit_price"]!,CultureInfo.InvariantCulture),tag:(string)request["intent_id"]!);
+            });
+            AdmissionProbes.Add(new JObject{["intent_id"]=(string)request["intent_id"]!,["instrument_id"]="I1",["utc"]=UtcTime.ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ",CultureInfo.InvariantCulture),["scientific_nav"]=nav,["accepted"]=accepted,["submission_delegate_called"]=called,["orders_before"]=before,["orders_after"]=Transactions.OrdersCount});
+            if(accepted||called||before!=Transactions.OrdersCount) BlockerMessage="NAV-dependent entry was not blocked with an unresolved terminal claim";
+        }
         Snapshot(frame.ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ",CultureInfo.InvariantCulture));
     }
     public void Snapshot(string phase)
