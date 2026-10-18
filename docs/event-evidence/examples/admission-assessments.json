@@ -1,0 +1,68 @@
+[
+  {
+    "mode": "catalog_only",
+    "decision_cutoff_utc": null,
+    "admission": "quarantined",
+    "reason_codes": [
+      "SYNTHETIC_ONLY",
+      "RECEIPT_UNKNOWN",
+      "RIGHTS_UNKNOWN"
+    ],
+    "availability_basis_refs": [],
+    "qualification_ref": "SYNTHETIC",
+    "registered_policy_ref": null,
+    "assessed_at": {
+      "state": "unknown",
+      "native_value": null,
+      "precision": "unknown",
+      "timezone": null,
+      "utc": null,
+      "uncertainty_ms": null,
+      "basis": "unavailable",
+      "evidence": [],
+      "reason": "Not present in this synthetic backfill example."
+    },
+    "assessment_id": "synthetic:macro:v1:catalog-assessment-1",
+    "evidence_id": "synthetic:macro:v1",
+    "evidence_manifest_sha256": "8693813d7505cc610d86580ddc86ebff6296df5f0a433b1667dd64ebd87b8754",
+    "dependency_manifest_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "arm_id": "catalog",
+    "experiment_ref": null,
+    "rights_assessment_ref": "SYNTHETIC",
+    "rights_state": "unknown",
+    "synthetic": true
+  },
+  {
+    "mode": "catalog_only",
+    "decision_cutoff_utc": null,
+    "admission": "quarantined",
+    "reason_codes": [
+      "SYNTHETIC_ONLY",
+      "RECEIPT_UNKNOWN",
+      "RIGHTS_UNKNOWN"
+    ],
+    "availability_basis_refs": [],
+    "qualification_ref": "SYNTHETIC",
+    "registered_policy_ref": null,
+    "assessed_at": {
+      "state": "unknown",
+      "native_value": null,
+      "precision": "unknown",
+      "timezone": null,
+      "utc": null,
+      "uncertainty_ms": null,
+      "basis": "unavailable",
+      "evidence": [],
+      "reason": "Not present in this synthetic backfill example."
+    },
+    "assessment_id": "synthetic:macro:v2:catalog-assessment-1",
+    "evidence_id": "synthetic:macro:v2",
+    "evidence_manifest_sha256": "adc5c69c5d094d955b8b09dc24570594d9222da15bc8dfc64ea0ced393125ea3",
+    "dependency_manifest_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "arm_id": "catalog",
+    "experiment_ref": null,
+    "rights_assessment_ref": "SYNTHETIC",
+    "rights_state": "unknown",
+    "synthetic": true
+  }
+]

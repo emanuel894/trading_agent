@@ -1,0 +1,242 @@
+{
+  "state": "LOCAL_VERIFICATION_COMPLETE_DRAFT_PR_PENDING",
+  "issue_status": "EVENT_SOURCE_QUALIFICATION_NEEDED",
+  "recorded_at_utc": "2026-10-18T13:45:37.698700+00:00",
+  "issue": 12,
+  "branch": "research/issue-12-event-evidence-contract",
+  "target_branch": "feat/alpaca-paper-foundation",
+  "original_base_sha": "b5b06af7a876ebb4c7fc9ab6f63cbaed9ef2aafe",
+  "reconciled_target_sha": "1a9014ef47accbea82fd086866bce114621a0d1f",
+  "integration_commit_sha": "7311867b82c69cda906adbc56113b894b91f5a8c",
+  "schema_contract": "event-evidence/1.0.0-design",
+  "artifact_hash_scope": "All current packet files except verification.json itself; Git commit pins this record. Hosted CI will verify exact published head.",
+  "authoring": {
+    "interface": "Codex desktop built-in tools",
+    "system_model_family": "GPT-6",
+    "reasoning_requested": "HIGH",
+    "resolved_backend_build": "not exposed",
+    "external_model_api_calls": 0
+  },
+  "environment": {
+    "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+    "git": "git version 2.52.0",
+    "uv": "uv 0.12.23 (x86_64-unknown-linux-gnu)",
+    "packages": {
+      "alpaca-py": "0.42.2",
+      "python-dotenv": "1.1.1",
+      "pytz": "2026.5",
+      "jsonschema": "4.26.0"
+    }
+  },
+  "passed": {
+    "existing_suite": {
+      "command": "python -m unittest discover -s tests -v",
+      "cwd": "trading_agent_starter",
+      "tests": 240,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 11.735,
+      "log": "verification/tests.log.gz",
+      "raw_log_sha256": "173c2acf4c6a88a468a3747403ffc455b94bb1449820b9b1348b98522023ba28",
+      "not_repeated_on_resume": true
+    },
+    "synthetic_demo": {
+      "command": "python -m agent demo",
+      "cwd": "trading_agent_starter",
+      "bars": 300,
+      "broker_orders": 0,
+      "model_training_or_promotion": false,
+      "log": "verification/demo.log.gz",
+      "raw_log_sha256": "a5daa74dd20e4d8524eeb486b58b8dcc25e832b0cd5904e54bbb87f24d8dcc64"
+    },
+    "artifact_check": {
+      "schema_meta_validation": "PASS",
+      "valid_synthetic_examples": 2,
+      "valid_separate_assessments": 2,
+      "reusable_evidence_across_arm_cutoff_assessments": true,
+      "correction_publication_and_vintage_not_backdated": true,
+      "schema_counterexamples_rejected": [
+        "date-only clock cannot become midnight UTC",
+        "unknown receipt cannot carry an invented UTC value",
+        "known clock requires source evidence",
+        "actual retrieval must be a known UTC instant",
+        "source facts require spans",
+        "primary immutable payload is required",
+        "raw evidence cannot be declared mutable",
+        "unrecognized clock field rejected",
+        "correction requires target linkage",
+        "cutoff-specific admission cannot be embedded in source envelope",
+        "catalog-only cannot admit predictive evidence",
+        "synthetic and rights-unknown assessment cannot admit evidence",
+        "assessment must bind frozen evidence hash"
+      ],
+      "source_captures_hash_verified": 43,
+      "source_excerpts_verified": 24,
+      "source_http_failures_preserved": [
+        {
+          "source_id": "T02",
+          "http_status": 404
+        },
+        {
+          "source_id": "T03",
+          "http_status": 403
+        },
+        {
+          "source_id": "A03",
+          "http_status": 403
+        },
+        {
+          "source_id": "S02",
+          "http_status": 403
+        },
+        {
+          "source_id": "N01",
+          "http_status": 404
+        },
+        {
+          "source_id": "T04",
+          "http_status": 404
+        },
+        {
+          "source_id": "S03",
+          "http_status": 404
+        },
+        {
+          "source_id": "N05",
+          "http_status": 404
+        },
+        {
+          "source_id": "R04",
+          "http_status": 404
+        }
+      ],
+      "local_markdown_links_verified": 22,
+      "all_changes_under_docs_event_evidence": true,
+      "not_verified": [
+        "source truth/completeness",
+        "legal rights",
+        "causal admission implementation",
+        "alpha",
+        "provider/broker access"
+      ]
+    },
+    "git_diff_check": "PASS",
+    "protected_scope": "All issue diffs relative to reconciled target are under docs/event-evidence/; scientific/runtime files unchanged.",
+    "existing_suite_runtime_and_workflows_unchanged_between_original_and_reconciled_base": true,
+    "independent_review": "Both P2s resolved; see verification/review.json."
+  },
+  "failed_checks": [],
+  "skipped_checks": [],
+  "source_limited": {
+    "historical_event_feeds_qualified": 0,
+    "captures": 43,
+    "http_200": 34,
+    "http_failed_paths": 9,
+    "bounded_excerpts": 24,
+    "details": "Existing captures retained; some HTTP 200 results are app shells. Unknown original-version/receipt/coverage/rights/exposure evidence remains in QUALIFICATION.md."
+  },
+  "unrun_or_pending": [
+    "Hosted exact-head Ubuntu and Windows CI, pending draft PR publication",
+    "Source completeness, original-version historical replay and real receipt qualification",
+    "Legal/contractual rights acceptance and licensed-provider entitlements",
+    "Causal admission engine implementation (design only)",
+    "Alpha experiments and predictive model evaluation",
+    "Paid acquisition, data/provider/model APIs and broker actions"
+  ],
+  "external_activity": {
+    "new_capture_on_resume": false,
+    "alpha_experiments": 0,
+    "paid_data_provider_model_calls": 0,
+    "authenticated_market_data_calls": 0,
+    "purchases": 0,
+    "subscriptions": 0,
+    "broker_actions": 0,
+    "secret_handling": false
+  },
+  "unchanged_boundaries": [
+    "Amendment 005 and existing registrations",
+    "FMBH remains UNRESOLVED; candidate #2 untouched",
+    "Trading flags and broker settings",
+    "PR #10 was externally merged; no edits/pushes to its branch"
+  ],
+  "trusted_policy_sha256": {
+    "AGENTS.md": "291514f0c3017fae9534ce9cd64f71928698e0c6e7faaac24989c035b3b0483c",
+    "AI_PROJECT_POLICY.md": "69795c12456a1a7228d6936d433a256a829760453361d04b3686c2a2669237ce",
+    ".agents/skills/trading-project/SKILL.md": "60542fdf5c1eba52e850a415fefe047ee5565c75da47b30354ad43aef3041ee7"
+  },
+  "usage": {
+    "builtin_agent_tokens_and_cost": "not exposed",
+    "no_paid_fallback": true,
+    "review_repair_rounds": 1
+  },
+  "artifact_sha256": {
+    "BASELINES_AND_FIRST_EXPERIMENT.md": "e2048d247e2e3f987f61044aaa4f177f1bc4656eae9df99e4d960969ad59932d",
+    "CHECKPOINT.md": "79ff47ad9dc673803da70dcf5e2f91cb6aee7868daff8cded3d9557da8ef5f5d",
+    "CONTRACT.md": "f75264bc05d07fa35417e8945e9d52130d0697318b00949f31468971c46aca9d",
+    "QUALIFICATION.md": "1278de0c8e20d5a16ea72ede05650becdba13be92d47380e5f6b399d71ee67e2",
+    "README.md": "cc3b3f879fda6942f3cda57db2d468dcebfa26a82ab01794f63421d24a655c53",
+    "SOURCE_MATRIX.md": "fbfd2a42f9cafbc97e12201804cd1df213879d42309e1b96359494861d5caf88",
+    "event-evidence.schema.json": "b0f31f8b915c1b7bd1698fb2d51f7c21631d8b4d8c74c8b1e54278f3b771e99c",
+    "examples/admission-assessments.json": "1d75cf5577fd7146b827178a6f7a1274f287eb4ef5218ad346dd3748645f043d",
+    "examples/date-only-backfill.json": "8693813d7505cc610d86580ddc86ebff6296df5f0a433b1667dd64ebd87b8754",
+    "examples/later-correction.json": "adc5c69c5d094d955b8b09dc24570594d9222da15bc8dfc64ea0ced393125ea3",
+    "issue-12.json": "b022715b875742ea03b71f64066f8c32351ca50adfcb99531db6cfcf6a35f34d",
+    "sources/A01.raw.gz": "6508882ea1a343961a3b35e9e2336acaf7a4607bc12dc8994aef4bd1c3f67aec",
+    "sources/A02.raw.gz": "ebd1530aa48c0975537950cb1e5024c5c7fcf0b68a2b6eff2488c6defd009147",
+    "sources/A03.raw.gz": "b6c115aebe86111b1f754f2fb64835a6e73c20b22f6d94fba68c3fa996272dd8",
+    "sources/A04.raw.gz": "cd15090108905d96adf4c0bf40ff3973a152f2fb6538b5ee9486019032684bd4",
+    "sources/A04.text.gz": "42290584d1577f21966c5b195db6fc131e69f97276937e4bd6ba398ee6072422",
+    "sources/B01.raw.gz": "eb228c018bc8200f20002baf8d3ce6f61a025ac3af82298e599ba4917be0eff3",
+    "sources/B02.raw.gz": "b40cd2eb0710cc6b4a9bb3e2a1ecc9ba0e8692e281a88c3cee22f0d61cc46c38",
+    "sources/B03.raw.gz": "581965333068b1611b3083022ab925d3b5f24e96978d97429f23222ec5a82e59",
+    "sources/B04.raw.gz": "4c19a66c00831d0639daf54f0957c660745e26cf03f2d3aab907cf4a02759680",
+    "sources/B05.raw.gz": "7a8839e3957a193d6fa43386e2c5f6ba35d031ee24bd7aa2c2bd1311829cc39c",
+    "sources/E01.raw.gz": "ff7e78f2787adc577e4be40bf3a4d94ccd48d884c415d562313ca1078b61f75f",
+    "sources/E02.raw.gz": "27b5d989d7da330e43939a9f12ae6acbb4440c2a51f5de79f6fac5bcda3abb11",
+    "sources/E03.raw.gz": "a4841b9db7af81e6657fa39c7a9247ecbfb60b28193f421e2820dd6f043f78a7",
+    "sources/E04.raw.gz": "da4eee58714a8b4254a4523d7a1d93722c3f9455829076d550c1bad0154a560b",
+    "sources/F01.raw.gz": "315982546e304ee1d71c34672eda909048d725170c375f512692b74346399330",
+    "sources/F02.raw.gz": "c456c1957b9c0a422bc40d210deb57eab92f34e0054ccffddd5ef3a3d6d14df3",
+    "sources/F03.raw.gz": "4002c432d3e0373a070ba542de4bd4da609c1da8883a45f594819867d226b013",
+    "sources/F04.raw.gz": "3857274dd430728e50edc2866ecc2b4a967afa22454220dc14e0cee2bae2df08",
+    "sources/M01.raw.gz": "aab3cd40944acbd78a30b135c29dfdb9079d94a0b8e5075268cea8d73fae0dcd",
+    "sources/M02.raw.gz": "cc3456f0801b0ea1203c76dacf25de88bd2a2d1bfaf1c25549f5ef294f8c538f",
+    "sources/M03.raw.gz": "1193f3442df92280e76090ce7410f26f3a5bd0f38aac751b76b259f08ded5eaa",
+    "sources/N01.raw.gz": "6d43af84da705a4f6bca625d8480fda0b575ec8dda851f8b1408fa3c761ce07d",
+    "sources/N02.raw.gz": "99ec25b8646fd4d926b1a0e9d95497d4fc64c88a3b6cf619e8ef1736edc8feaa",
+    "sources/N03.raw.gz": "7d1125177df44521b2048d2de38f90ba8cd67f15e50648c3df8549ec7ee1290e",
+    "sources/N04.raw.gz": "233a51e881029ca9223c2771856cb333e65dee6ecdc78c32dc84447016e91870",
+    "sources/N05.raw.gz": "e7b620d10d11e774888c04ba85e2f89aa768b263c9cf79a354aba277e07d2e12",
+    "sources/N06.raw.gz": "976caf9483b31514950ec065a1de723da474d416df4f8d668dc42bc527bc0521",
+    "sources/O01.raw.gz": "1b0b81be5da52bdd1b5c4fdabdfaf2fba4e2f5ffb8ecdbf643b37e7fe8fda167",
+    "sources/O02.raw.gz": "2c62c0851056d4e639ead173a09a2af6efe4fb11b4a426c1ddb147eee5bf6bc0",
+    "sources/R01.raw.gz": "dca0ca972b2868311d851a76b1387531dfa22ebabafa354b382c89f0108ade7a",
+    "sources/R02.raw.gz": "ef6156d0cfc4f51724005889ee0b32e868a083bcd554383d65f6a0a30423f358",
+    "sources/R03.raw.gz": "33cdacedf0a54c0503307119542237e54a119962ae519d0e1133491844717b66",
+    "sources/R04.raw.gz": "dd08f69ab38245bac97abae7f6b83f1881436f0828c6d57606f6f9c7ced0a4c4",
+    "sources/README.md": "438bc6ee0fe935f781679e50fcadae1ab021b503442a6ae05aa1fa587b2a44a6",
+    "sources/S01.raw.gz": "4be6e03878abd936d53378d8cc4b7898ac2ce6093f9ae3a83ed9b247b7ba4054",
+    "sources/S02.raw.gz": "95abbc72dbc323ea77d135efda24204ab675243655faeb9f90801bbd0e0f1eb1",
+    "sources/S03.raw.gz": "b182079b13775bf2183f3e8549c2f37f9c794c43a22a777983742c80b1afad7e",
+    "sources/T01.raw.gz": "d3d3d1360cc4573c2e5f6dbc83c9cb88b17c18837b64b5a4130e5407f4da873f",
+    "sources/T02.raw.gz": "9918d009585979195ac93c3a2c717d3177463492dcc5039d7b84e28ac167a036",
+    "sources/T03.raw.gz": "a1738a318aef21191f71e792df700535ef839c7e591dfe3119f68439b0eb18a3",
+    "sources/T04.raw.gz": "e22108c1a63384795857d13da18223a9218d0b799baf635a6f348ae656585315",
+    "sources/W01.raw.gz": "ef282e69088f15d150ef7e0c959bd4cc441ef600308a736ee0036ff06fe320c1",
+    "sources/W02.raw.gz": "de1c6dcd5581c38b35e183d8fb9158011eb3330ee13b6305c8be87e5a805b54e",
+    "sources/W03.raw.gz": "469b8479bf94b134c2321bdfa0630311e667aa3745eee77988504c46abd6e409",
+    "sources/W04.raw.gz": "c6d3e3ed5e10397311297c68557bf513a8156cf102c75b872ae7d3174f99c569",
+    "sources/captures.json": "8475f374d6192540bfd8581749487eae736a1f6365c3d326092bd18d100c2798",
+    "sources/claims.json": "ab7e9ccc74c10a89fc03a47b50d87a66e6e687aafc975a0b3cf50923f26dfe90",
+    "sources/pr10-context.json": "c528c42898946ead495a2964e927456f4fc71fadf4cb5664a10f94de6cf3fc96",
+    "verification/README.md": "4d63a7f50ca155508f479b2fd25d3ebe4f43a6cf5b5a8c3fd60a6d1ad0fc1a91",
+    "verification/artifact-check.json": "4d7412bf746bcdf8c1fcbe7db64e1f87e95a47634da33f664053e20980e522f2",
+    "verification/demo.log.gz": "877e44890d72d0e6c37cb5c62ec3abac1c710b61d0a599450e086f7a50979009",
+    "verification/install.log.gz": "0b01d5cbddd23f2bdbfac45ed1e721209e4ae024ed4de83c76a049c6312fd93f",
+    "verification/review.json": "40642fade8979770b8138f0adb5688b7c4a2d26bbe4cf49e7ba56bc7e02cef6a",
+    "verification/tests.log.gz": "99db663fb22f1aab42e5434aa0b6bb485246ccd8180b4351b1d458886cbf269c",
+    "verify_artifacts.py": "b47d2dd97a272173d1febe7d3e7674b6dab1006f424e35955c001a4ed546f4bc"
+  }
+}
