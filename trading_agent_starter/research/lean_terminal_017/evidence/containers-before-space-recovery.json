@@ -1,0 +1,137 @@
+[
+  {
+    "name": "issue17-terminal-03",
+    "image": "sha256:9cd0d6fa04def99891bf4d5a29eb9a3878b6041f9cc25cb389ea0df2177d23fd",
+    "network": "none",
+    "readonly_root": true,
+    "exit_code": 0,
+    "started": "2026-10-18T14:48:06.918607552Z",
+    "finished": "2026-10-18T14:48:11.929789647Z"
+  },
+  {
+    "name": "issue17-v2-build",
+    "image": "sha256:9cd0d6fa04def99891bf4d5a29eb9a3878b6041f9cc25cb389ea0df2177d23fd",
+    "network": "none",
+    "readonly_root": false,
+    "exit_code": 0,
+    "started": "2026-10-18T14:46:58.716296296Z",
+    "finished": "2026-10-18T14:47:12.971826135Z"
+  },
+  {
+    "name": "issue17-host-repair2",
+    "image": "sha256:9cd0d6fa04def99891bf4d5a29eb9a3878b6041f9cc25cb389ea0df2177d23fd",
+    "network": "none",
+    "readonly_root": false,
+    "exit_code": 0,
+    "started": "2026-10-18T14:45:31.039177721Z",
+    "finished": "2026-10-18T14:45:42.00329974Z"
+  },
+  {
+    "name": "issue17-terminal-02",
+    "image": "sha256:9cd0d6fa04def99891bf4d5a29eb9a3878b6041f9cc25cb389ea0df2177d23fd",
+    "network": "none",
+    "readonly_root": true,
+    "exit_code": 0,
+    "started": "2026-10-18T14:40:16.728200676Z",
+    "finished": "2026-10-18T14:40:19.886346731Z"
+  },
+  {
+    "name": "issue17-host-repair1",
+    "image": "sha256:9cd0d6fa04def99891bf4d5a29eb9a3878b6041f9cc25cb389ea0df2177d23fd",
+    "network": "none",
+    "readonly_root": false,
+    "exit_code": 0,
+    "started": "2026-10-18T14:38:34.928777064Z",
+    "finished": "2026-10-18T14:38:43.449053154Z"
+  },
+  {
+    "name": "issue17-q01-user-run1",
+    "image": "sha256:9cd0d6fa04def99891bf4d5a29eb9a3878b6041f9cc25cb389ea0df2177d23fd",
+    "network": "none",
+    "readonly_root": true,
+    "exit_code": 0,
+    "started": "2026-10-18T14:35:28.812655203Z",
+    "finished": "2026-10-18T14:35:31.407765023Z"
+  },
+  {
+    "name": "issue17-host-compile-finalized",
+    "image": "sha256:9cd0d6fa04def99891bf4d5a29eb9a3878b6041f9cc25cb389ea0df2177d23fd",
+    "network": "none",
+    "readonly_root": false,
+    "exit_code": 0,
+    "started": "2026-10-18T14:34:51.425080346Z",
+    "finished": "2026-10-18T14:34:58.987238626Z"
+  },
+  {
+    "name": "issue17-host-compile-gate",
+    "image": "sha256:9cd0d6fa04def99891bf4d5a29eb9a3878b6041f9cc25cb389ea0df2177d23fd",
+    "network": "none",
+    "readonly_root": false,
+    "exit_code": 0,
+    "started": "2026-10-18T14:34:18.738223678Z",
+    "finished": "2026-10-18T14:34:27.759601646Z"
+  },
+  {
+    "name": "issue17-host-compile-frozen",
+    "image": "sha256:9cd0d6fa04def99891bf4d5a29eb9a3878b6041f9cc25cb389ea0df2177d23fd",
+    "network": "none",
+    "readonly_root": false,
+    "exit_code": 0,
+    "started": "2026-10-18T14:33:34.94583354Z",
+    "finished": "2026-10-18T14:33:45.656042467Z"
+  },
+  {
+    "name": "issue17-package-verify",
+    "image": "sha256:9cd0d6fa04def99891bf4d5a29eb9a3878b6041f9cc25cb389ea0df2177d23fd",
+    "network": "none",
+    "readonly_root": false,
+    "exit_code": 0,
+    "started": "2026-10-18T14:31:18.04121737Z",
+    "finished": "2026-10-18T14:31:19.243214435Z"
+  },
+  {
+    "name": "issue17-host-compile-final",
+    "image": "sha256:9cd0d6fa04def99891bf4d5a29eb9a3878b6041f9cc25cb389ea0df2177d23fd",
+    "network": "none",
+    "readonly_root": false,
+    "exit_code": 0,
+    "started": "2026-10-18T14:30:03.349707139Z",
+    "finished": "2026-10-18T14:30:16.111292544Z"
+  },
+  {
+    "name": "issue17-host-compile-3",
+    "image": "sha256:9cd0d6fa04def99891bf4d5a29eb9a3878b6041f9cc25cb389ea0df2177d23fd",
+    "network": "none",
+    "readonly_root": false,
+    "exit_code": 0,
+    "started": "2026-10-18T14:28:38.484033596Z",
+    "finished": "2026-10-18T14:28:51.501205182Z"
+  },
+  {
+    "name": "issue17-host-compile-2",
+    "image": "sha256:9cd0d6fa04def99891bf4d5a29eb9a3878b6041f9cc25cb389ea0df2177d23fd",
+    "network": "none",
+    "readonly_root": false,
+    "exit_code": 1,
+    "started": "2026-10-18T14:27:16.0360636Z",
+    "finished": "2026-10-18T14:27:24.518679809Z"
+  },
+  {
+    "name": "issue17-host-compile",
+    "image": "sha256:9cd0d6fa04def99891bf4d5a29eb9a3878b6041f9cc25cb389ea0df2177d23fd",
+    "network": "none",
+    "readonly_root": false,
+    "exit_code": 1,
+    "started": "2026-10-18T14:26:04.245633626Z",
+    "finished": "2026-10-18T14:26:04.526918148Z"
+  },
+  {
+    "name": "issue17-build",
+    "image": "sha256:9cd0d6fa04def99891bf4d5a29eb9a3878b6041f9cc25cb389ea0df2177d23fd",
+    "network": "host",
+    "readonly_root": false,
+    "exit_code": 0,
+    "started": "2026-10-18T14:18:41.155153791Z",
+    "finished": "2026-10-18T14:19:35.200200077Z"
+  }
+]

@@ -1,0 +1,186 @@
+{
+  "case_id": "Q02_user_defined_zero",
+  "before_terminal": {
+    "engine_quantity": "10",
+    "cash": "9000"
+  },
+  "after_terminal_before_available": {
+    "engine_quantity": "10",
+    "cash": "9000",
+    "unresolved_claim": {
+      "instrument_id": "I1",
+      "quantity": "10",
+      "status": "UNKNOWN",
+      "terminal_value": null
+    },
+    "realized_proceeds": null,
+    "denominator": 1,
+    "failures": 1
+  },
+  "required_lifecycle": [
+    "Warning",
+    "Delisted"
+  ],
+  "required_cancellations": {
+    "buy2": 1,
+    "sell3": 1
+  },
+  "post_delisting_tradable": false,
+  "core_patch_allowed": false,
+  "reflection_private_access_allowed": false,
+  "negative_control_violation_required": false,
+  "at_settlement_available": {
+    "event_kind": "ActionSettlement",
+    "amount": "0",
+    "cash": "9000",
+    "engine_quantity": "0",
+    "realized_pnl": "-1000",
+    "action_settlements": 1,
+    "trade_fills": 0,
+    "denominator": 1,
+    "failures": 0,
+    "duplicate": "NO_OP"
+  },
+  "ordered_business_kinds": [
+    "Seed",
+    "OrderSubmitted:buy2",
+    "OrderSubmitted:sell3",
+    "Warning",
+    "Notification:Intercepted",
+    "Delisted",
+    "UnresolvedTerminal",
+    "OrderCanceled:buy2",
+    "OrderCanceled:sell3",
+    "ActionSettlement",
+    "DuplicateIgnored",
+    "EndOfAlgorithm"
+  ],
+  "ordered_business_event_utc": [
+    "2025-01-06T14:59:59.0000000Z",
+    "2025-01-06T14:59:59.0000000Z",
+    "2025-01-06T14:59:59.0000000Z",
+    "2025-01-06T15:00:00.0000000Z",
+    "2025-01-06T15:01:00.0000000Z",
+    "2025-01-06T15:01:00.0000000Z",
+    "2025-01-06T15:01:00.0000000Z",
+    "2025-01-06T15:01:00.0000000Z",
+    "2025-01-06T15:01:00.0000000Z",
+    "2025-01-06T17:00:00.0000000Z",
+    "2025-01-06T17:00:00.0000000Z",
+    "2025-01-06T19:00:00.0000000Z"
+  ],
+  "external_identity": {
+    "instrument_id": "I1",
+    "issuer_id": "U1",
+    "class_id": "A",
+    "listing_id": "L1",
+    "ticker": "AAA",
+    "market": "usa",
+    "currency": "USD",
+    "identity_from": "2025-01-01T00:00:00Z"
+  },
+  "required_snapshot_phases": [
+    "2025-01-06T14:59:59.0000000Z",
+    "2025-01-06T15:00:00.0000000Z",
+    "2025-01-06T15:01:00.0000000Z",
+    "2025-01-06T16:00:00.0000000Z",
+    "2025-01-06T16:59:59.0000000Z",
+    "2025-01-06T17:00:00.0000000Z",
+    "2025-01-06T17:00:01.0000000Z",
+    "2025-01-06T18:00:00.0000000Z",
+    "2025-01-06T19:00:00.0000000Z",
+    "end"
+  ],
+  "native_order_sequence": [
+    {
+      "order_id": 1,
+      "status": "Submitted",
+      "fill_quantity": "0",
+      "fill_price": "0",
+      "fee": "0"
+    },
+    {
+      "order_id": 2,
+      "status": "Submitted",
+      "fill_quantity": "0",
+      "fill_price": "0",
+      "fee": "0"
+    },
+    {
+      "order_id": 1,
+      "status": "CancelPending",
+      "fill_quantity": "0",
+      "fill_price": "0",
+      "fee": "0"
+    },
+    {
+      "order_id": 2,
+      "status": "CancelPending",
+      "fill_quantity": "0",
+      "fill_price": "0",
+      "fee": "0"
+    },
+    {
+      "order_id": 1,
+      "status": "Canceled",
+      "fill_quantity": "0",
+      "fill_price": "0",
+      "fee": "0"
+    },
+    {
+      "order_id": 2,
+      "status": "Canceled",
+      "fill_quantity": "0",
+      "fill_price": "0",
+      "fee": "0"
+    }
+  ],
+  "nav_entry_probe": {
+    "intent_id": "terminal-nav-probe",
+    "instrument_id": "I1",
+    "utc": "2025-01-06T15:01:00.0000000Z",
+    "scientific_nav": null,
+    "accepted": false,
+    "submission_delegate_called": false,
+    "orders_before": 2,
+    "orders_after": 2
+  },
+  "reservation_observations": [
+    {
+      "order_id": 1,
+      "status": "Submitted",
+      "reserved_cash": "3",
+      "reserved_shares": "0"
+    },
+    {
+      "order_id": 2,
+      "status": "Submitted",
+      "reserved_cash": "3",
+      "reserved_shares": "3"
+    },
+    {
+      "order_id": 1,
+      "status": "CancelPending",
+      "reserved_cash": "3",
+      "reserved_shares": "3"
+    },
+    {
+      "order_id": 2,
+      "status": "CancelPending",
+      "reserved_cash": "3",
+      "reserved_shares": "3"
+    },
+    {
+      "order_id": 1,
+      "status": "Canceled",
+      "reserved_cash": "0",
+      "reserved_shares": "3"
+    },
+    {
+      "order_id": 2,
+      "status": "Canceled",
+      "reserved_cash": "0",
+      "reserved_shares": "0"
+    }
+  ]
+}

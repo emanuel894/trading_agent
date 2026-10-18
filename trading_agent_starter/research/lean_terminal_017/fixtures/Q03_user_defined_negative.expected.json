@@ -1,0 +1,65 @@
+{
+  "case_id": "Q03_user_defined_negative",
+  "before_terminal": {
+    "engine_quantity": "10",
+    "cash": "9000"
+  },
+  "after_terminal_before_available": {
+    "engine_quantity": "0",
+    "cash": "10000",
+    "unresolved_claim": {
+      "instrument_id": "I1",
+      "quantity": "10",
+      "status": "UNKNOWN",
+      "terminal_value": null
+    },
+    "realized_proceeds": null,
+    "denominator": 1,
+    "failures": 1
+  },
+  "required_lifecycle": [
+    "Warning",
+    "Delisted"
+  ],
+  "required_cancellations": {
+    "buy2": 1,
+    "sell3": 1
+  },
+  "post_delisting_tradable": false,
+  "core_patch_allowed": false,
+  "reflection_private_access_allowed": false,
+  "negative_control_violation_required": true,
+  "after_hourly_cleanup_and_end": {
+    "engine_quantity": "0",
+    "cash": "10000",
+    "unresolved_claim": {
+      "instrument_id": "I1",
+      "quantity": "10",
+      "status": "UNKNOWN",
+      "terminal_value": null
+    },
+    "realized_proceeds": null,
+    "denominator": 1,
+    "failures": 1
+  },
+  "ordered_business_kinds": [
+    "Seed",
+    "OrderSubmitted:buy2",
+    "OrderSubmitted:sell3",
+    "Warning",
+    "Notification:Forwarded",
+    "TradeFill:Liquidate from delisting",
+    "OrderCanceled:buy2",
+    "OrderCanceled:sell3",
+    "Delisted",
+    "UnresolvedTerminal",
+    "EndOfAlgorithm"
+  ],
+  "default_liquidation": {
+    "fill_quantity": "-10",
+    "fill_price": "100",
+    "fee": "0",
+    "tag": "Liquidate from delisting",
+    "cash": "10000"
+  }
+}
