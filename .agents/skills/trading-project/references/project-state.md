@@ -115,8 +115,10 @@ automatic repairs persist across resumes; global implementer/reviewer caps are 1
 Previously discussed illustrative API amounts and the RED review's proposed one-off
 data ceiling are non-canonical and require fresh owner approval plus exact pricing/
 enforcement; no fixed monthly API commitment is authorized and neither licenses paid calls. Broker/acquisition secrets
-stay outside coding/review/ordinary CI. Human approval remains mandatory for merge,
-science amendments, paid acquisition/activation, and later Paper/Live transitions.
+stay outside coding/review/ordinary CI. The owner's 2026-10-18 standing authorization
+satisfies routine repository merge approval after required review/CI; scientific
+amendments, paid acquisition/activation, credential changes and later Paper/Live
+transitions remain separate explicit gates.
 
 Validation: [policy](../../../../AI_PROJECT_POLICY.md#validation-and-reporting),
 [Foundation workflow](../../../../.github/workflows/tests.yml) and
