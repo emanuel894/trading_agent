@@ -1,0 +1,379 @@
+{
+  "captured_utc": "2026-10-18T08:02:33.366025+00:00",
+  "scope": "Public source/docs GET only; no upstream install/import/build/run, broker/provider/model calls or probe.",
+  "pins": {
+    "lean": {
+      "repo": "QuantConnect/Lean",
+      "sha": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
+      "commit_date": "2026-10-16T21:33:14Z"
+    },
+    "ib": {
+      "repo": "QuantConnect/Lean.Brokerages.InteractiveBrokers",
+      "sha": "fb86123c7ea07c3e9d02d56ed7476675e3e4578a",
+      "commit_date": "2026-10-01T17:17:09Z"
+    },
+    "alpaca": {
+      "repo": "QuantConnect/Lean.Brokerages.Alpaca",
+      "sha": "f186471dc3a9b349e516a69fd75a603ffb5e1050",
+      "commit_date": "2026-10-16T13:52:20Z"
+    },
+    "nautilus": {
+      "repo": "nautechsystems/nautilus_trader",
+      "sha": "c6e8f73f89dfdd49a5c6a2578173ff3e2057dfb1",
+      "commit_date": "2026-10-18T07:51:45Z"
+    }
+  },
+  "captures": [
+    {
+      "key": "lean/LICENSE",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/LICENSE",
+      "retrieved_utc": "2026-10-18T08:02:29.518113+00:00",
+      "status": "captured",
+      "sha256": "522cf0a716ce03f67d46f8fceb5bf78c5b84400ec5cd8d14bf9f02cddc1cb6ba",
+      "bytes": 10737
+    },
+    {
+      "key": "lean/readme.md",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/readme.md",
+      "retrieved_utc": "2026-10-18T08:02:29.518388+00:00",
+      "status": "captured",
+      "sha256": "c93d2d649740ffdbfeca35ee5035eff668dc1f0a6b97873756addb70f4f4b91e",
+      "bytes": 11001
+    },
+    {
+      "key": "lean/Algorithm.Python/readme.md",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Algorithm.Python/readme.md",
+      "retrieved_utc": "2026-10-18T08:02:29.518535+00:00",
+      "status": "captured",
+      "sha256": "aadc48a8c6c1fc64dd7b875c57cabe03b726fa9ec9475b8582a6d45a28226023",
+      "bytes": 6366
+    },
+    {
+      "key": "lean/Common/QuantConnect.csproj",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/QuantConnect.csproj",
+      "retrieved_utc": "2026-10-18T08:02:29.518675+00:00",
+      "status": "captured",
+      "sha256": "eb9dedee7bc48ff6a835905d9f9da23d7a1b7a4dd95875df690258f335844e37",
+      "bytes": 3408
+    },
+    {
+      "key": "lean/Launcher/config.json",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Launcher/config.json",
+      "retrieved_utc": "2026-10-18T08:02:29.519131+00:00",
+      "status": "captured",
+      "sha256": "d8c25c38e873c2354df58271f11b177208d98bb39af9249885f6137f45312658",
+      "bytes": 40228
+    },
+    {
+      "key": "lean/Engine/Setup/BacktestingSetupHandler.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Engine/Setup/BacktestingSetupHandler.cs",
+      "retrieved_utc": "2026-10-18T08:02:29.522898+00:00",
+      "status": "captured",
+      "sha256": "7466e15a9268fdc2c29e1d3c893e788105483dbc0fac0a33f4dabd662aa23c35",
+      "bytes": 12667
+    },
+    {
+      "key": "lean/Brokerages/Brokerage.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Brokerages/Brokerage.cs",
+      "retrieved_utc": "2026-10-18T08:02:30.063085+00:00",
+      "status": "captured",
+      "sha256": "20f2277b4f307d8eb09956152241511d87d144ba6d3476a7ab8bea52431cb1bc",
+      "bytes": 44996
+    },
+    {
+      "key": "lean/Brokerages/Backtesting/BacktestingBrokerage.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Brokerages/Backtesting/BacktestingBrokerage.cs",
+      "retrieved_utc": "2026-10-18T08:02:30.103935+00:00",
+      "status": "captured",
+      "sha256": "9425f67eff7fe1457985a5a70985801f9db962db08878b80a49b8802624e942c",
+      "bytes": 33421
+    },
+    {
+      "key": "lean/Engine/TransactionHandlers/BacktestingTransactionHandler.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Engine/TransactionHandlers/BacktestingTransactionHandler.cs",
+      "retrieved_utc": "2026-10-18T08:02:30.150263+00:00",
+      "status": "captured",
+      "sha256": "df5b3565fa4f67e504252d1b70320394c8be4e0bbebbe17317d6fa827d85f05e",
+      "bytes": 4948
+    },
+    {
+      "key": "lean/Engine/TransactionHandlers/BrokerageTransactionHandler.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Engine/TransactionHandlers/BrokerageTransactionHandler.cs",
+      "retrieved_utc": "2026-10-18T08:02:30.175891+00:00",
+      "status": "captured",
+      "sha256": "7eb8d10b2582c8f4d1a4578eaa4db66c021b70305abcbff378f0c899be95a00c",
+      "bytes": 98933
+    },
+    {
+      "key": "lean/Engine/DataFeeds/UniverseSelection.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Engine/DataFeeds/UniverseSelection.cs",
+      "retrieved_utc": "2026-10-18T08:02:30.220743+00:00",
+      "status": "captured",
+      "sha256": "3d02158c9c6e8d2c1205f3d2a286a023cd03afc57a3240e904723cf225fb66cd",
+      "bytes": 35489
+    },
+    {
+      "key": "lean/Engine/DataFeeds/PendingRemovalsManager.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Engine/DataFeeds/PendingRemovalsManager.cs",
+      "retrieved_utc": "2026-10-18T08:02:30.302987+00:00",
+      "status": "captured",
+      "sha256": "7131f22de4ed88507ac8abb1b49ed9213eb6b13b00548342d439bcfe2555e049",
+      "bytes": 10133
+    },
+    {
+      "key": "lean/Common/Securities/Security.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Securities/Security.cs",
+      "retrieved_utc": "2026-10-18T08:02:30.442820+00:00",
+      "status": "captured",
+      "sha256": "d8a514de7d67a6aa3abf72bdf049a0bc098bfbd64576f0926182fc0588a761e9",
+      "bytes": 44604
+    },
+    {
+      "key": "lean/Common/Securities/SecurityPortfolioManager.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Securities/SecurityPortfolioManager.cs",
+      "retrieved_utc": "2026-10-18T08:02:30.590678+00:00",
+      "status": "captured",
+      "sha256": "a38ddb51a0d7a2b60cff663e74912e0bebb302a09c44bf6bd295980fce26a2bb",
+      "bytes": 43334
+    },
+    {
+      "key": "lean/Common/Orders/Fills/IFillModel.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Orders/Fills/IFillModel.cs",
+      "retrieved_utc": "2026-10-18T08:02:30.661400+00:00",
+      "status": "captured",
+      "sha256": "597e364af51c783aa0b1609740d22ee09f00c6d0aa43c44614a780a813355a8f",
+      "bytes": 1402
+    },
+    {
+      "key": "lean/Common/Orders/Fills/EquityFillModel.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Orders/Fills/EquityFillModel.cs",
+      "retrieved_utc": "2026-10-18T08:02:30.664868+00:00",
+      "status": "captured",
+      "sha256": "7f8c0e35eb538f5a63184c9b5ef4b32886e2c7779ccce1e773229a1a1ec18232",
+      "bytes": 52099
+    },
+    {
+      "key": "lean/Common/Orders/Fees/IFeeModel.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Orders/Fees/IFeeModel.cs",
+      "retrieved_utc": "2026-10-18T08:02:30.743774+00:00",
+      "status": "captured",
+      "sha256": "bb68139e3eb70056f158ebbd708e3d80d7fab43ba82c03a42a2435f0868a7792",
+      "bytes": 2409
+    },
+    {
+      "key": "lean/Common/Orders/Slippage/ISlippageModel.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Orders/Slippage/ISlippageModel.cs",
+      "retrieved_utc": "2026-10-18T08:02:30.877606+00:00",
+      "status": "captured",
+      "sha256": "48c4bf2e5750f7f29d3d6c6b7210a652e104cf7a315506fb06e02a449edfdf74",
+      "bytes": 1135
+    },
+    {
+      "key": "lean/Algorithm/QCAlgorithm.Framework.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Algorithm/QCAlgorithm.Framework.cs",
+      "retrieved_utc": "2026-10-18T08:02:30.934411+00:00",
+      "status": "captured",
+      "sha256": "e9360fa1eef29fa99aa8662989fa7095a718749173806460738ae4725e3d956a",
+      "bytes": 21280
+    },
+    {
+      "key": "lean/Algorithm/Risk/IRiskManagementModel.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Algorithm/Risk/IRiskManagementModel.cs",
+      "retrieved_utc": "2026-10-18T08:02:31.001653+00:00",
+      "status": "captured",
+      "sha256": "0027c75ead9206f6406cb5b859335bc87d62fff6197fda2dc34d22b581c06f4d",
+      "bytes": 1408
+    },
+    {
+      "key": "lean/Common/Interfaces/IDataProvider.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Interfaces/IDataProvider.cs",
+      "retrieved_utc": "2026-10-18T08:02:31.152176+00:00",
+      "status": "captured",
+      "sha256": "e5d13c48b768b6a4db0dc211a677d9950dcb988f85759579ff53f92da3070e91",
+      "bytes": 1545
+    },
+    {
+      "key": "lean/Common/Interfaces/IMapFileProvider.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Interfaces/IMapFileProvider.cs",
+      "retrieved_utc": "2026-10-18T08:02:31.207171+00:00",
+      "status": "captured",
+      "sha256": "9d7982137e960a59997a4f274364a04299728fef7766fd3c9e62a8c56b858925",
+      "bytes": 1739
+    },
+    {
+      "key": "lean/Common/Interfaces/IFactorFileProvider.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Interfaces/IFactorFileProvider.cs",
+      "retrieved_utc": "2026-10-18T08:02:31.215618+00:00",
+      "status": "captured",
+      "sha256": "5f78fb854f6af9fe13d18f5c7d10874a58afd3e841f31ffb2430a39f5f3032cd",
+      "bytes": 1779
+    },
+    {
+      "key": "lean/Common/Symbol.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Symbol.cs",
+      "retrieved_utc": "2026-10-18T08:02:31.261173+00:00",
+      "status": "captured",
+      "sha256": "bb6ac9287b4cdc58c30962fe1516a400bb75c751ee879ab3f161f6ebb24b9584",
+      "bytes": 41836
+    },
+    {
+      "key": "lean/Common/SecurityIdentifier.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/SecurityIdentifier.cs",
+      "retrieved_utc": "2026-10-18T08:02:31.452456+00:00",
+      "status": "captured",
+      "sha256": "802ff0f0493ee990a5d1917632482f94fe4e267874d034864d03b1aca5574302",
+      "bytes": 48918
+    },
+    {
+      "key": "lean/Common/Data/Market/Tick.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/Market/Tick.cs",
+      "retrieved_utc": "2026-10-18T08:02:31.484741+00:00",
+      "status": "captured",
+      "sha256": "9ca69500eea60503036070b38111ad0205afdc25a0b2740ab467991476db66a5",
+      "bytes": 35485
+    },
+    {
+      "key": "lean/Common/Data/BaseData.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Data/BaseData.cs",
+      "retrieved_utc": "2026-10-18T08:02:31.629723+00:00",
+      "status": "captured",
+      "sha256": "3c95bda87a3cf134cd89767e8964c31d525b961e2a698a0d1c449a0978db7ff9",
+      "bytes": 19267
+    },
+    {
+      "key": "lean/Common/Securities/SecurityManager.cs",
+      "url": "https://github.com/QuantConnect/Lean/blob/d4cac37514427c84d40064cecbf3f0e6be4b0137/Common/Securities/SecurityManager.cs",
+      "retrieved_utc": "2026-10-18T08:02:31.703245+00:00",
+      "status": "captured",
+      "sha256": "260668bcf0428d9dd502fab7ed4a0788e6815bc38614b4b3071e6d7ea7a9e15f",
+      "bytes": 17674
+    },
+    {
+      "key": "ib/LICENSE",
+      "url": "https://github.com/QuantConnect/Lean.Brokerages.InteractiveBrokers/blob/fb86123c7ea07c3e9d02d56ed7476675e3e4578a/LICENSE",
+      "retrieved_utc": "2026-10-18T08:02:31.718604+00:00",
+      "status": "captured",
+      "sha256": "522cf0a716ce03f67d46f8fceb5bf78c5b84400ec5cd8d14bf9f02cddc1cb6ba",
+      "bytes": 10737
+    },
+    {
+      "key": "ib/README.md",
+      "url": "https://github.com/QuantConnect/Lean.Brokerages.InteractiveBrokers/blob/fb86123c7ea07c3e9d02d56ed7476675e3e4578a/README.md",
+      "retrieved_utc": "2026-10-18T08:02:31.773093+00:00",
+      "status": "captured",
+      "sha256": "7ec5dd2b0887d376eae24c06b26e7b872754835c3b7672b27f020da2d0d3989e",
+      "bytes": 12912
+    },
+    {
+      "key": "ib/QuantConnect.InteractiveBrokersBrokerage/InteractiveBrokersBrokerage.cs",
+      "url": "https://github.com/QuantConnect/Lean.Brokerages.InteractiveBrokers/blob/fb86123c7ea07c3e9d02d56ed7476675e3e4578a/QuantConnect.InteractiveBrokersBrokerage/InteractiveBrokersBrokerage.cs",
+      "retrieved_utc": "2026-10-18T08:02:31.809039+00:00",
+      "status": "captured",
+      "sha256": "d8800f77674587aa041f720350927bbfdc7e075622f5f477734dce3609795818",
+      "bytes": 291127
+    },
+    {
+      "key": "ib/QuantConnect.InteractiveBrokersBrokerage/QuantConnect.InteractiveBrokersBrokerage.csproj",
+      "url": "https://github.com/QuantConnect/Lean.Brokerages.InteractiveBrokers/blob/fb86123c7ea07c3e9d02d56ed7476675e3e4578a/QuantConnect.InteractiveBrokersBrokerage/QuantConnect.InteractiveBrokersBrokerage.csproj",
+      "retrieved_utc": "2026-10-18T08:02:31.908868+00:00",
+      "status": "captured",
+      "sha256": "95086703cd84500bce6d3f31caddc22b8914a361757b49983ff338c71edaa775",
+      "bytes": 2725
+    },
+    {
+      "key": "alpaca/LICENSE",
+      "url": "https://github.com/QuantConnect/Lean.Brokerages.Alpaca/blob/f186471dc3a9b349e516a69fd75a603ffb5e1050/LICENSE",
+      "retrieved_utc": "2026-10-18T08:02:31.927530+00:00",
+      "status": "source_limited",
+      "error": "Command '['gh', 'api', '-H', 'Accept: application/vnd.github.raw+json', 'repos/QuantConnect/Lean.Brokerages.Alpaca/contents/LICENSE?ref=f186471dc3a9b349e516a69fd75a603ffb5e1050']' returned non-zero exit status 1."
+    },
+    {
+      "key": "alpaca/README.md",
+      "url": "https://github.com/QuantConnect/Lean.Brokerages.Alpaca/blob/f186471dc3a9b349e516a69fd75a603ffb5e1050/README.md",
+      "retrieved_utc": "2026-10-18T08:02:32.031084+00:00",
+      "status": "captured",
+      "sha256": "0d0712cf23c0897fdcbd01b25189e7387c07670d5566759053716f823837c459",
+      "bytes": 13416
+    },
+    {
+      "key": "alpaca/QuantConnect.AlpacaBrokerage/AlpacaBrokerage.cs",
+      "url": "https://github.com/QuantConnect/Lean.Brokerages.Alpaca/blob/f186471dc3a9b349e516a69fd75a603ffb5e1050/QuantConnect.AlpacaBrokerage/AlpacaBrokerage.cs",
+      "retrieved_utc": "2026-10-18T08:02:32.082277+00:00",
+      "status": "captured",
+      "sha256": "50686e8ac32823750a4e9e853d058af52625a486b00619a88a0459ffbe196cbd",
+      "bytes": 80624
+    },
+    {
+      "key": "alpaca/QuantConnect.AlpacaBrokerage/QuantConnect.AlpacaBrokerage.csproj",
+      "url": "https://github.com/QuantConnect/Lean.Brokerages.Alpaca/blob/f186471dc3a9b349e516a69fd75a603ffb5e1050/QuantConnect.AlpacaBrokerage/QuantConnect.AlpacaBrokerage.csproj",
+      "retrieved_utc": "2026-10-18T08:02:32.091586+00:00",
+      "status": "captured",
+      "sha256": "3c80485ab301f422c3cd1e45f2fa184b0583dea24a2b120ae3512cd03cdf2f38",
+      "bytes": 2394
+    },
+    {
+      "key": "nautilus/README.md",
+      "url": "https://github.com/nautechsystems/nautilus_trader/blob/c6e8f73f89dfdd49a5c6a2578173ff3e2057dfb1/README.md",
+      "retrieved_utc": "2026-10-18T08:02:32.176020+00:00",
+      "status": "captured",
+      "sha256": "fb59fc43d9c585018b6e1ea77504d28111be7d30dc6e08a1da1eb4ad78ad39aa",
+      "bytes": 40010
+    },
+    {
+      "key": "nautilus/RELEASES.md",
+      "url": "https://github.com/nautechsystems/nautilus_trader/blob/c6e8f73f89dfdd49a5c6a2578173ff3e2057dfb1/RELEASES.md",
+      "retrieved_utc": "2026-10-18T08:02:32.195187+00:00",
+      "status": "captured",
+      "sha256": "6edee2003e8a89afc2295008c80b7ba380317ffaeb75128c7dee017237b9de63",
+      "bytes": 641570
+    },
+    {
+      "key": "nautilus/python/pyproject.toml",
+      "url": "https://github.com/nautechsystems/nautilus_trader/blob/c6e8f73f89dfdd49a5c6a2578173ff3e2057dfb1/python/pyproject.toml",
+      "retrieved_utc": "2026-10-18T08:02:32.251444+00:00",
+      "status": "captured",
+      "sha256": "8f2febbd835c3108f9609ad260e1e032e6eb2a7a298f02890d79fb33e5cf9e63",
+      "bytes": 12497
+    },
+    {
+      "key": "nautilus/crates/model/src/instruments/equity.rs",
+      "url": "https://github.com/nautechsystems/nautilus_trader/blob/c6e8f73f89dfdd49a5c6a2578173ff3e2057dfb1/crates/model/src/instruments/equity.rs",
+      "retrieved_utc": "2026-10-18T08:02:32.375476+00:00",
+      "status": "captured",
+      "sha256": "1269f29c46b8d24e28397a990da15dd24629f8d2e11e3ae51265b931e8ff0190",
+      "bytes": 15129
+    },
+    {
+      "key": "docs/qc-ib.html",
+      "url": "https://www.quantconnect.com/docs/v2/lean-cli/live-trading/brokerages/interactive-brokers",
+      "retrieved_utc": "2026-10-18T08:02:32.511074+00:00",
+      "status": "captured",
+      "sha256": "8573b328a9dc2c83b7e736bc3882a331b89c84cf37bcd16bf3937f6aea11e8ac",
+      "bytes": 150751
+    },
+    {
+      "key": "docs/qc-alpaca.html",
+      "url": "https://www.quantconnect.com/docs/v2/lean-cli/live-trading/brokerages/alpaca",
+      "retrieved_utc": "2026-10-18T08:02:32.549796+00:00",
+      "status": "captured",
+      "sha256": "4f1eb75536b9f1dd4c82e9ee3fba10026512b9ab1a49da0e3e2b8cc892ef70d6",
+      "bytes": 127743
+    },
+    {
+      "key": "docs/qc-pricing.html",
+      "url": "https://www.quantconnect.com/pricing",
+      "retrieved_utc": "2026-10-18T08:02:32.666248+00:00",
+      "status": "captured",
+      "sha256": "1907b7a91eef7843ff09b19c8f425e5cac9ffc1db1e85b4629bc34c276c0dad3",
+      "bytes": 404470
+    },
+    {
+      "key": "docs/qc-actions.html",
+      "url": "https://www.quantconnect.com/docs/v2/writing-algorithms/securities/asset-classes/us-equity/corporate-actions",
+      "retrieved_utc": "2026-10-18T08:02:32.666825+00:00",
+      "status": "captured",
+      "sha256": "db5868fe52c8e815f150c4ec7c887946e9f8fa8d0296a9f779e61ea3bb4af335",
+      "bytes": 437114
+    }
+  ]
+}
