@@ -18,13 +18,31 @@ Mandate: https://github.com/emanuel894/trading_agent/issues/11.
 - Critical question: terminal forced-fill interception, including subsequent
   holding/removal effects. Do not assume fill-model replacement alone covers it.
 
+## Checkpoint 2 — design and source evidence
+
+- Design: `../../LEAN_CONTRACT_QUALIFICATION_20261018.md`; exact matrix Q01–Q33
+  in `FIXTURE_MATRIX.md`. Provisional design status LEAN_QUALIFICATION_READY;
+  no LEAN fixture has been implemented or run.
+- Fresh public source/docs GET captures: 43 successful files, pinned HEAD metadata
+  and ZIP retained. Alpaca root LICENSE path absent; source/README license exists.
+- Source seams support terminal-first falsification without a core patch in
+  principle. Runtime holding removal, nanosecond envelope ordering, fractional
+  action cash and dividend payable cash remain explicit gates.
+- Existing baseline: Python 3.13.5, 240 tests passed; synthetic demo passed.
+  First installer attempts found no pip and unwritable default uv cache; using
+  existing isolated venv with `UV_CACHE_DIR=/tmp/issue11-uv-cache uv pip install
+  --python /workspace/audit-upstreams/test-venv313/bin/python -r requirements.txt`
+  succeeded. No project dependency changed.
+- Next: source packet/links/arithmetic/invariant validation, independent model
+  review from trusted base policy, then final push and draft PR. The initial
+  scope checkpoint is already pushed for recovery.
+
 ## Resume
 
 1. Verify branch/status and read this checkpoint and the issue snapshot.
-2. Finish pinned LEAN/official plugin inspection; persist evidence and exact
-   synthetic fixture matrix with pass/fail rules and adapter seams.
-3. Validate documentation, protected-file invariance, required existing tests
-   and demo. Obtain independent review under the trusted base policy.
+2. Read design, fixture matrix and source evidence; do not reimplement the spike.
+3. Complete packet validation and independent review under trusted base policy;
+   retain existing test/demo evidence and clearly mark LEAN fixtures UNRUN.
 4. Commit and push only this branch; open draft PR targeting the named base.
    Attach PR to the chat. Never merge or change PR #10.
 

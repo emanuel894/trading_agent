@@ -1,0 +1,110 @@
+{
+  "Researcher Seat": {
+    "monthly": 10,
+    "yearly": 96,
+    "annualDiscount": 24
+  },
+  "Researcher Pack": {
+    "monthly": 84,
+    "yearly": 888
+  },
+  "moduleProducts": [
+    {
+      "id": 185,
+      "name": "Tradier",
+      "sku": "Tradier",
+      "type": "module",
+      "quantity": 0,
+      "price": {
+        "monthly": 1,
+        "yearly": 12,
+        "annualDiscount": 0
+      },
+      "marketPrice": {
+        "Researcher Seat": {
+          "monthly": 1,
+          "yearly": 12,
+          "annualDiscount": 0
+        },
+        "Team Seat": {
+          "monthly": 1,
+          "yearly": 12,
+          "annualDiscount": 0
+        },
+        "Trading Firm Seat": {
+          "monthly": 1,
+          "yearly": 12,
+          "annualDiscount": 0
+        },
+        "Institution Seat": {
+          "monthly": 1,
+          "yearly": 12,
+          "annualDiscount": 0
+        }
+      },
+      "min": 1,
+      "icon": null,
+      "vendorName": "QuantConnect",
+      "vendorImageTile": "https://cdn.quantconnect.com/i/tu/qc-logo.svg",
+      "max": 9223372036854775807,
+      "cpu": null,
+      "ram": null,
+      "storage": null,
+      "storageHuman": "",
+      "billingInterval": "monthly & yearly",
+      "priceScale": "team",
+      "priceVisibility": 1,
+      "shortDescription": "Enables live trading through Tradier",
+      "cancelTime": null
+    },
+    {
+      "id": 366,
+      "name": "Private Cloud Hosts",
+      "sku": "Private Cloud Hosts",
+      "type": "module",
+      "quantity": 0,
+      "price": {
+        "monthly": null,
+        "yearly": 4800,
+        "annualDiscount": null
+      },
+      "marketPrice": {
+        "Researcher Seat": {
+          "monthly": null,
+          "yearly": 4800,
+          "annualDiscount": null
+        },
+        "Team Seat": {
+          "monthly": null,
+          "yearly": 4800,
+          "annualDiscount": null
+        },
+        "Trading Firm Seat": {
+          "monthly": null,
+          "yearly": 4800,
+          "annualDiscount": null
+        },
+        "Institution Seat": {
+          "monthly": null,
+          "yearly": 4800,
+          "annualDiscount": null
+        }
+      },
+      "min": 1,
+      "icon": null,
+      "vendorName": "QuantConnect",
+      "vendorImageTile": "https://cdn.quantconnect.com/i/tu/qc-logo.svg",
+      "max": 9223372036854775807,
+      "cpu": null,
+      "ram": null,
+      "storage": null,
+      "storageHuman": "",
+      "billingInterval": "yearly",
+      "priceScale": "unity",
+      "priceVisibility": 1,
+      "shortDescription": "Privately host a cluster of LEAN servers on-premise.",
+      "cancelTime": null
+    }
+  ],
+  "module_181_or_347_present": false
+}
