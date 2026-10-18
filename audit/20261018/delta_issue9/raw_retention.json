@@ -1,0 +1,38 @@
+{
+  "path": "/workspace/audit-upstreams/issue9-delta-20261018/retained-delta-public-sources.zip",
+  "sha256": "8b59919960c9d28fe6087eefe69625b35bb992a54aa7587e45c86f556a243a9a",
+  "bytes": 3374147,
+  "distinct_archive_files": 310,
+  "indexed_source_files_verified": {
+    "grok": 59,
+    "claude": 241,
+    "codex": 5
+  },
+  "committed_raw_bytes": false,
+  "contents": "Public code/docs/metadata and bounded researcher notes only; no account responses, licensed data or credentials. Exact mutable bodies remain in the cloud workspace, not portable Git storage.",
+  "archive_paths": "Each manifest file resolves under grok/ or claude/; Codex archive_path is explicit.",
+  "failures": [
+    {
+      "url": "https://api.github.com/repos/xai-org/grok-build/releases/latest",
+      "retrieved_utc": "2026-10-18T07:51:11.822221+00:00",
+      "error": "HTTP Error 404: Not Found",
+      "metadata_file": "87cc464bea0a.json",
+      "id": "G36"
+    },
+    {
+      "url": "https://cursor.com/docs/cloud-agent/overview",
+      "retrieved_utc": "2026-10-18T07:51:27.506973+00:00",
+      "error": "HTTP Error 404: Not Found",
+      "metadata_file": "2d0a209805bc.json",
+      "id": "G39"
+    },
+    {
+      "url": "https://docs.x.ai/docs/guides/tools/agent-tools",
+      "retrieved_utc": "2026-10-18T07:49:53.544872+00:00",
+      "error": "HTTP Error 404: Not Found",
+      "metadata_file": "6d7e95b41296.json",
+      "id": "G45"
+    }
+  ],
+  "not_completeness_or_runtime_qualification": true
+}

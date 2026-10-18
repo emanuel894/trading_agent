@@ -1,0 +1,8 @@
+{
+  "path": "/workspace/audit-upstreams/framework-audit-20261018/retained-public-sources.zip",
+  "sha256": "331b8b34b4c5c23318692d9e5a3ab09e8831786d144b13f283e406e1abd4da93",
+  "bytes": 6414122,
+  "indexed_local_files": 604,
+  "committed_raw_bytes": false,
+  "note": "Raw bytes retained in cloud workspace; Git holds exact pinned URLs/hash indexes and decisive excerpts. Mutable pages may change on re-fetch. Date-only index timestamps preserved without invented exact retrieval clocks."
+}
