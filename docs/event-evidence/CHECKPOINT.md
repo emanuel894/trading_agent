@@ -20,9 +20,21 @@ paid/provider/model calls, secrets, broker actions or ingestion platform.
 - Design-only deliverable: portable envelope plus source matrix/admission,
   correction, entity and baseline rules; separately registered future experiment
   proposal. No production implementation is planned.
-- Next: capture current public documentation; write artifacts; verify schema,
-  source integrity, protected-file scope and existing fixture suite/demo; obtain
-  independent review; push and open a draft PR targeting the base branch.
+- Captured 43 public documentation/source responses (34 HTTP 200; nine failed
+  paths preserved); retained bytes/hashes and 24 bounded source excerpts. An
+  HTTP 200 app shell is not feed qualification. Two clients are pinned, not installed.
+- Drafted all eight requested outputs under `docs/event-evidence/`. Proposed
+  disposition: `EVENT_SOURCE_QUALIFICATION_NEEDED`. First future separate pilot:
+  eight consecutive scheduled FOMC statements for evidence/control feasibility;
+  predictive comparison requires another powered registration.
+- Existing Python 3.13.5/Linux fixture suite: 240 tests, zero failures/errors;
+  synthetic 300-bar demo completed, zero broker orders/model training. Logs are
+  currently `/tmp/issue12-tests.log` and `/tmp/issue12-demo.log`.
+- Offline schema/source verifier passes: two synthetic examples, 11 rejected
+  counterexamples, 43 source hashes, 24 excerpts, local links and docs-only scope.
+- Next: independent review; fix material findings; replace draft verification
+  record with pinned artifact hashes and retained logs; final check, push, draft
+  PR targeting the base branch, then inspect CI and report exact status.
 
 ## Operational notes
 

@@ -1,0 +1,6 @@
+{
+  "state": "DRAFT_VERIFICATION_IN_PROGRESS",
+  "base_sha": "b5b06af7a876ebb4c7fc9ab6f63cbaed9ef2aafe",
+  "branch": "research/issue-12-event-evidence-contract",
+  "note": "Replaced with final evidence before push; see CHECKPOINT.md for resume state."
+}

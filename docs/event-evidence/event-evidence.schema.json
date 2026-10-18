@@ -1,0 +1,1143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portable event evidence envelope (design only)",
+  "description": "Structure validation is necessary, never source truth or admission authority. Normative semantic invariants are in CONTRACT.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {
+      "const": "event-evidence/1.0.0-design"
+    },
+    "evidence_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_family": {
+      "enum": [
+        "fed_decision",
+        "fed_minutes",
+        "fed_speech",
+        "scheduled_macro",
+        "regulation",
+        "trade_policy",
+        "sanctions",
+        "government_award",
+        "issuer_release",
+        "financial_news"
+      ]
+    },
+    "record_kind": {
+      "enum": [
+        "original",
+        "revision",
+        "update",
+        "correction",
+        "retraction",
+        "duplicate",
+        "republication"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "publisher": {
+          "type": "string",
+          "minLength": 1
+        },
+        "distributor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "canonical_uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "document_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "transport": {
+          "enum": [
+            "official_web",
+            "official_api",
+            "licensed_feed",
+            "prospective_capture"
+          ]
+        },
+        "language": {
+          "type": "string",
+          "minLength": 1
+        },
+        "qualification_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "publisher",
+        "distributor",
+        "canonical_uri",
+        "document_id",
+        "version_id",
+        "transport",
+        "language",
+        "qualification_ref"
+      ]
+    },
+    "clocks": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "economic_effective": {
+          "$ref": "#/$defs/clock"
+        },
+        "scheduled_publication": {
+          "$ref": "#/$defs/clock"
+        },
+        "official_publication": {
+          "$ref": "#/$defs/clock"
+        },
+        "first_machine_observable": {
+          "$ref": "#/$defs/clock"
+        },
+        "first_receipt": {
+          "$ref": "#/$defs/clock"
+        },
+        "source_revision": {
+          "$ref": "#/$defs/clock"
+        },
+        "retrieved": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/clock"
+            },
+            {
+              "properties": {
+                "state": {
+                  "const": "known"
+                },
+                "utc": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                }
+              }
+            }
+          ]
+        },
+        "ingestion_completed": {
+          "$ref": "#/$defs/clock"
+        },
+        "verification_completed": {
+          "$ref": "#/$defs/clock"
+        }
+      },
+      "required": [
+        "economic_effective",
+        "scheduled_publication",
+        "official_publication",
+        "first_machine_observable",
+        "first_receipt",
+        "source_revision",
+        "retrieved",
+        "ingestion_completed",
+        "verification_completed"
+      ]
+    },
+    "raw": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifact"
+      },
+      "minItems": 1,
+      "contains": {
+        "properties": {
+          "role": {
+            "const": "primary"
+          }
+        }
+      }
+    },
+    "rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "assessment_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "state": {
+          "enum": [
+            "permitted",
+            "unknown",
+            "forbidden"
+          ]
+        },
+        "allowed_purposes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "retention_until": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "replay_after_termination": {
+          "enum": [
+            "permitted",
+            "unknown",
+            "forbidden"
+          ]
+        },
+        "redistribution": {
+          "enum": [
+            "permitted",
+            "unknown",
+            "forbidden"
+          ]
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "assessment_ref",
+        "state",
+        "allowed_purposes",
+        "retention_until",
+        "replay_after_termination",
+        "redistribution",
+        "constraints"
+      ]
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relation"
+      }
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fact"
+      }
+    },
+    "entity_links": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entityLink"
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "inventory_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_event_key": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "capture_session_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "gaps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "completeness": {
+          "enum": [
+            "qualified_for_scope",
+            "partial",
+            "unknown"
+          ]
+        }
+      },
+      "required": [
+        "inventory_ref",
+        "expected_event_key",
+        "capture_session_ref",
+        "gaps",
+        "completeness"
+      ]
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "parent_evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "parser_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "normalization_config_sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "derived_text_sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "extractor_kind": {
+          "enum": [
+            "none",
+            "deterministic",
+            "optional_llm"
+          ]
+        },
+        "extractor_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "processing_log_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "parent_evidence_ids",
+        "parser_version",
+        "normalization_config_sha256",
+        "derived_text_sha256",
+        "extractor_kind",
+        "extractor_version",
+        "processing_log_ref"
+      ]
+    },
+    "availability": {
+      "$ref": "#/$defs/availability"
+    },
+    "synthetic": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "contract_version",
+    "evidence_id",
+    "event_id",
+    "event_family",
+    "record_kind",
+    "source",
+    "clocks",
+    "raw",
+    "rights",
+    "relations",
+    "facts",
+    "entity_links",
+    "coverage",
+    "lineage",
+    "availability",
+    "synthetic"
+  ],
+  "$defs": {
+    "span": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "artifact_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start_byte": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "end_byte_exclusive": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+      "required": [
+        "artifact_sha256",
+        "locator",
+        "start_byte",
+        "end_byte_exclusive"
+      ]
+    },
+    "clock": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "enum": [
+            "known",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "native_value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "precision": {
+          "enum": [
+            "unknown",
+            "year",
+            "quarter",
+            "month",
+            "day",
+            "minute",
+            "second",
+            "millisecond",
+            "microsecond",
+            "nanosecond"
+          ]
+        },
+        "timezone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "utc": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "uncertainty_ms": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "basis": {
+          "enum": [
+            "source_asserted",
+            "collector_observed",
+            "provider_observed",
+            "documented_conversion",
+            "unavailable"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/span"
+          }
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "state",
+        "native_value",
+        "precision",
+        "timezone",
+        "utc",
+        "uncertainty_ms",
+        "basis",
+        "evidence",
+        "reason"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "known"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "native_value": {
+                "type": "string",
+                "minLength": 1
+              },
+              "precision": {
+                "not": {
+                  "const": "unknown"
+                }
+              },
+              "basis": {
+                "not": {
+                  "const": "unavailable"
+                }
+              },
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "native_value": {
+                "type": "null"
+              },
+              "precision": {
+                "const": "unknown"
+              },
+              "timezone": {
+                "type": "null"
+              },
+              "utc": {
+                "type": "null"
+              },
+              "uncertainty_ms": {
+                "type": "null"
+              },
+              "basis": {
+                "const": "unavailable"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "precision": {
+                "enum": [
+                  "year",
+                  "quarter",
+                  "month",
+                  "day"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "utc": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "utc": {
+                "type": "string"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "timezone": {
+                "type": "string",
+                "minLength": 1
+              },
+              "state": {
+                "const": "known"
+              },
+              "uncertainty_ms": {
+                "type": "number",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "enum": [
+            "primary",
+            "attachment",
+            "transport_log",
+            "headers",
+            "authoritative_rendition",
+            "derived_text",
+            "link_evidence",
+            "rights_document"
+          ]
+        },
+        "uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "byte_length": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "media_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "immutable": {
+          "const": true
+        },
+        "rights_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "role",
+        "uri",
+        "sha256",
+        "byte_length",
+        "media_type",
+        "immutable",
+        "rights_ref"
+      ]
+    },
+    "relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "updates",
+            "corrects",
+            "supersedes",
+            "retracts",
+            "duplicates",
+            "republication_of",
+            "public_inspection_of",
+            "same_release_as"
+          ]
+        },
+        "target_evidence_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "asserted_at": {
+          "$ref": "#/$defs/clock"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/span"
+          },
+          "minItems": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "kind",
+        "target_evidence_id",
+        "asserted_at",
+        "evidence",
+        "reason"
+      ]
+    },
+    "fact": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "fact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "measure": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value_kind": {
+          "enum": [
+            "decimal",
+            "text",
+            "missing"
+          ]
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "frequency": {
+          "type": "string",
+          "minLength": 1
+        },
+        "seasonal_adjustment": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reference_period": {
+          "type": "string",
+          "minLength": 1
+        },
+        "vintage": {
+          "$ref": "#/$defs/clock"
+        },
+        "role": {
+          "enum": [
+            "new_period",
+            "prior_as_printed",
+            "prior_previously_known",
+            "revision_delta",
+            "policy_setting",
+            "narrative"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/span"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "fact_id",
+        "measure",
+        "value",
+        "value_kind",
+        "unit",
+        "frequency",
+        "seasonal_adjustment",
+        "reference_period",
+        "vintage",
+        "role",
+        "evidence"
+      ]
+    },
+    "entityLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "link_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject_mention": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entity_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "entity_namespace": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "instrument_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "relationship": {
+          "enum": [
+            "issuer",
+            "subsidiary",
+            "award_recipient",
+            "sanctioned_subject",
+            "sector",
+            "country",
+            "commodity",
+            "exposure"
+          ]
+        },
+        "valid_from": {
+          "$ref": "#/$defs/clock"
+        },
+        "valid_to": {
+          "$ref": "#/$defs/clock"
+        },
+        "known_at": {
+          "$ref": "#/$defs/clock"
+        },
+        "link_status": {
+          "enum": [
+            "resolved",
+            "ambiguous",
+            "unresolved"
+          ]
+        },
+        "method_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/span"
+          },
+          "minItems": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "link_id",
+        "subject_mention",
+        "entity_id",
+        "entity_namespace",
+        "instrument_id",
+        "relationship",
+        "valid_from",
+        "valid_to",
+        "known_at",
+        "link_status",
+        "method_version",
+        "evidence",
+        "reason"
+      ]
+    },
+    "availability": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "enum": [
+            "prospective_observed",
+            "historical_publication_proxy",
+            "catalog_only"
+          ]
+        },
+        "decision_cutoff_utc": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "admission": {
+          "enum": [
+            "admitted",
+            "quarantined",
+            "excluded"
+          ]
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "availability_basis_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "qualification_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "registered_policy_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "admitted_at": {
+          "$ref": "#/$defs/clock"
+        }
+      },
+      "required": [
+        "mode",
+        "decision_cutoff_utc",
+        "admission",
+        "reason_codes",
+        "availability_basis_refs",
+        "qualification_ref",
+        "registered_policy_ref",
+        "admitted_at"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "admission": {
+                "const": "admitted"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "mode": {
+                "not": {
+                  "const": "catalog_only"
+                }
+              },
+              "decision_cutoff_utc": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              },
+              "registered_policy_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "availability_basis_refs": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "availability": {
+            "properties": {
+              "admission": {
+                "const": "admitted"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "synthetic": {
+            "const": false
+          },
+          "rights": {
+            "properties": {
+              "state": {
+                "const": "permitted"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_kind": {
+            "const": "revision"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "relations": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "updates",
+                    "supersedes"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_kind": {
+            "const": "update"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "relations": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "updates"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_kind": {
+            "const": "correction"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "relations": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "corrects"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_kind": {
+            "const": "retraction"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "relations": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "retracts"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_kind": {
+            "const": "duplicate"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "relations": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "duplicates"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_kind": {
+            "const": "republication"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "relations": {
+            "contains": {
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "republication_of"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

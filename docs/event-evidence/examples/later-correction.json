@@ -1,0 +1,277 @@
+{
+  "contract_version": "event-evidence/1.0.0-design",
+  "evidence_id": "synthetic:macro:v2",
+  "event_id": "synthetic:macro:release-1",
+  "event_family": "scheduled_macro",
+  "record_kind": "correction",
+  "source": {
+    "publisher": "SYNTHETIC AGENCY",
+    "distributor": null,
+    "canonical_uri": "urn:synthetic:release-1",
+    "document_id": "SYNTHETIC-1",
+    "version_id": null,
+    "transport": "prospective_capture",
+    "language": "en",
+    "qualification_ref": "SYNTHETIC-NOT-QUALIFIED"
+  },
+  "clocks": {
+    "economic_effective": {
+      "state": "unknown",
+      "native_value": null,
+      "precision": "unknown",
+      "timezone": null,
+      "utc": null,
+      "uncertainty_ms": null,
+      "basis": "unavailable",
+      "evidence": [],
+      "reason": "Not present in this synthetic backfill example."
+    },
+    "scheduled_publication": {
+      "state": "unknown",
+      "native_value": null,
+      "precision": "unknown",
+      "timezone": null,
+      "utc": null,
+      "uncertainty_ms": null,
+      "basis": "unavailable",
+      "evidence": [],
+      "reason": "Not present in this synthetic backfill example."
+    },
+    "official_publication": {
+      "state": "known",
+      "native_value": "2024-09-11",
+      "precision": "day",
+      "timezone": null,
+      "utc": null,
+      "uncertainty_ms": null,
+      "basis": "source_asserted",
+      "evidence": [
+        {
+          "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "locator": "synthetic payload; full bytes",
+          "start_byte": 0,
+          "end_byte_exclusive": 24
+        }
+      ],
+      "reason": "Synthetic structural illustration; not acquired evidence."
+    },
+    "first_machine_observable": {
+      "state": "unknown",
+      "native_value": null,
+      "precision": "unknown",
+      "timezone": null,
+      "utc": null,
+      "uncertainty_ms": null,
+      "basis": "unavailable",
+      "evidence": [],
+      "reason": "Not present in this synthetic backfill example."
+    },
+    "first_receipt": {
+      "state": "unknown",
+      "native_value": null,
+      "precision": "unknown",
+      "timezone": null,
+      "utc": null,
+      "uncertainty_ms": null,
+      "basis": "unavailable",
+      "evidence": [],
+      "reason": "Not present in this synthetic backfill example."
+    },
+    "source_revision": {
+      "state": "known",
+      "native_value": "2024-09-12",
+      "precision": "day",
+      "timezone": null,
+      "utc": null,
+      "uncertainty_ms": null,
+      "basis": "source_asserted",
+      "evidence": [
+        {
+          "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "locator": "synthetic payload; full bytes",
+          "start_byte": 0,
+          "end_byte_exclusive": 24
+        }
+      ],
+      "reason": "Synthetic structural illustration; not acquired evidence."
+    },
+    "retrieved": {
+      "state": "known",
+      "native_value": "2026-10-18T08:00:00Z",
+      "precision": "second",
+      "timezone": "UTC",
+      "utc": "2026-10-18T08:00:00Z",
+      "uncertainty_ms": 0,
+      "basis": "collector_observed",
+      "evidence": [
+        {
+          "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "locator": "synthetic payload; full bytes",
+          "start_byte": 0,
+          "end_byte_exclusive": 24
+        }
+      ],
+      "reason": "Synthetic structural illustration; not acquired evidence."
+    },
+    "ingestion_completed": {
+      "state": "unknown",
+      "native_value": null,
+      "precision": "unknown",
+      "timezone": null,
+      "utc": null,
+      "uncertainty_ms": null,
+      "basis": "unavailable",
+      "evidence": [],
+      "reason": "Not present in this synthetic backfill example."
+    },
+    "verification_completed": {
+      "state": "unknown",
+      "native_value": null,
+      "precision": "unknown",
+      "timezone": null,
+      "utc": null,
+      "uncertainty_ms": null,
+      "basis": "unavailable",
+      "evidence": [],
+      "reason": "Not present in this synthetic backfill example."
+    }
+  },
+  "raw": [
+    {
+      "role": "primary",
+      "uri": "urn:synthetic:payload",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "byte_length": 24,
+      "media_type": "text/plain",
+      "immutable": true,
+      "rights_ref": "SYNTHETIC"
+    }
+  ],
+  "rights": {
+    "assessment_ref": "SYNTHETIC",
+    "state": "unknown",
+    "allowed_purposes": [],
+    "retention_until": null,
+    "replay_after_termination": "unknown",
+    "redistribution": "unknown",
+    "constraints": [
+      "Illustrative only; hash is a placeholder, not an acquisition claim."
+    ]
+  },
+  "relations": [
+    {
+      "kind": "corrects",
+      "target_evidence_id": "synthetic:macro:v1",
+      "asserted_at": {
+        "state": "known",
+        "native_value": "2024-09-12",
+        "precision": "day",
+        "timezone": null,
+        "utc": null,
+        "uncertainty_ms": null,
+        "basis": "source_asserted",
+        "evidence": [
+          {
+            "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": "synthetic payload; full bytes",
+            "start_byte": 0,
+            "end_byte_exclusive": 24
+          }
+        ],
+        "reason": "Synthetic structural illustration; not acquired evidence."
+      },
+      "evidence": [
+        {
+          "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "locator": "synthetic payload; full bytes",
+          "start_byte": 0,
+          "end_byte_exclusive": 24
+        }
+      ],
+      "reason": "Synthetic later correction must not rewrite v1."
+    }
+  ],
+  "facts": [
+    {
+      "fact_id": "synthetic:fact-1",
+      "measure": "headline_index",
+      "value": "100.2",
+      "value_kind": "decimal",
+      "unit": "index",
+      "frequency": "monthly",
+      "seasonal_adjustment": "SA",
+      "reference_period": "2024-08",
+      "vintage": {
+        "state": "known",
+        "native_value": "2024-09-11",
+        "precision": "day",
+        "timezone": null,
+        "utc": null,
+        "uncertainty_ms": null,
+        "basis": "source_asserted",
+        "evidence": [
+          {
+            "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": "synthetic payload; full bytes",
+            "start_byte": 0,
+            "end_byte_exclusive": 24
+          }
+        ],
+        "reason": "Synthetic structural illustration; not acquired evidence."
+      },
+      "role": "new_period",
+      "evidence": [
+        {
+          "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "locator": "synthetic payload; full bytes",
+          "start_byte": 0,
+          "end_byte_exclusive": 24
+        }
+      ]
+    }
+  ],
+  "entity_links": [],
+  "coverage": {
+    "inventory_ref": "SYNTHETIC",
+    "expected_event_key": "synthetic:release-1",
+    "capture_session_ref": null,
+    "gaps": [
+      "No historical receipt clock."
+    ],
+    "completeness": "unknown"
+  },
+  "lineage": {
+    "parent_evidence_ids": [],
+    "parser_version": null,
+    "normalization_config_sha256": null,
+    "derived_text_sha256": null,
+    "extractor_kind": "none",
+    "extractor_version": null,
+    "processing_log_ref": "SYNTHETIC"
+  },
+  "availability": {
+    "mode": "catalog_only",
+    "decision_cutoff_utc": null,
+    "admission": "quarantined",
+    "reason_codes": [
+      "SYNTHETIC_ONLY",
+      "RECEIPT_UNKNOWN",
+      "RIGHTS_UNKNOWN"
+    ],
+    "availability_basis_refs": [],
+    "qualification_ref": "SYNTHETIC",
+    "registered_policy_ref": null,
+    "admitted_at": {
+      "state": "unknown",
+      "native_value": null,
+      "precision": "unknown",
+      "timezone": null,
+      "utc": null,
+      "uncertainty_ms": null,
+      "basis": "unavailable",
+      "evidence": [],
+      "reason": "Not present in this synthetic backfill example."
+    }
+  },
+  "synthetic": true
+}
