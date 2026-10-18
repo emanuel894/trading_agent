@@ -1,0 +1,107 @@
+{
+  "status": "LEAN_QUALIFICATION_READY",
+  "scope": "Qualification design only; no LEAN installation/build/run/probe or fixture implementation",
+  "checked_utc": "2026-10-18T13:43:20.192140+00:00",
+  "original_base_sha": "b5b06af7a876ebb4c7fc9ab6f63cbaed9ef2aafe",
+  "design_reviewed_content_commit": "8a0d4f0522ae549f37c85248edbdda898d4ad946",
+  "observed_target_sha": "1a9014ef47accbea82fd086866bce114621a0d1f",
+  "branch": "research/issue-11-lean-contract-qualification",
+  "target_branch": "feat/alpaca-paper-foundation",
+  "target_reconciliation": "Original base is ancestor of current target; issue-only three-dot diff. No rebase/merge. Final GitHub PR merge-ref CI validates combined target/head.",
+  "independent_review": {
+    "status": "PASS_AFTER_TWO_P2_FIXES",
+    "model_requested": "gpt-6-astra",
+    "reasoning_requested": "high",
+    "report": "INDEPENDENT_REVIEW.md",
+    "cross_provider_acceptance": false,
+    "runtime_qualification": false
+  },
+  "passed": [
+    {
+      "command": "python -m unittest discover -s tests -v",
+      "cwd": "trading_agent_starter",
+      "python": "3.13.5",
+      "platform": "Linux",
+      "tests": 240,
+      "elapsed_seconds": 8.691,
+      "exit_code": 0,
+      "log": "repository-tests-python313.log"
+    },
+    {
+      "command": "python -m agent demo --output /workspace/issue11-sources/demo-final",
+      "cwd": "trading_agent_starter",
+      "exit_code": 0,
+      "synthetic_bars": 300,
+      "log": "demo.log"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    },
+    {
+      "check": "All tracked files present at original base unchanged",
+      "modified_or_deleted_original_paths": []
+    },
+    {
+      "check": "Q08 price100.080015 and Q23 negative quote valid within20bps",
+      "status": "PASS"
+    },
+    {
+      "checked_utc": "2026-10-18T13:41:55.668261+00:00",
+      "status": "PASS",
+      "source_hashes_passed": 43,
+      "source_limited": [
+        "alpaca/LICENSE"
+      ],
+      "metadata_pins": 4,
+      "fixture_groups": 33,
+      "evidence_sections": 19,
+      "verbatim_excerpts": 53,
+      "prose_local_links_checked": 4,
+      "decimal_oracles": "PASS",
+      "changed_paths_allowlist": "PASS"
+    }
+  ],
+  "environment": "Existing isolated test-venv313; requirements satisfied using uv with /tmp cache; all trading flags false. No repository dependency changes.",
+  "unrun": [
+    "LEAN Q01-Q33 and all variants",
+    "LEAN compilation/binary/runtime compatibility",
+    "actual broker plugins or entitlement/license requests",
+    "actual data/admission/alpha/Paper/live",
+    "local Windows tests"
+  ],
+  "source_limited": [
+    "Alpaca root LICENSE path absent; README/source Apache-2.0 text retained",
+    "Exact official module181/347 entitlement and full recurring deployment cost unresolved"
+  ],
+  "hosted_ci": "Inspect final PR head after publication; mandatory Ubuntu and Windows Foundation jobs. No hosted pass claimed by this prepublication record.",
+  "forbidden_activity_counters": {
+    "databento_calls": 0,
+    "purchases": 0,
+    "paid_provider_model_api_calls": 0,
+    "broker_calls_or_orders": 0,
+    "lean_installations_or_runs": 0,
+    "scientific_artifact_changes": 0,
+    "pr10_writes": 0,
+    "merges": 0
+  },
+  "tool_versions": {
+    "git": "2.52.0",
+    "gh": "2.46.0",
+    "python": "3.13.5",
+    "root_model": "GPT-6 Codex; exact backend snapshot not exposed"
+  },
+  "artifact_sha256": {
+    "trading_agent_starter/LEAN_CONTRACT_QUALIFICATION_20261018.md": "9467bde7ef6698decbcf158e5c0d26a57af54283e9f30d2b7a1938beb382e835",
+    "trading_agent_starter/research/lean_qualification_011/FIXTURE_MATRIX.md": "a002fb8d9ae2add7486a196c4d590a47395428f64a24c1a611b159ea8e4ab076",
+    "trading_agent_starter/research/lean_qualification_011/INDEPENDENT_REVIEW.md": "5f1e4236cdd28312d1a62ee945e2116413356ad264691d65dc2f209650df11dd",
+    "trading_agent_starter/research/lean_qualification_011/PROGRESS.md": "772021b70f9afcc77aa12882c9ab7694344cd26606bdea0f4da93c1129b1e2de",
+    "trading_agent_starter/research/lean_qualification_011/SOURCE_EVIDENCE.md": "0c459c5ab1b6ae4fe58218d6714bd9da8a952505df651d8c5592df924a2ce389",
+    "trading_agent_starter/research/lean_qualification_011/demo.log": "b040d81a32b21cf89550973017c9eeba62f66e67a02100281f4c21e850d4676d",
+    "trading_agent_starter/research/lean_qualification_011/issue_snapshot.json": "bb073c031ee62e85209e600ce9e43f4802ec647a23d0d9c8ec6bd9d88e9a7341",
+    "trading_agent_starter/research/lean_qualification_011/public_pricing_extract.json": "f1d4950a1b74fe682cee62e97ea736b761409253aff7647203e346cf172505a0",
+    "trading_agent_starter/research/lean_qualification_011/public_source_packet.zip": "0337e2864db376682af8de5b4fa8d3d55123b3c9bafd5d7e83d7238d67674900",
+    "trading_agent_starter/research/lean_qualification_011/repository-tests-python313.log": "e9b87bb071dd6fdd68819da066e446af2bdba2e405f7819bb4a8bdbbb840fd34",
+    "trading_agent_starter/research/lean_qualification_011/source_manifest.json": "583ada603b14c2bef551043e83f17429693d7a70f644bfcff56a7f79236ebb52"
+  }
+}
