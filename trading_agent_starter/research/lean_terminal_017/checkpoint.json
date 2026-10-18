@@ -8,8 +8,8 @@
     "Q02",
     "Q03"
   ],
-  "status": "LEAN_TERMINAL_GATE_INCOMPLETE",
-  "phase": "public Base-universe calendar configuration compiled and newly hashed; final-host terminal gate next",
+  "status": "LEAN_TERMINAL_GATE_PASS",
+  "phase": "terminal runtime complete; do not execute more fixtures",
   "completed": [
     "Read live issue17, merged design, Q01\u2013Q03 definitions and canonical policy/operating skill.",
     "Selected clean current protected base; created mandated branch only.",
@@ -30,9 +30,12 @@
     "Executable unknown-NAV admission probe and known-NAV positive control added; exact event/identity/hash/phase/reservation-until-ack checks strengthened.",
     "First v2 Q01 user-defined passed exact strengthened assertions (attempt03). Second launch failed before engine due disk exhaustion.",
     "Preserved all container controls/exits, removed only stopped issue17 containers and cold-archived task NuGet cache under /tmp/issue17-spill. Measured free disk25GB. Native runtime/source/fixtures/output hashes retained.",
-    "Resumed validated v2 attempt03 without rerunning it; attempt05 PASS, both canonical bytes hash5563172cc21a757077a62d349130f3539cb5c17deb1744d438a152b4fd384ace."
+    "Resumed validated v2 attempt03 without rerunning it; attempt05 PASS, both canonical bytes hash5563172cc21a757077a62d349130f3539cb5c17deb1744d438a152b4fd384ace.",
+    "Final host passes all10variants through20fresh network-none processes; each casepaircanonicalJSON bytehashidentical.",
+    "Both required negative controls detect actual native cached-price delisting fill; interception prevents it.",
+    "Repository240testsPASS, syntheticdemo300bars/zeroorders, comparator12adversarialchecksPASS."
   ],
-  "next_action": "Run Q01\u2013Q03 only on final LeanTerminal.dll hash 27846cb9dfe0b565149534b76c2f9a8e39f73cff7e2b5e7efc3432b2f4047f38. Existing successful runs on earlier host hash are preserved, but final-host verification must be fresh.",
+  "next_action": "Complete fresh whole-packet independent review, protected-file/hash checks, draft PR and exact-final-head Ubuntu/Windows CI. No Q04\u2013Q33 or follow-on implementation.",
   "policy_and_design_sha256": {
     "AGENTS.md": "291514f0c3017fae9534ce9cd64f71928698e0c6e7faaac24989c035b3b0483c",
     "AI_PROJECT_POLICY.md": "69795c12456a1a7228d6936d433a256a829760453361d04b3686c2a2669237ce",
@@ -43,8 +46,12 @@
   "usage": {
     "paid_provider_calls": 0,
     "purchases": 0,
-    "framework_fixture_runs": 5,
-    "repair_cycles": 2
+    "framework_fixture_runs": 25,
+    "repair_cycles": 2,
+    "final_host_clean_runs": 20,
+    "host_processes": 25,
+    "native_algorithm_manager_runs": 24,
+    "framework_fixture_runs_definition": "Host processes including one pre-lifecycle calendar failure; excludes failed Docker launch04."
   },
   "scheduling": {
     "available_tool": false,
@@ -52,7 +59,9 @@
     "resume_scheduled": false,
     "reason": "No scheduling tool appears in active tool catalog; quota reset is not exposed. Do not invent a reset or create recurring polling."
   },
-  "pending_side_effects": [],
+  "pending_side_effects": [
+    "draft PR publication and final-head CI pending"
+  ],
   "stop_conditions": "Issue17 immediate stop list is authoritative; no Q04\u2013Q33.",
   "runtime_workspace": "/workspace/issue-17-lean",
   "container_image": "mcr.microsoft.com/dotnet/sdk@sha256:0d99ebf1ccad15037b5c98c9fe8979d6b8dbac23812feae2277a0b277b5c5ffa",
@@ -71,5 +80,11 @@
     "source-grounded callback order/probe coverage correction",
     "explicit Base universe calendar registration via public SetEntry"
   ],
-  "automatic_provider_repair_cycles": 0
+  "automatic_provider_repair_cycles": 0,
+  "final_artifacts": {
+    "decision": "decision.json",
+    "report": "LEAN_TERMINAL_GATE_20261018.md",
+    "validation": "validation.json",
+    "native_results": "evidence/gate-attempts.json"
+  }
 }

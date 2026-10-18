@@ -1,0 +1,12 @@
+{
+  "004": {
+    "status": "REGISTRATION_VERIFIED",
+    "registration_sha256": "c4dfc00f202ef93a3b87cfb8928f75c4a7e152db6a3253260187bdb9b0173409",
+    "real_candidates_screened": 0,
+    "cohort_constructed": false
+  },
+  "005": {
+    "verified": true,
+    "registration_sha256": "26eeca3bc843f0de0dab53b61fa2008773e1616d888bb165111fabe8a2c38cc5"
+  }
+}
