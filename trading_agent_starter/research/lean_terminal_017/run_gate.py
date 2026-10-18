@@ -16,7 +16,7 @@ for cid in case_ids:
  hashes=[]
  # Resume only verified successful runs of the same frozen bundle; preserve failed attempts.
  for prior in records:
-  if prior.get('case_id')!=cid or prior.get('verdict') not in ['PASS','CONTRACT_VIOLATION_DETECTED_AS_REQUIRED']:continue
+  if prior.get('case_id')!=cid or prior.get('verdict') not in ['PASS','CONTRACT_VIOLATION_DETECTED_AS_REQUIRED'] or prior.get('host_dll_sha256')!=build['runtime_files_sha256']['LeanTerminal.dll']:continue
   saved=Path(prior['output'])
   try:
    comparator.compare_files(saved,packet/'fixtures_v2'/(cid+'.expected.json'))
@@ -27,7 +27,7 @@ for cid in case_ids:
   attempt=len(records)+2 # attempt01 was the preserved invalid initial quote-seed run.
   name=f'issue17-terminal-{attempt:02d}';filename=f'{cid}.attempt{attempt:02d}.json';output=work/'runtime-output'/filename;log=work/'evidence'/(filename+'.log')
   cmd=['docker','run','--name',name,'--network','none','--read-only','--cap-drop','ALL','--security-opt','no-new-privileges','--user','65534:65534','--tmpfs','/tmp:rw,nosuid,nodev,size=128m','--volume',str(work)+':/work:ro','--volume',str(work/'runtime-output')+':/out','--workdir','/work','--env','DOTNET_CLI_HOME=/tmp/dotnet','--env','DOTNET_CLI_TELEMETRY_OPTOUT=1','--env','DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1','--env','TRADING_ENABLED=false','--env','ALLOW_PAPER_ORDERS=false','--env','ALPACA_LIVE_TRADE=false',image,'dotnet','/work/host/bin/Release/net10.0/LeanTerminal.dll','/work/fixtures_v2',cid,'/out/'+filename]
-  record={'case_id':cid,'repeat':repeat,'attempt':attempt,'container':name,'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'command':cmd,'output':str(output),'log':str(log)}
+  record={'case_id':cid,'repeat':repeat,'attempt':attempt,'container':name,'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'command':cmd,'output':str(output),'log':str(log),'host_dll_sha256':build['runtime_files_sha256']['LeanTerminal.dll'],'build_manifest_sha256':hashlib.sha256((packet/'build/manifest.json').read_bytes()).hexdigest()}
   with log.open('w')as f:
    try:process=subprocess.run(cmd,stdout=f,stderr=subprocess.STDOUT,timeout=90);record['exit_code']=process.returncode
    except subprocess.TimeoutExpired:record['timeout_seconds']=90;record['exit_code']=124

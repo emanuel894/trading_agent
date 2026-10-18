@@ -79,7 +79,12 @@ public static class Program
             var feed=new FixtureFeed(algorithm);
             var dataManager=new DataManager(feed,universeSelection,algorithm,algorithm.TimeKeeper,hours,false,RegisteredSecurityDataTypesProvider.Null,permissions);
             algorithm.SubscriptionManager.SetDataManager(dataManager);
-            algorithm.Initialize(); algorithm.OnEndOfTimeStep(); algorithm.SetFinishedWarmingUp();
+            algorithm.Initialize();
+            // The synthetic Base-type explicit universe needs its own public calendar entry.
+            // Reuse the pinned NY equity session hours; instrument eligibility/economics are untouched.
+            if((string)test["universe"]! == "explicit")
+                hours.SetEntry(Market.USA,"terminal-fixture-universe",SecurityType.Base,hours.GetExchangeHours(Market.USA,algorithm.Instrument,SecurityType.Equity),TimeZones.NewYork);
+            algorithm.OnEndOfTimeStep(); algorithm.SetFinishedWarmingUp();
             var results=new LocalResults();
             var job=new BacktestNodePacket{BacktestId="terminal-fixture",Language=Language.CSharp,PeriodStart=algorithm.StartDate,PeriodFinish=algorithm.EndDate};
             using var brokerage=(TerminalBrokerage)new TerminalSetup(algorithm).CreateBrokerage(job,algorithm,out var factory);

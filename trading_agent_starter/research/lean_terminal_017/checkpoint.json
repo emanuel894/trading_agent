@@ -9,7 +9,7 @@
     "Q03"
   ],
   "status": "LEAN_TERMINAL_GATE_INCOMPLETE",
-  "phase": "v2 Q01 user-defined PASS with two byte-identical clean network-none runs",
+  "phase": "public Base-universe calendar configuration compiled and newly hashed; final-host terminal gate next",
   "completed": [
     "Read live issue17, merged design, Q01\u2013Q03 definitions and canonical policy/operating skill.",
     "Selected clean current protected base; created mandated branch only.",
@@ -32,7 +32,7 @@
     "Preserved all container controls/exits, removed only stopped issue17 containers and cold-archived task NuGet cache under /tmp/issue17-spill. Measured free disk25GB. Native runtime/source/fixtures/output hashes retained.",
     "Resumed validated v2 attempt03 without rerunning it; attempt05 PASS, both canonical bytes hash5563172cc21a757077a62d349130f3539cb5c17deb1744d438a152b4fd384ace."
   ],
-  "next_action": "Reconcile running sequential terminal-only runner and durable gate-attempts.json; do not repeat completed successful pairs. Stop on first blocker/incomplete divergence. Repository suite/demo are running separately.",
+  "next_action": "Run Q01\u2013Q03 only on final LeanTerminal.dll hash 27846cb9dfe0b565149534b76c2f9a8e39f73cff7e2b5e7efc3432b2f4047f38. Existing successful runs on earlier host hash are preserved, but final-host verification must be fresh.",
   "policy_and_design_sha256": {
     "AGENTS.md": "291514f0c3017fae9534ce9cd64f71928698e0c6e7faaac24989c035b3b0483c",
     "AI_PROJECT_POLICY.md": "69795c12456a1a7228d6936d433a256a829760453361d04b3686c2a2669237ce",
@@ -43,7 +43,7 @@
   "usage": {
     "paid_provider_calls": 0,
     "purchases": 0,
-    "framework_fixture_runs": 3,
+    "framework_fixture_runs": 5,
     "repair_cycles": 2
   },
   "scheduling": {
@@ -65,5 +65,11 @@
     "path": "/tmp/issue17-spill/packages.tar.gz",
     "sha256": "0756b57656de11fff914f33b585f2a448c7a97d0dca078494ef810f6a1fd0f6c",
     "not_needed_for_compiled_fixture_execution": true
-  }
+  },
+  "host_preparation_corrections": [
+    "equity seed HasData representation",
+    "source-grounded callback order/probe coverage correction",
+    "explicit Base universe calendar registration via public SetEntry"
+  ],
+  "automatic_provider_repair_cycles": 0
 }
