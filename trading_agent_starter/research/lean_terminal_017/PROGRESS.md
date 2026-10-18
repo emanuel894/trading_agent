@@ -21,8 +21,9 @@ failed storage launch remain separate from the final twenty accepted replays.
 
 Repository240tests/demo and comparator12adversarial checks PASS. Registrations004/
 005 verify. Protected policy/science/runtime/workflow files are unchanged.
-Fresh whole-packet review and draft-PR/final-head Foundation CI are the only pending
-steps. No more LEAN runtime fixture work is needed or authorized in this issue.
+Fresh whole-packet review PASS is recorded in `INDEPENDENT_REVIEW.md` (two minor
+limits, no critical/important findings). Draft-PR/final-head Foundation CI are the
+only pending publication steps as of this commit; reconcile GitHub native state. No more LEAN runtime fixture work is needed or authorized in this issue.
 
 ## Milestone decision record
 

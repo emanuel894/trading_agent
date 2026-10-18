@@ -33,9 +33,10 @@
     "Resumed validated v2 attempt03 without rerunning it; attempt05 PASS, both canonical bytes hash5563172cc21a757077a62d349130f3539cb5c17deb1744d438a152b4fd384ace.",
     "Final host passes all10variants through20fresh network-none processes; each casepaircanonicalJSON bytehashidentical.",
     "Both required negative controls detect actual native cached-price delisting fill; interception prevents it.",
-    "Repository240testsPASS, syntheticdemo300bars/zeroorders, comparator12adversarialchecksPASS."
+    "Repository240testsPASS, syntheticdemo300bars/zeroorders, comparator12adversarialchecksPASS.",
+    "Fresh independent whole-packet RED review PASS for draft publication; zero critical/important findings; two bounded runner/exporter limitations documented in INDEPENDENT_REVIEW.md. Fresh suite240/comparator12/demo300 PASS."
   ],
-  "next_action": "Complete fresh whole-packet independent review, protected-file/hash checks, draft PR and exact-final-head Ubuntu/Windows CI. No Q04\u2013Q33 or follow-on implementation.",
+  "next_action": "No additional implementation or fixture execution. Reconcile the branch draft PR and native final-head Ubuntu/Windows Foundation checks on GitHub; publish only if absent, then report LEAN_TERMINAL_GATE_PASS and stop. Never merge in this issue.",
   "policy_and_design_sha256": {
     "AGENTS.md": "291514f0c3017fae9534ce9cd64f71928698e0c6e7faaac24989c035b3b0483c",
     "AI_PROJECT_POLICY.md": "69795c12456a1a7228d6936d433a256a829760453361d04b3686c2a2669237ce",
@@ -60,7 +61,7 @@
     "reason": "No scheduling tool appears in active tool catalog; quota reset is not exposed. Do not invent a reset or create recurring polling."
   },
   "pending_side_effects": [
-    "draft PR publication and final-head CI pending"
+    "As of this prepublication checkpoint: draft PR publication and exact-final-head hosted CI; final outcomes belong to the GitHub PR/native checks, not a self-referencing commit. Reconcile before retry."
   ],
   "stop_conditions": "Issue17 immediate stop list is authoritative; no Q04\u2013Q33.",
   "runtime_workspace": "/workspace/issue-17-lean",
@@ -86,5 +87,7 @@
     "report": "LEAN_TERMINAL_GATE_20261018.md",
     "validation": "validation.json",
     "native_results": "evidence/gate-attempts.json"
-  }
+  },
+  "updated_utc": "2026-10-18T20:07:19.851033+00:00",
+  "independent_final_review": "PASS_FOR_DRAFT_PUBLICATION; INDEPENDENT_REVIEW.md"
 }

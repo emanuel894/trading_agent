@@ -111,11 +111,21 @@ Repository suite: **240/240 PASS**, zero failures/errors/skips, Python3.13.5/Lin
 synthetic demo300bars/zeroorders/no trained or promoted model. The independent
 comparator has **12 adversarial checks PASS**, including lost exposure, invented
 cash, denominator changes, time/class substitution, NAV bypass, early reservation
-release, missing native orders, sparse cleanup and duplicate settlement. Exact
-head Ubuntu/Windows Foundation CI and fresh final review are linked in the draft
-PR; local evidence/hashes are in `validation.json`. Foundation CI is distinct from
+release, missing native orders, sparse cleanup and duplicate settlement. Exact-
+head Ubuntu/Windows Foundation CI and fresh final review are mandatory; their
+final outcomes are reported in the draft PR. Local evidence/hashes are in
+`validation.json`, which does not attest a future PR head. Foundation CI is distinct from
 this Linux-only .NET terminal run. Upstream full test suites/Windows LEAN runtime,
 production security and Q04–Q33 were not executed.
+
+[Fresh independent review](INDEPENDENT_REVIEW.md) supports draft publication with
+no critical/important findings. Two bounded limits remain: reusable journal entries
+are selected by DLL hash rather than the full dependency manifest (all twenty
+accepted entries were independently verified against the current full manifest),
+and exported `realized_proceeds` is a fixture-mode constant (native cash, quantity,
+profit, settlement-event amount and count provide the independent accounting
+evidence). Neither runner reuse after changed dependencies nor a general settlement
+implementation is qualified. The frozen host was not changed after acceptance.
 
 NuGet audit warnings for source-pinned DotNetZip1.16.0 (high) and
 System.Drawing.Common4.7.0 (critical) are preserved, not suppressed or patched.
