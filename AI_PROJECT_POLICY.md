@@ -5,6 +5,16 @@ Gemini and human-assisted automation. Provider entry files point here; they must
 not maintain separate scientific or safety rules. This policy does not amend an
 experiment or enable a broker capability.
 
+## Read this first — project operations
+
+Before every task, also read the canonical [trading-project operating skill](.agents/skills/trading-project/SKILL.md).
+It owns workflow optimization, delegation, checkpoints and milestone reporting;
+this policy and the registered documents remain the scientific/safety authority.
+The skill's dated state reference is a navigation aid, not an amendment or an
+activation grant. Claude/Gemini agents follow the same linked instructions.
+Instruction changes in a PR remain proposals until accepted through human review;
+trusted-base review/automation rules below still apply.
+
 ## Objective and scientific authority
 
 Test whether AI/LLM-derived information adds incremental **net alpha after all
