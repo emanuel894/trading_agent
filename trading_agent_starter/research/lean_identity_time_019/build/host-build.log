@@ -1,0 +1,51 @@
+  Determining projects to restore...
+  Restored /work/source/Common/QuantConnect.csproj (in 413 ms).
+  Restored /work/host/LeanIdentity.csproj (in 415 ms).
+  Restored /work/source/AlgorithmFactory/QuantConnect.AlgorithmFactory.csproj (in 413 ms).
+  Restored /work/source/Api/QuantConnect.Api.csproj (in 10 ms).
+  Restored /work/source/Algorithm/QuantConnect.Algorithm.csproj (in 11 ms).
+  Restored /work/source/Brokerages/QuantConnect.Brokerages.csproj (in 11 ms).
+  Restored /work/source/Algorithm.Framework/QuantConnect.Algorithm.Framework.csproj (in 10 ms).
+  Restored /work/source/Logging/QuantConnect.Logging.csproj (in 5 ms).
+  Restored /work/source/Indicators/QuantConnect.Indicators.csproj (in 7 ms).
+  Restored /work/source/Algorithm.CSharp/QuantConnect.Algorithm.CSharp.csproj (in 16 ms).
+  Restored /work/source/Configuration/QuantConnect.Configuration.csproj (in 7 ms).
+  Restored /work/source/Engine/QuantConnect.Lean.Engine.csproj (in 15 ms).
+  Restored /work/source/Compression/QuantConnect.Compression.csproj (in 9 ms).
+  QuantConnect.Logging -> /work/source/Logging/bin/Release/QuantConnect.Logging.dll
+  SelectedOptimization 
+  QuantConnect.Configuration -> /work/source/Configuration/bin/Release/QuantConnect.Configuration.dll
+  SelectedOptimization 
+  QuantConnect.Compression -> /work/source/Compression/bin/Release/QuantConnect.Compression.dll
+  SelectedOptimization 
+  QuantConnect -> /work/source/Common/bin/Release/QuantConnect.Common.dll
+  SelectedOptimization 
+  QuantConnect.Indicators -> /work/source/Indicators/bin/Release/QuantConnect.Indicators.dll
+  QuantConnect.Api -> /work/source/Api/bin/Release/QuantConnect.Api.dll
+  SelectedOptimization 
+  SelectedOptimization 
+  QuantConnect.Brokerages -> /work/source/Brokerages/bin/Release/QuantConnect.Brokerages.dll
+  SelectedOptimization 
+  QuantConnect.Algorithm -> /work/source/Algorithm/bin/Release/QuantConnect.Algorithm.dll
+  QuantConnect.AlgorithmFactory -> /work/source/AlgorithmFactory/bin/Release/QuantConnect.AlgorithmFactory.dll
+  QuantConnect.Algorithm.Framework -> /work/source/Algorithm.Framework/bin/Release/QuantConnect.Algorithm.Framework.dll
+  QuantConnect.Algorithm.CSharp -> /work/source/Algorithm.CSharp/bin/Release/QuantConnect.Algorithm.CSharp.dll
+/usr/share/dotnet/sdk/10.0.402/Microsoft.CSharp.CurrentVersion.targets(130,9): warning MSB3884: Could not find rule set file "MinimumRecommendedRules.ruleset". [/work/source/Engine/QuantConnect.Lean.Engine.csproj]
+  QuantConnect.Lean.Engine -> /work/source/Engine/bin/Release/QuantConnect.Lean.Engine.dll
+  SelectedOptimization 
+/work/host/Program.cs(322,44): error CS0246: The type or namespace name 'SubscriptionRequest' could not be found (are you missing a using directive or an assembly reference?) [/work/host/LeanIdentity.csproj]
+/work/host/Program.cs(317,33): error CS0535: 'FixtureFeed' does not implement interface member 'IDataFeed.CreateSubscription(SubscriptionRequest)' [/work/host/LeanIdentity.csproj]
+/work/host/Program.cs(119,31): warning CS0108: 'IdentityAlgorithm.Status' hides inherited member 'QCAlgorithm.Status'. Use the new keyword if hiding was intended. [/work/host/LeanIdentity.csproj]
+/work/host/Program.cs(104,46): error CS0246: The type or namespace name 'SecurityChanges' could not be found (are you missing a using directive or an assembly reference?) [/work/host/LeanIdentity.csproj]
+
+Build FAILED.
+
+/usr/share/dotnet/sdk/10.0.402/Microsoft.CSharp.CurrentVersion.targets(130,9): warning MSB3884: Could not find rule set file "MinimumRecommendedRules.ruleset". [/work/source/Engine/QuantConnect.Lean.Engine.csproj]
+/work/host/Program.cs(119,31): warning CS0108: 'IdentityAlgorithm.Status' hides inherited member 'QCAlgorithm.Status'. Use the new keyword if hiding was intended. [/work/host/LeanIdentity.csproj]
+/work/host/Program.cs(322,44): error CS0246: The type or namespace name 'SubscriptionRequest' could not be found (are you missing a using directive or an assembly reference?) [/work/host/LeanIdentity.csproj]
+/work/host/Program.cs(317,33): error CS0535: 'FixtureFeed' does not implement interface member 'IDataFeed.CreateSubscription(SubscriptionRequest)' [/work/host/LeanIdentity.csproj]
+/work/host/Program.cs(104,46): error CS0246: The type or namespace name 'SecurityChanges' could not be found (are you missing a using directive or an assembly reference?) [/work/host/LeanIdentity.csproj]
+    2 Warning(s)
+    3 Error(s)
+
+Time Elapsed 00:00:11.10

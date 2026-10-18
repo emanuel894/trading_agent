@@ -1,0 +1,18 @@
+test_contract_mutations_are_rejected (test_comparator.ComparatorTests.test_contract_mutations_are_rejected) ... FAIL
+test_extra_missing_fields_rejected (test_comparator.ComparatorTests.test_extra_missing_fields_rejected) ... ok
+
+======================================================================
+FAIL: test_contract_mutations_are_rejected (test_comparator.ComparatorTests.test_contract_mutations_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/trading_agent/trading_agent_starter/research/lean_identity_time_019/test_comparator.py", line 8, in test_contract_mutations_are_rejected
+    self.assertTrue(compare.compare_business(expected,expected))
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/trading_agent/trading_agent_starter/research/lean_identity_time_019/compare.py", line 3, in compare_business
+    raise GateMismatch("Exact comparator not implemented")
+compare.GateMismatch: Exact comparator not implemented
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=1)
