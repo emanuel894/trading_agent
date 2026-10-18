@@ -1,0 +1,41 @@
+{
+  "issue": 17,
+  "branch": "research/issue-17-lean-terminal-spike",
+  "base_sha": "e20a1410fe0130b7eddfacf97d1fca7860f25d3c",
+  "source_pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
+  "allowed_fixtures": [
+    "Q01",
+    "Q02",
+    "Q03"
+  ],
+  "status": "LEAN_TERMINAL_GATE_INCOMPLETE",
+  "phase": "preparing pinned host; no fixture run",
+  "completed": [
+    "Read live issue17, merged design, Q01\u2013Q03 definitions and canonical policy/operating skill.",
+    "Selected clean current protected base; created mandated branch only.",
+    "Checked namespaces: bwrap/unshare denied uid-map by environment; Docker daemon available."
+  ],
+  "next_action": "Fetch exact LEAN source pin, resolve and pin an isolated .NET10 host/dependencies, freeze exact fixture/oracle JSON before fixture execution.",
+  "policy_and_design_sha256": {
+    "AGENTS.md": "291514f0c3017fae9534ce9cd64f71928698e0c6e7faaac24989c035b3b0483c",
+    "AI_PROJECT_POLICY.md": "69795c12456a1a7228d6936d433a256a829760453361d04b3686c2a2669237ce",
+    ".agents/skills/trading-project/SKILL.md": "ae1069018bdfe1b58284f0425b16abb6bdfeac5e39aac68af9530f77e60c2973",
+    "trading_agent_starter/LEAN_CONTRACT_QUALIFICATION_20261018.md": "9467bde7ef6698decbcf158e5c0d26a57af54283e9f30d2b7a1938beb382e835",
+    "trading_agent_starter/research/lean_qualification_011/FIXTURE_MATRIX.md": "a002fb8d9ae2add7486a196c4d590a47395428f64a24c1a611b159ea8e4ab076"
+  },
+  "usage": {
+    "paid_provider_calls": 0,
+    "purchases": 0,
+    "framework_fixture_runs": 0,
+    "repair_cycles": 0
+  },
+  "scheduling": {
+    "available_tool": false,
+    "quota_reset_time": "unknown",
+    "resume_scheduled": false,
+    "reason": "No scheduling tool appears in active tool catalog; quota reset is not exposed. Do not invent a reset or create recurring polling."
+  },
+  "pending_side_effects": [],
+  "stop_conditions": "Issue17 immediate stop list is authoritative; no Q04\u2013Q33.",
+  "runtime_workspace": "/workspace/issue-17-lean"
+}
