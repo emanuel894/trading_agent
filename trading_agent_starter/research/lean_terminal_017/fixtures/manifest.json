@@ -1,0 +1,24 @@
+{
+  "frozen_at_utc": "2026-10-18T14:24:06.432212+00:00",
+  "frozen_before_any_lean_fixture_execution": true,
+  "fixture_ids": [
+    "Q01",
+    "Q02",
+    "Q03"
+  ],
+  "case_count": 10,
+  "basis": "Merged Issue11 definitions; business-state and ordered-event oracles authored independently before execution. No tolerance or oracle relaxation.",
+  "sha256": {
+    "Q01_explicit_unknown.expected.json": "6dbf3793e513e2d7a9a86ef8161e2f7a64cedc137d9a4dfce19524aede785dd6",
+    "Q01_user_defined_unknown.expected.json": "a9d1d94a7d651e45b654cc14f9f7e52d6fe16b2bdd5c887756855b1d0b788097",
+    "Q02_explicit_conflict.expected.json": "c4b2fc0a2e4e025c570c0dcb995128d158378d740e11f4174c0612ff1d732d80",
+    "Q02_explicit_known.expected.json": "309dbfb3576f9e8cb0f53ad0b6c623242ad4883562d0cf7f1b15bfd95380b395",
+    "Q02_explicit_zero.expected.json": "eefb14a25997557f779f5749eb9cc8de6a237caf6c295f4baf837fc22d9bac7d",
+    "Q02_user_defined_conflict.expected.json": "57b6407a723f6211729e0c8de4416c6d42c39a57099fea668b45bb3845e3a08d",
+    "Q02_user_defined_known.expected.json": "385cab5eff560239467228780fc79bb9e5efdfd1b8362e6789041b41e6da7c81",
+    "Q02_user_defined_zero.expected.json": "e10aec0c5a55c4df43bfb25c231848e15fd3fc7dfedfeff71a6387e5ade05861",
+    "Q03_explicit_negative.expected.json": "f7858a68df22968e333a4bdb6361e4f2dd7fb7646148eb38f933460bbaebe394",
+    "Q03_user_defined_negative.expected.json": "1f214b9e582a0dba908be41d063f4cd95ff23ae3f99090476424c1147b8d33cd",
+    "input.json": "7b27afdbdbf9a1269f1ff8d45cc7ac56728b46c943aef3290439f8f7ae58f8f4"
+  }
+}

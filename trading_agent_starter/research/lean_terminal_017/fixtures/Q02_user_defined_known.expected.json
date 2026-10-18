@@ -1,0 +1,58 @@
+{
+  "case_id": "Q02_user_defined_known",
+  "before_terminal": {
+    "engine_quantity": "10",
+    "cash": "9000"
+  },
+  "after_terminal_before_available": {
+    "engine_quantity": "10",
+    "cash": "9000",
+    "unresolved_claim": {
+      "instrument_id": "I1",
+      "quantity": "10",
+      "status": "UNKNOWN",
+      "terminal_value": null
+    },
+    "realized_proceeds": null,
+    "denominator": 1,
+    "failures": 1
+  },
+  "required_lifecycle": [
+    "Warning",
+    "Delisted"
+  ],
+  "required_cancellations": {
+    "buy2": 1,
+    "sell3": 1
+  },
+  "post_delisting_tradable": false,
+  "core_patch_allowed": false,
+  "reflection_private_access_allowed": false,
+  "negative_control_violation_required": false,
+  "at_settlement_available": {
+    "event_kind": "ActionSettlement",
+    "amount": "375",
+    "cash": "9375",
+    "engine_quantity": "0",
+    "realized_pnl": "-625",
+    "action_settlements": 1,
+    "trade_fills": 0,
+    "denominator": 1,
+    "failures": 0,
+    "duplicate": "NO_OP"
+  },
+  "ordered_business_kinds": [
+    "Seed",
+    "OrderSubmitted:buy2",
+    "OrderSubmitted:sell3",
+    "Warning",
+    "Notification:Intercepted",
+    "OrderCanceled:buy2",
+    "OrderCanceled:sell3",
+    "Delisted",
+    "UnresolvedTerminal",
+    "ActionSettlement",
+    "DuplicateIgnored",
+    "EndOfAlgorithm"
+  ]
+}

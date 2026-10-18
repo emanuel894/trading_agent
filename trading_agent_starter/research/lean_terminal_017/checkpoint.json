@@ -9,13 +9,16 @@
     "Q03"
   ],
   "status": "LEAN_TERMINAL_GATE_INCOMPLETE",
-  "phase": "preparing pinned host; no fixture run",
+  "phase": "implementing bounded fixture host, no fixture run",
   "completed": [
     "Read live issue17, merged design, Q01\u2013Q03 definitions and canonical policy/operating skill.",
     "Selected clean current protected base; created mandated branch only.",
-    "Checked namespaces: bwrap/unshare denied uid-map by environment; Docker daemon available."
+    "Checked namespaces: bwrap/unshare denied uid-map by environment; Docker daemon available.",
+    "Fetched exact LEAN source pin into separate host workspace.",
+    "Pulled and pinned official .NET10 SDK container digest; first source build passed (0 errors).",
+    "Frozen ten exact Q01\u2013Q03 cases/oracles before fixture execution."
   ],
-  "next_action": "Fetch exact LEAN source pin, resolve and pin an isolated .NET10 host/dependencies, freeze exact fixture/oracle JSON before fixture execution.",
+  "next_action": "Use real SubscriptionSynchronizer/UniverseSelection, BacktestingTransactionHandler and AlgorithmManager; export exact events/state, then run first case offline and stop on any blocker.",
   "policy_and_design_sha256": {
     "AGENTS.md": "291514f0c3017fae9534ce9cd64f71928698e0c6e7faaac24989c035b3b0483c",
     "AI_PROJECT_POLICY.md": "69795c12456a1a7228d6936d433a256a829760453361d04b3686c2a2669237ce",
@@ -37,5 +40,6 @@
   },
   "pending_side_effects": [],
   "stop_conditions": "Issue17 immediate stop list is authoritative; no Q04\u2013Q33.",
-  "runtime_workspace": "/workspace/issue-17-lean"
+  "runtime_workspace": "/workspace/issue-17-lean",
+  "container_image": "mcr.microsoft.com/dotnet/sdk@sha256:0d99ebf1ccad15037b5c98c9fe8979d6b8dbac23812feae2277a0b277b5c5ffa"
 }
