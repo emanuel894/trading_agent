@@ -1,0 +1,432 @@
+{
+  "ai_http": [
+    {
+      "id": "TradingAgents_releases",
+      "url": "https://api.github.com/repos/TauricResearch/TradingAgents/releases?per_page=4",
+      "retrieved_at_utc": "2026-10-17T21:52:13.903901+00:00",
+      "status": 200,
+      "path": "/workspace/audit-upstreams/framework-audit-20261018/ai/captures/TradingAgents_releases.json",
+      "sha256": "4ced6a38c7f0f11ae54273b1643c24b459140d8cb48c148e230f4856928cd7f4",
+      "bytes": 30411
+    },
+    {
+      "id": "RD-Agent_releases",
+      "url": "https://api.github.com/repos/microsoft/RD-Agent/releases?per_page=4",
+      "retrieved_at_utc": "2026-10-17T21:52:14.418000+00:00",
+      "status": 200,
+      "path": "/workspace/audit-upstreams/framework-audit-20261018/ai/captures/RD-Agent_releases.json",
+      "sha256": "cd06498bfab4a51bc928aabd08b474f46b1bc67c22887c9e77b540aeed70103c",
+      "bytes": 39831
+    },
+    {
+      "id": "qlib_releases",
+      "url": "https://api.github.com/repos/microsoft/qlib/releases?per_page=4",
+      "retrieved_at_utc": "2026-10-17T21:52:14.989731+00:00",
+      "status": 200,
+      "path": "/workspace/audit-upstreams/framework-audit-20261018/ai/captures/qlib_releases.json",
+      "sha256": "15d4f10338e9d3ffcb1197a7f29724854b2b792d5b07c14649154c073cb933dd",
+      "bytes": 14047
+    },
+    {
+      "id": "rdagent_pypi",
+      "url": "https://pypi.org/pypi/rdagent/json",
+      "retrieved_at_utc": "2026-10-17T21:52:15.649964+00:00",
+      "status": 200,
+      "path": "/workspace/audit-upstreams/framework-audit-20261018/ai/captures/rdagent_pypi.json",
+      "sha256": "364ffaeb403c39107afe26db9c1e79753d9c7ba9e2efcc18bbe8844c7f17dc29",
+      "bytes": 67256
+    },
+    {
+      "id": "pyqlib_pypi",
+      "url": "https://pypi.org/pypi/pyqlib/json",
+      "retrieved_at_utc": "2026-10-17T21:52:15.843731+00:00",
+      "status": 200,
+      "path": "/workspace/audit-upstreams/framework-audit-20261018/ai/captures/pyqlib_pypi.json",
+      "sha256": "ab52cf3ef958c809d125d2b711b09128d9e4b2a73c7ef46bc5447305c484da8a",
+      "bytes": 288030
+    },
+    {
+      "id": "tradingagents_pypi",
+      "url": "https://pypi.org/pypi/tradingagents/json",
+      "retrieved_at_utc": "2026-10-17T21:52:16.203674+00:00",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "qlib_v097_recorder",
+      "url": "https://raw.githubusercontent.com/microsoft/qlib/da920b7f954f48ab1bb64117c976710de198373e/qlib/workflow/recorder.py",
+      "retrieved_at_utc": "2026-10-17T21:52:57.412151+00:00",
+      "status": 200,
+      "path": "/workspace/audit-upstreams/framework-audit-20261018/ai/captures/qlib_v097_recorder.py",
+      "sha256": "9b4fb98b06954c18ce5234fdf99c85232ca29eab6f0193b7de2ece4835ea5e40",
+      "bytes": 18438
+    },
+    {
+      "id": "RD_Agent_quant_docs",
+      "url": "https://rdagent.readthedocs.io/en/latest/scens/quant_agent_fin.html",
+      "retrieved_at_utc": "2026-10-17T21:52:57.613194+00:00",
+      "status": 200,
+      "path": "/workspace/audit-upstreams/framework-audit-20261018/ai/captures/RD_Agent_quant_docs.html",
+      "sha256": "4f342d244f64ab17378ae04344c0679fb11d460af50a9fa2029fa741cff87ed7",
+      "bytes": 96840
+    },
+    {
+      "id": "Qlib_PIT_docs",
+      "url": "https://qlib.readthedocs.io/en/latest/advanced/PIT.html",
+      "retrieved_at_utc": "2026-10-17T21:52:57.835181+00:00",
+      "status": 200,
+      "path": "/workspace/audit-upstreams/framework-audit-20261018/ai/captures/Qlib_PIT_docs.html",
+      "sha256": "4c50ac075313158a270a823f3718dbd368dc9364bccb802a2e6a3d3680b7f9f0",
+      "bytes": 112344
+    },
+    {
+      "id": "Qlib_artifact_docs",
+      "url": "https://qlib.readthedocs.io/en/latest/start/artifact_migration.html",
+      "retrieved_at_utc": "2026-10-17T21:52:58.214778+00:00",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "finrl_http": [
+    {
+      "name": "org_repositories",
+      "url": "https://api.github.com/orgs/AI4Finance-Foundation/repos?per_page=100",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:52:03.903834+00:00"
+    },
+    {
+      "name": "finrl_releases",
+      "url": "https://api.github.com/repos/AI4Finance-Foundation/FinRL/releases?per_page=10",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:52:04.569580+00:00"
+    },
+    {
+      "name": "fingpt_releases",
+      "url": "https://api.github.com/repos/AI4Finance-Foundation/FinGPT/releases?per_page=10",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:52:05.009612+00:00"
+    },
+    {
+      "name": "finrl_pypi",
+      "url": "https://pypi.org/pypi/finrl/json",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:52:05.221088+00:00"
+    },
+    {
+      "name": "finrlx_releases",
+      "url": "https://api.github.com/repos/AI4Finance-Foundation/FinRL-Trading/releases?per_page=10",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:53:09.250232+00:00"
+    },
+    {
+      "name": "finrlx_commits",
+      "url": "https://api.github.com/repos/AI4Finance-Foundation/FinRL-Trading/commits?per_page=6",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:53:09.786835+00:00"
+    },
+    {
+      "name": "finrlx_pypi",
+      "url": "https://pypi.org/pypi/finrl-trading/json",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:53:10.001416+00:00"
+    },
+    {
+      "name": "fingpt_pypi",
+      "url": "https://pypi.org/pypi/fingpt/json",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:53:10.139598+00:00"
+    },
+    {
+      "name": "vectorbt_releases",
+      "url": "https://api.github.com/repos/polakowo/vectorbt/releases?per_page=6",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:53:10.597262+00:00"
+    },
+    {
+      "name": "vectorbt_pypi",
+      "url": "https://pypi.org/pypi/vectorbt/json",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:53:10.770262+00:00"
+    },
+    {
+      "name": "backtrader_releases",
+      "url": "https://api.github.com/repos/mementum/backtrader/releases?per_page=6",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:53:11.161417+00:00"
+    },
+    {
+      "name": "backtrader_pypi",
+      "url": "https://pypi.org/pypi/backtrader/json",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:53:11.225105+00:00"
+    },
+    {
+      "name": "freqtrade_readme",
+      "url": "https://raw.githubusercontent.com/freqtrade/freqtrade/develop/README.md",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:53:11.401427+00:00"
+    },
+    {
+      "name": "jesse_readme",
+      "url": "https://raw.githubusercontent.com/jesse-ai/jesse/master/README.md",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:53:11.606292+00:00"
+    },
+    {
+      "name": "guessed_finrlx_git_url",
+      "url": "https://github.com/AI4Finance-Foundation/FinRL-X.git",
+      "status": "Native git ls-remote returned Repository not found; official README instead identifies FinRL-Trading. Not treated as FinRL-X capability absence.",
+      "retrieved_utc": "2026-10-17T21:53:56.722682+00:00"
+    }
+  ],
+  "quantrocket_http": [
+    {
+      "name": "website",
+      "url": "https://www.quantrocket.com/",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:57:17.705119+00:00"
+    },
+    {
+      "name": "docs",
+      "url": "https://www.quantrocket.com/docs/",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:57:18.543217+00:00"
+    },
+    {
+      "name": "pricing",
+      "url": "https://www.quantrocket.com/pricing/",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:57:19.080243+00:00"
+    },
+    {
+      "name": "client_repo",
+      "url": "https://api.github.com/repos/quantrocket-llc/quantrocket-client",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:57:19.514928+00:00"
+    },
+    {
+      "name": "client_releases",
+      "url": "https://api.github.com/repos/quantrocket-llc/quantrocket-client/releases?per_page=5",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:57:19.979135+00:00"
+    },
+    {
+      "name": "pypi",
+      "url": "https://pypi.org/pypi/quantrocket-client/json",
+      "status": 200,
+      "retrieved_utc": "2026-10-17T21:57:20.173187+00:00"
+    }
+  ],
+  "execution_http": [
+    {
+      "key": "qc-engine",
+      "url": "https://www.quantconnect.com/docs/v2/lean-engine/getting-started",
+      "status": 200,
+      "bytes": 112785,
+      "sha256": "e3c31d6f8f3229e69b2c649f25e412b79083b6ff183ee4e4689d8115952c914b",
+      "retrieved_utc": "2026-10-17T21:54:32.194915+00:00"
+    },
+    {
+      "key": "qc-equity-data",
+      "url": "https://www.quantconnect.com/docs/v2/writing-algorithms/securities/asset-classes/us-equity/corporate-actions",
+      "status": 200,
+      "bytes": 437114,
+      "sha256": "be74667f32956ded0aeb7684aef8e442b38f63abaf55617c3b3a70dae17d0cc0",
+      "retrieved_utc": "2026-10-17T21:54:32.252225+00:00"
+    },
+    {
+      "key": "qc-equity-key",
+      "url": "https://www.quantconnect.com/docs/v2/writing-algorithms/key-concepts/security-identifiers",
+      "status": 200,
+      "bytes": 434238,
+      "sha256": "01d078aa271da7aaf78d8e49fc30285cb5bfae9424705c8e1ae86522300bcee3",
+      "retrieved_utc": "2026-10-17T21:54:32.474325+00:00"
+    },
+    {
+      "key": "qc-fill",
+      "url": "https://www.quantconnect.com/docs/v2/writing-algorithms/reality-modeling/trade-fills/supported-models/equity-model",
+      "status": 200,
+      "bytes": 453121,
+      "sha256": "2ba4479b77799ba4990bad0053828f656c1f67bbed402433b81d4de2cd4dda7a",
+      "retrieved_utc": "2026-10-17T21:54:32.250388+00:00"
+    },
+    {
+      "key": "qc-data-license",
+      "url": "https://www.quantconnect.com/docs/v2/lean-cli/datasets/data-providers",
+      "status": 200,
+      "bytes": 23923,
+      "sha256": "ced45d5c38d4cc8397a1cb9e39e9a789d75b222bceac38c7ff47c941fb3e35a9",
+      "retrieved_utc": "2026-10-17T21:54:32.903273+00:00"
+    },
+    {
+      "key": "qc-ib",
+      "url": "https://www.quantconnect.com/docs/v2/lean-cli/live-trading/brokerages/interactive-brokers",
+      "status": 200,
+      "bytes": 150751,
+      "sha256": "fb10136c05ee18f559b218ed1c69a6a31334e624dc37cb1ad898eeee1a43a27f",
+      "retrieved_utc": "2026-10-17T21:54:32.235054+00:00"
+    },
+    {
+      "key": "qc-alpaca",
+      "url": "https://www.quantconnect.com/docs/v2/lean-cli/live-trading/brokerages/alpaca",
+      "status": 200,
+      "bytes": 127743,
+      "sha256": "dd1a2a932b92ee20293f3588f44c3e30dd860acc8330a823c0927a743a9488b1",
+      "retrieved_utc": "2026-10-17T21:54:32.391261+00:00"
+    },
+    {
+      "key": "ib-download",
+      "url": "https://download2.interactivebrokers.com/installers/tws-api/index.html",
+      "status": 200,
+      "bytes": 20100,
+      "sha256": "d90ae6eb3fbe2e983064cc9032453696386201fe65906bca2296acf8c6b0601d",
+      "retrieved_utc": "2026-10-17T21:54:32.391729+00:00"
+    },
+    {
+      "key": "ib-license-noncommercial",
+      "url": "https://interactivebrokers.github.io/tws-api/non_commercial.html",
+      "status": 404,
+      "bytes": 9379,
+      "sha256": "b620507312c5e97566a3c6cfaf99144fefc18a0da7d941401dfa0f5f58fb0368",
+      "retrieved_utc": "2026-10-17T21:54:32.480051+00:00"
+    },
+    {
+      "key": "ib-license-commercial",
+      "url": "https://interactivebrokers.github.io/tws-api/commercial.html",
+      "status": 404,
+      "bytes": 9379,
+      "sha256": "b620507312c5e97566a3c6cfaf99144fefc18a0da7d941401dfa0f5f58fb0368",
+      "retrieved_utc": "2026-10-17T21:54:32.487035+00:00"
+    },
+    {
+      "key": "ib-campus",
+      "url": "https://www.interactivebrokers.com/campus/ibkr-api-page/twsapi-doc/",
+      "status": 403,
+      "bytes": 146,
+      "sha256": "32f2fa940d4b4fe19aca1e53a24e5aac29c57b7c5ee78588325b87f1b649c864",
+      "retrieved_utc": "2026-10-17T21:54:33.065430+00:00"
+    },
+    {
+      "key": "ib-market-pricing",
+      "url": "https://www.interactivebrokers.com/en/pricing/research-news-marketdata.php",
+      "status": 200,
+      "bytes": 444290,
+      "sha256": "c10f5de3a20ce8b187052e02e6f37d74067efca0b9b70b481abf2068470bd9fc",
+      "retrieved_utc": "2026-10-17T21:54:33.920987+00:00"
+    },
+    {
+      "key": "ib-commissions",
+      "url": "https://www.interactivebrokers.com/en/pricing/commissions-stocks.php",
+      "status": 200,
+      "bytes": 609628,
+      "sha256": "9e842fa912501593068bfdb525f0b9c1fefcdd7ef9468af3414409e04b65ba70",
+      "retrieved_utc": "2026-10-17T21:54:33.440357+00:00"
+    },
+    {
+      "key": "ibapi-pypi",
+      "url": "https://pypi.org/pypi/nautilus-ibapi/json",
+      "status": 200,
+      "bytes": 27479,
+      "sha256": "6f7ad4cfe274ad424c40ab5fb825dd385d77c76b8ec1d7d3e08c6e1a502f0bcc",
+      "retrieved_utc": "2026-10-17T21:54:32.570484+00:00"
+    },
+    {
+      "key": "ib-campus-direct",
+      "url": "https://ibkrcampus.com/ibkr-api-page/twsapi-doc/",
+      "status": 403,
+      "bytes": 146
+    },
+    {
+      "key": "ib-api-license",
+      "url": "https://interactivebrokers.github.io/downloads/IB_API_Non-Commercial_License.pdf",
+      "status": 404,
+      "bytes": 100
+    },
+    {
+      "key": "nautilus-ibapi-license",
+      "url": "https://raw.githubusercontent.com/nautechsystems/ibapi/master/LICENSE",
+      "status": 404,
+      "bytes": 14
+    },
+    {
+      "key": "nautilus-ibapi-readme",
+      "url": "https://raw.githubusercontent.com/nautechsystems/ibapi/master/README.md",
+      "status": 200,
+      "bytes": 6971
+    },
+    {
+      "key": "rust-ibapi-license",
+      "url": "https://raw.githubusercontent.com/wboayue/rust-ibapi/main/LICENSE",
+      "status": 200,
+      "bytes": 1067
+    },
+    {
+      "key": "nautilus-ibapi-meta",
+      "url": "https://api.github.com/repos/nautechsystems/ibapi",
+      "status": 200,
+      "bytes": 6762
+    },
+    {
+      "key": "lean-release",
+      "url": "https://api.github.com/repos/QuantConnect/Lean/releases/latest",
+      "status": 200,
+      "bytes": 7435,
+      "sha256": "74c71f70f1b94c12da151a917a328138470942fdaa3e18e886d65f411866f88c",
+      "retrieved_utc": "2026-10-17T21:52:29.106431+00:00"
+    },
+    {
+      "key": "nautilus-release",
+      "url": "https://api.github.com/repos/nautechsystems/nautilus_trader/releases/latest",
+      "status": 200,
+      "bytes": 154405,
+      "sha256": "6b5385b95dfde68f06cc6f7fe1c2f3c1ba6b04db90b7169f76da64ae89f5e163",
+      "retrieved_utc": "2026-10-17T21:52:29.078254+00:00"
+    },
+    {
+      "key": "nautilus-pypi",
+      "url": "https://pypi.org/pypi/nautilus_trader/json",
+      "status": 200,
+      "bytes": 346413,
+      "sha256": "2d197b7d124b245fe460d147bb71f75501542f5dc9786b16b35b3b7b8e5e781d",
+      "retrieved_utc": "2026-10-17T21:52:28.672092+00:00"
+    },
+    {
+      "key": "lean-cli-pypi",
+      "url": "https://pypi.org/pypi/lean/json",
+      "status": 200,
+      "bytes": 569816,
+      "sha256": "569577da0ec0cd821f17361529d5fe85e0ad1013bbdc6092bfd84ae1e6fb48c2",
+      "retrieved_utc": "2026-10-17T21:52:28.849221+00:00"
+    },
+    {
+      "key": "lean-pricing",
+      "url": "https://www.quantconnect.com/pricing",
+      "status": 200,
+      "bytes": 404470,
+      "sha256": "1907b7a91eef7843ff09b19c8f425e5cac9ffc1db1e85b4629bc34c276c0dad3",
+      "retrieved_utc": "2026-10-17T21:52:29.246704+00:00"
+    },
+    {
+      "key": "lean-licensing",
+      "url": "https://www.quantconnect.com/docs/v2/lean-cli/key-concepts/getting-started",
+      "status": 200,
+      "bytes": 129250,
+      "sha256": "0383ad6b4eda55ca93dc05b1df9f73da074e3fa61755db99c14ee062908dacac",
+      "retrieved_utc": "2026-10-17T21:52:29.099972+00:00"
+    },
+    {
+      "key": "ibkr-api",
+      "url": "https://interactivebrokers.github.io/tws-api/",
+      "status": 200,
+      "bytes": 9164,
+      "sha256": "d175a32fcb1a70d336b536a30443da1b2c399df0805d1c4e86933da379797b22",
+      "retrieved_utc": "2026-10-17T21:52:29.436145+00:00"
+    },
+    {
+      "key": "ibkr-license",
+      "url": "https://interactivebrokers.github.io/",
+      "status": 200,
+      "bytes": 2334,
+      "sha256": "e7bea37b07922e1cdecd5042a165752bcb6848726379cb5580dc9b322c86adab",
+      "retrieved_utc": "2026-10-17T21:52:29.396491+00:00"
+    }
+  ]
+}

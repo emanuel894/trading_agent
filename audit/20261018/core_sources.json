@@ -1,0 +1,951 @@
+{
+  "heads": [
+    {
+      "repository": "dgunning/edgartools",
+      "retrieved_at_utc": "2026-10-17T21:52:03.420661+00:00",
+      "commit": "25786d431a692bd548c1ead77aaecfa9f8aff09a",
+      "error": null
+    },
+    {
+      "repository": "mortada/fredapi",
+      "retrieved_at_utc": "2026-10-17T21:52:03.406846+00:00",
+      "commit": "d0a0ba3001ebbbceafdcbdd3eb23828f0537cdff",
+      "error": null
+    },
+    {
+      "repository": "mlflow/mlflow",
+      "retrieved_at_utc": "2026-10-17T21:52:03.963931+00:00",
+      "commit": "9385162c11b44c61af49ea805d0783d15e65949f",
+      "error": null
+    },
+    {
+      "repository": "iterative/dvc",
+      "retrieved_at_utc": "2026-10-17T21:52:03.952989+00:00",
+      "commit": "56e59829512ff134aa269099a2099587b810b4dd",
+      "error": null
+    },
+    {
+      "repository": "PrefectHQ/prefect",
+      "retrieved_at_utc": "2026-10-17T21:52:03.991254+00:00",
+      "commit": "87b5243845e733ed938b21cf7b9aeda6d6a4e194",
+      "error": null
+    },
+    {
+      "repository": "langchain-ai/langgraph",
+      "retrieved_at_utc": "2026-10-17T21:52:03.576043+00:00",
+      "commit": "0eb194fe6093812243de2249e7092029c87c8820",
+      "error": null
+    },
+    {
+      "repository": "scikit-learn/scikit-learn",
+      "retrieved_at_utc": "2026-10-17T21:52:03.997527+00:00",
+      "commit": "85593ca7a07a9956ac891f6bfc3fedca53b74f72",
+      "error": null
+    },
+    {
+      "repository": "duckdb/duckdb",
+      "retrieved_at_utc": "2026-10-17T21:52:03.883230+00:00",
+      "commit": "1b4c3e54ba3625bac56ad184f0ce642a8d2bfbd5",
+      "error": null
+    },
+    {
+      "repository": "gerrymanoim/exchange_calendars",
+      "retrieved_at_utc": "2026-10-17T21:52:03.849350+00:00",
+      "commit": "bbda29fed902374bdb75acab008f421fbd567823",
+      "error": null
+    },
+    {
+      "repository": "open-telemetry/opentelemetry-python",
+      "retrieved_at_utc": "2026-10-17T21:52:04.179627+00:00",
+      "commit": "2fa016b27d9b817aee88ea58be1bd0bc10fd2a40",
+      "error": null
+    },
+    {
+      "repository": "quantopian/zipline",
+      "retrieved_at_utc": "2026-10-17T21:52:04.431030+00:00",
+      "commit": "014f1fc339dc8b7671d29be2d85ce57d3daec343",
+      "error": null
+    },
+    {
+      "repository": "stefan-jansen/zipline-reloaded",
+      "retrieved_at_utc": "2026-10-17T21:52:04.331165+00:00",
+      "commit": "cf649ac06fddce76f6caa2403cd8494ac84f72ad",
+      "error": null
+    },
+    {
+      "repository": "kernc/backtesting.py",
+      "retrieved_at_utc": "2026-10-17T21:52:04.607460+00:00",
+      "commit": "ca2e2611621e472542ba90f7243a1fa06a7d7108",
+      "error": null
+    },
+    {
+      "repository": "polakowo/vectorbt",
+      "retrieved_at_utc": "2026-10-17T21:52:04.332122+00:00",
+      "commit": "8bf3aff77e3d9cba0be0b00988d3a4831692e142",
+      "error": null
+    },
+    {
+      "repository": "mementum/backtrader",
+      "retrieved_at_utc": "2026-10-17T21:52:04.412596+00:00",
+      "commit": "b853d7c90b6721476eb5a5ea3135224e33db1f14",
+      "error": null
+    }
+  ],
+  "tags": [
+    {
+      "repository": "dgunning/edgartools",
+      "checked_at_utc": "2026-10-17T21:54:16.939129+00:00",
+      "observed_last_version_sorted_tags": [
+        "0f752b2dfcd043bf13ad9f10ba4fa1334932b14e\trefs/tags/v5.59.0",
+        "b022ad29ac3965248c473b5790cf8e124887eac6\trefs/tags/v5.59.1",
+        "1e7a61b3a142dbf5d19bc82444f85239c1786348\trefs/tags/v5.60.0",
+        "4b7a510bdab4eab2d5c1bfe6bf7e0e5fafb71715\trefs/tags/v5.61.0",
+        "7338aa335f6442c52dfa0695422cf1cd27e946e0\trefs/tags/v5.61.1",
+        "5068cc548552fab1fbd061f1b8bccdc4e1677c6f\trefs/tags/v5.62.0"
+      ],
+      "error": null
+    },
+    {
+      "repository": "mortada/fredapi",
+      "checked_at_utc": "2026-10-17T21:54:17.051495+00:00",
+      "observed_last_version_sorted_tags": [
+        "37c2dc84c442465fd8287d88d5283e5970bd6607\trefs/tags/v0.4.1",
+        "d3ca79efccb9525f2752a0d6da90e793e87c3fd8\trefs/tags/v0.4.2",
+        "22132f9e021e4bd4c066d8a23e9575ccac1760f3\trefs/tags/v0.4.3",
+        "8a6beb9560ceba608ec4bfcebe7abde0e682463d\trefs/tags/v0.5.0",
+        "0af995877f82592c106665f5f757067b076d239f\trefs/tags/v0.5.1",
+        "bf7cc8fdb03b12f8224bbb1bf66381b9d21c6d6d\trefs/tags/v0.5.2"
+      ],
+      "error": null
+    },
+    {
+      "repository": "mlflow/mlflow",
+      "checked_at_utc": "2026-10-17T21:54:17.150008+00:00",
+      "observed_last_version_sorted_tags": [
+        "9a1c0d9a9827acd23c7a215f0999e4b0f97e9870\trefs/tags/v3.15.1",
+        "ca15da96555ef1ef80a61393bf8559ffe5c2e8df\trefs/tags/v3.15.2",
+        "998f7103eb5bb305491aa6e661e3862af0a8a8ed\trefs/tags/v3.16.0",
+        "32792afe5b0183fce10532d3a023f5cfa8612d09\trefs/tags/v3.16.1",
+        "6dd94c6de2932d22767769eec5b644e48c457ce8\trefs/tags/v3.17.0",
+        "7fc49ae9fcd65ed125e46cf68b976060e5a38c77\trefs/tags/v3.17.1"
+      ],
+      "error": null
+    },
+    {
+      "repository": "PrefectHQ/prefect",
+      "checked_at_utc": "2026-10-17T21:54:17.029729+00:00",
+      "observed_last_version_sorted_tags": [
+        "213644dbbcc72042496c5373cfbdbe4b5ab09f36\trefs/tags/prefect-sqlalchemy-0.5.0rc2",
+        "ab6c49da7cbade5026d194a7f8a74fc3ce3d0cd5\trefs/tags/prefect-sqlalchemy-0.5.1",
+        "8dd8f3c4e57394c5081a82c9afd31141826cedab\trefs/tags/prefect-sqlalchemy-0.5.2",
+        "0851785d727d69ade9144c61b231756fa7f1889d\trefs/tags/prefect-sqlalchemy-0.5.3",
+        "d7791414195869baa6ebb423c3b0e4477c6abf89\trefs/tags/prefect-sqlalchemy-0.6.0",
+        "ee531648b970b255057701acb167c2882c297ea1\trefs/tags/prefect-sqlalchemy-0.6.1"
+      ],
+      "error": null
+    },
+    {
+      "repository": "langchain-ai/langgraph",
+      "checked_at_utc": "2026-10-17T21:54:17.099957+00:00",
+      "observed_last_version_sorted_tags": [
+        "4950c2405a8b62d4d2910936844f4f1f8a3bc23d\trefs/tags/v0.0.3",
+        "85e200fb952124f7fc3bdd5d85352794b600188e\trefs/tags/v0.0.4",
+        "2cf65ac6baa0b48d7c0ee452e6a393895fdc5abe\trefs/tags/v0.0.5",
+        "db85dbe62dda2d7c475b2c4f6f5dde831b947f32\trefs/tags/v0.0.6",
+        "d03efe28cf7d3e87a36ed96ab9de04ea66fdde49\trefs/tags/v0.0.7",
+        "6fb060add0b4b05333446087a875246406282b11\trefs/tags/v0.0.8"
+      ],
+      "error": null
+    },
+    {
+      "repository": "stefan-jansen/zipline-reloaded",
+      "checked_at_utc": "2026-10-17T21:54:17.051707+00:00",
+      "observed_last_version_sorted_tags": [
+        "316611abd593e7a72a2777fe076ca8a806c5f514\trefs/tags/v0.6.1^{}",
+        "a7de02176b3d8f78cc38253bd08432e9a04332cd\trefs/tags/v0.7.0",
+        "297223a70c3cac2eebf0dff7b5935f3cc7cee071\trefs/tags/v0.7.0rc1",
+        "1955146184fe51f85757ede8813b381898bed049\trefs/tags/v0.8.0",
+        "f7f5f538a5756a1e5429c429a4ee86c2e4c13b50\trefs/tags/v0.8.3",
+        "1105f513233682bb4c1cab8d882238f5484a1bb3\trefs/tags/v1.3.0"
+      ],
+      "error": null
+    },
+    {
+      "repository": "mementum/backtrader",
+      "checked_at_utc": "2026-10-17T21:54:17.060980+00:00",
+      "observed_last_version_sorted_tags": [
+        "b0cfdc7787eff620f2d986f55af93ea28c581d1d\trefs/tags/1.9.67.122",
+        "cff7cb2082e2c3b00a0ae1cbba9cc723abc3c90a\trefs/tags/1.9.70.122",
+        "8559898583a62d29a1d8b170bcd235133b34bdbc\trefs/tags/1.9.71.122",
+        "59ee9521f9887c2a1030c6f1db8c918a5816fd64\trefs/tags/1.9.72.122",
+        "dcb4c1a5dc7a555d1610f8e309da64723cfee845\trefs/tags/1.9.74.123",
+        "54cb7a5d7e3eb3038ef6ff3b3d516497f21f8e0c\trefs/tags/1.94.15.104"
+      ],
+      "error": null
+    },
+    {
+      "repository": "polakowo/vectorbt",
+      "checked_at_utc": "2026-10-17T21:54:16.905630+00:00",
+      "observed_last_version_sorted_tags": [
+        "6cb7ae3b88ca30ec33e2084b655b3bc02563af2f\trefs/tags/v0.28.4",
+        "993ceca7116fc8e55f4cd3a36fe43d83dab62b27\trefs/tags/v0.28.5",
+        "5cdbd786f5f25e379a16e50f762b3552b58f479b\trefs/tags/v1.0.0",
+        "259d2d89fe2e7638baf3ca76c394937cd32b656d\trefs/tags/v1.1.0",
+        "4f22e370e6f75717d50cc8eab4adc4b37ccbbbce\trefs/tags/v1.1.1",
+        "f0d2afba7af8a6e6c1b02afde27c9a16413e86ff\trefs/tags/v1.1.2"
+      ],
+      "error": null
+    }
+  ],
+  "captures": [
+    {
+      "repository": "dgunning/edgartools",
+      "commit": "25786d431a692bd548c1ead77aaecfa9f8aff09a",
+      "source_path": "README.md",
+      "url": "https://raw.githubusercontent.com/dgunning/edgartools/25786d431a692bd548c1ead77aaecfa9f8aff09a/README.md",
+      "retrieved_at_utc": "2026-10-17T21:52:26.883798+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/2ec838d6461f58729d.raw",
+      "bytes": 12161,
+      "sha256": "dcba0ff3573f67d1107eee57fd4944f86c02e650472dadc9226362e6627bef1e"
+    },
+    {
+      "repository": "dgunning/edgartools",
+      "commit": "25786d431a692bd548c1ead77aaecfa9f8aff09a",
+      "source_path": "LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/dgunning/edgartools/25786d431a692bd548c1ead77aaecfa9f8aff09a/LICENSE.txt",
+      "retrieved_at_utc": "2026-10-17T21:52:26.884376+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/1d3b86d834c761c194.raw",
+      "bytes": 1100,
+      "sha256": "249fb5021f07689c5fb17925c4d8bcd04fd9e2cee4b4b789499fb80b1e9dfe0c"
+    },
+    {
+      "repository": "dgunning/edgartools",
+      "commit": "25786d431a692bd548c1ead77aaecfa9f8aff09a",
+      "source_path": "pyproject.toml",
+      "url": "https://raw.githubusercontent.com/dgunning/edgartools/25786d431a692bd548c1ead77aaecfa9f8aff09a/pyproject.toml",
+      "retrieved_at_utc": "2026-10-17T21:52:26.884816+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/0aa7abaaacc5674300.raw",
+      "bytes": 17358,
+      "sha256": "9f3b6536d5588e4b7538617ebe496dd814970bb327dfa35df9fe55f8c234d312"
+    },
+    {
+      "repository": "dgunning/edgartools",
+      "commit": "25786d431a692bd548c1ead77aaecfa9f8aff09a",
+      "source_path": "edgar/_filings.py",
+      "url": "https://raw.githubusercontent.com/dgunning/edgartools/25786d431a692bd548c1ead77aaecfa9f8aff09a/edgar/_filings.py",
+      "retrieved_at_utc": "2026-10-17T21:52:26.885218+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/5b463d790cc2ac1e09.raw",
+      "bytes": 117601,
+      "sha256": "574434d42e048005914caad26f2d3701a74b01d5ea50b996912c066c1b0ca218"
+    },
+    {
+      "repository": "dgunning/edgartools",
+      "commit": "25786d431a692bd548c1ead77aaecfa9f8aff09a",
+      "source_path": "edgar/httprequests.py",
+      "url": "https://raw.githubusercontent.com/dgunning/edgartools/25786d431a692bd548c1ead77aaecfa9f8aff09a/edgar/httprequests.py",
+      "retrieved_at_utc": "2026-10-17T21:52:26.885721+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/202d6000b83b613dd5.raw",
+      "bytes": 60021,
+      "sha256": "23a4466c0122b4b76d7d6c9ed34c2f5e5dc9eb8faa70423fcd310d73a583bcdc"
+    },
+    {
+      "repository": "mortada/fredapi",
+      "commit": "d0a0ba3001ebbbceafdcbdd3eb23828f0537cdff",
+      "source_path": "README.md",
+      "url": "https://raw.githubusercontent.com/mortada/fredapi/d0a0ba3001ebbbceafdcbdd3eb23828f0537cdff/README.md",
+      "retrieved_at_utc": "2026-10-17T21:52:26.886270+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/6c6667bc630ffdea2f.raw",
+      "bytes": 9035,
+      "sha256": "1f0f85300bd55a1275b163c3701374203b61014360755476fc3ce6a94963fb42"
+    },
+    {
+      "repository": "mortada/fredapi",
+      "commit": "d0a0ba3001ebbbceafdcbdd3eb23828f0537cdff",
+      "source_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/mortada/fredapi/d0a0ba3001ebbbceafdcbdd3eb23828f0537cdff/LICENSE",
+      "retrieved_at_utc": "2026-10-17T21:52:26.887176+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/40a2b4a3b227bcd7b6.raw",
+      "bytes": 11324,
+      "sha256": "a8ad31b1c3f40dca5a84119351b8fa8ddc868edd77fad8a8ebf6d8f2d16fa4ae"
+    },
+    {
+      "repository": "mortada/fredapi",
+      "commit": "d0a0ba3001ebbbceafdcbdd3eb23828f0537cdff",
+      "source_path": "setup.py",
+      "url": "https://raw.githubusercontent.com/mortada/fredapi/d0a0ba3001ebbbceafdcbdd3eb23828f0537cdff/setup.py",
+      "retrieved_at_utc": "2026-10-17T21:52:26.887679+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/7a52483bf01c9a6fdc.raw",
+      "bytes": 1387,
+      "sha256": "7deebfb57d0ddf04282c8118a082961ead6d8cf5efeeb037db4227ec113894a4"
+    },
+    {
+      "repository": "mortada/fredapi",
+      "commit": "d0a0ba3001ebbbceafdcbdd3eb23828f0537cdff",
+      "source_path": "fredapi/fred.py",
+      "url": "https://raw.githubusercontent.com/mortada/fredapi/d0a0ba3001ebbbceafdcbdd3eb23828f0537cdff/fredapi/fred.py",
+      "retrieved_at_utc": "2026-10-17T21:52:26.888129+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/24ab5fbf8f3f6fba33.raw",
+      "bytes": 20463,
+      "sha256": "ec14f4a6508bf68f6cf24e047ddf910842f9253ec3da45bf246c716d02d3a1cd"
+    },
+    {
+      "repository": "mlflow/mlflow",
+      "commit": "9385162c11b44c61af49ea805d0783d15e65949f",
+      "source_path": "README.md",
+      "url": "https://raw.githubusercontent.com/mlflow/mlflow/9385162c11b44c61af49ea805d0783d15e65949f/README.md",
+      "retrieved_at_utc": "2026-10-17T21:52:26.895556+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/db9064d1d728d76ed6.raw",
+      "bytes": 33107,
+      "sha256": "e9b30b8aee35e78fb87bdbbfcf837e8739f596aef5f6def89e735680d7d8b00e"
+    },
+    {
+      "repository": "mlflow/mlflow",
+      "commit": "9385162c11b44c61af49ea805d0783d15e65949f",
+      "source_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/mlflow/mlflow/9385162c11b44c61af49ea805d0783d15e65949f/LICENSE",
+      "retrieved_at_utc": "2026-10-17T21:52:27.256483+00:00",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "repository": "mlflow/mlflow",
+      "commit": "9385162c11b44c61af49ea805d0783d15e65949f",
+      "source_path": "pyproject.toml",
+      "url": "https://raw.githubusercontent.com/mlflow/mlflow/9385162c11b44c61af49ea805d0783d15e65949f/pyproject.toml",
+      "retrieved_at_utc": "2026-10-17T21:52:27.268732+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/deb77c525d6d8f2bd9.raw",
+      "bytes": 20098,
+      "sha256": "0388dd3eb1b228fa20d246d28a261302e5d403e5df4eb5a4477c8884081c84e0"
+    },
+    {
+      "repository": "mlflow/mlflow",
+      "commit": "9385162c11b44c61af49ea805d0783d15e65949f",
+      "source_path": "mlflow/tracking/client.py",
+      "url": "https://raw.githubusercontent.com/mlflow/mlflow/9385162c11b44c61af49ea805d0783d15e65949f/mlflow/tracking/client.py",
+      "retrieved_at_utc": "2026-10-17T21:52:27.275060+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/5ecec9d4b15c4b129a.raw",
+      "bytes": 290112,
+      "sha256": "6c4de92996c170fb499dfcf28835d7ad22af5d530776be88ae4b30ce8d757f1e"
+    },
+    {
+      "repository": "iterative/dvc",
+      "commit": "56e59829512ff134aa269099a2099587b810b4dd",
+      "source_path": "README.rst",
+      "url": "https://raw.githubusercontent.com/iterative/dvc/56e59829512ff134aa269099a2099587b810b4dd/README.rst",
+      "retrieved_at_utc": "2026-10-17T21:52:27.304774+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/6cbc54de36d9a16a3c.raw",
+      "bytes": 12874,
+      "sha256": "d10985fd1a1efb7ee4a28c0a4dac8a3f40cebe564dc86404aa5300e659ddeb39"
+    },
+    {
+      "repository": "iterative/dvc",
+      "commit": "56e59829512ff134aa269099a2099587b810b4dd",
+      "source_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/iterative/dvc/56e59829512ff134aa269099a2099587b810b4dd/LICENSE",
+      "retrieved_at_utc": "2026-10-17T21:52:27.316465+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/538def4064e1e4cc86.raw",
+      "bytes": 11340,
+      "sha256": "e817a2cc039b0cf9902431510648773913ccc942dc01a07697cd6f88cf479e15"
+    },
+    {
+      "repository": "iterative/dvc",
+      "commit": "56e59829512ff134aa269099a2099587b810b4dd",
+      "source_path": "pyproject.toml",
+      "url": "https://raw.githubusercontent.com/iterative/dvc/56e59829512ff134aa269099a2099587b810b4dd/pyproject.toml",
+      "retrieved_at_utc": "2026-10-17T21:52:27.328113+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/3e16c7c341f422d5b8.raw",
+      "bytes": 8705,
+      "sha256": "7c9a77d69f45b5d260c374c49132cb60439cb1e5d19c739987c693beba92b9ac"
+    },
+    {
+      "repository": "iterative/dvc",
+      "commit": "56e59829512ff134aa269099a2099587b810b4dd",
+      "source_path": "dvc/repo/reproduce.py",
+      "url": "https://raw.githubusercontent.com/iterative/dvc/56e59829512ff134aa269099a2099587b810b4dd/dvc/repo/reproduce.py",
+      "retrieved_at_utc": "2026-10-17T21:52:27.375054+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/5908b71cf7ea83c57b.raw",
+      "bytes": 7758,
+      "sha256": "3f59e3160375e2be5a688286452f545db5d4b993d67d068cc9f57ea1bfb6fdb3"
+    },
+    {
+      "repository": "PrefectHQ/prefect",
+      "commit": "87b5243845e733ed938b21cf7b9aeda6d6a4e194",
+      "source_path": "README.md",
+      "url": "https://raw.githubusercontent.com/PrefectHQ/prefect/87b5243845e733ed938b21cf7b9aeda6d6a4e194/README.md",
+      "retrieved_at_utc": "2026-10-17T21:52:27.382510+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/0eb3192fa3124664dc.raw",
+      "bytes": 8939,
+      "sha256": "55591992fdcf02c3492f41e5fbac1e971e17424fa41b035e37de947eab5f5624"
+    },
+    {
+      "repository": "PrefectHQ/prefect",
+      "commit": "87b5243845e733ed938b21cf7b9aeda6d6a4e194",
+      "source_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/PrefectHQ/prefect/87b5243845e733ed938b21cf7b9aeda6d6a4e194/LICENSE",
+      "retrieved_at_utc": "2026-10-17T21:52:27.535616+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/5a82d417e67c67bd88.raw",
+      "bytes": 11357,
+      "sha256": "302c6c9fca2c024cdfc4a0b8082fdd2dc52453c0d92e4ca2859f261acdc08774"
+    },
+    {
+      "repository": "PrefectHQ/prefect",
+      "commit": "87b5243845e733ed938b21cf7b9aeda6d6a4e194",
+      "source_path": "pyproject.toml",
+      "url": "https://raw.githubusercontent.com/PrefectHQ/prefect/87b5243845e733ed938b21cf7b9aeda6d6a4e194/pyproject.toml",
+      "retrieved_at_utc": "2026-10-17T21:52:27.603225+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/57d911a505da48362d.raw",
+      "bytes": 14008,
+      "sha256": "4fbf625a901284b0a2314f3f442437370fc34e1a7d4fff30cd6d8fc3f1a65a63"
+    },
+    {
+      "repository": "PrefectHQ/prefect",
+      "commit": "87b5243845e733ed938b21cf7b9aeda6d6a4e194",
+      "source_path": "src/prefect/flow_engine.py",
+      "url": "https://raw.githubusercontent.com/PrefectHQ/prefect/87b5243845e733ed938b21cf7b9aeda6d6a4e194/src/prefect/flow_engine.py",
+      "retrieved_at_utc": "2026-10-17T21:52:27.624501+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/6b88e90f6f82ec3e2b.raw",
+      "bytes": 92068,
+      "sha256": "eefbba7e276b2e8ef0d4d5080609823fbb83fd794c8e38ef9cabf05961eced04"
+    },
+    {
+      "repository": "PrefectHQ/prefect",
+      "commit": "87b5243845e733ed938b21cf7b9aeda6d6a4e194",
+      "source_path": "src/prefect/flow_runs.py",
+      "url": "https://raw.githubusercontent.com/PrefectHQ/prefect/87b5243845e733ed938b21cf7b9aeda6d6a4e194/src/prefect/flow_runs.py",
+      "retrieved_at_utc": "2026-10-17T21:52:27.628234+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/bf1f257f59e3edcac9.raw",
+      "bytes": 30108,
+      "sha256": "d360dc7289fd86ee8aaf6881c1b3b56773b2d1e15a49ab68c7355bcd786726d5"
+    },
+    {
+      "repository": "langchain-ai/langgraph",
+      "commit": "0eb194fe6093812243de2249e7092029c87c8820",
+      "source_path": "README.md",
+      "url": "https://raw.githubusercontent.com/langchain-ai/langgraph/0eb194fe6093812243de2249e7092029c87c8820/README.md",
+      "retrieved_at_utc": "2026-10-17T21:52:27.657481+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/9f8ce4b2f67227c193.raw",
+      "bytes": 6395,
+      "sha256": "3a13e257af1216962d53d72414a7f44ac1fc5cea34d994bdff60ea2a3b045933"
+    },
+    {
+      "repository": "langchain-ai/langgraph",
+      "commit": "0eb194fe6093812243de2249e7092029c87c8820",
+      "source_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/langchain-ai/langgraph/0eb194fe6093812243de2249e7092029c87c8820/LICENSE",
+      "retrieved_at_utc": "2026-10-17T21:52:27.660020+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/c81eb243c47e20f294.raw",
+      "bytes": 1072,
+      "sha256": "d9bb52f2e3540d60ff50d8f0f5b6ba649b7fd346948c4c3d086c8afb120763c7"
+    },
+    {
+      "repository": "langchain-ai/langgraph",
+      "commit": "0eb194fe6093812243de2249e7092029c87c8820",
+      "source_path": "libs/langgraph/pyproject.toml",
+      "url": "https://raw.githubusercontent.com/langchain-ai/langgraph/0eb194fe6093812243de2249e7092029c87c8820/libs/langgraph/pyproject.toml",
+      "retrieved_at_utc": "2026-10-17T21:52:27.752483+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/6b609aae53525cb0a7.raw",
+      "bytes": 4466,
+      "sha256": "8c8bf8b26f77f3949a221217b04ff68297cf52e07733dce43c0bf9db92944e53"
+    },
+    {
+      "repository": "langchain-ai/langgraph",
+      "commit": "0eb194fe6093812243de2249e7092029c87c8820",
+      "source_path": "libs/langgraph/langgraph/pregel/_loop.py",
+      "url": "https://raw.githubusercontent.com/langchain-ai/langgraph/0eb194fe6093812243de2249e7092029c87c8820/libs/langgraph/langgraph/pregel/_loop.py",
+      "retrieved_at_utc": "2026-10-17T21:52:27.787521+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/36c1125f0b02f44bb9.raw",
+      "bytes": 91418,
+      "sha256": "cc51e52a6624aa064ac1688e4a55326012d11b615d9810d4b5c1f19bf5f579e0"
+    },
+    {
+      "repository": "scikit-learn/scikit-learn",
+      "commit": "85593ca7a07a9956ac891f6bfc3fedca53b74f72",
+      "source_path": "README.rst",
+      "url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/85593ca7a07a9956ac891f6bfc3fedca53b74f72/README.rst",
+      "retrieved_at_utc": "2026-10-17T21:52:27.818118+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/1948ad55c358bd7da8.raw",
+      "bytes": 7676,
+      "sha256": "3e0c151adde02aa2501477a7c2a17a87888abe58178c09a2a8eff794bbee3221"
+    },
+    {
+      "repository": "scikit-learn/scikit-learn",
+      "commit": "85593ca7a07a9956ac891f6bfc3fedca53b74f72",
+      "source_path": "COPYING",
+      "url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/85593ca7a07a9956ac891f6bfc3fedca53b74f72/COPYING",
+      "retrieved_at_utc": "2026-10-17T21:52:27.824085+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/6d3c67b071346e4a78.raw",
+      "bytes": 1532,
+      "sha256": "50d6a9d340f19ab355609917993114daf5f47e3161067bcf34955bbd05cd9cb0"
+    },
+    {
+      "repository": "scikit-learn/scikit-learn",
+      "commit": "85593ca7a07a9956ac891f6bfc3fedca53b74f72",
+      "source_path": "pyproject.toml",
+      "url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/85593ca7a07a9956ac891f6bfc3fedca53b74f72/pyproject.toml",
+      "retrieved_at_utc": "2026-10-17T21:52:27.825609+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/b804c72af2722ec855.raw",
+      "bytes": 13812,
+      "sha256": "60076dfc0b7bef4471363947873317e288767cd1271b0eba81eccb5ac6e897f2"
+    },
+    {
+      "repository": "scikit-learn/scikit-learn",
+      "commit": "85593ca7a07a9956ac891f6bfc3fedca53b74f72",
+      "source_path": "sklearn/pipeline.py",
+      "url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/85593ca7a07a9956ac891f6bfc3fedca53b74f72/sklearn/pipeline.py",
+      "retrieved_at_utc": "2026-10-17T21:52:27.847391+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/67c6a1be00f23b6c93.raw",
+      "bytes": 88405,
+      "sha256": "2be5348cd63f25253b31034a9137f1b4fc311a13388c142003a0dc1cc8b73aa0"
+    },
+    {
+      "repository": "duckdb/duckdb",
+      "commit": "1b4c3e54ba3625bac56ad184f0ce642a8d2bfbd5",
+      "source_path": "README.md",
+      "url": "https://raw.githubusercontent.com/duckdb/duckdb/1b4c3e54ba3625bac56ad184f0ce642a8d2bfbd5/README.md",
+      "retrieved_at_utc": "2026-10-17T21:52:27.867839+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/98e5714cafbd934491.raw",
+      "bytes": 3480,
+      "sha256": "907b44f4727089c4475a5f9342e76ed2cdb39cac5619feb4ed9c5c065f5cc559"
+    },
+    {
+      "repository": "duckdb/duckdb",
+      "commit": "1b4c3e54ba3625bac56ad184f0ce642a8d2bfbd5",
+      "source_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/duckdb/duckdb/1b4c3e54ba3625bac56ad184f0ce642a8d2bfbd5/LICENSE",
+      "retrieved_at_utc": "2026-10-17T21:52:27.914206+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/ab78682698d63fee78.raw",
+      "bytes": 1072,
+      "sha256": "075c33400ffcb0c586dd106a029d3e733e9da3693f8fcb9cebfc651c8a2f14e3"
+    },
+    {
+      "repository": "gerrymanoim/exchange_calendars",
+      "commit": "bbda29fed902374bdb75acab008f421fbd567823",
+      "source_path": "README.md",
+      "url": "https://raw.githubusercontent.com/gerrymanoim/exchange_calendars/bbda29fed902374bdb75acab008f421fbd567823/README.md",
+      "retrieved_at_utc": "2026-10-17T21:52:28.017978+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/9deb263ba1089c922f.raw",
+      "bytes": 25069,
+      "sha256": "bdd51a148fa734a951941d64c84e491b73496b6d88b4c7a8480cba5cf924c25a"
+    },
+    {
+      "repository": "gerrymanoim/exchange_calendars",
+      "commit": "bbda29fed902374bdb75acab008f421fbd567823",
+      "source_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/gerrymanoim/exchange_calendars/bbda29fed902374bdb75acab008f421fbd567823/LICENSE",
+      "retrieved_at_utc": "2026-10-17T21:52:28.028452+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/c612089414d606c656.raw",
+      "bytes": 11347,
+      "sha256": "e35c4578f7db4498e62e278978f6c42e0fce6f21f9993a060b08a33549cd3044"
+    },
+    {
+      "repository": "gerrymanoim/exchange_calendars",
+      "commit": "bbda29fed902374bdb75acab008f421fbd567823",
+      "source_path": "pyproject.toml",
+      "url": "https://raw.githubusercontent.com/gerrymanoim/exchange_calendars/bbda29fed902374bdb75acab008f421fbd567823/pyproject.toml",
+      "retrieved_at_utc": "2026-10-17T21:52:28.111607+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/4b1fca92e5a795d6ad.raw",
+      "bytes": 3524,
+      "sha256": "7915a8c83d1039992e26c344397b4a5c158b093fdf9c9f971f87b9e13e7066d3"
+    },
+    {
+      "repository": "gerrymanoim/exchange_calendars",
+      "commit": "bbda29fed902374bdb75acab008f421fbd567823",
+      "source_path": "exchange_calendars/exchange_calendar_xnys.py",
+      "url": "https://raw.githubusercontent.com/gerrymanoim/exchange_calendars/bbda29fed902374bdb75acab008f421fbd567823/exchange_calendars/exchange_calendar_xnys.py",
+      "retrieved_at_utc": "2026-10-17T21:52:28.138863+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/4c6d881525c2f0143b.raw",
+      "bytes": 9403,
+      "sha256": "baa39f07163abafcf2800b69edc5d920c3db0a64f8bbb30dc7d522883d0b5bd7"
+    },
+    {
+      "repository": "stefan-jansen/zipline-reloaded",
+      "commit": "cf649ac06fddce76f6caa2403cd8494ac84f72ad",
+      "source_path": "README.md",
+      "url": "https://raw.githubusercontent.com/stefan-jansen/zipline-reloaded/cf649ac06fddce76f6caa2403cd8494ac84f72ad/README.md",
+      "retrieved_at_utc": "2026-10-17T21:52:28.165611+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/7baca261cba3a6fc51.raw",
+      "bytes": 9302,
+      "sha256": "81b18bc4301b97442e8d3ff89c646351a0612d0a69d8c7db4f9ea012716d810d"
+    },
+    {
+      "repository": "stefan-jansen/zipline-reloaded",
+      "commit": "cf649ac06fddce76f6caa2403cd8494ac84f72ad",
+      "source_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/stefan-jansen/zipline-reloaded/cf649ac06fddce76f6caa2403cd8494ac84f72ad/LICENSE",
+      "retrieved_at_utc": "2026-10-17T21:52:28.195224+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/ef43791c88292c7eca.raw",
+      "bytes": 11347,
+      "sha256": "e35c4578f7db4498e62e278978f6c42e0fce6f21f9993a060b08a33549cd3044"
+    },
+    {
+      "repository": "stefan-jansen/zipline-reloaded",
+      "commit": "cf649ac06fddce76f6caa2403cd8494ac84f72ad",
+      "source_path": "pyproject.toml",
+      "url": "https://raw.githubusercontent.com/stefan-jansen/zipline-reloaded/cf649ac06fddce76f6caa2403cd8494ac84f72ad/pyproject.toml",
+      "retrieved_at_utc": "2026-10-17T21:52:28.207587+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/43e942294241812491.raw",
+      "bytes": 9027,
+      "sha256": "106e0c7b3f46a97cd92f7e44c83aa6d609bd22c9893693ecd36258ab720e86ac"
+    },
+    {
+      "repository": "polakowo/vectorbt",
+      "commit": "8bf3aff77e3d9cba0be0b00988d3a4831692e142",
+      "source_path": "README.md",
+      "url": "https://raw.githubusercontent.com/polakowo/vectorbt/8bf3aff77e3d9cba0be0b00988d3a4831692e142/README.md",
+      "retrieved_at_utc": "2026-10-17T21:52:28.217606+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/5969651eb141ba8aa0.raw",
+      "bytes": 14394,
+      "sha256": "fa4d73b7db3a76ffea9d72389ad42c8aac3798bcf76831e35f8d4dedbd91dad3"
+    },
+    {
+      "repository": "polakowo/vectorbt",
+      "commit": "8bf3aff77e3d9cba0be0b00988d3a4831692e142",
+      "source_path": "LICENSE.md",
+      "url": "https://raw.githubusercontent.com/polakowo/vectorbt/8bf3aff77e3d9cba0be0b00988d3a4831692e142/LICENSE.md",
+      "retrieved_at_utc": "2026-10-17T21:52:28.253640+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/6e4a8635db4955008d.raw",
+      "bytes": 12321,
+      "sha256": "a914859a115b70e80956a3cbd613139ad74c04e5d1bd38da8bcc16725822ec84"
+    },
+    {
+      "repository": "polakowo/vectorbt",
+      "commit": "8bf3aff77e3d9cba0be0b00988d3a4831692e142",
+      "source_path": "pyproject.toml",
+      "url": "https://raw.githubusercontent.com/polakowo/vectorbt/8bf3aff77e3d9cba0be0b00988d3a4831692e142/pyproject.toml",
+      "retrieved_at_utc": "2026-10-17T21:52:28.313522+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/d22525889307287a30.raw",
+      "bytes": 2236,
+      "sha256": "03006d1dcd6ce3a3c67c9b1b725b4645b11fec44b96e4d3afa878fde5159422c"
+    },
+    {
+      "repository": "mementum/backtrader",
+      "commit": "b853d7c90b6721476eb5a5ea3135224e33db1f14",
+      "source_path": "README.rst",
+      "url": "https://raw.githubusercontent.com/mementum/backtrader/b853d7c90b6721476eb5a5ea3135224e33db1f14/README.rst",
+      "retrieved_at_utc": "2026-10-17T21:52:28.381137+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/d1d9783921b3284e38.raw",
+      "bytes": 5409,
+      "sha256": "a8f4230185291ab0c44e569ae334f98f5e2352d93d315b4d75e8acaaaaf50cbe"
+    },
+    {
+      "repository": "mementum/backtrader",
+      "commit": "b853d7c90b6721476eb5a5ea3135224e33db1f14",
+      "source_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/mementum/backtrader/b853d7c90b6721476eb5a5ea3135224e33db1f14/LICENSE",
+      "retrieved_at_utc": "2026-10-17T21:52:28.408222+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/6e9f75a57446560d45.raw",
+      "bytes": 35121,
+      "sha256": "e1c0ad728983d8a57335e52cf1064f1affd1d454173d8cebd3ed8b4a72b48704"
+    },
+    {
+      "repository": "mementum/backtrader",
+      "commit": "b853d7c90b6721476eb5a5ea3135224e33db1f14",
+      "source_path": "setup.py",
+      "url": "https://raw.githubusercontent.com/mementum/backtrader/b853d7c90b6721476eb5a5ea3135224e33db1f14/setup.py",
+      "retrieved_at_utc": "2026-10-17T21:52:28.421826+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/e0ea0368f2d25d2cd7.raw",
+      "bytes": 5322,
+      "sha256": "b4cffd86c8f73da09ef4afe5cdb3a60d76ea5f6e5b3e4c39155a0d04d6ed6fa5"
+    },
+    {
+      "repository": "pypi",
+      "commit": null,
+      "source_path": "edgartools",
+      "url": "https://pypi.org/pypi/edgartools/json",
+      "retrieved_at_utc": "2026-10-17T21:52:28.435866+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/df64e23df630828a39.raw",
+      "bytes": 719996,
+      "sha256": "7cf2d5f56d372b7fe953cf2c261dd87fb26422ea5e95f9f62f625a764ac86150"
+    },
+    {
+      "repository": "pypi",
+      "commit": null,
+      "source_path": "fredapi",
+      "url": "https://pypi.org/pypi/fredapi/json",
+      "retrieved_at_utc": "2026-10-17T21:52:28.471341+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/a50c7a110a72dfb9b0.raw",
+      "bytes": 22876,
+      "sha256": "a086b5c345ac1a3be85e5b1899148ae8456f7bbec1c2915e9cfb7d0351152942"
+    },
+    {
+      "repository": "pypi",
+      "commit": null,
+      "source_path": "mlflow",
+      "url": "https://pypi.org/pypi/mlflow/json",
+      "retrieved_at_utc": "2026-10-17T21:52:28.472128+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/af97e072663560b9aa.raw",
+      "bytes": 347210,
+      "sha256": "555937a6b8d64fc6b1c2166eb80fb40562d66c0a3859f49fd3176cea5d72258c"
+    },
+    {
+      "repository": "pypi",
+      "commit": null,
+      "source_path": "dvc",
+      "url": "https://pypi.org/pypi/dvc/json",
+      "retrieved_at_utc": "2026-10-17T21:52:28.499638+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/b338d308708d6c160a.raw",
+      "bytes": 811271,
+      "sha256": "6065382cd138bb3fda382cf87cf2960807b813cb3ed668d5d19f66826a748711"
+    },
+    {
+      "repository": "pypi",
+      "commit": null,
+      "source_path": "prefect",
+      "url": "https://pypi.org/pypi/prefect/json",
+      "retrieved_at_utc": "2026-10-17T21:52:28.533419+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/14afd2d79dce808267.raw",
+      "bytes": 1260915,
+      "sha256": "111a8d8baf315827638274949b89140c1e99e6f6228aeea5db8d7115310eadbb"
+    },
+    {
+      "repository": "pypi",
+      "commit": null,
+      "source_path": "langgraph",
+      "url": "https://pypi.org/pypi/langgraph/json",
+      "retrieved_at_utc": "2026-10-17T21:52:28.572619+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/af4f080a171b58f329.raw",
+      "bytes": 444672,
+      "sha256": "6c8849e8d20e42b784f373514fdb042479f1ebe023b16187a6f5e4a41021cc45"
+    },
+    {
+      "repository": "pypi",
+      "commit": null,
+      "source_path": "scikit-learn",
+      "url": "https://pypi.org/pypi/scikit-learn/json",
+      "retrieved_at_utc": "2026-10-17T21:52:28.666017+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/0ed90afa82993de670.raw",
+      "bytes": 1422044,
+      "sha256": "7f2c77f9da0b1765ccd00fe236628488f1645a0e8d14e2f38bdcc85d2ea477dd"
+    },
+    {
+      "repository": "pypi",
+      "commit": null,
+      "source_path": "duckdb",
+      "url": "https://pypi.org/pypi/duckdb/json",
+      "retrieved_at_utc": "2026-10-17T21:52:28.747771+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/ed7c8c5b25a1f52be8.raw",
+      "bytes": 4263645,
+      "sha256": "b3e08eb8cc326f89557f2be8ebbf4e3c1e411a6d5d8319cd5a65ce1e210ae47a"
+    },
+    {
+      "repository": "pypi",
+      "commit": null,
+      "source_path": "exchange-calendars",
+      "url": "https://pypi.org/pypi/exchange-calendars/json",
+      "retrieved_at_utc": "2026-10-17T21:52:28.758628+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/5effd50eec871404af.raw",
+      "bytes": 94605,
+      "sha256": "91efd757fdcec580e2a5cdf5a62f97595717f12539e4412fa5e84c79563524b5"
+    },
+    {
+      "repository": "pypi",
+      "commit": null,
+      "source_path": "zipline-reloaded",
+      "url": "https://pypi.org/pypi/zipline-reloaded/json",
+      "retrieved_at_utc": "2026-10-17T21:52:28.909672+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/958f284d81036de4ae.raw",
+      "bytes": 295602,
+      "sha256": "4f14c2d56f48e8442c556f1309d33ae4294420c09b1cc76d00b2e2a83db10077"
+    },
+    {
+      "repository": "pypi",
+      "commit": null,
+      "source_path": "vectorbt",
+      "url": "https://pypi.org/pypi/vectorbt/json",
+      "retrieved_at_utc": "2026-10-17T21:52:29.096788+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/a87960db73d6ac7246.raw",
+      "bytes": 87775,
+      "sha256": "c346717f8e29020e3fe8e03b8733f6610158ecdc19717a59949985b619793277"
+    },
+    {
+      "repository": "pypi",
+      "commit": null,
+      "source_path": "backtrader",
+      "url": "https://pypi.org/pypi/backtrader/json",
+      "retrieved_at_utc": "2026-10-17T21:52:29.101462+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/8d250a20d4e6cd375c.raw",
+      "bytes": 12783,
+      "sha256": "69efd2350215d11cf806ec9e95442b8601391437b43954342fce971dd19a8ad3"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mlflow/mlflow/9385162c11b44c61af49ea805d0783d15e65949f/LICENSE.txt",
+      "retrieved_at_utc": "2026-10-17T21:53:29.074948+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/89b5e978be9a73ddd5.raw",
+      "bytes": 11382,
+      "sha256": "6395355de6f391afff35996a30fb41b189b4991a4cb54993ace35ab69a0bfa28"
+    },
+    {
+      "url": "https://fred.stlouisfed.org/docs/api/fred/realtime_period.html",
+      "retrieved_at_utc": "2026-10-17T21:53:29.075553+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/8ee4e77ee19658151f.raw",
+      "bytes": 34051,
+      "sha256": "a35fca0a2b8badc5f9de247c0ff06be1904b0d3aa54ab4d1dde43fdd2911e5f5"
+    },
+    {
+      "url": "https://fred.stlouisfed.org/docs/api/fred/series_observations.html",
+      "retrieved_at_utc": "2026-10-17T21:53:29.076012+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/4ae564a6ee3e67fc89.raw",
+      "bytes": 65914,
+      "sha256": "4364eb00e10c04aa25e95a10406e5e96e8ad6c589f05bc69437649caa352fd13"
+    },
+    {
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "retrieved_at_utc": "2026-10-17T21:53:29.076455+00:00",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.bls.gov/developers/",
+      "retrieved_at_utc": "2026-10-17T21:53:29.076796+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/da19197a547a407235.raw",
+      "bytes": 49607,
+      "sha256": "6db4fe94ccd0c0b9c553006aa2a487d43801a20325b10ced7a6349888b680977"
+    },
+    {
+      "url": "https://www.bea.gov/API/signup/index.cfm",
+      "retrieved_at_utc": "2026-10-17T21:53:29.077674+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/37a527bece804d3f40.raw",
+      "bytes": 39907,
+      "sha256": "e0427ba488d2c356f8254de37f697e5b450b907024582f8a0a103239965a502f"
+    },
+    {
+      "url": "https://api.github.com/repos/mortada/fredapi",
+      "retrieved_at_utc": "2026-10-17T21:53:29.084855+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/f39d72420c64796d0a.raw",
+      "bytes": 5233,
+      "sha256": "7727ec02b7b94f337aeef672142dfe3c8b7abb6f50fe0a7b900899a4e7665cf0"
+    },
+    {
+      "url": "https://api.github.com/repos/PrefectHQ/prefect/releases/latest",
+      "retrieved_at_utc": "2026-10-17T21:53:29.088709+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/a5327df648a031661d.raw",
+      "bytes": 9445,
+      "sha256": "655990e31b50b61a6e5b89638f39e23d0a7e57030ec6b878e4e72e160b13f7b4"
+    },
+    {
+      "url": "https://api.github.com/repos/mlflow/mlflow/releases/latest",
+      "retrieved_at_utc": "2026-10-17T21:53:29.327627+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/f2fb3d1bfd246a6bec.raw",
+      "bytes": 2475,
+      "sha256": "b1154476d0d07e160af9cff1425e6b6cc91ae933953ecb8a4655864802a344c5"
+    },
+    {
+      "url": "https://api.github.com/repos/dgunning/edgartools/releases/latest",
+      "retrieved_at_utc": "2026-10-17T21:53:29.393760+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/70982652047e6c1b9e.raw",
+      "bytes": 9667,
+      "sha256": "b9d2258a7de27d5e938f781f4f9650d23f64c4c833264f316c3503cb84565679"
+    },
+    {
+      "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "retrieved_at_utc": "2026-10-17T21:53:29.534348+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/0f07369afb96d99f09.raw",
+      "bytes": 69018,
+      "sha256": "65ddec188b336d55f611ebc00f92b329d389a2257b0ff64ea36e4ac8e3dd052d"
+    },
+    {
+      "url": "https://www.federalregister.gov/developers/documentation/api/v1",
+      "retrieved_at_utc": "2026-10-17T21:53:29.587921+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/962f52ab9427c0556e.raw",
+      "bytes": 31934,
+      "sha256": "31f2148b7916531ebedc10d3e70cdde69697019763d77d42aac3189b63bf95bd"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PrefectHQ/prefect/3.8.8/src/prefect/flow_runs.py",
+      "retrieved_at_utc": "2026-10-17T21:54:34.441148+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/d1e762a69841e3b393.raw",
+      "bytes": 29595,
+      "sha256": "d0b8939f3f41db8903e7019cf8488a9a583c1896fdd2e6ba90c1efdd91fe61f0"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PrefectHQ/prefect/3.8.8/src/prefect/flow_engine.py",
+      "retrieved_at_utc": "2026-10-17T21:54:34.441727+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/a9d3c79df279f3844b.raw",
+      "bytes": 92068,
+      "sha256": "eefbba7e276b2e8ef0d4d5080609823fbb83fd794c8e38ef9cabf05961eced04"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PrefectHQ/prefect/3.8.8/LICENSE",
+      "retrieved_at_utc": "2026-10-17T21:54:34.442190+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/a3cd01bf0ca70fa620.raw",
+      "bytes": 11357,
+      "sha256": "302c6c9fca2c024cdfc4a0b8082fdd2dc52453c0d92e4ca2859f261acdc08774"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PrefectHQ/prefect/3.8.8/pyproject.toml",
+      "retrieved_at_utc": "2026-10-17T21:54:34.442654+00:00",
+      "status": 200,
+      "local_path": "/workspace/audit-upstreams/framework-audit-20261018/core/49aadc888abd712e51.raw",
+      "bytes": 14624,
+      "sha256": "a78fbe412a72994e75cdee333e3a0219a35892b942aeca6d701a5821610b663c"
+    }
+  ]
+}

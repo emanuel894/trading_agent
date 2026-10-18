@@ -1,0 +1,366 @@
+{
+  "reviewed_repository_commit": "4dd7703f429df01a6f7e67912294ec26e93b4ad0",
+  "audit_date": "2026-10-18",
+  "timezone": "Asia/Jerusalem",
+  "branch": "docs/long-term-build-vs-adopt-20261018",
+  "purpose": "architecture audit only",
+  "primary_recommendation": "Small scientific control layer + direct standard research tools + conditional LEAN integration; no wholesale migration; Nautilus alternative benchmark",
+  "subsystem_decisions": [
+    {
+      "component": "Evidence/provenance admission",
+      "classification": "KEEP_OURS",
+      "implementation_and_boundary": "Retain raw-byte hashes, clock distinctions, accession/class bindings, append-only decisions and fail-closed semantics. Use standard SQLite/object storage; do not grow a proprietary database platform."
+    },
+    {
+      "component": "Historical security master",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "Qualify a maintained reference backbone as in the red review; retain small temporal crosswalk/admission adapters. Buy maintenance of the universe rather than recreate it from current symbols/ITCH. No vendor is newly admitted here."
+    },
+    {
+      "component": "Eligibility/cohort/registration",
+      "classification": "KEEP_OURS",
+      "implementation_and_boundary": "Preserve registered population/class selection, exact lookbacks, protected hashes, unresolved states, candidate ordering and no-replacement rules."
+    },
+    {
+      "component": "SEC discovery/transport",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "Retain bounded original-envelope capture and completeness guards; use SEC APIs and maintained HTTP tooling. No current-ticker lookup as historical identity."
+    },
+    {
+      "component": "SEC/XBRL/document parsing",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "EdgarTools for parsing/crosschecks from captured accession-bound data after acceptance fixtures. Keep our raw-span/period/entity verifier; stop building a universal SEC/XBRL parser."
+    },
+    {
+      "component": "Market/reference source transport",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "Official qualified provider SDKs/bulk tooling, keeping native symbols/time/precision and raw-response evidence where required. Source contracts/entitlements remain independent of engine defaults."
+    },
+    {
+      "component": "Macro/government/news collection",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "Official agency APIs/archives, ALFRED vintages and a qualified historical news source; source-specific availability/revision adapter beneath the same evidence layer. No autonomous browsing-to-trade shortcut."
+    },
+    {
+      "component": "Numerical feature/model pipeline",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "scikit-learn Pipeline, Ridge and the registered squared-loss depth-2 boosted-tree implementation/grid. Fit preprocessing only on training rows. Use existing numerical libraries, not custom ML estimators."
+    },
+    {
+      "component": "Cheap text and verified extraction",
+      "classification": "KEEP_OURS",
+      "implementation_and_boundary": "Registered shared passages, deterministic comparisons, source-span/entity/unit checks, schema validation and abstention. Adopt ordinary parser/model SDK primitives underneath."
+    },
+    {
+      "component": "LLM inference/provider transport",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "Official model clients and structured output validation. One bounded extractor plus permitted repair; no generic multi-agent framework needed for a fixed extraction stage. Model choice remains removable."
+    },
+    {
+      "component": "Hybrid strategy composition",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "LLM facts become reviewed features in the same estimator/risk pipeline as controls. Preserve fixed opportunities, models, budgets and information boundaries. Avoid vote-based trade committees."
+    },
+    {
+      "component": "Automated factor discovery",
+      "classification": "BENCHMARK",
+      "implementation_and_boundary": "RD-Agent(Q)/Qlib in an isolated later research experiment. Do not custom-build a proposal/code/evaluate/repair loop."
+    },
+    {
+      "component": "Experiment metrics/artifact index",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "Local/private MLflow; log all trials/failures/costs and link immutable input/registration hashes. Mutable tracker rows are not scientific authority."
+    },
+    {
+      "component": "Data/model artifact lineage",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "DVC/content-addressed manifests and private versioned storage when scale needs it. Evidence timing/rights remain separate; do not commit licensed data."
+    },
+    {
+      "component": "Analytical storage",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "Parquet and DuckDB views over versioned evidence/features. Preserve quote precision and temporal joins; no new feature-store service yet."
+    },
+    {
+      "component": "Backtesting and portfolio accounting",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "Qualified LEAN adapter, including registered fills/costs/terminal treatment. Retain the tiny existing replay only as a regression oracle."
+    },
+    {
+      "component": "Statistical/economic evaluator",
+      "classification": "KEEP_OURS",
+      "implementation_and_boundary": "Registered paired incremental net metric, controls, purging/grouping, failures/abstentions, trial budgets, holdout and promotion rules. Adopt statistical/bootstrap primitives."
+    },
+    {
+      "component": "Portfolio allocation/risk implementation",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "Maintained engine accounting/reservations/risk hooks; retain our exact deterministic limits, halt and scheduled-exit policy. Prototype defaults are not the registered production policy."
+    },
+    {
+      "component": "Order lifecycle/OMS",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "Selected engine's order states, partial-fill/cancel handling, dedup/reconciliation capabilities. Keep only a small project approval/intent boundary and acceptance checks. Do not build a generic OMS."
+    },
+    {
+      "component": "Broker connectivity / future IBKR",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "Maintained selected-engine plugin after license, Paper and fault-recovery qualification. Existing read-only broker probes remain diagnostics."
+    },
+    {
+      "component": "Monitoring/reconciliation",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "Engine reconciliation plus standard metrics/logging/OpenTelemetry. Keep source/economic/cost/unknown-state alerts. A successful snapshot is not continuous reconciliation."
+    },
+    {
+      "component": "Research job checkpoint/resume",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "DVC stages for dependency/cache reuse; Prefect for durable scheduled retries/pause/resume when unattended work requires it. Never implement a generic scheduler or confuse cache reuse with scientific replay."
+    },
+    {
+      "component": "Agent graph state",
+      "classification": "BENCHMARK",
+      "implementation_and_boundary": "Use a framework's checkpointing, or LangGraph if a new bounded graph is genuinely needed. No second graph engine in the minimal fixed extraction path."
+    },
+    {
+      "component": "GitHub coding/review automation",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "Existing official-runner qualification plan, trusted-base guards, exact-SHA CI and independent review. Current real-provider activation remains PAUSED_BUDGET; no new agent platform/router."
+    },
+    {
+      "component": "Secrets/security",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "Platform secret isolation, least-privilege jobs, locked dependencies/containers and sandbox controls; keep project-specific access/cost/approval policy. No broker/acquisition secrets in research coding agents."
+    }
+  ],
+  "framework_decisions": {
+    "TradingAgents": "BENCHMARK",
+    "RD-Agent(Q)": "BENCHMARK",
+    "FinRL": "BENCHMARK",
+    "FinRL-X/FinRL-Trading": "BENCHMARK",
+    "Qlib": "BENCHMARK",
+    "LEAN": "INTEGRATE",
+    "NautilusTrader": "BENCHMARK",
+    "FinGPT": "BENCHMARK",
+    "QuantRocket": "BENCHMARK",
+    "vectorbt": "BENCHMARK",
+    "Zipline-reloaded": "BENCHMARK",
+    "Backtrader as new backbone": "REJECT",
+    "Freqtrade/Jesse for US-equity scope": "REJECT",
+    "xAI Grok Bot": "BENCHMARK",
+    "xAI Grok Build": "BENCHMARK",
+    "Claude Code ecosystem": "BENCHMARK",
+    "brainbytes-dev/everything-claude-trading as backbone": "REJECT",
+    "anthropics/financial-services selected reviewed skills/patterns": "INTEGRATE"
+  },
+  "current_science": {
+    "FMBH": "UNRESOLVED",
+    "amendment_005_modified": false,
+    "registrations_modified": false,
+    "candidate_priority_or_ledger_modified": false,
+    "broker_flags_modified": false,
+    "trading_enabled": false,
+    "alpha_experiments_run": false
+  },
+  "external_actions": {
+    "purchases": 0,
+    "subscriptions": 0,
+    "paid_provider_calls": 0,
+    "broker_calls": 0,
+    "market_data_acquisition_calls": 0,
+    "Massive_calls": 0,
+    "upstream_framework_execution": 0,
+    "provider_contact": 0
+  },
+  "cost_limits": "No spending authorization. Vendor quotes and future budget approval remain separate. Current OSS code licenses do not confer data/model/broker/service rights.",
+  "known_limits": [
+    "Static inspection only; no upstream install/runtime/benchmark",
+    "Some primary routes source-limited; current positive requests preserved",
+    "Qlib Git-vs-PyPI/Nautilus stable-vs-development must be pinned separately",
+    "Commercial engine internals not inspected; pricing/entitlements/retention require exact terms",
+    "Current acquisition gate unchanged; no framework admission for performance or execution",
+    "Hosted Grok/Claude proprietary runtimes not inspected or exercised; web docs are claims, not verified service behavior.",
+    "Current account/credits/Enterprise entitlements and this client scheduling surface remain unverified.",
+    "Original validation.json remains historical evidence; delta_issue9/validation.json records the additive completion on the cleaned branch."
+  ],
+  "original_audit_reviewed_repository_commit": "ad45afbf9aa1de402926b0a84da3e914faae5bd1",
+  "delta": {
+    "issue": 9,
+    "pr": 10,
+    "clean_remote_parent": "4dd7703f429df01a6f7e67912294ec26e93b4ad0",
+    "kind": "additive missing-candidate/output completion; original framework qualifications carried forward",
+    "evidence_directory": "audit/20261018/delta_issue9",
+    "source_snapshot": "issue_snapshot.json",
+    "old_ancestry_reintroduced": false,
+    "primary_recommendation_changed": false,
+    "actual_benchmark_run": false
+  },
+  "delta_framework_details": [
+    {
+      "component": "xAI Grok Bot",
+      "classification": "BENCHMARK",
+      "replaces_if_qualified": [
+        "cloud desktop",
+        "bot roster/context",
+        "generic dispatch/wake/handoffs",
+        "routine scheduler",
+        "approval presentation",
+        "coding delegation"
+      ],
+      "reason": "Real persistent shared cloud computer and multi-bot routines; Cursor hosting/delegation and plan-specific enterprise controls. Shared credentials, model freeze, durable export and cumulative cap qualification prevent present adoption.",
+      "evidence": [
+        "delta_issue9/grok_sources.json",
+        "delta_issue9/grok_quotes.md"
+      ],
+      "alpha_established": false
+    },
+    {
+      "component": "Claude Code ecosystem",
+      "classification": "BENCHMARK",
+      "replaces_if_qualified": [
+        "coding/session runtime",
+        "generic subagent fan-out",
+        "workflow persistence",
+        "routine/event scheduler",
+        "GitHub coding plumbing"
+      ],
+      "reason": "Real background/dynamic workflows/routines; no demonstrated marginal benefit over included Codex plus independent review. OAuth/plan credits may avoid separate billing but entitlement is unverified; no extra standing provider.",
+      "evidence": [
+        "delta_issue9/claude_sources.json",
+        "delta_issue9/claude_refs.json",
+        "delta_issue9/claude_quotes.json"
+      ],
+      "alpha_established": false
+    },
+    {
+      "component": "everything-claude-trading as backbone",
+      "classification": "REJECT",
+      "reason": "Post-edit warning regex hooks always exit zero; missing npm validation/lint scripts; March code maintenance, no release; checklists are not causal data or evaluation guarantees. No import of strategy/promotion/risk thresholds.",
+      "commit": "9a8fcfcaacd7620afc24dc8c5e79d922135f3e11",
+      "license": "MIT"
+    },
+    {
+      "component": "Official financial-services selected skills/patterns",
+      "classification": "INTEGRATE",
+      "reason": "Current official financial/equity/earnings recipes and reader separation, reused only for an authorized task after review. Do not deploy reference handoff/schema loop unchanged. No connector subscription or whole runtime adoption.",
+      "commit": "574ed3624aebd0418c7e96cd101262f30210ab26",
+      "license": "Apache-2.0",
+      "installed": false
+    }
+  ],
+  "TARGET_STACK": {
+    "report_section": "TARGET_STACK",
+    "text": "The minimum starting-today stack remains one research worker and, later, one\nqualified simulation/execution process. Layers/providers are replaceable:\n\n| Layer | Maintained component/provider | What remains ours |\n| --- | --- | --- |\n| Development/review | Included Codex; existing independent review route using available included Gemini/ChatGPT or another actually independent model; GitHub PRs/CI. Claude/Grok are alternatives to benchmark, not extra standing agents. | Trusted-base policy, scope/exact-SHA admission, repair/cost pause and human merge. Real-provider automation stays disabled. |\n| Historical identity | Qualified external reference master; awaited Databento qualification is the current lead, with existing CRSP/enterprise alternatives retained. | Temporal issuer/class/listing crosswalk, completeness admission and unresolved treatment. No new source decision here. |\n| Filings/fundamentals | SEC original accessions + EdgarTools/ordinary parser libraries. | As-filed provenance, period/entity/source spans, prior-disclosure and availability checks. |\n| Market data | Existing qualified Alpaca SIP contract and official SDK; another provider only behind a separately reviewed equivalent contract. | Frozen daily/quote semantics, native precision, revisions, conditions and status admission. |\n| Future macro/government/news | FRED/ALFRED, BLS/BEA, primary Fed/agency/Federal Register releases and qualified licensed news. Tariff/sanction/contract/geopolitical families use their authoritative releases/archives, not a Bot's narrative; future registration required. | Release/vintage/receipt clocks, evidence-backed issuer/exposure links and causal feature windows. |\n| Storage/lineage | SQLite + content-addressed objects; Parquet/DuckDB; DVC when needed. | Evidence schema, immutable admission/decision records and rights references. |\n| Models | scikit-learn registered cheap controls; one bounded official-provider LLM SDK call and permitted repair. Selected financial-services skills are optional recipes, not model or evidence authority. | Fixed information/opportunity sets, verified features, budgets, holdout and paired net evaluator. |\n| Job/run state | MLflow run index; existing bounded commands first, Prefect only for actual durable unattended jobs. Reuse Codex/Claude/Grok native session state if that runner is selected. | Scientific resume identity, cumulative trial/cost receipts and fail-closed gates. |\n| Simulation/risk/OMS | Qualified LEAN interfaces; Nautilus remains the alternative benchmark. | Registered fills/costs/terminal outcomes, deterministic policy and independent safety boundary. |\n| Broker | Later maintained LEAN IBKR/Alpaca plugin after entitlement and Paper qualification; execution host isolated from development. | Authorization/account allowlist, observed-event audit, unresolved-state stop and human live gate. Broker symbols never define scientific truth. |\n\nNo new subscription, broker/data credential, framework or agent platform is\nrequired to preserve this architecture. The LLM can lose and be removed."
+  },
+  "STOP_BUILDING_NOW": {
+    "report_section": "STOP_BUILDING_NOW",
+    "text": "Stop building generic **security masters; universal SEC/XBRL parsers; data SDKs;\nmodel/optimizer libraries; feature-store/database platforms; backtest engines;\nportfolio/accounting/OMS/broker protocol stacks; experiment trackers; general\nworkflow schedulers; cloud desktops; bot rosters; generic session/memory stores;\nagent fan-out/message/handoff engines; coding/factor proposal–repair loops;\napproval UIs; cross-provider routers; generalized spend/billing platforms; and\nmulti-agent trading committees**. Maintained tools already occupy these layers.\nDo not build a custom API loop merely to replace manual relay before its value\ngate passes. Do not build several interchangeable frameworks into production.\n\nNever attempt to build historical truth by inventing missing source clocks,\nclasses, news coverage or outcomes with an LLM. Retain our **small scientific and\nsafety contracts**, not a second implementation of upstream engines. Review and\nbudget receipts are project-specific controls, not an excuse to build a generic\nbilling service. “Stop building” does not delete protected code/evidence now."
+  },
+  "NEXT_3_TASKS": {
+    "report_section": "NEXT_3_TASKS",
+    "text": "These are exactly three proposed follow-ups, not work executed or newly authorized\nby this audit. Do not create busywork/issues or purchase anything while waiting.\n\n1. **Adjudicate only the awaited Databento response/sample against the existing\n   qualification request.** Why: source viability has the highest decision value\n   and can stop unnecessary downstream investment. Dependency: actual provider\n   response/new evidence; reuse the existing request and reviews. **Before reply:\n   no**—do not repeat the search or sample request. Model: included high-reasoning\n   scientific review, with an independent reviewer for disputed semantics.\n   Expected cost: **$0 paid API/data/subscription spend**, at most one bounded\n   review day; a quoted paid export is a separate owner decision. **Exact stop:**\n   a source-grounded qualified method, a documented failure, or one precise list\n   of still-missing baseline/class/temporal/rights facts; unknown remains unresolved.\n   No eligibility/status/registration change, 58-call completion or candidate #2.\n\n2. **One synthetic LEAN terminal-outcome feasibility spike, not a migration.**\n   Why: it can falsify the most consequential engine assumption before expensive\n   integration. Dependency: separate maintainer authorization for a disposable\n   offline open-source engine runtime; original contract fixtures and pinned\n   extension hooks, no source data or broker plugin login. **Before Databento:\n   yes**, technically independent; it is optional work only when an actual engine\n   decision is due. Model: included coding model at high reasoning plus independent\n   technical review. Expected cost: **$0 paid provider/license/data calls**, existing\n   CPU only, **maximum one engineer-day**. **Exact stop:** both synthetic known-\n   settlement and unknown-terminal cases preserve expected holdings/cash/outcome\n   records without a fallback last-price fill, or the first unsupported behavior,\n   core-fork requirement, paid entitlement or time cap. Record PASS/FAIL/UNRESOLVED;\n   do not patch indefinitely, calculate alpha or build a general OMS. No framework\n   is installed in this delta task.\n\n3. **Passively measure real relay/resume friction for fourteen days of natural\n   work.** Why: it determines whether API automation has any economic value rather\n   than presuming an always-on agent is needed. Dependency: genuine existing\n   tasks/PRs; use GitHub timestamps and a manual table, not a new logging service.\n   **Before Databento: yes**, if real authorized work exists; otherwise record no\n   workload and wait. Model: **none** for logging, optional included medium-reasoning\n   summarization; high reasoning only for a safety finding. Expected cost: **$0\n   external spend**, under five minutes of logging per real task, included in the\n   measured overhead. **Exact stop:** fourteen calendar days; evaluate the value\n   gate below. Fewer than sixteen qualifying jobs, insufficient relay friction,\n   unknown costs or insufficient benefit means **API_NOT_JUSTIFIED_YET**. Do not\n   manufacture jobs or extend the window to obtain a favorable answer.",
+    "tasks": [
+      {
+        "id": 1,
+        "task": "Adjudicate awaited Databento qualification reply/sample",
+        "why": "Highest-value source viability decision without repeating prior search.",
+        "dependency": "Actual provider reply/new evidence; existing request and reviews.",
+        "can_run_before_databento_reply": false,
+        "model_reasoning": "Included high-reasoning scientific review; independent reviewer for disputed semantics.",
+        "expected_external_cost_usd": 0,
+        "effort_cap": "one bounded review day",
+        "exact_stop": "Grounded qualified method, documented failure, or one precise remaining baseline/class/temporal/rights-facts list. Unknown remains unresolved; no status/registration change."
+      },
+      {
+        "id": 2,
+        "task": "One synthetic LEAN terminal-outcome feasibility spike",
+        "why": "Falsifies engine terminal-treatment assumption before expensive integration.",
+        "dependency": "Separate maintainer authorization for disposable offline pinned OSS runtime; existing contract fixtures; no data/broker login.",
+        "can_run_before_databento_reply": true,
+        "before_reply_condition": "Only if a real engine decision is due; optional independent work, not manufactured waiting-window activity.",
+        "model_reasoning": "Included coding model high reasoning plus independent technical review.",
+        "expected_external_cost_usd": 0,
+        "effort_cap": "one engineer-day; existing CPU only",
+        "exact_stop": "Known-settlement and unknown-terminal synthetic cases both preserve holdings/cash/outcome without fallback last-price fill, OR first unsupported behavior/core fork/paid requirement/time cap. Record PASS/FAIL/UNRESOLVED; no alpha/migration."
+      },
+      {
+        "id": 3,
+        "task": "Passive fourteen-calendar-day natural-work relay/resume friction record",
+        "why": "Tests whether paid automation has economic value.",
+        "dependency": "Genuine existing authorized tasks/PRs, GitHub timestamps and manual table; otherwise wait.",
+        "can_run_before_databento_reply": true,
+        "model_reasoning": "None for logging; optional included medium summarization; high only for safety finding.",
+        "expected_external_cost_usd": 0,
+        "effort_cap": "less than five minutes logging per genuine task, counted as cost",
+        "exact_stop": "Fourteen calendar days; fewer than sixteen qualifying jobs or unmet friction/value/cost evidence means API_NOT_JUSTIFIED_YET. Do not manufacture jobs/extend window."
+      }
+    ]
+  },
+  "API_AUTOMATION_VALUE_GATE": {
+    "report_section": "API_AUTOMATION_VALUE_GATE",
+    "text": "**Current result: NOT MET; real-provider activation remains PAUSED_BUDGET.** The\naudit contains no measured friction/workload record or verified paid budget. A\nwaiting data request, depleted included allowance or desire for more agents does\nnot itself justify paying. First verify usable included cloud/schedule/review\nfeatures and existing plan credits; neither availability nor unlimited use is\nassumed. API rates cannot be used as the price of included ChatGPT/Codex usage.\n\nRequire **all** of these before recommending a separately billed pilot:\n\n| Gate | Measurable rule |\n| --- | --- |\n| Actual manual friction | A fourteen-day record must show at least four avoidable owner relay/resume interventions **in total across fourteen days**, **and ninety active owner minutes per week**, on genuine issue/PR work. Record the exact copy/relay, restart/context reconstruction or launch action and its start/end; exclude ordinary scientific judgment, required review and provider waiting time. |\n| Repeated workload | At least **eight bounded, automation-ready jobs per week for two weeks** (sixteen total), with stable inputs/outputs and an acceptance rule. Count a real implement/review work item once; retries, manufactured subissues and multiple agents are not extra demand. |\n| Value exceeds total cost | Estimate monthly benefit from measured removable owner hours and an **owner-supplied** time value, less extra review/repair time. Do not assign speculative trading profit or unmeasured overnight latency value. Require conservative benefit **>=3×** total incremental API + runner/storage + amortized setup/maintenance cost, including both models, tools, failures and maximum allowed repairs. Unknown usage/prices fail the gate. |\n| Quality/safety readiness | Existing included/manual outcomes define acceptance. Paid automation must preserve 100% mandatory CI, exact-head review, scope/credential boundaries and human merge; no unresolved isolation/stale-head/budget defect may be traded for speed. A proposed finite pilot must measure accepted work and confirmed independent defects, not tokens, agents or PR counts. |\n\nIf all pass and the owner explicitly approves, propose **one pilot capped at five\nnatural jobs or seven days**, whichever comes first, **$10 total**, **$2/job**,\n**$5/day**, inside an owner-approved combined monthly cap of **$50 or lower**.\nThese are proposed ceilings, not existing configured limits or spending authority.\nNo job launches if the chosen model's conservatively reserved maximum cannot fit.\nAfter the pilot, continue only if measured accepted-work benefit meets the same\n3× threshold with no safety regressions; otherwise return to included/manual use.\n\nHard controls required **before** a cost-bearing launch: exact model/runner/price\nsnapshot; per-call input/output/tool/time limits; durable pre-call reservation;\nprovider/gateway enforcement proven to cover every route; combined monthly/daily/\njob totals across implementer, reviewer, retries and resumes; concurrency one\nimplementer/one reviewer; **two repair cycles maximum across all resumes** and at\nmost six provider calls per issue. Unknown or ambiguous spend, unpriced routes,\nbackend outage or interrupted-call reconciliation means **PAUSED_BUDGET**.\nDisable top-up and unrestricted fallback; no identity reset may replenish a cap.\nUse a qualified maintained gateway/runner, not a new generic budget platform.\nClaude's resumed-session CLI budget and hosted Auto Review alone do not suffice.\n\nKeep trusted policy/config outside candidate control, a separate narrow publisher,\nno broker/acquisition secrets, immutable task/head/usage receipts and mandatory\nfresh CI/review after changes. **Humans still approve** protected-branch merges,\nscientific amendments/source admission/promotion, purchases/budget changes,\ncredentials/connectors, deployments and every Paper/live transition. Permission\nclassifiers, lead-agent plan approval, skills and passing tests cannot grant these\nauthorities. This audit changes none of those controls.",
+    "current_result": "NOT_MET",
+    "current_real_provider_state": "PAUSED_BUDGET",
+    "window_calendar_days": 14,
+    "manual_interventions_min": 4,
+    "avoidable_owner_minutes_min_per_week": 90,
+    "qualifying_jobs_min_per_week": 8,
+    "qualifying_jobs_min_total": 16,
+    "conservative_benefit_to_total_incremental_cost_min": 3,
+    "owner_time_value_required": true,
+    "speculative_alpha_value_allowed": false,
+    "proposed_pilot_only": {
+      "owner_approval_required": true,
+      "jobs_max": 5,
+      "days_max": 7,
+      "stop_when": "earliest jobs/days/budget/safety limit",
+      "total_usd_max": 10,
+      "per_job_usd_max": 2,
+      "per_day_usd_max": 5,
+      "combined_monthly_usd_max": 50,
+      "not_configured_or_authorized": true
+    },
+    "repair_cycles_max_across_resumes": 2,
+    "provider_calls_max_per_issue": 6,
+    "concurrency": {
+      "implementer": 1,
+      "reviewer": 1
+    },
+    "required_controls": [
+      "trusted-base policy/config",
+      "exact head CI and independent review",
+      "least-privilege separated publisher",
+      "no broker/acquisition credentials",
+      "durable pre-call reservation across every route, retry and resume",
+      "exact model/pricing and per-call token/tool/time ceilings",
+      "no auto top-up or unrestricted fallback",
+      "fail closed on unknown spend or unavailable enforcement"
+    ],
+    "human_gates": [
+      "protected branch merges",
+      "scientific amendments/source admission/promotion",
+      "purchases/budget changes",
+      "credentials/connectors",
+      "deployments",
+      "Paper/live transitions"
+    ],
+    "manual_interventions_scope": "total across the fourteen-calendar-day observation window"
+  },
+  "multi_agent_conclusion": {
+    "axes": [
+      "development/research orchestration",
+      "scientific trading validity",
+      "evidence of actual net trading edge"
+    ],
+    "systems": [
+      "Current Codex plus independent review",
+      "Grok Bot / Grok Build",
+      "Claude Code",
+      "TradingAgents",
+      "RD-Agent"
+    ],
+    "extra_agents_establish_alpha": false,
+    "no_qualified_incremental_project_alpha_in_this_audit": true,
+    "lean_retained_reason": "New orchestrators do not replace simulation/accounting/OMS/broker engine; LEAN still subject to terminal/fill/rights/cost qualification.",
+    "paid_activation_authorized": false
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-18T08:04:37.526705+00:00",
+  "clean_remote_parent": "4dd7703f429df01a6f7e67912294ec26e93b4ad0",
+  "branch": "docs/long-term-build-vs-adopt-20261018",
+  "existing_pr": 10,
+  "old_branch_ancestry": {
+    "ad45afbf9aa1de402926b0a84da3e914faae5bd1": false,
+    "e4a2cd4db7386bd83164a54f8ee740a4a8c81bd1": false
+  },
+  "suite": {
+    "command": "python -m unittest discover -s tests -v",
+    "cwd": "trading_agent_starter",
+    "python": "Python 3.13.5",
+    "platform": "Linux",
+    "tests": 240,
+    "seconds": 9.703,
+    "result": "PASS",
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "log_path": "/workspace/audit-upstreams/issue9-delta-20261018/core/tests.log",
+    "log_sha256": "9c1e6fc4e2a05d3f6b73b64d7c915bfa10c0343902aa9aaed7d214bef234ad36"
+  },
+  "registration_verification": {
+    "004": {
+      "status": "REGISTRATION_VERIFIED",
+      "registration_sha256": "c4dfc00f202ef93a3b87cfb8928f75c4a7e152db6a3253260187bdb9b0173409",
+      "real_candidates_screened": 0,
+      "cohort_constructed": false
+    },
+    "005": {
+      "registration_sha256": "26eeca3bc843f0de0dab53b61fa2008773e1616d888bb165111fabe8a2c38cc5",
+      "verified": true
+    }
+  },
+  "synthetic_demo": {
+    "command": "python -m agent demo --output <outside-Git-directory>",
+    "bars": 300,
+    "orders": 0,
+    "trained_or_promoted": false,
+    "engineering_regression_only": true,
+    "log_sha256": "ecb29edcec602f29e4c16d993530f9dcb41e03a6a4272df23324f49547d96416"
+  },
+  "source_integrity": {
+    "original_indexed_files_reverified": 604,
+    "original_archive_hash_verified": true,
+    "delta_hashed_captures_verified": {
+      "grok": 59,
+      "claude": 241,
+      "codex": 5
+    },
+    "delta_exact_quotations_verified": {
+      "claude": 46,
+      "grok": 48,
+      "codex_derived": 7
+    },
+    "delta_archive_hash_and_indexed_bodies_verified": true,
+    "integrity_not_source_or_runtime_qualification": true
+  },
+  "preserved_original_artifact_sha256": {
+    "audit/20261018/ai_sources.json": "b7a4a72a755b1a92665cffbbbc8e3852a8031b3246c821275c470362cef0d93b",
+    "audit/20261018/core_sources.json": "5d5d8cb82255c9336ad2ed3b36f84c6182b41261b209b81d0baa7d7a38a95c96",
+    "audit/20261018/critical_excerpts.json": "273ee425bc0790d1953df59ebde48c624e9c05178d4c965d3a68de617a8c244f",
+    "audit/20261018/execution_excerpts.md": "1a1b72e58b6331d7497a0f17d1b7bd74a02729596a96536d0a8083882b0774d2",
+    "audit/20261018/execution_sources.json": "b0376d90d5d2576541619fb8cca272ffacfc5904e0fb94869b88dd86415f537d",
+    "audit/20261018/finrl_sources.json": "4bcb98e81e62ba52fbe8f0a3b75edda01ee75c3b28c6d4eca3eaa756c56eb185",
+    "audit/20261018/metadata_captures.json": "e40bde47859f3f218ba36f8dad1ae77ce5fa3832fe1d7c4e1ee5bfce7b96d108",
+    "audit/20261018/quantrocket_sources.json": "0c407f21ceb7fdb92ab7cc685b59973dcb39eca1d82ddb96fda1b288fd98ceaf",
+    "audit/20261018/raw_retention.json": "3239f01d20b90a84066d22077be46c74020ebd6ed097a168f6a675d2a2454517"
+  },
+  "historical_validation_preserved_sha256": "6379b7789d7a6d95219f75d736e00086208874e248e2d530b44d20ee736e5524",
+  "replaced_artifact_hashes": {
+    "audit/20261018/README.md": {
+      "historical_sha256": "420e43a84b5bb67df4dc5e033cbbd07cf8c305e3d2b6ab1ce5f761546cca67b6",
+      "current_sha256": "41122f958709e941ee0032f9c87c1c7f3d09c6546ae566049ad81d537a686071"
+    },
+    "audit/20261018/decisions.json": {
+      "historical_sha256": "5c01be848d12bf4f98d7a49e3f3cd4009475816f2f8c8434b66d635d531cdd85",
+      "current_sha256": "2c1dcd5540917ce911f77c0771035f267246d39ea17df0d332231aee2d660a26"
+    },
+    "LONG_TERM_BUILD_VS_ADOPT_20261018.md": {
+      "historical_sha256": "3fcfe1f73244517bf05c0562422a036d6a52203ad4714ef3879436986fa1b0ae",
+      "current_sha256": "1880bd1a80940ed0baf6269ffb9d71ed8668764ede419f1a00db9cc4dd160769"
+    }
+  },
+  "checks": {
+    "git_diff_check": "PASS",
+    "report_and_decision_output_consistency": "PASS",
+    "three_tasks_and_required_fields": "PASS",
+    "audit_local_links": "PASS",
+    "modified_paths_limited_to_audit": true,
+    "all_code_policy_science_workflows_unchanged_from_clean_base": true
+  },
+  "independent_model_review": {
+    "state": "COMPLETED_ZERO_CONTENT_OR_CONTROL_BLOCKERS",
+    "trusted_policy_commit": "b5b06af7a876ebb4c7fc9ab6f63cbaed9ef2aafe",
+    "reviewed_delta_parent": "4dd7703f429df01a6f7e67912294ec26e93b4ad0",
+    "requested_model_configurations": [
+      {
+        "agent": "issue9_delta_final_review",
+        "model": "gpt-6-astra",
+        "reasoning": "high",
+        "fork_turns": "none",
+        "scope": "Final scientific/content review; 305 source-capture hashes, retained archive, 48 Grok and 46 Claude quotations and Codex derived excerpts; output consistency. Narrow threshold clarity fix subsequently re-reviewed.",
+        "blocking_findings": 0
+      },
+      {
+        "agent": "issue9_delta_controls_review",
+        "model": "gpt-6-sol",
+        "reasoning": "high",
+        "fork_turns": "none",
+        "scope": "Trusted-base controls and all19Issue9criteria; four exact outputs/three tasks; ancestry/file scope; final validation record before review metadata. Did not repeat full upstream research.",
+        "blocking_findings": 0,
+        "reviewed_validation_before_review_metadata_sha256": "45f3ebebba23411f04804a08b13e292ce442913ff2e5e0035ecdf0ddaae41db2"
+      }
+    ],
+    "model_selection_evidence": "Explicit distinct model overrides in accepted collaboration.spawn_agent calls, fresh contexts; no separately billed external model API used.",
+    "resolved_runtime_model_identity": "Not separately exposed by the harness; requested configurations are recorded, not a claim of attested provider/model identity or provider independence.",
+    "reviewed_artifact_sha256": {
+      "LONG_TERM_BUILD_VS_ADOPT_20261018.md": "1880bd1a80940ed0baf6269ffb9d71ed8668764ede419f1a00db9cc4dd160769",
+      "audit/20261018/decisions.json": "2c1dcd5540917ce911f77c0771035f267246d39ea17df0d332231aee2d660a26",
+      "audit/20261018/README.md": "41122f958709e941ee0032f9c87c1c7f3d09c6546ae566049ad81d537a686071",
+      "audit/20261018/delta_issue9/README.md": "4b9264bdc7b218320434e568c5e749e776aae65f18782852f94b93a726b34fc3",
+      "audit/20261018/delta_issue9/coverage.json": "ddc7439e70adc579f135fb5d5d76de383a3fa2db4c004902830ea06af0f2bec1"
+    },
+    "reviewer_reran_tests": false,
+    "reviewer_read_all_original604sources": false,
+    "not_human_merge_approval_or_scientific_source_admission": true
+  },
+  "unrun": [
+    "New-head hosted Ubuntu/Windows CI until publication",
+    "Upstream install/build/runtime or service benchmark",
+    "Account/credit/Enterprise entitlement validation",
+    "Alpha experiments",
+    "Paper/live trading"
+  ],
+  "external_actions": {
+    "purchases": 0,
+    "subscriptions": 0,
+    "paid_provider_model_api_calls": 0,
+    "market_data_calls": 0,
+    "broker_calls": 0,
+    "Massive_calls": 0,
+    "provider_contact": 0,
+    "framework_installs": 0,
+    "new_prs": 0
+  },
+  "artifact_sha256": {
+    "audit/20261018/delta_issue9/README.md": "4b9264bdc7b218320434e568c5e749e776aae65f18782852f94b93a726b34fc3",
+    "audit/20261018/delta_issue9/claude_quotes.json": "5bf01849edb447790f4ab70e84678b06b0b764cd47afb06679301090fa5f6e58",
+    "audit/20261018/delta_issue9/claude_refs.json": "2cdc37405e831715d3fa6456cc42a302f33483cc52c8c045d32fd01be0e30517",
+    "audit/20261018/delta_issue9/claude_sources.json": "ae1e308afb62ee7c395a622adddd4d8684f259f1b932b7701fbd441fda77aa2e",
+    "audit/20261018/delta_issue9/codex_comparison_quotes.json": "70417eb8f701fbdac6d67a1e2b29528e93b2798b65f20b5c1ffd57ef51bbbc44",
+    "audit/20261018/delta_issue9/codex_comparison_sources.json": "bb25f41c732a9b93921a7018dbcd4912a59d46f689f88aa89124ef32cbf09516",
+    "audit/20261018/delta_issue9/coverage.json": "ddc7439e70adc579f135fb5d5d76de383a3fa2db4c004902830ea06af0f2bec1",
+    "audit/20261018/delta_issue9/grok_quotes.md": "4144da965f18ef76086135f543d67e9bfd28ef88e19c40eb789e139197b54184",
+    "audit/20261018/delta_issue9/grok_sources.json": "43c4e1e39ed02802f1ad86720785dbc0b2e878d2b3c1d7b78de30944eae74f78",
+    "audit/20261018/delta_issue9/issue_snapshot.json": "00830ce80af1f8026f73e975c9333e3d4dd9e40bd288740afdbd6f0885c5ab9a",
+    "audit/20261018/delta_issue9/pr_snapshot_before_delta.json": "b34259f17939b255273dca79d23d67393cc3e6ff2df01f458ee94547562dd20b",
+    "audit/20261018/delta_issue9/raw_retention.json": "7381f2c65492ede38bc4bac88a8e61501410b4855f876626b8a7444832211f89"
+  }
+}

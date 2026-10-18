@@ -1,0 +1,82 @@
+[
+  {
+    "url": "https://developers.openai.com/codex/automations/",
+    "retrieved_at_utc": "2026-10-18T07:51:20.708428+00:00",
+    "status": 200,
+    "local_path": "/workspace/audit-upstreams/issue9-delta-20261018/core/f14c28030445abad.html",
+    "bytes": 476108,
+    "sha256": "71133bd984dcd38ea280db35696ce5f2eb501a21637c4862bf7197b7071cc7ca",
+    "id": "C01",
+    "archive_path": "core/f14c28030445abad.html",
+    "derived_main_text": {
+      "archive_path": "core/f14c28030445abad.main.txt",
+      "sha256": "b0a39ee318941858c1944bb7ce721fd27687545e3704dd4053a48ce5956d241b",
+      "transformation": "HTML main element text; whitespace normalized; not source bytes"
+    },
+    "claim_scope": "Narrow current Codex orchestration/pricing comparison only."
+  },
+  {
+    "url": "https://developers.openai.com/codex/cloud/",
+    "retrieved_at_utc": "2026-10-18T07:51:20.708944+00:00",
+    "status": 200,
+    "local_path": "/workspace/audit-upstreams/issue9-delta-20261018/core/c3f83e466662a312.html",
+    "bytes": 397546,
+    "sha256": "5007e63ceaa33cef963e7da8bb35c679167cd56f4b67e6ac2ab8b38eb80f7673",
+    "id": "C02",
+    "archive_path": "core/c3f83e466662a312.html",
+    "derived_main_text": {
+      "archive_path": "core/c3f83e466662a312.main.txt",
+      "sha256": "bf741fa1de68e994ef89afbc0a0987a392af071f614f8006865b53f9d70f540a",
+      "transformation": "HTML main element text; whitespace normalized; not source bytes"
+    },
+    "claim_scope": "Narrow current Codex orchestration/pricing comparison only."
+  },
+  {
+    "url": "https://developers.openai.com/codex/security/",
+    "retrieved_at_utc": "2026-10-18T07:51:20.709494+00:00",
+    "status": 200,
+    "local_path": "/workspace/audit-upstreams/issue9-delta-20261018/core/af17d91789a83ae1.html",
+    "bytes": 362721,
+    "sha256": "1e67ce70454377fc0f02ded36f89675547f746fcfdb8d20bb0225f03cae93ad7",
+    "id": "C03",
+    "archive_path": "core/af17d91789a83ae1.html",
+    "derived_main_text": {
+      "archive_path": "core/af17d91789a83ae1.main.txt",
+      "sha256": "46c87355d676e18f6f0e4125bd4ec0819247362601d74f016a5e104c46607c45",
+      "transformation": "HTML main element text; whitespace normalized; not source bytes"
+    },
+    "claim_scope": "Separate Codex Security product, NOT runtime permission evidence; excluded from orchestration conclusions."
+  },
+  {
+    "url": "https://developers.openai.com/codex/github-action/",
+    "retrieved_at_utc": "2026-10-18T07:51:20.711805+00:00",
+    "status": 200,
+    "local_path": "/workspace/audit-upstreams/issue9-delta-20261018/core/4a0a43c64f26049e.html",
+    "bytes": 375823,
+    "sha256": "98adac813ea51396e62792f9cb7c0b02b31c7a4d67782473956290f917d641fb",
+    "id": "C04",
+    "archive_path": "core/4a0a43c64f26049e.html",
+    "derived_main_text": {
+      "archive_path": "core/4a0a43c64f26049e.main.txt",
+      "sha256": "1fa220205477bab872523873b0dc7d65428cba10c9ea952250fd06bd4eacc41e",
+      "transformation": "HTML main element text; whitespace normalized; not source bytes"
+    },
+    "claim_scope": "Narrow current Codex orchestration/pricing comparison only."
+  },
+  {
+    "url": "https://developers.openai.com/codex/pricing/",
+    "retrieved_at_utc": "2026-10-18T07:51:20.712537+00:00",
+    "status": 200,
+    "local_path": "/workspace/audit-upstreams/issue9-delta-20261018/core/7905bc1071987805.html",
+    "bytes": 707379,
+    "sha256": "39049aa6ece0fe7a228faeaa4bde0ff6f894eef2e585fbe092d4d9f5518c1558",
+    "id": "C05",
+    "archive_path": "core/7905bc1071987805.html",
+    "derived_main_text": {
+      "archive_path": "core/7905bc1071987805.main.txt",
+      "sha256": "b0b975276dd735912a2f7716cd1db7281c29979ec5741e740363272a32be6861",
+      "transformation": "HTML main element text; whitespace normalized; not source bytes"
+    },
+    "claim_scope": "Narrow current Codex orchestration/pricing comparison only."
+  }
+]
