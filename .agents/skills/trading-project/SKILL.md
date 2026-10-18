@@ -5,7 +5,7 @@ description: Use when planning, implementing, researching, reviewing, or resumin
 
 # Trading project operating doctrine
 
-Version **1.1.0 — 2026-10-18**, Asia/Jerusalem.
+Version **1.2.0 — 2026-10-18**, Asia/Jerusalem.
 
 ## Read this first
 
