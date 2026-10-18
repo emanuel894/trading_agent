@@ -1,0 +1,67 @@
+{
+  "recorded_utc": "2026-10-18T23:22:36.920967+00:00",
+  "python": "3.13.5",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "command": "/workspace/audit-upstreams/test-venv313/bin/python -m unittest discover -s tests -v",
+      "result": "240 passed;0 failures/errors/skips",
+      "log": "evidence/repository-tests.log"
+    },
+    {
+      "command": "/workspace/audit-upstreams/test-venv313/bin/python -m agent demo",
+      "result": "300 bars;0 orders;no model trained/promoted",
+      "log": "evidence/demo.log"
+    },
+    {
+      "command": "python3.13 -m unittest discover -s research/lean_identity_time_019 -p test_comparator.py -v",
+      "result": "3 tests passed;14 business plus8 native mutations rejected",
+      "log": "evidence/native-comparator-green.log"
+    },
+    {
+      "command": "python3.13 -m unittest discover -s research/lean_terminal_017 -p test_comparator.py -v",
+      "result": "12 passed",
+      "log": "evidence/terminal-comparator.log"
+    }
+  ],
+  "protected_scope_check": "PASS: git diff against base and all untracked files confined to issue19 packet",
+  "source_postrun_unchanged": true,
+  "source_files_manifest_sha256": "f7bc9af7e0301ce270dc528c3ea3edb7dd32017103a677d27a8cf286bc58916a",
+  "config_sha256": {
+    "source/Data/market-hours/market-hours-database.json": "f44effe21e7937a76a426bdb6a0de427b6440160b811b33bb6ed28c0f04ea1f0",
+    "source/Data/symbol-properties/symbol-properties-database.csv": "53072f5a5ac4ff1b0d6f14a28fb93c43b633c0713635539fda0c2695089e236a"
+  },
+  "code_sha256": {
+    "host/Program.cs": "28b00ff69402ce81ec710a26b7a252bc7b80d4c20dbcb9a27773b98f3fe76da8",
+    "host/LeanIdentity.csproj": "6a931a5c6ddfa15d1859b47cd4ab66c6840df90d75515da48b7a646ef373e68e",
+    "compare.py": "73dbfd4bbc799701cfb557f0a0ad627b987f12d60ce25ec0e8445913bd2d048c",
+    "run_gate.py": "c4ee8df086feb5a1ff6de2717b44b3af649185f86b9be1473676ad8ef94aed50"
+  },
+  "host_runtime_manifest_verified": true,
+  "hosted_ci": "Pending; final exact-head outcomes must be taken from draft PR/native GitHub checks. No future-head attestation in this self-referencing artifact.",
+  "log_sha256": {
+    "evidence/Q04_before.attempt001.json.log": "c0e4b4a855c14df9b49adb70f89bc9dfdf6144ab9d1f0382209efc5f7a1cfc0c",
+    "evidence/native-comparator-red.log": "9b4f806df6847ddcd5aa824d20d1130c01ea23d86d282fbf0c52bc0d187f8e0b",
+    "evidence/comparator-green.log": "a54cea02cc7e0f8e1175173a745c7312f4939c57036313ba196302496bd0a76f",
+    "evidence/Q04_before.attempt007.json.log": "e33f05566e434cd5763af096e6f29a732b523c9f4bbab5d99a3407878b1b4897",
+    "evidence/Q04_before.attempt005.json.log": "e14d8579b61ce158c77032777d2a7146a71c633fca8c2f35bc4243495ecd2210",
+    "evidence/Q04_before.attempt006.json.log": "9b19ff0454eede7cc4ab2425730454844ea39d13b51bfa65154ead0a3f974d71",
+    "evidence/Q04_before.attempt003.json.log": "37057e3ee4503a3fbca479621286761a66ac2748be6e0ef7e94169cbd8702b09",
+    "evidence/comparator-red.log": "9ae67d2e6feee83f6cb89edfdb09cdf5e6698f38318bf7b13dff472697f30b31",
+    "evidence/Q04_before.attempt004.json.log": "9571e0b560eb3b954c4952cce7b88d7ded2b94909f5de8fe760a98e9c1163309",
+    "evidence/Q04_after.attempt011.json.log": "5e2fa6c8fa2eed7754a3a939fb0b60be6a6e8d86305e069f982609965cfde03b",
+    "evidence/demo.log": "c09eba5c6fb39c2be11dc3b797f26ca3026fbcb6659e0efc7223dbdb528799a7",
+    "evidence/native-comparator-green.log": "21248e9306a4a603f44ded418ac99c6ef097008e86b9d7754402bdc371a232fe",
+    "evidence/Q04_missing.attempt012.json.log": "86912cafd1a95fb149127f760264185450484a62b033fce7f8f19d967f9492ca",
+    "evidence/Q04_before.attempt002.json.log": "7a390807ca142277a3b85ed4ce7b2a410928c8de228635b0c126fe89d0ec8083",
+    "evidence/Q04_after.attempt010.json.log": "0814af1b60833fc720c89dc9aa72621502f6f3a1ba8d0708d0a1bd90c84e6826",
+    "evidence/repository-tests.log": "82175e0259f3b43e9ea363349ca8d645df71042b35273f48fb2b9de209bb2472",
+    "evidence/Q04_at.attempt008.json.log": "79ce24bdfe9fca1cae32cf2d160496e45a660c82cbd2102773b763656e3e909b",
+    "evidence/terminal-comparator.log": "3f7c9b2bae1c044e6f4ce3929f7367c528df6a2259c495a18cf523dc01cd1887",
+    "evidence/Q04_at.attempt009.json.log": "c4940c736998dd9093c40ffb5a3127eb72d85fb704c998044b6d05994028d97e"
+  },
+  "final_comparator_logs_sha256": {
+    "evidence/native-comparator-final.log": "21248e9306a4a603f44ded418ac99c6ef097008e86b9d7754402bdc371a232fe",
+    "evidence/terminal-comparator-final.log": "fd069935f88e39ce409c846c2c54390d6955bc79d36866dc6ae5ee09b094e078"
+  }
+}
