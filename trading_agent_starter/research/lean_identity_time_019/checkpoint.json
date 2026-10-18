@@ -3,7 +3,7 @@
   "branch": "research/issue-19-lean-identity-time-spike",
   "base_sha": "67317e573624529e247d98a4964f946421b571e7",
   "source_pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
-  "phase": "57 variants frozen; host built; pre-runtime checkpoint",
+  "phase": "Stopped after attempt02 native seed precondition; diagnosed initial universe subscription frame",
   "allowed_fixtures": [
     "Q04",
     "Q05",
@@ -38,10 +38,15 @@
   "usage": {
     "paid_calls": 0,
     "purchases": 0,
-    "fixture_processes": 0,
-    "repair_cycles": 0
+    "fixture_processes": 1,
+    "repair_cycles": 2,
+    "launches": 2
   },
   "pending_side_effects": [],
-  "next_action": "Run Q04_before then subsequent frozen Q04-Q11 variants in order with stop-on-divergence; preserve all attempts.",
-  "updated_utc": "2026-10-18T23:02:53.352162+00:00"
+  "next_action": "Rebuild with predecision-only seed wait; oracles unchanged. Run Q04_before only; stop on any contract blocker or unresolved technical divergence.",
+  "updated_utc": "2026-10-18T23:02:53.352162+00:00",
+  "failed_attempts": [
+    "01: parent workspace mode0700 prevented unprivileged DLL access; no host execution.",
+    "02: initial native user-universe slice creates subscriptions before seed OnData; no fixture decision executed."
+  ]
 }

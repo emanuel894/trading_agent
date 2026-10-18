@@ -170,7 +170,10 @@ public sealed class IdentityAlgorithm:QCAlgorithm
     }
     public void Step(long dispatch)
     {
-        if(!seeded)throw new InvalidOperationException("Native seed not consumed");
+        // The initial user-universe slice creates subscriptions; its seed arrives on
+        // the next native slice. No contract decision may precede that seed.
+        if(!seeded && dispatch<Program.Ceiling(Decision))return;
+        if(!seeded)throw new InvalidOperationException("Native seed not consumed at decision");
         if(!decided && dispatch>=Program.Ceiling(Decision))Decide();
         while(pending.Count>0 && Program.Ceiling(Program.Ns(pending[0]["available_ns"]!))<=dispatch)
         {

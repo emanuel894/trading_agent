@@ -1,0 +1,149 @@
+[
+  {
+    "case_id": "Q04_before",
+    "repeat": 1,
+    "attempt": 1,
+    "output": "Q04_before.attempt001.json",
+    "binding": {
+      "build_manifest_sha256": "b12de83464b7c4e44e7100bee692bf1ad79b9443710213180ce83692dcae8769",
+      "fixture_manifest_sha256": "9af93e7fbaf2d3684e7880a846199d75a68bb5b3cb0d88a488cbba5ef10fbef7",
+      "host_source_sha256": "fd0fb31bd2ed106136efd2b52a9bc4d6a7120dd6b95c0353839b3c92ac1d30d3",
+      "image": "mcr.microsoft.com/dotnet/sdk@sha256:0d99ebf1ccad15037b5c98c9fe8979d6b8dbac23812feae2277a0b277b5c5ffa"
+    },
+    "command": [
+      "docker",
+      "--host=unix:///var/run/docker.sock",
+      "run",
+      "--name",
+      "issue19-gate-001",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,nosuid,nodev,size=128m",
+      "--volume",
+      "/workspace/issue-19-lean:/work:ro",
+      "--volume",
+      "/workspace/issue-19-lean/runtime-output:/out",
+      "--workdir",
+      "/work",
+      "--env",
+      "DOTNET_CLI_HOME=/tmp/dotnet",
+      "--env",
+      "DOTNET_CLI_TELEMETRY_OPTOUT=1",
+      "--env",
+      "TRADING_ENABLED=false",
+      "--env",
+      "ALLOW_PAPER_ORDERS=false",
+      "--env",
+      "ALPACA_LIVE_TRADE=false",
+      "mcr.microsoft.com/dotnet/sdk@sha256:0d99ebf1ccad15037b5c98c9fe8979d6b8dbac23812feae2277a0b277b5c5ffa",
+      "dotnet",
+      "/work/host/bin/Release/net10.0/LeanIdentity.dll",
+      "/work/fixtures",
+      "Q04_before",
+      "/out/Q04_before.attempt001.json"
+    ],
+    "started_utc": "2026-10-18T23:11:22.124526+00:00",
+    "verdict": "LEAN_IDENTITY_TIME_GATE_INCOMPLETE",
+    "exit_code": 1,
+    "container_controls": {
+      "NetworkMode": "none",
+      "ReadonlyRootfs": true,
+      "CapDrop": [
+        "ALL"
+      ],
+      "SecurityOpt": [
+        "no-new-privileges"
+      ]
+    },
+    "container_user": "65534:65534",
+    "container_state": {
+      "Status": "exited",
+      "ExitCode": 1,
+      "OOMKilled": false,
+      "Error": ""
+    },
+    "first_divergence": "No native output"
+  },
+  {
+    "case_id": "Q04_before",
+    "repeat": 1,
+    "attempt": 2,
+    "output": "Q04_before.attempt002.json",
+    "binding": {
+      "build_manifest_sha256": "b12de83464b7c4e44e7100bee692bf1ad79b9443710213180ce83692dcae8769",
+      "fixture_manifest_sha256": "9af93e7fbaf2d3684e7880a846199d75a68bb5b3cb0d88a488cbba5ef10fbef7",
+      "host_source_sha256": "fd0fb31bd2ed106136efd2b52a9bc4d6a7120dd6b95c0353839b3c92ac1d30d3",
+      "image": "mcr.microsoft.com/dotnet/sdk@sha256:0d99ebf1ccad15037b5c98c9fe8979d6b8dbac23812feae2277a0b277b5c5ffa"
+    },
+    "command": [
+      "docker",
+      "--host=unix:///var/run/docker.sock",
+      "run",
+      "--name",
+      "issue19-gate-002",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,nosuid,nodev,size=128m",
+      "--volume",
+      "/workspace/issue-19-lean:/work:ro",
+      "--volume",
+      "/workspace/issue-19-lean/runtime-output:/out",
+      "--workdir",
+      "/work",
+      "--env",
+      "DOTNET_CLI_HOME=/tmp/dotnet",
+      "--env",
+      "DOTNET_CLI_TELEMETRY_OPTOUT=1",
+      "--env",
+      "TRADING_ENABLED=false",
+      "--env",
+      "ALLOW_PAPER_ORDERS=false",
+      "--env",
+      "ALPACA_LIVE_TRADE=false",
+      "mcr.microsoft.com/dotnet/sdk@sha256:0d99ebf1ccad15037b5c98c9fe8979d6b8dbac23812feae2277a0b277b5c5ffa",
+      "dotnet",
+      "/work/host/bin/Release/net10.0/LeanIdentity.dll",
+      "/work/fixtures",
+      "Q04_before",
+      "/out/Q04_before.attempt002.json"
+    ],
+    "started_utc": "2026-10-18T23:11:58.414010+00:00",
+    "verdict": "LEAN_IDENTITY_TIME_GATE_INCOMPLETE",
+    "exit_code": 3,
+    "container_controls": {
+      "NetworkMode": "none",
+      "ReadonlyRootfs": true,
+      "CapDrop": [
+        "ALL"
+      ],
+      "SecurityOpt": [
+        "no-new-privileges"
+      ]
+    },
+    "container_user": "65534:65534",
+    "container_state": {
+      "Status": "exited",
+      "ExitCode": 3,
+      "OOMKilled": false,
+      "Error": ""
+    },
+    "output_sha256": "c5950f7429bbef86fe89a3b602c2f432494b12bdb2ce68530327e5fb00b10602",
+    "first_divergence": "Nonzero native exit"
+  }
+]
