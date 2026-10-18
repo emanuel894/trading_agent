@@ -3,7 +3,7 @@
   "branch": "research/issue-19-lean-identity-time-spike",
   "base_sha": "67317e573624529e247d98a4964f946421b571e7",
   "source_pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
-  "phase": "restore pinned runtime; no identity/time fixture run",
+  "phase": "57 variants frozen; host built; pre-runtime checkpoint",
   "allowed_fixtures": [
     "Q04",
     "Q05",
@@ -20,7 +20,12 @@
     "Live foundation head and merged PR18 merge SHA both exactly match expected base.",
     "Mandatory issue19/11/17, design/matrix/terminal evidence, AGENTS/policy/trading skill read.",
     "No pre-existing issue19 branch or PR; mandated branch created from verified base.",
-    "Issue17 ephemeral runtime absent; exact source pin found in existing audit checkout; Docker daemon reachable with network permission."
+    "Issue17 ephemeral runtime absent; exact source pin found in existing audit checkout; Docker daemon reachable with network permission.",
+    "Restored exact existing LEAN source pin; all tracked source bytes verified unchanged.",
+    "Restored dependencies using Issue17 locks and verified all28 raw package archives; built isolated C# host.",
+    "Independent oracle review identified fixture defects; corrected BEFORE any fixture execution.",
+    "57 Q04-Q11 variants frozen with exact business oracles; comparator RED then GREEN.",
+    "Q11 split-accounting cross-reference remains explicitly unrun because Q12 is excluded."
   ],
   "policy_design_sha256": {
     "AGENTS.md": "291514f0c3017fae9534ce9cd64f71928698e0c6e7faaac24989c035b3b0483c",
@@ -37,6 +42,6 @@
     "repair_cycles": 0
   },
   "pending_side_effects": [],
-  "next_action": "Restore SDK/container and locked native dependencies from existing source pin; freeze all Q04-Q11 variants before execution. Never execute Q12-Q33.",
+  "next_action": "Run Q04_before then subsequent frozen Q04-Q11 variants in order with stop-on-divergence; preserve all attempts.",
   "updated_utc": "2026-10-18T23:02:53.352162+00:00"
 }
