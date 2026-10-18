@@ -10,3 +10,7 @@ Ruling: existing user mandate and merged specification authorize this bounded sp
 Ruling: Q11 tests raw normalization/metadata/temporal invariance only; explicit split execution belongs to Q12 and remains unrun. Post-split raw quote is data, never permission to execute Q12.
 
 No identity/time fixture has executed.
+
+Attempt03 retained: predecision seed wait did not fix missing seed at decision. Source comparison with Issue17 establishes root cause: fixture feed omitted the user-universe BaseDataCollection; therefore no equity subscription was created. Restore that existing public ingress branch only. No contract evidence or oracle changed.
+
+Attempt04 reached native completion and retained I1 quantity10/cash10000 but deadline cancellation was absent. Exact root cause: with decision B−1ns, ceiling(deadline+1ns) equals ceiling(deadline), so the strictly-after-deadline pacing frame never ran. Correct only the synthetic final pulse to ceiling(deadline)+100ns. No contract clock/fixture/oracle changed.

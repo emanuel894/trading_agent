@@ -141,7 +141,7 @@ public sealed class IdentityAlgorithm:QCAlgorithm
         pending=((JArray)test["events"]!).Cast<JObject>().OrderBy(x=>Program.Ns(x["available_ns"]!))
             .ThenBy(x=>(int)x["sequence"]!).ThenBy(x=>(string)x["id"]!,StringComparer.Ordinal).ToList();
         // Every source envelope is retained; DateTime is only a ceiling dispatch label.
-        Frames=new[]{Program.Ceiling(Decision-1_000_000_000),Program.Ceiling(Decision),Program.Ceiling(Decision+5_000_000_001)}
+        Frames=new[]{Program.Ceiling(Decision-1_000_000_000),Program.Ceiling(Decision),checked(Program.Ceiling(Decision+5_000_000_000)+100)}
             .Concat(pending.Select(x=>Program.Ceiling(Program.Ns(x["available_ns"]!))))
             .Where(x=>x>=Program.Ceiling(Decision-1_000_000_000)).Distinct().OrderBy(x=>x).ToList();
     }
@@ -326,7 +326,12 @@ public sealed class FixtureFeed:IDataFeed
     public Subscription CreateSubscription(SubscriptionRequest request)
     {
         var points=new List<SubscriptionData>();
-        if(request.Configuration.Symbol==a.Symbols["I1"])
+        if(request.IsUniverseSubscription)
+        {
+            var start=a.UtcTime;
+            points.Add(new SubscriptionData(new BaseDataCollection(start.ConvertFromUtc(TimeZones.NewYork),request.Configuration.Symbol,Array.Empty<BaseData>()),start));
+        }
+        else if(request.Configuration.Symbol==a.Symbols["I1"])
             foreach(var ns in a.Frames)
             {
                 var utc=Program.Time(ns);

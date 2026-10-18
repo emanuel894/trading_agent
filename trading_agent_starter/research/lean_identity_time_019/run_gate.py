@@ -21,12 +21,17 @@ def main(ids):
         assert digest(WORK/'fixtures'/f)==h,f
     build=PACKET/'build/manifest.json'
     build_info=json.loads(build.read_text())
+    assert build_info['host_source_sha256']==digest(PACKET/'host/Program.cs')
+    assert build_info['host_project_sha256']==digest(PACKET/'host/LeanIdentity.csproj')
+    assert build_info['image']==IMAGE
     runtime=WORK/'host/bin/Release/net10.0'
     for f,h in build_info['runtime_files_sha256'].items():assert digest(runtime/f)==h,f
     bundle=json.loads((PACKET/'fixtures/input.json').read_text())
     allowed={x['case_id'] for x in bundle['cases']}
     journal=PACKET/'evidence/attempts.json'
     records=json.loads(journal.read_text()) if journal.exists() else []
+    if any(r['verdict']=='LAUNCH_PENDING' for r in records):
+        raise SystemExit('Reconcile the journaled pending container/output before another launch')
     binding=dict(build_manifest_sha256=digest(build),fixture_manifest_sha256=digest(manifest),
                  host_source_sha256=digest(PACKET/'host/Program.cs'),image=IMAGE)
     for cid in ids:

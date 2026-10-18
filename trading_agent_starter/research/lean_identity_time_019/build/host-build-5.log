@@ -1,0 +1,30 @@
+  QuantConnect.Logging -> /work/source/Logging/bin/Release/QuantConnect.Logging.dll
+  SelectedOptimization 
+  QuantConnect.Compression -> /work/source/Compression/bin/Release/QuantConnect.Compression.dll
+  SelectedOptimization 
+  QuantConnect.Configuration -> /work/source/Configuration/bin/Release/QuantConnect.Configuration.dll
+  SelectedOptimization 
+  QuantConnect -> /work/source/Common/bin/Release/QuantConnect.Common.dll
+  SelectedOptimization 
+  QuantConnect.Indicators -> /work/source/Indicators/bin/Release/QuantConnect.Indicators.dll
+  SelectedOptimization 
+  QuantConnect.Api -> /work/source/Api/bin/Release/QuantConnect.Api.dll
+  SelectedOptimization 
+  QuantConnect.Brokerages -> /work/source/Brokerages/bin/Release/QuantConnect.Brokerages.dll
+  SelectedOptimization 
+  QuantConnect.Algorithm -> /work/source/Algorithm/bin/Release/QuantConnect.Algorithm.dll
+  QuantConnect.Algorithm.Framework -> /work/source/Algorithm.Framework/bin/Release/QuantConnect.Algorithm.Framework.dll
+  QuantConnect.AlgorithmFactory -> /work/source/AlgorithmFactory/bin/Release/QuantConnect.AlgorithmFactory.dll
+  QuantConnect.Algorithm.CSharp -> /work/source/Algorithm.CSharp/bin/Release/QuantConnect.Algorithm.CSharp.dll
+/usr/share/dotnet/sdk/10.0.402/Microsoft.CSharp.CurrentVersion.targets(130,9): warning MSB3884: Could not find rule set file "MinimumRecommendedRules.ruleset". [/work/source/Engine/QuantConnect.Lean.Engine.csproj]
+  QuantConnect.Lean.Engine -> /work/source/Engine/bin/Release/QuantConnect.Lean.Engine.dll
+  SelectedOptimization 
+  LeanIdentity -> /work/host/bin/Release/net10.0/LeanIdentity.dll
+
+Build succeeded.
+
+/usr/share/dotnet/sdk/10.0.402/Microsoft.CSharp.CurrentVersion.targets(130,9): warning MSB3884: Could not find rule set file "MinimumRecommendedRules.ruleset". [/work/source/Engine/QuantConnect.Lean.Engine.csproj]
+    1 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:08.57
