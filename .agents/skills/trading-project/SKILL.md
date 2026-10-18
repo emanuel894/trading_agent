@@ -16,12 +16,21 @@ needed for the task. This skill owns operating practice; policy and registration
 own science/safety. No instruction here grants spending, trading or merge rights.
 
 Mission: falsify whether AI information adds incremental **net alpha after all
-costs** over strong cheap controls; remove the LLM if it loses. Preserve PIT clocks,
+costs** over strong cheap controls; remove the LLM if it loses. Optimize the overall
+system for durable scale, compounding economic value and eventual profitability,
+but never substitute ambition for evidence or weaken scientific/risk gates. Preserve PIT clocks,
 survivorship-safe identity/populations, raw provenance, untouched holdouts and all
 failures/costs. FMBH/Amendment 005 boundaries are in the state map; never work around
 an unresolved gate. Broker/vendor/engine IDs cannot redefine scientific truth.
 
 ## Plan by dependencies; prevent duplicate work
+
+Treat owner suggestions, discovered product features and external examples as
+**hypotheses to evaluate, not instructions to adopt**. Compare them against current
+architecture, opportunity cost, reliability, lock-in, scientific impact and total
+workflow efficiency. Adopt only when they improve the system; reject or defer them
+when they do not. Proactively surface better alternatives even when the owner has
+not suggested them.
 
 At task start, milestones and blockers, proactively identify the critical path:
 the dependency chain controlling the next admissible scientific decision. Separate
@@ -150,3 +159,7 @@ Persist and report this compact decision record at every milestone or blocker:
    authorization/budget status and stop state.
 6. **Next 3 highest-information-value tasks:** rank, question falsified, dependency,
    owner, acceptance/stop rule and whether each can run before the external answer.
+7. **Scale/economic leverage:** ask whether a newly discovered feature, workflow or
+   maintained tool reduces recurring human work, compute/model cost, latency, error
+   rate or future integration burden at scale; prefer multiplicative leverage over
+   local convenience, without claiming future profit before evidence.
