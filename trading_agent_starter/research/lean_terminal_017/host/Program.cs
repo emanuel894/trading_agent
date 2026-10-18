@@ -187,10 +187,12 @@ public sealed class TerminalAlgorithm : QCAlgorithm
         Holding=Securities[Instrument];
         Holding.Holdings.SetHoldings(100m,10m);
         Holding.Holdings.Target=new PortfolioTarget(Instrument,10m);
-        Holding.SetMarketPrice(new Tick(Decision.AddSeconds(-1).ConvertFromUtc(TimeZones.NewYork),Instrument,100m,100m));
+        Holding.SetMarketPrice(new TradeBar(Decision.AddSeconds(-1).ConvertFromUtc(TimeZones.NewYork),Instrument,100m,100m,100m,100m,0m,TimeSpan.Zero));
         Seeded=true;Record("Seed");
         UniverseBranch=string.Join(",",UniverseManager.Values.Where(u=>u.ContainsMember(Instrument)).Select(u=>u.GetType().Name).OrderBy(x=>x,StringComparer.Ordinal));
-        LimitOrder(Instrument,2m,1m,tag:"buy2");LimitOrder(Instrument,-3m,1000m,tag:"sell3");
+        foreach(var ticket in new[]{LimitOrder(Instrument,2m,1m,tag:"buy2"),LimitOrder(Instrument,-3m,1000m,tag:"sell3")})
+            if(ticket.GetMostRecentOrderResponse().IsError)
+                throw new InvalidOperationException("Mandatory fixture order not admitted: "+ticket.GetMostRecentOrderResponse());
     }
     public override void OnDelistings(Delistings delistings)
     {
@@ -280,7 +282,7 @@ public sealed class FixtureFeed : IDataFeed
         }
         else if(request.Configuration.Symbol==algorithm.Instrument)
         {
-            points.Add(new SubscriptionData(new Tick(algorithm.Decision.AddSeconds(-1).ConvertFromUtc(TimeZones.NewYork),algorithm.Instrument,100m,100m),algorithm.Decision.AddSeconds(-1)));
+            points.Add(new SubscriptionData(new TradeBar(algorithm.Decision.AddSeconds(-1).ConvertFromUtc(TimeZones.NewYork),algorithm.Instrument,100m,100m,100m,100m,0m,TimeSpan.Zero),algorithm.Decision.AddSeconds(-1)));
             points.Add(new SubscriptionData(new Delisting(algorithm.Instrument,algorithm.Decision.ConvertFromUtc(TimeZones.NewYork),100m,DelistingType.Warning),algorithm.Decision));
             points.Add(new SubscriptionData(new Delisting(algorithm.Instrument,algorithm.Decision.AddSeconds(60).ConvertFromUtc(TimeZones.NewYork),100m,DelistingType.Delisted),algorithm.Decision.AddSeconds(60)));
         }
