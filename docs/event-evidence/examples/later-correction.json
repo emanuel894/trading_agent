@@ -39,7 +39,7 @@
     },
     "official_publication": {
       "state": "known",
-      "native_value": "2024-09-11",
+      "native_value": "2024-09-12",
       "precision": "day",
       "timezone": null,
       "utc": null,
@@ -203,7 +203,7 @@
       "reference_period": "2024-08",
       "vintage": {
         "state": "known",
-        "native_value": "2024-09-11",
+        "native_value": "2024-09-12",
         "precision": "day",
         "timezone": null,
         "utc": null,
@@ -248,30 +248,6 @@
     "extractor_kind": "none",
     "extractor_version": null,
     "processing_log_ref": "SYNTHETIC"
-  },
-  "availability": {
-    "mode": "catalog_only",
-    "decision_cutoff_utc": null,
-    "admission": "quarantined",
-    "reason_codes": [
-      "SYNTHETIC_ONLY",
-      "RECEIPT_UNKNOWN",
-      "RIGHTS_UNKNOWN"
-    ],
-    "availability_basis_refs": [],
-    "qualification_ref": "SYNTHETIC",
-    "registered_policy_ref": null,
-    "admitted_at": {
-      "state": "unknown",
-      "native_value": null,
-      "precision": "unknown",
-      "timezone": null,
-      "utc": null,
-      "uncertainty_ms": null,
-      "basis": "unavailable",
-      "evidence": [],
-      "reason": "Not present in this synthetic backfill example."
-    }
   },
   "synthetic": true
 }

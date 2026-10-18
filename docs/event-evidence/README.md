@@ -25,8 +25,10 @@ based on `feat/alpaca-paper-foundation` at
 | Verification and resume | [verification](verification.json), [checkpoint](CHECKPOINT.md) |
 
 The contract keeps official release assertions, actual collector observations,
-and hypothetical historical latency assumptions separate. One immutable record
-represents one source document/story version. A release can contain many
+and hypothetical historical latency assumptions separate. One immutable evidence
+record represents one source document/story version; separately identified
+immutable assessments bind its frozen hash to each experiment, arm and cutoff.
+A release can contain many
 observations and revisions; multiple sources can describe the same economic event.
 Common event IDs do not collapse their provenance or clocks.
 

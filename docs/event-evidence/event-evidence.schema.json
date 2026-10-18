@@ -359,9 +359,6 @@
         "processing_log_ref"
       ]
     },
-    "availability": {
-      "$ref": "#/$defs/availability"
-    },
     "synthetic": {
       "type": "boolean"
     }
@@ -381,7 +378,6 @@
     "entity_links",
     "coverage",
     "lineage",
-    "availability",
     "synthetic"
   ],
   "$defs": {
@@ -863,7 +859,7 @@
         "reason"
       ]
     },
-    "availability": {
+    "admissionAssessment": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -918,8 +914,48 @@
             "null"
           ]
         },
-        "admitted_at": {
+        "assessed_at": {
           "$ref": "#/$defs/clock"
+        },
+        "assessment_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "dependency_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "arm_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "experiment_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rights_assessment_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rights_state": {
+          "enum": [
+            "permitted",
+            "unknown",
+            "forbidden"
+          ]
+        },
+        "synthetic": {
+          "type": "boolean"
         }
       },
       "required": [
@@ -930,7 +966,16 @@
         "availability_basis_refs",
         "qualification_ref",
         "registered_policy_ref",
-        "admitted_at"
+        "assessed_at",
+        "assessment_id",
+        "evidence_id",
+        "evidence_manifest_sha256",
+        "dependency_manifest_sha256",
+        "arm_id",
+        "experiment_ref",
+        "rights_assessment_ref",
+        "rights_state",
+        "synthetic"
       ],
       "allOf": [
         {
@@ -959,41 +1004,25 @@
               },
               "availability_basis_refs": {
                 "minItems": 1
+              },
+              "synthetic": {
+                "const": false
+              },
+              "rights_state": {
+                "const": "permitted"
+              },
+              "experiment_ref": {
+                "type": "string",
+                "minLength": 1
               }
             }
           }
         }
-      ]
+      ],
+      "description": "Separate immutable cutoff/arm assessment. Resolve referenced frozen evidence and dependency manifests; never mutate the source envelope. Structural validity is not causal admission authority."
     }
   },
   "allOf": [
-    {
-      "if": {
-        "properties": {
-          "availability": {
-            "properties": {
-              "admission": {
-                "const": "admitted"
-              }
-            }
-          }
-        }
-      },
-      "then": {
-        "properties": {
-          "synthetic": {
-            "const": false
-          },
-          "rights": {
-            "properties": {
-              "state": {
-                "const": "permitted"
-              }
-            }
-          }
-        }
-      }
-    },
     {
       "if": {
         "properties": {

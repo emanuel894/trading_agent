@@ -30,11 +30,20 @@ paid/provider/model calls, secrets, broker actions or ingestion platform.
 - Existing Python 3.13.5/Linux fixture suite: 240 tests, zero failures/errors;
   synthetic 300-bar demo completed, zero broker orders/model training. Logs are
   currently `/tmp/issue12-tests.log` and `/tmp/issue12-demo.log`.
-- Offline schema/source verifier passes: two synthetic examples, 11 rejected
-  counterexamples, 43 source hashes, 24 excerpts, local links and docs-only scope.
-- Next: independent review; fix material findings; replace draft verification
-  record with pinned artifact hashes and retained logs; final check, push, draft
-  PR targeting the base branch, then inspect CI and report exact status.
+- Initial design checkpoint `484659f` pushed to the dedicated remote branch.
+- Independent review at that head found two P2 inconsistencies: embedded
+  cutoff-specific admission in an immutable source envelope, and a synthetic
+  correction carrying the original publication/vintage date. Both are corrected:
+  assessments now have separate IDs/evidence hashes/arm/cutoff dependencies, and
+  v2 publication/vintage stays on the correction date while v1 is unchanged.
+- Final offline verifier passes two evidence examples, two separate assessments,
+  13 rejected counterexamples, evidence reuse across cutoffs/arms, correction-date
+  checks, 43 source hashes, 24 excerpts, local links and docs-only scope.
+- Completed suite/demo/install logs retained in `verification/*.log.gz`; no
+  repeated source capture, design research or full fixture-suite run on resume.
+- Next: reviewer recheck of these limited fixes; replace draft verification
+  record with pinned artifact hashes; final push and draft PR targeting the base,
+  then inspect CI and report exact status.
 
 ## Operational notes
 

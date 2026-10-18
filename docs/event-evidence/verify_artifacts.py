@@ -57,11 +57,33 @@ def main():
     schema = json.loads((ROOT / 'event-evidence.schema.json').read_text())
     Draft202012Validator.check_schema(schema)
     validator = Draft202012Validator(schema, format_checker=FormatChecker())
-    examples = [json.loads(p.read_text()) for p in sorted((ROOT / 'examples').glob('*.json'))]
+    examples = [json.loads((ROOT / 'examples' / name).read_text()) for name in
+                ('date-only-backfill.json', 'later-correction.json')]
     assert len(examples) == 2
     for example in examples:
         validator.validate(example)
-        assert example['synthetic'] and example['availability']['admission'] == 'quarantined'
+        assert example['synthetic'] and 'availability' not in example
+    assessment_validator = Draft202012Validator(
+        {'$schema': schema['$schema'], '$defs': schema['$defs'],
+         '$ref': '#/$defs/admissionAssessment'}, format_checker=FormatChecker())
+    assessments = json.loads((ROOT / 'examples/admission-assessments.json').read_text())
+    assert len(assessments) == 2
+    frozen = {example['evidence_id']: example for example in examples}
+    for assessment in assessments:
+        assessment_validator.validate(assessment)
+        assert assessment['admission'] == 'quarantined' and assessment['synthetic']
+        source = frozen[assessment['evidence_id']]
+        name = 'date-only-backfill.json' if source['record_kind'] == 'original' else 'later-correction.json'
+        assert assessment['evidence_manifest_sha256'] == digest((ROOT / 'examples' / name).read_bytes())
+    # Multiple arm/cutoff assessments reuse one unchanged source envelope.
+    prior_bytes = (ROOT / 'examples/date-only-backfill.json').read_bytes()
+    another = copy.deepcopy(assessments[0])
+    another.update(assessment_id='synthetic:later-cutoff:C', arm_id='C',
+                   decision_cutoff_utc='2024-09-12T12:00:00Z')
+    assessment_validator.validate(another)
+    assert another['evidence_id'] == assessments[0]['evidence_id']
+    assert another['evidence_manifest_sha256'] == digest(prior_bytes)
+    assert (ROOT / 'examples/date-only-backfill.json').read_bytes() == prior_bytes
     original = next(e for e in examples if e['record_kind'] == 'original')
     correction = next(e for e in examples if e['record_kind'] == 'correction')
     assert original['event_id'] == correction['event_id']
@@ -71,6 +93,11 @@ def main():
     assert original['clocks']['official_publication']['utc'] is None
     assert original['facts'][0]['value'] == '100.1'
     assert correction['facts'][0]['value'] == '100.2'
+    assert original['clocks']['official_publication']['native_value'] == '2024-09-11'
+    assert original['facts'][0]['vintage']['native_value'] == '2024-09-11'
+    assert correction['clocks']['official_publication']['native_value'] == '2024-09-12'
+    assert correction['facts'][0]['vintage']['native_value'] == '2024-09-12'
+    assert correction['clocks']['source_revision']['native_value'] == '2024-09-12'
 
     counterexamples = []
     def reject(label, change, base=original):
@@ -88,10 +115,19 @@ def main():
     reject('raw evidence cannot be declared mutable', lambda x: x['raw'][0].update(immutable=False))
     reject('unrecognized clock field rejected', lambda x: x['clocks'].update(known_at='2024-09-11'))
     reject('correction requires target linkage', lambda x: x.update(relations=[]), correction)
-    reject('catalog-only cannot admit predictive evidence', lambda x: x['availability'].update(admission='admitted'))
-    def invented_admission(x):
-        x['availability'].update(mode='historical_publication_proxy', admission='admitted', decision_cutoff_utc='2024-09-12T12:00:00Z', availability_basis_refs=['invented'], registered_policy_ref='invented')
-    reject('synthetic and rights-unknown evidence cannot be admitted', invented_admission)
+    reject('cutoff-specific admission cannot be embedded in source envelope', lambda x: x.update(availability=assessments[0]))
+    for label, mutate in [
+        ('catalog-only cannot admit predictive evidence', lambda x: x.update(admission='admitted')),
+        ('synthetic and rights-unknown assessment cannot admit evidence', lambda x: x.update(
+            mode='historical_publication_proxy', admission='admitted',
+            decision_cutoff_utc='2024-09-12T12:00:00Z', availability_basis_refs=['invented'],
+            registered_policy_ref='invented', experiment_ref='invented')),
+        ('assessment must bind frozen evidence hash', lambda x: x.pop('evidence_manifest_sha256')),
+    ]:
+        value = copy.deepcopy(assessments[0])
+        mutate(value)
+        assert list(assessment_validator.iter_errors(value)), label
+        counterexamples.append(label)
 
     captures = json.loads((ROOT / 'sources/captures.json').read_text())
     assert len({r['id'] for r in captures}) == len(captures)
@@ -133,6 +169,9 @@ def main():
     assert changed and all(p.startswith('docs/event-evidence/') for p in changed), changed
     result = {
         'schema_meta_validation': 'PASS', 'valid_synthetic_examples': len(examples),
+        'valid_separate_assessments': len(assessments),
+        'reusable_evidence_across_arm_cutoff_assessments': True,
+        'correction_publication_and_vintage_not_backdated': True,
         'schema_counterexamples_rejected': counterexamples,
         'source_captures_hash_verified': len(captures), 'source_excerpts_verified': len(claims),
         'source_http_failures_preserved': failures, 'local_markdown_links_verified': links,

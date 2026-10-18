@@ -21,6 +21,23 @@ each changed raw payload still gets a new internal evidence version. The full
 content manifest is separately hashed at freeze time; do not require a hash to
 contain itself. A hash proves byte identity, not historical availability.
 
+The envelope is a frozen evidence snapshot. Its captured clocks, parsed facts,
+rights snapshot, relations and entity links are immutable. Later parsing,
+qualification or linkage adds a separately identified derived assertion/manifest
+referencing the same source `evidence_id` and hashes; it does not invent a new
+source publication or overwrite the earlier snapshot. Source-version identity
+and derived-processing/assessment identity are separate.
+
+Cutoff-specific results use a separate immutable `admissionAssessment` (defined
+in the schema's `$defs`), with assessment ID, source evidence ID and frozen
+envelope hash, dependency-manifest hash, experiment/policy and arm ID, mode,
+cutoff, disposition, reason codes and actual assessment clock. Its rights
+assessment and source references must resolve to the selected frozen inputs;
+copied status fields alone are not proof. Many assessments can reference one
+unchanged evidence envelope: quarantine at one cutoff need not prevent admission
+at a later cutoff, and a late C does not change A's assessment. Each revision of
+an assessment receives a new assessment ID, never an overwritten result.
+
 One release may have multiple `facts`, each with measure/series ID, decimal string
 or text/missing marker, units, frequency, seasonal adjustment, reference period,
 vintage, source span and role. Keep `prior_as_printed` (possibly revised in this
@@ -125,8 +142,11 @@ For a cutoff `t`, the future admission process must:
   use the later bound; a suspected embargo leak cannot be silently admitted.
   Use a conservative upper bound from native precision and clock uncertainty.
   In historical proxy mode use only the registered publication/latency scenario
-  and original-version evidence; actual later retrieval/processing stays later
-  and is not misrepresented as a historical observation.
+  and original-version evidence. For updates/corrections, include applicable
+  source-revision and relation-availability bounds; an inherited story creation
+  date cannot make revised text or facts available earlier. Actual later
+  retrieval/processing stays later and is not misrepresented as a historical
+  observation.
 - Require every input dependency, including a prior release, consensus snapshot,
   deduplication rule, entity/exposure link and preprocessing fit, to be admissible
   as of `t`. Equal coarse timestamps do not prove ordering: require complete
@@ -147,9 +167,10 @@ For a cutoff `t`, the future admission process must:
   arrivals. Unknown completeness is explicit. A calendar cancellation is a new
   evidenced event; a failed poll or empty query is not evidence of no event.
 
-All current examples are synthetic and quarantined. Schema validation alone
-does not implement these causal checks. Each actual admission must reference its
-reviewed qualification record and separate registered experiment policy.
+All current examples are synthetic; their separate illustrative assessments are
+quarantined. Schema validation alone does not implement these causal checks.
+Each actual assessment must resolve its reviewed qualification/rights records,
+frozen evidence/dependency manifests and separate registered experiment policy.
 
 ## Version history
 
