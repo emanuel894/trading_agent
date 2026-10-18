@@ -27,7 +27,7 @@
         "intent_id": "buy2",
         "quantity": "2",
         "limit_price": "1",
-        "reserved_cash": "2",
+        "reserved_cash": "3",
         "reserved_shares": "0"
       },
       {

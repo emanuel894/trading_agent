@@ -19,11 +19,16 @@
     "Q02_user_defined_zero.expected.json": "e10aec0c5a55c4df43bfb25c231848e15fd3fc7dfedfeff71a6387e5ade05861",
     "Q03_explicit_negative.expected.json": "f7858a68df22968e333a4bdb6361e4f2dd7fb7646148eb38f933460bbaebe394",
     "Q03_user_defined_negative.expected.json": "1f214b9e582a0dba908be41d063f4cd95ff23ae3f99090476424c1147b8d33cd",
-    "input.json": "6d6e7847d398a7adf3b7e897a68dc38be501efef15c775971c1d5157f99fc832"
+    "input.json": "f877f48e57a9581d1350a00f94b4ae7ae9a1619b24ac57662826b0c365a5f18a"
   },
   "pre_execution_preparation_revision": {
     "previous_manifest_sha256": "f72f5d7fa1cf42c10b7a237bf658993f5c3bcdb06b5339a32044dda331b2baf2",
     "reason": "Make the duplicated and conflicting settlement source payloads explicit as frozen input bytes before first fixture run; no oracle changes.",
     "recorded_utc": "2026-10-18T14:28:25.667926+00:00"
+  },
+  "pre_execution_reservation_preparation": {
+    "previous_manifest_sha256": "4bbe6a8611f31c16ec391e5ac56521f587ba81280387c3b1b32620440a3715ce",
+    "recorded_utc": "2026-10-18T14:33:26.401984+00:00",
+    "reason": "Before any execution, frozen buy limit1 x2 reserves3 including shared maximum fee1; exact fixture definitions tightened, no expected-output alteration."
   }
 }

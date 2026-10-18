@@ -65,6 +65,7 @@ public static class Program
             Config.Set("log-handler","QuantConnect.Logging.ConsoleLogHandler");
             Config.Set("composer-dll-directory","/work/host/bin/Release/net10.0");
             var algorithm=new TerminalAlgorithm((JObject)input["shared"]!,test);
+            output["events"]=algorithm.Events; output["snapshots"]=algorithm.Snapshots;
             var hours=MarketHoursDatabase.FromDataFolder();
             var permissions=new DataPermissionManager();
             var service=new SecurityService(algorithm.Portfolio.CashBook,hours,SymbolPropertiesDatabase.FromDataFolder(),algorithm,
@@ -81,12 +82,12 @@ public static class Program
             var transaction=new BacktestingTransactionHandler();
             algorithm.Transactions.SetOrderProcessor(transaction);
             transaction.Initialize(algorithm,brokerage,results);
+            var manager=new AlgorithmManager(false,job);
             var realtime=new BacktestingRealTimeHandler();
-            realtime.Setup(algorithm,job,results,null,null);
+            realtime.Setup(algorithm,job,results,null,manager.TimeLimit);
             algorithm.Schedule.SetEventSchedule(realtime);
             algorithm.SetStatus(AlgorithmStatus.Running); algorithm.SetLocked();
             var stream=new FixtureStream(algorithm,dataManager,universeSelection);
-            var manager=new AlgorithmManager(false,job);
             try
             {
                 manager.Run(job,algorithm,stream,transaction,results,realtime,new LocalLeanManager(),new CancellationTokenSource(),new PerformanceTrackingTool());
@@ -97,6 +98,7 @@ public static class Program
                 output["native_order_events"]=JArray.FromObject(transaction.OrderEvents.Select(x=>new{order_id=x.OrderId,status=x.Status.ToString(),fill_quantity=Decimal(x.FillQuantity),fill_price=Decimal(x.FillPrice),fee=Decimal(x.OrderFee.Value.Amount),message=x.Message}));
                 output["universe_branch"]=algorithm.UniverseBranch;
                 output["conflict_blocked"]=algorithm.ConflictBlocked;
+                output["blocker"]=algorithm.BlockerMessage;
                 output["execution_complete"]=true;
             }
             finally { transaction.Exit(); realtime.Exit(); dataManager.RemoveAllSubscriptions(); }
@@ -148,6 +150,8 @@ public sealed class TerminalAlgorithm : QCAlgorithm
     public string UniverseBranch="";
     public Security Holding;
     public int Settlements;
+    public string BlockerMessage;
+    readonly Dictionary<string,JObject> reservations=new(StringComparer.Ordinal);
     readonly Dictionary<string,string> admitted=new(StringComparer.Ordinal);
     readonly HashSet<int> delivered=new();
     public TerminalAlgorithm(JObject shared,JObject test)
@@ -199,9 +203,18 @@ public sealed class TerminalAlgorithm : QCAlgorithm
     public override void OnOrderEvent(OrderEvent e)
     {
         var order=Transactions.GetOrderById(e.OrderId);
-        if(e.Status==OrderStatus.Filled) Record("TradeFill:"+order.Tag,new JObject{["quantity"]=Program.Decimal(e.FillQuantity),["price"]=Program.Decimal(e.FillPrice),["fee"]=Program.Decimal(e.OrderFee.Value.Amount),["order_id"]=e.OrderId});
-        else if(e.Status==OrderStatus.Submitted) Record("OrderSubmitted:"+order.Tag);
-        else if(e.Status==OrderStatus.Canceled) Record("OrderCanceled:"+order.Tag);
+        if(e.Status==OrderStatus.Filled)
+        {
+            Record("TradeFill:"+order.Tag,new JObject{["quantity"]=Program.Decimal(e.FillQuantity),["price"]=Program.Decimal(e.FillPrice),["fee"]=Program.Decimal(e.OrderFee.Value.Amount),["order_id"]=e.OrderId});
+            if(!Forward) BlockerMessage="Unexpected native trade fill in intercepted terminal configuration";
+        }
+        else if(e.Status==OrderStatus.Submitted)
+        {
+            Record("OrderSubmitted:"+order.Tag);
+            var input=((JArray)Shared["open_orders"]!).Single(x=>(string)x["intent_id"]! == order.Tag);
+            reservations[order.Tag]=(JObject)input.DeepClone();
+        }
+        else if(e.Status==OrderStatus.Canceled) { Record("OrderCanceled:"+order.Tag);reservations.Remove(order.Tag); }
         else if(e.Status==OrderStatus.Invalid) throw new InvalidOperationException("Fixture order invalid: "+e.Message);
     }
     void DeliverRecords(int offset)
@@ -234,13 +247,17 @@ public sealed class TerminalAlgorithm : QCAlgorithm
     }
     public void AfterFrame(DateTime frame)
     {
-        if(frame==Decision.AddSeconds(7201)) DeliverRecords(7201);
+        if(BlockerMessage==null && frame==Decision.AddSeconds(7201)) DeliverRecords(7201);
+        if(!Forward && Terminal && !Resolved && (Holding.Holdings.Quantity!=10m || !Securities.ContainsKey(Instrument)))
+            BlockerMessage="Unresolved holding/exposure disappeared through native removal or cleanup";
+        if(!Forward && Terminal && !Resolved && Portfolio.CashBook["USD"].Amount!=9000m)
+            BlockerMessage="Cash changed without admitted settlement evidence";
         Snapshot(frame.ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ",CultureInfo.InvariantCulture));
     }
     public void Snapshot(string phase)
     {
         var unknown=Terminal&&!Resolved;
-        Snapshots.Add(new JObject{["phase"]=phase,["engine_quantity"]=Holding==null?null:Program.Decimal(Holding.Holdings.Quantity),["engine_security_present"]=Securities.ContainsKey(Instrument),["cash"]=Program.Decimal(Portfolio.CashBook["USD"].Amount),["realized_pnl"]=Resolved?Program.Decimal(Holding.Holdings.Profit):null,["realized_proceeds"]=Resolved?Program.Decimal(((string)Case["mode"]! =="zero" ?0m:375m)):null,["unresolved_claim"]=unknown?new JObject{["instrument_id"]="I1",["quantity"]="10",["status"]="UNKNOWN",["terminal_value"]=null}:null,["denominator"]=1,["failures"]=unknown?1:0,["scientific_nav"]=null,["nav_entry_blocked"]=unknown,["tradable"]=Holding?.IsTradable??false,["open_orders"]=Transactions.GetOpenOrders().Count(),["action_settlements"]=Settlements});
+        Snapshots.Add(new JObject{["phase"]=phase,["engine_quantity"]=Holding==null?null:Program.Decimal(Holding.Holdings.Quantity),["engine_security_present"]=Securities.ContainsKey(Instrument),["cash"]=Program.Decimal(Portfolio.CashBook["USD"].Amount),["realized_pnl"]=Resolved?Program.Decimal(Holding.Holdings.Profit):null,["realized_proceeds"]=Resolved?Program.Decimal(((string)Case["mode"]! =="zero" ?0m:375m)):null,["unresolved_claim"]=unknown?new JObject{["instrument_id"]="I1",["quantity"]="10",["status"]="UNKNOWN",["terminal_value"]=null}:null,["denominator"]=1,["failures"]=unknown?1:0,["scientific_nav"]=null,["nav_entry_blocked"]=unknown,["tradable"]=Holding?.IsTradable??false,["open_orders"]=Transactions.GetOpenOrders().Count(),["action_settlements"]=Settlements,["reserved_cash"]=Program.Decimal(reservations.Values.Sum(x=>decimal.Parse((string)x["reserved_cash"]!,CultureInfo.InvariantCulture))),["reserved_shares"]=Program.Decimal(reservations.Values.Sum(x=>decimal.Parse((string)x["reserved_shares"]!,CultureInfo.InvariantCulture)))});
     }
     public override void OnEndOfAlgorithm(){EndObserved=true;Record("EndOfAlgorithm");Snapshot("end");}
 }
@@ -287,10 +304,13 @@ public sealed class FixtureStream : ISynchronizer
         foreach(var offset in (JArray)algorithm.Shared["frame_offsets_seconds"]!)
         {
             clock.Time=algorithm.Decision.AddSeconds((int)offset);
-            if(!stream.MoveNext())throw new InvalidOperationException("Native synchronizer ended early");
-            yield return stream.Current;
+            do
+            {
+                if(!stream.MoveNext())throw new InvalidOperationException("Native synchronizer ended early");
+                yield return stream.Current;
+            } while(stream.Current.IsTimePulse);
             algorithm.AfterFrame(clock.Time);
-            if(algorithm.ConflictBlocked)yield break;
+            if(algorithm.ConflictBlocked || algorithm.BlockerMessage!=null)yield break;
         }
     }
 }
