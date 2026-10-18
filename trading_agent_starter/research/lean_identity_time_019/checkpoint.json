@@ -1,0 +1,42 @@
+{
+  "issue": 19,
+  "branch": "research/issue-19-lean-identity-time-spike",
+  "base_sha": "67317e573624529e247d98a4964f946421b571e7",
+  "source_pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
+  "phase": "restore pinned runtime; no identity/time fixture run",
+  "allowed_fixtures": [
+    "Q04",
+    "Q05",
+    "Q06",
+    "Q07",
+    "Q08",
+    "Q09",
+    "Q10",
+    "Q11"
+  ],
+  "completed": [
+    "Authenticated connector account emanuel894; repository push permission true.",
+    "Network-enabled git fetch and push --dry-run succeeded.",
+    "Live foundation head and merged PR18 merge SHA both exactly match expected base.",
+    "Mandatory issue19/11/17, design/matrix/terminal evidence, AGENTS/policy/trading skill read.",
+    "No pre-existing issue19 branch or PR; mandated branch created from verified base.",
+    "Issue17 ephemeral runtime absent; exact source pin found in existing audit checkout; Docker daemon reachable with network permission."
+  ],
+  "policy_design_sha256": {
+    "AGENTS.md": "291514f0c3017fae9534ce9cd64f71928698e0c6e7faaac24989c035b3b0483c",
+    "AI_PROJECT_POLICY.md": "69795c12456a1a7228d6936d433a256a829760453361d04b3686c2a2669237ce",
+    ".agents/skills/trading-project/SKILL.md": "ae1069018bdfe1b58284f0425b16abb6bdfeac5e39aac68af9530f77e60c2973",
+    "trading_agent_starter/LEAN_CONTRACT_QUALIFICATION_20261018.md": "9467bde7ef6698decbcf158e5c0d26a57af54283e9f30d2b7a1938beb382e835",
+    "trading_agent_starter/research/lean_qualification_011/FIXTURE_MATRIX.md": "a002fb8d9ae2add7486a196c4d590a47395428f64a24c1a611b159ea8e4ab076",
+    "trading_agent_starter/research/lean_terminal_017/LEAN_TERMINAL_GATE_20261018.md": "f9f654a3e9a1320ec52c3903ce7031470b50514be522d338439b26632a48370d"
+  },
+  "usage": {
+    "paid_calls": 0,
+    "purchases": 0,
+    "fixture_processes": 0,
+    "repair_cycles": 0
+  },
+  "pending_side_effects": [],
+  "next_action": "Restore SDK/container and locked native dependencies from existing source pin; freeze all Q04-Q11 variants before execution. Never execute Q12-Q33.",
+  "updated_utc": "2026-10-18T23:02:53.352162+00:00"
+}
