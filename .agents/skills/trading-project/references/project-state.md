@@ -1,6 +1,6 @@
 # Project state and authoritative source map
 
-Version **1.1.0 — 2026-10-18**, Asia/Jerusalem. Snapshot, not standing authority for
+Version **1.2.0 — 2026-10-18**, Asia/Jerusalem. Snapshot, not standing authority for
 later status claims. Refresh GitHub state on resume; update this map through review
 when facts change, retaining dated evidence. Workflow rules newly consolidated in
 the skill are operating instructions requested by the owner, not research amendments.
@@ -8,8 +8,8 @@ the skill are operating instructions requested by the owner, not research amendm
 ## Repository convention and discovery
 
 Inspected `main` at `ebf676263343fc2049eb7e73cc5e83ab8c307c1f` and active
-`feat/alpaca-paper-foundation` at `17f8742bf6fd64ca5733eb3b90b893d46172a753`
-(after merged PR #10). The active branch has
+`feat/alpaca-paper-foundation` at `ef1a3bace92211f168f2b573bb7db7deffbc8abe`
+(after merged PRs #10, #11, #12 and #13). The active branch has
 root `AGENTS.md` → `AI_PROJECT_POLICY.md`; `CLAUDE.md` and `GEMINI.md` import the
 same policy. No existing repo `SKILL.md` or nested agent instruction was found.
 Keep one scientific policy and this one operating skill; no provider-specific copy.
@@ -92,17 +92,15 @@ duplicate enterprise feeds or default multi-agent trade committee.
 | --- | --- |
 | Databento / [#7](https://github.com/emanuel894/trading_agent/issues/7), merged [#8](https://github.com/emanuel894/trading_agent/pull/8) | `DATABENTO_QUALIFICATION_NEXT`, not qualified. Read [RED review](../../../../trading_agent_starter/SECURITY_MASTER_RED_REVIEW_20261018.md), [decision](../../../../trading_agent_starter/research/structural_source_007_red/decision.json) and [provider request](../../../../trading_agent_starter/research/structural_source_007_red/PROVIDER_REQUEST.md). Repo records request **unsent**, no actual FMBH sample, unverified coverage start/price/free trial. #9/#11 describe waiting for a reply; reconcile owner evidence before asserting sent/replied or sending anything. Seek free static semantics/sample; stop before allocation/authenticated acquisition or purchase. |
 | Stack / [#9](https://github.com/emanuel894/trading_agent/issues/9), merged PR #10 | Complete and merged as `17f8742bf6fd64ca5733eb3b90b893d46172a753`; exact-head CI was green. Reuse its report; do not repeat its framework/security-master audit. |
-| LEAN / [#11](https://github.com/emanuel894/trading_agent/issues/11) | In progress on `research/issue-11-lean-contract-qualification`; two commits/checkpoint are pushed. Design and Q01–Q33 fixture matrix are drafted with provisional `LEAN_QUALIFICATION_READY`; independent review/final validation/draft PR remain. No LEAN fixture has been run. Resume from `trading_agent_starter/research/lean_qualification_011/PROGRESS.md`; do not restart source research. |
-| Events / [#12](https://github.com/emanuel894/trading_agent/issues/12) | In progress on `research/issue-12-event-evidence-contract`; two commits/checkpoint are pushed. All requested design outputs are drafted with proposed `EVENT_SOURCE_QUALIFICATION_NEEDED`; independent review/final artifact hashes/draft PR remain. Resume from `docs/event-evidence/CHECKPOINT.md`; do not restart source capture. |
+| LEAN / [#11](https://github.com/emanuel894/trading_agent/issues/11), merged PR #15 | Design complete and merged as `110490c8f0d03ddc48b808a603bcade4fdbc945b`; status `LEAN_QUALIFICATION_READY` means ready for a bounded synthetic runtime qualification, not engine acceptance. Q01–Q33 are specified; all LEAN runtime fixtures remain unrun. The highest-information next engine step is terminal-first Q01–Q03 with immediate stop on forced fill, lost exposure, invented cash or core-patch requirement. |
+| Events / [#12](https://github.com/emanuel894/trading_agent/issues/12), merged PR #16 | Design complete and merged as `ef1a3bace92211f168f2b573bb7db7deffbc8abe`; status `EVENT_SOURCE_QUALIFICATION_NEEDED`. The portable PIT envelope, source matrix, revision/entity rules and cheap-control proposal are accepted design guidance. No historical event feed is yet qualified: original versions/receipt clocks, completeness, historical exposure links and retention/licensing remain source gates. |
 
-#11 and #12 can proceed independently of a Databento answer and use separate scopes;
-both stop at design. Their current branches were created from the earlier foundation
-head, so each must reconcile with the current foundation head before its final PR/CI
-without restarting completed research. A third worker
-is justified only for a distinct ready source-reply adjudication or integration
-task, never merely waiting or duplicating #9. After #9, the default next-three
-candidate list is source qualification, #11 and #12; rerank against live ownership,
-dependencies and information value. No new work on these tracks is started by this skill.
+#11 and #12 design work is complete; do not reopen or repeat it without new evidence
+or a concrete defect. While Databento/FMBH remains the external research blocker,
+the highest-information independent engineering task is the bounded LEAN Q01–Q03
+terminal-runtime spike. Event-source qualification is a separate future track and
+must not be mistaken for alpha work or broad ingestion implementation. Rerank all
+next work against live GitHub state and the milestone checklist.
 
 ## Automation, costs and CI
 
@@ -128,7 +126,9 @@ confirm real Ubuntu and Windows job conclusions for the exact current head.
 No specific Windows flaky-test root cause is established in this source map.
 An email or one successful rerun cannot establish that a failure is harmless.
 
-The owner's current Codex client exposes Goal mode and Plan mode. Use Plan for risky
-path selection and Goal for long outcome-driven work. No heartbeat control has been
-observed, so do not rely on heartbeat-based automatic resume; durable checkpoints
-remain required when included usage is exhausted.
+The owner's current Codex client exposes Goal mode, Plan mode and scheduling. Use
+Plan for risky path selection, Goal for long outcome-driven work, and one scheduled
+resume shortly after a known quota reset for a checkpointed Goal when that removes
+manual relay. The resume must re-read live state and stop rather than repeat work or
+loop if usage is unavailable. No heartbeat control has been observed; durable Git
+checkpoints remain the source of resume truth.
