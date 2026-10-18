@@ -14,7 +14,16 @@ for cid in case_ids:
   assert hashlib.sha256((work/'host/bin/Release/net10.0'/relative).read_bytes()).hexdigest()==digest,relative
  assert cid in [x['case_id']for x in input['cases']]
  hashes=[]
- for repeat in [1,2]:
+ # Resume only verified successful runs of the same frozen bundle; preserve failed attempts.
+ for prior in records:
+  if prior.get('case_id')!=cid or prior.get('verdict') not in ['PASS','CONTRACT_VIOLATION_DETECTED_AS_REQUIRED']:continue
+  saved=Path(prior['output'])
+  try:
+   comparator.compare_files(saved,packet/'fixtures_v2'/(cid+'.expected.json'))
+   digest=hashlib.sha256(saved.read_bytes()).hexdigest();assert digest==prior['output_sha256']
+   hashes.append(digest)
+  except Exception:continue
+ for repeat in range(len(hashes)+1,3):
   attempt=len(records)+2 # attempt01 was the preserved invalid initial quote-seed run.
   name=f'issue17-terminal-{attempt:02d}';filename=f'{cid}.attempt{attempt:02d}.json';output=work/'runtime-output'/filename;log=work/'evidence'/(filename+'.log')
   cmd=['docker','run','--name',name,'--network','none','--read-only','--cap-drop','ALL','--security-opt','no-new-privileges','--user','65534:65534','--tmpfs','/tmp:rw,nosuid,nodev,size=128m','--volume',str(work)+':/work:ro','--volume',str(work/'runtime-output')+':/out','--workdir','/work','--env','DOTNET_CLI_HOME=/tmp/dotnet','--env','DOTNET_CLI_TELEMETRY_OPTOUT=1','--env','DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1','--env','TRADING_ENABLED=false','--env','ALLOW_PAPER_ORDERS=false','--env','ALPACA_LIVE_TRADE=false',image,'dotnet','/work/host/bin/Release/net10.0/LeanTerminal.dll','/work/fixtures_v2',cid,'/out/'+filename]
@@ -22,7 +31,10 @@ for cid in case_ids:
   with log.open('w')as f:
    try:process=subprocess.run(cmd,stdout=f,stderr=subprocess.STDOUT,timeout=90);record['exit_code']=process.returncode
    except subprocess.TimeoutExpired:record['timeout_seconds']=90;record['exit_code']=124
-  info=json.loads(subprocess.check_output(['docker','inspect',name,'--format','{{json .HostConfig}}'],text=True));record['container_controls']={k:info[k]for k in ['NetworkMode','ReadonlyRootfs','CapDrop','SecurityOpt']}
+  inspect=subprocess.run(['docker','inspect',name,'--format','{{json .HostConfig}}'],text=True,capture_output=True)
+  if inspect.returncode==0:
+   info=json.loads(inspect.stdout);record['container_controls']={k:info[k]for k in ['NetworkMode','ReadonlyRootfs','CapDrop','SecurityOpt']}
+  else:record['container_inspect_unavailable']=inspect.stderr
   status=3
   try:
    assert output.exists(),'No output artifact'
@@ -35,6 +47,7 @@ for cid in case_ids:
   except Exception as e:
    record['verdict']='LEAN_TERMINAL_GATE_INCOMPLETE';record['first_divergence']=repr(e)
   records.append(record);recordfile.write_text(json.dumps(records,indent=2)+'\n')
+  subprocess.run(['docker','rm',name],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
   print(json.dumps({'case':cid,'attempt':attempt,'verdict':record['verdict'],'divergence':record.get('first_divergence')}),flush=True)
   if status:raise SystemExit(status)
  if len(set(hashes))!=1:raise SystemExit('LEAN_TERMINAL_GATE_INCOMPLETE: clean-process canonical hashes differ')

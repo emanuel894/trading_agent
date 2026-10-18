@@ -9,7 +9,7 @@
     "Q03"
   ],
   "status": "LEAN_TERMINAL_GATE_INCOMPLETE",
-  "phase": "v2 strengthened fixtures/source-grounded oracle frozen before new run",
+  "phase": "v2 Q01 user-defined PASS with two byte-identical clean network-none runs",
   "completed": [
     "Read live issue17, merged design, Q01\u2013Q03 definitions and canonical policy/operating skill.",
     "Selected clean current protected base; created mandated branch only.",
@@ -27,9 +27,12 @@
     "Attempt02 retained quantity10/cash9000 and canceled both admitted orders, but authored callback-order oracle diverged. Run stopped; no subsequent case executed.",
     "Fresh independent high-reasoning boundary review requested before deciding whether any source-grounded callback-order correction is within the frozen design.",
     "Independent RED review permits source-grounded versioned callback permutation; no economic/denominator/settlement changes.",
-    "Executable unknown-NAV admission probe and known-NAV positive control added; exact event/identity/hash/phase/reservation-until-ack checks strengthened."
+    "Executable unknown-NAV admission probe and known-NAV positive control added; exact event/identity/hash/phase/reservation-until-ack checks strengthened.",
+    "First v2 Q01 user-defined passed exact strengthened assertions (attempt03). Second launch failed before engine due disk exhaustion.",
+    "Preserved all container controls/exits, removed only stopped issue17 containers and cold-archived task NuGet cache under /tmp/issue17-spill. Measured free disk25GB. Native runtime/source/fixtures/output hashes retained.",
+    "Resumed validated v2 attempt03 without rerunning it; attempt05 PASS, both canonical bytes hash5563172cc21a757077a62d349130f3539cb5c17deb1744d438a152b4fd384ace."
   ],
-  "next_action": "Run v2 Q01 user-defined twice in clean network-none processes. Stop on first blocker/divergence. Only if passing proceed to remaining Q01\u2013Q03 variants.",
+  "next_action": "Reconcile running sequential terminal-only runner and durable gate-attempts.json; do not repeat completed successful pairs. Stop on first blocker/incomplete divergence. Repository suite/demo are running separately.",
   "policy_and_design_sha256": {
     "AGENTS.md": "291514f0c3017fae9534ce9cd64f71928698e0c6e7faaac24989c035b3b0483c",
     "AI_PROJECT_POLICY.md": "69795c12456a1a7228d6936d433a256a829760453361d04b3686c2a2669237ce",
@@ -40,7 +43,7 @@
   "usage": {
     "paid_provider_calls": 0,
     "purchases": 0,
-    "framework_fixture_runs": 2,
+    "framework_fixture_runs": 3,
     "repair_cycles": 2
   },
   "scheduling": {
@@ -57,5 +60,10 @@
     "attempts/01",
     "attempts/02"
   ],
-  "oracle_revision": "ORACLE_REVISION.md; v1 retained in fixtures; v2 corrects callback permutation and adds stronger probes/time/identity/assertions."
+  "oracle_revision": "ORACLE_REVISION.md; v1 retained in fixtures; v2 corrects callback permutation and adds stronger probes/time/identity/assertions.",
+  "cold_cache_archive": {
+    "path": "/tmp/issue17-spill/packages.tar.gz",
+    "sha256": "0756b57656de11fff914f33b585f2a448c7a97d0dca078494ef810f6a1fd0f6c",
+    "not_needed_for_compiled_fixture_execution": true
+  }
 }
