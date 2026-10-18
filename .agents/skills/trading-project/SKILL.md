@@ -75,9 +75,14 @@ across turns. A normal prompt remains preferable for small one-shot work.
 
 Goal mode improves continuity but does not replace durable repository state.
 Usage limits can still interrupt future turns, so checkpoints, branches, exact SHAs
-and resume instructions remain mandatory. No verified **heartbeat** control is
-available in the owner's current workflow; do not depend on heartbeat-based resume
-unless it is later observed and qualified.
+and resume instructions remain mandatory. When the Codex client exposes scheduling
+and a quota reset time is known, prefer one scheduled resume shortly after reset
+for a checkpointed Goal instead of requiring manual relay. The scheduled prompt
+must read the existing checkpoint, avoid repeated work and stop rather than loop if
+usage is still unavailable or state has changed. Do not create retry storms or use
+scheduling to bypass scientific, spend, credential or trading gates. No verified
+**heartbeat** control is available in the owner's current workflow; do not depend
+on heartbeat-based resume unless it is later observed and qualified.
 
 ## Adopt, route and spend deliberately
 
