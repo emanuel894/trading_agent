@@ -2,6 +2,9 @@
 
 Branch: `research/issue-12-event-evidence-contract`
 Base: `feat/alpaca-paper-foundation` at `b5b06af7a876ebb4c7fc9ab6f63cbaed9ef2aafe`.
+Reconciled target: `1a9014ef47accbea82fd086866bce114621a0d1f`, merged into this
+dedicated branch before final verification; inherited target changes are not
+issue edits. No runtime/tests/workflows changed between those two target commits.
 Mandate: https://github.com/emanuel894/trading_agent/issues/12
 
 ## Resume safely
@@ -41,9 +44,29 @@ paid/provider/model calls, secrets, broker actions or ingestion platform.
   checks, 43 source hashes, 24 excerpts, local links and docs-only scope.
 - Completed suite/demo/install logs retained in `verification/*.log.gz`; no
   repeated source capture, design research or full fixture-suite run on resume.
-- Next: reviewer recheck of these limited fixes; replace draft verification
-  record with pinned artifact hashes; final push and draft PR targeting the base,
-  then inspect CI and report exact status.
+- Reviewer recheck at `332cd0e` resolved both P2s with no remaining material
+  blocker. Source qualification is still needed, as documented.
+- Read the newly accepted target operating skill and state map. Reconciled the
+  target branch without repeating source capture/design or the passing suite.
+- Next: final verification record and integration recheck; push and draft PR
+  targeting the base, then inspect exact-head Ubuntu/Windows CI and report status.
+
+## Milestone decision record
+
+1. Critical path: final verified packet → draft PR → exact-head CI; no external
+   source answer is needed to finish this design milestone.
+2. Workers: one author plus one bounded independent reviewer; no competing writer
+   or additional source work would help the remaining shared artifact scope.
+3. Adopt/build: reuse JSON Schema/offline validation and existing scientific
+   contracts; no collector, ingestion platform, evaluator or model framework.
+4. Waste: stop captures/framework research and passing full-suite repeats; reuse
+   retained evidence and completed logs. PR #10 was externally merged, not edited.
+5. Usage/API ROI: included agent tools only; no external model/provider/data spend
+   or calls. Usage/cost counters are not exposed; no paid fallback is authorized.
+6. Next three actions: verify/review final bindings (author/reviewer; stop on
+   material mismatch); publish draft (author; only dedicated branch and target);
+   inspect both OS CI jobs (author; report failures/unrun separately). All can run
+   before external source qualification, which remains a later workstream.
 
 ## Operational notes
 

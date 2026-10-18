@@ -18,7 +18,8 @@ import subprocess
 from jsonschema import Draft202012Validator, FormatChecker
 
 ROOT = Path(__file__).resolve().parent
-BASE = 'b5b06af7a876ebb4c7fc9ab6f63cbaed9ef2aafe'
+# Current target reconciled before PR; original source base is recorded in CHECKPOINT.md.
+BASE = '1a9014ef47accbea82fd086866bce114621a0d1f'
 
 
 class VisibleText(HTMLParser):

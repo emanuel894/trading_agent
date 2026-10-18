@@ -1,0 +1,71 @@
+{
+  "schema_meta_validation": "PASS",
+  "valid_synthetic_examples": 2,
+  "valid_separate_assessments": 2,
+  "reusable_evidence_across_arm_cutoff_assessments": true,
+  "correction_publication_and_vintage_not_backdated": true,
+  "schema_counterexamples_rejected": [
+    "date-only clock cannot become midnight UTC",
+    "unknown receipt cannot carry an invented UTC value",
+    "known clock requires source evidence",
+    "actual retrieval must be a known UTC instant",
+    "source facts require spans",
+    "primary immutable payload is required",
+    "raw evidence cannot be declared mutable",
+    "unrecognized clock field rejected",
+    "correction requires target linkage",
+    "cutoff-specific admission cannot be embedded in source envelope",
+    "catalog-only cannot admit predictive evidence",
+    "synthetic and rights-unknown assessment cannot admit evidence",
+    "assessment must bind frozen evidence hash"
+  ],
+  "source_captures_hash_verified": 43,
+  "source_excerpts_verified": 24,
+  "source_http_failures_preserved": [
+    {
+      "source_id": "T02",
+      "http_status": 404
+    },
+    {
+      "source_id": "T03",
+      "http_status": 403
+    },
+    {
+      "source_id": "A03",
+      "http_status": 403
+    },
+    {
+      "source_id": "S02",
+      "http_status": 403
+    },
+    {
+      "source_id": "N01",
+      "http_status": 404
+    },
+    {
+      "source_id": "T04",
+      "http_status": 404
+    },
+    {
+      "source_id": "S03",
+      "http_status": 404
+    },
+    {
+      "source_id": "N05",
+      "http_status": 404
+    },
+    {
+      "source_id": "R04",
+      "http_status": 404
+    }
+  ],
+  "local_markdown_links_verified": 22,
+  "all_changes_under_docs_event_evidence": true,
+  "not_verified": [
+    "source truth/completeness",
+    "legal rights",
+    "causal admission implementation",
+    "alpha",
+    "provider/broker access"
+  ]
+}

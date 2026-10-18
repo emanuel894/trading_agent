@@ -10,6 +10,10 @@ This is the design deliverable for [Issue #12](https://github.com/emanuel894/tra
 based on `feat/alpaca-paper-foundation` at
 `b5b06af7a876ebb4c7fc9ab6f63cbaed9ef2aafe`. User-facing review date: October 18,
 2026, Asia/Jerusalem. Source captures retain their actual UTC retrieval times.
+Before PR publication, the branch was reconciled with target
+`1a9014ef47accbea82fd086866bce114621a0d1f` (including the externally merged
+PR #10 and project operating guidance). The issue diff remains entirely within
+this documentation packet; no existing scientific or runtime file changed.
 
 | Required output | Artifact |
 | --- | --- |
