@@ -1,0 +1,2412 @@
+[
+  {
+    "id": "ect_repo",
+    "url": "https://api.github.com/repos/brainbytes-dev/everything-claude-trading",
+    "final_url": "https://api.github.com/repos/brainbytes-dev/everything-claude-trading",
+    "utc": "2026-10-18T07:50:06.400097+00:00",
+    "status": 200,
+    "bytes": 6346,
+    "sha256": "6e189bf4233eb8d185dacf10e2f3c12a59dac249c47f90044d40f6db7a164e96",
+    "file": "ect_repo.json"
+  },
+  {
+    "id": "ect_head",
+    "url": "https://api.github.com/repos/brainbytes-dev/everything-claude-trading/commits/HEAD",
+    "final_url": "https://api.github.com/repos/brainbytes-dev/everything-claude-trading/commits/HEAD",
+    "utc": "2026-10-18T07:50:06.400999+00:00",
+    "status": 200,
+    "bytes": 991186,
+    "sha256": "814fa7b6e365fa027091c07a99707357fd13083a8d1963664394c75eb13ed63c",
+    "file": "ect_head.json"
+  },
+  {
+    "id": "ect_releases",
+    "url": "https://api.github.com/repos/brainbytes-dev/everything-claude-trading/releases?per_page=10",
+    "final_url": "https://api.github.com/repos/brainbytes-dev/everything-claude-trading/releases?per_page=10",
+    "utc": "2026-10-18T07:50:06.401525+00:00",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "ect_releases.json"
+  },
+  {
+    "id": "ect_tree",
+    "url": "https://api.github.com/repos/brainbytes-dev/everything-claude-trading/git/trees/HEAD?recursive=1",
+    "final_url": "https://api.github.com/repos/brainbytes-dev/everything-claude-trading/git/trees/HEAD?recursive=1",
+    "utc": "2026-10-18T07:50:06.401962+00:00",
+    "status": 200,
+    "bytes": 66907,
+    "sha256": "36b73b45da566e0186b9f221c980ed0ed3f827a32c5ebc9a50691436a2fbcaea",
+    "file": "ect_tree.json"
+  },
+  {
+    "id": "financial_repo",
+    "url": "https://api.github.com/repos/anthropics/financial-services-plugins",
+    "final_url": "https://api.github.com/repositories/1165056385",
+    "utc": "2026-10-18T07:50:06.404845+00:00",
+    "status": 200,
+    "bytes": 7107,
+    "sha256": "5611af05e6fb45bb7d0f0e79d814035e6b07ee1f0c51df1c5fec52030017db80",
+    "file": "financial_repo.json"
+  },
+  {
+    "id": "financial_head",
+    "url": "https://api.github.com/repos/anthropics/financial-services-plugins/commits/HEAD",
+    "final_url": "https://api.github.com/repositories/1165056385/commits/HEAD",
+    "utc": "2026-10-18T07:50:06.405520+00:00",
+    "status": 200,
+    "bytes": 262948,
+    "sha256": "05a9c3ae053104c5608669fe52963e97319d00fba7544ae2af6532e7c528cf8f",
+    "file": "financial_head.json"
+  },
+  {
+    "id": "financial_tree",
+    "url": "https://api.github.com/repos/anthropics/financial-services-plugins/git/trees/HEAD?recursive=1",
+    "final_url": "https://api.github.com/repositories/1165056385/git/trees/HEAD?recursive=1",
+    "utc": "2026-10-18T07:50:06.406365+00:00",
+    "status": 200,
+    "bytes": 168066,
+    "sha256": "148a8c53048c0702b5e7a847350400b8532999977bda4dcb1644255d7b0b3248",
+    "file": "financial_tree.json"
+  },
+  {
+    "id": "financial_releases",
+    "url": "https://api.github.com/repos/anthropics/financial-services-plugins/releases?per_page=10",
+    "final_url": "https://api.github.com/repositories/1165056385/releases?per_page=10",
+    "utc": "2026-10-18T07:50:06.414062+00:00",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "financial_releases.json"
+  },
+  {
+    "id": "claude_head",
+    "url": "https://api.github.com/repos/anthropics/claude-code/commits/HEAD",
+    "final_url": "https://api.github.com/repos/anthropics/claude-code/commits/HEAD",
+    "utc": "2026-10-18T07:50:06.873826+00:00",
+    "status": 200,
+    "bytes": 4949,
+    "sha256": "a0296e7805fb197d2e96ed8e524184a47c71484d23bfdb3f06608403aea03ae8",
+    "file": "claude_head.json"
+  },
+  {
+    "id": "claude_releases",
+    "url": "https://api.github.com/repos/anthropics/claude-code/releases?per_page=3",
+    "final_url": "https://api.github.com/repos/anthropics/claude-code/releases?per_page=3",
+    "utc": "2026-10-18T07:50:06.896535+00:00",
+    "status": 200,
+    "bytes": 82748,
+    "sha256": "b82641824409ea8e49345a44b8f25acf2e175323f28391470d06129bb4ada800",
+    "file": "claude_releases.json"
+  },
+  {
+    "id": "docs_llms",
+    "url": "https://code.claude.com/docs/llms.txt",
+    "final_url": "https://code.claude.com/docs/llms.txt",
+    "utc": "2026-10-18T07:50:06.913835+00:00",
+    "status": 200,
+    "bytes": 63675,
+    "sha256": "9a3b8d6724124ae5af78703e7ddfc7fc0745acdd03e018a526ce2e24172dda51",
+    "file": "docs_llms.txt"
+  },
+  {
+    "id": "docs/memory.md",
+    "url": "https://code.claude.com/docs/en/memory.md",
+    "final_url": "https://code.claude.com/docs/en/memory.md",
+    "utc": "2026-10-18T07:50:30.350486+00:00",
+    "status": 200,
+    "bytes": 51526,
+    "sha256": "768be47946cafc36d6fbe3988a04229521f5433bc038736739204e2ed258f6a7",
+    "file": "docs/memory.md"
+  },
+  {
+    "id": "docs/sessions.md",
+    "url": "https://code.claude.com/docs/en/sessions.md",
+    "final_url": "https://code.claude.com/docs/en/sessions.md",
+    "utc": "2026-10-18T07:50:30.351263+00:00",
+    "status": 200,
+    "bytes": 31150,
+    "sha256": "a4d0d58234728333f34ea679d6841442252e23a7e6621197f255aa94a72859ed",
+    "file": "docs/sessions.md"
+  },
+  {
+    "id": "docs/agents.md",
+    "url": "https://code.claude.com/docs/en/agents.md",
+    "final_url": "https://code.claude.com/docs/en/agents.md",
+    "utc": "2026-10-18T07:50:30.351751+00:00",
+    "status": 200,
+    "bytes": 8300,
+    "sha256": "67874a4189558b75520e90509f497464c3712059ee156754bbb96bb1efd7a786",
+    "file": "docs/agents.md"
+  },
+  {
+    "id": "docs/sub-agents.md",
+    "url": "https://code.claude.com/docs/en/sub-agents.md",
+    "final_url": "https://code.claude.com/docs/en/sub-agents.md",
+    "utc": "2026-10-18T07:50:30.353925+00:00",
+    "status": 200,
+    "bytes": 111181,
+    "sha256": "2ef84ba688983c9d7c28015fd3b06a9056b0be11efc7ff8f4b39552d36582d8a",
+    "file": "docs/sub-agents.md"
+  },
+  {
+    "id": "docs/agent-teams.md",
+    "url": "https://code.claude.com/docs/en/agent-teams.md",
+    "final_url": "https://code.claude.com/docs/en/agent-teams.md",
+    "utc": "2026-10-18T07:50:30.354515+00:00",
+    "status": 200,
+    "bytes": 40432,
+    "sha256": "e09abc4e91fd29fc83e308ee66c7386d8de71f399b606e081c629673361d1250",
+    "file": "docs/agent-teams.md"
+  },
+  {
+    "id": "docs/cross-session-messaging.md",
+    "url": "https://code.claude.com/docs/en/cross-session-messaging.md",
+    "final_url": "https://code.claude.com/docs/en/cross-session-messaging.md",
+    "utc": "2026-10-18T07:50:30.354906+00:00",
+    "status": 200,
+    "bytes": 34299,
+    "sha256": "7b359027749ff27d84019a388145bf78edce1dc424aaa9a50896c6c88e4b1edd",
+    "file": "docs/cross-session-messaging.md"
+  },
+  {
+    "id": "docs/workflows.md",
+    "url": "https://code.claude.com/docs/en/workflows.md",
+    "final_url": "https://code.claude.com/docs/en/workflows.md",
+    "utc": "2026-10-18T07:50:30.356751+00:00",
+    "status": 200,
+    "bytes": 41609,
+    "sha256": "a324b4814d760d6c6f115a0a534123fe71acc40e4a9fa63f0e2f85200df197dd",
+    "file": "docs/workflows.md"
+  },
+  {
+    "id": "docs/headless.md",
+    "url": "https://code.claude.com/docs/en/headless.md",
+    "final_url": "https://code.claude.com/docs/en/headless.md",
+    "utc": "2026-10-18T07:50:30.361976+00:00",
+    "status": 200,
+    "bytes": 34282,
+    "sha256": "fe8a1d507c57c816da57b3b51ee7d08fedf0e6de86391e6378510989c3e42c7b",
+    "file": "docs/headless.md"
+  },
+  {
+    "id": "docs/routines.md",
+    "url": "https://code.claude.com/docs/en/routines.md",
+    "final_url": "https://code.claude.com/docs/en/routines.md",
+    "utc": "2026-10-18T07:50:30.368774+00:00",
+    "status": 200,
+    "bytes": 36889,
+    "sha256": "7e17c96c0b9eff83779590e596a792e2cdb1c6bbea8095aa1989c305cfe29cac",
+    "file": "docs/routines.md"
+  },
+  {
+    "id": "docs/scheduled-tasks.md",
+    "url": "https://code.claude.com/docs/en/scheduled-tasks.md",
+    "final_url": "https://code.claude.com/docs/en/scheduled-tasks.md",
+    "utc": "2026-10-18T07:50:30.434307+00:00",
+    "status": 200,
+    "bytes": 17473,
+    "sha256": "8cb643f43a143fdbd8aee53fb63070d2ac473ac5046f5a301b7fb6e502c0f127",
+    "file": "docs/scheduled-tasks.md"
+  },
+  {
+    "id": "docs/permissions.md",
+    "url": "https://code.claude.com/docs/en/permissions.md",
+    "final_url": "https://code.claude.com/docs/en/permissions.md",
+    "utc": "2026-10-18T07:50:30.434730+00:00",
+    "status": 200,
+    "bytes": 83973,
+    "sha256": "22f01bc144964cc7cf2ea3b2b71ba5a75d160adf6dbd9b954f6fbf5f707b0b56",
+    "file": "docs/permissions.md"
+  },
+  {
+    "id": "docs/permission-modes.md",
+    "url": "https://code.claude.com/docs/en/permission-modes.md",
+    "final_url": "https://code.claude.com/docs/en/permission-modes.md",
+    "utc": "2026-10-18T07:50:30.454137+00:00",
+    "status": 200,
+    "bytes": 91352,
+    "sha256": "7ac8298b868b338f2814160fe24800e6691b7ef313a93daa55c5c907a51005d9",
+    "file": "docs/permission-modes.md"
+  },
+  {
+    "id": "docs/authentication.md",
+    "url": "https://code.claude.com/docs/en/authentication.md",
+    "final_url": "https://code.claude.com/docs/en/authentication.md",
+    "utc": "2026-10-18T07:50:30.675186+00:00",
+    "status": 200,
+    "bytes": 31125,
+    "sha256": "c43ef3e8ddcb34ff6ba8b8d9e72276326ba7b672cd99f1252d5167c111ce67ac",
+    "file": "docs/authentication.md"
+  },
+  {
+    "id": "docs/costs.md",
+    "url": "https://code.claude.com/docs/en/costs.md",
+    "final_url": "https://code.claude.com/docs/en/costs.md",
+    "utc": "2026-10-18T07:50:30.679974+00:00",
+    "status": 200,
+    "bytes": 42383,
+    "sha256": "6622bdc6962b23a8c0ef27162b93aaa82a8ecc8527b0dadb0772eedc089a2521",
+    "file": "docs/costs.md"
+  },
+  {
+    "id": "docs/security.md",
+    "url": "https://code.claude.com/docs/en/security.md",
+    "final_url": "https://code.claude.com/docs/en/security.md",
+    "utc": "2026-10-18T07:50:30.687527+00:00",
+    "status": 200,
+    "bytes": 14368,
+    "sha256": "57603902b3038ab4c51a458516e7d74cb41cd256026e5ebc1d0c20a671aea155",
+    "file": "docs/security.md"
+  },
+  {
+    "id": "docs/github-actions.md",
+    "url": "https://code.claude.com/docs/en/github-actions.md",
+    "final_url": "https://code.claude.com/docs/en/github-actions.md",
+    "utc": "2026-10-18T07:50:30.696301+00:00",
+    "status": 200,
+    "bytes": 29088,
+    "sha256": "87b99aefc0a9f4389a3293fdf7c5dfd35491bebc6fec70869a80557070a31ae7",
+    "file": "docs/github-actions.md"
+  },
+  {
+    "id": "docs/claude-code-on-the-web.md",
+    "url": "https://code.claude.com/docs/en/claude-code-on-the-web.md",
+    "final_url": "https://code.claude.com/docs/en/claude-code-on-the-web.md",
+    "utc": "2026-10-18T07:50:30.700869+00:00",
+    "status": 200,
+    "bytes": 41021,
+    "sha256": "96facadf5c54041b768e5e1c98131f80ae9c851c15253d72639423146dafb704",
+    "file": "docs/claude-code-on-the-web.md"
+  },
+  {
+    "id": "docs/code-review-costs.md",
+    "url": "https://code.claude.com/docs/en/code-review-costs.md",
+    "final_url": "https://code.claude.com/docs/en/code-review-costs.md",
+    "utc": "2026-10-18T07:50:30.706644+00:00",
+    "status": 200,
+    "bytes": 6008,
+    "sha256": "93504a0e1aa12e30593b8970d8011b652493a45de6a2f95859de422746993fa2",
+    "file": "docs/code-review-costs.md"
+  },
+  {
+    "id": "docs/agent-sdk/overview.md",
+    "url": "https://code.claude.com/docs/en/agent-sdk/overview.md",
+    "final_url": "https://code.claude.com/docs/en/agent-sdk/overview.md",
+    "utc": "2026-10-18T07:50:30.710783+00:00",
+    "status": 200,
+    "bytes": 6839,
+    "sha256": "970069a3d032e81062aed716308d39420b241f590cddc005a9ee72370241db01",
+    "file": "docs/agent-sdk/overview.md"
+  },
+  {
+    "id": "docs/agent-sdk/sessions.md",
+    "url": "https://code.claude.com/docs/en/agent-sdk/sessions.md",
+    "final_url": "https://code.claude.com/docs/en/agent-sdk/sessions.md",
+    "utc": "2026-10-18T07:50:30.713468+00:00",
+    "status": 200,
+    "bytes": 22295,
+    "sha256": "c3106db1c25679f0f5557b18e8da687aa9f0232437911db3fb1db5fdecb4d114",
+    "file": "docs/agent-sdk/sessions.md"
+  },
+  {
+    "id": "docs/agent-sdk/session-storage.md",
+    "url": "https://code.claude.com/docs/en/agent-sdk/session-storage.md",
+    "final_url": "https://code.claude.com/docs/en/agent-sdk/session-storage.md",
+    "utc": "2026-10-18T07:50:30.715226+00:00",
+    "status": 200,
+    "bytes": 23428,
+    "sha256": "6e582d288d2062d6b5c1c9fa3c7f426409688fa1c7b917dec7778071fc01cc46",
+    "file": "docs/agent-sdk/session-storage.md"
+  },
+  {
+    "id": "docs/plugins/security.md",
+    "url": "https://code.claude.com/docs/en/plugins/security.md",
+    "final_url": "https://code.claude.com/docs/en/plugins/security.md",
+    "utc": "2026-10-18T07:50:30.771103+00:00",
+    "status": 200,
+    "bytes": 13840,
+    "sha256": "00692b78a21589e73a1740279aa8168429b86c930520860d31573bc4021e2949",
+    "file": "docs/plugins/security.md"
+  },
+  {
+    "id": "docs/claude-projects.md",
+    "url": "https://code.claude.com/docs/en/claude-projects.md",
+    "final_url": "https://code.claude.com/docs/en/claude-projects.md",
+    "utc": "2026-10-18T07:50:30.777522+00:00",
+    "status": 200,
+    "bytes": 61488,
+    "sha256": "4f50e7fd2084ea2a0c6765742bea7039017692e21dac10d5d6d542f08cb42ec9",
+    "file": "docs/claude-projects.md"
+  },
+  {
+    "id": "docs/goal.md",
+    "url": "https://code.claude.com/docs/en/goal.md",
+    "final_url": "https://code.claude.com/docs/en/goal.md",
+    "utc": "2026-10-18T07:50:30.786921+00:00",
+    "status": 200,
+    "bytes": 14930,
+    "sha256": "ee86d204c45ddee9145fa4d47eab0c8232819e20e10ff6852bf6f2ba42299817",
+    "file": "docs/goal.md"
+  },
+  {
+    "id": "ect/.claude-plugin/marketplace.json",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/.claude-plugin/marketplace.json",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/.claude-plugin/marketplace.json",
+    "utc": "2026-10-18T07:50:30.890583+00:00",
+    "status": 200,
+    "bytes": 905,
+    "sha256": "e889286f2fb64e4d2980a3e9a6d3540e1a46e48c14364d5e259b84b039d36537",
+    "file": "ect/.claude-plugin/marketplace.json"
+  },
+  {
+    "id": "ect/.claude-plugin/plugin.json",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/.claude-plugin/plugin.json",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/.claude-plugin/plugin.json",
+    "utc": "2026-10-18T07:50:30.900559+00:00",
+    "status": 200,
+    "bytes": 777,
+    "sha256": "da0a0df032cfb7913792b89674c6175c07eefa75228a06232b52d287142c0d5b",
+    "file": "ect/.claude-plugin/plugin.json"
+  },
+  {
+    "id": "ect/.github/FUNDING.yml",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/.github/FUNDING.yml",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/.github/FUNDING.yml",
+    "utc": "2026-10-18T07:50:30.912535+00:00",
+    "status": 200,
+    "bytes": 28,
+    "sha256": "22c5203baa7d80736b92aec9c4e39f33734f6217a665ea6334adc891d8c01b50",
+    "file": "ect/.github/FUNDING.yml"
+  },
+  {
+    "id": "ect/.github/PULL_REQUEST_TEMPLATE.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/.github/PULL_REQUEST_TEMPLATE.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/.github/PULL_REQUEST_TEMPLATE.md",
+    "utc": "2026-10-18T07:50:30.928434+00:00",
+    "status": 200,
+    "bytes": 1175,
+    "sha256": "3ebef93bb8f4786eaa1b3ec0c27a3eb97cd49c5105aadc651f84b19f942e5208",
+    "file": "ect/.github/PULL_REQUEST_TEMPLATE.md"
+  },
+  {
+    "id": "ect/.github/workflows/ci.yml",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/.github/workflows/ci.yml",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/.github/workflows/ci.yml",
+    "utc": "2026-10-18T07:50:30.932461+00:00",
+    "status": 200,
+    "bytes": 1755,
+    "sha256": "332000b2b73489232378dda7a2485ffee4ccec3c78e0c6b06c8a8d49c1a6a34f",
+    "file": "ect/.github/workflows/ci.yml"
+  },
+  {
+    "id": "ect/AGENTS.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/AGENTS.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/AGENTS.md",
+    "utc": "2026-10-18T07:50:30.935309+00:00",
+    "status": 200,
+    "bytes": 8532,
+    "sha256": "e5b645c142ad60ef695fe7941e3ea381d98cc8a06f04e227e914e8ad967c86f4",
+    "file": "ect/AGENTS.md"
+  },
+  {
+    "id": "ect/CHANGELOG.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/CHANGELOG.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/CHANGELOG.md",
+    "utc": "2026-10-18T07:50:30.963405+00:00",
+    "status": 200,
+    "bytes": 3684,
+    "sha256": "7e1d138758b8c45896c97b97863fbf4073730ffade838a7c71fcce02933c1ef2",
+    "file": "ect/CHANGELOG.md"
+  },
+  {
+    "id": "ect/CLAUDE.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/CLAUDE.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/CLAUDE.md",
+    "utc": "2026-10-18T07:50:30.972093+00:00",
+    "status": 200,
+    "bytes": 3328,
+    "sha256": "fbdfdc4d4c04f0091a6ee460f31d5978675ef631b937a10fc882e6714261ceb0",
+    "file": "ect/CLAUDE.md"
+  },
+  {
+    "id": "ect/CODE_OF_CONDUCT.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/CODE_OF_CONDUCT.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/CODE_OF_CONDUCT.md",
+    "utc": "2026-10-18T07:50:30.983879+00:00",
+    "status": 200,
+    "bytes": 1654,
+    "sha256": "ccf54b93e29be8f0b9af8204b8f4a005730f63efef6fb6937e2ee9ee5478e858",
+    "file": "ect/CODE_OF_CONDUCT.md"
+  },
+  {
+    "id": "ect/CONTRIBUTING.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/CONTRIBUTING.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/CONTRIBUTING.md",
+    "utc": "2026-10-18T07:50:31.069799+00:00",
+    "status": 200,
+    "bytes": 2718,
+    "sha256": "f01e886ec618c63092b84fca54948545a3627038d6f1797501b796db5ea7bc56",
+    "file": "ect/CONTRIBUTING.md"
+  },
+  {
+    "id": "ect/LICENSE",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/LICENSE",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/LICENSE",
+    "utc": "2026-10-18T07:50:31.108514+00:00",
+    "status": 200,
+    "bytes": 1095,
+    "sha256": "6f9c8e9ff08cb4b90761eeb2656be410517d3515048d110d1c00aed049b066e1",
+    "file": "ect/LICENSE"
+  },
+  {
+    "id": "ect/README.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/README.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/README.md",
+    "utc": "2026-10-18T07:50:31.111099+00:00",
+    "status": 200,
+    "bytes": 18308,
+    "sha256": "eacf8aca5d364ac6fcab6785e96a30aba5ca2ef659f417c27bdc8273438a48fc",
+    "file": "ect/README.md"
+  },
+  {
+    "id": "ect/agents/algo-strategist.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/algo-strategist.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/algo-strategist.md",
+    "utc": "2026-10-18T07:50:31.237416+00:00",
+    "status": 200,
+    "bytes": 13218,
+    "sha256": "d2eb683f7f5cc9623643cad2f20f1c31afd5ba897926fc9ff910567209f56b4f",
+    "file": "ect/agents/algo-strategist.md"
+  },
+  {
+    "id": "ect/agents/backtesting-engineer.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/backtesting-engineer.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/backtesting-engineer.md",
+    "utc": "2026-10-18T07:50:31.256829+00:00",
+    "status": 200,
+    "bytes": 13966,
+    "sha256": "1374c1f3bbf8e604a522892d5b536fa1f6ab119771092d850f436dcd4acca113",
+    "file": "ect/agents/backtesting-engineer.md"
+  },
+  {
+    "id": "ect/agents/commodities-analyst.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/commodities-analyst.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/commodities-analyst.md",
+    "utc": "2026-10-18T07:50:31.257153+00:00",
+    "status": 200,
+    "bytes": 17209,
+    "sha256": "b412268b56ea9505f2cdf7f60ff5f15fae36acf7a4ffcfcc78faf626509ae5e7",
+    "file": "ect/agents/commodities-analyst.md"
+  },
+  {
+    "id": "ect/agents/crypto-defi-analyst.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/crypto-defi-analyst.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/crypto-defi-analyst.md",
+    "utc": "2026-10-18T07:50:31.269013+00:00",
+    "status": 200,
+    "bytes": 15632,
+    "sha256": "0e528f4443aef5e9e3ba8b1a3ed6ee720c2977362344afe0cfc9dcf5111293a8",
+    "file": "ect/agents/crypto-defi-analyst.md"
+  },
+  {
+    "id": "ect/agents/derivatives-analyst.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/derivatives-analyst.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/derivatives-analyst.md",
+    "utc": "2026-10-18T07:50:31.286187+00:00",
+    "status": 200,
+    "bytes": 13082,
+    "sha256": "f27bb888215d7761fc1a351bda8ec0f0cb5c206c58d0d5de9a434e79ef3c9e69",
+    "file": "ect/agents/derivatives-analyst.md"
+  },
+  {
+    "id": "ect/agents/execution-specialist.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/execution-specialist.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/execution-specialist.md",
+    "utc": "2026-10-18T07:50:31.292589+00:00",
+    "status": 200,
+    "bytes": 16939,
+    "sha256": "aa8ab82842b9ea7264624add20b25a59a4940a6dbaa7b0c75757e578bbcfc791",
+    "file": "ect/agents/execution-specialist.md"
+  },
+  {
+    "id": "ect/agents/financial-data-scientist.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/financial-data-scientist.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/financial-data-scientist.md",
+    "utc": "2026-10-18T07:50:31.303909+00:00",
+    "status": 200,
+    "bytes": 16658,
+    "sha256": "277bce8e443527a2a25fbbd5c8514caec1a125d66ca85ce7abb54760e34d5619",
+    "file": "ect/agents/financial-data-scientist.md"
+  },
+  {
+    "id": "ect/agents/fixed-income-analyst.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/fixed-income-analyst.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/fixed-income-analyst.md",
+    "utc": "2026-10-18T07:50:31.369412+00:00",
+    "status": 200,
+    "bytes": 14966,
+    "sha256": "be5a7b29cbf11a039d4e164cb6cf56053dd2d9c6f43d39521446624e3c81e201",
+    "file": "ect/agents/fixed-income-analyst.md"
+  },
+  {
+    "id": "ect/agents/fx-strategist.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/fx-strategist.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/fx-strategist.md",
+    "utc": "2026-10-18T07:50:31.370267+00:00",
+    "status": 200,
+    "bytes": 14211,
+    "sha256": "a457d326762556aaa0ccc6950608730f1ffbbc5fcb5a63f9d99e9cb8e6888031",
+    "file": "ect/agents/fx-strategist.md"
+  },
+  {
+    "id": "ect/agents/market-microstructure.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/market-microstructure.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/market-microstructure.md",
+    "utc": "2026-10-18T07:50:31.598252+00:00",
+    "status": 200,
+    "bytes": 15757,
+    "sha256": "5e81c2bae69d3e10d14d8b686ede7a8e8df9ec702c89c2244f4c44714b812850",
+    "file": "ect/agents/market-microstructure.md"
+  },
+  {
+    "id": "ect/agents/options-strategist.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/options-strategist.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/options-strategist.md",
+    "utc": "2026-10-18T07:50:31.609035+00:00",
+    "status": 200,
+    "bytes": 18300,
+    "sha256": "d969a57898ccc889f831868574995ab833bf4d2e5c59110f55a5b262fc8e42b8",
+    "file": "ect/agents/options-strategist.md"
+  },
+  {
+    "id": "ect/agents/portfolio-manager.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/portfolio-manager.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/portfolio-manager.md",
+    "utc": "2026-10-18T07:50:31.625903+00:00",
+    "status": 200,
+    "bytes": 17293,
+    "sha256": "3309c28d4cff67d7b992593f080fce6c28779a977dfbaf9925945f17f2abef40",
+    "file": "ect/agents/portfolio-manager.md"
+  },
+  {
+    "id": "ect/agents/quant-researcher.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/quant-researcher.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/quant-researcher.md",
+    "utc": "2026-10-18T07:50:31.644209+00:00",
+    "status": 200,
+    "bytes": 12287,
+    "sha256": "98855f93f6329227a913357418c4daeda09a5655f23affe292ba40db44d5ad90",
+    "file": "ect/agents/quant-researcher.md"
+  },
+  {
+    "id": "ect/agents/regulatory-compliance.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/regulatory-compliance.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/regulatory-compliance.md",
+    "utc": "2026-10-18T07:50:31.647326+00:00",
+    "status": 200,
+    "bytes": 22010,
+    "sha256": "5f0d46d6c1c0cadca2f2d9be39d04898598069286bde409e0239c4113fa4fd50",
+    "file": "ect/agents/regulatory-compliance.md"
+  },
+  {
+    "id": "ect/agents/risk-manager.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/risk-manager.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/risk-manager.md",
+    "utc": "2026-10-18T07:50:31.670096+00:00",
+    "status": 200,
+    "bytes": 14452,
+    "sha256": "06008b353b9aa0854808d2cf3d88e853349ff2e58e2cd01360bcf6c177791ffe",
+    "file": "ect/agents/risk-manager.md"
+  },
+  {
+    "id": "ect/agents/stat-arb-specialist.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/stat-arb-specialist.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/stat-arb-specialist.md",
+    "utc": "2026-10-18T07:50:31.675318+00:00",
+    "status": 200,
+    "bytes": 19263,
+    "sha256": "acac2e66485e32ab8ec768a9ce03517653c6c87ee585732de685752e01b79241",
+    "file": "ect/agents/stat-arb-specialist.md"
+  },
+  {
+    "id": "ect/agents/technical-analyst.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/technical-analyst.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/technical-analyst.md",
+    "utc": "2026-10-18T07:50:31.689446+00:00",
+    "status": 200,
+    "bytes": 14025,
+    "sha256": "da766b8bf1768ce0e03ca3ddffc602b09708226afd5f6deee675fa1a24147f86",
+    "file": "ect/agents/technical-analyst.md"
+  },
+  {
+    "id": "ect/agents/volatility-trader.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/volatility-trader.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/agents/volatility-trader.md",
+    "utc": "2026-10-18T07:50:31.705688+00:00",
+    "status": 200,
+    "bytes": 17463,
+    "sha256": "d54bd6c963552d41a3c66e48e8522ee85ff3d15260180bdd89b1d039e79de424",
+    "file": "ect/agents/volatility-trader.md"
+  },
+  {
+    "id": "ect/commands/alpha-decay.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/alpha-decay.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/alpha-decay.md",
+    "utc": "2026-10-18T07:50:31.801665+00:00",
+    "status": 200,
+    "bytes": 4731,
+    "sha256": "e5f622b192858ec1f24aa256a54851410437cc100b7d84927a22372720ca7412",
+    "file": "ect/commands/alpha-decay.md"
+  },
+  {
+    "id": "ect/commands/backtest.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/backtest.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/backtest.md",
+    "utc": "2026-10-18T07:50:31.808927+00:00",
+    "status": 200,
+    "bytes": 3455,
+    "sha256": "2dc9235789b1b4db34540af80a39aacd08036312f501bce111a29a7cc35fcc4b",
+    "file": "ect/commands/backtest.md"
+  },
+  {
+    "id": "ect/commands/correlation-check.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/correlation-check.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/correlation-check.md",
+    "utc": "2026-10-18T07:50:31.815057+00:00",
+    "status": 200,
+    "bytes": 4888,
+    "sha256": "a91e8f51d33d75ede583fdfed3d88d337490cc2970f9e1c6b95f94c1ad10f416",
+    "file": "ect/commands/correlation-check.md"
+  },
+  {
+    "id": "ect/commands/crypto-analysis.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/crypto-analysis.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/crypto-analysis.md",
+    "utc": "2026-10-18T07:50:31.847630+00:00",
+    "status": 200,
+    "bytes": 4242,
+    "sha256": "5befb84b04868dfe12caa8d48c81774607863a7b30f7346658c7680152baf321",
+    "file": "ect/commands/crypto-analysis.md"
+  },
+  {
+    "id": "ect/commands/data-pipeline.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/data-pipeline.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/data-pipeline.md",
+    "utc": "2026-10-18T07:50:31.886034+00:00",
+    "status": 200,
+    "bytes": 5252,
+    "sha256": "942cfbb1fe9ac9cf8992927c2c5def5b4e634a1a7de241b698d37f56b457bd63",
+    "file": "ect/commands/data-pipeline.md"
+  },
+  {
+    "id": "ect/commands/execution-plan.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/execution-plan.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/execution-plan.md",
+    "utc": "2026-10-18T07:50:31.897229+00:00",
+    "status": 200,
+    "bytes": 4188,
+    "sha256": "61c2778a39a0fd3ee0bfbb079e69f4c724ce7ddc80fcf0cc93702f613b895147",
+    "file": "ect/commands/execution-plan.md"
+  },
+  {
+    "id": "ect/commands/factor-analysis.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/factor-analysis.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/factor-analysis.md",
+    "utc": "2026-10-18T07:50:31.903619+00:00",
+    "status": 200,
+    "bytes": 4267,
+    "sha256": "f75accef69a61ac834b136a884e9be4c11ad866c2bae7e540f2b2f0ef433707c",
+    "file": "ect/commands/factor-analysis.md"
+  },
+  {
+    "id": "ect/commands/hedging-plan.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/hedging-plan.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/hedging-plan.md",
+    "utc": "2026-10-18T07:50:31.922588+00:00",
+    "status": 200,
+    "bytes": 4327,
+    "sha256": "0b4b91cbd64bc68d147e0f5f74d8e022d4123147dcb6edfad9934ec4dff06b12",
+    "file": "ect/commands/hedging-plan.md"
+  },
+  {
+    "id": "ect/commands/macro-outlook.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/macro-outlook.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/macro-outlook.md",
+    "utc": "2026-10-18T07:50:31.926269+00:00",
+    "status": 200,
+    "bytes": 4494,
+    "sha256": "fef8e09afafce56f0444daa31237d0bb1b1a56cfb4d53bfec41726e2e9fe5769",
+    "file": "ect/commands/macro-outlook.md"
+  },
+  {
+    "id": "ect/commands/market-regime.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/market-regime.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/market-regime.md",
+    "utc": "2026-10-18T07:50:31.933834+00:00",
+    "status": 200,
+    "bytes": 4418,
+    "sha256": "79d601719d93a204b680f072829fa52406eb0f44dca9e5800b26ca74f019a7f9",
+    "file": "ect/commands/market-regime.md"
+  },
+  {
+    "id": "ect/commands/options-analysis.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/options-analysis.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/options-analysis.md",
+    "utc": "2026-10-18T07:50:31.965027+00:00",
+    "status": 200,
+    "bytes": 3520,
+    "sha256": "7a2d875bf13e204099804ea3ff9d13d4bc5b45ec87b9ad39db8319dd76bb00ca",
+    "file": "ect/commands/options-analysis.md"
+  },
+  {
+    "id": "ect/commands/pairs-scan.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/pairs-scan.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/pairs-scan.md",
+    "utc": "2026-10-18T07:50:31.982450+00:00",
+    "status": 200,
+    "bytes": 3611,
+    "sha256": "78a53941639cbd646331b0c5645598cc133734c4049a7c25645b12a4a73513cc",
+    "file": "ect/commands/pairs-scan.md"
+  },
+  {
+    "id": "ect/commands/portfolio-optimize.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/portfolio-optimize.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/portfolio-optimize.md",
+    "utc": "2026-10-18T07:50:32.023479+00:00",
+    "status": 200,
+    "bytes": 3863,
+    "sha256": "1746dd1fa864fc31d92ffb91f6636b5a585155a10bf650350eee900783f1b9b8",
+    "file": "ect/commands/portfolio-optimize.md"
+  },
+  {
+    "id": "ect/commands/position-size.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/position-size.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/position-size.md",
+    "utc": "2026-10-18T07:50:32.046761+00:00",
+    "status": 200,
+    "bytes": 5301,
+    "sha256": "c87faffcd2d37c5aeba2d8c50401725321bb86711801ec46d60d3ae8fb8868f9",
+    "file": "ect/commands/position-size.md"
+  },
+  {
+    "id": "ect/commands/risk-report.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/risk-report.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/risk-report.md",
+    "utc": "2026-10-18T07:50:32.070392+00:00",
+    "status": 200,
+    "bytes": 3599,
+    "sha256": "c7c30aa5ae604fe0f002e310265e2ace38415b7362f0da6b4e6c55a23475c2cf",
+    "file": "ect/commands/risk-report.md"
+  },
+  {
+    "id": "ect/commands/signal-research.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/signal-research.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/signal-research.md",
+    "utc": "2026-10-18T07:50:32.078768+00:00",
+    "status": 200,
+    "bytes": 3843,
+    "sha256": "6f5c0fe1939d0b06c67ff36479906659ed03f597c857624fda9a264f486a989c",
+    "file": "ect/commands/signal-research.md"
+  },
+  {
+    "id": "ect/commands/strategy.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/strategy.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/strategy.md",
+    "utc": "2026-10-18T07:50:32.116943+00:00",
+    "status": 200,
+    "bytes": 3425,
+    "sha256": "e53151aab4906fcdac18c13a62af4230721e2e7fb21d9d97f1955cefde70f9a8",
+    "file": "ect/commands/strategy.md"
+  },
+  {
+    "id": "ect/commands/stress-test.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/stress-test.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/stress-test.md",
+    "utc": "2026-10-18T07:50:32.124983+00:00",
+    "status": 200,
+    "bytes": 4447,
+    "sha256": "1e29ac324348b07a82b76374a8716786793b60266e1659c389a8c23cf562d54c",
+    "file": "ect/commands/stress-test.md"
+  },
+  {
+    "id": "ect/commands/trade-review.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/trade-review.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/trade-review.md",
+    "utc": "2026-10-18T07:50:32.152916+00:00",
+    "status": 200,
+    "bytes": 4528,
+    "sha256": "b88b1c62395d7298b235153c8a6a69fc2a2b8017a4649ca500c8924ca7385ca3",
+    "file": "ect/commands/trade-review.md"
+  },
+  {
+    "id": "ect/commands/vol-analysis.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/vol-analysis.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/commands/vol-analysis.md",
+    "utc": "2026-10-18T07:50:32.157992+00:00",
+    "status": 200,
+    "bytes": 3961,
+    "sha256": "01a6e41f6f49bbc2b48bffd3f4b772fcc97243d5b44b759774dd2fb6a5990565",
+    "file": "ect/commands/vol-analysis.md"
+  },
+  {
+    "id": "ect/contexts/backtesting.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/contexts/backtesting.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/contexts/backtesting.md",
+    "utc": "2026-10-18T07:50:32.165307+00:00",
+    "status": 200,
+    "bytes": 2654,
+    "sha256": "dcf43d4b764018ce4597efc7958755f6f7d1943e405639374460f263245fe03c",
+    "file": "ect/contexts/backtesting.md"
+  },
+  {
+    "id": "ect/contexts/live-trading.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/contexts/live-trading.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/contexts/live-trading.md",
+    "utc": "2026-10-18T07:50:32.170591+00:00",
+    "status": 200,
+    "bytes": 2092,
+    "sha256": "e733f5c518b53881d83d818d577ec6825381b8759cb6f43130b8324bc83a545b",
+    "file": "ect/contexts/live-trading.md"
+  },
+  {
+    "id": "ect/contexts/research.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/contexts/research.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/contexts/research.md",
+    "utc": "2026-10-18T07:50:32.175797+00:00",
+    "status": 200,
+    "bytes": 1875,
+    "sha256": "fa2be91f23e4a44b343e01688ccf8ed233374835cd8c349e103e5acffdbb335d",
+    "file": "ect/contexts/research.md"
+  },
+  {
+    "id": "ect/examples/crypto-trader-CLAUDE.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/examples/crypto-trader-CLAUDE.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/examples/crypto-trader-CLAUDE.md",
+    "utc": "2026-10-18T07:50:32.231033+00:00",
+    "status": 200,
+    "bytes": 2942,
+    "sha256": "fec9101d7cc566cc2a9e2ffa512ce1311fa30c9eeb0b94814704ecca0e63b2eb",
+    "file": "ect/examples/crypto-trader-CLAUDE.md"
+  },
+  {
+    "id": "ect/examples/quant-fund-CLAUDE.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/examples/quant-fund-CLAUDE.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/examples/quant-fund-CLAUDE.md",
+    "utc": "2026-10-18T07:50:32.231626+00:00",
+    "status": 200,
+    "bytes": 2563,
+    "sha256": "6e1557aae15f7b25aae5e72e1d48046534cfcf43512899171ded6e8c5bc6b5b0",
+    "file": "ect/examples/quant-fund-CLAUDE.md"
+  },
+  {
+    "id": "ect/examples/retail-algo-CLAUDE.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/examples/retail-algo-CLAUDE.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/examples/retail-algo-CLAUDE.md",
+    "utc": "2026-10-18T07:50:32.274918+00:00",
+    "status": 200,
+    "bytes": 3498,
+    "sha256": "a54eadd46483ff136962f9fa65e638e9baf949ccfbb5f20c034220f6d8ec4050",
+    "file": "ect/examples/retail-algo-CLAUDE.md"
+  },
+  {
+    "id": "ect/hooks/hooks.json",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/hooks/hooks.json",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/hooks/hooks.json",
+    "utc": "2026-10-18T07:50:32.307701+00:00",
+    "status": 200,
+    "bytes": 787,
+    "sha256": "269d546a9dbeebcbc21a98188672423328df0b31616c8138cbd3b632cfaabfe6",
+    "file": "ect/hooks/hooks.json"
+  },
+  {
+    "id": "ect/mcp-configs/mcp-servers.json",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/mcp-configs/mcp-servers.json",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/mcp-configs/mcp-servers.json",
+    "utc": "2026-10-18T07:50:32.322332+00:00",
+    "status": 200,
+    "bytes": 1181,
+    "sha256": "8e52593ff64724648374d2bcff850602d8285d396ad0b7db73ad728db75e7f19",
+    "file": "ect/mcp-configs/mcp-servers.json"
+  },
+  {
+    "id": "ect/package.json",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/package.json",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/package.json",
+    "utc": "2026-10-18T07:50:32.330678+00:00",
+    "status": 200,
+    "bytes": 949,
+    "sha256": "48ad5f79cdbc5994a3a366d259277d6b43c45be34249e3ba1ff2bb85883778f7",
+    "file": "ect/package.json"
+  },
+  {
+    "id": "ect/rules/common/data-integrity.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/rules/common/data-integrity.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/rules/common/data-integrity.md",
+    "utc": "2026-10-18T07:50:32.338867+00:00",
+    "status": 200,
+    "bytes": 2903,
+    "sha256": "7d9e5e895f2aea690371c0fd00be2ba1a2f8f97bd6c9760f9a291cf9445e643c",
+    "file": "ect/rules/common/data-integrity.md"
+  },
+  {
+    "id": "ect/rules/common/ethical-trading.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/rules/common/ethical-trading.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/rules/common/ethical-trading.md",
+    "utc": "2026-10-18T07:50:32.340493+00:00",
+    "status": 200,
+    "bytes": 2774,
+    "sha256": "82c950d05a12e1f8f508322e24f4437770aa89ce6d02b574df054f87ffc9e625",
+    "file": "ect/rules/common/ethical-trading.md"
+  },
+  {
+    "id": "ect/rules/common/model-governance.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/rules/common/model-governance.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/rules/common/model-governance.md",
+    "utc": "2026-10-18T07:50:32.361034+00:00",
+    "status": 200,
+    "bytes": 3098,
+    "sha256": "ab50bad35b465c5221960909055c6d038fc784760b878a9c384ff99f4fe08cf2",
+    "file": "ect/rules/common/model-governance.md"
+  },
+  {
+    "id": "ect/rules/common/regulatory-compliance.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/rules/common/regulatory-compliance.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/rules/common/regulatory-compliance.md",
+    "utc": "2026-10-18T07:50:32.396417+00:00",
+    "status": 200,
+    "bytes": 2825,
+    "sha256": "1a0800643222eb1fccd3462e96043d2b5a90f3cfd7b370032c9216770e6403ba",
+    "file": "ect/rules/common/regulatory-compliance.md"
+  },
+  {
+    "id": "ect/rules/common/risk-limits.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/rules/common/risk-limits.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/rules/common/risk-limits.md",
+    "utc": "2026-10-18T07:50:32.418289+00:00",
+    "status": 200,
+    "bytes": 2386,
+    "sha256": "3f94b3e42056924ea48fdcfa9a37b7c5c913ee3836612026a63d55a51aeee1a7",
+    "file": "ect/rules/common/risk-limits.md"
+  },
+  {
+    "id": "ect/scripts/hooks/backtest-validation.js",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/scripts/hooks/backtest-validation.js",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/scripts/hooks/backtest-validation.js",
+    "utc": "2026-10-18T07:50:32.421677+00:00",
+    "status": 200,
+    "bytes": 1980,
+    "sha256": "0b002f411b0daf239c130f31b2893539dd24c5b165ac4c3d86a5904e18780548",
+    "file": "ect/scripts/hooks/backtest-validation.js"
+  },
+  {
+    "id": "ect/scripts/hooks/data-quality-check.js",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/scripts/hooks/data-quality-check.js",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/scripts/hooks/data-quality-check.js",
+    "utc": "2026-10-18T07:50:32.428793+00:00",
+    "status": 200,
+    "bytes": 1993,
+    "sha256": "ee4cd2f4c0d44f0997f15669d456d774108af62dd7a606823b9c93df11d594c3",
+    "file": "ect/scripts/hooks/data-quality-check.js"
+  },
+  {
+    "id": "ect/scripts/hooks/risk-check.js",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/scripts/hooks/risk-check.js",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/scripts/hooks/risk-check.js",
+    "utc": "2026-10-18T07:50:32.471776+00:00",
+    "status": 200,
+    "bytes": 1697,
+    "sha256": "eb25bfbcbe466ab555eb6c79b6ea1c01c025f496bb5fac310fd5d6f5205fc85a",
+    "file": "ect/scripts/hooks/risk-check.js"
+  },
+  {
+    "id": "ect/scripts/hooks/session-start.js",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/scripts/hooks/session-start.js",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/scripts/hooks/session-start.js",
+    "utc": "2026-10-18T07:50:32.494344+00:00",
+    "status": 200,
+    "bytes": 1174,
+    "sha256": "6492674a1068d0db8bc0cc438bf35df23cb14ad6401895b067351ff4268b28bb",
+    "file": "ect/scripts/hooks/session-start.js"
+  },
+  {
+    "id": "ect/skills/backtesting/live-trading-monitoring/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/backtesting/live-trading-monitoring/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/backtesting/live-trading-monitoring/SKILL.md",
+    "utc": "2026-10-18T07:50:32.512076+00:00",
+    "status": 200,
+    "bytes": 12949,
+    "sha256": "5164c69e6f09097c0c4c16fcdcd2b262cd2ad794d5c8fa6a54fa8453894e73cd",
+    "file": "ect/skills/backtesting/live-trading-monitoring/SKILL.md"
+  },
+  {
+    "id": "ect/skills/backtesting/monte-carlo-simulation/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/backtesting/monte-carlo-simulation/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/backtesting/monte-carlo-simulation/SKILL.md",
+    "utc": "2026-10-18T07:50:32.518945+00:00",
+    "status": 200,
+    "bytes": 12895,
+    "sha256": "198898d9608996b39597a4bf1dac0f8038271d3f4c78fd921bb9dab05189d982",
+    "file": "ect/skills/backtesting/monte-carlo-simulation/SKILL.md"
+  },
+  {
+    "id": "ect/skills/backtesting/overfitting-prevention/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/backtesting/overfitting-prevention/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/backtesting/overfitting-prevention/SKILL.md",
+    "utc": "2026-10-18T07:50:32.520463+00:00",
+    "status": 200,
+    "bytes": 12933,
+    "sha256": "d3b47871280a148ce3b5b49eb101ac856c7e5e5efb097a6944227459b420f4b8",
+    "file": "ect/skills/backtesting/overfitting-prevention/SKILL.md"
+  },
+  {
+    "id": "ect/skills/backtesting/research-notebooks/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/backtesting/research-notebooks/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/backtesting/research-notebooks/SKILL.md",
+    "utc": "2026-10-18T07:50:32.570888+00:00",
+    "status": 200,
+    "bytes": 15281,
+    "sha256": "51762720a69cdf9f6a26de278d3fa2f35a2bcbb6ee613adc801c6848e78f97b4",
+    "file": "ect/skills/backtesting/research-notebooks/SKILL.md"
+  },
+  {
+    "id": "ect/skills/backtesting/strategy-evaluation/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/backtesting/strategy-evaluation/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/backtesting/strategy-evaluation/SKILL.md",
+    "utc": "2026-10-18T07:50:32.580629+00:00",
+    "status": 200,
+    "bytes": 13278,
+    "sha256": "2c2c7bb28a45a21add38314c87b0e5b99d762b7ac6d180e20b6f14583fec5351",
+    "file": "ect/skills/backtesting/strategy-evaluation/SKILL.md"
+  },
+  {
+    "id": "ect/skills/backtesting/walk-forward-optimization/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/backtesting/walk-forward-optimization/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/backtesting/walk-forward-optimization/SKILL.md",
+    "utc": "2026-10-18T07:50:32.593379+00:00",
+    "status": 200,
+    "bytes": 11791,
+    "sha256": "39bc5933b1d45859a6df53f037c8b2b9263e0bd43f9231821e5a8f4fb03b85f5",
+    "file": "ect/skills/backtesting/walk-forward-optimization/SKILL.md"
+  },
+  {
+    "id": "ect/skills/crypto/cross-chain-arbitrage/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/crypto/cross-chain-arbitrage/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/crypto/cross-chain-arbitrage/SKILL.md",
+    "utc": "2026-10-18T07:50:32.594663+00:00",
+    "status": 200,
+    "bytes": 9964,
+    "sha256": "bc42d112245e4d05c0e20e58f1c74564b570d78979d8187ab7691b6bfd746c13",
+    "file": "ect/skills/crypto/cross-chain-arbitrage/SKILL.md"
+  },
+  {
+    "id": "ect/skills/crypto/crypto-derivatives/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/crypto/crypto-derivatives/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/crypto/crypto-derivatives/SKILL.md",
+    "utc": "2026-10-18T07:50:32.612828+00:00",
+    "status": 200,
+    "bytes": 11080,
+    "sha256": "fcd4eb36907a963fc32398a537b8c8618ec566c20cfb977181f30ada1a25c2a8",
+    "file": "ect/skills/crypto/crypto-derivatives/SKILL.md"
+  },
+  {
+    "id": "ect/skills/crypto/defi-protocols/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/crypto/defi-protocols/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/crypto/defi-protocols/SKILL.md",
+    "utc": "2026-10-18T07:50:32.638747+00:00",
+    "status": 200,
+    "bytes": 7981,
+    "sha256": "5a3152aad693a6e8a9df5782e10962095cbccc0c954bba3544954e3513cafefe",
+    "file": "ect/skills/crypto/defi-protocols/SKILL.md"
+  },
+  {
+    "id": "ect/skills/crypto/mev-strategies/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/crypto/mev-strategies/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/crypto/mev-strategies/SKILL.md",
+    "utc": "2026-10-18T07:50:32.670673+00:00",
+    "status": 200,
+    "bytes": 9069,
+    "sha256": "1f1b8b1dd0470c73450c477342ad26b3680da52e70f3f589d7a55d3dc64f98b5",
+    "file": "ect/skills/crypto/mev-strategies/SKILL.md"
+  },
+  {
+    "id": "ect/skills/crypto/on-chain-analytics/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/crypto/on-chain-analytics/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/crypto/on-chain-analytics/SKILL.md",
+    "utc": "2026-10-18T07:50:32.693024+00:00",
+    "status": 200,
+    "bytes": 6989,
+    "sha256": "1f1580713fbb3685a6bc3a735769886e88b0597b93addcd605db41269bbf0893",
+    "file": "ect/skills/crypto/on-chain-analytics/SKILL.md"
+  },
+  {
+    "id": "ect/skills/crypto/stablecoin-analysis/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/crypto/stablecoin-analysis/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/crypto/stablecoin-analysis/SKILL.md",
+    "utc": "2026-10-18T07:50:32.697419+00:00",
+    "status": 200,
+    "bytes": 10798,
+    "sha256": "254ad9fbceb8b8aba8ab9b29927f4a6999cdbaa4c4093d28a3ee6d4e0b82b928",
+    "file": "ect/skills/crypto/stablecoin-analysis/SKILL.md"
+  },
+  {
+    "id": "ect/skills/crypto/tokenomics/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/crypto/tokenomics/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/crypto/tokenomics/SKILL.md",
+    "utc": "2026-10-18T07:50:32.710799+00:00",
+    "status": 200,
+    "bytes": 8398,
+    "sha256": "a3288009e7e64c57b6b24aafaaa85da9d3d90bad360aaab8f6a29ed270a391aa",
+    "file": "ect/skills/crypto/tokenomics/SKILL.md"
+  },
+  {
+    "id": "ect/skills/crypto/yield-farming/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/crypto/yield-farming/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/crypto/yield-farming/SKILL.md",
+    "utc": "2026-10-18T07:50:32.772435+00:00",
+    "status": 200,
+    "bytes": 9167,
+    "sha256": "ca9c5649f7a9d666ce38b12b53f61ad87d56305cf2ca7cba8191373a9879970e",
+    "file": "ect/skills/crypto/yield-farming/SKILL.md"
+  },
+  {
+    "id": "ect/skills/data/alternative-data/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/data/alternative-data/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/data/alternative-data/SKILL.md",
+    "utc": "2026-10-18T07:50:32.773044+00:00",
+    "status": 200,
+    "bytes": 10697,
+    "sha256": "3c9afbd050dcac6d7b7cf4033d70f942d8e6b2e2efde7494566e8f1eff7cf198",
+    "file": "ect/skills/data/alternative-data/SKILL.md"
+  },
+  {
+    "id": "ect/skills/data/data-quality/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/data/data-quality/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/data/data-quality/SKILL.md",
+    "utc": "2026-10-18T07:50:32.782645+00:00",
+    "status": 200,
+    "bytes": 11885,
+    "sha256": "8364d2428e96f8e5e9262ecbded4a4d294118cf1e789ce48a2ae7376ba942567",
+    "file": "ect/skills/data/data-quality/SKILL.md"
+  },
+  {
+    "id": "ect/skills/data/data-vendors/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/data/data-vendors/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/data/data-vendors/SKILL.md",
+    "utc": "2026-10-18T07:50:32.877454+00:00",
+    "status": 200,
+    "bytes": 11560,
+    "sha256": "36ea298077b974ee1120d286ce28db8882ba1727f36b95f9a8545d5cfb6dddc3",
+    "file": "ect/skills/data/data-vendors/SKILL.md"
+  },
+  {
+    "id": "ect/skills/data/feature-engineering/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/data/feature-engineering/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/data/feature-engineering/SKILL.md",
+    "utc": "2026-10-18T07:50:32.888846+00:00",
+    "status": 200,
+    "bytes": 11447,
+    "sha256": "e1560023b4da8ac0903601bdc329931e589f565a5246af1dc20c57f97e66f504",
+    "file": "ect/skills/data/feature-engineering/SKILL.md"
+  },
+  {
+    "id": "ect/skills/data/sentiment-analysis/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/data/sentiment-analysis/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/data/sentiment-analysis/SKILL.md",
+    "utc": "2026-10-18T07:50:32.894208+00:00",
+    "status": 200,
+    "bytes": 10761,
+    "sha256": "a25d8a99a6b6ddea2023cda65cd15b1fdb7308b2e7a7770ffcfe29eec411cd6b",
+    "file": "ect/skills/data/sentiment-analysis/SKILL.md"
+  },
+  {
+    "id": "ect/skills/data/web-scraping-finance/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/data/web-scraping-finance/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/data/web-scraping-finance/SKILL.md",
+    "utc": "2026-10-18T07:50:32.922739+00:00",
+    "status": 200,
+    "bytes": 11984,
+    "sha256": "8c9097cf9b04401861d13fbec8549f42496c276702655083e4ecaf13be619809",
+    "file": "ect/skills/data/web-scraping-finance/SKILL.md"
+  },
+  {
+    "id": "ect/skills/derivatives/binomial-trees/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/binomial-trees/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/binomial-trees/SKILL.md",
+    "utc": "2026-10-18T07:50:32.997810+00:00",
+    "status": 200,
+    "bytes": 8464,
+    "sha256": "0901f73ea81fa5f9e5d8d83adf26c2f48d531565600e0586511b644401595a5f",
+    "file": "ect/skills/derivatives/binomial-trees/SKILL.md"
+  },
+  {
+    "id": "ect/skills/derivatives/black-scholes/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/black-scholes/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/black-scholes/SKILL.md",
+    "utc": "2026-10-18T07:50:33.009521+00:00",
+    "status": 200,
+    "bytes": 8565,
+    "sha256": "a69b9b3ce3c67b2cabcb1e58215844646b8d5230f7dab7f39ca0254527b6bc6c",
+    "file": "ect/skills/derivatives/black-scholes/SKILL.md"
+  },
+  {
+    "id": "ect/skills/derivatives/credit-derivatives/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/credit-derivatives/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/credit-derivatives/SKILL.md",
+    "utc": "2026-10-18T07:50:33.015844+00:00",
+    "status": 200,
+    "bytes": 9770,
+    "sha256": "ea4f9f147a8b4e555b12122dbcde3ed4c1394741469d8f3174d8bd46d3275b23",
+    "file": "ect/skills/derivatives/credit-derivatives/SKILL.md"
+  },
+  {
+    "id": "ect/skills/derivatives/exotic-options/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/exotic-options/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/exotic-options/SKILL.md",
+    "utc": "2026-10-18T07:50:33.024067+00:00",
+    "status": 200,
+    "bytes": 9717,
+    "sha256": "082f1ea13c7815b7ac1beff58bd37c130b8fbcbe256caf9fdd7ce9cee9c9a8c5",
+    "file": "ect/skills/derivatives/exotic-options/SKILL.md"
+  },
+  {
+    "id": "ect/skills/derivatives/hedging-strategies/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/hedging-strategies/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/hedging-strategies/SKILL.md",
+    "utc": "2026-10-18T07:50:33.035037+00:00",
+    "status": 200,
+    "bytes": 11348,
+    "sha256": "7af0dbc10f365ad605c491d219dc55f8fd488d90b42f0d9ee7bf767aa7a78f90",
+    "file": "ect/skills/derivatives/hedging-strategies/SKILL.md"
+  },
+  {
+    "id": "ect/skills/derivatives/interest-rate-derivatives/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/interest-rate-derivatives/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/interest-rate-derivatives/SKILL.md",
+    "utc": "2026-10-18T07:50:33.043011+00:00",
+    "status": 200,
+    "bytes": 9478,
+    "sha256": "7a251dd3bdc99de2a45c685110f3734d9d214ac16fed72aa080e9c124e975f09",
+    "file": "ect/skills/derivatives/interest-rate-derivatives/SKILL.md"
+  },
+  {
+    "id": "ect/skills/derivatives/monte-carlo-pricing/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/monte-carlo-pricing/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/monte-carlo-pricing/SKILL.md",
+    "utc": "2026-10-18T07:50:33.046559+00:00",
+    "status": 200,
+    "bytes": 9159,
+    "sha256": "adc5ac3950de3ae6b4564c9fdca9e6507dcae82c3f7782a369c2241c1de3828d",
+    "file": "ect/skills/derivatives/monte-carlo-pricing/SKILL.md"
+  },
+  {
+    "id": "ect/skills/derivatives/structured-products/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/structured-products/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/structured-products/SKILL.md",
+    "utc": "2026-10-18T07:50:33.058929+00:00",
+    "status": 200,
+    "bytes": 10389,
+    "sha256": "635a09db13fdc76d41261c48280af3dee8a9d896ceba1822312b4efaa3b928b9",
+    "file": "ect/skills/derivatives/structured-products/SKILL.md"
+  },
+  {
+    "id": "ect/skills/derivatives/vol-surfaces/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/vol-surfaces/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/vol-surfaces/SKILL.md",
+    "utc": "2026-10-18T07:50:33.126421+00:00",
+    "status": 200,
+    "bytes": 8825,
+    "sha256": "53d4e2cc550e92c7957600fbd3c568a99e14f6c4f7ee381f2030552449c280c0",
+    "file": "ect/skills/derivatives/vol-surfaces/SKILL.md"
+  },
+  {
+    "id": "ect/skills/derivatives/vol-trading/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/vol-trading/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/derivatives/vol-trading/SKILL.md",
+    "utc": "2026-10-18T07:50:33.171147+00:00",
+    "status": 200,
+    "bytes": 10200,
+    "sha256": "59b92f4f7463123f2b19ff0c38d1afb591fecd4e07d31274d11a176df237661c",
+    "file": "ect/skills/derivatives/vol-trading/SKILL.md"
+  },
+  {
+    "id": "ect/skills/execution/execution-algos/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/execution/execution-algos/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/execution/execution-algos/SKILL.md",
+    "utc": "2026-10-18T07:50:33.175387+00:00",
+    "status": 200,
+    "bytes": 11472,
+    "sha256": "f2d6e2140b81f50aaff0e3c9c1eb2ad870c74ee9a190664b6a6141e929eee3f3",
+    "file": "ect/skills/execution/execution-algos/SKILL.md"
+  },
+  {
+    "id": "ect/skills/execution/latency-optimization/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/execution/latency-optimization/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/execution/latency-optimization/SKILL.md",
+    "utc": "2026-10-18T07:50:33.196712+00:00",
+    "status": 200,
+    "bytes": 12337,
+    "sha256": "4cbc91ed13c065a6598e2dde6cf996fd32442d4bb7b3f58f3599f887f98fca40",
+    "file": "ect/skills/execution/latency-optimization/SKILL.md"
+  },
+  {
+    "id": "ect/skills/execution/market-microstructure-theory/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/execution/market-microstructure-theory/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/execution/market-microstructure-theory/SKILL.md",
+    "utc": "2026-10-18T07:50:33.205344+00:00",
+    "status": 200,
+    "bytes": 11557,
+    "sha256": "64f1a01bafea3cb5fc5c74d76191a5a7ada5498527981bbeaf5306220a403737",
+    "file": "ect/skills/execution/market-microstructure-theory/SKILL.md"
+  },
+  {
+    "id": "ect/skills/execution/order-flow-analysis/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/execution/order-flow-analysis/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/execution/order-flow-analysis/SKILL.md",
+    "utc": "2026-10-18T07:50:33.309654+00:00",
+    "status": 200,
+    "bytes": 11526,
+    "sha256": "6e10d43d1bd89097bd8f8215d11a26db2646c957c958722ef61f43bec648aaa0",
+    "file": "ect/skills/execution/order-flow-analysis/SKILL.md"
+  },
+  {
+    "id": "ect/skills/execution/performance-metrics/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/execution/performance-metrics/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/execution/performance-metrics/SKILL.md",
+    "utc": "2026-10-18T07:50:33.315344+00:00",
+    "status": 200,
+    "bytes": 14444,
+    "sha256": "aada24e77bf873cd5ee0b69deb4328d39562ead7d7795b95219cc8e86ad640c2",
+    "file": "ect/skills/execution/performance-metrics/SKILL.md"
+  },
+  {
+    "id": "ect/skills/execution/smart-order-routing/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/execution/smart-order-routing/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/execution/smart-order-routing/SKILL.md",
+    "utc": "2026-10-18T07:50:33.326528+00:00",
+    "status": 200,
+    "bytes": 11980,
+    "sha256": "3815aee5e7c9db9093f2e8d93a7d5696f03605bc16d4c1ca0e9caafa59197dbc",
+    "file": "ect/skills/execution/smart-order-routing/SKILL.md"
+  },
+  {
+    "id": "ect/skills/execution/tick-data-processing/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/execution/tick-data-processing/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/execution/tick-data-processing/SKILL.md",
+    "utc": "2026-10-18T07:50:33.331940+00:00",
+    "status": 200,
+    "bytes": 14144,
+    "sha256": "77c09d872ab3cc2be56aa1b1c58a1a76ac9be6faacd4ea7246033339583bbeac",
+    "file": "ect/skills/execution/tick-data-processing/SKILL.md"
+  },
+  {
+    "id": "ect/skills/execution/transaction-cost-analysis/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/execution/transaction-cost-analysis/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/execution/transaction-cost-analysis/SKILL.md",
+    "utc": "2026-10-18T07:50:33.335468+00:00",
+    "status": 200,
+    "bytes": 11053,
+    "sha256": "e9d3797b90562b137a858fc662cbc8d65967cbf224cc85ae9c20e953eb8e9c41",
+    "file": "ect/skills/execution/transaction-cost-analysis/SKILL.md"
+  },
+  {
+    "id": "ect/skills/macro/central-bank-analysis/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/macro/central-bank-analysis/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/macro/central-bank-analysis/SKILL.md",
+    "utc": "2026-10-18T07:50:33.355517+00:00",
+    "status": 200,
+    "bytes": 12730,
+    "sha256": "f5fa043ccfd8472a2de1ad62d15eced0e7695d95924b0972efcbaf9ea6e8c2bd",
+    "file": "ect/skills/macro/central-bank-analysis/SKILL.md"
+  },
+  {
+    "id": "ect/skills/macro/commodities-fundamentals/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/macro/commodities-fundamentals/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/macro/commodities-fundamentals/SKILL.md",
+    "utc": "2026-10-18T07:50:33.361405+00:00",
+    "status": 200,
+    "bytes": 11474,
+    "sha256": "1aa4d7b3c28be4d409498a862ef432ddfba654d9405022219fdd498e6b32df9d",
+    "file": "ect/skills/macro/commodities-fundamentals/SKILL.md"
+  },
+  {
+    "id": "ect/skills/macro/economic-indicators/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/macro/economic-indicators/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/macro/economic-indicators/SKILL.md",
+    "utc": "2026-10-18T07:50:33.401510+00:00",
+    "status": 200,
+    "bytes": 11759,
+    "sha256": "b0390463a3c597337b0194b792e0388c9db98148bd0b633439b4851e3be00d9c",
+    "file": "ect/skills/macro/economic-indicators/SKILL.md"
+  },
+  {
+    "id": "ect/skills/macro/fx-fundamentals/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/macro/fx-fundamentals/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/macro/fx-fundamentals/SKILL.md",
+    "utc": "2026-10-18T07:50:33.414965+00:00",
+    "status": 200,
+    "bytes": 10324,
+    "sha256": "72e450de7ec38b38d9499d2ec087afc8ab84d852161783e57bbc4d1553f1a521",
+    "file": "ect/skills/macro/fx-fundamentals/SKILL.md"
+  },
+  {
+    "id": "ect/skills/macro/geopolitical-risk/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/macro/geopolitical-risk/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/macro/geopolitical-risk/SKILL.md",
+    "utc": "2026-10-18T07:50:33.430536+00:00",
+    "status": 200,
+    "bytes": 12920,
+    "sha256": "7a5f54e54c521488ae335dcf9185b54ccfaa8266e26a69dc236d2b8752223afd",
+    "file": "ect/skills/macro/geopolitical-risk/SKILL.md"
+  },
+  {
+    "id": "ect/skills/macro/yield-curve-analysis/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/macro/yield-curve-analysis/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/macro/yield-curve-analysis/SKILL.md",
+    "utc": "2026-10-18T07:50:33.453441+00:00",
+    "status": 200,
+    "bytes": 9441,
+    "sha256": "5e64fc68034d679bad9d9d025494561b3e55ee578a8919a572c3b122736f51c8",
+    "file": "ect/skills/macro/yield-curve-analysis/SKILL.md"
+  },
+  {
+    "id": "ect/skills/portfolio/alternative-allocations/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/portfolio/alternative-allocations/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/portfolio/alternative-allocations/SKILL.md",
+    "utc": "2026-10-18T07:50:33.484146+00:00",
+    "status": 200,
+    "bytes": 11083,
+    "sha256": "da487fcaa699e2c93aca74449d010978d4875362d68a0e1b0cd6aa1e92cf7101",
+    "file": "ect/skills/portfolio/alternative-allocations/SKILL.md"
+  },
+  {
+    "id": "ect/skills/portfolio/benchmark-tracking/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/portfolio/benchmark-tracking/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/portfolio/benchmark-tracking/SKILL.md",
+    "utc": "2026-10-18T07:50:33.485631+00:00",
+    "status": 200,
+    "bytes": 10799,
+    "sha256": "53154a718a3249e9aae7cccc624ce838d0b12e912df092be37739b907faceb2f",
+    "file": "ect/skills/portfolio/benchmark-tracking/SKILL.md"
+  },
+  {
+    "id": "ect/skills/portfolio/black-litterman/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/portfolio/black-litterman/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/portfolio/black-litterman/SKILL.md",
+    "utc": "2026-10-18T07:50:33.506511+00:00",
+    "status": 200,
+    "bytes": 8527,
+    "sha256": "eda0ccd66d207b52a31411956aa74fcd2a9e2606f9f12b27eed0cf0b9a494b66",
+    "file": "ect/skills/portfolio/black-litterman/SKILL.md"
+  },
+  {
+    "id": "ect/skills/portfolio/factor-investing/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/portfolio/factor-investing/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/portfolio/factor-investing/SKILL.md",
+    "utc": "2026-10-18T07:50:33.511973+00:00",
+    "status": 200,
+    "bytes": 10049,
+    "sha256": "ffd089627d4bc0d95116d2a13b6967253028b6c3ca2719a2918bea2bd11ffe92",
+    "file": "ect/skills/portfolio/factor-investing/SKILL.md"
+  },
+  {
+    "id": "ect/skills/portfolio/markowitz-optimization/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/portfolio/markowitz-optimization/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/portfolio/markowitz-optimization/SKILL.md",
+    "utc": "2026-10-18T07:50:33.517100+00:00",
+    "status": 200,
+    "bytes": 8147,
+    "sha256": "5090e1b158739d42b48cb62823f3d3a11170a9453d4c3b22ccdb2d29e2d6bea9",
+    "file": "ect/skills/portfolio/markowitz-optimization/SKILL.md"
+  },
+  {
+    "id": "ect/skills/portfolio/portfolio-attribution/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/portfolio/portfolio-attribution/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/portfolio/portfolio-attribution/SKILL.md",
+    "utc": "2026-10-18T07:50:33.526792+00:00",
+    "status": 200,
+    "bytes": 10458,
+    "sha256": "c62bbbe25b0a02443743d56eaa1113a49b214c8975270c09861e0acd31252c08",
+    "file": "ect/skills/portfolio/portfolio-attribution/SKILL.md"
+  },
+  {
+    "id": "ect/skills/portfolio/rebalancing-strategies/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/portfolio/rebalancing-strategies/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/portfolio/rebalancing-strategies/SKILL.md",
+    "utc": "2026-10-18T07:50:33.546080+00:00",
+    "status": 200,
+    "bytes": 11024,
+    "sha256": "851291dec71e5f62f0504693700aa3dd00eb4eb43e617557dcd68f7acb5c329d",
+    "file": "ect/skills/portfolio/rebalancing-strategies/SKILL.md"
+  },
+  {
+    "id": "ect/skills/portfolio/risk-parity/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/portfolio/risk-parity/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/portfolio/risk-parity/SKILL.md",
+    "utc": "2026-10-18T07:50:33.575709+00:00",
+    "status": 200,
+    "bytes": 8801,
+    "sha256": "697aada7982c539246a699ec16a57c7c66db2cc4f35c240f09b7a2050d9b95da",
+    "file": "ect/skills/portfolio/risk-parity/SKILL.md"
+  },
+  {
+    "id": "ect/skills/quant-methods/alpha-research/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/alpha-research/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/alpha-research/SKILL.md",
+    "utc": "2026-10-18T07:50:33.625189+00:00",
+    "status": 200,
+    "bytes": 7865,
+    "sha256": "459d03570e6614d57d2ef6a05b25c1098ab3b68fd870c26cf55b4faa181a53bb",
+    "file": "ect/skills/quant-methods/alpha-research/SKILL.md"
+  },
+  {
+    "id": "ect/skills/quant-methods/bayesian-methods/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/bayesian-methods/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/bayesian-methods/SKILL.md",
+    "utc": "2026-10-18T07:50:33.635862+00:00",
+    "status": 200,
+    "bytes": 9724,
+    "sha256": "c88270322c22818efbde39cea7ad17624928bd73a57ee29499e24c1af9053f3a",
+    "file": "ect/skills/quant-methods/bayesian-methods/SKILL.md"
+  },
+  {
+    "id": "ect/skills/quant-methods/deep-learning-trading/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/deep-learning-trading/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/deep-learning-trading/SKILL.md",
+    "utc": "2026-10-18T07:50:33.640083+00:00",
+    "status": 200,
+    "bytes": 10435,
+    "sha256": "b9004d0d887230cb49785ba09f2933759e8df005a32c6d3fbd191bad7fb841c6",
+    "file": "ect/skills/quant-methods/deep-learning-trading/SKILL.md"
+  },
+  {
+    "id": "ect/skills/quant-methods/factor-models/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/factor-models/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/factor-models/SKILL.md",
+    "utc": "2026-10-18T07:50:33.741566+00:00",
+    "status": 200,
+    "bytes": 7296,
+    "sha256": "773798dfcecfe8f508a44f823674bd9a9ff17df787b29caec73d0dab0d5eec17",
+    "file": "ect/skills/quant-methods/factor-models/SKILL.md"
+  },
+  {
+    "id": "ect/skills/quant-methods/kalman-filters/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/kalman-filters/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/kalman-filters/SKILL.md",
+    "utc": "2026-10-18T07:50:33.821388+00:00",
+    "status": 200,
+    "bytes": 8897,
+    "sha256": "ac5076d385942b7e27bafb8ca6081fe74da07d28e7134d6f0561b56d608063be",
+    "file": "ect/skills/quant-methods/kalman-filters/SKILL.md"
+  },
+  {
+    "id": "ect/skills/quant-methods/ml-for-finance/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/ml-for-finance/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/ml-for-finance/SKILL.md",
+    "utc": "2026-10-18T07:50:33.836892+00:00",
+    "status": 200,
+    "bytes": 9772,
+    "sha256": "7fea210ef9cdc02389a8441a375ca14c00f9c96ce5828a1795947d937cf761af",
+    "file": "ect/skills/quant-methods/ml-for-finance/SKILL.md"
+  },
+  {
+    "id": "ect/skills/quant-methods/regime-detection/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/regime-detection/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/regime-detection/SKILL.md",
+    "utc": "2026-10-18T07:50:33.877806+00:00",
+    "status": 200,
+    "bytes": 8584,
+    "sha256": "b2c7e5d30bda7b63087cd6c9da8eb5e40991ee29b39f6702ccb32a77c2eec8c2",
+    "file": "ect/skills/quant-methods/regime-detection/SKILL.md"
+  },
+  {
+    "id": "ect/skills/quant-methods/reinforcement-learning-trading/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/reinforcement-learning-trading/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/reinforcement-learning-trading/SKILL.md",
+    "utc": "2026-10-18T07:50:33.884789+00:00",
+    "status": 200,
+    "bytes": 11027,
+    "sha256": "6d5191da1a1a538df719ecdd07f01a985d892b74f43fdcce819d0850c5b593bd",
+    "file": "ect/skills/quant-methods/reinforcement-learning-trading/SKILL.md"
+  },
+  {
+    "id": "ect/skills/quant-methods/signal-processing/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/signal-processing/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/signal-processing/SKILL.md",
+    "utc": "2026-10-18T07:50:33.905490+00:00",
+    "status": 200,
+    "bytes": 9666,
+    "sha256": "ae8d6ce068ab1abd4965d3482383d2c91595dc01440e0fc065a8c8dfb53463cc",
+    "file": "ect/skills/quant-methods/signal-processing/SKILL.md"
+  },
+  {
+    "id": "ect/skills/quant-methods/time-series-analysis/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/time-series-analysis/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/quant-methods/time-series-analysis/SKILL.md",
+    "utc": "2026-10-18T07:50:33.910590+00:00",
+    "status": 200,
+    "bytes": 8602,
+    "sha256": "2d742f4af8974842fcd6ae0b7c2331b1144d2448c02368bd11dec43daa0b4951",
+    "file": "ect/skills/quant-methods/time-series-analysis/SKILL.md"
+  },
+  {
+    "id": "ect/skills/risk/correlation-risk/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/correlation-risk/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/correlation-risk/SKILL.md",
+    "utc": "2026-10-18T07:50:33.912747+00:00",
+    "status": 200,
+    "bytes": 8224,
+    "sha256": "33d0e01f50f993d225bedd8f12af7d5706c2b697c2487d30f3f2bf789c6e5e1a",
+    "file": "ect/skills/risk/correlation-risk/SKILL.md"
+  },
+  {
+    "id": "ect/skills/risk/counterparty-risk/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/counterparty-risk/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/counterparty-risk/SKILL.md",
+    "utc": "2026-10-18T07:50:33.916800+00:00",
+    "status": 200,
+    "bytes": 9945,
+    "sha256": "8663ad75f97d68e802f4f363bf002d4e9a3348974aa8ae8334afa6b7e2eb5c12",
+    "file": "ect/skills/risk/counterparty-risk/SKILL.md"
+  },
+  {
+    "id": "ect/skills/risk/drawdown-management/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/drawdown-management/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/drawdown-management/SKILL.md",
+    "utc": "2026-10-18T07:50:33.939190+00:00",
+    "status": 200,
+    "bytes": 8745,
+    "sha256": "7db9d8ac38b958836ebb8b395e7d24003f7f378bb7046d37149326f5a6445439",
+    "file": "ect/skills/risk/drawdown-management/SKILL.md"
+  },
+  {
+    "id": "ect/skills/risk/expected-shortfall/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/expected-shortfall/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/expected-shortfall/SKILL.md",
+    "utc": "2026-10-18T07:50:33.954301+00:00",
+    "status": 200,
+    "bytes": 7677,
+    "sha256": "a3d7cccbf0a70d5f837663398d03876808d1366369ef415ea9fc355300e1cef9",
+    "file": "ect/skills/risk/expected-shortfall/SKILL.md"
+  },
+  {
+    "id": "ect/skills/risk/greeks-management/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/greeks-management/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/greeks-management/SKILL.md",
+    "utc": "2026-10-18T07:50:33.984071+00:00",
+    "status": 200,
+    "bytes": 8447,
+    "sha256": "47e21eb0c7c422570b81555bfdf572a3c404ec8906a99e8ce1e5fbb24ccace01",
+    "file": "ect/skills/risk/greeks-management/SKILL.md"
+  },
+  {
+    "id": "ect/skills/risk/liquidity-risk/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/liquidity-risk/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/liquidity-risk/SKILL.md",
+    "utc": "2026-10-18T07:50:34.028843+00:00",
+    "status": 200,
+    "bytes": 8185,
+    "sha256": "c9169ab04a2c9a6c86523c0c74a1ddb245a559c7eb42bcc2388b5d917da4e87a",
+    "file": "ect/skills/risk/liquidity-risk/SKILL.md"
+  },
+  {
+    "id": "ect/skills/risk/position-sizing/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/position-sizing/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/position-sizing/SKILL.md",
+    "utc": "2026-10-18T07:50:34.072340+00:00",
+    "status": 200,
+    "bytes": 8757,
+    "sha256": "eb16d72e7abb7aa66f4a007fb93343fa1086b39b668b8ceed5619cb3c0ca54cd",
+    "file": "ect/skills/risk/position-sizing/SKILL.md"
+  },
+  {
+    "id": "ect/skills/risk/stress-testing/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/stress-testing/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/stress-testing/SKILL.md",
+    "utc": "2026-10-18T07:50:34.084387+00:00",
+    "status": 200,
+    "bytes": 9034,
+    "sha256": "8d7940bcbfde53307331f4e193766b25c3efcddfc37617ba14e82a25dc1474cf",
+    "file": "ect/skills/risk/stress-testing/SKILL.md"
+  },
+  {
+    "id": "ect/skills/risk/tail-risk-hedging/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/tail-risk-hedging/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/tail-risk-hedging/SKILL.md",
+    "utc": "2026-10-18T07:50:34.097255+00:00",
+    "status": 200,
+    "bytes": 8373,
+    "sha256": "e85bbce59583a30b26c4b6dfaa5db7a06e238960474b3799f552a5b83c9cfa77",
+    "file": "ect/skills/risk/tail-risk-hedging/SKILL.md"
+  },
+  {
+    "id": "ect/skills/risk/var-models/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/var-models/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/risk/var-models/SKILL.md",
+    "utc": "2026-10-18T07:50:34.116654+00:00",
+    "status": 200,
+    "bytes": 6759,
+    "sha256": "a3b875ac99b793f63c80b26878e422cb18616f47486c36409665a88b7d9ce022",
+    "file": "ect/skills/risk/var-models/SKILL.md"
+  },
+  {
+    "id": "ect/skills/strategies/carry-strategies/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/carry-strategies/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/carry-strategies/SKILL.md",
+    "utc": "2026-10-18T07:50:34.123809+00:00",
+    "status": 200,
+    "bytes": 9021,
+    "sha256": "851e28e8128a575e3d320f609cdf7350cd23068e6aec43b78badbf3a387f02c1",
+    "file": "ect/skills/strategies/carry-strategies/SKILL.md"
+  },
+  {
+    "id": "ect/skills/strategies/event-driven/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/event-driven/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/event-driven/SKILL.md",
+    "utc": "2026-10-18T07:50:34.128248+00:00",
+    "status": 200,
+    "bytes": 8895,
+    "sha256": "1d2cabe0ae326795f423a38ec745348cf95794d3cd6d752f54b34b3eb86fef5f",
+    "file": "ect/skills/strategies/event-driven/SKILL.md"
+  },
+  {
+    "id": "ect/skills/strategies/market-making/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/market-making/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/market-making/SKILL.md",
+    "utc": "2026-10-18T07:50:34.133153+00:00",
+    "status": 200,
+    "bytes": 10548,
+    "sha256": "8c0426650a97580355e7e3ef81119f962e3334be1d98a0886575a7f95b77f04a",
+    "file": "ect/skills/strategies/market-making/SKILL.md"
+  },
+  {
+    "id": "ect/skills/strategies/mean-reversion/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/mean-reversion/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/mean-reversion/SKILL.md",
+    "utc": "2026-10-18T07:50:34.140773+00:00",
+    "status": 200,
+    "bytes": 9726,
+    "sha256": "c3d2bd7c98479ab85f7b82e3085c84d0749eb8df26b680604314742bbfc5170c",
+    "file": "ect/skills/strategies/mean-reversion/SKILL.md"
+  },
+  {
+    "id": "ect/skills/strategies/momentum-strategies/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/momentum-strategies/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/momentum-strategies/SKILL.md",
+    "utc": "2026-10-18T07:50:34.196786+00:00",
+    "status": 200,
+    "bytes": 9621,
+    "sha256": "5bc761a279d7cebf3d1dfba1786d7d2b44aa9212d015070e850ee539da868add",
+    "file": "ect/skills/strategies/momentum-strategies/SKILL.md"
+  },
+  {
+    "id": "ect/skills/strategies/multi-asset-strategies/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/multi-asset-strategies/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/multi-asset-strategies/SKILL.md",
+    "utc": "2026-10-18T07:50:34.199560+00:00",
+    "status": 200,
+    "bytes": 10787,
+    "sha256": "c2627b32864640e472111401a407500ad5d4f36c5abacbbc0d5ec6405e4ae1ad",
+    "file": "ect/skills/strategies/multi-asset-strategies/SKILL.md"
+  },
+  {
+    "id": "ect/skills/strategies/pairs-trading/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/pairs-trading/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/pairs-trading/SKILL.md",
+    "utc": "2026-10-18T07:50:34.202226+00:00",
+    "status": 200,
+    "bytes": 10318,
+    "sha256": "e398e11e5021a1f0067f75e77637528bb1959e61e30d53fd72af5177ab379134",
+    "file": "ect/skills/strategies/pairs-trading/SKILL.md"
+  },
+  {
+    "id": "ect/skills/strategies/relative-value/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/relative-value/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/relative-value/SKILL.md",
+    "utc": "2026-10-18T07:50:34.229126+00:00",
+    "status": 200,
+    "bytes": 9252,
+    "sha256": "d4a23c43679f8a2818c058bd6d92b1bb8edbcdcf6b785d77cbe2df5d80cfbce7",
+    "file": "ect/skills/strategies/relative-value/SKILL.md"
+  },
+  {
+    "id": "ect/skills/strategies/stat-arb/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/stat-arb/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/stat-arb/SKILL.md",
+    "utc": "2026-10-18T07:50:34.264030+00:00",
+    "status": 200,
+    "bytes": 10135,
+    "sha256": "0a17c028aee89de7489d7c06810f5f8a5c7d23bb8561889566508fc817273fb4",
+    "file": "ect/skills/strategies/stat-arb/SKILL.md"
+  },
+  {
+    "id": "ect/skills/strategies/trend-following/SKILL.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/trend-following/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/strategies/trend-following/SKILL.md",
+    "utc": "2026-10-18T07:50:34.288325+00:00",
+    "status": 200,
+    "bytes": 9805,
+    "sha256": "8a4b845f9b07b451d46542b99f12b684be371d8aa586982b37542348b31bc901",
+    "file": "ect/skills/strategies/trend-following/SKILL.md"
+  },
+  {
+    "id": "ect/the-complete-guide.md",
+    "url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/the-complete-guide.md",
+    "final_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/the-complete-guide.md",
+    "utc": "2026-10-18T07:50:34.291641+00:00",
+    "status": 200,
+    "bytes": 15870,
+    "sha256": "65062f0dda763a146cb0ced16e203851701fa59ef8b30b22fa63eaa8ccacb925",
+    "file": "ect/the-complete-guide.md"
+  },
+  {
+    "id": "financial/.claude-plugin/marketplace.json",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/.claude-plugin/marketplace.json",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/.claude-plugin/marketplace.json",
+    "utc": "2026-10-18T07:50:34.309407+00:00",
+    "status": 200,
+    "bytes": 5008,
+    "sha256": "fbd8222d3a7031f7b7de2a094c2bbcc851227311f711469e6c396201ea1e1622",
+    "file": "financial/.claude-plugin/marketplace.json"
+  },
+  {
+    "id": "financial/.github/workflows/plugin-validate.yml",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/.github/workflows/plugin-validate.yml",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/.github/workflows/plugin-validate.yml",
+    "utc": "2026-10-18T07:50:34.325129+00:00",
+    "status": 200,
+    "bytes": 2133,
+    "sha256": "082550c3e897242b44959486eda5b2666e71741b701c28e54b48dcc88bb80d8f",
+    "file": "financial/.github/workflows/plugin-validate.yml"
+  },
+  {
+    "id": "financial/.github/workflows/secret-scan.yml",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/.github/workflows/secret-scan.yml",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/.github/workflows/secret-scan.yml",
+    "utc": "2026-10-18T07:50:34.349006+00:00",
+    "status": 200,
+    "bytes": 1156,
+    "sha256": "fbf6d6e281cc4389a54990b9b8879704f1f4a1544a87e953818908c05cb06146",
+    "file": "financial/.github/workflows/secret-scan.yml"
+  },
+  {
+    "id": "financial/LICENSE",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/LICENSE",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/LICENSE",
+    "utc": "2026-10-18T07:50:34.361080+00:00",
+    "status": 200,
+    "bytes": 11358,
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "file": "financial/LICENSE"
+  },
+  {
+    "id": "financial/README.md",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/README.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/README.md",
+    "utc": "2026-10-18T07:50:34.363482+00:00",
+    "status": 200,
+    "bytes": 15894,
+    "sha256": "52f689c6c32bd2a505fb75e774c8857d4a70db77b1b0057353fb10e7a6e5ca42",
+    "file": "financial/README.md"
+  },
+  {
+    "id": "financial/managed-agent-cookbooks/README.md",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/managed-agent-cookbooks/README.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/managed-agent-cookbooks/README.md",
+    "utc": "2026-10-18T07:50:34.387576+00:00",
+    "status": 200,
+    "bytes": 4405,
+    "sha256": "5d182993ab6768552ece5d1014dde48d8c2bf7f02fe988255a11924eaa8c8c65",
+    "file": "financial/managed-agent-cookbooks/README.md"
+  },
+  {
+    "id": "financial/managed-agent-cookbooks/earnings-reviewer/README.md",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/managed-agent-cookbooks/earnings-reviewer/README.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/managed-agent-cookbooks/earnings-reviewer/README.md",
+    "utc": "2026-10-18T07:50:34.394334+00:00",
+    "status": 200,
+    "bytes": 1386,
+    "sha256": "90853190da1e72ecc38a57a5de5cbe64442a57063034ed54f97631dd6f577441",
+    "file": "financial/managed-agent-cookbooks/earnings-reviewer/README.md"
+  },
+  {
+    "id": "financial/managed-agent-cookbooks/earnings-reviewer/agent.yaml",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/managed-agent-cookbooks/earnings-reviewer/agent.yaml",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/managed-agent-cookbooks/earnings-reviewer/agent.yaml",
+    "utc": "2026-10-18T07:50:34.401155+00:00",
+    "status": 200,
+    "bytes": 1074,
+    "sha256": "5e7c96716a564d55fba6504b7af41c340fca2a82f880a73767d8006841ef7dd8",
+    "file": "financial/managed-agent-cookbooks/earnings-reviewer/agent.yaml"
+  },
+  {
+    "id": "financial/managed-agent-cookbooks/model-builder/subagents/data-puller.yaml",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/managed-agent-cookbooks/model-builder/subagents/data-puller.yaml",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/managed-agent-cookbooks/model-builder/subagents/data-puller.yaml",
+    "utc": "2026-10-18T07:50:34.426053+00:00",
+    "status": 200,
+    "bytes": 1038,
+    "sha256": "cf06634c3d1f70e044b485e68fbd0ac62fdb732e8565c75f4d495020006bf468",
+    "file": "financial/managed-agent-cookbooks/model-builder/subagents/data-puller.yaml"
+  },
+  {
+    "id": "financial/plugins/agent-plugins/earnings-reviewer/skills/earnings-analysis/SKILL.md",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/earnings-reviewer/skills/earnings-analysis/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/earnings-reviewer/skills/earnings-analysis/SKILL.md",
+    "utc": "2026-10-18T07:50:34.495762+00:00",
+    "status": 200,
+    "bytes": 8684,
+    "sha256": "4db857c27a53141b6ebc38ec9ee7f0020dec59cab084ae6753e53366d118c8ee",
+    "file": "financial/plugins/agent-plugins/earnings-reviewer/skills/earnings-analysis/SKILL.md"
+  },
+  {
+    "id": "financial/plugins/agent-plugins/earnings-reviewer/skills/earnings-analysis/references/best-practices.md",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/earnings-reviewer/skills/earnings-analysis/references/best-practices.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/earnings-reviewer/skills/earnings-analysis/references/best-practices.md",
+    "utc": "2026-10-18T07:50:34.527427+00:00",
+    "status": 200,
+    "bytes": 9355,
+    "sha256": "a688e6b53d408fcfc36cb5490e9e2a75b82789f876f14ba22119bf19db655d09",
+    "file": "financial/plugins/agent-plugins/earnings-reviewer/skills/earnings-analysis/references/best-practices.md"
+  },
+  {
+    "id": "financial/plugins/agent-plugins/earnings-reviewer/skills/earnings-analysis/references/report-structure.md",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/earnings-reviewer/skills/earnings-analysis/references/report-structure.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/earnings-reviewer/skills/earnings-analysis/references/report-structure.md",
+    "utc": "2026-10-18T07:50:34.532293+00:00",
+    "status": 200,
+    "bytes": 11141,
+    "sha256": "60da5bd7cde0d93f197d21618bf801978022c4b24b91f2ed9ba21eb2945dc586",
+    "file": "financial/plugins/agent-plugins/earnings-reviewer/skills/earnings-analysis/references/report-structure.md"
+  },
+  {
+    "id": "financial/plugins/agent-plugins/earnings-reviewer/skills/earnings-analysis/references/workflow.md",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/earnings-reviewer/skills/earnings-analysis/references/workflow.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/earnings-reviewer/skills/earnings-analysis/references/workflow.md",
+    "utc": "2026-10-18T07:50:34.545664+00:00",
+    "status": 200,
+    "bytes": 21406,
+    "sha256": "c8922b00e1f7fbbb23afc7601430bbb9c8bf0ac995f478bdd3b368aad6cf0a01",
+    "file": "financial/plugins/agent-plugins/earnings-reviewer/skills/earnings-analysis/references/workflow.md"
+  },
+  {
+    "id": "financial/plugins/agent-plugins/model-builder/skills/3-statement-model/references/sec-filings.md",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/model-builder/skills/3-statement-model/references/sec-filings.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/model-builder/skills/3-statement-model/references/sec-filings.md",
+    "utc": "2026-10-18T07:50:34.556424+00:00",
+    "status": 200,
+    "bytes": 4598,
+    "sha256": "9765c2f789b8d87baeca89b7f3a5ddc68d6068c06b39b4445224197d6e444e93",
+    "file": "financial/plugins/agent-plugins/model-builder/skills/3-statement-model/references/sec-filings.md"
+  },
+  {
+    "id": "financial/plugins/agent-plugins/model-builder/skills/dcf-model/scripts/validate_dcf.py",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/model-builder/skills/dcf-model/scripts/validate_dcf.py",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/model-builder/skills/dcf-model/scripts/validate_dcf.py",
+    "utc": "2026-10-18T07:50:34.560456+00:00",
+    "status": 200,
+    "bytes": 11623,
+    "sha256": "6892a153a0b834f0f31d8676602341a4d721bbb2c294dbed64a03262512e738a",
+    "file": "financial/plugins/agent-plugins/model-builder/skills/dcf-model/scripts/validate_dcf.py"
+  },
+  {
+    "id": "financial/plugins/agent-plugins/pitch-agent/skills/3-statement-model/references/sec-filings.md",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/pitch-agent/skills/3-statement-model/references/sec-filings.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/pitch-agent/skills/3-statement-model/references/sec-filings.md",
+    "utc": "2026-10-18T07:50:34.572525+00:00",
+    "status": 200,
+    "bytes": 4598,
+    "sha256": "9765c2f789b8d87baeca89b7f3a5ddc68d6068c06b39b4445224197d6e444e93",
+    "file": "financial/plugins/agent-plugins/pitch-agent/skills/3-statement-model/references/sec-filings.md"
+  },
+  {
+    "id": "financial/plugins/agent-plugins/pitch-agent/skills/dcf-model/scripts/validate_dcf.py",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/pitch-agent/skills/dcf-model/scripts/validate_dcf.py",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/pitch-agent/skills/dcf-model/scripts/validate_dcf.py",
+    "utc": "2026-10-18T07:50:34.586216+00:00",
+    "status": 200,
+    "bytes": 11623,
+    "sha256": "6892a153a0b834f0f31d8676602341a4d721bbb2c294dbed64a03262512e738a",
+    "file": "financial/plugins/agent-plugins/pitch-agent/skills/dcf-model/scripts/validate_dcf.py"
+  },
+  {
+    "id": "financial/plugins/agent-plugins/valuation-reviewer/agents/valuation-reviewer.md",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/valuation-reviewer/agents/valuation-reviewer.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/agent-plugins/valuation-reviewer/agents/valuation-reviewer.md",
+    "utc": "2026-10-18T07:50:34.615081+00:00",
+    "status": 200,
+    "bytes": 1455,
+    "sha256": "fc86b92eccde10781ca04982a62396b04ffca9750296308381b6a336e6436a6a",
+    "file": "financial/plugins/agent-plugins/valuation-reviewer/agents/valuation-reviewer.md"
+  },
+  {
+    "id": "financial/plugins/vertical-plugins/equity-research/skills/earnings-analysis/SKILL.md",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/equity-research/skills/earnings-analysis/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/equity-research/skills/earnings-analysis/SKILL.md",
+    "utc": "2026-10-18T07:50:34.620227+00:00",
+    "status": 200,
+    "bytes": 8684,
+    "sha256": "4db857c27a53141b6ebc38ec9ee7f0020dec59cab084ae6753e53366d118c8ee",
+    "file": "financial/plugins/vertical-plugins/equity-research/skills/earnings-analysis/SKILL.md"
+  },
+  {
+    "id": "financial/plugins/vertical-plugins/equity-research/skills/earnings-analysis/references/best-practices.md",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/equity-research/skills/earnings-analysis/references/best-practices.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/equity-research/skills/earnings-analysis/references/best-practices.md",
+    "utc": "2026-10-18T07:50:34.660260+00:00",
+    "status": 200,
+    "bytes": 9355,
+    "sha256": "a688e6b53d408fcfc36cb5490e9e2a75b82789f876f14ba22119bf19db655d09",
+    "file": "financial/plugins/vertical-plugins/equity-research/skills/earnings-analysis/references/best-practices.md"
+  },
+  {
+    "id": "financial/plugins/vertical-plugins/equity-research/skills/earnings-analysis/references/report-structure.md",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/equity-research/skills/earnings-analysis/references/report-structure.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/equity-research/skills/earnings-analysis/references/report-structure.md",
+    "utc": "2026-10-18T07:50:34.677591+00:00",
+    "status": 200,
+    "bytes": 11141,
+    "sha256": "60da5bd7cde0d93f197d21618bf801978022c4b24b91f2ed9ba21eb2945dc586",
+    "file": "financial/plugins/vertical-plugins/equity-research/skills/earnings-analysis/references/report-structure.md"
+  },
+  {
+    "id": "financial/plugins/vertical-plugins/equity-research/skills/earnings-analysis/references/workflow.md",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/equity-research/skills/earnings-analysis/references/workflow.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/equity-research/skills/earnings-analysis/references/workflow.md",
+    "utc": "2026-10-18T07:50:34.711423+00:00",
+    "status": 200,
+    "bytes": 21406,
+    "sha256": "c8922b00e1f7fbbb23afc7601430bbb9c8bf0ac995f478bdd3b368aad6cf0a01",
+    "file": "financial/plugins/vertical-plugins/equity-research/skills/earnings-analysis/references/workflow.md"
+  },
+  {
+    "id": "financial/plugins/vertical-plugins/financial-analysis/skills/3-statement-model/references/sec-filings.md",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/financial-analysis/skills/3-statement-model/references/sec-filings.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/financial-analysis/skills/3-statement-model/references/sec-filings.md",
+    "utc": "2026-10-18T07:50:34.719822+00:00",
+    "status": 200,
+    "bytes": 4598,
+    "sha256": "9765c2f789b8d87baeca89b7f3a5ddc68d6068c06b39b4445224197d6e444e93",
+    "file": "financial/plugins/vertical-plugins/financial-analysis/skills/3-statement-model/references/sec-filings.md"
+  },
+  {
+    "id": "financial/plugins/vertical-plugins/financial-analysis/skills/dcf-model/scripts/validate_dcf.py",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/financial-analysis/skills/dcf-model/scripts/validate_dcf.py",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/financial-analysis/skills/dcf-model/scripts/validate_dcf.py",
+    "utc": "2026-10-18T07:50:34.728121+00:00",
+    "status": 200,
+    "bytes": 11623,
+    "sha256": "6892a153a0b834f0f31d8676602341a4d721bbb2c294dbed64a03262512e738a",
+    "file": "financial/plugins/vertical-plugins/financial-analysis/skills/dcf-model/scripts/validate_dcf.py"
+  },
+  {
+    "id": "financial/scripts/orchestrate.py",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/scripts/orchestrate.py",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/scripts/orchestrate.py",
+    "utc": "2026-10-18T07:51:13.874090+00:00",
+    "status": 200,
+    "bytes": 3147,
+    "sha256": "d561f9bb62bfa025ae409d94121e91568bcd1d46035b0715e333287874d14f6b",
+    "file": "financial/scripts/orchestrate.py"
+  },
+  {
+    "id": "financial/scripts/check.py",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/scripts/check.py",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/scripts/check.py",
+    "utc": "2026-10-18T07:51:13.874872+00:00",
+    "status": 200,
+    "bytes": 8444,
+    "sha256": "c19d681ddba4bd09c05e4270f991827a3289414702dbe99e4983fd5ebb4819b5",
+    "file": "financial/scripts/check.py"
+  },
+  {
+    "id": "financial/scripts/validate.py",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/scripts/validate.py",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/scripts/validate.py",
+    "utc": "2026-10-18T07:51:13.875431+00:00",
+    "status": 200,
+    "bytes": 1178,
+    "sha256": "4094e34f8431c08ae617de8c0280a0a64b4a0afd70507fdfdc3a0b26932ae090",
+    "file": "financial/scripts/validate.py"
+  },
+  {
+    "id": "financial/scripts/test-cookbooks.sh",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/scripts/test-cookbooks.sh",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/scripts/test-cookbooks.sh",
+    "utc": "2026-10-18T07:51:13.875968+00:00",
+    "status": 200,
+    "bytes": 1032,
+    "sha256": "86371dd43786202f6967a81680a3dbfe683f6706b546e7afd9e9e40eadfb0390",
+    "file": "financial/scripts/test-cookbooks.sh"
+  },
+  {
+    "id": "financial/scripts/deploy-managed-agent.sh",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/scripts/deploy-managed-agent.sh",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/scripts/deploy-managed-agent.sh",
+    "utc": "2026-10-18T07:51:13.876458+00:00",
+    "status": 200,
+    "bytes": 7224,
+    "sha256": "9949351e02b3be4d9eeff79e586edd77d532b6337ee92d96ce72da8120cf8207",
+    "file": "financial/scripts/deploy-managed-agent.sh"
+  },
+  {
+    "id": "financial/plugins/vertical-plugins/financial-analysis/.mcp.json",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/financial-analysis/.mcp.json",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/financial-analysis/.mcp.json",
+    "utc": "2026-10-18T07:51:13.876876+00:00",
+    "status": 200,
+    "bytes": 1172,
+    "sha256": "a772aa4b50f7fc1130176c2368b9fd2a57aafbb82cca943b78f8181ebaa2bc43",
+    "file": "financial/plugins/vertical-plugins/financial-analysis/.mcp.json"
+  },
+  {
+    "id": "financial/managed-agent-cookbooks/earnings-reviewer/subagents/transcript-reader.yaml",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/managed-agent-cookbooks/earnings-reviewer/subagents/transcript-reader.yaml",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/managed-agent-cookbooks/earnings-reviewer/subagents/transcript-reader.yaml",
+    "utc": "2026-10-18T07:51:13.877556+00:00",
+    "status": 200,
+    "bytes": 992,
+    "sha256": "dedb2fb453f9bca9c6d0dd4838fce45a4683625d7abe5a91738dafd920886bc0",
+    "file": "financial/managed-agent-cookbooks/earnings-reviewer/subagents/transcript-reader.yaml"
+  },
+  {
+    "id": "financial/managed-agent-cookbooks/earnings-reviewer/subagents/model-updater.yaml",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/managed-agent-cookbooks/earnings-reviewer/subagents/model-updater.yaml",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/managed-agent-cookbooks/earnings-reviewer/subagents/model-updater.yaml",
+    "utc": "2026-10-18T07:51:13.878040+00:00",
+    "status": 200,
+    "bytes": 864,
+    "sha256": "0116d5639b67fee1856c70d1cd9059ac99b6de9c41ae7f3e2ff784b537ebfeff",
+    "file": "financial/managed-agent-cookbooks/earnings-reviewer/subagents/model-updater.yaml"
+  },
+  {
+    "id": "financial/managed-agent-cookbooks/earnings-reviewer/subagents/note-writer.yaml",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/managed-agent-cookbooks/earnings-reviewer/subagents/note-writer.yaml",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/managed-agent-cookbooks/earnings-reviewer/subagents/note-writer.yaml",
+    "utc": "2026-10-18T07:51:13.881966+00:00",
+    "status": 200,
+    "bytes": 688,
+    "sha256": "5cee07ae798b5c5f34b53482b319ba39d8e4368430e0cb0a3d3659603dddff76",
+    "file": "financial/managed-agent-cookbooks/earnings-reviewer/subagents/note-writer.yaml"
+  },
+  {
+    "id": "financial/plugins/vertical-plugins/equity-research/skills/earnings-analysis/SKILL.md",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/equity-research/skills/earnings-analysis/SKILL.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/equity-research/skills/earnings-analysis/SKILL.md",
+    "utc": "2026-10-18T07:51:13.886452+00:00",
+    "status": 200,
+    "bytes": 8684,
+    "sha256": "4db857c27a53141b6ebc38ec9ee7f0020dec59cab084ae6753e53366d118c8ee",
+    "file": "financial/plugins/vertical-plugins/equity-research/skills/earnings-analysis/SKILL.md"
+  },
+  {
+    "id": "financial/plugins/vertical-plugins/financial-analysis/skills/dcf-model/scripts/validate_dcf.py",
+    "url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/financial-analysis/skills/dcf-model/scripts/validate_dcf.py",
+    "final_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/financial-analysis/skills/dcf-model/scripts/validate_dcf.py",
+    "utc": "2026-10-18T07:51:13.893950+00:00",
+    "status": 200,
+    "bytes": 11623,
+    "sha256": "6892a153a0b834f0f31d8676602341a4d721bbb2c294dbed64a03262512e738a",
+    "file": "financial/plugins/vertical-plugins/financial-analysis/skills/dcf-model/scripts/validate_dcf.py"
+  },
+  {
+    "id": "docs/agent-view.md",
+    "url": "https://code.claude.com/docs/en/agent-view.md",
+    "final_url": "https://code.claude.com/docs/en/agent-view.md",
+    "utc": "2026-10-18T07:51:13.897004+00:00",
+    "status": 200,
+    "bytes": 137741,
+    "sha256": "1cba78a0b064b62fdfb8f1a48d0a23deec34ce0d5eeba0a9af01482207a73754",
+    "file": "docs/agent-view.md"
+  },
+  {
+    "id": "docs/agent-sdk/overview.md",
+    "url": "https://code.claude.com/docs/en/agent-sdk/overview.md",
+    "final_url": "https://code.claude.com/docs/en/agent-sdk/overview.md",
+    "utc": "2026-10-18T07:51:14.033573+00:00",
+    "status": 200,
+    "bytes": 6839,
+    "sha256": "970069a3d032e81062aed716308d39420b241f590cddc005a9ee72370241db01",
+    "file": "docs/agent-sdk/overview.md"
+  },
+  {
+    "id": "docs/github-actions.md",
+    "url": "https://code.claude.com/docs/en/github-actions.md",
+    "final_url": "https://code.claude.com/docs/en/github-actions.md",
+    "utc": "2026-10-18T07:51:14.084784+00:00",
+    "status": 200,
+    "bytes": 29088,
+    "sha256": "87b99aefc0a9f4389a3293fdf7c5dfd35491bebc6fec70869a80557070a31ae7",
+    "file": "docs/github-actions.md"
+  },
+  {
+    "id": "docs/agent-sdk/permissions.md",
+    "url": "https://code.claude.com/docs/en/agent-sdk/permissions.md",
+    "final_url": "https://code.claude.com/docs/en/agent-sdk/permissions.md",
+    "utc": "2026-10-18T07:51:14.144622+00:00",
+    "status": 200,
+    "bytes": 26730,
+    "sha256": "59b8df322c70a4a17937bf376ca56910e3b246012258c1d1a52aa1b88e2b1fee",
+    "file": "docs/agent-sdk/permissions.md"
+  },
+  {
+    "id": "docs/agent-sdk/cost-tracking.md",
+    "url": "https://code.claude.com/docs/en/agent-sdk/cost-tracking.md",
+    "final_url": "https://code.claude.com/docs/en/agent-sdk/cost-tracking.md",
+    "utc": "2026-10-18T07:51:14.148278+00:00",
+    "status": 200,
+    "bytes": 27593,
+    "sha256": "0efff313646aefb8e10616b8d5e8b330ffd9904cb08017ccb05073af13d66a61",
+    "file": "docs/agent-sdk/cost-tracking.md"
+  },
+  {
+    "id": "docs/data-usage.md",
+    "url": "https://code.claude.com/docs/en/data-usage.md",
+    "final_url": "https://code.claude.com/docs/en/data-usage.md",
+    "utc": "2026-10-18T07:51:14.165260+00:00",
+    "status": 200,
+    "bytes": 18976,
+    "sha256": "ef5260591575f5c4d2cc649054349b427fb6f3aa91388f9162662d7e3ba0bb03",
+    "file": "docs/data-usage.md"
+  },
+  {
+    "id": "docs/cli-reference.md",
+    "url": "https://code.claude.com/docs/en/cli-reference.md",
+    "final_url": "https://code.claude.com/docs/en/cli-reference.md",
+    "utc": "2026-10-18T07:51:14.196277+00:00",
+    "status": 200,
+    "bytes": 47770,
+    "sha256": "81d5a5b49f43566ba0f43c7725dae858cad39c20b297cc5efbde5e4759462cbf",
+    "file": "docs/cli-reference.md"
+  },
+  {
+    "id": "docs/code-review-costs.md",
+    "url": "https://code.claude.com/docs/en/code-review-costs.md",
+    "final_url": "https://code.claude.com/docs/en/code-review-costs.md",
+    "utc": "2026-10-18T07:51:14.210311+00:00",
+    "status": 200,
+    "bytes": 6008,
+    "sha256": "93504a0e1aa12e30593b8970d8011b652493a45de6a2f95859de422746993fa2",
+    "file": "docs/code-review-costs.md"
+  },
+  {
+    "id": "docs/code-review.md",
+    "url": "https://code.claude.com/docs/en/code-review.md",
+    "final_url": "https://code.claude.com/docs/en/code-review.md",
+    "utc": "2026-10-18T07:51:14.224122+00:00",
+    "status": 200,
+    "bytes": 10831,
+    "sha256": "e27d0098417de60dc9792fdc86087415970e88a8fdfca60c6b9b3207d39bc5d6",
+    "file": "docs/code-review.md"
+  },
+  {
+    "id": "docs/security.md",
+    "url": "https://code.claude.com/docs/en/security.md",
+    "final_url": "https://code.claude.com/docs/en/security.md",
+    "utc": "2026-10-18T07:51:14.247766+00:00",
+    "status": 200,
+    "bytes": 14368,
+    "sha256": "57603902b3038ab4c51a458516e7d74cb41cd256026e5ebc1d0c20a671aea155",
+    "file": "docs/security.md"
+  },
+  {
+    "id": "docs/sandboxing.md",
+    "url": "https://code.claude.com/docs/en/sandboxing.md",
+    "final_url": "https://code.claude.com/docs/en/sandboxing.md",
+    "utc": "2026-10-18T07:51:14.248969+00:00",
+    "status": 200,
+    "bytes": 94950,
+    "sha256": "ac3bda4a1aa12361200c724edc2a1531d21f54fab50814ac7460a7226e987d75",
+    "file": "docs/sandboxing.md"
+  },
+  {
+    "id": "pricing.html",
+    "url": "https://claude.com/pricing",
+    "final_url": "https://claude.com/pricing",
+    "utc": "2026-10-18T07:51:14.266899+00:00",
+    "status": 200,
+    "bytes": 1244443,
+    "sha256": "3191dab09a117512d99bf90279773a096535b944f0a6f1d454132530dc36cbbb",
+    "file": "pricing.html"
+  },
+  {
+    "id": "github_action_repo.json",
+    "url": "https://api.github.com/repos/anthropics/claude-code-action",
+    "final_url": "https://api.github.com/repos/anthropics/claude-code-action",
+    "utc": "2026-10-18T07:51:14.276925+00:00",
+    "status": 200,
+    "bytes": 7101,
+    "sha256": "558392e73f19920433b3ced687beeecda25a3ae13f20805880c94efd8cc273b1",
+    "file": "github_action_repo.json"
+  },
+  {
+    "id": "github_action_head.json",
+    "url": "https://api.github.com/repos/anthropics/claude-code-action/commits/HEAD",
+    "final_url": "https://api.github.com/repos/anthropics/claude-code-action/commits/HEAD",
+    "utc": "2026-10-18T07:51:14.286394+00:00",
+    "status": 200,
+    "bytes": 21957,
+    "sha256": "e40badf813a431965762bf2e66c93c140a25c1feb20ad73c70269202cc1b41bb",
+    "file": "github_action_head.json"
+  },
+  {
+    "id": "action/README.md",
+    "url": "https://raw.githubusercontent.com/anthropics/claude-code-action/f27be6b65a4652f08a2ba3cff79114829b588967/README.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/claude-code-action/f27be6b65a4652f08a2ba3cff79114829b588967/README.md",
+    "utc": "2026-10-18T07:51:50.744320+00:00",
+    "status": 200,
+    "bytes": 4896,
+    "sha256": "a381c47399445c97480d025a406f485644fdd5f4f7ffd880be0567ac2f7b4640",
+    "file": "action/README.md"
+  },
+  {
+    "id": "action/action.yml",
+    "url": "https://raw.githubusercontent.com/anthropics/claude-code-action/f27be6b65a4652f08a2ba3cff79114829b588967/action.yml",
+    "final_url": "https://raw.githubusercontent.com/anthropics/claude-code-action/f27be6b65a4652f08a2ba3cff79114829b588967/action.yml",
+    "utc": "2026-10-18T07:51:50.745143+00:00",
+    "status": 200,
+    "bytes": 23689,
+    "sha256": "87b706489e63483c9c32c12af36467dd34e309becca35f7a8ead4d1e0664c4df",
+    "file": "action/action.yml"
+  },
+  {
+    "id": "action/LICENSE",
+    "url": "https://raw.githubusercontent.com/anthropics/claude-code-action/f27be6b65a4652f08a2ba3cff79114829b588967/LICENSE",
+    "final_url": "https://raw.githubusercontent.com/anthropics/claude-code-action/f27be6b65a4652f08a2ba3cff79114829b588967/LICENSE",
+    "utc": "2026-10-18T07:51:50.745640+00:00",
+    "status": 200,
+    "bytes": 1070,
+    "sha256": "cebdde8a8fb9ee59e5eaaed19578bf8085aa7047562259c31f38f225c26f6812",
+    "file": "action/LICENSE"
+  },
+  {
+    "id": "action/docs/security.md",
+    "url": "https://raw.githubusercontent.com/anthropics/claude-code-action/f27be6b65a4652f08a2ba3cff79114829b588967/docs/security.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/claude-code-action/f27be6b65a4652f08a2ba3cff79114829b588967/docs/security.md",
+    "utc": "2026-10-18T07:51:50.746241+00:00",
+    "status": 200,
+    "bytes": 14238,
+    "sha256": "2dd090ea8027eda1b4148bc46d00767c1bb5fdd78203a5c53525580e8e9cfc5c",
+    "file": "action/docs/security.md"
+  },
+  {
+    "id": "action/docs/usage.md",
+    "url": "https://raw.githubusercontent.com/anthropics/claude-code-action/f27be6b65a4652f08a2ba3cff79114829b588967/docs/usage.md",
+    "final_url": "https://raw.githubusercontent.com/anthropics/claude-code-action/f27be6b65a4652f08a2ba3cff79114829b588967/docs/usage.md",
+    "utc": "2026-10-18T07:51:50.746689+00:00",
+    "status": 200,
+    "bytes": 21275,
+    "sha256": "70f62d0f2f42b9b1945e42ea064debcdfdb7aae0ad6c784ca9a984254327633f",
+    "file": "action/docs/usage.md"
+  },
+  {
+    "id": "claude_tag_v2.1.302.json",
+    "url": "https://api.github.com/repos/anthropics/claude-code/git/ref/tags/v2.1.302",
+    "final_url": "https://api.github.com/repos/anthropics/claude-code/git/ref/tags/v2.1.302",
+    "utc": "2026-10-18T07:51:50.747726+00:00",
+    "status": 200,
+    "bytes": 352,
+    "sha256": "4ed3a5a997a6dc446013216d0c83b2a71b6c05d2b3214c6b9a250a8bf08af6a7",
+    "file": "claude_tag_v2.1.302.json"
+  }
+]

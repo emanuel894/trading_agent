@@ -1,0 +1,47 @@
+{
+  "ect": {
+    "commit": "9a8fcfcaacd7620afc24dc8c5e79d922135f3e11",
+    "commit_utc": "2026-03-14T23:26:54Z",
+    "releases": []
+  },
+  "financial": {
+    "commit": "574ed3624aebd0418c7e96cd101262f30210ab26",
+    "commit_utc": "2026-09-21T21:10:41Z",
+    "releases": []
+  },
+  "claude": {
+    "commit": "dd6bee38458cc3e6dc5f2b16eca1f0f364619ad8",
+    "commit_utc": "2026-10-17T23:14:49Z",
+    "releases": [
+      {
+        "tag": "v2.1.302",
+        "published_at": "2026-10-16T20:53:06Z",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.302"
+      },
+      {
+        "tag": "v2.1.301",
+        "published_at": "2026-10-15T19:22:06Z",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.301"
+      },
+      {
+        "tag": "v2.1.300",
+        "published_at": "2026-10-14T18:24:25Z",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.300"
+      }
+    ],
+    "release_tag_ref": {
+      "ref": "refs/tags/v2.1.302",
+      "node_id": "REF_kwDON91aY7JyZWZzL3RhZ3MvdjIuMS4zMDI",
+      "url": "https://api.github.com/repos/anthropics/claude-code/git/refs/tags/v2.1.302",
+      "object": {
+        "sha": "c017428c8c27e604840435048d5bce6a9a22c040",
+        "type": "commit",
+        "url": "https://api.github.com/repos/anthropics/claude-code/git/commits/c017428c8c27e604840435048d5bce6a9a22c040"
+      }
+    }
+  },
+  "github_action": {
+    "commit": "f27be6b65a4652f08a2ba3cff79114829b588967",
+    "commit_utc": "2026-10-16T20:54:52Z"
+  }
+}

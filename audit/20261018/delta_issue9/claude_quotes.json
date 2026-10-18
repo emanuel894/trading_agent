@@ -1,0 +1,416 @@
+[
+  {
+    "file": "docs/memory.md",
+    "source_url": "https://code.claude.com/docs/en/memory.md",
+    "retrieved_utc": "2026-10-18T07:50:30.350486+00:00",
+    "sha256": "768be47946cafc36d6fbe3988a04229521f5433bc038736739204e2ed258f6a7",
+    "line_start": 24,
+    "line_end": 24,
+    "quote": "Claude Code has two complementary memory systems. Both are loaded at the start of every conversation. Claude treats them as context, not enforced configuration. To block an action regardless of what Claude decides, use a [PreToolUse hook](/docs/en/hooks-guide) instead. The more specific and concise your instructions, the more consistently Claude follows them."
+  },
+  {
+    "file": "docs/memory.md",
+    "source_url": "https://code.claude.com/docs/en/memory.md",
+    "retrieved_utc": "2026-10-18T07:50:30.350486+00:00",
+    "sha256": "768be47946cafc36d6fbe3988a04229521f5433bc038736739204e2ed258f6a7",
+    "line_start": 31,
+    "line_end": 31,
+    "quote": "| **Loaded into** | Every session | Every session (first 200 lines or 25KB) |"
+  },
+  {
+    "file": "docs/sessions.md",
+    "source_url": "https://code.claude.com/docs/en/sessions.md",
+    "retrieved_utc": "2026-10-18T07:50:30.351263+00:00",
+    "sha256": "a4d0d58234728333f34ea679d6841442252e23a7e6621197f255aa94a72859ed",
+    "line_start": 9,
+    "line_end": 9,
+    "quote": "A [session](/docs/en/glossary#session) is a saved conversation tied to a project directory. Claude Code stores it locally as you work, so you can resume where you left off, branch to try a different approach, or switch between tasks."
+  },
+  {
+    "file": "docs/agent-view.md",
+    "source_url": "https://code.claude.com/docs/en/agent-view.md",
+    "retrieved_utc": "2026-10-18T07:51:13.897004+00:00",
+    "sha256": "1cba78a0b064b62fdfb8f1a48d0a23deec34ce0d5eeba0a9af01482207a73754",
+    "line_start": 160,
+    "line_end": 160,
+    "quote": "Session state persists on disk through auto-updates and supervisor restarts. Sessions are also preserved when your machine sleeps. Their processes resume on wake and the supervisor reconnects to them instead of treating the time gap as idle. Shutting down still stops running sessions; see [Sessions show as failed or stopped after shutdown](#sessions-show-as-failed-after-shutdown) for how to recover them."
+  },
+  {
+    "file": "docs/agent-teams.md",
+    "source_url": "https://code.claude.com/docs/en/agent-teams.md",
+    "retrieved_utc": "2026-10-18T07:50:30.354515+00:00",
+    "sha256": "e09abc4e91fd29fc83e308ee66c7386d8de71f399b606e081c629673361d1250",
+    "line_start": 10,
+    "line_end": 10,
+    "quote": "  Agent teams are experimental and disabled by default. Enable them by setting `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` in your [settings.json](/docs/en/settings) or environment. Without that variable, no team is set up at session start, no team directories are written, and Claude does not spawn or propose teammates. Agent teams have [known limitations](#limitations) around session resumption, task coordination, and shutdown behavior."
+  },
+  {
+    "file": "docs/agent-teams.md",
+    "source_url": "https://code.claude.com/docs/en/agent-teams.md",
+    "retrieved_utc": "2026-10-18T07:50:30.354515+00:00",
+    "sha256": "e09abc4e91fd29fc83e308ee66c7386d8de71f399b606e081c629673361d1250",
+    "line_start": 479,
+    "line_end": 479,
+    "quote": "* **No session resumption with in-process teammates**: `/resume` and `/rewind` do not restore in-process teammates. After resuming a session, the lead may attempt to message teammates that no longer exist. If this happens, tell the lead to spawn new teammates."
+  },
+  {
+    "file": "docs/agent-teams.md",
+    "source_url": "https://code.claude.com/docs/en/agent-teams.md",
+    "retrieved_utc": "2026-10-18T07:50:30.354515+00:00",
+    "sha256": "e09abc4e91fd29fc83e308ee66c7386d8de71f399b606e081c629673361d1250",
+    "line_start": 173,
+    "line_end": 173,
+    "quote": "When a teammate finishes planning, it sends a plan approval request to the lead. Claude Code approves the plan in the lead's session as soon as the request arrives, without the lead reviewing it. The teammate's edits and commands still go through the permission prompts described in [Permissions](#permissions). Once approved, the teammate exits plan mode and begins implementation."
+  },
+  {
+    "file": "docs/workflows.md",
+    "source_url": "https://code.claude.com/docs/en/workflows.md",
+    "retrieved_utc": "2026-10-18T07:50:30.356751+00:00",
+    "sha256": "a324b4814d760d6c6f115a0a534123fe71acc40e4a9fa63f0e2f85200df197dd",
+    "line_start": 399,
+    "line_end": 400,
+    "quote": "In a [cloud session](/docs/en/claude-code-on-the-web), Claude Code also saves the run's results with the session's conversation history, which survives when the session's VM is reclaimed. When you [reopen such a session](/docs/en/claude-code-on-the-web#environment-expired) and ask Claude to relaunch the workflow, completed agents still return their saved results.\n"
+  },
+  {
+    "file": "docs/workflows.md",
+    "source_url": "https://code.claude.com/docs/en/workflows.md",
+    "retrieved_utc": "2026-10-18T07:50:30.356751+00:00",
+    "sha256": "a324b4814d760d6c6f115a0a534123fe71acc40e4a9fa63f0e2f85200df197dd",
+    "line_start": 397,
+    "line_end": 397,
+    "quote": "* If you exit Claude Code while a workflow is running and [agent view is on](/docs/en/agent-view#from-inside-a-session), the exit dialog offers `Move to background and exit`, which carries the run over the same way. If you choose `Exit and stop tasks` instead, or the option isn't offered, the run stops with the session. Claude Code keeps the run's saved results under that session's directory in `~/.claude/projects/`, so a session you resume with `claude --resume` can replay them when you ask Claude to relaunch the workflow. In a session you start fresh, Claude has no earlier run to relaunch and starts the workflow over as a new run."
+  },
+  {
+    "file": "docs/workflows.md",
+    "source_url": "https://code.claude.com/docs/en/workflows.md",
+    "retrieved_utc": "2026-10-18T07:50:30.356751+00:00",
+    "sha256": "a324b4814d760d6c6f115a0a534123fe71acc40e4a9fa63f0e2f85200df197dd",
+    "line_start": 388,
+    "line_end": 388,
+    "quote": "That last case means a failure in the middle of a fan-out reruns work that already finished. If a script starts A, B, C, and D in that order and B fails, relaunching returns A from cache and runs B, C, and D again."
+  },
+  {
+    "file": "docs/workflows.md",
+    "source_url": "https://code.claude.com/docs/en/workflows.md",
+    "retrieved_utc": "2026-10-18T07:50:30.356751+00:00",
+    "sha256": "a324b4814d760d6c6f115a0a534123fe71acc40e4a9fa63f0e2f85200df197dd",
+    "line_start": 422,
+    "line_end": 422,
+    "quote": "An agent restarts at most five times, counting any restart you ask for with `r`. If the sixth attempt stalls as well, the `agent()` call fails, and the start of the error says why:"
+  },
+  {
+    "file": "docs/workflows.md",
+    "source_url": "https://code.claude.com/docs/en/workflows.md",
+    "retrieved_utc": "2026-10-18T07:50:30.356751+00:00",
+    "sha256": "a324b4814d760d6c6f115a0a534123fe71acc40e4a9fa63f0e2f85200df197dd",
+    "line_start": 362,
+    "line_end": 362,
+    "quote": "| No mid-run user input | A run pauses on its own only for agent permission prompts and a [usage-limit wait](#when-a-run-hits-your-usage-limit). For sign-off between stages, run each stage as its own workflow |"
+  },
+  {
+    "file": "docs/routines.md",
+    "source_url": "https://code.claude.com/docs/en/routines.md",
+    "retrieved_utc": "2026-10-18T07:50:30.368774+00:00",
+    "sha256": "7e17c96c0b9eff83779590e596a792e2cdb1c6bbea8095aa1989c305cfe29cac",
+    "line_start": 10,
+    "line_end": 10,
+    "quote": "  Routines are in research preview. Behavior, limits, and the API surface may change."
+  },
+  {
+    "file": "docs/routines.md",
+    "source_url": "https://code.claude.com/docs/en/routines.md",
+    "retrieved_utc": "2026-10-18T07:50:30.368774+00:00",
+    "sha256": "7e17c96c0b9eff83779590e596a792e2cdb1c6bbea8095aa1989c305cfe29cac",
+    "line_start": 51,
+    "line_end": 51,
+    "quote": "Routines run autonomously as full Claude Code cloud sessions: there is no permission-mode picker, and the session runs shell commands, uses [skills](/docs/en/skills) committed to the cloned repository, and calls any connectors you include, all without stopping for approval apart from some [artifact actions](#when-a-run-publishes-an-artifact-without-asking)."
+  },
+  {
+    "file": "docs/routines.md",
+    "source_url": "https://code.claude.com/docs/en/routines.md",
+    "retrieved_utc": "2026-10-18T07:50:30.368774+00:00",
+    "sha256": "7e17c96c0b9eff83779590e596a792e2cdb1c6bbea8095aa1989c305cfe29cac",
+    "line_start": 105,
+    "line_end": 105,
+    "quote": "    Under **Connectors** at the bottom of the form, all of your connected [MCP connectors](/docs/en/mcp) are included by default. Remove any the routine doesn't need: Claude can use every tool from an included connector, including writes, without asking for permission during a run."
+  },
+  {
+    "file": "docs/routines.md",
+    "source_url": "https://code.claude.com/docs/en/routines.md",
+    "retrieved_utc": "2026-10-18T07:50:30.368774+00:00",
+    "sha256": "7e17c96c0b9eff83779590e596a792e2cdb1c6bbea8095aa1989c305cfe29cac",
+    "line_start": 299,
+    "line_end": 299,
+    "quote": "  A green status in the run list means the session started and exited without an infrastructure error. It does not mean the task in your prompt succeeded. Open the run to read the transcript and confirm what Claude actually did. Blocked network requests, missing connector tools, and task-level failures all surface there rather than in the status indicator."
+  },
+  {
+    "file": "docs/routines.md",
+    "source_url": "https://code.claude.com/docs/en/routines.md",
+    "retrieved_utc": "2026-10-18T07:50:30.368774+00:00",
+    "sha256": "7e17c96c0b9eff83779590e596a792e2cdb1c6bbea8095aa1989c305cfe29cac",
+    "line_start": 389,
+    "line_end": 389,
+    "quote": "Routines draw down subscription usage the same way interactive sessions do. See your current consumption at [claude.ai/settings/usage](https://claude.ai/settings/usage)."
+  },
+  {
+    "file": "docs/github-actions.md",
+    "source_url": "https://code.claude.com/docs/en/github-actions.md",
+    "retrieved_utc": "2026-10-18T07:51:14.084784+00:00",
+    "sha256": "87b99aefc0a9f4389a3293fdf7c5dfd35491bebc6fec70869a80557070a31ae7",
+    "line_start": 77,
+    "line_end": 77,
+    "quote": "    * `CLAUDE_CODE_OAUTH_TOKEN`: an OAuth token that authenticates with your Claude subscription, available on Pro, Max, Team, and Enterprise plans. Generate one by running `claude setup-token` locally. See [Generate a long-lived token](/docs/en/authentication#generate-a-long-lived-token)"
+  },
+  {
+    "file": "docs/agent-sdk/overview.md",
+    "source_url": "https://code.claude.com/docs/en/agent-sdk/overview.md",
+    "retrieved_utc": "2026-10-18T07:51:14.033573+00:00",
+    "sha256": "970069a3d032e81062aed716308d39420b241f590cddc005a9ee72370241db01",
+    "line_start": 44,
+    "line_end": 44,
+    "quote": "  Unless previously approved, Anthropic does not allow third party developers to offer claude.ai login or rate limits for their products, including agents built on the Claude Agent SDK. Use the API key authentication methods described in the [Quickstart](/docs/en/agent-sdk/quickstart) instead."
+  },
+  {
+    "file": "docs/headless.md",
+    "source_url": "https://code.claude.com/docs/en/headless.md",
+    "retrieved_utc": "2026-10-18T07:50:30.361976+00:00",
+    "sha256": "fe8a1d507c57c816da57b3b51ee7d08fedf0e6de86391e6378510989c3e42c7b",
+    "line_start": 41,
+    "line_end": 41,
+    "quote": "Without `--bare`, a `-p` session runs the hooks in a project's `.claude/settings.json` and connects the servers in its `.mcp.json`, even in a folder you've never trusted. A `-p` session shows no workspace trust dialog and no per-server approval prompt. [What runs before you trust a folder](/docs/en/permissions#what-runs-before-you-trust-a-folder) covers each kind of repository content under `-p` and how to keep it out."
+  },
+  {
+    "file": "docs/headless.md",
+    "source_url": "https://code.claude.com/docs/en/headless.md",
+    "retrieved_utc": "2026-10-18T07:50:30.361976+00:00",
+    "sha256": "fe8a1d507c57c816da57b3b51ee7d08fedf0e6de86391e6378510989c3e42c7b",
+    "line_start": 49,
+    "line_end": 49,
+    "quote": "In bare mode, Claude Code never reads OAuth credentials or the system keychain. For the Anthropic API, set `ANTHROPIC_API_KEY` in the environment, with a key created in the [Claude Console](https://platform.claude.com), or supply an `apiKeyHelper` in the `--settings` JSON. Amazon Bedrock, Google Cloud's Agent Platform, and Microsoft Foundry continue to read their own provider credentials as usual."
+  },
+  {
+    "file": "docs/cli-reference.md",
+    "source_url": "https://code.claude.com/docs/en/cli-reference.md",
+    "retrieved_utc": "2026-10-18T07:51:14.196277+00:00",
+    "sha256": "81d5a5b49f43566ba0f43c7725dae858cad39c20b297cc5efbde5e4759462cbf",
+    "line_start": 105,
+    "line_end": 105,
+    "quote": "| `--max-budget-usd` | Stop the run once estimated spend on API calls reaches this amount (print mode only). Claude Code checks the cap against its [client-side cost estimate](/docs/en/agent-sdk/cost-tracking#estimates-not-billing), which can differ from your bill. Spend from [subagents](/docs/en/sub-agents) counts toward the cap. Spend can pass the cap, so [leave headroom](/docs/en/agent-sdk/agent-loop#budget-headroom). When you return to a conversation with `--continue` or `--resume`, totals [restored from earlier runs](/docs/en/agent-sdk/cost-tracking#accumulate-costs-across-multiple-calls) don't count toward it. Once spend reaches the cap, spawning another subagent fails with `Budget limit reached`, and Claude Code stops background subagents that are still running; the cap-enforcement behaviors require Claude Code v2.1.217 or later | `claude -p --max-budget-usd 5.00 \"query\"` |"
+  },
+  {
+    "file": "docs/costs.md",
+    "source_url": "https://code.claude.com/docs/en/costs.md",
+    "retrieved_utc": "2026-10-18T07:50:30.679974+00:00",
+    "sha256": "6622bdc6962b23a8c0ef27162b93aaa82a8ecc8527b0dadb0772eedc089a2521",
+    "line_start": 20,
+    "line_end": 20,
+    "quote": "  The Session block in `/usage` shows API token usage and is intended for API users. Claude Max and Pro subscribers have usage included in their subscription, so the session cost figure isn't relevant for billing purposes. Subscribers see plan usage bars, activity stats, and a usage breakdown on the same screen."
+  },
+  {
+    "file": "docs/code-review-costs.md",
+    "source_url": "https://code.claude.com/docs/en/code-review-costs.md",
+    "retrieved_utc": "2026-10-18T07:51:14.210311+00:00",
+    "sha256": "93504a0e1aa12e30593b8970d8011b652493a45de6a2f95859de422746993fa2",
+    "line_start": 16,
+    "line_end": 16,
+    "quote": "Code Review is billed on token usage through [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans), separately from your plan's included usage. Reviews are billed to your organization, not to the developer who opened the PR or requested the review. Costs appear on your Anthropic bill regardless of whether your organization uses Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry for other Claude Code features."
+  },
+  {
+    "file": "docs/data-usage.md",
+    "source_url": "https://code.claude.com/docs/en/data-usage.md",
+    "retrieved_utc": "2026-10-18T07:51:14.165260+00:00",
+    "sha256": "ef5260591575f5c4d2cc649054349b427fb6f3aa91388f9162662d7e3ba0bb03",
+    "line_start": 13,
+    "line_end": 14,
+    "quote": "**Consumer users (Free, Pro, and Max plans)**:\nWe give you the choice to allow your data to be used to improve future Claude models. We will train new models using data from Free, Pro, and Max accounts when this setting is on (including when you use Claude Code from these accounts)."
+  },
+  {
+    "file": "docs/data-usage.md",
+    "source_url": "https://code.claude.com/docs/en/data-usage.md",
+    "retrieved_utc": "2026-10-18T07:51:14.165260+00:00",
+    "sha256": "ef5260591575f5c4d2cc649054349b427fb6f3aa91388f9162662d7e3ba0bb03",
+    "line_start": 16,
+    "line_end": 16,
+    "quote": "**Commercial users**: (Team and Enterprise plans, API, 3rd-party platforms, and Claude Gov) maintain existing policies: Anthropic does not train generative models using code or prompts sent to Claude Code under commercial terms, unless the customer has chosen to provide their data to us for model improvement (for example, the [Developer Partner Program](https://support.claude.com/en/articles/11174108-about-the-development-partner-program))."
+  },
+  {
+    "file": "docs/data-usage.md",
+    "source_url": "https://code.claude.com/docs/en/data-usage.md",
+    "retrieved_utc": "2026-10-18T07:51:14.165260+00:00",
+    "sha256": "ef5260591575f5c4d2cc649054349b427fb6f3aa91388f9162662d7e3ba0bb03",
+    "line_start": 56,
+    "line_end": 56,
+    "quote": "* Local caching: Claude Code clients store session transcripts locally in plaintext under `~/.claude/projects/` for 30 days by default to enable session resumption. Adjust the period with `cleanupPeriodDays`. See [application data](/docs/en/claude-directory#application-data) for what's stored and how to clear it."
+  },
+  {
+    "file": "ect/scripts/hooks/backtest-validation.js",
+    "source_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/scripts/hooks/backtest-validation.js",
+    "retrieved_utc": "2026-10-18T07:50:32.421677+00:00",
+    "sha256": "0b002f411b0daf239c130f31b2893539dd24c5b165ac4c3d86a5904e18780548",
+    "line_start": 6,
+    "line_end": 7,
+    "quote": " * Non-blocking (always exits 0).\n */"
+  },
+  {
+    "file": "ect/scripts/hooks/backtest-validation.js",
+    "source_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/scripts/hooks/backtest-validation.js",
+    "retrieved_utc": "2026-10-18T07:50:32.421677+00:00",
+    "sha256": "0b002f411b0daf239c130f31b2893539dd24c5b165ac4c3d86a5904e18780548",
+    "line_start": 42,
+    "line_end": 46,
+    "quote": "const hasSurvivorshipBias =\n  /survivorship.?bias|delisted|point.?in.?time.?constit|survivorship.?free/i.test(\n    content\n  );\nif (!hasSurvivorshipBias) {"
+  },
+  {
+    "file": "ect/scripts/hooks/backtest-validation.js",
+    "source_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/scripts/hooks/backtest-validation.js",
+    "retrieved_utc": "2026-10-18T07:50:32.421677+00:00",
+    "sha256": "0b002f411b0daf239c130f31b2893539dd24c5b165ac4c3d86a5904e18780548",
+    "line_start": 29,
+    "line_end": 29,
+    "quote": "  process.exit(0);"
+  },
+  {
+    "file": "ect/scripts/hooks/session-start.js",
+    "source_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/scripts/hooks/session-start.js",
+    "retrieved_utc": "2026-10-18T07:50:32.494344+00:00",
+    "sha256": "6492674a1068d0db8bc0cc438bf35df23cb14ad6401895b067351ff4268b28bb",
+    "line_start": 33,
+    "line_end": 33,
+    "quote": "Type any command to get started. Risk management is enforced on all operations."
+  },
+  {
+    "file": "ect/package.json",
+    "source_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/package.json",
+    "retrieved_utc": "2026-10-18T07:50:32.330678+00:00",
+    "sha256": "48ad5f79cdbc5994a3a366d259277d6b43c45be34249e3ba1ff2bb85883778f7",
+    "line_start": 29,
+    "line_end": 33,
+    "quote": "  \"scripts\": {\n    \"validate\": \"node scripts/validate-frontmatter.js\",\n    \"lint\": \"node scripts/lint-skills.js\",\n    \"test\": \"node scripts/validate-frontmatter.js\"\n  }"
+  },
+  {
+    "file": "ect/.github/workflows/ci.yml",
+    "source_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/.github/workflows/ci.yml",
+    "retrieved_utc": "2026-10-18T07:50:30.932461+00:00",
+    "sha256": "332000b2b73489232378dda7a2485ffee4ccec3c78e0c6b06c8a8d49c1a6a34f",
+    "line_start": 29,
+    "line_end": 29,
+    "quote": "              head -1 \"$file\" | grep -q \"^---\" || { echo \"ERROR: $file missing frontmatter\"; exit 1; }"
+  },
+  {
+    "file": "ect/skills/backtesting/overfitting-prevention/SKILL.md",
+    "source_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/skills/backtesting/overfitting-prevention/SKILL.md",
+    "retrieved_utc": "2026-10-18T07:50:32.520463+00:00",
+    "sha256": "d3b47871280a148ce3b5b49eb101ac856c7e5e5efb097a6944227459b420f4b8",
+    "line_start": 108,
+    "line_end": 108,
+    "quote": "   - Each path is a valid walk-forward simulation"
+  },
+  {
+    "file": "ect/rules/common/data-integrity.md",
+    "source_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/rules/common/data-integrity.md",
+    "retrieved_utc": "2026-10-18T07:50:32.338867+00:00",
+    "sha256": "7d9e5e895f2aea690371c0fd00be2ba1a2f8f97bd6c9760f9a291cf9445e643c",
+    "line_start": 11,
+    "line_end": 13,
+    "quote": "- Always use point-in-time constituent lists for index-based strategies. Never use current index members to backtest historical periods.\n- Include delisted securities with their delisting returns. Excluding them inflates backtest performance.\n- When using fundamental data, ensure the universe includes companies that went bankrupt, merged, or were acquired."
+  },
+  {
+    "file": "ect/mcp-configs/mcp-servers.json",
+    "source_url": "https://raw.githubusercontent.com/brainbytes-dev/everything-claude-trading/9a8fcfcaacd7620afc24dc8c5e79d922135f3e11/mcp-configs/mcp-servers.json",
+    "retrieved_utc": "2026-10-18T07:50:32.322332+00:00",
+    "sha256": "8e52593ff64724648374d2bcff850602d8285d396ad0b7db73ad728db75e7f19",
+    "line_start": 5,
+    "line_end": 5,
+    "quote": "      \"args\": [\"-y\", \"@polygon.io/mcp-server\"],"
+  },
+  {
+    "file": "financial/README.md",
+    "source_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/README.md",
+    "retrieved_utc": "2026-10-18T07:50:34.363482+00:00",
+    "sha256": "52f689c6c32bd2a505fb75e774c8857d4a70db77b1b0057353fb10e7a6e5ca42",
+    "line_start": 5,
+    "line_end": 5,
+    "quote": "Everything here is available **two ways from one source**: install it as a [Claude Cowork](https://claude.com/product/cowork) plugin, or deploy it through the [Claude Managed Agents API](https://docs.claude.com/en/api/managed-agents) behind your own workflow engine. Same system prompt, same skills \u2014 you choose where it runs."
+  },
+  {
+    "file": "financial/README.md",
+    "source_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/README.md",
+    "retrieved_utc": "2026-10-18T07:50:34.363482+00:00",
+    "sha256": "52f689c6c32bd2a505fb75e774c8857d4a70db77b1b0057353fb10e7a6e5ca42",
+    "line_start": 8,
+    "line_end": 8,
+    "quote": "> Nothing in this repository constitutes investment, legal, tax, or accounting advice. These agents draft analyst work product \u2014 models, memos, research notes, reconciliations \u2014 for review by a qualified professional. They do not make investment recommendations, execute transactions, bind risk, post to a ledger, or approve onboarding; every output is staged for human sign-off. You are responsible for verifying outputs and for compliance with the laws and regulations that apply to your firm."
+  },
+  {
+    "file": "financial/managed-agent-cookbooks/earnings-reviewer/README.md",
+    "source_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/managed-agent-cookbooks/earnings-reviewer/README.md",
+    "retrieved_utc": "2026-10-18T07:50:34.394334+00:00",
+    "sha256": "90853190da1e72ecc38a57a5de5cbe64442a57063034ed54f97631dd6f577441",
+    "line_start": 29,
+    "line_end": 29,
+    "quote": "`transcript-reader` returns length-capped, schema-validated JSON. `note-writer` produces `./out/note-<ticker>.docx` and the updated model at `./out/model-<ticker>.xlsx`."
+  },
+  {
+    "file": "financial/managed-agent-cookbooks/earnings-reviewer/subagents/transcript-reader.yaml",
+    "source_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/managed-agent-cookbooks/earnings-reviewer/subagents/transcript-reader.yaml",
+    "retrieved_utc": "2026-10-18T07:51:13.877556+00:00",
+    "sha256": "dedb2fb453f9bca9c6d0dd4838fce45a4683625d7abe5a91738dafd920886bc0",
+    "line_start": 17,
+    "line_end": 23,
+    "quote": "output_schema:\n  type: object\n  required: [ticker, period, actuals]\n  additionalProperties: false\n  properties:\n    ticker: { type: string, maxLength: 12, pattern: \"^[A-Z.]+$\" }\n    period: { type: string, maxLength: 16, pattern: \"^[A-Za-z0-9_-]+$\" }"
+  },
+  {
+    "file": "financial/scripts/deploy-managed-agent.sh",
+    "source_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/scripts/deploy-managed-agent.sh",
+    "retrieved_utc": "2026-10-18T07:51:13.876458+00:00",
+    "sha256": "9949351e02b3be4d9eeff79e586edd77d532b6337ee92d96ce72da8120cf8207",
+    "line_start": 160,
+    "line_end": 160,
+    "quote": "  json=$(jq --argjson c \"$sub_ids\" '.callable_agents=$c | del(.output_schema)' <<<\"$json\")"
+  },
+  {
+    "file": "financial/scripts/orchestrate.py",
+    "source_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/scripts/orchestrate.py",
+    "retrieved_utc": "2026-10-18T07:51:13.874090+00:00",
+    "sha256": "d561f9bb62bfa025ae409d94121e91568bcd1d46035b0715e333287874d14f6b",
+    "line_start": 4,
+    "line_end": 7,
+    "quote": "REFERENCE ONLY \u2014 replace with your firm's workflow engine (Temporal, Airflow,\nGuidewire event bus). This script shows the shape of the loop, not a\nproduction implementation.\n"
+  },
+  {
+    "file": "financial/scripts/orchestrate.py",
+    "source_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/scripts/orchestrate.py",
+    "retrieved_utc": "2026-10-18T07:51:13.874090+00:00",
+    "sha256": "d561f9bb62bfa025ae409d94121e91568bcd1d46035b0715e333287874d14f6b",
+    "line_start": 9,
+    "line_end": 14,
+    "quote": "which is downstream of untrusted-document readers. An attacker who controls a\nprocessed document could embed a literal handoff_request blob that, if echoed,\nwould be parsed here. This script mitigates by (a) hard-allowlisting\ntarget_agent against the deployed slugs and (b) schema-validating the payload\nbefore steering. In production, prefer emitting handoffs via a dedicated tool\ncall or a typed SSE event the model cannot produce by quoting document text."
+  },
+  {
+    "file": "financial/scripts/orchestrate.py",
+    "source_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/scripts/orchestrate.py",
+    "retrieved_utc": "2026-10-18T07:51:13.874090+00:00",
+    "sha256": "d561f9bb62bfa025ae409d94121e91568bcd1d46035b0715e333287874d14f6b",
+    "line_start": 40,
+    "line_end": 43,
+    "quote": "HANDOFF_RE = re.compile(\n    r'\\{\"type\":\\s*\"handoff_request\".*?\\}', re.DOTALL\n)\n"
+  },
+  {
+    "file": "financial/scripts/validate.py",
+    "source_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/scripts/validate.py",
+    "retrieved_utc": "2026-10-18T07:51:13.875431+00:00",
+    "sha256": "4094e34f8431c08ae617de8c0280a0a64b4a0afd70507fdfdc3a0b26932ae090",
+    "line_start": 2,
+    "line_end": 10,
+    "quote": "\"\"\"Harness-side schema validation for managed-agent worker output.\n\nUsage: validate.py <output.json> <schema.json|schema.yaml>\nExits 0 on valid, 1 on invalid (message to stderr).\n\nThe CMA API does not enforce structured output today, so the deploy harness\nruns this between a reader subagent and the orchestrator. Schemas live in each\nsubagent yaml under `output_schema:` \u2014 the deploy script extracts them.\n\"\"\""
+  },
+  {
+    "file": "financial/scripts/test-cookbooks.sh",
+    "source_url": "https://raw.githubusercontent.com/anthropics/financial-services/574ed3624aebd0418c7e96cd101262f30210ab26/scripts/test-cookbooks.sh",
+    "retrieved_utc": "2026-10-18T07:51:13.875968+00:00",
+    "sha256": "86371dd43786202f6967a81680a3dbfe683f6706b546e7afd9e9e40eadfb0390",
+    "line_start": 3,
+    "line_end": 5,
+    "quote": "# bodies are well-formed: valid JSON, depth-1, non-empty system prompts, no\n# output_schema. Exits non-zero if any cookbook fails.\nset -euo pipefail"
+  }
+]

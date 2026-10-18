@@ -63,3 +63,18 @@ network restrictions are not substituted for current observations.
 Existing Python 3.13 repository tests/demo are regression checks only. No upstream
 runtime, cross-engine parity, latency, licensed access or profitability result is
 claimed. Hosted/Windows CI status is separate from local Linux verification.
+
+## Issue #9 delta completion on the cleaned branch
+
+The original packet above is preserved as historical evidence. Its reviewed
+`ad45af...` identifier describes the original audit context, **not required Git
+ancestry**. The maintainer's cleaned remote head
+`4dd7703f429df01a6f7e67912294ec26e93b4ad0` is the parent for this additive
+completion in existing PR #10. Do not merge or cherry-pick the old branch.
+
+Read [delta_issue9/README.md](delta_issue9/README.md) for new Grok Bot / Claude
+Code source captures, the live Issue #9 coverage map, four exact required outputs
+and fresh validation. Earlier framework research is carried forward, not rerun.
+The original `validation.json` remains unchanged and refers to the original
+artifact hashes; it does not validate the updated report/README/decisions.
+`delta_issue9/validation.json` records those replacements and preserved evidence.

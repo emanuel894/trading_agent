@@ -1,0 +1,159 @@
+{
+  "issue": 9,
+  "issue_snapshot": "issue_snapshot.json",
+  "complete_only_as_architecture_audit": true,
+  "original_framework_evidence_preserved": true,
+  "criteria": [
+    {
+      "issue_item": 1,
+      "requirement": "point-in-time/no-lookahead",
+      "report_sections": "3; 10\u201312",
+      "new_delta_evidence": false
+    },
+    {
+      "issue_item": 2,
+      "requirement": "survivorship-safe universe construction",
+      "report_sections": "3; TARGET_STACK",
+      "new_delta_evidence": false
+    },
+    {
+      "issue_item": 3,
+      "requirement": "SEC as-filed/fundamental ingestion",
+      "report_sections": "2\u20134; TARGET_STACK",
+      "new_delta_evidence": false
+    },
+    {
+      "issue_item": 4,
+      "requirement": "macro/Fed/government/regulation/news/event ingestion",
+      "report_sections": "4; TARGET_STACK",
+      "new_delta_evidence": false
+    },
+    {
+      "issue_item": 5,
+      "requirement": "quant baselines and factor discovery",
+      "report_sections": "1\u20133; 7",
+      "new_delta_evidence": false
+    },
+    {
+      "issue_item": 6,
+      "requirement": "LLM/AI strategy research",
+      "report_sections": "1\u20133; 10\u201312",
+      "new_delta_evidence": false
+    },
+    {
+      "issue_item": 7,
+      "requirement": "hybrid strategy research",
+      "report_sections": "2\u20134; TARGET_STACK",
+      "new_delta_evidence": false
+    },
+    {
+      "issue_item": 8,
+      "requirement": "realistic backtesting/costs/slippage",
+      "report_sections": "1 (LEAN); 3; 9",
+      "new_delta_evidence": false
+    },
+    {
+      "issue_item": 9,
+      "requirement": "portfolio/risk management",
+      "report_sections": "2; 3; 6",
+      "new_delta_evidence": false
+    },
+    {
+      "issue_item": 10,
+      "requirement": "paper/live execution",
+      "report_sections": "2; 6; TARGET_STACK",
+      "new_delta_evidence": false
+    },
+    {
+      "issue_item": 11,
+      "requirement": "future IBKR integration",
+      "report_sections": "6; TARGET_STACK",
+      "new_delta_evidence": false
+    },
+    {
+      "issue_item": 12,
+      "requirement": "broker independence",
+      "report_sections": "6; TARGET_STACK",
+      "new_delta_evidence": false
+    },
+    {
+      "issue_item": 13,
+      "requirement": "data-provider independence",
+      "report_sections": "2\u20134; TARGET_STACK",
+      "new_delta_evidence": false
+    },
+    {
+      "issue_item": 14,
+      "requirement": "checkpoint/resume and long-running autonomous research",
+      "report_sections": "5; 10\u201312",
+      "new_delta_evidence": true
+    },
+    {
+      "issue_item": 15,
+      "requirement": "experiment provenance/reproducibility",
+      "report_sections": "2; 5; delta_issue9/README.md",
+      "new_delta_evidence": false
+    },
+    {
+      "issue_item": 16,
+      "requirement": "incremental AI alpha versus cheap controls",
+      "report_sections": "3; 7; 12",
+      "new_delta_evidence": false
+    },
+    {
+      "issue_item": 17,
+      "requirement": "licensing, operational burden and expected cost",
+      "report_sections": "8\u201311; API_AUTOMATION_VALUE_GATE",
+      "new_delta_evidence": true
+    },
+    {
+      "issue_item": 18,
+      "requirement": "persistent state, parallel agents, handoffs, approvals, unattended continuation",
+      "report_sections": "10\u201312",
+      "new_delta_evidence": true
+    },
+    {
+      "issue_item": 19,
+      "requirement": "actual trading edge versus analysis/coding automation",
+      "report_sections": "12",
+      "new_delta_evidence": true
+    }
+  ],
+  "mandatory_upstreams": {
+    "carried_forward": [
+      "TauricResearch/TradingAgents",
+      "Microsoft RD-Agent / RD-Agent(Q)",
+      "FinRL / FinRL-X",
+      "QuantConnect LEAN",
+      "Microsoft Qlib",
+      "NautilusTrader",
+      "event/news/macro tooling and other maintained alternatives in original sections 2\u20134/8"
+    ],
+    "new": [
+      "xAI Grok Bot / Grok Build",
+      "Claude Code / official Action",
+      "brainbytes-dev/everything-claude-trading",
+      "anthropics/financial-services"
+    ]
+  },
+  "explicit_delta_requirements": {
+    "grok_all_capabilities_cost_lockin_security_replaceable_plumbing": "10; grok_sources.json and grok_quotes.md; decisions.json delta_framework_details",
+    "claude_current_capabilities_trading_skills_stronger_alternative": "11; claude_sources.json, claude_refs.json and claude_quotes.json",
+    "five_way_orchestration_validity_edge_separation": "12; decisions.json multi_agent_conclusion",
+    "TARGET_STACK": "Named report section and same uppercase decisions.json key",
+    "STOP_BUILDING_NOW": "Named report section and same uppercase decisions.json key",
+    "NEXT_3_TASKS": "Exactly three numbered proposals; structured tasks in same uppercase decisions.json key; each has why/dependency/before-Databento/model/cost/stop",
+    "API_AUTOMATION_VALUE_GATE": "Named report section and structured current-result/friction/volume/value/budget/safety/human-gate fields",
+    "reassess_lean_without_presuming_it_wins": "12; NEXT_3_TASKS task2 has rejection conditions, no runtime here",
+    "no_new_pr_or_old_ancestry": "validation.json; same branch/PR10"
+  },
+  "explicit_original_outputs": {
+    "uniquely_necessary_project_logic": "2; 7; TARGET_STACK",
+    "stop_and_never_build": "7; STOP_BUILDING_NOW",
+    "frameworks_accelerating_alpha_testing": "1; 7; 12; data admission still blocks alpha",
+    "research_to_ibkr": "6; TARGET_STACK",
+    "government_macro_news": "4; TARGET_STACK",
+    "from_zero_minimal_stack": "TARGET_STACK"
+  },
+  "boundaries": "No scientific/source admission, trading, framework install, paid call or purchase; three next tasks are proposals, not executed."
+}

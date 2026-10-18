@@ -1,5 +1,11 @@
 # Long-term trading/research build-versus-adopt audit
 
+**Issue #9 delta completion:** sections 10–12 and the four named outputs below
+were added from clean remote head `4dd7703f429df01a6f7e67912294ec26e93b4ad0`.
+The original framework evidence remains intact. This ordinary descendant update
+does not restore the earlier Issue #7 branch ancestry. New evidence is isolated
+in [delta_issue9](audit/20261018/delta_issue9/README.md).
+
 **Recommendation:** retain a small scientific control layer; adopt standard data,
 model and workflow tools; integrate **LEAN** as the first simulation and future
 broker engine to qualify. Use **NautilusTrader as the alternative to benchmark**,
@@ -529,3 +535,272 @@ and a minimal run index first. The subsequent engine spike must show correct
 delayed quotes, cash/exposure, halts and actual/unresolved terminal treatment
 before any registered performance use. A framework unable to pass is replaced;
 the contract is not relaxed.
+
+## 10. Delta: xAI Grok Bot and multi-bot orchestration
+
+**Grok Bot: BENCHMARK.** This is a real hosted product in current official xAI
+documentation, distinct from social reply bots, the xAI API research model, and
+the open-source **Grok Build** coding harness. It could remove substantial generic
+orchestration work, but there is no measured advantage here sufficient to buy or
+switch platforms. No benchmark was run. Sources G01–G30 resolve in the new packet.
+
+| Requested capability | Current official documentation / inspected boundary |
+| --- | --- |
+| Persistent state/computer | A per-user persistent cloud computer with browser, terminal and durable `/workspace`; separate Bot context, but shared files, cookies, logins and CLI credentials. Resets can lose unsynced work; persistence is not immutable evidence. |
+| Parallel/cooperating Bots | Parallel Bots with separate screens; asynchronous messages wake other Bots, and group chats coordinate work. Separate screens/roles are not isolation boundaries. |
+| Handoffs | Bot-to-Bot messages and delegation are implemented product features. Group handoffs are text-only; approvals/login requests are not presented in group chats. |
+| Unattended continuation | Work can continue with the laptop closed. Routines support schedules/events and GitHub-notification connections; documented limits include 50 routines/Bot, five-minute minimum interval and 20 retained recent run records. Inactivity can pause routines. |
+| Approvals/human gates | Model-based Auto Review can allow/ask/deny actions. Team enforcement, locked rules, network allowlists and detailed audit controls are Enterprise-specific. Some team/background paths can proceed without a person answering. This does not enforce our human merge/scientific gates. |
+| GitHub/coding | Coding delegation uses separate Cursor Cloud Agents, whose documented repository integration can push branches and return draft PRs. CI, exact-head review and merge approval must remain external requirements. |
+
+Important identity/lock-in finding: these **xAI-hosted-product docs explicitly
+describe Cursor hosting/authentication and model selection**. They do not promise
+a customer-selected fixed serving vendor/model. Self-serve users do not receive
+all Enterprise network/audit controls. Do not put broker/acquisition credentials
+or licensed raw research data on the shared computer. Browser access can also
+bypass the practical effect of disabling one connector. Full portable export and
+reimport of Bot memory/routines/permissions was not established. [G01–G08, G19–G24]
+
+Published new-plan Grok Bot inclusion starts at X Premium, **$30/month or
+$300/year**, with shared usage pools and separately configurable additional
+credit/top-up. Legacy plans differ. Owner entitlement and actual workload cost
+were not checked. Auto top-up and soft usage notices are not our hard budget gate.
+
+The API's beta multi-agent research model coordinates 4/16 agents within a
+request. It is **not** the hosted Bot computer: the inspected beta lacks custom
+client function tools and `max_tokens`; its subagent state is encrypted, and
+remote MCP documentation says `require_approval` is unsupported. Do not attach
+broker-capable MCP tools and expect a human approval barrier. Usage/turn limits
+do not prove cumulative spend enforcement. [G09–G12, G25, G27]
+
+Official Apache-2.0 **Grok Build**, pinned at
+`2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8`, has real Rust implementations for
+child sessions, parallel routing and admission/concurrency. It is another coding
+harness, not an always-on hosted computer merely because its CLI runs. Its
+sandbox is off by default; recurring prompts have lifetime limits. **BENCHMARK**
+as an alternative, rather than build equivalent session/dispatch plumbing.
+
+Potentially replaceable generic work: Bot roster/context UI, shared-desktop
+provisioning, asynchronous wake/routing/handoffs, routine scheduler, connectors,
+approval presentation and coding delegation. Keep our source/clock/identity
+admission, cumulative cost/trial receipts, exact-SHA guards, independent evaluation
+and deterministic risk outside Bot discretion. Nothing inspected establishes
+incremental net trading alpha or qualifies the present acquisition inputs.
+
+## 11. Delta: Claude Code and trading skills/agents
+
+**Claude Code ecosystem: BENCHMARK as an alternative workflow.** Keep the current
+included Codex + independent review arrangement; do not add another standing paid
+provider without measured benefit. Claude is capable of replacing generic coding
+orchestration, not just adding a finance prompt. Its capabilities warrant a fair
+comparison, not a claim that it is structurally superior for our repository.
+
+Official current docs/release observations include Claude Code v2.1.302 and:
+
+- Saved/resumable/forkable sessions, memory, separate-context subagents,
+  background sessions, messaging, and persisted dynamic workflows with fan-out.
+  Cloud workflow results can survive VM reclamation. A rerun can repeat downstream
+  agents after a changed/failed stage; partial file changes remain. Agent teams
+  are experimental and `/resume` does not restore in-process teammates.
+- Hosted research-preview **routines**, with scheduled/API/GitHub triggers and
+  laptop-closed work. Connector tools can run without per-action approval; all
+  connected connectors are included by default. A successful infrastructure run
+  is not proof the research task succeeded.
+- Plan/manual/rule/managed-policy modes, hooks and sandboxing; current auto mode
+  can delegate approval to a classifier. A team lead's plan approval is not a
+  human approval. Memory/instruction files are context, not enforced controls.
+- Official GitHub Action support, including **subscription OAuth as well as API
+  keys**. Do not claim every Action requires separate API billing. Current Max
+  pricing advertises qualifying monthly API credits; eligibility and coverage must
+  be verified. Hosted Code Review is separately billed. CLI budget estimates can
+  overshoot and exclude restored previous-session spend on resume.
+
+`--bare` avoids auto-discovered hooks/MCP/plugins/instructions in scripted runs,
+but does not use subscription OAuth; do not combine incompatible authentication
+assumptions. Outside bare mode, candidate-controlled hooks/config can execute
+without an interactive trust dialog. Use trusted-base configuration and separate
+publication/review credentials regardless of provider. Pro/Max usage limits,
+credits, retention, extra usage and service/model terms are account-specific;
+none was activated or verified here. Sources and exact quotations are in
+`claude_sources.json`, `claude_refs.json` and `claude_quotes.json`.
+
+**brainbytes-dev/everything-claude-trading: REJECT as a backbone.** Inspected
+HEAD `9a8fcfcaacd7620afc24dc8c5e79d922135f3e11` is March 14, 2026, MIT,
+unarchived, with no published releases observed. It supplies 18 agents, 82 skills
+and 20 commands, including useful research checklists. Its three post-edit checks
+regex-search for words such as “point-in-time”, “delisted” and “holdout”, print
+warnings and always exit zero. They do not enforce temporal joins, evaluation or
+risk. Its npm test/lint commands reference absent scripts; inspected CI checks
+frontmatter/directories. Advice and skill counts are not scientific guarantees.
+Do not import its deployment thresholds or unpinned MCP examples as our policy.
+
+**Stronger component source: anthropics/financial-services — INTEGRATE selected
+reviewed skills/patterns when needed, not its whole runtime.** The old
+financial-services-plugins URL redirects here. HEAD
+`574ed3624aebd0418c7e96cd101262f30210ab26`, September 21, 2026, Apache-2.0,
+includes maintained financial-analysis/equity/earnings skills, validation CI,
+spreadsheet checks and document-reader/connector/writer separation. Reuse those
+domain recipes and isolation ideas rather than create another skill collection.
+They can accelerate future analyst preparation, not prove a strategy's edge.
+
+Do not deploy its reference handoff scripts unchanged: the inspected deployment
+script deletes `output_schema`, the standalone validator is not wired to every
+reader response, and its handoff regex can truncate nested JSON. The loop labels
+itself reference-only. Commercial-data connectors have separate rights/costs.
+Neither stack establishes complete PIT classes, original disclosure availability,
+unbiased strategy evaluation or order safety. Source review is not installation
+or runtime validation.
+
+## 12. Multi-agent conclusion and reassessment
+
+| System | A. Development/research orchestration | B. Scientific trading validity | C. Evidence of actual edge for this project |
+| --- | --- | --- | --- |
+| Current Codex + independent review | Already supports bounded tasks, shared-session delegation, auditable commits/PRs and CI. Cloud tasks have their own workspaces and can run laptop-asleep; schedule/event features depend on plan/workspace. The paid Issue #5 loop remains **PAUSED_BUDGET**, not operational. | Our admission/registration/evaluator and independent review remain necessary; agents/CI alone do not prove data truth. | None. Correct patches and passing tests are engineering evidence. |
+| Grok Bot / Grok Build | Real persistence, cooperation/handoffs and routines; shared computer, plan-specific approval/audit and exit limitations. | No demonstrated replacement for our scientific gates, model freeze or external risk authority. | None established by the inspected sources. |
+| Claude Code | Real background/workflow/routine capability; mature coding integration. Team/permission/resume limits above. | Skills can guide analysts; advisory checks do not prove causal data or a valid holdout. Same-provider teammates are not independent model review. | None established by the inspected sources. |
+| TradingAgents | Domain analyst graph with sources and checkpoints, carried forward from the completed audit. | Daily rating/identity/evaluation contract differs from our registered comparison. | Its strategy/benchmark results do not establish our incremental net alpha. |
+| RD-Agent | Strong proposal/code/evaluate/feedback/resume discovery loop, carried forward. | Default iterative test feedback and local code execution need isolation and an inaccessible final test. | Upstream research claims are not a replication or confirmation on our universe/costs. |
+
+**Reassessment:** keep LEAN as the first **conditional engine qualification**.
+The new tools orchestrate workers or analyst tasks; they do not replace an
+equity lifecycle/quote-fill/OMS/broker engine or cure its terminal-fill defaults.
+No stronger execution implementation was qualified by this delta. A Bot clicking
+a broker page is not a simpler safe execution architecture. LEAN must still pass
+the existing contract/rights/cost gates; its rejection conditions remain real.
+
+The relevant orchestration change is to recognize **native hosted options before
+buying APIs or building a scheduler**. Current official Codex docs already describe
+laptop-asleep Cloud work and eligible scheduled/Team Tasks; they are not uniquely
+Claude/Grok capabilities. This client's usable scheduling surface/entitlements
+were not established, and no recurring task was created. Retain included usage
+and GitHub as durable truth. Use existing framework state internally, and Prefect
+only when a deterministic research job needs durable scheduling beyond that.
+
+## TARGET_STACK
+
+The minimum starting-today stack remains one research worker and, later, one
+qualified simulation/execution process. Layers/providers are replaceable:
+
+| Layer | Maintained component/provider | What remains ours |
+| --- | --- | --- |
+| Development/review | Included Codex; existing independent review route using available included Gemini/ChatGPT or another actually independent model; GitHub PRs/CI. Claude/Grok are alternatives to benchmark, not extra standing agents. | Trusted-base policy, scope/exact-SHA admission, repair/cost pause and human merge. Real-provider automation stays disabled. |
+| Historical identity | Qualified external reference master; awaited Databento qualification is the current lead, with existing CRSP/enterprise alternatives retained. | Temporal issuer/class/listing crosswalk, completeness admission and unresolved treatment. No new source decision here. |
+| Filings/fundamentals | SEC original accessions + EdgarTools/ordinary parser libraries. | As-filed provenance, period/entity/source spans, prior-disclosure and availability checks. |
+| Market data | Existing qualified Alpaca SIP contract and official SDK; another provider only behind a separately reviewed equivalent contract. | Frozen daily/quote semantics, native precision, revisions, conditions and status admission. |
+| Future macro/government/news | FRED/ALFRED, BLS/BEA, primary Fed/agency/Federal Register releases and qualified licensed news. Tariff/sanction/contract/geopolitical families use their authoritative releases/archives, not a Bot's narrative; future registration required. | Release/vintage/receipt clocks, evidence-backed issuer/exposure links and causal feature windows. |
+| Storage/lineage | SQLite + content-addressed objects; Parquet/DuckDB; DVC when needed. | Evidence schema, immutable admission/decision records and rights references. |
+| Models | scikit-learn registered cheap controls; one bounded official-provider LLM SDK call and permitted repair. Selected financial-services skills are optional recipes, not model or evidence authority. | Fixed information/opportunity sets, verified features, budgets, holdout and paired net evaluator. |
+| Job/run state | MLflow run index; existing bounded commands first, Prefect only for actual durable unattended jobs. Reuse Codex/Claude/Grok native session state if that runner is selected. | Scientific resume identity, cumulative trial/cost receipts and fail-closed gates. |
+| Simulation/risk/OMS | Qualified LEAN interfaces; Nautilus remains the alternative benchmark. | Registered fills/costs/terminal outcomes, deterministic policy and independent safety boundary. |
+| Broker | Later maintained LEAN IBKR/Alpaca plugin after entitlement and Paper qualification; execution host isolated from development. | Authorization/account allowlist, observed-event audit, unresolved-state stop and human live gate. Broker symbols never define scientific truth. |
+
+No new subscription, broker/data credential, framework or agent platform is
+required to preserve this architecture. The LLM can lose and be removed.
+
+## STOP_BUILDING_NOW
+
+Stop building generic **security masters; universal SEC/XBRL parsers; data SDKs;
+model/optimizer libraries; feature-store/database platforms; backtest engines;
+portfolio/accounting/OMS/broker protocol stacks; experiment trackers; general
+workflow schedulers; cloud desktops; bot rosters; generic session/memory stores;
+agent fan-out/message/handoff engines; coding/factor proposal–repair loops;
+approval UIs; cross-provider routers; generalized spend/billing platforms; and
+multi-agent trading committees**. Maintained tools already occupy these layers.
+Do not build a custom API loop merely to replace manual relay before its value
+gate passes. Do not build several interchangeable frameworks into production.
+
+Never attempt to build historical truth by inventing missing source clocks,
+classes, news coverage or outcomes with an LLM. Retain our **small scientific and
+safety contracts**, not a second implementation of upstream engines. Review and
+budget receipts are project-specific controls, not an excuse to build a generic
+billing service. “Stop building” does not delete protected code/evidence now.
+
+## NEXT_3_TASKS
+
+These are exactly three proposed follow-ups, not work executed or newly authorized
+by this audit. Do not create busywork/issues or purchase anything while waiting.
+
+1. **Adjudicate only the awaited Databento response/sample against the existing
+   qualification request.** Why: source viability has the highest decision value
+   and can stop unnecessary downstream investment. Dependency: actual provider
+   response/new evidence; reuse the existing request and reviews. **Before reply:
+   no**—do not repeat the search or sample request. Model: included high-reasoning
+   scientific review, with an independent reviewer for disputed semantics.
+   Expected cost: **$0 paid API/data/subscription spend**, at most one bounded
+   review day; a quoted paid export is a separate owner decision. **Exact stop:**
+   a source-grounded qualified method, a documented failure, or one precise list
+   of still-missing baseline/class/temporal/rights facts; unknown remains unresolved.
+   No eligibility/status/registration change, 58-call completion or candidate #2.
+
+2. **One synthetic LEAN terminal-outcome feasibility spike, not a migration.**
+   Why: it can falsify the most consequential engine assumption before expensive
+   integration. Dependency: separate maintainer authorization for a disposable
+   offline open-source engine runtime; original contract fixtures and pinned
+   extension hooks, no source data or broker plugin login. **Before Databento:
+   yes**, technically independent; it is optional work only when an actual engine
+   decision is due. Model: included coding model at high reasoning plus independent
+   technical review. Expected cost: **$0 paid provider/license/data calls**, existing
+   CPU only, **maximum one engineer-day**. **Exact stop:** both synthetic known-
+   settlement and unknown-terminal cases preserve expected holdings/cash/outcome
+   records without a fallback last-price fill, or the first unsupported behavior,
+   core-fork requirement, paid entitlement or time cap. Record PASS/FAIL/UNRESOLVED;
+   do not patch indefinitely, calculate alpha or build a general OMS. No framework
+   is installed in this delta task.
+
+3. **Passively measure real relay/resume friction for fourteen days of natural
+   work.** Why: it determines whether API automation has any economic value rather
+   than presuming an always-on agent is needed. Dependency: genuine existing
+   tasks/PRs; use GitHub timestamps and a manual table, not a new logging service.
+   **Before Databento: yes**, if real authorized work exists; otherwise record no
+   workload and wait. Model: **none** for logging, optional included medium-reasoning
+   summarization; high reasoning only for a safety finding. Expected cost: **$0
+   external spend**, under five minutes of logging per real task, included in the
+   measured overhead. **Exact stop:** fourteen calendar days; evaluate the value
+   gate below. Fewer than sixteen qualifying jobs, insufficient relay friction,
+   unknown costs or insufficient benefit means **API_NOT_JUSTIFIED_YET**. Do not
+   manufacture jobs or extend the window to obtain a favorable answer.
+
+## API_AUTOMATION_VALUE_GATE
+
+**Current result: NOT MET; real-provider activation remains PAUSED_BUDGET.** The
+audit contains no measured friction/workload record or verified paid budget. A
+waiting data request, depleted included allowance or desire for more agents does
+not itself justify paying. First verify usable included cloud/schedule/review
+features and existing plan credits; neither availability nor unlimited use is
+assumed. API rates cannot be used as the price of included ChatGPT/Codex usage.
+
+Require **all** of these before recommending a separately billed pilot:
+
+| Gate | Measurable rule |
+| --- | --- |
+| Actual manual friction | A fourteen-day record must show at least four avoidable owner relay/resume interventions **in total across fourteen days**, **and ninety active owner minutes per week**, on genuine issue/PR work. Record the exact copy/relay, restart/context reconstruction or launch action and its start/end; exclude ordinary scientific judgment, required review and provider waiting time. |
+| Repeated workload | At least **eight bounded, automation-ready jobs per week for two weeks** (sixteen total), with stable inputs/outputs and an acceptance rule. Count a real implement/review work item once; retries, manufactured subissues and multiple agents are not extra demand. |
+| Value exceeds total cost | Estimate monthly benefit from measured removable owner hours and an **owner-supplied** time value, less extra review/repair time. Do not assign speculative trading profit or unmeasured overnight latency value. Require conservative benefit **>=3×** total incremental API + runner/storage + amortized setup/maintenance cost, including both models, tools, failures and maximum allowed repairs. Unknown usage/prices fail the gate. |
+| Quality/safety readiness | Existing included/manual outcomes define acceptance. Paid automation must preserve 100% mandatory CI, exact-head review, scope/credential boundaries and human merge; no unresolved isolation/stale-head/budget defect may be traded for speed. A proposed finite pilot must measure accepted work and confirmed independent defects, not tokens, agents or PR counts. |
+
+If all pass and the owner explicitly approves, propose **one pilot capped at five
+natural jobs or seven days**, whichever comes first, **$10 total**, **$2/job**,
+**$5/day**, inside an owner-approved combined monthly cap of **$50 or lower**.
+These are proposed ceilings, not existing configured limits or spending authority.
+No job launches if the chosen model's conservatively reserved maximum cannot fit.
+After the pilot, continue only if measured accepted-work benefit meets the same
+3× threshold with no safety regressions; otherwise return to included/manual use.
+
+Hard controls required **before** a cost-bearing launch: exact model/runner/price
+snapshot; per-call input/output/tool/time limits; durable pre-call reservation;
+provider/gateway enforcement proven to cover every route; combined monthly/daily/
+job totals across implementer, reviewer, retries and resumes; concurrency one
+implementer/one reviewer; **two repair cycles maximum across all resumes** and at
+most six provider calls per issue. Unknown or ambiguous spend, unpriced routes,
+backend outage or interrupted-call reconciliation means **PAUSED_BUDGET**.
+Disable top-up and unrestricted fallback; no identity reset may replenish a cap.
+Use a qualified maintained gateway/runner, not a new generic budget platform.
+Claude's resumed-session CLI budget and hosted Auto Review alone do not suffice.
+
+Keep trusted policy/config outside candidate control, a separate narrow publisher,
+no broker/acquisition secrets, immutable task/head/usage receipts and mandatory
+fresh CI/review after changes. **Humans still approve** protected-branch merges,
+scientific amendments/source admission/promotion, purchases/budget changes,
+credentials/connectors, deployments and every Paper/live transition. Permission
+classifiers, lead-agent plan approval, skills and passing tests cannot grant these
+authorities. This audit changes none of those controls.

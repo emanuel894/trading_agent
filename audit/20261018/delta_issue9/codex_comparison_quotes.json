@@ -1,0 +1,65 @@
+[
+  {
+    "source_id": "C01",
+    "source_url": "https://developers.openai.com/codex/automations/",
+    "source_sha256": "71133bd984dcd38ea280db35696ce5f2eb501a21637c4862bf7197b7071cc7ca",
+    "derived_text_sha256": "b0a39ee318941858c1944bb7ce721fd27687545e3704dd4053a48ce5956d241b",
+    "character_start": 334,
+    "character_end": 784,
+    "quote": "uns in Scheduled . You can combine scheduled tasks with skills for more complex work. For workspace admins: See Set up and manage teams and Team Tasks for recurring or event-triggered work shared by a team, including permissions and connection setup. Team Tasks run in the cloud through the team’s service account and configured app connections. GPT-5.5 retires from Codex with ChatGPT sign-in on October 14, 2026, at noon PDT (19:00 UTC). Review sch"
+  },
+  {
+    "source_id": "C01",
+    "source_url": "https://developers.openai.com/codex/automations/",
+    "source_sha256": "71133bd984dcd38ea280db35696ce5f2eb501a21637c4862bf7197b7071cc7ca",
+    "derived_text_sha256": "b0a39ee318941858c1944bb7ce721fd27687545e3704dd4053a48ce5956d241b",
+    "character_start": 957,
+    "character_end": 1402,
+    "quote": "n API key aren’t affected. See GPT-5.5 retirement for plan-specific replacements. In the ChatGPT desktop app, scheduled tasks can work with local projects and run in the project directory or an isolated worktree. Keep the computer on and the app running when a scheduled task needs local files. When scheduled tasks are enabled for your workspace, create them from Chat or ChatGPT Work on the web and manage their runs from Scheduled . Web tasks"
+  },
+  {
+    "source_id": "C02",
+    "source_url": "https://developers.openai.com/codex/cloud/",
+    "source_sha256": "5007e63ceaa33cef963e7da8bb35c679167cd56f4b67e6ac2ab8b38eb80f7673",
+    "derived_text_sha256": "bf741fa1de68e994ef89afbc0a0987a392af071f614f8006865b53f9d70f540a",
+    "character_start": 581,
+    "character_end": 1104,
+    "quote": "the project, works through setup, and asks you for missing details or access. 02 Keep work moving Start tasks from a published environment. Each task has its own workspace and can keep working while your computer is asleep. 03 Review the work Inspect changed files and check results, request follow-up changes, and commit or open a pull request when you're ready. Quickstart Get started with Codex Cloud Create a cloud environment with the repositories, tools, and access your project needs, or select an existing one. Then"
+  },
+  {
+    "source_id": "C04",
+    "source_url": "https://developers.openai.com/codex/github-action/",
+    "source_sha256": "98adac813ea51396e62792f9cb7c0b02b31c7a4d67782473956290f917d641fb",
+    "derived_text_sha256": "1fa220205477bab872523873b0dc7d65428cba10c9ea952250fd06bd4eacc41e",
+    "character_start": 1645,
+    "character_end": 2099,
+    "quote": "_request.number }}/merge fetch-depth : 0 persist-credentials : false - name : Run Codex id : run_codex uses : openai/codex-action@v1 with : openai-api-key : ${{ secrets.OPENAI_API_KEY }} prompt-file : .github/codex/prompts/review.md output-file : codex-output.md post_feedback : runs-on : ubuntu-latest needs : codex if : needs.codex.outputs.final_message != '' permissions : issues : write pull-requests : write steps : - name : Post Codex feedback uses"
+  },
+  {
+    "source_id": "C04",
+    "source_url": "https://developers.openai.com/codex/github-action/",
+    "source_sha256": "98adac813ea51396e62792f9cb7c0b02b31c7a4d67782473956290f917d641fb",
+    "derived_text_sha256": "1fa220205477bab872523873b0dc7d65428cba10c9ea952250fd06bd4eacc41e",
+    "character_start": 808,
+    "character_end": 1263,
+    "quote": "as a GitHub secret (for example OPENAI_API_KEY ) and reference it in the workflow. Run the job on a Linux or macOS runner. For Windows, set safety-strategy: unsafe . Check out your code before invoking the action so Codex can read the repository contents. Decide which prompts you want to run. You can provide inline text via prompt or point to a file committed in the repo with prompt-file . Example workflow The sample workflow below reviews new pull re"
+  },
+  {
+    "source_id": "C05",
+    "source_url": "https://developers.openai.com/codex/pricing/",
+    "source_sha256": "39049aa6ece0fe7a228faeaa4bde0ff6f894eef2e585fbe092d4d9f5518c1558",
+    "derived_text_sha256": "b0b975276dd735912a2f7716cd1db7281c29979ec5741e740363272a32be6861",
+    "character_start": 0,
+    "character_end": 353,
+    "quote": "Copy Page Pricing ChatGPT Work and Codex are included in your ChatGPT Free, Go, Plus, Pro, Business, Edu, or Enterprise plan Copy Page ChatGPT Work and Codex share usage. ChatGPT Work usage inside ChatGPT uses the same pricing, credits, and usage limits as Codex. GPT-5.5 retires from Codex with ChatGPT sign-in on October 14, 2026, at noon PDT (19:00 U"
+  },
+  {
+    "source_id": "C05",
+    "source_url": "https://developers.openai.com/codex/pricing/",
+    "source_sha256": "39049aa6ece0fe7a228faeaa4bde0ff6f894eef2e585fbe092d4d9f5518c1558",
+    "derived_text_sha256": "b0b975276dd735912a2f7716cd1db7281c29979ec5741e740363272a32be6861",
+    "character_start": 229,
+    "character_end": 672,
+    "quote": "redits, and usage limits as Codex. GPT-5.5 retires from Codex with ChatGPT sign-in on October 14, 2026, at noon PDT (19:00 UTC). The OpenAI API and Codex sessions authenticated with an API key aren’t affected. See GPT-5.5 retirement for migration guidance. See token rates for credit-based plans and GPT-6.1 Sol model guidance for model details. API token prices are separate from subscription usage; don’t use them to estimate included tasks."
+  }
+]
