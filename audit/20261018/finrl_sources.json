@@ -1,0 +1,669 @@
+{
+  "indexed_utc": "2026-10-17T21:53:56.722682+00:00",
+  "method": "Read-only shallow native HTTPS git clones, GitHub API and PyPI metadata. No upstream code imports, installs, tests, model/API calls or broker access.",
+  "repositories": [
+    {
+      "repository": "AI4Finance-Foundation/FinRL",
+      "local": "FinRL",
+      "url": "https://github.com/AI4Finance-Foundation/FinRL",
+      "head_sha": "8511e7c15fbe1fbe5eb25e9f89932ac1ecd546a0",
+      "head_committer_and_subject": "2026-10-14T00:08:02+08:00 Merge pull request #1456 from nicoloangileri/fix/stocktrading-tradable-check",
+      "source_indexed_utc": "2026-10-17T21:53:56.722682+00:00",
+      "working_tree_clean": true,
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "498bb3870ec65e5b1a885d4faf4070f3c4f28ba4dab9558cb657b5e096d22063",
+          "bytes": 23178,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL/blob/8511e7c15fbe1fbe5eb25e9f89932ac1ecd546a0/README.md",
+          "excerpt_ranges": [
+            [
+              23,
+              55
+            ]
+          ]
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "486a06be9075686b75b35649de0adf9076508c5d0cc5b00af7928b7a96bffe65",
+          "bytes": 1093,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL/blob/8511e7c15fbe1fbe5eb25e9f89932ac1ecd546a0/LICENSE",
+          "excerpt_ranges": [
+            [
+              1,
+              21
+            ]
+          ]
+        },
+        {
+          "path": "setup.py",
+          "sha256": "0a38dc1618e090e5e58a950aa212eb7f03bf331a9beec36256b181b9cc8dfd50",
+          "bytes": 1850,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL/blob/8511e7c15fbe1fbe5eb25e9f89932ac1ecd546a0/setup.py",
+          "excerpt_ranges": [
+            [
+              25,
+              67
+            ]
+          ]
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "7577eef126ce8a94704d02d21d4cd600dd1340205c455ad493285622a2e81d78",
+          "bytes": 1837,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL/blob/8511e7c15fbe1fbe5eb25e9f89932ac1ecd546a0/pyproject.toml",
+          "excerpt_ranges": [
+            [
+              30,
+              72
+            ]
+          ]
+        },
+        {
+          "path": "finrl/meta/preprocessor/preprocessors.py",
+          "sha256": "1231edba2e10364cfbd361733698eae2415eef068617fcb17edd044c60b03ec2",
+          "bytes": 11960,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL/blob/8511e7c15fbe1fbe5eb25e9f89932ac1ecd546a0/finrl/meta/preprocessor/preprocessors.py",
+          "excerpt_ranges": [
+            [
+              140,
+              198
+            ]
+          ]
+        },
+        {
+          "path": "finrl/meta/preprocessor/yahoodownloader.py",
+          "sha256": "11360f4a06b7e41adb5bfbd853de744bab604ea4e6f8d7151ff581cfa3cf8975",
+          "bytes": 4206,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL/blob/8511e7c15fbe1fbe5eb25e9f89932ac1ecd546a0/finrl/meta/preprocessor/yahoodownloader.py",
+          "excerpt_ranges": [
+            [
+              45,
+              110
+            ]
+          ]
+        },
+        {
+          "path": "finrl/meta/env_stock_trading/env_stocktrading.py",
+          "sha256": "6871075e09d234109218e87b80c676f23bae9dd040e6036a44b303d7978dae20",
+          "bytes": 21888,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL/blob/8511e7c15fbe1fbe5eb25e9f89932ac1ecd546a0/finrl/meta/env_stock_trading/env_stocktrading.py",
+          "excerpt_ranges": [
+            [
+              109,
+              138
+            ],
+            [
+              175,
+              202
+            ],
+            [
+              307,
+              360
+            ]
+          ]
+        },
+        {
+          "path": "finrl/train.py",
+          "sha256": "bd57a6bde04d6c040f9f6017c8ad63f708014567fd096b0527ab7cc53c47d744",
+          "bytes": 5215,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL/blob/8511e7c15fbe1fbe5eb25e9f89932ac1ecd546a0/finrl/train.py",
+          "excerpt_ranges": [
+            [
+              14,
+              102
+            ]
+          ]
+        },
+        {
+          "path": "finrl/test.py",
+          "sha256": "cfa0a4fbca01a25f9fcb412953f55cf294b6e2f4d2655a2ecb5cda86f57b4f4f",
+          "bytes": 4246,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL/blob/8511e7c15fbe1fbe5eb25e9f89932ac1ecd546a0/finrl/test.py",
+          "excerpt_ranges": [
+            [
+              10,
+              80
+            ]
+          ]
+        },
+        {
+          "path": "finrl/agents/rllib/models.py",
+          "sha256": "bca0fcb513c3176ebb310ee14ef46a5d74f1823baded591566c502c57e32db4d",
+          "bytes": 6406,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL/blob/8511e7c15fbe1fbe5eb25e9f89932ac1ecd546a0/finrl/agents/rllib/models.py",
+          "excerpt_ranges": [
+            [
+              100,
+              110
+            ],
+            [
+              145,
+              165
+            ]
+          ]
+        },
+        {
+          "path": "finrl/meta/paper_trading/alpaca.py",
+          "sha256": "c9f21f958d0f9d4dad95c3180d8d9a9968f049e69dc0ea57e881d787787349aa",
+          "bytes": 16868,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL/blob/8511e7c15fbe1fbe5eb25e9f89932ac1ecd546a0/finrl/meta/paper_trading/alpaca.py",
+          "excerpt_ranges": [
+            [
+              350,
+              377
+            ]
+          ]
+        },
+        {
+          "path": ".github/workflows/test.yml",
+          "sha256": "a0c878d6cf65a2470aad752620c6373c8012940cd8fd4905a22fdd03cd4f0bd8",
+          "bytes": 372,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL/blob/8511e7c15fbe1fbe5eb25e9f89932ac1ecd546a0/.github/workflows/test.yml",
+          "excerpt_ranges": [
+            [
+              1,
+              25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "repository": "AI4Finance-Foundation/FinRL-Trading",
+      "local": "FinRL-Trading",
+      "url": "https://github.com/AI4Finance-Foundation/FinRL-Trading",
+      "head_sha": "4409abe925c904e570be78ebfb5e77ac3491dff8",
+      "head_committer_and_subject": "2026-09-18T09:13:20+08:00 Merge pull request #95 from emt-Q/fix/ml-strategy-apply-risk-limits",
+      "source_indexed_utc": "2026-10-17T21:53:56.722682+00:00",
+      "working_tree_clean": true,
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "87b6d384f7b9f98ab2d091cf52391c5a0246a342c61213bf5cf7eec1c366d6d2",
+          "bytes": 16808,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL-Trading/blob/4409abe925c904e570be78ebfb5e77ac3491dff8/README.md",
+          "excerpt_ranges": [
+            [
+              1,
+              90
+            ]
+          ]
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "ef3d97b5113a0f224425680aceb7a9ed3baaa4fd9aa21e8ff445cb963fddcbf5",
+          "bytes": 11352,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL-Trading/blob/4409abe925c904e570be78ebfb5e77ac3491dff8/LICENSE",
+          "excerpt_ranges": [
+            [
+              1,
+              14
+            ]
+          ]
+        },
+        {
+          "path": "setup.py",
+          "sha256": "1626e212f1272045bfd50f99b550d2dc967669c2ffaacd3dd2c23e87200457bc",
+          "bytes": 3647,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL-Trading/blob/4409abe925c904e570be78ebfb5e77ac3491dff8/setup.py",
+          "excerpt_ranges": [
+            [
+              24,
+              60
+            ]
+          ]
+        },
+        {
+          "path": "requirements.txt",
+          "sha256": "bafd6710592e640315b1e2ff2f6dc6e79e1b40dd40658776ee84ef146217a7f3",
+          "bytes": 1022,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL-Trading/blob/4409abe925c904e570be78ebfb5e77ac3491dff8/requirements.txt",
+          "excerpt_ranges": [
+            [
+              1,
+              80
+            ]
+          ]
+        },
+        {
+          "path": "Dockerfile",
+          "sha256": "3e4b83c1e0c95886f5215b48df591206421800cf43b10a6744d1446abd16a1d8",
+          "bytes": 1244,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL-Trading/blob/4409abe925c904e570be78ebfb5e77ac3491dff8/Dockerfile",
+          "excerpt_ranges": [
+            [
+              22,
+              39
+            ]
+          ]
+        },
+        {
+          "path": "src/strategies/ml_strategy.py",
+          "sha256": "5340dfe55a8628dd88147061331656a9242588e6d34a1d4b0d64983257c9d108",
+          "bytes": 61240,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL-Trading/blob/4409abe925c904e570be78ebfb5e77ac3491dff8/src/strategies/ml_strategy.py",
+          "excerpt_ranges": [
+            [
+              600,
+              743
+            ]
+          ]
+        },
+        {
+          "path": "src/config/settings.py",
+          "sha256": "fb776a5869a766dd9e7156a4d6b95e11e3d50e703f8a0d5e7c640d7052ae92a1",
+          "bytes": 10243,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL-Trading/blob/4409abe925c904e570be78ebfb5e77ac3491dff8/src/config/settings.py",
+          "excerpt_ranges": [
+            [
+              29,
+              40
+            ],
+            [
+              111,
+              126
+            ]
+          ]
+        },
+        {
+          "path": "src/data/data_fetcher.py",
+          "sha256": "92daa773a90a0e4cc61e2412d0233dbbfd8d439e0b8952d05d97d1f07a882626",
+          "bytes": 69902,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL-Trading/blob/4409abe925c904e570be78ebfb5e77ac3491dff8/src/data/data_fetcher.py",
+          "excerpt_ranges": [
+            [
+              900,
+              928
+            ],
+            [
+              1317,
+              1358
+            ]
+          ]
+        },
+        {
+          "path": "src/data/data_store.py",
+          "sha256": "fba17a3a2928f11cf7a91c83b9f0b4efc8abab5931b79cbef04e9e0df005bb9a",
+          "bytes": 42887,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL-Trading/blob/4409abe925c904e570be78ebfb5e77ac3491dff8/src/data/data_store.py",
+          "excerpt_ranges": [
+            [
+              349,
+              395
+            ],
+            [
+              415,
+              478
+            ],
+            [
+              975,
+              1006
+            ]
+          ]
+        },
+        {
+          "path": "src/backtest/backtest_engine.py",
+          "sha256": "0db265436ba9816d4b07b6834c080f467314abd18ab8c451c7e5cd39eaaa46a0",
+          "bytes": 31402,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL-Trading/blob/4409abe925c904e570be78ebfb5e77ac3491dff8/src/backtest/backtest_engine.py",
+          "excerpt_ranges": [
+            [
+              144,
+              170
+            ],
+            [
+              290,
+              319
+            ]
+          ]
+        },
+        {
+          "path": "src/trading/alpaca_manager.py",
+          "sha256": "e006133938e3c325b8b5b1cc797fbca0148d2de470cde9221721f5ed17ea5ad4",
+          "bytes": 35229,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL-Trading/blob/4409abe925c904e570be78ebfb5e77ac3491dff8/src/trading/alpaca_manager.py",
+          "excerpt_ranges": [
+            [
+              391,
+              424
+            ]
+          ]
+        },
+        {
+          "path": "src/strategies/adaptive_rotation/walk_forward.py",
+          "sha256": "581feaf57f666c1bc41b1dcf68c5b27cb00a34e3900a82f5330090bef7d9c545",
+          "bytes": 19632,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL-Trading/blob/4409abe925c904e570be78ebfb5e77ac3491dff8/src/strategies/adaptive_rotation/walk_forward.py",
+          "excerpt_ranges": [
+            [
+              1,
+              65
+            ]
+          ]
+        },
+        {
+          "path": "src/strategies/universe_manager.py",
+          "sha256": "62a82196f4b2a0e2f412e27a9d79da72cd37716820a81b823aa068201f822e9f",
+          "bytes": 6063,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinRL-Trading/blob/4409abe925c904e570be78ebfb5e77ac3491dff8/src/strategies/universe_manager.py",
+          "excerpt_ranges": [
+            [
+              77,
+              117
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "repository": "AI4Finance-Foundation/FinGPT",
+      "local": "FinGPT",
+      "url": "https://github.com/AI4Finance-Foundation/FinGPT",
+      "head_sha": "fdb04c9a273d1ccc3764b09b8e3ed1e708e57566",
+      "head_committer_and_subject": "2026-09-23T09:59:08+08:00 Merge pull request #278 from jellyfishing2346/documentation-improvements",
+      "source_indexed_utc": "2026-10-17T21:53:56.722682+00:00",
+      "working_tree_clean": true,
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "8f2b9963d39c4a6e9ef558db018cfa1abf66126906912a55a8dc261647140aaf",
+          "bytes": 32497,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinGPT/blob/fdb04c9a273d1ccc3764b09b8e3ed1e708e57566/README.md",
+          "excerpt_ranges": [
+            [
+              132,
+              166
+            ]
+          ]
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "2a3183a35138275582698c16b07e9b33992d822434bb4c7728673c6204bb1848",
+          "bytes": 1083,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinGPT/blob/fdb04c9a273d1ccc3764b09b8e3ed1e708e57566/LICENSE",
+          "excerpt_ranges": [
+            [
+              1,
+              21
+            ]
+          ]
+        },
+        {
+          "path": "setup.py",
+          "sha256": "6168059b0f9ad8ff96da49ce6b4c880248b0e527b590506999ec6f8bf44c643c",
+          "bytes": 1464,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinGPT/blob/fdb04c9a273d1ccc3764b09b8e3ed1e708e57566/setup.py",
+          "excerpt_ranges": [
+            [
+              17,
+              50
+            ]
+          ]
+        },
+        {
+          "path": "requirements.txt",
+          "sha256": "676a55ce6d84759cf2889f360e62e20e977a5fa59c19c653dd29fb9c372f9b3d",
+          "bytes": 422,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinGPT/blob/fdb04c9a273d1ccc3764b09b8e3ed1e708e57566/requirements.txt",
+          "excerpt_ranges": [
+            [
+              1,
+              30
+            ]
+          ]
+        },
+        {
+          "path": "fingpt/FinGPT_Forecaster/utils.py",
+          "sha256": "a65e549300653a8637002dc30c0dd00805ef8e11dffbd25c92087544c3ec72ae",
+          "bytes": 5685,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinGPT/blob/fdb04c9a273d1ccc3764b09b8e3ed1e708e57566/fingpt/FinGPT_Forecaster/utils.py",
+          "excerpt_ranges": [
+            [
+              57,
+              73
+            ]
+          ]
+        },
+        {
+          "path": "fingpt/FinGPT_Forecaster/data.py",
+          "sha256": "a1e077f4c3ba4b31fd8c21cb14f64a4289f333c77b7f4d3148171228c179a851",
+          "bytes": 11907,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinGPT/blob/fdb04c9a273d1ccc3764b09b8e3ed1e708e57566/fingpt/FinGPT_Forecaster/data.py",
+          "excerpt_ranges": [
+            [
+              86,
+              114
+            ],
+            [
+              186,
+              238
+            ],
+            [
+              270,
+              291
+            ],
+            [
+              339,
+              359
+            ]
+          ]
+        },
+        {
+          "path": "fingpt/FinGPT_Forecaster/train_lora.py",
+          "sha256": "255b04f13063b7ecca6dfae99fcb8da3728fb80b3693fc79f1bc9e5e8f985563",
+          "bytes": 8174,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinGPT/blob/fdb04c9a273d1ccc3764b09b8e3ed1e708e57566/fingpt/FinGPT_Forecaster/train_lora.py",
+          "excerpt_ranges": [
+            [
+              86,
+              120
+            ],
+            [
+              126,
+              146
+            ],
+            [
+              187,
+              194
+            ]
+          ]
+        },
+        {
+          "path": "fingpt/FinGPT_Forecaster/prompt.py",
+          "sha256": "5e0c36d43a09969b78f059ff552b830f93fc23c603771a893211c23485a1cadc",
+          "bytes": 7788,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinGPT/blob/fdb04c9a273d1ccc3764b09b8e3ed1e708e57566/fingpt/FinGPT_Forecaster/prompt.py",
+          "excerpt_ranges": [
+            [
+              164,
+              185
+            ]
+          ]
+        },
+        {
+          "path": "fingpt/FinGPT_Forecaster/indices.py",
+          "sha256": "5aa6028857b094bd0f94295725096aa23f8d6d5152837d9c4c0b21b2b9f10989",
+          "bytes": 938,
+          "source_url": "https://github.com/AI4Finance-Foundation/FinGPT/blob/fdb04c9a273d1ccc3764b09b8e3ed1e708e57566/fingpt/FinGPT_Forecaster/indices.py",
+          "excerpt_ranges": [
+            [
+              1,
+              40
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "repository": "polakowo/vectorbt",
+      "local": "vectorbt",
+      "url": "https://github.com/polakowo/vectorbt",
+      "head_sha": "8bf3aff77e3d9cba0be0b00988d3a4831692e142",
+      "head_committer_and_subject": "2026-10-16T00:35:06+02:00 chore: polish documentation and release checks",
+      "source_indexed_utc": "2026-10-17T21:53:56.722682+00:00",
+      "working_tree_clean": true,
+      "files": [
+        {
+          "path": "LICENSE.md",
+          "sha256": "a914859a115b70e80956a3cbd613139ad74c04e5d1bd38da8bcc16725822ec84",
+          "bytes": 12321,
+          "source_url": "https://github.com/polakowo/vectorbt/blob/8bf3aff77e3d9cba0be0b00988d3a4831692e142/LICENSE.md",
+          "excerpt_ranges": [
+            [
+              1,
+              16
+            ]
+          ]
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "03006d1dcd6ce3a3c67c9b1b725b4645b11fec44b96e4d3afa878fde5159422c",
+          "bytes": 2236,
+          "source_url": "https://github.com/polakowo/vectorbt/blob/8bf3aff77e3d9cba0be0b00988d3a4831692e142/pyproject.toml",
+          "excerpt_ranges": [
+            [
+              1,
+              77
+            ]
+          ]
+        },
+        {
+          "path": "vectorbt/_version.py",
+          "sha256": "61fa03e1e09c6d76f43cb2b9ae2dcb8a207b192712d3f963e768a4ce6737e61c",
+          "bytes": 182,
+          "source_url": "https://github.com/polakowo/vectorbt/blob/8bf3aff77e3d9cba0be0b00988d3a4831692e142/vectorbt/_version.py",
+          "excerpt_ranges": [
+            [
+              1,
+              5
+            ]
+          ]
+        },
+        {
+          "path": ".github/workflows/tests.yml",
+          "sha256": "ed6c205a1d88f1567735ce4077442a2aaadc817cc363ae20f1da9b409c54e55f",
+          "bytes": 2193,
+          "source_url": "https://github.com/polakowo/vectorbt/blob/8bf3aff77e3d9cba0be0b00988d3a4831692e142/.github/workflows/tests.yml",
+          "excerpt_ranges": [
+            [
+              14,
+              43
+            ]
+          ]
+        },
+        {
+          "path": "vectorbt/portfolio/base.py",
+          "sha256": "1762c6597013ff2084316b15ece1d3ad3110230ead03f98a195024c348c2ca4e",
+          "bytes": 248264,
+          "source_url": "https://github.com/polakowo/vectorbt/blob/8bf3aff77e3d9cba0be0b00988d3a4831692e142/vectorbt/portfolio/base.py",
+          "excerpt_ranges": [
+            [
+              1688,
+              1699
+            ],
+            [
+              1764,
+              1784
+            ],
+            [
+              2647,
+              2660
+            ],
+            [
+              3793,
+              3807
+            ]
+          ]
+        },
+        {
+          "path": "vectorbt/utils/config.py",
+          "sha256": "bae2d21bb37366ba6b8e89096f2ed9e833339bf33f4932d8f174c55f2efc0bb9",
+          "bytes": 31314,
+          "source_url": "https://github.com/polakowo/vectorbt/blob/8bf3aff77e3d9cba0be0b00988d3a4831692e142/vectorbt/utils/config.py",
+          "excerpt_ranges": [
+            [
+              803,
+              818
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "repository": "mementum/backtrader",
+      "local": "backtrader",
+      "url": "https://github.com/mementum/backtrader",
+      "head_sha": "b853d7c90b6721476eb5a5ea3135224e33db1f14",
+      "head_committer_and_subject": "2023-04-19T16:13:08+02:00 Version 1.9.78.123",
+      "source_indexed_utc": "2026-10-17T21:53:56.722682+00:00",
+      "working_tree_clean": true,
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "e1c0ad728983d8a57335e52cf1064f1affd1d454173d8cebd3ed8b4a72b48704",
+          "bytes": 35121,
+          "source_url": "https://github.com/mementum/backtrader/blob/b853d7c90b6721476eb5a5ea3135224e33db1f14/LICENSE",
+          "excerpt_ranges": [
+            [
+              1,
+              16
+            ]
+          ]
+        },
+        {
+          "path": "README.rst",
+          "sha256": "a8f4230185291ab0c44e569ae334f98f5e2352d93d315b4d75e8acaaaaf50cbe",
+          "bytes": 5409,
+          "source_url": "https://github.com/mementum/backtrader/blob/b853d7c90b6721476eb5a5ea3135224e33db1f14/README.rst",
+          "excerpt_ranges": [
+            [
+              64,
+              99
+            ]
+          ]
+        },
+        {
+          "path": "setup.py",
+          "sha256": "b4cffd86c8f73da09ef4afe5cdb3a60d76ea5f6e5b3e4c39155a0d04d6ed6fa5",
+          "bytes": 5322,
+          "source_url": "https://github.com/mementum/backtrader/blob/b853d7c90b6721476eb5a5ea3135224e33db1f14/setup.py",
+          "excerpt_ranges": [
+            [
+              78,
+              96
+            ]
+          ]
+        },
+        {
+          "path": "backtrader/stores/ibstore.py",
+          "sha256": "412d9b9c435ee95de4dc7bc2b3e191bcce4d0ff9ddec847581f2cd87fbde3420",
+          "bytes": 54280,
+          "source_url": "https://github.com/mementum/backtrader/blob/b853d7c90b6721476eb5a5ea3135224e33db1f14/backtrader/stores/ibstore.py",
+          "excerpt_ranges": [
+            [
+              29,
+              43
+            ]
+          ]
+        },
+        {
+          "path": "backtrader/brokers/bbroker.py",
+          "sha256": "0fd397a72814f0de31fcd318b4a1da2030412ae9bea426c0d5dcdd001a52965e",
+          "bytes": 46016,
+          "source_url": "https://github.com/mementum/backtrader/blob/b853d7c90b6721476eb5a5ea3135224e33db1f14/backtrader/brokers/bbroker.py",
+          "excerpt_ranges": [
+            [
+              135,
+              196
+            ],
+            [
+              224,
+              243
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

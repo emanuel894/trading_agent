@@ -1,0 +1,177 @@
+{
+  "reviewed_repository_commit": "ad45afbf9aa1de402926b0a84da3e914faae5bd1",
+  "audit_date": "2026-10-18",
+  "timezone": "Asia/Jerusalem",
+  "branch": "docs/long-term-build-vs-adopt-20261018",
+  "purpose": "architecture audit only",
+  "primary_recommendation": "Small scientific control layer + direct standard research tools + conditional LEAN integration; no wholesale migration; Nautilus alternative benchmark",
+  "subsystem_decisions": [
+    {
+      "component": "Evidence/provenance admission",
+      "classification": "KEEP_OURS",
+      "implementation_and_boundary": "Retain raw-byte hashes, clock distinctions, accession/class bindings, append-only decisions and fail-closed semantics. Use standard SQLite/object storage; do not grow a proprietary database platform."
+    },
+    {
+      "component": "Historical security master",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "Qualify a maintained reference backbone as in the red review; retain small temporal crosswalk/admission adapters. Buy maintenance of the universe rather than recreate it from current symbols/ITCH. No vendor is newly admitted here."
+    },
+    {
+      "component": "Eligibility/cohort/registration",
+      "classification": "KEEP_OURS",
+      "implementation_and_boundary": "Preserve registered population/class selection, exact lookbacks, protected hashes, unresolved states, candidate ordering and no-replacement rules."
+    },
+    {
+      "component": "SEC discovery/transport",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "Retain bounded original-envelope capture and completeness guards; use SEC APIs and maintained HTTP tooling. No current-ticker lookup as historical identity."
+    },
+    {
+      "component": "SEC/XBRL/document parsing",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "EdgarTools for parsing/crosschecks from captured accession-bound data after acceptance fixtures. Keep our raw-span/period/entity verifier; stop building a universal SEC/XBRL parser."
+    },
+    {
+      "component": "Market/reference source transport",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "Official qualified provider SDKs/bulk tooling, keeping native symbols/time/precision and raw-response evidence where required. Source contracts/entitlements remain independent of engine defaults."
+    },
+    {
+      "component": "Macro/government/news collection",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "Official agency APIs/archives, ALFRED vintages and a qualified historical news source; source-specific availability/revision adapter beneath the same evidence layer. No autonomous browsing-to-trade shortcut."
+    },
+    {
+      "component": "Numerical feature/model pipeline",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "scikit-learn Pipeline, Ridge and the registered squared-loss depth-2 boosted-tree implementation/grid. Fit preprocessing only on training rows. Use existing numerical libraries, not custom ML estimators."
+    },
+    {
+      "component": "Cheap text and verified extraction",
+      "classification": "KEEP_OURS",
+      "implementation_and_boundary": "Registered shared passages, deterministic comparisons, source-span/entity/unit checks, schema validation and abstention. Adopt ordinary parser/model SDK primitives underneath."
+    },
+    {
+      "component": "LLM inference/provider transport",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "Official model clients and structured output validation. One bounded extractor plus permitted repair; no generic multi-agent framework needed for a fixed extraction stage. Model choice remains removable."
+    },
+    {
+      "component": "Hybrid strategy composition",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "LLM facts become reviewed features in the same estimator/risk pipeline as controls. Preserve fixed opportunities, models, budgets and information boundaries. Avoid vote-based trade committees."
+    },
+    {
+      "component": "Automated factor discovery",
+      "classification": "BENCHMARK",
+      "implementation_and_boundary": "RD-Agent(Q)/Qlib in an isolated later research experiment. Do not custom-build a proposal/code/evaluate/repair loop."
+    },
+    {
+      "component": "Experiment metrics/artifact index",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "Local/private MLflow; log all trials/failures/costs and link immutable input/registration hashes. Mutable tracker rows are not scientific authority."
+    },
+    {
+      "component": "Data/model artifact lineage",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "DVC/content-addressed manifests and private versioned storage when scale needs it. Evidence timing/rights remain separate; do not commit licensed data."
+    },
+    {
+      "component": "Analytical storage",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "Parquet and DuckDB views over versioned evidence/features. Preserve quote precision and temporal joins; no new feature-store service yet."
+    },
+    {
+      "component": "Backtesting and portfolio accounting",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "Qualified LEAN adapter, including registered fills/costs/terminal treatment. Retain the tiny existing replay only as a regression oracle."
+    },
+    {
+      "component": "Statistical/economic evaluator",
+      "classification": "KEEP_OURS",
+      "implementation_and_boundary": "Registered paired incremental net metric, controls, purging/grouping, failures/abstentions, trial budgets, holdout and promotion rules. Adopt statistical/bootstrap primitives."
+    },
+    {
+      "component": "Portfolio allocation/risk implementation",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "Maintained engine accounting/reservations/risk hooks; retain our exact deterministic limits, halt and scheduled-exit policy. Prototype defaults are not the registered production policy."
+    },
+    {
+      "component": "Order lifecycle/OMS",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "Selected engine's order states, partial-fill/cancel handling, dedup/reconciliation capabilities. Keep only a small project approval/intent boundary and acceptance checks. Do not build a generic OMS."
+    },
+    {
+      "component": "Broker connectivity / future IBKR",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "Maintained selected-engine plugin after license, Paper and fault-recovery qualification. Existing read-only broker probes remain diagnostics."
+    },
+    {
+      "component": "Monitoring/reconciliation",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "Engine reconciliation plus standard metrics/logging/OpenTelemetry. Keep source/economic/cost/unknown-state alerts. A successful snapshot is not continuous reconciliation."
+    },
+    {
+      "component": "Research job checkpoint/resume",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "DVC stages for dependency/cache reuse; Prefect for durable scheduled retries/pause/resume when unattended work requires it. Never implement a generic scheduler or confuse cache reuse with scientific replay."
+    },
+    {
+      "component": "Agent graph state",
+      "classification": "BENCHMARK",
+      "implementation_and_boundary": "Use a framework's checkpointing, or LangGraph if a new bounded graph is genuinely needed. No second graph engine in the minimal fixed extraction path."
+    },
+    {
+      "component": "GitHub coding/review automation",
+      "classification": "INTEGRATE",
+      "implementation_and_boundary": "Existing official-runner qualification plan, trusted-base guards, exact-SHA CI and independent review. Current real-provider activation remains PAUSED_BUDGET; no new agent platform/router."
+    },
+    {
+      "component": "Secrets/security",
+      "classification": "ADOPT",
+      "implementation_and_boundary": "Platform secret isolation, least-privilege jobs, locked dependencies/containers and sandbox controls; keep project-specific access/cost/approval policy. No broker/acquisition secrets in research coding agents."
+    }
+  ],
+  "framework_decisions": {
+    "TradingAgents": "BENCHMARK",
+    "RD-Agent(Q)": "BENCHMARK",
+    "FinRL": "BENCHMARK",
+    "FinRL-X/FinRL-Trading": "BENCHMARK",
+    "Qlib": "BENCHMARK",
+    "LEAN": "INTEGRATE",
+    "NautilusTrader": "BENCHMARK",
+    "FinGPT": "BENCHMARK",
+    "QuantRocket": "BENCHMARK",
+    "vectorbt": "BENCHMARK",
+    "Zipline-reloaded": "BENCHMARK",
+    "Backtrader as new backbone": "REJECT",
+    "Freqtrade/Jesse for US-equity scope": "REJECT"
+  },
+  "current_science": {
+    "FMBH": "UNRESOLVED",
+    "amendment_005_modified": false,
+    "registrations_modified": false,
+    "candidate_priority_or_ledger_modified": false,
+    "broker_flags_modified": false,
+    "trading_enabled": false,
+    "alpha_experiments_run": false
+  },
+  "external_actions": {
+    "purchases": 0,
+    "subscriptions": 0,
+    "paid_provider_calls": 0,
+    "broker_calls": 0,
+    "market_data_acquisition_calls": 0,
+    "Massive_calls": 0,
+    "upstream_framework_execution": 0,
+    "provider_contact": 0
+  },
+  "cost_limits": "No spending authorization. Vendor quotes and future budget approval remain separate. Current OSS code licenses do not confer data/model/broker/service rights.",
+  "known_limits": [
+    "Static inspection only; no upstream install/runtime/benchmark",
+    "Some primary routes source-limited; current positive requests preserved",
+    "Qlib Git-vs-PyPI/Nautilus stable-vs-development must be pinned separately",
+    "Commercial engine internals not inspected; pricing/entitlements/retention require exact terms",
+    "Current acquisition gate unchanged; no framework admission for performance or execution"
+  ]
+}

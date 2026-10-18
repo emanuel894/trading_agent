@@ -1,0 +1,97 @@
+{
+  "retrieved_utc": "2026-10-17T21:58:54.277119+00:00",
+  "client_url": "https://github.com/quantrocket-llc/quantrocket-client",
+  "client_head": "b5c7aca2f9bc1d9532551d3c03692ead129d4f55",
+  "client_clean": true,
+  "official_docs": "https://www.quantrocket.com/docs/",
+  "official_pricing": "https://www.quantrocket.com/pricing/",
+  "method": "Read-only static public website/client audit; no upstream code execution or paid/authenticated calls. Unversioned docs preserved by byte hashes.",
+  "files": [
+    {
+      "path": "website.html",
+      "sha256": "be4199d6539ee92604708a8c6a68046244f362f9d307dabedbe25a3dad95f492",
+      "bytes": 78311
+    },
+    {
+      "path": "docs.html",
+      "sha256": "a185c04f39c56fe1e68101bb9a358fed4c0dc37a9a8dd8d2d270c696844a50ff",
+      "bytes": 1751737
+    },
+    {
+      "path": "pricing.html",
+      "sha256": "ed395410575d76cf5ea26610a32b80f0a4d756b6648362752097f01c67658db4",
+      "bytes": 106316
+    },
+    {
+      "path": "website.txt",
+      "sha256": "b6509c6a53bfb5fa6539b0fb6df009e62b5fb20536ef81fd9eb60a9bb35233e6",
+      "bytes": 17809
+    },
+    {
+      "path": "docs.txt",
+      "sha256": "bbb3c096d74002096c970310e63cd377dcb126fd79ff830c50c9c67ca0b67cfe",
+      "bytes": 997019
+    },
+    {
+      "path": "pricing.txt",
+      "sha256": "1795d90642cd39ed8c90b2bb8e2704daa66a674ab1540767a39edaf8b4b18da9",
+      "bytes": 55701
+    },
+    {
+      "path": "client_repo.json",
+      "sha256": "9d206c6aee97f80b0cab4d2c27cab1093bdf22b1227c032900ad4f644818de98",
+      "bytes": 7312
+    },
+    {
+      "path": "client_releases.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "pypi.json",
+      "sha256": "6ef724924b2a13b3d0ccece12d19e4ba7383d9061809ea8a436b2c57caae8550",
+      "bytes": 258904
+    },
+    {
+      "path": "retrieval.json",
+      "sha256": "818c112c4c6c4598e7dce835065caf7123a5ef4c35f7178427a367ac697e84e0",
+      "bytes": 1028
+    },
+    {
+      "path": "client/README.md",
+      "sha256": "e9f24c28c4ae91e5819aa07083d95650df20667dff8d625d93f7807bade451bc",
+      "bytes": 354,
+      "source_url": "https://github.com/quantrocket-llc/quantrocket-client/blob/b5c7aca2f9bc1d9532551d3c03692ead129d4f55/README.md"
+    },
+    {
+      "path": "client/LICENSE.txt",
+      "sha256": "becde03a3c8b9b2e3d58c7b65ca7ffd9e18e98162396cc374052983c1faaa47c",
+      "bytes": 9144,
+      "source_url": "https://github.com/quantrocket-llc/quantrocket-client/blob/b5c7aca2f9bc1d9532551d3c03692ead129d4f55/LICENSE.txt"
+    },
+    {
+      "path": "client/setup.py",
+      "sha256": "8c924fad743d9f0ab118213e5212c18f727fb8f1276bccf7bf55b3c138d80b94",
+      "bytes": 1341,
+      "source_url": "https://github.com/quantrocket-llc/quantrocket-client/blob/b5c7aca2f9bc1d9532551d3c03692ead129d4f55/setup.py"
+    },
+    {
+      "path": "client/quantrocket/blotter.py",
+      "sha256": "95a370383a7a9bff8d2458c33b00b782284fc825d92fbdb6592348e9feb1abfd",
+      "bytes": 31592,
+      "source_url": "https://github.com/quantrocket-llc/quantrocket-client/blob/b5c7aca2f9bc1d9532551d3c03692ead129d4f55/quantrocket/blotter.py"
+    },
+    {
+      "path": "client/quantrocket/moonshot.py",
+      "sha256": "c6e22652db0969f4d804008890328ffd09c3711f4b890fbea746d6b1b81af0ee",
+      "bytes": 25268,
+      "source_url": "https://github.com/quantrocket-llc/quantrocket-client/blob/b5c7aca2f9bc1d9532551d3c03692ead129d4f55/quantrocket/moonshot.py"
+    },
+    {
+      "path": "client/quantrocket/houston.py",
+      "sha256": "b16676f55d16056ab0086245fffc7e0690b51b0d26ddca293a1b4745f6ca3d09",
+      "bytes": 7439,
+      "source_url": "https://github.com/quantrocket-llc/quantrocket-client/blob/b5c7aca2f9bc1d9532551d3c03692ead129d4f55/quantrocket/houston.py"
+    }
+  ]
+}
