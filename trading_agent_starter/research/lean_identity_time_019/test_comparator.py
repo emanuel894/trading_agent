@@ -1,4 +1,4 @@
-import copy,json,unittest
+import copy,json,unittest,tempfile
 from pathlib import Path
 import compare
 ROOT=Path(__file__).parent
@@ -17,4 +17,21 @@ class ComparatorTests(unittest.TestCase):
  def test_extra_missing_fields_rejected(self):
   for bad in [{'a':1,'extra':0},{}]:
    with self.assertRaises(compare.GateMismatch):compare.compare_business(bad,{'a':1})
+class NativeComparatorTests(unittest.TestCase):
+ def test_native_contradictions_rejected(self):
+  baseline=json.loads((ROOT/'evidence/Q04_before.attempt005.json').read_text())
+  baseline['native_open_orders']=0
+  with tempfile.TemporaryDirectory() as tmp:
+   out=Path(tmp)/'out.json';oracle=ROOT/'fixtures_v2/Q04_before.expected.json';inp=ROOT/'fixtures/input.json'
+   out.write_text(json.dumps(baseline));self.assertTrue(compare.compare_file(out,oracle,inp))
+   mutations=[]
+   for key,value in [('native_open_orders',1),('fixture_manifest_sha256','0'*64)]:
+    bad=copy.deepcopy(baseline);bad[key]=value;mutations.append(bad)
+   for key,value in [('quantity','1'),('price','100'),('fee','1'),('order_id',2),('utc','2025-01-07T14:30:00.0000000Z')]:
+    bad=copy.deepcopy(baseline);bad['native_orders'][-1][key]=value;mutations.append(bad)
+   bad=copy.deepcopy(baseline);bad['native_orders'].pop(1);mutations.append(bad)
+   for i,bad in enumerate(mutations):
+    with self.subTest(mutation=i):
+     out.write_text(json.dumps(bad))
+     with self.assertRaises(compare.GateMismatch):compare.compare_file(out,oracle,inp)
 if __name__=='__main__':unittest.main(verbosity=2)

@@ -87,6 +87,7 @@ public static class Program
                 output["business"]=a.Business();output["engine_status"]=a.Status.ToString();output["native_end_observed"]=a.EndObserved;
                 output["native_orders"]=JArray.FromObject(transaction.OrderEvents.Select(e=>new{order_id=e.OrderId,sid=e.Symbol.ID.ToString(),status=e.Status.ToString(),quantity=Num(e.FillQuantity),price=Num(e.FillPrice),fee=Num(e.OrderFee.Value.Amount),utc=e.UtcTime.ToString("O")}));
                 output["crosswalk"]=a.Crosswalk;output["envelope_journal"]=a.Journal;
+                output["native_open_orders"]=a.Transactions.GetOpenOrders().Count;
                 output["execution_complete"]=true;
             }
             finally{transaction.Exit();realtime.Exit();manager.RemoveAllSubscriptions();}
@@ -162,7 +163,8 @@ public sealed class IdentityAlgorithm:QCAlgorithm
         {
             foreach(var pair in Symbols)
                 Securities[pair.Value].SetMarketPrice(new TradeBar(Program.Time(Decision-1_000_000_000).ConvertFromUtc(TimeZones.NewYork),pair.Value,100m,100m,100m,100m,0m,TimeSpan.Zero));
-            Securities[Symbols["I1"]].Holdings.SetHoldings(100m,decimal.Parse((string)Case["seed_quantity"]!,CultureInfo.InvariantCulture));
+            var seedQuantity=decimal.Parse((string)Case["seed_quantity"]!,CultureInfo.InvariantCulture);
+            if(seedQuantity>0m)Securities[Symbols["I1"]].Holdings.SetHoldings(100m,seedQuantity);
             seeded=true;
             initialAverage=Program.Num(Securities[Symbols["I1"]].Holdings.AveragePrice);
             if(Group=="Q11" && (string)Case["normalization"]! == "Raw")RawMarks.Add(Program.Num(Securities[Symbols["I1"]].Price));

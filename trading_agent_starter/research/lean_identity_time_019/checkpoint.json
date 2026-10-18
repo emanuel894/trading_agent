@@ -3,7 +3,7 @@
   "branch": "research/issue-19-lean-identity-time-spike",
   "base_sha": "67317e573624529e247d98a4964f946421b571e7",
   "source_pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
-  "phase": "Stopped at v1 Q04_before callback oracle divergence; independent ruling requested",
+  "phase": "v2 source-grounded oracle and stronger native assertions frozen; ready fresh processes",
   "allowed_fixtures": [
     "Q04",
     "Q05",
@@ -25,7 +25,9 @@
     "Restored dependencies using Issue17 locks and verified all28 raw package archives; built isolated C# host.",
     "Independent oracle review identified fixture defects; corrected BEFORE any fixture execution.",
     "57 Q04-Q11 variants frozen with exact business oracles; comparator RED then GREEN.",
-    "Q11 split-accounting cross-reference remains explicitly unrun because Q12 is excluded."
+    "Q11 split-accounting cross-reference remains explicitly unrun because Q12 is excluded.",
+    "Independent source ruling approves v2 exact CancelPending sequence; v1 retained.",
+    "Native comparator RED(8contradictions) then GREEN; manifest/native accounting/order checks strengthened."
   ],
   "policy_design_sha256": {
     "AGENTS.md": "291514f0c3017fae9534ce9cd64f71928698e0c6e7faaac24989c035b3b0483c",
@@ -43,7 +45,7 @@
     "launches": 5
   },
   "pending_side_effects": [],
-  "next_action": "Read independent ruling; if allowed, preserve fixtures v1 and freeze source-grounded cancellation-state fixtures_v2 before clean native runs. Otherwise publish INCOMPLETE evidence. No Q12-Q33.",
+  "next_action": "Run57frozen v2variants in matrix order, fresh pair per case; never reuse v1 outputs.",
   "updated_utc": "2026-10-18T23:02:53.352162+00:00",
   "failed_attempts": [
     "01: parent workspace mode0700 prevented unprivileged DLL access; no host execution.",

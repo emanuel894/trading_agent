@@ -1,0 +1,38 @@
+{
+  "admitted": true,
+  "reason": null,
+  "fill": {
+    "quote_id": "seq1",
+    "instrument": "I1",
+    "event_ns": 1736175601000000001,
+    "available_ns": 1736175601000000002,
+    "receipt_ns": null,
+    "dispatch_ns": 1736175601000000100,
+    "quantity": "5",
+    "price": "100.07001",
+    "fee": "1",
+    "evidence": "E-seq1",
+    "source": "SIP_FIXTURE",
+    "tape": "A",
+    "precision": "nanosecond",
+    "clock_mode": "simulated_historical"
+  },
+  "cash": "9498.64995",
+  "quantity": "5",
+  "native_order_statuses": [
+    "Submitted",
+    "Filled"
+  ],
+  "decision_receipt_ns": null,
+  "clock_mode": "simulated_historical",
+  "routes": [],
+  "structural": null,
+  "raw_marks": [],
+  "contract_state": "COMPLETE",
+  "positions": {
+    "I1": "5",
+    "I2": "0",
+    "I3": "0"
+  },
+  "initial_average": "0"
+}

@@ -5,7 +5,7 @@ from decimal import Decimal
 import hashlib
 import json
 
-ROOT = Path(__file__).parent / 'fixtures'
+ROOT = Path(__file__).parent / 'fixtures_v2'
 D = 1736175600000000000  # 2025-01-06T15:00:00Z
 S = 1_000_000_000
 B = D + 84600*S  # Jan7 14:30Z
@@ -52,7 +52,7 @@ def add(name, *, group=None, decision=None, events=None, fill='q1', price='100.0
     exp = dict(admitted=admitted, reason=reason, fill=actual_fill,
                cash=dec(cash), quantity=dec(Decimal(seed)+(quantity if filled else 0)),
                native_order_statuses=(['Submitted', 'Filled'] if filled else
-                   ['Submitted', 'Canceled'] if admitted else []),
+                   ['Submitted', 'CancelPending', 'Canceled'] if admitted else []),
                decision_receipt_ns=c['decision_quote']['receipt_ns'],
                clock_mode='simulated_historical' if c['decision_quote']['receipt_ns'] is None else 'prospective',
                routes=[], structural=None, raw_marks=[])

@@ -1,6 +1,7 @@
 """Independent exact comparison. No time/price/order tolerances or output sorting."""
 import json
 import hashlib
+import datetime
 from pathlib import Path
 
 class GateMismatch(AssertionError):
@@ -23,7 +24,11 @@ def compare_business(actual, expected, path='$'):
         raise GateMismatch(f'{path}: {actual!r} != {expected!r}')
     return True
 
-def compare_file(output, oracle, input_path=None):
+def native_utc(ns):
+    seconds,remainder=divmod(ns,1_000_000_000)
+    return datetime.datetime.fromtimestamp(seconds,datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%S')+f'.{remainder//100:07d}Z'
+
+def compare_file(output, oracle, input_path):
     actual=json.loads(Path(output).read_text())
     if not actual.get('execution_complete'):
         raise GateMismatch('Native execution incomplete: '+str(actual.get('technical_error')))
@@ -32,7 +37,12 @@ def compare_file(output, oracle, input_path=None):
     if actual.get('engine_status') != 'Completed' or not actual.get('native_end_observed'):
         raise GateMismatch('Native AlgorithmManager end not observed')
     compare_business(actual['business'],json.loads(Path(oracle).read_text()))
+    if actual.get('native_open_orders')!=0:
+        raise GateMismatch('Native order remains open at completion')
     if input_path is not None:
+        manifest=Path(input_path).parent/'manifest.json'
+        if actual['fixture_manifest_sha256']!=hashlib.sha256(manifest.read_bytes()).hexdigest():
+            raise GateMismatch('Fixture manifest binding mismatch')
         bundle=json.loads(Path(input_path).read_text())
         if actual['input_sha256']!=hashlib.sha256(Path(input_path).read_bytes()).hexdigest():
             raise GateMismatch('Input binding mismatch')
@@ -46,9 +56,26 @@ def compare_file(output, oracle, input_path=None):
             compare_business({k:v for k,v in native.items() if k!='engine_sid'},external)
         target=actual['business']['routes'][0] if actual['business']['routes'] else 'I1'
         target_sid=next(r['engine_sid'] for r in crosswalk if r['instrument']==target)
+        business=actual['business']
+        compare_business([o['status'] for o in actual['native_orders']],business['native_order_statuses'],'$.native_statuses')
         for order in actual['native_orders']:
             if order['sid']!=target_sid:
                 raise GateMismatch('Native order SID is not the admitted instrument')
+            if order['order_id']!=1:
+                raise GateMismatch('Unexpected native order ID')
+            expected_quantity=expected_price=expected_fee='0'
+            ns=((case['decision_ns']+99)//100)*100
+            if order['status']=='Filled':
+                f=business['fill']
+                if f is None:raise GateMismatch('Unexpected native fill')
+                expected_quantity,expected_price,expected_fee=f['quantity'],f['price'],f['fee']
+                ns=f['dispatch_ns']
+            if order['status'] in ('CancelPending','Canceled'):
+                if business['contract_state']=='ABORTED_CONFLICT':
+                    ns=((min(e['available_ns'] for e in case['events'])+99)//100)*100
+                else:ns=((case['decision_ns']+5_000_000_000+99)//100)*100+100
+            compare_business({k:order[k] for k in ['quantity','price','fee','utc']},
+                dict(quantity=expected_quantity,price=expected_price,fee=expected_fee,utc=native_utc(ns)),'$.native_event')
         events=sorted(case['events'],key=lambda e:(e['available_ns'],e['sequence'],e['id']))
         consumed=[];seen={}
         i=0
