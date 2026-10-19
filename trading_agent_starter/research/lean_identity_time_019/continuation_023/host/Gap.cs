@@ -75,7 +75,7 @@ public sealed partial class IdentityAlgorithm
     }
     SubscriptionDataConfig NormalizationConfig(Symbol symbol,DataNormalizationMode mode)=>new SubscriptionDataConfig(typeof(Tick),symbol,Resolution.Tick,TimeZones.NewYork,TimeZones.NewYork,false,false,false,dataNormalizationMode:mode);
     static Tick Quote(Symbol symbol,long ns,decimal bid,decimal ask)=>new Tick{Symbol=symbol,Time=Program.Time(ns).ConvertFromUtc(TimeZones.NewYork),TickType=TickType.Quote,BidPrice=bid,AskPrice=ask,BidSize=1000m,AskSize=1000m};
-    void VerifyRawNormalization(JObject r,Symbol symbol)
+    Tick NormalizeRaw(JObject r,Symbol symbol)
     {
         var provider=new FrozenFactors(symbol,0.5m);
         var config=NormalizationConfig(symbol,DataNormalizationMode.Raw);
@@ -84,6 +84,7 @@ public sealed partial class IdentityAlgorithm
         var tick=(Tick)e.Current;
         if(provider.Calls!=0 || Program.Num(tick.BidPrice)!=(string)r["bid"]! || Program.Num(tick.AskPrice)!=(string)r["ask"]!)throw new InvalidOperationException("Raw normalization substituted price");
         rawNormalization.Add(new JObject{["id"]=r["id"]!.DeepClone(),["provider_calls"]=provider.Calls,["bid"]=Program.Num(tick.BidPrice),["ask"]=Program.Num(tick.AskPrice),["mode"]=config.DataNormalizationMode.ToString()});
+        return tick;
     }
     void FactorControl(JObject r,long dispatch)
     {

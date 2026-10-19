@@ -211,8 +211,8 @@ public sealed partial class IdentityAlgorithm:QCAlgorithm
                 if(TryDecimal(e["bid"],out var bid)&&TryDecimal(e["ask"],out var ask))
                 {
                     var symbol=Symbols[(string)e["instrument"]!];
-                    if(Group=="Q11")VerifyRawNormalization(e,symbol);
                     var tick=new Tick{Symbol=symbol,Time=Program.Time(Program.Ns(e["event_ns"]!)).ConvertFromUtc(TimeZones.NewYork),TickType=TickType.Quote,BidPrice=bid,AskPrice=ask,BidSize=1m,AskSize=1m};
+                    if(Group=="Q11")tick=NormalizeRaw(e,symbol);
                     Securities[symbol].SetMarketPrice(tick);
                     if(Group=="Q11" && id=="post_raw" && (string)Case["normalization"]! == "Raw")RawMarks.Add(Program.Num(Securities[symbol].BidPrice));
                 }
