@@ -36,8 +36,8 @@
     "Q25_drawdown.expected.json": "e05c06c9399aa349be8a59f59071856128c810ab3079b2c7b5909eb5c65be237",
     "Q25_drawdown_below.expected.json": "de74b388be2df3bb4ffd71bdbecba08cc7696662f8306f2de9fa3372baeb90bb",
     "Q25_midnight_daily.expected.json": "2fd8dbb011e410c03c31f44ae2f4a68e78a189e5bfe0a983807e14c71328a061",
-    "Q25_new_session_daily.expected.json": "0db21925a60c6b419e388042fde73dd33c1b5cdd38a6108048b2b75cdecd39dc",
-    "Q25_new_session_drawdown.expected.json": "39c9b13627450d04f2eba939740d9775b072bddeb01e393c132f708f74c6b763",
+    "Q25_new_session_daily.expected.json": "1359ab16939ef05ae079c4acb3b4b37d8630221fdf239bc33b9829c423d052d4",
+    "Q25_new_session_drawdown.expected.json": "4e938a3ae7c22f60d6e5852f0844e1ca705e2ac46e8cdc98a935e84a6fbd96a1",
     "Q25_unknown.expected.json": "8918351a195141a567e8d5fd71f54c82fff562a5d0a75c7eca990f423ed05876",
     "Q26_ambiguous.expected.json": "440bda2bfee44a3481ccd10500bd68b36a98080b613b2b18d02d613b4a605a35",
     "Q26_sequence.expected.json": "41439e9bf05ed5825c38ee1387ef3a80e58695e2ede978a8d8eff54bcf4bfea0",
@@ -53,6 +53,6 @@
     "Q33_no_fill.expected.json": "43afc9ce305695a67dd99297e751c3db6decfceca72bf74ab42e7ac831b0ac1d",
     "Q33_unresolved.expected.json": "b3c3157602eb50b3fe06222788dd26b65482fc8c20fd80d0dc09fedc00c0c715",
     "config.json": "1d893956c87aff71bce8e9d230ec20f974ac6435a111f186ae84a58633ffdee9",
-    "input.json": "ac9ea284c32a433a4373b093808865eaf7430db54f7f29169adeb649f5f87eac"
+    "input.json": "439b63511380a00a1ab02b1196a023cf723e65e51784fb788f93e1fff5a65d87"
   }
 }

@@ -29,10 +29,10 @@ public sealed partial class ResearchAlgorithm:QCAlgorithm
  readonly Dictionary<int,(string id,long ns)> fillSources=new();
  readonly Dictionary<int,Reservation> reservations=new();readonly Dictionary<string,OrderTicket> tickets=new(StringComparer.Ordinal);
  readonly HashSet<string> applied=new(StringComparer.Ordinal);readonly Dictionary<string,decimal> capacity=new();
- JObject context;bool seeded;decimal dayStart=10000m,highWater=10000m;
+ JObject context;bool seeded;decimal dayStart=10000m,highWater=10000m;DateTime lastSession;
  public ResearchAlgorithm(JObject c)
  {
-  Case=c;Decision=(long?)c["start_ns"]??1736175600000000000;Due=(long?)c["exit_due_ns"]??0;Daily=(bool?)c["daily"]==true;
+  Case=c;Decision=(long?)c["start_ns"]??1736175600000000000;Due=(long?)c["exit_due_ns"]??0;Daily=(bool?)c["daily"]==true;lastSession=Program.Time(Decision).ConvertFromUtc(TimeZones.NewYork).Date;
   dayStart=c["day_start"]!=null?Program.Dec(c["day_start"]!):10000m;highWater=c["high_water"]!=null?Program.Dec(c["high_water"]!):10000m;if(c["initial_halt"] is JObject halt)riskRecords.Add(halt.DeepClone());
   for(int i=1;i<=7;i++)Symbols.Add("I"+i,new Symbol(SecurityIdentifier.GenerateEquity(new DateTime(2025,1,i),"SYN"+i,Market.USA),"SYN"+i));
   pending=((JArray)c["steps"]!).Cast<JObject>().OrderBy(s=>(long)s["at_ns"]!).ToList();
@@ -84,7 +84,7 @@ public sealed partial class ResearchAlgorithm:QCAlgorithm
     case "reject":Acknowledge(s,OrderStatus.Invalid);break;
     case "execution":ApplyExecution(s);break;
     case "mark":RiskObservation(s);break;
-    case "session":if((bool)s["explicit"]!){var session=(string)s["session_id"]!;if(session!=Program.Time(Now).ToString("yyyy-MM-dd",CultureInfo.InvariantCulture))throw new InvalidOperationException("Session ID mismatch");riskRecords.Add(new JObject{["kind"]="session_reset",["at_ns"]=Now,["session_id"]=session,["day_start"]=Program.Num(Portfolio.TotalPortfolioValue),["high_water"]=Program.Num(highWater),["previous_daily"]=Daily});Daily=false;dayStart=Portfolio.TotalPortfolioValue;}break;
+    case "session":if((bool)s["explicit"]!){var session=(string)s["session_id"]!;var local=Program.Time(Now).ConvertFromUtc(TimeZones.NewYork);if(!NavKnown||session!=local.ToString("yyyy-MM-dd",CultureInfo.InvariantCulture)||local.Date<=lastSession||!Securities[Symbols["I1"]].Exchange.Hours.IsOpen(local,false))throw new InvalidOperationException("Invalid new-session evidence");riskRecords.Add(new JObject{["kind"]="session_reset",["at_ns"]=Now,["session_id"]=session,["day_start"]=Program.Num(Portfolio.TotalPortfolioValue),["high_water"]=Program.Num(highWater),["previous_daily"]=Daily});Daily=false;dayStart=Portfolio.TotalPortfolioValue;lastSession=local.Date;}break;
     case "schedule":ScheduleExit(s);break;
     case "due":if(!PendingExit){if(Due==0)Due=Now;PendingExit=true;Submit(new JObject{["id"]="EXIT",["qty"]=-Securities[Symbols["I1"]].Holdings.Quantity,["instrument"]="I1",["price"]="100.07001",["fee"]="1",["route"]="direct"});}break;
     default:throw new InvalidOperationException("Unknown fixture operation "+op);
@@ -186,9 +186,10 @@ public sealed partial class ResearchAlgorithm:QCAlgorithm
  }
  void RiskObservation(JObject s)
  {
-  var reference=(string)s["mark_ref"]!;riskRecords.Add(new JObject{["kind"]="mark",["at_ns"]=Now,["ref"]=reference,["equity"]=s["equity"]!.DeepClone()});
-  if(s["equity"]?.Type==JTokenType.Null){NavKnown=false;return;}
-  var quantity=Securities[Symbols["I1"]].Holdings.Quantity;Mark("I1",(Program.Dec(s["equity"]!)-Cash)/quantity);var equity=Portfolio.TotalPortfolioValue;highWater=Math.Max(highWater,equity);
+  var reference=(string)s["mark_ref"]!;
+  if(s["equity"]?.Type==JTokenType.Null){riskRecords.Add(new JObject{["kind"]="mark",["at_ns"]=Now,["ref"]=reference,["equity"]=null});NavKnown=false;return;}
+  var quantity=Securities[Symbols["I1"]].Holdings.Quantity;Mark("I1",(Program.Dec(s["equity"]!)-Cash)/quantity);var equity=Portfolio.TotalPortfolioValue;if(equity!=Program.Dec(s["equity"]!))throw new InvalidOperationException("Native marked equity differs from evidence");highWater=Math.Max(highWater,equity);
+  riskRecords.Add(new JObject{["kind"]="mark",["at_ns"]=Now,["ref"]=reference,["equity"]=Program.Num(equity)});
   RefreshRisk(reference);
  }
  void RefreshRisk(string reference)

@@ -43,7 +43,7 @@
     },
     {
       "kind": "session_reset",
-      "at_ns": 1736208000000000000,
+      "at_ns": 1736260200000000000,
       "session_id": "2025-01-07",
       "day_start": "9800",
       "high_water": "10000",

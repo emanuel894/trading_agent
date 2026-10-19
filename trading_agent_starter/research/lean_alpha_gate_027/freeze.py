@@ -108,7 +108,7 @@ for name,equity,daily,drawdown in [('daily','9800',True,False),('daily_below','9
   ops.append(dict(order('POST',instrument='I2'),at_ns=D+3*10**9));ds.append(decision('POST',False,'DAILY_HALT'));sn[-1]['daily']=True
  case('Q25_'+name,finish(ops),business(ds,sn,[dict(id='EXIT',quantity='-5',price='99.95',fee='1')]),cash='9000',holdings=[dict(instrument='I1',qty='5',mark='200')],checks=('cash','limits','halts'),exit_due_ns=D+2*10**9)
 for name,equity,explicit,day,dd in [('midnight_daily','9800',False,True,False),('new_session_daily','9800',True,False,False),('new_session_drawdown','9200',True,False,True)]:
- ops=[step('mark',equity=equity,mark_ref='E-Q25-'+name),step('session',at=ns('2025-01-07T00:00:00Z')-D,explicit=explicit,session_id='2025-01-07'),dict(order(instrument='I2'),at_ns=ns('2025-01-07T15:00:00Z'))]
+ ops=[step('mark',equity=equity,mark_ref='E-Q25-'+name),step('session',at=ns('2025-01-07T14:30:00Z' if explicit else '2025-01-07T00:00:00Z')-D,explicit=explicit,session_id='2025-01-07'),dict(order(instrument='I2'),at_ns=ns('2025-01-07T15:00:00Z'))]
  reason='DAILY_HALT' if day else 'DRAWDOWN_HALT' if dd else 'OK'
  case('Q25_'+name,finish(ops),business([decision(allow=not(day or dd),reason=reason,gross=True if not(day or dd) else None,symbol=True if not(day or dd) else None)],[snap(cash='9000',reserve='101.07001' if not(day or dd) else '0',qty='5',daily=day,drawdown=dd)]),cash='9000',holdings=[dict(instrument='I1',qty='5',mark='200')],checks=('cash','limits','halts'))
 
