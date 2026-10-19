@@ -21,3 +21,9 @@ Critical path: remaining submission/risk/calendar/arm pairs -> combined exact ev
 ## Submission-limit milestone
 
 Q22 all11 cases passed22 clean processes, attempts032–053, byte-identical per pair. Global accepted processes52: Q21original16 +Q32new14 +Q22new22; total failures1 preserved pre-init permission failure. No native/oracle/code/config binding changed. Critical path now Q23–Q26/Q33 -> combined review/final-head validation/CI/draft PR. One implementer and independent read-only reviewer; maintained engine/policy adapter reused. No old reruns, broker/recovery work or paid calls. Next3: sizing/calendar pairs; risk/sell/arm pairs; exact-head final gates. Runnable before the external source reply.
+
+## Sizing/calendar milestone
+
+Q23 all6 cases (attempts054–065) and Q24 all6 cases (066–077) passed24 clean processes,12 byte-identical pairs. Required quantities4/9, volatility abstentions, stable tie sort and independent price ceiling remained frozen. One/five-session exits, early close/DST and halt/no-quote pending semantics matched native exchange/schedule/export evidence. Global accepted processes76, preserved failures1; no binding changed.
+
+Critical path: last14 cases Q25/Q26/Q33 -> combined evidence/final head -> local validation/fresh final review/both OS CI/draft PR, no merge. Same one implementer + fresh reviewer; smallest public LEAN adapter reused, no OMS/recovery expansion. No old native reruns, credentials, paid calls/purchases or source/science changes. Next3: finish risk/sell/arm paired falsification; reconcile combined report; publish reviewed exact-head gate. Runnable before Eric/Databento.
