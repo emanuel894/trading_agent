@@ -1,0 +1,67 @@
+{
+  "issue": 23,
+  "pr": 20,
+  "branch": "research/issue-19-lean-identity-time-spike",
+  "starting_head": "ee72ca97c6682e2a2200cc996fc51a26e1c65380",
+  "foundation": "67317e573624529e247d98a4964f946421b571e7",
+  "runtime_scope": "Only Q09 typed ingress, Q11 normalization ingress, narrow integral split coupling",
+  "native_gap_cases": 6,
+  "new_accepted_processes": 12,
+  "preserved_accepted_processes": 114,
+  "old_replayed": 0,
+  "total_accepted_clean_processes": 126,
+  "failed_launches_without_host": [
+    121
+  ],
+  "native_business_divergences": 0,
+  "accepted": {
+    "Q09_typed_historical": {
+      "attempts": [
+        122,
+        123
+      ],
+      "output_sha256": "3aa85a338f8d479df7b35957d272cc90a93d5e84b9c816e2c29b44e51190568d"
+    },
+    "Q09_typed_prospective": {
+      "attempts": [
+        124,
+        125
+      ],
+      "output_sha256": "95768c0acf236dc43ca2c0961bef62516522f61772049e36f80155194ce765a3"
+    },
+    "Q11_ingress_raw": {
+      "attempts": [
+        126,
+        127
+      ],
+      "output_sha256": "a2e1586b424febf7f267ea08316f3f2083fcfbdd9d89f95cb4ded36c3ad2f4f5"
+    },
+    "Q11_ingress_future_factor": {
+      "attempts": [
+        128,
+        129
+      ],
+      "output_sha256": "1f566cc32899f0a6283e9a534976b9adf1931c1f252738736126c0e5edd29159"
+    },
+    "Q11_ingress_wrong_metadata": {
+      "attempts": [
+        130,
+        131
+      ],
+      "output_sha256": "84def32b6ce0cb18848d6d6fafcc8e3a4a29849254afbd5002b9382eecc9e9a9"
+    },
+    "Q11_integral_coupling": {
+      "attempts": [
+        132,
+        133
+      ],
+      "output_sha256": "e86f7215cf3877605f6b8f6262b33af3690e8abf4c080ac620a316891c487c51"
+    }
+  },
+  "q12_overall": "UNQUALIFIED; reverse/fractional/cash-in-lieu and all otherQ12 variants unrun",
+  "q13_q33": "UNRUN",
+  "independent_oracle_approval_sha256": "ab9019de96963df34f0e12b276f06cede771e936b9de771602a54477cc24ad5e",
+  "final_decision": "Publish on PR20 only after finalhead local checks andUbuntu/WindowsCI pass",
+  "runtime_contract_decision": "LEAN_IDENTITY_TIME_GATE_PASS",
+  "independent_final_review": "No material findings; combined originalQ04\u2013Q11 contract supported under Issue23; finalhead local/OS checks pending"
+}
