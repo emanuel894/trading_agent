@@ -1,0 +1,21 @@
+20261019 14:59:23.612 TRACE:: Composer(): Loading Assemblies from /packet/host/bin/Release/net10.0
+20261019 14:59:27.255 TRACE:: AlgorithmManager.CreateTokenBucket(): Initializing LeakyBucket: Capacity: 120 RefillAmount: 18 TimeInterval: 1440
+20261019 14:59:27.270 TRACE:: Event Name "Daily Sampling", scheduled to run.
+20261019 14:59:27.271 TRACE:: AlgorithmManager.Run(): Begin DataStream - Start: 01/06/2025 00:00:00 Stop: 01/06/2025 23:59:59 Time: 01/06/2025 09:59:58 Warmup: False
+20261019 14:59:27.352 TRACE:: AlgorithmManager.Run(): Firing On End Of Algorithm...
+20261019 14:59:27.358 TRACE:: OrderRequestProcessingPool.Dispose(): completed
+20261019 14:59:27.363 TRACE:: AlgorithmManager.CreateTokenBucket(): Initializing LeakyBucket: Capacity: 120 RefillAmount: 18 TimeInterval: 1440
+20261019 14:59:27.363 TRACE:: Event Name "Daily Sampling", scheduled to run.
+20261019 14:59:27.363 TRACE:: AlgorithmManager.Run(): Begin DataStream - Start: 01/06/2025 00:00:00 Stop: 01/06/2025 23:59:59 Time: 01/06/2025 09:59:58 Warmup: False
+20261019 14:59:27.364 TRACE:: AlgorithmManager.Run(): Firing On End Of Algorithm...
+20261019 14:59:27.364 TRACE:: OrderRequestProcessingPool.Dispose(): completed
+20261019 14:59:27.367 TRACE:: AlgorithmManager.CreateTokenBucket(): Initializing LeakyBucket: Capacity: 120 RefillAmount: 18 TimeInterval: 1440
+20261019 14:59:27.367 TRACE:: Event Name "Daily Sampling", scheduled to run.
+20261019 14:59:27.367 TRACE:: AlgorithmManager.Run(): Begin DataStream - Start: 01/06/2025 00:00:00 Stop: 01/06/2025 23:59:59 Time: 01/06/2025 09:59:58 Warmup: False
+20261019 14:59:27.368 TRACE:: AlgorithmManager.Run(): Firing On End Of Algorithm...
+20261019 14:59:27.368 TRACE:: OrderRequestProcessingPool.Dispose(): completed
+20261019 14:59:27.370 TRACE:: AlgorithmManager.CreateTokenBucket(): Initializing LeakyBucket: Capacity: 120 RefillAmount: 18 TimeInterval: 1440
+20261019 14:59:27.370 TRACE:: Event Name "Daily Sampling", scheduled to run.
+20261019 14:59:27.370 TRACE:: AlgorithmManager.Run(): Begin DataStream - Start: 01/06/2025 00:00:00 Stop: 01/06/2025 23:59:59 Time: 01/06/2025 09:59:58 Warmup: False
+20261019 14:59:27.371 TRACE:: AlgorithmManager.Run(): Firing On End Of Algorithm...
+20261019 14:59:27.371 TRACE:: OrderRequestProcessingPool.Dispose(): completed
