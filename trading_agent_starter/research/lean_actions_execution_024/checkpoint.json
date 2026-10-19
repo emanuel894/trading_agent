@@ -3,10 +3,10 @@
   "goal": "Qualify exactlyQ12\u2013Q20 and stop at LEAN_Q12_Q20_GATE_PASS, LEAN_BLOCKER_FOUND, or LEAN_Q12_Q20_GATE_INCOMPLETE; draftPR only, no merge",
   "branch": "research/issue-24-lean-q12-q20-spike",
   "starting_foundation": "ba213d8d775c20db7a299932a9ea3319c9bc8a59",
-  "current_head": "ba213d8d775c20db7a299932a9ea3319c9bc8a59",
-  "phase": "Exact build03/code/oracles independently approved; ready for54 newcleanprocesses only",
+  "current_head": "7da0f33683510b201d4feecdd355d41dbaa000f7",
+  "phase": "Resumed after usage interruption;32 accepted originalbinding processes; attempt33 stopped on authored decimal-string mismatch99.90vs99.9; extension command was not executed",
   "old_runtime_reruns": 0,
-  "new_native_attempts": 0,
+  "new_native_attempts": 33,
   "paid_calls": 0,
   "purchases": 0,
   "completed": [
@@ -22,9 +22,9 @@
     "Nativesymbolchanged events cancelopenorders: useexternalstableSIDmapping",
     "NativeexecutionhandlernotexecutionIDidempotent: dedup/reorderbeforefake-destinationemission"
   ],
-  "next_action": "Run all27 approved caseIDs twice via launch-journaling runner; stopfirstdivergence; noQ01\u2013Q11rerun",
+  "next_action": "Independently adjudicate rendering mismatch; freeze versioned continuation with one canonical oracle scalar correction and two duplicate-action guards/cases; reuse32 accepted runs unchanged. Resume only unrun cases and required corrected/duplicate cases after new approval.",
   "pending_side_effects": [],
-  "updated_utc": "2026-10-19T09:18:46.344996+00:00",
+  "updated_utc": "2026-10-19T12:51:08.270839+00:00",
   "completed_source_passes": 2,
   "code_build": "Build02:0warnings0errors",
   "new_cases": 27,
@@ -35,5 +35,10 @@
     "Frozen oracles nowshow actualsource/nativeclock snapshots, nativeQ12profit andvaluationentryblock, Q13economicNAVandcashencumbrance, Q14actualnativeqty/rawmark/bookcost, lateQ16quote afterdeadline, stableeconomicduplicates withseparatedeliverymetadata",
     "FixedrunnerdecisionconstanttoIssue24exactstate beforeexecution"
   ],
-  "oracle_approved": true
+  "oracle_approved": true,
+  "accepted_new_processes": 32,
+  "failed_attempts": [
+    33
+  ],
+  "usage_interruption": "Automatic approval review rejected extension command because included usage limit was reached; action was not executed. User has now requested continuation; authentication works. No paid fallback."
 }
