@@ -1,0 +1,86 @@
+{
+  "snapshots": [
+    {
+      "label": "same_event_scans",
+      "cash": "9698.78997",
+      "I1_quantity": "3",
+      "I1_average": "100.07001",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "1",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "3",
+          "filled": "3",
+          "status": "Filled",
+          "limit": null
+        },
+        {
+          "id": 2,
+          "quantity": "3",
+          "filled": "0",
+          "status": "Canceled",
+          "limit": null
+        }
+      ],
+      "remaining_capacity": "2",
+      "rejected_intent": 2,
+      "at_ns": 1736175601000000000,
+      "native_dispatch_ns": 1736175601000000000
+    },
+    {
+      "label": "new_event",
+      "cash": "9397.57994",
+      "I1_quantity": "6",
+      "I1_average": "100.07001",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "2",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "3",
+          "filled": "3",
+          "status": "Filled",
+          "limit": null
+        },
+        {
+          "id": 2,
+          "quantity": "3",
+          "filled": "0",
+          "status": "Canceled",
+          "limit": null
+        },
+        {
+          "id": 3,
+          "quantity": "3",
+          "filled": "3",
+          "status": "Filled",
+          "limit": null
+        }
+      ],
+      "remaining_capacity": "2",
+      "at_ns": 1736175602000000000,
+      "native_dispatch_ns": 1736175602000000000
+    }
+  ],
+  "fills": [
+    {
+      "order_id": 1,
+      "quote_id": "budget_q1",
+      "quantity": "3",
+      "price": "100.07001",
+      "fee": "1",
+      "available_ns": 1736175601000000000
+    },
+    {
+      "order_id": 3,
+      "quote_id": "budget_q2",
+      "quantity": "3",
+      "price": "100.07001",
+      "fee": "1",
+      "available_ns": 1736175602000000000
+    }
+  ]
+}

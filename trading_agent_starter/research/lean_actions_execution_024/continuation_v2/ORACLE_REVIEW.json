@@ -1,0 +1,21 @@
+{
+  "approved": true,
+  "reviewer": "issue24_oracle_review",
+  "review_type": "Independent Codex context; actual served identifiers unavailable; not cross-provider qualification",
+  "approved_utc": "2026-10-19T12:57:05.928051+00:00",
+  "binding": {
+    "build.json": "488e5edc6720a9810058230fc397b92aaff977215787a937d06b0940f5ed00b4",
+    "fixtures/manifest.json": "b36acb6f0bbc97dcd35e5df1e2434ae2f80b651a90d51fa8e72e9eff165e2103",
+    "../compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+    "reuse-v1.json": "a69abefa0aef62966beae25caa99f764c02473e2ef142abd58350832fa8fcc2c",
+    "parent-preserved.json": "626caea04410479ee59f647a842a948f10a3f694b23628ad507926b5edaca16e",
+    "run_gate.py": "9ae421a90e25e419b640f0cca48226cf79858a5799ae4c65f0ed5242e9fef32f",
+    "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+    "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+    "host/Actions.cs": "b5fdfb4c4c1486a03f84113dbfcb900d636ccd288f80ee654aea1473f45d12cb",
+    "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+    "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+  },
+  "scope": "Exactly13remaining/newcases paired; no32acceptedv1replay/noQ01-Q11/noQ21-Q33",
+  "findings": "Verified115parenthashes,32original-boundpasses and preservedfailed33,27unchangedcaseobjects,onescalarcanonicaldecimalcorrection,two genuinely duplicated action cases with unchanged businessoracles,twoOnce-only source delta,copiedcode/runtime/config/fixtures and11exactbindings. No remaining material finding before bounded execution."
+}

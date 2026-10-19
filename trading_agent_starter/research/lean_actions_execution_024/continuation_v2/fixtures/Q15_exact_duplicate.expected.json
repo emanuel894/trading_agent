@@ -1,0 +1,58 @@
+{
+  "snapshots": [
+    {
+      "label": "mapped",
+      "cash": "10000",
+      "I1_quantity": "10",
+      "I1_average": "100",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "0",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "5",
+          "filled": "0",
+          "status": "Submitted",
+          "limit": "100"
+        }
+      ],
+      "mapping_version": 2,
+      "ticker": "NEW",
+      "stable_sid": true,
+      "stable_order": true,
+      "stable_intent": true,
+      "unresolved": false,
+      "at_ns": 1736179200000000000,
+      "native_dispatch_ns": 1736179200000000000
+    },
+    {
+      "label": "quotes",
+      "cash": "10000",
+      "I1_quantity": "10",
+      "I1_average": "100",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "0",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "5",
+          "filled": "0",
+          "status": "Submitted",
+          "limit": "100"
+        }
+      ],
+      "quote_results": [
+        "old_quote:SYMBOL_INTERVAL",
+        "new_quote:ADMITTED"
+      ],
+      "mapping_version": 2,
+      "ticker": "NEW",
+      "unresolved": false,
+      "at_ns": 1736179200000002000,
+      "native_dispatch_ns": 1736179200000002000
+    }
+  ],
+  "fills": []
+}
