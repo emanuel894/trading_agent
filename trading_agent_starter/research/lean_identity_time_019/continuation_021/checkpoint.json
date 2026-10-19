@@ -4,14 +4,14 @@
   "starting_head": "c70aa329c8ebfc993e0048b1142a7db22fbdcf9b",
   "foundation_sha": "67317e573624529e247d98a4964f946421b571e7",
   "pr": 20,
-  "phase": "Fresh v3 actual-byte review APPROVED; reuse proof verified; ready remaining54cases",
+  "phase": "Native driver active; Q04malformed/Q05/Q06 checkpoint",
   "adjudication": "authored_fixture_error",
   "minimum_change": "Four event/availability scalar values in Q04_missing/overlap, from1736175601000000000 to1736260201000000000; all expected records byte-identical",
-  "next_action": "Execute Q04missing/overlap thenQ05-Q11; exact comparison,2cleanprocesses each; stop at first divergence. NoQ12-Q33.",
+  "next_action": "Driver83612 is active; wait/read journal, never duplicate. Continue Q07-Q11 in matrix order unless first divergence.",
   "usage": {
     "paid_provider_calls": 0,
     "purchases": 0,
-    "new_native_processes": 0,
+    "new_native_processes": 43,
     "previous_launches": 12,
     "previous_host_processes": 11
   },
@@ -22,12 +22,37 @@
     "windows": "SUCCESS",
     "run_url": "https://github.com/emanuel894/trading_agent/actions/runs/39176401314"
   },
-  "updated_utc": "2026-10-19T07:50:07.832491+00:00",
+  "updated_utc": "2026-10-19T07:58:04.294255+00:00",
   "completed": [
     "Auth/live expected branch/PR reconciled.",
     "Fresh independent adjudication: authored error.",
     "V3 only4clock scalar changes;57expected records unchanged;185prior files preserved.",
     "Exact6510source/125runtime/config/code bindings verified;3prior deterministic pairs validate under originalv2.",
     "Fresh independent oracle approval binds exactv3input/manifest and permits verified originalv2reuse."
-  ]
+  ],
+  "accepted_new_cases": [
+    "Q04_missing",
+    "Q04_overlap",
+    "Q05_structural_unknown_publication",
+    "Q05_date_only",
+    "Q05_conflicting_class",
+    "Q05_late_halt",
+    "Q06_age_exact",
+    "Q06_age_plus_ns",
+    "Q06_future_availability",
+    "Q06_spread_exact",
+    "Q06_spread_over",
+    "Q06_locked",
+    "Q06_crossed",
+    "Q06_zero_bid",
+    "Q06_zero_ask",
+    "Q06_nan_bid",
+    "Q06_nan_ask",
+    "Q06_conditions_mixed",
+    "Q06_conditions_missing",
+    "Q06_unknown_status",
+    "Q07_first"
+  ],
+  "last_journal_attempt": 55,
+  "driver_exec_session": 83612
 }

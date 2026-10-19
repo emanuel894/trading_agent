@@ -1,0 +1,17 @@
+test_cancel_request_cannot_release_reservation (test_comparator.ComparatorAcceptanceTests.test_cancel_request_cannot_release_reservation) ... ok
+test_changed_denominator_blocks (test_comparator.ComparatorAcceptanceTests.test_changed_denominator_blocks) ... ok
+test_class_substitution_is_rejected (test_comparator.ComparatorAcceptanceTests.test_class_substitution_is_rejected) ... ok
+test_duplicate_settlement_mutation_blocks (test_comparator.ComparatorAcceptanceTests.test_duplicate_settlement_mutation_blocks) ... ok
+test_invented_cash_blocks (test_comparator.ComparatorAcceptanceTests.test_invented_cash_blocks) ... ok
+test_late_lifecycle_timestamp_is_rejected (test_comparator.ComparatorAcceptanceTests.test_late_lifecycle_timestamp_is_rejected) ... ok
+test_missing_native_order_is_rejected (test_comparator.ComparatorAcceptanceTests.test_missing_native_order_is_rejected) ... ok
+test_nav_probe_cannot_call_destination (test_comparator.ComparatorAcceptanceTests.test_nav_probe_cannot_call_destination) ... ok
+test_removed_engine_security_blocks (test_comparator.ComparatorAcceptanceTests.test_removed_engine_security_blocks) ... ok
+test_sparse_cleanup_or_end_evidence_is_rejected (test_comparator.ComparatorAcceptanceTests.test_sparse_cleanup_or_end_evidence_is_rejected) ... ok
+test_unchanged_observed_case_passes (test_comparator.ComparatorAcceptanceTests.test_unchanged_observed_case_passes) ... ok
+test_vanished_engine_holding_blocks (test_comparator.ComparatorAcceptanceTests.test_vanished_engine_holding_blocks) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.042s
+
+OK

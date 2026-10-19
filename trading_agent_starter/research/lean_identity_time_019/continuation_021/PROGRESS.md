@@ -5,3 +5,5 @@ Auth succeeded; live PR20draft and branch head exactlyc70aa329c8ebfc993e0048b114
 Fresh independent adjudication finds authored fixture error: malformed variants overrode decision toJan7 but inherited default Jan6q1. Correct only q1event_ns/available_ns toJan7decision+1s, four scalar changes total. Keep I1identity, nullreceipt, prices/units/expectations untouched. V3 actual bytes require a different fresh oracle reviewer before any native execution.
 
 All original tracked packet files are frozen by preserved_c70aa32_sha256.json. No prior artifact overwritten.
+
+Milestone: 21new paired cases accepted through current journal. Original185files unchanged. Driver remains active; pending entries are prelaunch intent and must be reconciled on resume, not repeated.

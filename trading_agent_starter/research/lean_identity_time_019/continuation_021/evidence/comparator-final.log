@@ -1,0 +1,8 @@
+test_contract_mutations_are_rejected (test_comparator.ComparatorTests.test_contract_mutations_are_rejected) ... ok
+test_extra_missing_fields_rejected (test_comparator.ComparatorTests.test_extra_missing_fields_rejected) ... ok
+test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.029s
+
+OK
