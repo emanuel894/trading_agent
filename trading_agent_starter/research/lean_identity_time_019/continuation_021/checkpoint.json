@@ -4,14 +4,14 @@
   "starting_head": "c70aa329c8ebfc993e0048b1142a7db22fbdcf9b",
   "foundation_sha": "67317e573624529e247d98a4964f946421b571e7",
   "pr": 20,
-  "phase": "Native driver active; Q04malformed/Q05/Q06 checkpoint",
+  "phase": "Native driver active; Q08/Q09 completed; Q10 current prefix",
   "adjudication": "authored_fixture_error",
   "minimum_change": "Four event/availability scalar values in Q04_missing/overlap, from1736175601000000000 to1736260201000000000; all expected records byte-identical",
-  "next_action": "Driver83612 is active; wait/read journal, never duplicate. Continue Q07-Q11 in matrix order unless first divergence.",
+  "next_action": "Driver83612 still active: read/wait, never duplicate. Complete Q10-Q11 or stop on first divergence, then summarize/review/CI/update existingPR20.",
   "usage": {
     "paid_provider_calls": 0,
     "purchases": 0,
-    "new_native_processes": 43,
+    "new_native_processes": 85,
     "previous_launches": 12,
     "previous_host_processes": 11
   },
@@ -22,7 +22,7 @@
     "windows": "SUCCESS",
     "run_url": "https://github.com/emanuel894/trading_agent/actions/runs/39176401314"
   },
-  "updated_utc": "2026-10-19T07:58:04.294255+00:00",
+  "updated_utc": "2026-10-19T08:05:35.037812+00:00",
   "completed": [
     "Auth/live expected branch/PR reconciled.",
     "Fresh independent adjudication: authored error.",
@@ -51,8 +51,29 @@
     "Q06_conditions_mixed",
     "Q06_conditions_missing",
     "Q06_unknown_status",
-    "Q07_first"
+    "Q07_first",
+    "Q07_deadline_exact",
+    "Q07_deadline_plus_ns",
+    "Q07_missing",
+    "Q08_event_order",
+    "Q08_receipt_order",
+    "Q08_quote_before_halt",
+    "Q08_halt_before_quote",
+    "Q08_late_receipt",
+    "Q08_stale_event",
+    "Q08_duplicate",
+    "Q08_conflict",
+    "Q08_conflict_reversed",
+    "Q08_tie_sequence",
+    "Q08_tie_event_id",
+    "Q09_baseline",
+    "Q09_future_append",
+    "Q09_prospective",
+    "Q10_five_shares",
+    "Q10_six_shares",
+    "Q10_round_lot",
+    "Q10_unknown_factor"
   ],
-  "last_journal_attempt": 55,
+  "last_journal_attempt": 97,
   "driver_exec_session": 83612
 }
