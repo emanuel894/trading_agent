@@ -4,7 +4,7 @@
   "branch": "research/issue-24-lean-q12-q20-spike",
   "starting_foundation": "ba213d8d775c20db7a299932a9ea3319c9bc8a59",
   "current_head": "ba213d8d775c20db7a299932a9ea3319c9bc8a59",
-  "phase": "Authenticated exactfoundation reconciled; bounded source-first pass in progress; no implementation/native runs",
+  "phase": "27 exact oracles and native build03 complete; independent pre-execution review pending exact10binding approval",
   "old_runtime_reruns": 0,
   "new_native_attempts": 0,
   "paid_calls": 0,
@@ -22,7 +22,17 @@
     "Nativesymbolchanged events cancelopenorders: useexternalstableSIDmapping",
     "NativeexecutionhandlernotexecutionIDidempotent: dedup/reorderbeforefake-destinationemission"
   ],
-  "next_action": "FinishQ16\u2013Q20sourcepass, freeze coverage/reuse table andminimumnewcaseplan beforecode/runtime; verifyaccepted integral bindings without rerun",
+  "next_action": "Persist fresh oracle approval bound to current10files; thenexecute27newcases only,2freshprocesses each, preserving firstdivergence andstoppingforadjudication",
   "pending_side_effects": [],
-  "updated_utc": "2026-10-19T09:18:46.344996+00:00"
+  "updated_utc": "2026-10-19T09:18:46.344996+00:00",
+  "completed_source_passes": 2,
+  "code_build": "Build02:0warnings0errors",
+  "new_cases": 27,
+  "planned_new_accepted_processes": 54,
+  "old_native_reruns": 0,
+  "build": "Build03:0warnings0errors",
+  "pre_execution_changes": [
+    "Frozen oracles nowshow actualsource/nativeclock snapshots, nativeQ12profit andvaluationentryblock, Q13economicNAVandcashencumbrance, Q14actualnativeqty/rawmark/bookcost, lateQ16quote afterdeadline, stableeconomicduplicates withseparatedeliverymetadata",
+    "FixedrunnerdecisionconstanttoIssue24exactstate beforeexecution"
+  ]
 }

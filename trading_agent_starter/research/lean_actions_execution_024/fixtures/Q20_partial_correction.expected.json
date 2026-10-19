@@ -1,0 +1,139 @@
+{
+  "snapshots": [
+    {
+      "label": "partial1",
+      "cash": "9898.92999",
+      "I1_quantity": "1",
+      "I1_average": "100.07001",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "1",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "10",
+          "filled": "1",
+          "status": "PartiallyFilled",
+          "limit": null
+        }
+      ],
+      "cumulative_fee": "1",
+      "at_ns": 1736175601000000000,
+      "native_dispatch_ns": 1736175601000000000
+    },
+    {
+      "label": "partial2",
+      "cash": "9798.85998",
+      "I1_quantity": "2",
+      "I1_average": "100.07001",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "1",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "10",
+          "filled": "2",
+          "status": "PartiallyFilled",
+          "limit": null
+        }
+      ],
+      "cumulative_fee": "1",
+      "at_ns": 1736175602000000000,
+      "native_dispatch_ns": 1736175602000000000
+    },
+    {
+      "label": "partial3",
+      "cash": "9698.58997",
+      "I1_quantity": "3",
+      "I1_average": "100.07001",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "1.2",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "10",
+          "filled": "3",
+          "status": "PartiallyFilled",
+          "limit": null
+        }
+      ],
+      "cumulative_fee": "1.2",
+      "at_ns": 1736175603000000000,
+      "native_dispatch_ns": 1736175603000000000
+    },
+    {
+      "label": "canceled",
+      "cash": "9698.58997",
+      "I1_quantity": "3",
+      "I1_average": "100.07001",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "1.2",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "10",
+          "filled": "3",
+          "status": "Canceled",
+          "limit": null
+        }
+      ],
+      "cumulative_fee": "1.2",
+      "at_ns": 1736175605000000000,
+      "native_dispatch_ns": 1736175605000000000
+    },
+    {
+      "label": "corrected_duplicate",
+      "cash": "9698.68997",
+      "I1_quantity": "3",
+      "I1_average": "100.07001",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "1.1",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "10",
+          "filled": "3",
+          "status": "Canceled",
+          "limit": null
+        }
+      ],
+      "cumulative_fee": "1.1",
+      "fee_adjustments": [
+        "-0.1"
+      ],
+      "fee_correction_applications": 1,
+      "at_ns": 1736175606000000000,
+      "native_dispatch_ns": 1736175606000000000
+    }
+  ],
+  "fills": [
+    {
+      "order_id": 1,
+      "quote_id": "f1",
+      "quantity": "1",
+      "price": "100.07001",
+      "fee": "1",
+      "available_ns": 1736175601000000000
+    },
+    {
+      "order_id": 1,
+      "quote_id": "f2",
+      "quantity": "1",
+      "price": "100.07001",
+      "fee": "0",
+      "available_ns": 1736175602000000000
+    },
+    {
+      "order_id": 1,
+      "quote_id": "f3",
+      "quantity": "1",
+      "price": "100.07001",
+      "fee": "0.2",
+      "available_ns": 1736175603000000000
+    }
+  ]
+}
