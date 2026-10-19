@@ -1,0 +1,29 @@
+{
+  "decisions": [
+    {
+      "id": "A",
+      "allowed": true,
+      "reason": "OK",
+      "quantity": "1000",
+      "gross_ok": true,
+      "symbol_ok": true
+    }
+  ],
+  "snapshots": [
+    {
+      "label": "final",
+      "cash": "10000",
+      "reserved_cash": "1001",
+      "free_cash": "8999",
+      "quantity": "0",
+      "reserved_sell": "0",
+      "daily": false,
+      "drawdown": false,
+      "pending_exit": false
+    }
+  ],
+  "fills": [],
+  "ranked": [],
+  "due_ns": null,
+  "risk_records": []
+}

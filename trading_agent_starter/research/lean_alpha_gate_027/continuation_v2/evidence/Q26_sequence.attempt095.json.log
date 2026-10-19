@@ -1,0 +1,6 @@
+20261019 14:56:53.619 TRACE:: Composer(): Loading Assemblies from /packet/host/bin/Release/net10.0
+20261019 14:56:55.269 TRACE:: AlgorithmManager.CreateTokenBucket(): Initializing LeakyBucket: Capacity: 120 RefillAmount: 18 TimeInterval: 1440
+20261019 14:56:55.283 TRACE:: Event Name "Daily Sampling", scheduled to run.
+20261019 14:56:55.283 TRACE:: AlgorithmManager.Run(): Begin DataStream - Start: 01/06/2025 00:00:00 Stop: 01/06/2025 23:59:59 Time: 01/06/2025 09:59:58 Warmup: False
+20261019 14:56:55.410 TRACE:: AlgorithmManager.Run(): Firing On End Of Algorithm...
+20261019 14:56:55.416 TRACE:: OrderRequestProcessingPool.Dispose(): completed

@@ -1,0 +1,68 @@
+{
+  "approved": true,
+  "review_kind": "Independent pre-execution continuation review; uniform offline service configuration and original-bound Q21 reuse",
+  "reviewed_head": "16fc9139da358dedcda81585c9a3c04e13324572",
+  "binding": {
+    "build.json": "dbf0134509f550f9333548c59c12fa1d556bdf54f42ce70c2da74ba05c251ebb",
+    "fixtures/manifest.json": "e7e209693a627e712c0cc916cf0f292f3ae0ae1eb7c7e52bd7f6da7c39399f93",
+    "compare.py": "e4ddec9cdbcdb672b7a64728ed7a3f91c64cb810da487f2f56514862cb086172",
+    "evaluate.py": "ac3a1570cb80a9b1c61a9a8e97c739319dfde1e186d3e0911c9a833229a07b53",
+    "run_gate.py": "3071f8b7489605a334b9dfb7050b2e54f42b913aaeea97be190d34a96587a4a7",
+    "reuse-proof.json": "fe4150dcc888c56e85f6029f7e7f0d667a404baf800419a912f65f29c9b8e929",
+    "reuse-v1.json": "ae963b94dbb677c53abfa2145f4495e55b314f93a24e684b3387e503a3c95c0e",
+    "parent-preserved.json": "98df8c84781ad55e8c599a909177736057b7fb65eb71485ec374e7a3fc175fab",
+    "host/Program.cs": "a9c1d706adbcac851f5afa18394ca8789cc4e36699604f3db04b6287a40ce899",
+    "host/ResearchAlgorithm.cs": "ef7f3e7aa76cd59aa42a97169d821ff4cbf9b4c6f5b1cfe6f9eb26a71fc2ed84",
+    "host/LeanResearch.csproj": "376a8366ddae4f6549f839a482425bf67d5a6327465ccb187f69c8ca504be673"
+  },
+  "reviewer": "issue27_source_review; independent agent context",
+  "model_id": "Actual served model ID unavailable; inherited configuration",
+  "reasoning_effort": "Actual served reasoning effort unavailable; inherited configuration",
+  "configuration_finding_closed": {
+    "prior_gap": "API/history deny services were installed only by negative ingress variants.",
+    "resolution": "Program.Run installs OfflineApi and SubscriptionDataReaderHistoryProvider using the same sticky OfflineData before Initialize for every algorithm; variants select only Download/History calls. UniverseSelection also receives the same guard.",
+    "source_check": "Pinned SubscriptionDataReaderHistoryProvider.Initialize consumes provider/cache/map/factor/settings/permissions and does not dereference the supplied null job."
+  },
+  "reuse_approved": {
+    "row": "Q21",
+    "original_pairs": 8,
+    "original_accepted_processes": 16,
+    "preserved_failed_processes": 1,
+    "original_packet_files_hash_verified": 123,
+    "original_output_hashes_and_bindings_verified": true,
+    "original_outputs_reassessed_against_original_frozen_oracles": true,
+    "pair_byte_identity_verified": true,
+    "original_provider_calls_zero": true,
+    "economic_dependency_adjudication": "Q21 policy, native order/reservation/accounting source, comparator, inputs and all oracles are byte-identical. Added uniform API/history deny services do not change its cash/reservation semantics; Q21 executes no Download/History request. Original outputs remain accepted only under their original bindings, without replay or relabelling.",
+    "reuse_manifest": "reuse-v1.json"
+  },
+  "remaining_execution_approved": {
+    "case_count": 44,
+    "rows": [
+      "Q22",
+      "Q23",
+      "Q24",
+      "Q25",
+      "Q26",
+      "Q32",
+      "Q33"
+    ],
+    "pairs_required_per_case": 2,
+    "runner_excludes_Q21": true,
+    "global_attempt_number_starts_at": 18,
+    "clean_pair_equality_and_independent_comparator_required": true
+  },
+  "checked": [
+    "run_gate.binding() validates compiled runtime/code/config/fixtures and prior/parent preservation hashes.",
+    "Continuation ResearchAlgorithm.cs, compare.py, evaluate.py, input and every expected oracle match original bytes.",
+    "All16 reused Q21 outputs pass the original comparator and hashes match original journal/approval; each pair is byte-identical.",
+    "Eight reused cases plus44 remaining cases cover the unchanged52-case frozen bundle."
+  ],
+  "limitations": [
+    "Pre-execution approval only; not final LEAN_ALPHA_RESEARCH_GATE_PASS.",
+    "No native process, build, network, broker/provider authentication or paid call executed by reviewer.",
+    "Remaining44 case runtime outcomes, clean-pair identity, final review and CI remain unverified.",
+    "Actual model/effort IDs unavailable; no cross-provider acceptance claimed.",
+    "Q01-Q20 remain original-bound evidence; full Q27 crash recovery and Q28-Q31 remain unqualified."
+  ]
+}

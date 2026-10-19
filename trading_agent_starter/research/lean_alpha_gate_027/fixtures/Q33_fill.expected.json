@@ -1,0 +1,197 @@
+{
+  "arms": {
+    "A": {
+      "accounting": {
+        "decisions": [
+          {
+            "id": "A",
+            "allowed": true,
+            "reason": "OK",
+            "quantity": "5",
+            "gross_ok": null,
+            "symbol_ok": null
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "final",
+            "cash": "9498.64995",
+            "reserved_cash": "0",
+            "free_cash": "9498.64995",
+            "quantity": "5",
+            "reserved_sell": "0",
+            "daily": false,
+            "drawdown": false,
+            "pending_exit": false
+          }
+        ],
+        "fills": [
+          {
+            "id": "A",
+            "quantity": "5",
+            "price": "100.07001",
+            "fee": "1",
+            "source_id": "Q33_fill-q1",
+            "source_ns": 1736175601000000000,
+            "native_dispatch_ns": 1736175601000000000
+          }
+        ],
+        "ranked": [],
+        "due_ns": null,
+        "risk_records": []
+      },
+      "evaluation": {
+        "opportunities": 1,
+        "failures": 0,
+        "run_cost": "0.25",
+        "terminal_value": null,
+        "status": "fill"
+      }
+    },
+    "B": {
+      "accounting": {
+        "decisions": [
+          {
+            "id": "A",
+            "allowed": true,
+            "reason": "OK",
+            "quantity": "5",
+            "gross_ok": null,
+            "symbol_ok": null
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "final",
+            "cash": "9498.64995",
+            "reserved_cash": "0",
+            "free_cash": "9498.64995",
+            "quantity": "5",
+            "reserved_sell": "0",
+            "daily": false,
+            "drawdown": false,
+            "pending_exit": false
+          }
+        ],
+        "fills": [
+          {
+            "id": "A",
+            "quantity": "5",
+            "price": "100.07001",
+            "fee": "1",
+            "source_id": "Q33_fill-q1",
+            "source_ns": 1736175601000000000,
+            "native_dispatch_ns": 1736175601000000000
+          }
+        ],
+        "ranked": [],
+        "due_ns": null,
+        "risk_records": []
+      },
+      "evaluation": {
+        "opportunities": 1,
+        "failures": 0,
+        "run_cost": "0.25",
+        "terminal_value": null,
+        "status": "fill"
+      }
+    },
+    "C": {
+      "accounting": {
+        "decisions": [
+          {
+            "id": "A",
+            "allowed": true,
+            "reason": "OK",
+            "quantity": "5",
+            "gross_ok": null,
+            "symbol_ok": null
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "final",
+            "cash": "9498.64995",
+            "reserved_cash": "0",
+            "free_cash": "9498.64995",
+            "quantity": "5",
+            "reserved_sell": "0",
+            "daily": false,
+            "drawdown": false,
+            "pending_exit": false
+          }
+        ],
+        "fills": [
+          {
+            "id": "A",
+            "quantity": "5",
+            "price": "100.07001",
+            "fee": "1",
+            "source_id": "Q33_fill-q1",
+            "source_ns": 1736175601000000000,
+            "native_dispatch_ns": 1736175601000000000
+          }
+        ],
+        "ranked": [],
+        "due_ns": null,
+        "risk_records": []
+      },
+      "evaluation": {
+        "opportunities": 1,
+        "failures": 0,
+        "run_cost": "0.25",
+        "terminal_value": null,
+        "status": "fill"
+      }
+    },
+    "N": {
+      "accounting": {
+        "decisions": [
+          {
+            "id": "A",
+            "allowed": true,
+            "reason": "OK",
+            "quantity": "5",
+            "gross_ok": null,
+            "symbol_ok": null
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "final",
+            "cash": "9498.64995",
+            "reserved_cash": "0",
+            "free_cash": "9498.64995",
+            "quantity": "5",
+            "reserved_sell": "0",
+            "daily": false,
+            "drawdown": false,
+            "pending_exit": false
+          }
+        ],
+        "fills": [
+          {
+            "id": "A",
+            "quantity": "5",
+            "price": "100.07001",
+            "fee": "1",
+            "source_id": "Q33_fill-q1",
+            "source_ns": 1736175601000000000,
+            "native_dispatch_ns": 1736175601000000000
+          }
+        ],
+        "ranked": [],
+        "due_ns": null,
+        "risk_records": []
+      },
+      "evaluation": {
+        "opportunities": 1,
+        "failures": 0,
+        "run_cost": "0.25",
+        "terminal_value": null,
+        "status": "fill"
+      }
+    }
+  },
+  "diagnostic_invariance": true
+}

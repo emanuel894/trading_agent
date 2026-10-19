@@ -1,0 +1,50 @@
+{
+  "decisions": [
+    {
+      "id": "A",
+      "allowed": true,
+      "reason": "OK",
+      "quantity": "9",
+      "gross_ok": true,
+      "symbol_ok": true
+    }
+  ],
+  "snapshots": [
+    {
+      "label": "frozen",
+      "cash": "10000",
+      "reserved_cash": "901.63009",
+      "free_cash": "9098.36991",
+      "quantity": "0",
+      "reserved_sell": "0",
+      "daily": false,
+      "drawdown": false,
+      "pending_exit": false
+    },
+    {
+      "label": "final",
+      "cash": "9098.36991",
+      "reserved_cash": "0",
+      "free_cash": "9098.36991",
+      "quantity": "9",
+      "reserved_sell": "0",
+      "daily": false,
+      "drawdown": false,
+      "pending_exit": false
+    }
+  ],
+  "fills": [
+    {
+      "id": "A",
+      "quantity": "9",
+      "price": "100.07001",
+      "fee": "1",
+      "source_id": "Q23_sigma01-q1",
+      "source_ns": 1736175601000000000,
+      "native_dispatch_ns": 1736175601000000000
+    }
+  ],
+  "ranked": [],
+  "due_ns": null,
+  "risk_records": []
+}
