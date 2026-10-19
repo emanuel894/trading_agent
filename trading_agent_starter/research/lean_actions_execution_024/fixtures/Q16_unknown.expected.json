@@ -1,0 +1,20 @@
+{
+  "snapshots": [
+    {
+      "label": "finished",
+      "cash": "10000",
+      "I1_quantity": "0",
+      "I1_average": "0",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "0",
+      "orders": [],
+      "status": "UNKNOWN",
+      "entry_allowed": false,
+      "deadline_ns": 1736175605000000000,
+      "at_ns": 1736175605000001000,
+      "native_dispatch_ns": 1736175605000001000
+    }
+  ],
+  "fills": []
+}

@@ -1,0 +1,49 @@
+{
+  "snapshots": [
+    {
+      "label": "converted",
+      "cash": "9000",
+      "I1_quantity": "0",
+      "I1_average": "0",
+      "I2_quantity": "5",
+      "I2_average": "200",
+      "fees": "0",
+      "orders": [],
+      "receivable": "70",
+      "payment_applications": 0,
+      "lineage": "I1->I2",
+      "original_cost": "1000",
+      "native_carry_book_cost": "1000",
+      "I2_raw_bid": "180",
+      "tax_basis_allocation": null,
+      "economic_value": "970",
+      "valuation_entry_allowed": true,
+      "unresolved": false,
+      "at_ns": 1736179200000000000,
+      "native_dispatch_ns": 1736179200000000000
+    },
+    {
+      "label": "paid_duplicate",
+      "cash": "9070",
+      "I1_quantity": "0",
+      "I1_average": "0",
+      "I2_quantity": "5",
+      "I2_average": "200",
+      "fees": "0",
+      "orders": [],
+      "receivable": "0",
+      "payment_applications": 1,
+      "lineage": "I1->I2",
+      "original_cost": "1000",
+      "native_carry_book_cost": "1000",
+      "I2_raw_bid": "180",
+      "tax_basis_allocation": null,
+      "economic_value": "970",
+      "valuation_entry_allowed": true,
+      "unresolved": false,
+      "at_ns": 1736182800000000000,
+      "native_dispatch_ns": 1736182800000000000
+    }
+  ],
+  "fills": []
+}

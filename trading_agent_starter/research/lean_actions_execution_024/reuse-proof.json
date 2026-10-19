@@ -1,0 +1,41 @@
+{
+  "Q17_buy5bps": {
+    "case_id": "Q06_age_exact",
+    "attempts": [
+      25,
+      26
+    ],
+    "output_sha256": "372e947257bb1810ff59db5dacb0869b7d03173fdd44cd80acaebbc1a8b20c8a",
+    "original_binding": {
+      "build_manifest_sha256": "42d884810f95a8e8ce422d7870bfd8b9532f72779a92c80e9aef3cd5b5c023ce",
+      "fixture_manifest_sha256": "4eb100de481b7ad14d5cfbcadf04c6518125df467f36c56f92b40d2ceb49d1fb",
+      "host_source_sha256": "28b00ff69402ce81ec710a26b7a252bc7b80d4c20dbcb9a27773b98f3fe76da8",
+      "image": "mcr.microsoft.com/dotnet/sdk@sha256:0d99ebf1ccad15037b5c98c9fe8979d6b8dbac23812feae2277a0b277b5c5ffa",
+      "verification_sha256": "759f0f70f5569ef80067c38c8a30bfa6704a5c52bb20c0417a7c7c35ec71ab23",
+      "runner_sha256": "d6cf223f6543b88b509fd3c7d4c79e8e079da42d5707ac08543ecaab0c8d63d2",
+      "comparator_sha256": "73dbfd4bbc799701cfb557f0a0ad627b987f12d60ce25ec0e8445913bd2d048c",
+      "verifier_sha256": "f86ea6b9dd8219ee3c3cdeda2c031a12e83993a68a16fbd3e955a390be352f50"
+    }
+  },
+  "Q12_integral": {
+    "case_id": "Q11_integral_coupling",
+    "attempts": [
+      132,
+      133
+    ],
+    "output_sha256": "e86f7215cf3877605f6b8f6262b33af3690e8abf4c080ac620a316891c487c51",
+    "original_binding": {
+      "build.json": "54bc24245395f27c7c1e5cdb5b5bdac6d0f2fb86ca517b83cd2f25c7e6bd759d",
+      "fixtures/manifest.json": "cac8ea81d670223a63e08e44a769a648668b81173087eff648cd8874919eeb08",
+      "compare.py": "ed1c5e1f665715cb16e639f843559e3e65812984bde67c69c286745d94320b27",
+      "verify_reuse.py": "f808a98d6ad1f14a30f8d93d6c09a9e34310a5129f863193e7f83fc8e0a39726",
+      "run_gate.py": "adb6856e05f74e68d9140fbefc683ffe4ce9db34e182090f6c273c047b82bac6",
+      "host/Program.cs": "de1dbbb0e9ef9edc9a33a371615ad6bc9c9f6a1c29fe126e44082e7c02dd687b",
+      "host/Gap.cs": "93b2bb2b1dc32795be9e04152fe7c18a204d1df23fc10134295c12035029e521",
+      "host/LeanGap.csproj": "8cbc96493e4c895a5ae8a3565652e3dd189c2ea478054f012ec2b970ff7b54c2"
+    }
+  },
+  "old_native_processes_rerun": 0,
+  "original_runtime_files_verified": 125,
+  "continuation_runtime_files_verified": 68
+}

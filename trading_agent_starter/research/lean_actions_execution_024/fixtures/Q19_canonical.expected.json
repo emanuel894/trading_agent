@@ -1,0 +1,110 @@
+{
+  "snapshots": [
+    {
+      "label": "partial1",
+      "cash": "9598.71996",
+      "I1_quantity": "4",
+      "I1_average": "100.07001",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "1",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "10",
+          "filled": "4",
+          "status": "PartiallyFilled",
+          "limit": null
+        }
+      ],
+      "reservation": "600.42006",
+      "lifecycle": "PARTIAL",
+      "at_ns": 1736175601000000000,
+      "native_dispatch_ns": 1736175601000000000
+    },
+    {
+      "label": "cancel_requested",
+      "cash": "9598.71996",
+      "I1_quantity": "4",
+      "I1_average": "100.07001",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "1",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "10",
+          "filled": "4",
+          "status": "CancelPending",
+          "limit": null
+        }
+      ],
+      "reservation": "600.42006",
+      "lifecycle": "CANCEL_PENDING",
+      "at_ns": 1736175601000000000,
+      "native_dispatch_ns": 1736175601000000000
+    },
+    {
+      "label": "partial2",
+      "cash": "9398.57994",
+      "I1_quantity": "6",
+      "I1_average": "100.07001",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "1",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "10",
+          "filled": "6",
+          "status": "PartiallyFilled",
+          "limit": null
+        }
+      ],
+      "reservation": "400.28004",
+      "lifecycle": "CANCEL_PENDING",
+      "at_ns": 1736175601000000000,
+      "native_dispatch_ns": 1736175601000000000
+    },
+    {
+      "label": "canceled",
+      "cash": "9398.57994",
+      "I1_quantity": "6",
+      "I1_average": "100.07001",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "1",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "10",
+          "filled": "6",
+          "status": "Canceled",
+          "limit": null
+        }
+      ],
+      "reservation": "0",
+      "lifecycle": "CANCELED",
+      "at_ns": 1736175601000000000,
+      "native_dispatch_ns": 1736175601000000000
+    }
+  ],
+  "fills": [
+    {
+      "order_id": 1,
+      "quote_id": "e1",
+      "quantity": "4",
+      "price": "100.07001",
+      "fee": "1",
+      "available_ns": 1736175601000000000
+    },
+    {
+      "order_id": 1,
+      "quote_id": "e2",
+      "quantity": "2",
+      "price": "100.07001",
+      "fee": "0",
+      "available_ns": 1736175601000000000
+    }
+  ]
+}

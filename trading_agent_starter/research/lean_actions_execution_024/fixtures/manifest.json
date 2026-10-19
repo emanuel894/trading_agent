@@ -1,0 +1,33 @@
+{
+  "version": "issue24-v1",
+  "sha256": {
+    "Q12_reverse_claim.expected.json": "3a1cefa473f819e8821ac20cb59f8aac5693b0185803e242010d58b94298b91a",
+    "Q13_missing_payable.expected.json": "12252007e26430a60b97de4d82cb81488665039d751258bd82504813216f8961",
+    "Q13_payable.expected.json": "f4afd25c94f0de8267fd2af949e7a1ab5b7d848788cbadc7c376d838157c1e39",
+    "Q14_conflicting.expected.json": "0ab0503b07ede3292d043e42922cd1ca9d032c1c68c5f7a90caf4c4de1587b87",
+    "Q14_known.expected.json": "f2b318cd567d560d82a585a9b0bfec22bf9eb49499fd9b5d65ee06aadc776348",
+    "Q14_missing.expected.json": "0ab0503b07ede3292d043e42922cd1ca9d032c1c68c5f7a90caf4c4de1587b87",
+    "Q15_date_only.expected.json": "853bb0b352844141c9b3d86f7adb2e51c9420a832cab0901b02706b995206f14",
+    "Q15_exact.expected.json": "1e5971d57a989aa609058315adec838d71c23c923f74fbc22b81e04e9ac163e3",
+    "Q15_overlap.expected.json": "853bb0b352844141c9b3d86f7adb2e51c9420a832cab0901b02706b995206f14",
+    "Q16_exit.expected.json": "d7bc2865253a8cf713f66978850824ab1965590c54b83ae6504d9edf10cf4b1c",
+    "Q16_no_fresh.expected.json": "9ac5156f6b15f22366ca856fb45868e37ab6bb19d0f0c3d612de0d25b9001f2c",
+    "Q16_no_resume.expected.json": "660623e26619dfcaf4bd7fcecfc9ebbcf58bc2d71333ab3b8368f1b03ffd9eb2",
+    "Q16_resume.expected.json": "1f012e19b74223900a6e71520d36f49517cce8e3de231c7562ddac8099634a05",
+    "Q16_unknown.expected.json": "0a3ebb331c3133bea7c15c9e0840f0c2e54db5d1424eb1f9a6391a6d4b50d073",
+    "Q17_buy_10.expected.json": "e689642492ed2f62c51ccf2b0284197f8fb5fd47276b7a37842956a0f67eadc2",
+    "Q17_sell_10.expected.json": "572835e26f36ddaf175311ada41e89d677b468e73af05f39e2f7b679e60443e6",
+    "Q17_sell_5.expected.json": "47f6d667d45dc73b8b865be5c536e52b9f73226638d5fd536813c4dcd0977b03",
+    "Q18_shared_capacity.expected.json": "bb88a877ce660edfc099c39e2eb5378cf64ffff3568b963ae35d8206fc5af36e",
+    "Q19_canonical.expected.json": "67c2dc75557e3f1d373c4ed016f51b2cf0f8569dcc3e8d02cc05f3ad412694f3",
+    "Q19_reordered_duplicates.expected.json": "67c2dc75557e3f1d373c4ed016f51b2cf0f8569dcc3e8d02cc05f3ad412694f3",
+    "Q20_missing.expected.json": "253e9d4eac0916a6081c779acd9a593a65b013447c34ea1cd4e56692410aa1ff",
+    "Q20_no_fill.expected.json": "380137715581408df39e669dfb45e0fe0f6259f85cf1eeaf9284a1c8e47b033c",
+    "Q20_partial_correction.expected.json": "e458f5d29c34edcfcf24abf8d35d3bc7229101f390cb22d5c4d16736a2f3d8d0",
+    "Q20_total_0.expected.json": "24e2a3e5c2dc2925aae6fb8f48ac630eaccb7d0f40a629a2f3fa2b7d845ec7c6",
+    "Q20_total_1.expected.json": "3378fc2c7aafe256550a5330b36034e6e0a94975635385933f9e62147ac7f679",
+    "Q20_total_1_25.expected.json": "8574a761a6b345ff8aeb4f2e34542ddc45397440f079c63b56a07682cb987995",
+    "Q20_unbounded.expected.json": "253e9d4eac0916a6081c779acd9a593a65b013447c34ea1cd4e56692410aa1ff",
+    "input.json": "6801dc215389f9336c9e442ec84c642c320e5563fd85e09a66d5a305af8e71eb"
+  }
+}

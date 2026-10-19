@@ -1,0 +1,80 @@
+{
+  "snapshots": [
+    {
+      "label": "halted",
+      "cash": "10000",
+      "I1_quantity": "0",
+      "I1_average": "0",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "0",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "5",
+          "filled": "0",
+          "status": "Submitted",
+          "limit": null
+        }
+      ],
+      "status": "HALTED",
+      "executable_quote": null,
+      "at_ns": 1736175601000000000,
+      "native_dispatch_ns": 1736175601000000000
+    },
+    {
+      "label": "resumed",
+      "cash": "10000",
+      "I1_quantity": "0",
+      "I1_average": "0",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "0",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "5",
+          "filled": "0",
+          "status": "Submitted",
+          "limit": null
+        }
+      ],
+      "status": "TRADABLE",
+      "executable_quote": null,
+      "at_ns": 1736175603000000000,
+      "native_dispatch_ns": 1736175603000000000
+    },
+    {
+      "label": "finished",
+      "cash": "9498.64995",
+      "I1_quantity": "5",
+      "I1_average": "100.07001",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "1",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "5",
+          "filled": "5",
+          "status": "Filled",
+          "limit": null
+        }
+      ],
+      "status": "TRADABLE",
+      "deadline_ns": 1736175605000000000,
+      "at_ns": 1736175605000001000,
+      "native_dispatch_ns": 1736175605000001000
+    }
+  ],
+  "fills": [
+    {
+      "order_id": 1,
+      "quote_id": "resumed_fresh",
+      "quantity": "5",
+      "price": "100.07001",
+      "fee": "1",
+      "available_ns": 1736175603100000000
+    }
+  ]
+}

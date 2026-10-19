@@ -1,0 +1,18 @@
+{
+  "parent_fixture_manifest_sha256": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+  "parent_build_sha256": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+  "oracle_change": {
+    "file": "Q17_sell_10.expected.json",
+    "path": "/fills/0/price",
+    "old": "99.90",
+    "new": "99.9",
+    "reason": "Preexisting G29 decimal canonical form; same exact decimal, no tolerance or economic change"
+  },
+  "code_delta": "Exactly two Once guards before mutation in Merger/Rename. All other host bytes unchanged.",
+  "new_cases": [
+    "Q14_known_duplicate",
+    "Q15_exact_duplicate"
+  ],
+  "reuse": "16 accepted v1 pairs remain original-bound; run only13 remaining/new pairs",
+  "failure": "Attempt33 remains failed against v1; never relabeled PASS"
+}

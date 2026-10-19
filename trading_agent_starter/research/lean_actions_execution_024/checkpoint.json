@@ -1,0 +1,46 @@
+{
+  "issue": 24,
+  "goal": "Qualify exactlyQ12\u2013Q20 and stop at LEAN_Q12_Q20_GATE_PASS, LEAN_BLOCKER_FOUND, or LEAN_Q12_Q20_GATE_INCOMPLETE; draftPR only, no merge",
+  "branch": "research/issue-24-lean-q12-q20-spike",
+  "starting_foundation": "ba213d8d775c20db7a299932a9ea3319c9bc8a59",
+  "current_head": "Use containing final packet commit; parent c0a6f479300055902a98ad2e8d29341aeefc04bd",
+  "phase": "Final nativepacket independentlyapproved; only finalheadchecks/CI/draftPRremain",
+  "old_runtime_reruns": 0,
+  "new_native_attempts": 59,
+  "paid_calls": 0,
+  "purchases": 0,
+  "completed": [
+    "Liveauth API/fetch verified",
+    "PR20 merged as exactrequiredfoundationba213d8",
+    "Dedicatedbranch created from exactfoundation; no existingIssue24PR found",
+    "ReadexactQ12\u2013Q20matrix andmergedPR20 result/policy/skill",
+    "Independent Q12\u2013Q15 publicsource pass identifies9minimalnewvariants; integral split132/133 reusable"
+  ],
+  "source_findings": [
+    "Nativefractionalsplit usescached-price cash: interceptbeforedefault andprojectwhole1+unresolved0.5",
+    "Nativedividend cash credit20 requiresencumbranceuntildocumentedpayable",
+    "Nativesymbolchanged events cancelopenorders: useexternalstableSIDmapping",
+    "NativeexecutionhandlernotexecutionIDidempotent: dedup/reorderbeforefake-destinationemission"
+  ],
+  "next_action": "Run /workspace/issue23-python/bin/python research packet validate_release.py once on containing finalhead. Publish newdraftPR basefeat/alpaca-paper-foundation; verify exactheadUbuntu+WindowsCI; publish final gate/comment. No native launches/Q21-Q33/merge.",
+  "pending_side_effects": [],
+  "updated_utc": "2026-10-19T13:03:41.589052+00:00",
+  "completed_source_passes": 2,
+  "code_build": "Build02:0warnings0errors",
+  "new_cases": 27,
+  "planned_new_accepted_processes": 54,
+  "old_native_reruns": 0,
+  "build": "Build03:0warnings0errors",
+  "pre_execution_changes": [
+    "Frozen oracles nowshow actualsource/nativeclock snapshots, nativeQ12profit andvaluationentryblock, Q13economicNAVandcashencumbrance, Q14actualnativeqty/rawmark/bookcost, lateQ16quote afterdeadline, stableeconomicduplicates withseparatedeliverymetadata",
+    "FixedrunnerdecisionconstanttoIssue24exactstate beforeexecution"
+  ],
+  "oracle_approved": true,
+  "accepted_new_processes": 58,
+  "failed_attempts": [
+    33
+  ],
+  "usage_interruption": "Automatic approval review rejected extension command because included usage limit was reached; action was not executed. User has now requested continuation; authentication works. No paid fallback.",
+  "continuation_oracle_approved": true,
+  "final_independent_review": true
+}

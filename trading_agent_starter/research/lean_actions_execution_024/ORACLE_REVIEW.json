@@ -1,0 +1,20 @@
+{
+  "approved": true,
+  "reviewer": "issue24_oracle_review",
+  "review_type": "fresh independent Codex context; actual served identifiers unavailable; no cross-provider qualification",
+  "approved_utc": "2026-10-19T09:38:57.536692+00:00",
+  "binding": {
+    "build.json": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+    "fixtures/manifest.json": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+    "compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+    "reuse-proof.json": "07742d8439595316eb1e77499c5c4eb80955a48eb361fe401c7f110c29aaae63",
+    "run_gate.py": "616802106af8bbca9eb45b2b688dda70ded3e5015392d062916c4e91b0861db1",
+    "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+    "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+    "host/Actions.cs": "7ea240173edd0fc6b8ba19150221c393b2bdc877e3c05428eab39afe59bcfc15",
+    "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+    "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+  },
+  "scope": "27boundedQ12\u2013Q20cases, eachtwice; reuse integral132/133andbuy5bps25/26 without rerun",
+  "findings": "Phase1 exactmatrix/arithmetic/reuse reviewed; phase2 publichost/adapter/nativecomparator/runner reviewed. Runnerstate corrected andQ14observables derivedfromactualnativeholding/rawmark/bookcost beforeapproval. All28fixturefilehashes/copiedcode/runtime/config verified; no remaining material finding. No reviewerbuild/native/mutation."
+}
