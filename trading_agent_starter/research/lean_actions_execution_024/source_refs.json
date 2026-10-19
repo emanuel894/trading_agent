@@ -1,0 +1,17 @@
+{
+  "pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
+  "sha256": {
+    "Common/Securities/SecurityPortfolioManager.cs": "a38ddb51a0d7a2b60cff663e74912e0bebb302a09c44bf6bd295980fce26a2bb",
+    "Common/Securities/SecurityHolding.cs": "6a9b7ca65ba354c751afdb7c4ce149f69d89d10c886642bf1311ae9ccafcf249",
+    "Common/Securities/SecurityCache.cs": "ba29a0ca8bb578496b9bb0ac19509db8a4bbeeb86266a58358277659732d8b6e",
+    "Common/Symbol.cs": "bb6ac9287b4cdc58c30962fe1516a400bb75c751ee879ab3f161f6ebb24b9584",
+    "Common/Brokerages/DefaultBrokerageModel.cs": "a2b3ba5da4f0e71c50aa301eb45a9c12561bf93b7570fd1a48d14782ddbc4e60",
+    "Engine/AlgorithmManager.cs": "c20e267cbd2a58b829587b7182966c5edf90a093ce98ac45dab64562adc2440f",
+    "Brokerages/Backtesting/BacktestingBrokerage.cs": "9425f67eff7fe1457985a5a70985801f9db962db08878b80a49b8802624e942c",
+    "Brokerages/Brokerage.cs": "20f2277b4f307d8eb09956152241511d87d144ba6d3476a7ab8bea52431cb1bc",
+    "Engine/TransactionHandlers/BacktestingTransactionHandler.cs": "df5b3565fa4f67e504252d1b70320394c8be4e0bbebbe17317d6fa827d85f05e",
+    "Engine/TransactionHandlers/BrokerageTransactionHandler.cs": "7eb8d10b2582c8f4d1a4578eaa4db66c021b70305abcbff378f0c899be95a00c",
+    "Common/Securities/SecurityPortfolioModel.cs": "8d9812b4b4178d31663567e3d925b21dc721cda6a2bef8706a628ba3cc6afe8e",
+    "Common/Orders/Fees/OrderFee.cs": "5d3c7b361f6126d7c32a0c47726f2ff091bbe5bbcb80742472000bd42246909a"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "issue": 24,
+  "goal": "Qualify exactlyQ12\u2013Q20 and stop at LEAN_Q12_Q20_GATE_PASS, LEAN_BLOCKER_FOUND, or LEAN_Q12_Q20_GATE_INCOMPLETE; draftPR only, no merge",
+  "branch": "research/issue-24-lean-q12-q20-spike",
+  "starting_foundation": "ba213d8d775c20db7a299932a9ea3319c9bc8a59",
+  "current_head": "ba213d8d775c20db7a299932a9ea3319c9bc8a59",
+  "phase": "Authenticated exactfoundation reconciled; bounded source-first pass in progress; no implementation/native runs",
+  "old_runtime_reruns": 0,
+  "new_native_attempts": 0,
+  "paid_calls": 0,
+  "purchases": 0,
+  "completed": [
+    "Liveauth API/fetch verified",
+    "PR20 merged as exactrequiredfoundationba213d8",
+    "Dedicatedbranch created from exactfoundation; no existingIssue24PR found",
+    "ReadexactQ12\u2013Q20matrix andmergedPR20 result/policy/skill",
+    "Independent Q12\u2013Q15 publicsource pass identifies9minimalnewvariants; integral split132/133 reusable"
+  ],
+  "source_findings": [
+    "Nativefractionalsplit usescached-price cash: interceptbeforedefault andprojectwhole1+unresolved0.5",
+    "Nativedividend cash credit20 requiresencumbranceuntildocumentedpayable",
+    "Nativesymbolchanged events cancelopenorders: useexternalstableSIDmapping",
+    "NativeexecutionhandlernotexecutionIDidempotent: dedup/reorderbeforefake-destinationemission"
+  ],
+  "next_action": "FinishQ16\u2013Q20sourcepass, freeze coverage/reuse table andminimumnewcaseplan beforecode/runtime; verifyaccepted integral bindings without rerun",
+  "pending_side_effects": [],
+  "updated_utc": "2026-10-19T09:18:46.344996+00:00"
+}
