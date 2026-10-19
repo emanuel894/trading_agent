@@ -1,0 +1,8 @@
+test_all_expected_records_unchanged (test_amendment.AmendmentTests.test_all_expected_records_unchanged) ... ok
+test_exact_four_scalar_changes (test_amendment.AmendmentTests.test_exact_four_scalar_changes) ... ok
+test_original_packet_bytes_preserved (test_amendment.AmendmentTests.test_original_packet_bytes_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.028s
+
+OK

@@ -1,0 +1,548 @@
+{
+  "status": "LEAN_IDENTITY_TIME_GATE_INCOMPLETE",
+  "issue": 21,
+  "pr": 20,
+  "branch": "research/issue-19-lean-identity-time-spike",
+  "starting_head": "c70aa329c8ebfc993e0048b1142a7db22fbdcf9b",
+  "foundation_sha": "67317e573624529e247d98a4964f946421b571e7",
+  "q04_timing_mismatch": "Resolved by independently adjudicated/reviewed timing-only v3",
+  "observed_subchecks": {
+    "total": 57,
+    "reused_v2": 3,
+    "new_v3": 54,
+    "new_clean_processes": 108,
+    "total_accepted_clean_processes": 114,
+    "failed": 0,
+    "unrun": 0,
+    "per_group": {
+      "Q04": 5,
+      "Q05": 4,
+      "Q06": 14,
+      "Q07": 4,
+      "Q08": 11,
+      "Q09": 3,
+      "Q10": 13,
+      "Q11": 3
+    }
+  },
+  "all_required_behavior_qualified": false,
+  "lean_blocker_established": false,
+  "coverage_limits": [
+    "Q09 corrections/symbol/action/prediction future_records are not consumed; their admission/revision behavior remains unexercised.",
+    "Q11 factor and adjusted_decoy metadata are not consumed by native ingress; factor normalization/adjusted-decoy rejection and no-double-action behavior remain unexercised.",
+    "Q12-Q33 remain forbidden/unrun. A split-accounting reference cannot authorize scope expansion.",
+    "Q10 proves supplied verified units/gap flags through the custom fill adapter, not native depth or source-gap detection."
+  ],
+  "accepted_reused_v2": {
+    "Q04_before": {
+      "version": "fixtures_v2",
+      "attempts": [
+        6,
+        7
+      ],
+      "output_sha256": "7bb4ebddcd00fe4e2b0b35534fb90c0aa9c18bd0abc203d939a0c034d36e7606",
+      "unchanged_case_sha256": "c9d26bfa4d0d0d97ad21d48c4bfae1f40683084313fb0f865cbaa5fd22b7b22e",
+      "oracle_sha256": "af7b52091e7776f10f8562b7016e840dcb44be3e4cad018ab6c986fde678fcc1"
+    },
+    "Q04_at": {
+      "version": "fixtures_v2",
+      "attempts": [
+        8,
+        9
+      ],
+      "output_sha256": "ae850b33dc33375393d9c536730bb5786d69f3fb1e3722f9f527bfa5083df888",
+      "unchanged_case_sha256": "76c234e3da3a465d3a329ffd592b6f9cf3dd1cbf89845be3abe8d5f8a52bd730",
+      "oracle_sha256": "1c37bba62e6e0ffac6750bab9ed8ba821d57ec58951b64a5a48cb4dbb79ebfc2"
+    },
+    "Q04_after": {
+      "version": "fixtures_v2",
+      "attempts": [
+        10,
+        11
+      ],
+      "output_sha256": "aa3839ab5578858472a03abcff108a38a5185bd9804eb11b7b495360a2006308",
+      "unchanged_case_sha256": "c9c7c61e88a5f99e90bc26039cc936dfacdbdc0af9b5b8e7b18b31cefc8b0d37",
+      "oracle_sha256": "dd18b84f0c5027c5666fa41346e03f98aa152bcab06fcd354f67825d3588b112"
+    }
+  },
+  "accepted_fresh_v3": {
+    "Q04_missing": {
+      "version": "fixtures_v3",
+      "attempts": [
+        13,
+        14
+      ],
+      "output_sha256": "5d9a4e8b504cab7a603c8cf382daef25246450b03a8d338a8bec54b84555b2f8"
+    },
+    "Q04_overlap": {
+      "version": "fixtures_v3",
+      "attempts": [
+        15,
+        16
+      ],
+      "output_sha256": "a4ac086e780c7dd3cca912844f6c2f8a59ae9cc2d76c2875b8866e6b42bd47c0"
+    },
+    "Q05_structural_unknown_publication": {
+      "version": "fixtures_v3",
+      "attempts": [
+        17,
+        18
+      ],
+      "output_sha256": "386fde642688916f0f87a5a9d59757b0917fdd5f963e9bef7f374bd1f8f13a4e"
+    },
+    "Q05_date_only": {
+      "version": "fixtures_v3",
+      "attempts": [
+        19,
+        20
+      ],
+      "output_sha256": "f483294f3f784e20cef17dcf5ee56f8a2fcd62c09686e08a6ff462ef37b93c4e"
+    },
+    "Q05_conflicting_class": {
+      "version": "fixtures_v3",
+      "attempts": [
+        21,
+        22
+      ],
+      "output_sha256": "940a08195612fd91d2a69ac857821487cbf532bfa44af732e4c0ca1403ee2b9b"
+    },
+    "Q05_late_halt": {
+      "version": "fixtures_v3",
+      "attempts": [
+        23,
+        24
+      ],
+      "output_sha256": "22a1318b99be5bdf64ab6e93012507a3178904310924a69f13f677ce54c2fe54"
+    },
+    "Q06_age_exact": {
+      "version": "fixtures_v3",
+      "attempts": [
+        25,
+        26
+      ],
+      "output_sha256": "372e947257bb1810ff59db5dacb0869b7d03173fdd44cd80acaebbc1a8b20c8a"
+    },
+    "Q06_age_plus_ns": {
+      "version": "fixtures_v3",
+      "attempts": [
+        27,
+        28
+      ],
+      "output_sha256": "a3c54458249a07c86ef8a3a3ae51d0cfb73d9c390c9630b168d442bb3a94f679"
+    },
+    "Q06_future_availability": {
+      "version": "fixtures_v3",
+      "attempts": [
+        29,
+        30
+      ],
+      "output_sha256": "ac1718c9aa61ff0cdf9d32eb1aa4aa9ab70448df95e3b0d86a641316ef670e2e"
+    },
+    "Q06_spread_exact": {
+      "version": "fixtures_v3",
+      "attempts": [
+        31,
+        32
+      ],
+      "output_sha256": "4e134b04159344464b05e4871fa2a8289a01deced1b8ea31555f3f4fda7e29ba"
+    },
+    "Q06_spread_over": {
+      "version": "fixtures_v3",
+      "attempts": [
+        33,
+        34
+      ],
+      "output_sha256": "cd1f402120cd4f9769fa93f77d8fc6dfff8db1b547bd8fa57618c66a6020d838"
+    },
+    "Q06_locked": {
+      "version": "fixtures_v3",
+      "attempts": [
+        35,
+        36
+      ],
+      "output_sha256": "871145dfd0620cacff7fad79296e8e23ba1ee4dc8711d7ec232ba35adbf8c872"
+    },
+    "Q06_crossed": {
+      "version": "fixtures_v3",
+      "attempts": [
+        37,
+        38
+      ],
+      "output_sha256": "b8fc665eceb09317305ad866c781ca5a7f87c8a5206038af66644e0ebb9b36f2"
+    },
+    "Q06_zero_bid": {
+      "version": "fixtures_v3",
+      "attempts": [
+        39,
+        40
+      ],
+      "output_sha256": "4d25607fdd8e16fabd7f6f6295f91ce61e29ec377add3bcf13c9ff4f315a2811"
+    },
+    "Q06_zero_ask": {
+      "version": "fixtures_v3",
+      "attempts": [
+        41,
+        42
+      ],
+      "output_sha256": "6f9cb88b15123bf32a8e51d1e236b9b4d2b6a9fed689e7e38ba351d5e39b5a8a"
+    },
+    "Q06_nan_bid": {
+      "version": "fixtures_v3",
+      "attempts": [
+        43,
+        44
+      ],
+      "output_sha256": "dd8bdd21ad948847e7ca4f28c82d16d0917a506774c80d3cf30222ecaa2b11a6"
+    },
+    "Q06_nan_ask": {
+      "version": "fixtures_v3",
+      "attempts": [
+        45,
+        46
+      ],
+      "output_sha256": "77741d6b533c080a713aed50745332408e1321da3c73d1ceadbc49077e5fbfb8"
+    },
+    "Q06_conditions_mixed": {
+      "version": "fixtures_v3",
+      "attempts": [
+        47,
+        48
+      ],
+      "output_sha256": "f237bd95e533f2253a4f890a67e3ae0f98aeaffe2ad3c8f4745a8c809ec1c8fb"
+    },
+    "Q06_conditions_missing": {
+      "version": "fixtures_v3",
+      "attempts": [
+        49,
+        50
+      ],
+      "output_sha256": "331a8bcd278f169fd4e0757f4bbd40506bd68d7937212b27ce5337d33828e8ca"
+    },
+    "Q06_unknown_status": {
+      "version": "fixtures_v3",
+      "attempts": [
+        51,
+        52
+      ],
+      "output_sha256": "99b211b2ac36c172adf2bc5adc3ed391ce7a19af899f627128a9cdd60346e874"
+    },
+    "Q07_first": {
+      "version": "fixtures_v3",
+      "attempts": [
+        53,
+        54
+      ],
+      "output_sha256": "b8eb62c9e6019e34d7fe4b09243341a485b2760869c85dc23d45d50188ea828c"
+    },
+    "Q07_deadline_exact": {
+      "version": "fixtures_v3",
+      "attempts": [
+        55,
+        56
+      ],
+      "output_sha256": "b34d4eac1bf2b25d5a7dd96d205475fec0b2b4a3fe7d9b9ca521d95cd4c077e5"
+    },
+    "Q07_deadline_plus_ns": {
+      "version": "fixtures_v3",
+      "attempts": [
+        57,
+        58
+      ],
+      "output_sha256": "34d33ba0e2e132da6d0135e90e6fbb48c816da00df4ecfe920d63d17c5c10463"
+    },
+    "Q07_missing": {
+      "version": "fixtures_v3",
+      "attempts": [
+        59,
+        60
+      ],
+      "output_sha256": "0fc125bd31bd63fd6643c271c4304da70159740378b53f8ab099128e5a14d98a"
+    },
+    "Q08_event_order": {
+      "version": "fixtures_v3",
+      "attempts": [
+        61,
+        62
+      ],
+      "output_sha256": "37ca9a5d8b90810f42a08244a5ef95cecd1060f2ab46a4928a28c44ceb9ae027"
+    },
+    "Q08_receipt_order": {
+      "version": "fixtures_v3",
+      "attempts": [
+        63,
+        64
+      ],
+      "output_sha256": "51467e1ff8421ada5534d2d77e3a4cf4967be8054da0eded8a3321b16aab8bf3"
+    },
+    "Q08_quote_before_halt": {
+      "version": "fixtures_v3",
+      "attempts": [
+        65,
+        66
+      ],
+      "output_sha256": "740ce745f5f8b88c795d68d5ce5c06c164511b7d2bf4c49658590b51068edfee"
+    },
+    "Q08_halt_before_quote": {
+      "version": "fixtures_v3",
+      "attempts": [
+        67,
+        68
+      ],
+      "output_sha256": "f447eef7312ecf504ecfe5e0242cd930c2f1b5aa6779edd9f454618814e51641"
+    },
+    "Q08_late_receipt": {
+      "version": "fixtures_v3",
+      "attempts": [
+        69,
+        70
+      ],
+      "output_sha256": "ab2203181b42f84844af507bd6af12d9572c2790988877318a5ebe12428357e2"
+    },
+    "Q08_stale_event": {
+      "version": "fixtures_v3",
+      "attempts": [
+        71,
+        72
+      ],
+      "output_sha256": "a87f0be333ccb47c7f2bc77cfe74645e514312ff94a7d07f64a106e4df04cbc2"
+    },
+    "Q08_duplicate": {
+      "version": "fixtures_v3",
+      "attempts": [
+        73,
+        74
+      ],
+      "output_sha256": "5c5dfd357c20f19bf6c00570c832503db7da4182eb33bc23de094c75b7268ce6"
+    },
+    "Q08_conflict": {
+      "version": "fixtures_v3",
+      "attempts": [
+        75,
+        76
+      ],
+      "output_sha256": "de55ea796c1326624bd6626bd174b5a0ed220e244ea370ba0ac73b720c5f0cef"
+    },
+    "Q08_conflict_reversed": {
+      "version": "fixtures_v3",
+      "attempts": [
+        77,
+        78
+      ],
+      "output_sha256": "83a8bcfd7f8401b05d493ae4011d65ef3a70d881ad2ce6bdcb47338891f88cd9"
+    },
+    "Q08_tie_sequence": {
+      "version": "fixtures_v3",
+      "attempts": [
+        79,
+        80
+      ],
+      "output_sha256": "3030a7d7f0b3ce425d97d0e3e83c088c82fa84f44fa414b8d885e34d9d18d5ca"
+    },
+    "Q08_tie_event_id": {
+      "version": "fixtures_v3",
+      "attempts": [
+        81,
+        82
+      ],
+      "output_sha256": "639cb98deaa20c6dfb3b448351ffded712bac4e4ac035c3fe9b5727d31fbb602"
+    },
+    "Q09_baseline": {
+      "version": "fixtures_v3",
+      "attempts": [
+        83,
+        84
+      ],
+      "output_sha256": "978511a74c10e0ea3635d4a8cabda793d043f05e9c3b96ad5e0cf2939c72f94b"
+    },
+    "Q09_future_append": {
+      "version": "fixtures_v3",
+      "attempts": [
+        85,
+        86
+      ],
+      "output_sha256": "dd01c8d2ff7cd833c029a0224aa3a626c9e67ca03149bfc128531dd55fb096d1"
+    },
+    "Q09_prospective": {
+      "version": "fixtures_v3",
+      "attempts": [
+        87,
+        88
+      ],
+      "output_sha256": "b9be14876ac3ab821bd539ef1a235b56bc48783b3cf14754b767827388cee122"
+    },
+    "Q10_five_shares": {
+      "version": "fixtures_v3",
+      "attempts": [
+        89,
+        90
+      ],
+      "output_sha256": "2c05f8d7072ae3c28b8e97c883870031c57d510232aac12a384e61cc17c76d95"
+    },
+    "Q10_six_shares": {
+      "version": "fixtures_v3",
+      "attempts": [
+        91,
+        92
+      ],
+      "output_sha256": "894c4f55ae0aaf18eab812b26b6ce53ba9dbe9304dc7898537194fb5fcf02911"
+    },
+    "Q10_round_lot": {
+      "version": "fixtures_v3",
+      "attempts": [
+        93,
+        94
+      ],
+      "output_sha256": "c471ce2dd86eb5fc9597387ac48de7a2afcf1a762f753709461139cc9755c299"
+    },
+    "Q10_unknown_factor": {
+      "version": "fixtures_v3",
+      "attempts": [
+        95,
+        96
+      ],
+      "output_sha256": "5a41a9625643329444db7cfab76fba1c4320de851d9896d6c4f13a9e73c49c43"
+    },
+    "Q10_missing_unit": {
+      "version": "fixtures_v3",
+      "attempts": [
+        97,
+        98
+      ],
+      "output_sha256": "bf51b895498f3c707800794852ae622ae097aff4ca425de46363ac7215ae463f"
+    },
+    "Q10_zero": {
+      "version": "fixtures_v3",
+      "attempts": [
+        99,
+        100
+      ],
+      "output_sha256": "6d533ce0eb9fbe3425a7c53ee6498566006b27887dc322185bcba12e1b211e32"
+    },
+    "Q10_negative": {
+      "version": "fixtures_v3",
+      "attempts": [
+        101,
+        102
+      ],
+      "output_sha256": "806702b8959a2eaffaa433721d32c23a5983f26e3c41aa1439c668ba11f96d16"
+    },
+    "Q10_nan": {
+      "version": "fixtures_v3",
+      "attempts": [
+        103,
+        104
+      ],
+      "output_sha256": "4eef543c931239212a2b82a8e10dc4bbeee2c686ee0a6713e83bd55af1c0373e"
+    },
+    "Q10_tape_gap": {
+      "version": "fixtures_v3",
+      "attempts": [
+        105,
+        106
+      ],
+      "output_sha256": "47c898aebdf8f11d89aa214b0dff27de6a360a8ba64c09a16bb92fbb6e06b0fa"
+    },
+    "Q10_source_gap": {
+      "version": "fixtures_v3",
+      "attempts": [
+        107,
+        108
+      ],
+      "output_sha256": "5e1f1d3a95b2990b30897a6b4d8f3f92d2a1d75ae73f8f292084f0f081d72f65"
+    },
+    "Q10_sequence_gap": {
+      "version": "fixtures_v3",
+      "attempts": [
+        109,
+        110
+      ],
+      "output_sha256": "c1a59565b805a79f5bd78ed207225c381b5da7de608b9177ca64adf6be1079d8"
+    },
+    "Q10_conditions": {
+      "version": "fixtures_v3",
+      "attempts": [
+        111,
+        112
+      ],
+      "output_sha256": "28b716a812d4899fbc14a91622540602805ee2bade1078afcabb871374082707"
+    },
+    "Q10_trade_bar_only": {
+      "version": "fixtures_v3",
+      "attempts": [
+        113,
+        114
+      ],
+      "output_sha256": "b3f9e7784a19d5a3b0ff221942ffd7b72a7632f97f285730df3b01b8d93755ef"
+    },
+    "Q11_raw": {
+      "version": "fixtures_v3",
+      "attempts": [
+        115,
+        116
+      ],
+      "output_sha256": "657c954d81c9e8630ef3acde3df8ad69a503ab3c57c450977e167cc9d5be78bc"
+    },
+    "Q11_wrong_metadata": {
+      "version": "fixtures_v3",
+      "attempts": [
+        117,
+        118
+      ],
+      "output_sha256": "9e35745f0b29837d4ce656fc4b5c6f914090e3c0f10dc67210ade5948c589759"
+    },
+    "Q11_future_factor": {
+      "version": "fixtures_v3",
+      "attempts": [
+        119,
+        120
+      ],
+      "output_sha256": "64cb70042c3024323efbf4035912a9e7d26d1928f012ce400a15ccf0cfd00b4a"
+    }
+  },
+  "cross_case_observations": [
+    {
+      "left": "Q09_baseline",
+      "right": "Q09_future_append",
+      "result": "EXACT_BUSINESS_EQUAL",
+      "scope": "Future-quote append business invariance; future_records remain unexercised"
+    },
+    {
+      "left": "Q10_five_shares",
+      "right": "Q10_round_lot",
+      "result": "EXACT_BUSINESS_EQUAL",
+      "scope": "Verified round-lot conversion business equivalence"
+    },
+    {
+      "left": "Q11_raw",
+      "right": "Q11_future_factor",
+      "result": "EXACT_BUSINESS_EQUAL",
+      "scope": "Unused future-factor metadata invariance only; no factor-provider acceptance"
+    },
+    {
+      "left": "Q08_conflict",
+      "right": "Q08_conflict_reversed",
+      "result": "EXACT_BUSINESS_EQUAL",
+      "scope": "Simultaneous conflict business outcome independent of file order"
+    }
+  ],
+  "immutable_original_files": 185,
+  "source_pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
+  "source_tree": "6bdca864f7be86d7268d46328fd5f099db95b882",
+  "source_files_manifest_sha256": "f7bc9af7e0301ce270dc528c3ea3edb7dd32017103a677d27a8cf286bc58916a",
+  "config_sha256": {
+    "source/Data/market-hours/market-hours-database.json": "f44effe21e7937a76a426bdb6a0de427b6440160b811b33bb6ed28c0f04ea1f0",
+    "source/Data/symbol-properties/symbol-properties-database.csv": "53072f5a5ac4ff1b0d6f14a28fb93c43b633c0713635539fda0c2695089e236a"
+  },
+  "hashes": {
+    "build_manifest": "42d884810f95a8e8ce422d7870bfd8b9532f72779a92c80e9aef3cd5b5c023ce",
+    "v1_manifest": "9af93e7fbaf2d3684e7880a846199d75a68bb5b3cb0d88a488cbba5ef10fbef7",
+    "v2_manifest": "cba03c897ed2cbd6633cbba68f6393548390c9b9962e010b1541ac9c12d06088",
+    "v3_manifest": "4eb100de481b7ad14d5cfbcadf04c6518125df467f36c56f92b40d2ceb49d1fb",
+    "v3_input": "681e9bf1859acc68d9662ccdd48080efe3546d0138b75ee5a3ca655229c0627e",
+    "runner": "d6cf223f6543b88b509fd3c7d4c79e8e079da42d5707ac08543ecaab0c8d63d2",
+    "comparator": "73dbfd4bbc799701cfb557f0a0ad627b987f12d60ce25ec0e8445913bd2d048c",
+    "verifier": "f86ea6b9dd8219ee3c3cdeda2c031a12e83993a68a16fbd3e955a390be352f50",
+    "attempt_journal": "03efa3d29491bb5c57b1779f17b8bb9cfaea5125df8f8f72d15b1258e109f1f7"
+  },
+  "stop": "No further fixture execution or implementation. Preserve coverage limits; final review/validation/CI; update existing draft PR20 only; no merge."
+}

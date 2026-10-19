@@ -1,0 +1,47 @@
+{
+  "recorded_utc": "2026-10-19T08:09:46.039058+00:00",
+  "checks": [
+    {
+      "log": "repository-tests.log",
+      "passed": 240,
+      "sha256": "3029f1723534a145385cfa18dacc6078a3a1db0cad533edd32db72e9f9ac7a61"
+    },
+    {
+      "log": "comparator-final.log",
+      "passed": 3,
+      "sha256": "0c7df2b1b5e465062469c4087b63861ec337947d4ecf34215205fd3fd96985cd"
+    },
+    {
+      "log": "terminal-comparator.log",
+      "passed": 12,
+      "sha256": "8a23935da06ea67d8ef43780244f5cf9031e61f19b8d2fbc33d2adc691c2a626"
+    },
+    {
+      "log": "amendment-final.log",
+      "passed": 3,
+      "sha256": "dcf726e4ad4b3240c4bf64903e7b096c51d8cf84a6de6e958641a5e0e803dfd8"
+    }
+  ],
+  "demo": {
+    "bars": 300,
+    "orders": 0,
+    "sha256": "4dc0649bb250dca0a3126accc0a4c36e77b69abd64e3ea181a1f3c7a48341385"
+  },
+  "manifests_valid": true,
+  "prior_files_preserved": 185,
+  "full_source_runtime_config_reverified": true,
+  "reuse_proof_sha256": "376b556015764afacd3a1758b7fa7408923538126314b7a47e44fe1546364e03",
+  "code_commit_before_native": "6d7c8c7",
+  "hosted_ci": "Final exact-head native checks to be verified on existing PR20; not attested by a self-referencing commit.",
+  "scope_check": "PASS: all additions confined to continuation_021/ and fixtures_v3/; original185files unchanged",
+  "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "research_environment": {
+    "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+    "packages": {
+      "alpaca-py": "0.42.2",
+      "python-dotenv": "1.1.1",
+      "pytz": "2026.5"
+    }
+  },
+  "independent_final_review": "Final code/evidence review plus complete108-output re-comparison supports INCOMPLETE draft only; exact-head CI external."
+}

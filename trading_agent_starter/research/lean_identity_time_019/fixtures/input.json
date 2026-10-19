@@ -1,0 +1,6324 @@
+{
+  "schema_version": 1,
+  "capture_mode": "fixture",
+  "rights_ref": "synthetic-created-for-issue19",
+  "decision_origin_ns": 1736175600000000000,
+  "identity_boundary_ns": 1736260200000000000,
+  "source_pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
+  "identities": [
+    {
+      "instrument": "I1",
+      "issuer": "U1",
+      "class_id": "A",
+      "listing": "L1",
+      "ticker": "AAA",
+      "start_ns": 1736173800000000000,
+      "end_ns": 1736260200000000000,
+      "engine_date": "2025-01-01"
+    },
+    {
+      "instrument": "I2",
+      "issuer": "U2",
+      "class_id": "B",
+      "listing": "L2",
+      "ticker": "AAA",
+      "start_ns": 1736260200000000000,
+      "end_ns": 1736346600000000000,
+      "engine_date": "2025-01-07"
+    },
+    {
+      "instrument": "I3",
+      "issuer": "U1",
+      "class_id": "B",
+      "listing": "L3",
+      "ticker": "AAB",
+      "start_ns": 1736173800000000000,
+      "end_ns": 1736346600000000000,
+      "engine_date": "2025-01-01"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "Q04_before",
+      "fixture": "Q04",
+      "decision_ns": 1736260199999999999,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736260199499999999,
+        "available_ns": 1736260199499999999,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736260200999999999,
+          "available_ns": 1736260200999999999,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        },
+        {
+          "id": "class_quote",
+          "kind": "quote",
+          "instrument": "I3",
+          "event_ns": 1736260200999999999,
+          "available_ns": 1736260200999999999,
+          "receipt_ns": null,
+          "sequence": 2,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-class_quote"
+        },
+        {
+          "id": "other_listing",
+          "kind": "quote",
+          "instrument": "I2",
+          "event_ns": 1736260200999999999,
+          "available_ns": 1736260200999999999,
+          "receipt_ns": null,
+          "sequence": 3,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-other_listing"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "10",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q04_at",
+      "fixture": "Q04",
+      "decision_ns": 1736260200000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I2",
+        "event_ns": 1736260200000000000,
+        "available_ns": 1736260200000000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I2",
+          "event_ns": 1736260201000000000,
+          "available_ns": 1736260201000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        },
+        {
+          "id": "class_quote",
+          "kind": "quote",
+          "instrument": "I3",
+          "event_ns": 1736260201000000000,
+          "available_ns": 1736260201000000000,
+          "receipt_ns": null,
+          "sequence": 2,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-class_quote"
+        },
+        {
+          "id": "other_listing",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736260201000000000,
+          "available_ns": 1736260201000000000,
+          "receipt_ns": null,
+          "sequence": 3,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-other_listing"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "10",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q04_after",
+      "fixture": "Q04",
+      "decision_ns": 1736260200000000001,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I2",
+        "event_ns": 1736260200000000001,
+        "available_ns": 1736260200000000001,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I2",
+          "event_ns": 1736260201000000001,
+          "available_ns": 1736260201000000001,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        },
+        {
+          "id": "class_quote",
+          "kind": "quote",
+          "instrument": "I3",
+          "event_ns": 1736260201000000001,
+          "available_ns": 1736260201000000001,
+          "receipt_ns": null,
+          "sequence": 2,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-class_quote"
+        },
+        {
+          "id": "other_listing",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736260201000000001,
+          "available_ns": 1736260201000000001,
+          "receipt_ns": null,
+          "sequence": 3,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-other_listing"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "10",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q04_missing",
+      "fixture": "Q04",
+      "decision_ns": 1736260200000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I2",
+        "event_ns": 1736260200000000000,
+        "available_ns": 1736260200000000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "10",
+      "mapping": "missing",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q04_overlap",
+      "fixture": "Q04",
+      "decision_ns": 1736260200000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I2",
+        "event_ns": 1736260200000000000,
+        "available_ns": 1736260200000000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "10",
+      "mapping": "overlap",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260201000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q05_structural_unknown_publication",
+      "fixture": "Q05",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": {
+        "valid_from_ns": 1736173800000000000,
+        "valid_to_ns": 1736260200000000000,
+        "publication_ns": null,
+        "retrieved_utc": "2026-10-18T00:00:00Z",
+        "receipt_ns": null,
+        "resolution": "exact_interval",
+        "capture_mode": "fixture",
+        "admission": "fixture_only"
+      },
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q05_date_only",
+      "fixture": "Q05",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": {
+        "valid_from_ns": 1736173800000000000,
+        "valid_to_ns": 1736260200000000000,
+        "publication_ns": null,
+        "retrieved_utc": "2026-10-18T00:00:00Z",
+        "receipt_ns": null,
+        "resolution": "date_only",
+        "capture_mode": "fixture",
+        "admission": "fixture_only"
+      },
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q05_conflicting_class",
+      "fixture": "Q05",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": {
+        "valid_from_ns": 1736173800000000000,
+        "valid_to_ns": 1736260200000000000,
+        "publication_ns": null,
+        "retrieved_utc": "2026-10-18T00:00:00Z",
+        "receipt_ns": null,
+        "resolution": "exact_interval",
+        "capture_mode": "fixture",
+        "admission": "fixture_only",
+        "conflicting_class": true
+      },
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q05_late_halt",
+      "fixture": "Q05",
+      "decision_ns": 1736175600000000000,
+      "status": "UNKNOWN",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "halt",
+          "kind": "halt",
+          "event_ns": 1736175599000000000,
+          "available_ns": 1736175602000000000,
+          "receipt_ns": null,
+          "sequence": 2,
+          "evidence": "E-H"
+        },
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": {
+        "valid_from_ns": 1736173800000000000,
+        "valid_to_ns": 1736260200000000000,
+        "publication_ns": null,
+        "retrieved_utc": "2026-10-18T00:00:00Z",
+        "receipt_ns": null,
+        "resolution": "exact_interval",
+        "capture_mode": "fixture",
+        "admission": "fixture_only"
+      },
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q06_age_exact",
+      "fixture": "Q06",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175598000000000,
+        "available_ns": 1736175598000000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q06_age_plus_ns",
+      "fixture": "Q06",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175597999999999,
+        "available_ns": 1736175597999999999,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q06_future_availability",
+      "fixture": "Q06",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175600000000001,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q06_spread_exact",
+      "fixture": "Q06",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.9",
+        "ask": "100.1",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q06_spread_over",
+      "fixture": "Q06",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.9",
+        "ask": "100.1001",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q06_locked",
+      "fixture": "Q06",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "100",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q06_crossed",
+      "fixture": "Q06",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "101",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q06_zero_bid",
+      "fixture": "Q06",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "0",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q06_zero_ask",
+      "fixture": "Q06",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99",
+        "ask": "0",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q06_nan_bid",
+      "fixture": "Q06",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "NaN",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q06_nan_ask",
+      "fixture": "Q06",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99",
+        "ask": "NaN",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q06_conditions_mixed",
+      "fixture": "Q06",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R",
+          "X"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q06_conditions_missing",
+      "fixture": "Q06",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": null,
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q06_unknown_status",
+      "fixture": "Q06",
+      "decision_ns": 1736175600000000000,
+      "status": "UNKNOWN",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q07_first",
+      "fixture": "Q07",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "pre",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175600999999999,
+          "available_ns": 1736175600999999999,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "89.99",
+          "ask": "90",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-pre"
+        },
+        {
+          "id": "crossed",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "101",
+          "ask": "100",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-crossed"
+        },
+        {
+          "id": "first",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000001,
+          "available_ns": 1736175601000000001,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-first"
+        },
+        {
+          "id": "cheaper",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175602000000000,
+          "available_ns": 1736175602000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "89.99",
+          "ask": "90",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-cheaper"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q07_deadline_exact",
+      "fixture": "Q07",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175605000000000,
+          "available_ns": 1736175605000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q07_deadline_plus_ns",
+      "fixture": "Q07",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "late",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175605000000001,
+          "available_ns": 1736175605000000001,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-late"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q07_missing",
+      "fixture": "Q07",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q08_event_order",
+      "fixture": "Q08",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "seq2",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000002,
+          "available_ns": 1736175601000000002,
+          "receipt_ns": null,
+          "sequence": 2,
+          "bid": "100",
+          "ask": "100.03",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-seq2"
+        },
+        {
+          "id": "seq1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000001,
+          "available_ns": 1736175601000000001,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-seq1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q08_receipt_order",
+      "fixture": "Q08",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "seq1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000001,
+          "available_ns": 1736175601000000080,
+          "receipt_ns": 1736175601000000080,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-seq1"
+        },
+        {
+          "id": "seq2",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000002,
+          "available_ns": 1736175601000000020,
+          "receipt_ns": 1736175601000000020,
+          "sequence": 2,
+          "bid": "100",
+          "ask": "100.03",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-seq2"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q08_quote_before_halt",
+      "fixture": "Q08",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000020,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        },
+        {
+          "id": "halt",
+          "kind": "halt",
+          "event_ns": 1736175601000000030,
+          "available_ns": 1736175601000000030,
+          "receipt_ns": null,
+          "sequence": 2,
+          "evidence": "E-H"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q08_halt_before_quote",
+      "fixture": "Q08",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000030,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        },
+        {
+          "id": "halt",
+          "kind": "halt",
+          "event_ns": 1736175601000000020,
+          "available_ns": 1736175601000000020,
+          "receipt_ns": null,
+          "sequence": 2,
+          "evidence": "E-H"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q08_late_receipt",
+      "fixture": "Q08",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "late",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175606000000000,
+          "receipt_ns": 1736175606000000000,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-late"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q08_stale_event",
+      "fixture": "Q08",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "old",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175598000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-old"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q08_duplicate",
+      "fixture": "Q08",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "seq1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000001,
+          "available_ns": 1736175601000000001,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-seq1"
+        },
+        {
+          "id": "seq1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000001,
+          "available_ns": 1736175601000000001,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-seq1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q08_conflict",
+      "fixture": "Q08",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "seq1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000001,
+          "available_ns": 1736175601000000001,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-seq1"
+        },
+        {
+          "id": "seq1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000001,
+          "available_ns": 1736175601000000001,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.03",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-seq1"
+        },
+        {
+          "id": "must_not_consume",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175602000000000,
+          "available_ns": 1736175602000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-must_not_consume"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q08_conflict_reversed",
+      "fixture": "Q08",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "must_not_consume",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175602000000000,
+          "available_ns": 1736175602000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-must_not_consume"
+        },
+        {
+          "id": "seq1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000001,
+          "available_ns": 1736175601000000001,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.03",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-seq1"
+        },
+        {
+          "id": "seq1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000001,
+          "available_ns": 1736175601000000001,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-seq1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q08_tie_sequence",
+      "fixture": "Q08",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "seq2",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000002,
+          "available_ns": 1736175601000000002,
+          "receipt_ns": null,
+          "sequence": 2,
+          "bid": "100",
+          "ask": "100.03",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-seq2"
+        },
+        {
+          "id": "seq1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000001,
+          "available_ns": 1736175601000000002,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-seq1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q08_tie_event_id",
+      "fixture": "Q08",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "z",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000002,
+          "available_ns": 1736175601000000002,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.03",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-seq2"
+        },
+        {
+          "id": "a",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000001,
+          "available_ns": 1736175601000000002,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-seq1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q09_baseline",
+      "fixture": "Q09",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "pre",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175600999999999,
+          "available_ns": 1736175600999999999,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "89.99",
+          "ask": "90",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-pre"
+        },
+        {
+          "id": "crossed",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "101",
+          "ask": "100",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-crossed"
+        },
+        {
+          "id": "first",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000001,
+          "available_ns": 1736175601000000001,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-first"
+        },
+        {
+          "id": "cheaper",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175602000000000,
+          "available_ns": 1736175602000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "89.99",
+          "ask": "90",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-cheaper"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q09_future_append",
+      "fixture": "Q09",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "pre",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175600999999999,
+          "available_ns": 1736175600999999999,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "89.99",
+          "ask": "90",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-pre"
+        },
+        {
+          "id": "crossed",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "101",
+          "ask": "100",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-crossed"
+        },
+        {
+          "id": "first",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000001,
+          "available_ns": 1736175601000000001,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-first"
+        },
+        {
+          "id": "cheaper",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175602000000000,
+          "available_ns": 1736175602000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "89.99",
+          "ask": "90",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-cheaper"
+        },
+        {
+          "id": "future",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175606000000000,
+          "available_ns": 1736175606000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "0.9999",
+          "ask": "1",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-future"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [
+        {
+          "id": "q0-v2",
+          "kind": "correction",
+          "available_ns": 1736175610000000000,
+          "revision_of": "q0",
+          "ask": "1"
+        },
+        {
+          "id": "symbol-v2",
+          "kind": "symbol",
+          "available_ns": 1736175611000000000
+        },
+        {
+          "id": "action-v2",
+          "kind": "action",
+          "available_ns": 1736175612000000000
+        },
+        {
+          "id": "prediction",
+          "kind": "prediction",
+          "available_ns": 1736175613000000000
+        }
+      ],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q09_prospective",
+      "fixture": "Q09",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175600100000000,
+        "receipt_ns": 1736175600100000000,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "pre",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175600999999999,
+          "available_ns": 1736175600999999999,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "89.99",
+          "ask": "90",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-pre"
+        },
+        {
+          "id": "crossed",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "101",
+          "ask": "100",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-crossed"
+        },
+        {
+          "id": "first",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000001,
+          "available_ns": 1736175601000000001,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-first"
+        },
+        {
+          "id": "cheaper",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175602000000000,
+          "available_ns": 1736175602000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "89.99",
+          "ask": "90",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-cheaper"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q10_five_shares",
+      "fixture": "Q10",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "50",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q10_six_shares",
+      "fixture": "Q10",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "50",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "6",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q10_round_lot",
+      "fixture": "Q10",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "0.5",
+          "unit": "round_lot",
+          "factor": "100",
+          "unit_evidence": "E-UNIT",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q10_unknown_factor",
+      "fixture": "Q10",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "0.5",
+          "unit": "round_lot",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q10_missing_unit",
+      "fixture": "Q10",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": null,
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q10_zero",
+      "fixture": "Q10",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "0",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q10_negative",
+      "fixture": "Q10",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "-1",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q10_nan",
+      "fixture": "Q10",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "NaN",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q10_tape_gap",
+      "fixture": "Q10",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": true,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q10_source_gap",
+      "fixture": "Q10",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": true,
+          "normalization": "Raw",
+          "source": "GAPPED",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q10_sequence_gap",
+      "fixture": "Q10",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 3,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": true,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q10_conditions",
+      "fixture": "Q10",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R",
+            "X"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q10_trade_bar_only",
+      "fixture": "Q10",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "trade",
+          "kind": "trade",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "price": "90",
+          "evidence": "E-T"
+        },
+        {
+          "id": "bar",
+          "kind": "bar",
+          "event_ns": 1736175602000000000,
+          "available_ns": 1736175602000000000,
+          "receipt_ns": null,
+          "sequence": 2,
+          "price": "90",
+          "evidence": "E-B"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "0",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q11_raw",
+      "fixture": "Q11",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        },
+        {
+          "id": "post_raw",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736179200000000000,
+          "available_ns": 1736179200000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "50",
+          "ask": "50.01",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-post_raw"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "10",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [
+        {
+          "id": "F1",
+          "available_ns": 1736175599000000000,
+          "effective_ns": 1736179200000000000,
+          "factor": "0.5"
+        }
+      ],
+      "future_records": [],
+      "adjusted_decoy": {
+        "id": "adjusted_prior",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599000000000,
+        "available_ns": 1736175599000000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "50",
+        "ask": "50.01",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Adjusted",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-adjusted_prior"
+      },
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q11_wrong_metadata",
+      "fixture": "Q11",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        },
+        {
+          "id": "post_raw",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736179200000000000,
+          "available_ns": 1736179200000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "50",
+          "ask": "50.01",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-post_raw"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "10",
+      "mapping": "valid",
+      "normalization": "Adjusted",
+      "structural": null,
+      "factors": [
+        {
+          "id": "F1",
+          "available_ns": 1736175599000000000,
+          "effective_ns": 1736179200000000000,
+          "factor": "0.5"
+        }
+      ],
+      "future_records": [],
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "case_id": "Q11_future_factor",
+      "fixture": "Q11",
+      "decision_ns": 1736175600000000000,
+      "status": "TRADABLE",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Raw",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-q0"
+      },
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-q1"
+        },
+        {
+          "id": "post_raw",
+          "kind": "quote",
+          "instrument": "I1",
+          "event_ns": 1736179200000000000,
+          "available_ns": 1736179200000000000,
+          "receipt_ns": null,
+          "sequence": 1,
+          "bid": "50",
+          "ask": "50.01",
+          "size": "1000",
+          "unit": "shares",
+          "factor": null,
+          "unit_evidence": null,
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "normalization": "Raw",
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "evidence": "E-post_raw"
+        }
+      ],
+      "quantity": "5",
+      "seed_quantity": "10",
+      "mapping": "valid",
+      "normalization": "Raw",
+      "structural": null,
+      "factors": [
+        {
+          "id": "F1",
+          "available_ns": 1736175599000000000,
+          "effective_ns": 1736179200000000000,
+          "factor": "0.5"
+        },
+        {
+          "id": "F2",
+          "available_ns": 1736182800000000000,
+          "effective_ns": 1736179200000000000,
+          "factor": "0.25"
+        }
+      ],
+      "future_records": [],
+      "adjusted_decoy": {
+        "id": "adjusted_prior",
+        "kind": "quote",
+        "instrument": "I1",
+        "event_ns": 1736175599000000000,
+        "available_ns": 1736175599000000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "bid": "50",
+        "ask": "50.01",
+        "size": "1000",
+        "unit": "shares",
+        "factor": null,
+        "unit_evidence": null,
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "normalization": "Adjusted",
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "evidence": "E-adjusted_prior"
+      },
+      "identities": [
+        {
+          "instrument": "I1",
+          "issuer": "U1",
+          "class_id": "A",
+          "listing": "L1",
+          "ticker": "AAA",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736260200000000000,
+          "engine_date": "2025-01-01"
+        },
+        {
+          "instrument": "I2",
+          "issuer": "U2",
+          "class_id": "B",
+          "listing": "L2",
+          "ticker": "AAA",
+          "start_ns": 1736260200000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-07"
+        },
+        {
+          "instrument": "I3",
+          "issuer": "U1",
+          "class_id": "B",
+          "listing": "L3",
+          "ticker": "AAB",
+          "start_ns": 1736173800000000000,
+          "end_ns": 1736346600000000000,
+          "engine_date": "2025-01-01"
+        }
+      ]
+    }
+  ]
+}

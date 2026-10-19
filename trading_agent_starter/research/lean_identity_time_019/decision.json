@@ -1,0 +1,120 @@
+{
+  "status": "LEAN_IDENTITY_TIME_GATE_INCOMPLETE",
+  "issue": 19,
+  "base_sha": "67317e573624529e247d98a4964f946421b571e7",
+  "source_pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
+  "stop_case": "Q04_missing",
+  "stop_attempt": 12,
+  "first_divergence": "$.envelope_journal[0].dispatch_ns: 1736260199000000000 != 1736175601000000000",
+  "technical_reason": "Missing/overlap mapping fixtures retain Jan6 quote availability while moving decision to Jan7. Host dispatches overdue input at initial Jan7 frame; comparator requires original Jan6 ceiling. No contract decision can be accepted for this variant on the frozen bundle.",
+  "lean_blocker_established": false,
+  "fixture_variants_frozen": 57,
+  "accepted_variants": {
+    "Q04_before": {
+      "attempts": [
+        6,
+        7
+      ],
+      "output_sha256": "7bb4ebddcd00fe4e2b0b35534fb90c0aa9c18bd0abc203d939a0c034d36e7606"
+    },
+    "Q04_at": {
+      "attempts": [
+        8,
+        9
+      ],
+      "output_sha256": "ae850b33dc33375393d9c536730bb5786d69f3fb1e3722f9f527bfa5083df888"
+    },
+    "Q04_after": {
+      "attempts": [
+        10,
+        11
+      ],
+      "output_sha256": "aa3839ab5578858472a03abcff108a38a5185bd9804eb11b7b495360a2006308"
+    }
+  },
+  "incomplete_variants": [
+    "Q04_missing"
+  ],
+  "unrun_variants": [
+    "Q04_overlap",
+    "Q05_structural_unknown_publication",
+    "Q05_date_only",
+    "Q05_conflicting_class",
+    "Q05_late_halt",
+    "Q06_age_exact",
+    "Q06_age_plus_ns",
+    "Q06_future_availability",
+    "Q06_spread_exact",
+    "Q06_spread_over",
+    "Q06_locked",
+    "Q06_crossed",
+    "Q06_zero_bid",
+    "Q06_zero_ask",
+    "Q06_nan_bid",
+    "Q06_nan_ask",
+    "Q06_conditions_mixed",
+    "Q06_conditions_missing",
+    "Q06_unknown_status",
+    "Q07_first",
+    "Q07_deadline_exact",
+    "Q07_deadline_plus_ns",
+    "Q07_missing",
+    "Q08_event_order",
+    "Q08_receipt_order",
+    "Q08_quote_before_halt",
+    "Q08_halt_before_quote",
+    "Q08_late_receipt",
+    "Q08_stale_event",
+    "Q08_duplicate",
+    "Q08_conflict",
+    "Q08_conflict_reversed",
+    "Q08_tie_sequence",
+    "Q08_tie_event_id",
+    "Q09_baseline",
+    "Q09_future_append",
+    "Q09_prospective",
+    "Q10_five_shares",
+    "Q10_six_shares",
+    "Q10_round_lot",
+    "Q10_unknown_factor",
+    "Q10_missing_unit",
+    "Q10_zero",
+    "Q10_negative",
+    "Q10_nan",
+    "Q10_tape_gap",
+    "Q10_source_gap",
+    "Q10_sequence_gap",
+    "Q10_conditions",
+    "Q10_trade_bar_only",
+    "Q11_raw",
+    "Q11_wrong_metadata",
+    "Q11_future_factor"
+  ],
+  "unexercised": [
+    "Q09 future_records correction/symbol/action/prediction admission.",
+    "Q10 native quote size/capacity and gap detection; only external conversion/supplied flags implemented, not executed.",
+    "Q11 native factor provider, adjusted-decoy ingress, explicit split/no double application. Q12 forbidden/unrun."
+  ],
+  "evidence": {
+    "attempt_journal": "evidence/attempts.json",
+    "build_manifest_sha256": "42d884810f95a8e8ce422d7870bfd8b9532f72779a92c80e9aef3cd5b5c023ce",
+    "fixture_manifest_sha256": "cba03c897ed2cbd6633cbba68f6393548390c9b9962e010b1541ac9c12d06088",
+    "input_sha256": "b3da5660fd2ed3f25dbdf84ee43cd840c709dad1648ea09cbc8e7abe1669233e",
+    "source_postrun_manifest_sha256": "f7bc9af7e0301ce270dc528c3ea3edb7dd32017103a677d27a8cf286bc58916a",
+    "source_files": 6510,
+    "config_sha256": {
+      "source/Data/market-hours/market-hours-database.json": "f44effe21e7937a76a426bdb6a0de427b6440160b811b33bb6ed28c0f04ea1f0",
+      "source/Data/symbol-properties/symbol-properties-database.csv": "53072f5a5ac4ff1b0d6f14a28fb93c43b633c0713635539fda0c2695089e236a"
+    },
+    "code_sha256": {
+      "host/Program.cs": "28b00ff69402ce81ec710a26b7a252bc7b80d4c20dbcb9a27773b98f3fe76da8",
+      "host/LeanIdentity.csproj": "6a931a5c6ddfa15d1859b47cd4ab66c6840df90d75515da48b7a646ef373e68e",
+      "compare.py": "73dbfd4bbc799701cfb557f0a0ad627b987f12d60ce25ec0e8445913bd2d048c",
+      "run_gate.py": "c4ee8df086feb5a1ff6de2717b44b3af649185f86b9be1473676ad8ef94aed50"
+    },
+    "code_commit_before_accepted_runs": "a6200ce",
+    "runner_limitations": "Attempt binding lacks comparator/runner/source-Data hashes. Current exact files verified unchanged against pre-run commit/source pin; do not claim runner alone enforces these bindings."
+  },
+  "scope": "No Q12-Q33 execution; no engine qualification, alpha, science/registration/trading/credential/provider changes.",
+  "next_action": "Stop runtime. Preserve INCOMPLETE evidence, fresh independent review, repository validation and final-head Ubuntu/Windows CI, draft PR only. Do not merge or silently regenerate fixtures."
+}

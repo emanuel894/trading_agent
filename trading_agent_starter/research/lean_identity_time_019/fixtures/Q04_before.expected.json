@@ -1,0 +1,28 @@
+{
+  "admitted": true,
+  "reason": "NO_VALID_QUOTE",
+  "fill": null,
+  "cash": "10000",
+  "quantity": "10",
+  "native_order_statuses": [
+    "Submitted",
+    "Canceled"
+  ],
+  "decision_receipt_ns": null,
+  "clock_mode": "simulated_historical",
+  "routes": [
+    "I1"
+  ],
+  "structural": null,
+  "raw_marks": [],
+  "contract_state": "COMPLETE",
+  "held_identity": "I1",
+  "class_separate": true,
+  "held_quantity": "10",
+  "positions": {
+    "I1": "10",
+    "I2": "0",
+    "I3": "0"
+  },
+  "initial_average": "100"
+}

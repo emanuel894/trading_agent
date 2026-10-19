@@ -1,0 +1,26 @@
+test_all_expected_records_unchanged (test_amendment.AmendmentTests.test_all_expected_records_unchanged) ... FAIL
+test_exact_four_scalar_changes (test_amendment.AmendmentTests.test_exact_four_scalar_changes) ... FAIL
+test_original_packet_bytes_preserved (test_amendment.AmendmentTests.test_original_packet_bytes_preserved) ... ok
+
+======================================================================
+FAIL: test_all_expected_records_unchanged (test_amendment.AmendmentTests.test_all_expected_records_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/trading_agent/trading_agent_starter/research/lean_identity_time_019/continuation_021/test_amendment.py", line 30, in test_all_expected_records_unchanged
+    self.assertTrue((PACKET/'fixtures_v3/manifest.json').exists(),'v3 manifest absent')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : v3 manifest absent
+
+======================================================================
+FAIL: test_exact_four_scalar_changes (test_amendment.AmendmentTests.test_exact_four_scalar_changes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/trading_agent/trading_agent_starter/research/lean_identity_time_019/continuation_021/test_amendment.py", line 20, in test_exact_four_scalar_changes
+    self.assertTrue((PACKET/'fixtures_v3/input.json').exists(),'Reviewed v3 amendment is absent')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Reviewed v3 amendment is absent
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.009s
+
+FAILED (failures=2)

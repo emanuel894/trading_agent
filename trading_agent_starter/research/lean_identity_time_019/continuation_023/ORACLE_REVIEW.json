@@ -1,0 +1,19 @@
+{
+  "approved": true,
+  "reviewer": "issue23_oracle_review",
+  "review_kind": "fresh independent Codex context; actual served model/reasoning unobservable; no cross-provider acceptance",
+  "binding": {
+    "build.json": "54bc24245395f27c7c1e5cdb5b5bdac6d0f2fb86ca517b83cd2f25c7e6bd759d",
+    "fixtures/manifest.json": "cac8ea81d670223a63e08e44a769a648668b81173087eff648cd8874919eeb08",
+    "compare.py": "ed1c5e1f665715cb16e639f843559e3e65812984bde67c69c286745d94320b27",
+    "verify_reuse.py": "f808a98d6ad1f14a30f8d93d6c09a9e34310a5129f863193e7f83fc8e0a39726",
+    "run_gate.py": "adb6856e05f74e68d9140fbefc683ffe4ce9db34e182090f6c273c047b82bac6",
+    "host/Program.cs": "de1dbbb0e9ef9edc9a33a371615ad6bc9c9f6a1c29fe126e44082e7c02dd687b",
+    "host/Gap.cs": "93b2bb2b1dc32795be9e04152fe7c18a204d1df23fc10134295c12035029e521",
+    "host/LeanGap.csproj": "8cbc96493e4c895a5ae8a3565652e3dd189c2ea478054f012ec2b970ff7b54c2"
+  },
+  "approved_utc": "2026-10-19T08:57:19.422471+00:00",
+  "scope": "Only six frozen Issue23 cases twice; runtime approval only, not qualification. Original114 accepted processes reused without rerun.",
+  "supersedes": "Build03 approval preceded Raw-returned-Tick improvement; no superseded build executed fixtures.",
+  "findings": "Clock rewrite in draft factorcontrol removed before execution. Corrected explicit factor_probe preserves clocks; Raw native enumerator Tick drives SetMarketPrice. No remaining material defect. Independently verified all493 priorfiles and114acceptedoutputs unchanged."
+}

@@ -1,0 +1,30 @@
+{
+  "admitted": false,
+  "reason": "IDENTITY_UNRESOLVED",
+  "fill": null,
+  "cash": "10000",
+  "quantity": "0",
+  "native_order_statuses": [],
+  "decision_receipt_ns": null,
+  "clock_mode": "simulated_historical",
+  "routes": [],
+  "structural": {
+    "valid_from_ns": 1736173800000000000,
+    "valid_to_ns": 1736260200000000000,
+    "publication_ns": null,
+    "retrieved_utc": "2026-10-18T00:00:00Z",
+    "receipt_ns": null,
+    "resolution": "exact_interval",
+    "capture_mode": "fixture",
+    "admission": "fixture_only",
+    "conflicting_class": true
+  },
+  "raw_marks": [],
+  "contract_state": "COMPLETE",
+  "positions": {
+    "I1": "0",
+    "I2": "0",
+    "I3": "0"
+  },
+  "initial_average": "0"
+}

@@ -1,0 +1,53 @@
+{
+  "source_pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
+  "source_tree": "6bdca864f7be86d7268d46328fd5f099db95b882",
+  "source_files": 6510,
+  "source_files_manifest_sha256": "f7bc9af7e0301ce270dc528c3ea3edb7dd32017103a677d27a8cf286bc58916a",
+  "build_manifest_sha256": "42d884810f95a8e8ce422d7870bfd8b9532f72779a92c80e9aef3cd5b5c023ce",
+  "runtime_files": 125,
+  "config_sha256": {
+    "source/Data/market-hours/market-hours-database.json": "f44effe21e7937a76a426bdb6a0de427b6440160b811b33bb6ed28c0f04ea1f0",
+    "source/Data/symbol-properties/symbol-properties-database.csv": "53072f5a5ac4ff1b0d6f14a28fb93c43b633c0713635539fda0c2695089e236a"
+  },
+  "code_sha256": {
+    "host/Program.cs": "28b00ff69402ce81ec710a26b7a252bc7b80d4c20dbcb9a27773b98f3fe76da8",
+    "host/LeanIdentity.csproj": "6a931a5c6ddfa15d1859b47cd4ab66c6840df90d75515da48b7a646ef373e68e",
+    "compare.py": "73dbfd4bbc799701cfb557f0a0ad627b987f12d60ce25ec0e8445913bd2d048c",
+    "run_gate.py": "c4ee8df086feb5a1ff6de2717b44b3af649185f86b9be1473676ad8ef94aed50"
+  },
+  "code_commit_before_prior_accepted_runs": "a6200ce3aa5cfd916a83be17775b125138e1af70",
+  "preserved_files": 185,
+  "reused": {
+    "Q04_before": {
+      "version": "fixtures_v2",
+      "attempts": [
+        6,
+        7
+      ],
+      "output_sha256": "7bb4ebddcd00fe4e2b0b35534fb90c0aa9c18bd0abc203d939a0c034d36e7606",
+      "unchanged_case_sha256": "c9d26bfa4d0d0d97ad21d48c4bfae1f40683084313fb0f865cbaa5fd22b7b22e",
+      "oracle_sha256": "af7b52091e7776f10f8562b7016e840dcb44be3e4cad018ab6c986fde678fcc1"
+    },
+    "Q04_at": {
+      "version": "fixtures_v2",
+      "attempts": [
+        8,
+        9
+      ],
+      "output_sha256": "ae850b33dc33375393d9c536730bb5786d69f3fb1e3722f9f527bfa5083df888",
+      "unchanged_case_sha256": "76c234e3da3a465d3a329ffd592b6f9cf3dd1cbf89845be3abe8d5f8a52bd730",
+      "oracle_sha256": "1c37bba62e6e0ffac6750bab9ed8ba821d57ec58951b64a5a48cb4dbb79ebfc2"
+    },
+    "Q04_after": {
+      "version": "fixtures_v2",
+      "attempts": [
+        10,
+        11
+      ],
+      "output_sha256": "aa3839ab5578858472a03abcff108a38a5185bd9804eb11b7b495360a2006308",
+      "unchanged_case_sha256": "c9c7c61e88a5f99e90bc26039cc936dfacdbdc0af9b5b8e7b18b31cefc8b0d37",
+      "oracle_sha256": "dd18b84f0c5027c5666fa41346e03f98aa152bcab06fcd354f67825d3588b112"
+    }
+  },
+  "reuse_rule": "Original outputs stay bound to v2. Only unchanged case/oracle evidence is reused after exact code/source/runtime/config verification; corrected cases require fresh v3 runs."
+}

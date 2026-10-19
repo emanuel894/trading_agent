@@ -1,0 +1,88 @@
+test_contract_mutations_are_rejected (test_comparator.ComparatorTests.test_contract_mutations_are_rejected) ... ok
+test_extra_missing_fields_rejected (test_comparator.ComparatorTests.test_extra_missing_fields_rejected) ... ok
+test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) ... 
+  test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) (mutation=0) ... FAIL
+  test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) (mutation=1) ... FAIL
+  test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) (mutation=2) ... FAIL
+  test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) (mutation=3) ... FAIL
+  test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) (mutation=4) ... FAIL
+  test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) (mutation=5) ... FAIL
+  test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) (mutation=6) ... FAIL
+  test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) (mutation=7) ... FAIL
+
+======================================================================
+FAIL: test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) (mutation=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/trading_agent/trading_agent_starter/research/lean_identity_time_019/test_comparator.py", line 36, in test_native_contradictions_rejected
+    with self.assertRaises(compare.GateMismatch):compare.compare_file(out,oracle,inp)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: GateMismatch not raised
+
+======================================================================
+FAIL: test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) (mutation=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/trading_agent/trading_agent_starter/research/lean_identity_time_019/test_comparator.py", line 36, in test_native_contradictions_rejected
+    with self.assertRaises(compare.GateMismatch):compare.compare_file(out,oracle,inp)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: GateMismatch not raised
+
+======================================================================
+FAIL: test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) (mutation=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/trading_agent/trading_agent_starter/research/lean_identity_time_019/test_comparator.py", line 36, in test_native_contradictions_rejected
+    with self.assertRaises(compare.GateMismatch):compare.compare_file(out,oracle,inp)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: GateMismatch not raised
+
+======================================================================
+FAIL: test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) (mutation=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/trading_agent/trading_agent_starter/research/lean_identity_time_019/test_comparator.py", line 36, in test_native_contradictions_rejected
+    with self.assertRaises(compare.GateMismatch):compare.compare_file(out,oracle,inp)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: GateMismatch not raised
+
+======================================================================
+FAIL: test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) (mutation=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/trading_agent/trading_agent_starter/research/lean_identity_time_019/test_comparator.py", line 36, in test_native_contradictions_rejected
+    with self.assertRaises(compare.GateMismatch):compare.compare_file(out,oracle,inp)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: GateMismatch not raised
+
+======================================================================
+FAIL: test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) (mutation=5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/trading_agent/trading_agent_starter/research/lean_identity_time_019/test_comparator.py", line 36, in test_native_contradictions_rejected
+    with self.assertRaises(compare.GateMismatch):compare.compare_file(out,oracle,inp)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: GateMismatch not raised
+
+======================================================================
+FAIL: test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) (mutation=6)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/trading_agent/trading_agent_starter/research/lean_identity_time_019/test_comparator.py", line 36, in test_native_contradictions_rejected
+    with self.assertRaises(compare.GateMismatch):compare.compare_file(out,oracle,inp)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: GateMismatch not raised
+
+======================================================================
+FAIL: test_native_contradictions_rejected (test_comparator.NativeComparatorTests.test_native_contradictions_rejected) (mutation=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/trading_agent/trading_agent_starter/research/lean_identity_time_019/test_comparator.py", line 36, in test_native_contradictions_rejected
+    with self.assertRaises(compare.GateMismatch):compare.compare_file(out,oracle,inp)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: GateMismatch not raised
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.024s
+
+FAILED (failures=8)

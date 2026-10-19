@@ -1,0 +1,51 @@
+{
+  "issue": 21,
+  "adjudication": "authored_fixture_timing_error",
+  "changes": [
+    {
+      "case_id": "Q04_missing",
+      "path": "/cases/3/events/0/event_ns",
+      "old": 1736175601000000000,
+      "new": 1736260201000000000,
+      "reason": "Restore decision-relative q1 at Jan7 decision+1s; simulated availability equals event; no receipt invention."
+    },
+    {
+      "case_id": "Q04_missing",
+      "path": "/cases/3/events/0/available_ns",
+      "old": 1736175601000000000,
+      "new": 1736260201000000000,
+      "reason": "Restore decision-relative q1 at Jan7 decision+1s; simulated availability equals event; no receipt invention."
+    },
+    {
+      "case_id": "Q04_overlap",
+      "path": "/cases/4/events/0/event_ns",
+      "old": 1736175601000000000,
+      "new": 1736260201000000000,
+      "reason": "Restore decision-relative q1 at Jan7 decision+1s; simulated availability equals event; no receipt invention."
+    },
+    {
+      "case_id": "Q04_overlap",
+      "path": "/cases/4/events/0/available_ns",
+      "old": 1736175601000000000,
+      "new": 1736260201000000000,
+      "reason": "Restore decision-relative q1 at Jan7 decision+1s; simulated availability equals event; no receipt invention."
+    }
+  ],
+  "unchanged": "Every expected-record byte and every other input field, including I1 identity and null receipt.",
+  "rationale": "Merged Q04 is Jan7 malformed mapping rejection before order. Shared q1 is decision+1s. Author omitted events override while overriding decision; ordinary Q04 variants explicitly use decision-relative q1.",
+  "review_required": "Fresh independent review of actual v3 bytes before any native execution.",
+  "hashes": {
+    "fixtures": {
+      "input_sha256": "b3da5660fd2ed3f25dbdf84ee43cd840c709dad1648ea09cbc8e7abe1669233e",
+      "manifest_sha256": "9af93e7fbaf2d3684e7880a846199d75a68bb5b3cb0d88a488cbba5ef10fbef7"
+    },
+    "fixtures_v2": {
+      "input_sha256": "b3da5660fd2ed3f25dbdf84ee43cd840c709dad1648ea09cbc8e7abe1669233e",
+      "manifest_sha256": "cba03c897ed2cbd6633cbba68f6393548390c9b9962e010b1541ac9c12d06088"
+    },
+    "fixtures_v3": {
+      "input_sha256": "681e9bf1859acc68d9662ccdd48080efe3546d0138b75ee5a3ca655229c0627e",
+      "manifest_sha256": "4eb100de481b7ad14d5cfbcadf04c6518125df467f36c56f92b40d2ceb49d1fb"
+    }
+  }
+}
