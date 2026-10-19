@@ -24,5 +24,39 @@
   ],
   "fills": [],
   "ranked": [],
-  "due_ns": null
+  "due_ns": null,
+  "risk_records": [
+    {
+      "kind": "mark",
+      "at_ns": 1736175600000000000,
+      "ref": "E-Q25-new_session_drawdown",
+      "equity": "9200"
+    },
+    {
+      "kind": "latch",
+      "reason": "DAILY_LOSS",
+      "at_ns": 1736175600000000000,
+      "ref": "E-Q25-new_session_drawdown",
+      "equity": "9200",
+      "day_start": "10000",
+      "high_water": "10000"
+    },
+    {
+      "kind": "latch",
+      "reason": "DRAWDOWN",
+      "at_ns": 1736175600000000000,
+      "ref": "E-Q25-new_session_drawdown",
+      "equity": "9200",
+      "day_start": "10000",
+      "high_water": "10000"
+    },
+    {
+      "kind": "session_reset",
+      "at_ns": 1736208000000000000,
+      "session_id": "2025-01-07",
+      "day_start": "9200",
+      "high_water": "10000",
+      "previous_daily": true
+    }
+  ]
 }

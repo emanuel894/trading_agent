@@ -18,5 +18,6 @@
     "I1",
     "I2"
   ],
-  "due_ns": null
+  "due_ns": null,
+  "risk_records": []
 }

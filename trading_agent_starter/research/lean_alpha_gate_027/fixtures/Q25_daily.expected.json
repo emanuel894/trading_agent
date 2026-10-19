@@ -62,9 +62,29 @@
       "id": "EXIT",
       "quantity": "-5",
       "price": "99.95",
-      "fee": "1"
+      "fee": "1",
+      "source_id": "Q25_daily-q1",
+      "source_ns": 1736175603000000000,
+      "native_dispatch_ns": 1736175603000000000
     }
   ],
   "ranked": [],
-  "due_ns": null
+  "due_ns": null,
+  "risk_records": [
+    {
+      "kind": "mark",
+      "at_ns": 1736175600000000000,
+      "ref": "E-Q25-daily",
+      "equity": "9800"
+    },
+    {
+      "kind": "latch",
+      "reason": "DAILY_LOSS",
+      "at_ns": 1736175600000000000,
+      "ref": "E-Q25-daily",
+      "equity": "9800",
+      "day_start": "10000",
+      "high_water": "10000"
+    }
+  ]
 }

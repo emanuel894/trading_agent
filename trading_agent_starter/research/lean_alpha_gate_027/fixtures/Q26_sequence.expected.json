@@ -15,6 +15,14 @@
       "quantity": null,
       "gross_ok": null,
       "symbol_ok": null
+    },
+    {
+      "id": "ENTRY",
+      "allowed": false,
+      "reason": "DAILY_HALT",
+      "quantity": null,
+      "gross_ok": null,
+      "symbol_ok": null
     }
   ],
   "snapshots": [
@@ -57,9 +65,20 @@
       "id": "S",
       "quantity": "-2",
       "price": "99.95",
-      "fee": "1"
+      "fee": "1",
+      "source_id": "e1",
+      "source_ns": 1736175601000000000,
+      "native_dispatch_ns": 1736175601000000000
     }
   ],
   "ranked": [],
-  "due_ns": null
+  "due_ns": null,
+  "risk_records": [
+    {
+      "kind": "seed_latch",
+      "reason": "DAILY_LOSS",
+      "at_ns": 1736175599000000000,
+      "ref": "E-Q26-initial-halt"
+    }
+  ]
 }

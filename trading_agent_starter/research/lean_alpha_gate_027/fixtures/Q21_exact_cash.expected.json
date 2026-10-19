@@ -20,9 +20,9 @@
   "snapshots": [
     {
       "label": "final",
-      "cash": "1000",
+      "cash": "601",
       "reserved_cash": "601",
-      "free_cash": "399",
+      "free_cash": "0",
       "quantity": "0",
       "reserved_sell": "0",
       "daily": false,
@@ -32,5 +32,6 @@
   ],
   "fills": [],
   "ranked": [],
-  "due_ns": null
+  "due_ns": null,
+  "risk_records": []
 }

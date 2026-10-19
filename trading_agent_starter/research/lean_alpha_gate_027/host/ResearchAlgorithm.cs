@@ -25,13 +25,15 @@ public sealed partial class ResearchAlgorithm:QCAlgorithm
  public int GateCalls;public long Now,Decision,Due;
  public bool Scripted=>(bool?)Case["scripted"]==true;
  public JObject Current;
- readonly List<JObject> pending;readonly JArray decisions=new(),snapshots=new(),fills=new(),ranked=new();
+ readonly List<JObject> pending;readonly JArray decisions=new(),snapshots=new(),fills=new(),ranked=new(),riskRecords=new();
+ readonly Dictionary<int,(string id,long ns)> fillSources=new();
  readonly Dictionary<int,Reservation> reservations=new();readonly Dictionary<string,OrderTicket> tickets=new(StringComparer.Ordinal);
  readonly HashSet<string> applied=new(StringComparer.Ordinal);readonly Dictionary<string,decimal> capacity=new();
  JObject context;bool seeded;decimal dayStart=10000m,highWater=10000m;
  public ResearchAlgorithm(JObject c)
  {
   Case=c;Decision=(long?)c["start_ns"]??1736175600000000000;Due=(long?)c["exit_due_ns"]??0;Daily=(bool?)c["daily"]==true;
+  dayStart=c["day_start"]!=null?Program.Dec(c["day_start"]!):10000m;highWater=c["high_water"]!=null?Program.Dec(c["high_water"]!):10000m;if(c["initial_halt"] is JObject halt)riskRecords.Add(halt.DeepClone());
   for(int i=1;i<=7;i++)Symbols.Add("I"+i,new Symbol(SecurityIdentifier.GenerateEquity(new DateTime(2025,1,i),"SYN"+i,Market.USA),"SYN"+i));
   pending=((JArray)c["steps"]!).Cast<JObject>().OrderBy(s=>(long)s["at_ns"]!).ToList();
   Frames=new[]{Decision-2_000_000_000,Decision-1_000_000_000,Decision}.Concat(pending.Select(s=>Program.Ceiling((long)s["at_ns"]!))).Distinct().OrderBy(n=>n).ToList();Frames.Add(Frames.Max()+100);
@@ -41,7 +43,7 @@ public sealed partial class ResearchAlgorithm:QCAlgorithm
  public string IntentFor(int id)=>reservations.TryGetValue(id,out var r)?(string)r.Intent["id"]!:Transactions.GetOrderById(id)?.Tag??"";
  bool Check(string name)=>((JArray)Case["checks"]!).Any(x=>(string)x! ==name);
  decimal Cash=>Portfolio.CashBook["USD"].Amount;
- decimal ReservedCash=>reservations.Values.Where(r=>!r.Closed&&r.Quantity>0).Sum(r=>r.Remaining*r.Price+r.FeeRemaining);
+ decimal ReservedCash=>reservations.Values.Where(r=>r.Allowed&&!r.Closed&&r.Quantity>0).Sum(r=>r.Remaining*r.Price+r.FeeRemaining);
  decimal ReservedSell(string instrument)=>reservations.Values.Where(r=>!r.Closed&&r.Quantity<0&&r.Instrument==instrument).Sum(r=>r.Remaining);
  public override void Initialize()
  {
@@ -72,6 +74,7 @@ public sealed partial class ResearchAlgorithm:QCAlgorithm
    switch(op)
    {
     case "order":Submit(s);break;
+    case "batch":foreach(var intent in ((JArray)s["intents"]!).Cast<JObject>().OrderBy(x=>(string)x["id"]!,StringComparer.Ordinal))Submit(intent);break;
     case "sized_order":Sized(s);break;
     case "rank":foreach(var c in ((JArray)s["candidates"]!).OrderByDescending(x=>Program.Dec(x["score"]!)).ThenBy(x=>(string)x["instrument"]!,StringComparer.Ordinal))ranked.Add(c["instrument"]!.DeepClone());break;
     case "snapshot":Snapshot((string)s["label"]!);break;
@@ -81,7 +84,7 @@ public sealed partial class ResearchAlgorithm:QCAlgorithm
     case "reject":Acknowledge(s,OrderStatus.Invalid);break;
     case "execution":ApplyExecution(s);break;
     case "mark":RiskObservation(s);break;
-    case "session":if((bool)s["explicit"]!){Daily=false;dayStart=Portfolio.TotalPortfolioValue;}break;
+    case "session":if((bool)s["explicit"]!){var session=(string)s["session_id"]!;if(session!=Program.Time(Now).ToString("yyyy-MM-dd",CultureInfo.InvariantCulture))throw new InvalidOperationException("Session ID mismatch");riskRecords.Add(new JObject{["kind"]="session_reset",["at_ns"]=Now,["session_id"]=session,["day_start"]=Program.Num(Portfolio.TotalPortfolioValue),["high_water"]=Program.Num(highWater),["previous_daily"]=Daily});Daily=false;dayStart=Portfolio.TotalPortfolioValue;}break;
     case "schedule":ScheduleExit(s);break;
     case "due":if(!PendingExit){if(Due==0)Due=Now;PendingExit=true;Submit(new JObject{["id"]="EXIT",["qty"]=-Securities[Symbols["I1"]].Holdings.Quantity,["instrument"]="I1",["price"]="100.07001",["fee"]="1",["route"]="direct"});}break;
     default:throw new InvalidOperationException("Unknown fixture operation "+op);
@@ -133,6 +136,7 @@ public sealed partial class ResearchAlgorithm:QCAlgorithm
    }
    else
    {
+    if(Check("halts")&&NavKnown)RefreshRisk("admission:"+(string)intent["id"]!);
     if(Check("halts")&&!NavKnown)reason="NAV_UNKNOWN";
     else if(Check("halts")&&Daily)reason="DAILY_HALT";
     else if(Check("halts")&&Drawdown)reason="DRAWDOWN_HALT";
@@ -166,7 +170,8 @@ public sealed partial class ResearchAlgorithm:QCAlgorithm
    r.Remaining-=Math.Abs(e.FillQuantity);r.FeeRemaining=Math.Max(0,r.FeeRemaining-e.OrderFee.Value.Amount);
    if(r.Remaining<0)throw new InvalidOperationException("Fill exceeds reserved quantity");
    if(e.Status==OrderStatus.Filled||r.Remaining==0){r.Closed=true;if((string)r.Intent["id"]! =="EXIT")PendingExit=false;}
-   fills.Add(new JObject{["id"]=r.Intent["id"]!.DeepClone(),["quantity"]=Program.Num(e.FillQuantity),["price"]=Program.Num(e.FillPrice),["fee"]=Program.Num(e.OrderFee.Value.Amount)});
+   var source=fillSources[e.OrderId];fills.Add(new JObject{["id"]=r.Intent["id"]!.DeepClone(),["quantity"]=Program.Num(e.FillQuantity),["price"]=Program.Num(e.FillPrice),["fee"]=Program.Num(e.OrderFee.Value.Amount),["source_id"]=source.id,["source_ns"]=source.ns,["native_dispatch_ns"]=(e.UtcTime.Ticks-DateTime.UnixEpoch.Ticks)*100});
+   if(Check("halts")&&NavKnown)RefreshRisk("fill:"+(string)r.Intent["id"]!);
   }
   else if(e.Status is OrderStatus.Canceled or OrderStatus.Invalid){r.Remaining=0;r.Closed=true;}
  }
@@ -177,13 +182,24 @@ public sealed partial class ResearchAlgorithm:QCAlgorithm
  void ApplyExecution(JObject s)
  {
   if(!applied.Add("execution:"+(string)s["execution_id"]!))return;var order=Transactions.GetOrderById(tickets[(string)s["id"]!].OrderId);
-  Brokerage.Emit(new OrderEvent(order,UtcTime,new OrderFee(new CashAmount(Program.Dec(s["fee"]!),"USD"))){Status=OrderStatus.PartiallyFilled,FillQuantity=Program.Dec(s["qty"]!),FillPrice=Program.Dec(s["price"]!)});Transaction.ProcessSynchronousEvents();
+  fillSources[order.Id]=((string)s["execution_id"]!,Now);Brokerage.Emit(new OrderEvent(order,UtcTime,new OrderFee(new CashAmount(Program.Dec(s["fee"]!),"USD"))){Status=OrderStatus.PartiallyFilled,FillQuantity=Program.Dec(s["qty"]!),FillPrice=Program.Dec(s["price"]!)});Transaction.ProcessSynchronousEvents();
  }
  void RiskObservation(JObject s)
  {
+  var reference=(string)s["mark_ref"]!;riskRecords.Add(new JObject{["kind"]="mark",["at_ns"]=Now,["ref"]=reference,["equity"]=s["equity"]!.DeepClone()});
   if(s["equity"]?.Type==JTokenType.Null){NavKnown=false;return;}
   var quantity=Securities[Symbols["I1"]].Holdings.Quantity;Mark("I1",(Program.Dec(s["equity"]!)-Cash)/quantity);var equity=Portfolio.TotalPortfolioValue;highWater=Math.Max(highWater,equity);
-  Daily|=equity<=dayStart*.98m;Drawdown|=equity<=highWater*.92m;
+  RefreshRisk(reference);
+ }
+ void RefreshRisk(string reference)
+ {
+  var equity=Portfolio.TotalPortfolioValue;highWater=Math.Max(highWater,equity);
+  foreach(var reason in new[]{"DAILY_LOSS","DRAWDOWN"})
+  {
+   var trigger=reason=="DAILY_LOSS"?!Daily&&equity<=dayStart*.98m:!Drawdown&&equity<=highWater*.92m;if(!trigger)continue;
+   if(reason=="DAILY_LOSS")Daily=true;else Drawdown=true;
+   riskRecords.Add(new JObject{["kind"]="latch",["reason"]=reason,["at_ns"]=Now,["ref"]=reference,["equity"]=Program.Num(equity),["day_start"]=Program.Num(dayStart),["high_water"]=Program.Num(highWater)});
+  }
  }
  void ScheduleExit(JObject s)
  {
@@ -201,6 +217,7 @@ public sealed partial class ResearchAlgorithm:QCAlgorithm
  {
   Current=s;if((string)s["status"]! !="TRADABLE")return;
   var symbol=Symbols["I1"];Securities[symbol].SetMarketPrice(new Tick{Symbol=symbol,Time=Program.Time(Now).ConvertFromUtc(TimeZones.NewYork),TickType=TickType.Quote,BidPrice=Program.Dec(s["bid"]!),AskPrice=Program.Dec(s["ask"]!),BidSize=Program.Dec(s["size"]!),AskSize=Program.Dec(s["size"]!)});
+  if(Check("halts")&&NavKnown)RefreshRisk((string)s["quote_id"]!);
   capacity[Now.ToString(CultureInfo.InvariantCulture)]=Program.Dec(s["size"]!)*.1m;Transaction.ProcessSynchronousEvents();
  }
  public OrderEvent Fill(Security security,Order order)
@@ -212,10 +229,10 @@ public sealed partial class ResearchAlgorithm:QCAlgorithm
   var bid=Program.Dec(q["bid"]!);var ask=Program.Dec(q["ask"]!);if(bid<=0||ask<=bid||10000m*(ask-bid)>20m*(ask+bid)/2m)return e;
   var price=buy?ask*1.0005m:bid*.9995m;if(buy&&price>r.Price)return e;
   var key=Now.ToString(CultureInfo.InvariantCulture);if(r.Remaining>capacity[key])return e;capacity[key]-=r.Remaining;
-  e.Status=OrderStatus.Filled;e.FillQuantity=buy?r.Remaining:-r.Remaining;e.FillPrice=price;return e;
+  fillSources[order.Id]=((string)q["quote_id"]!,Now);e.Status=OrderStatus.Filled;e.FillQuantity=buy?r.Remaining:-r.Remaining;e.FillPrice=price;return e;
  }
  void Snapshot(string label)=>snapshots.Add(new JObject{["label"]=label,["cash"]=Program.Num(Cash),["reserved_cash"]=Program.Num(ReservedCash),["free_cash"]=Program.Num(Cash-ReservedCash),["quantity"]=Program.Num(Securities[Symbols["I1"]].Holdings.Quantity),["reserved_sell"]=Program.Num(ReservedSell("I1")),["daily"]=Daily,["drawdown"]=Drawdown,["pending_exit"]=PendingExit});
- public JObject Business()=>new JObject{["decisions"]=decisions,["snapshots"]=snapshots,["fills"]=fills,["ranked"]=ranked,["due_ns"]=(string)Case["fixture"]! =="Q24"&&Due!=0?new JValue(Due):JValue.CreateNull()};
+ public JObject Business()=>new JObject{["decisions"]=decisions,["snapshots"]=snapshots,["fills"]=fills,["ranked"]=ranked,["due_ns"]=(string)Case["fixture"]! =="Q24"&&Due!=0?new JValue(Due):JValue.CreateNull(),["risk_records"]=riskRecords};
  sealed class Reservation
  {
   public readonly JObject Intent;public readonly string Instrument;public readonly decimal Quantity;public decimal Remaining,Price,FeeRemaining;public bool Allowed,Closed;

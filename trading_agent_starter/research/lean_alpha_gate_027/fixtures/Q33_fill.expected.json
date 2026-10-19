@@ -30,11 +30,15 @@
             "id": "A",
             "quantity": "5",
             "price": "100.07001",
-            "fee": "1"
+            "fee": "1",
+            "source_id": "Q33_fill-q1",
+            "source_ns": 1736175601000000000,
+            "native_dispatch_ns": 1736175601000000000
           }
         ],
         "ranked": [],
-        "due_ns": null
+        "due_ns": null,
+        "risk_records": []
       },
       "evaluation": {
         "opportunities": 1,
@@ -74,11 +78,15 @@
             "id": "A",
             "quantity": "5",
             "price": "100.07001",
-            "fee": "1"
+            "fee": "1",
+            "source_id": "Q33_fill-q1",
+            "source_ns": 1736175601000000000,
+            "native_dispatch_ns": 1736175601000000000
           }
         ],
         "ranked": [],
-        "due_ns": null
+        "due_ns": null,
+        "risk_records": []
       },
       "evaluation": {
         "opportunities": 1,
@@ -118,11 +126,15 @@
             "id": "A",
             "quantity": "5",
             "price": "100.07001",
-            "fee": "1"
+            "fee": "1",
+            "source_id": "Q33_fill-q1",
+            "source_ns": 1736175601000000000,
+            "native_dispatch_ns": 1736175601000000000
           }
         ],
         "ranked": [],
-        "due_ns": null
+        "due_ns": null,
+        "risk_records": []
       },
       "evaluation": {
         "opportunities": 1,
@@ -162,11 +174,15 @@
             "id": "A",
             "quantity": "5",
             "price": "100.07001",
-            "fee": "1"
+            "fee": "1",
+            "source_id": "Q33_fill-q1",
+            "source_ns": 1736175601000000000,
+            "native_dispatch_ns": 1736175601000000000
           }
         ],
         "ranked": [],
-        "due_ns": null
+        "due_ns": null,
+        "risk_records": []
       },
       "evaluation": {
         "opportunities": 1,

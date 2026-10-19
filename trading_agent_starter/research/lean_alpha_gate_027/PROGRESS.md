@@ -21,3 +21,5 @@ Stop state: IN_PROGRESS (not a gate claim). Q27 crash recovery and Q28–Q31 unq
 
 
 Milestone2: source/reuse map and51 pre-execution cases frozen; 913 prior packet files preserved. Source build PASS, new host preparation compile fixes in progress; no native fixture execution. Seven adversarial comparator/evaluator checks observed RED then GREEN. Source reviewer confirmed public seams and Q22 all-other-rules interpretation; oracle/build review next. All prior native runs remain0.
+
+Milestone3: independent pre-execution review found four adapter/evidence defects; corrected before any native case: candidate fee self-count, Q26 inert halt flag, missing valuation/latch lineage and fill-time provenance. Added exact-cash control;52 cases now frozen. Preparation revisions remain byte-preserved in tar.gz archives. Restored QuantConnect.Common/Algorithm/Lean.Engine binaries match original accepted hashes exactly. No old or new native case has run. Next: compile final reviewed host, freeze build/runtime bindings, get independent approval, then new pairs only.

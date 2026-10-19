@@ -38,9 +38,13 @@
       "id": "EXIT",
       "quantity": "-5",
       "price": "99.95",
-      "fee": "1"
+      "fee": "1",
+      "source_id": "Q24_dst-q2",
+      "source_ns": 1741809301000000000,
+      "native_dispatch_ns": 1741809301000000000
     }
   ],
   "ranked": [],
-  "due_ns": 1741809300000000000
+  "due_ns": 1741809300000000000,
+  "risk_records": []
 }

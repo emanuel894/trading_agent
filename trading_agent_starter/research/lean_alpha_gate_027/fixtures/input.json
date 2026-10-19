@@ -14,24 +14,30 @@
       "mark": "100",
       "steps": [
         {
-          "op": "order",
+          "op": "batch",
           "at_ns": 1736175600000000000,
-          "id": "A",
-          "qty": "6",
-          "instrument": "I1",
-          "price": "100",
-          "fee": "1",
-          "route": "direct"
-        },
-        {
-          "op": "order",
-          "at_ns": 1736175600000000000,
-          "id": "B",
-          "qty": "6",
-          "instrument": "I2",
-          "price": "100",
-          "fee": "1",
-          "route": "direct"
+          "intents": [
+            {
+              "op": "order",
+              "at_ns": 1736175600000000000,
+              "id": "B",
+              "qty": "6",
+              "instrument": "I2",
+              "price": "100",
+              "fee": "1",
+              "route": "direct"
+            },
+            {
+              "op": "order",
+              "at_ns": 1736175600000000000,
+              "id": "A",
+              "qty": "6",
+              "instrument": "I1",
+              "price": "100",
+              "fee": "1",
+              "route": "direct"
+            }
+          ]
         },
         {
           "op": "snapshot",
@@ -51,24 +57,30 @@
       "mark": "100",
       "steps": [
         {
-          "op": "order",
+          "op": "batch",
           "at_ns": 1736175600000000000,
-          "id": "A",
-          "qty": "6",
-          "instrument": "I1",
-          "price": "100",
-          "fee": "1",
-          "route": "direct"
-        },
-        {
-          "op": "order",
-          "at_ns": 1736175600000000000,
-          "id": "B",
-          "qty": "6",
-          "instrument": "I2",
-          "price": "100",
-          "fee": "1",
-          "route": "direct"
+          "intents": [
+            {
+              "op": "order",
+              "at_ns": 1736175600000000000,
+              "id": "B",
+              "qty": "6",
+              "instrument": "I2",
+              "price": "100",
+              "fee": "1",
+              "route": "direct"
+            },
+            {
+              "op": "order",
+              "at_ns": 1736175600000000000,
+              "id": "A",
+              "qty": "6",
+              "instrument": "I1",
+              "price": "100",
+              "fee": "1",
+              "route": "direct"
+            }
+          ]
         },
         {
           "op": "cancel_request",
@@ -93,24 +105,30 @@
       "mark": "100",
       "steps": [
         {
-          "op": "order",
+          "op": "batch",
           "at_ns": 1736175600000000000,
-          "id": "A",
-          "qty": "6",
-          "instrument": "I1",
-          "price": "100",
-          "fee": "1",
-          "route": "direct"
-        },
-        {
-          "op": "order",
-          "at_ns": 1736175600000000000,
-          "id": "B",
-          "qty": "6",
-          "instrument": "I2",
-          "price": "100",
-          "fee": "1",
-          "route": "direct"
+          "intents": [
+            {
+              "op": "order",
+              "at_ns": 1736175600000000000,
+              "id": "B",
+              "qty": "6",
+              "instrument": "I2",
+              "price": "100",
+              "fee": "1",
+              "route": "direct"
+            },
+            {
+              "op": "order",
+              "at_ns": 1736175600000000000,
+              "id": "A",
+              "qty": "6",
+              "instrument": "I1",
+              "price": "100",
+              "fee": "1",
+              "route": "direct"
+            }
+          ]
         },
         {
           "op": "cancel_request",
@@ -145,24 +163,30 @@
       "mark": "100",
       "steps": [
         {
-          "op": "order",
+          "op": "batch",
           "at_ns": 1736175600000000000,
-          "id": "A",
-          "qty": "6",
-          "instrument": "I1",
-          "price": "100",
-          "fee": "1",
-          "route": "direct"
-        },
-        {
-          "op": "order",
-          "at_ns": 1736175600000000000,
-          "id": "B",
-          "qty": "6",
-          "instrument": "I2",
-          "price": "100",
-          "fee": "1",
-          "route": "direct"
+          "intents": [
+            {
+              "op": "order",
+              "at_ns": 1736175600000000000,
+              "id": "B",
+              "qty": "6",
+              "instrument": "I2",
+              "price": "100",
+              "fee": "1",
+              "route": "direct"
+            },
+            {
+              "op": "order",
+              "at_ns": 1736175600000000000,
+              "id": "A",
+              "qty": "6",
+              "instrument": "I1",
+              "price": "100",
+              "fee": "1",
+              "route": "direct"
+            }
+          ]
         },
         {
           "op": "reject",
@@ -208,24 +232,73 @@
           "route": "direct"
         },
         {
-          "op": "order",
+          "op": "batch",
           "at_ns": 1736175600000000000,
-          "id": "A",
-          "qty": "6",
-          "instrument": "I1",
-          "price": "100",
-          "fee": "1",
-          "route": "direct"
+          "intents": [
+            {
+              "op": "order",
+              "at_ns": 1736175600000000000,
+              "id": "B",
+              "qty": "6",
+              "instrument": "I3",
+              "price": "100",
+              "fee": "1",
+              "route": "direct"
+            },
+            {
+              "op": "order",
+              "at_ns": 1736175600000000000,
+              "id": "A",
+              "qty": "6",
+              "instrument": "I1",
+              "price": "100",
+              "fee": "1",
+              "route": "direct"
+            }
+          ]
         },
         {
-          "op": "order",
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q21_exact_cash",
+      "fixture": "Q21",
+      "cash": "601",
+      "holdings": [],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "batch",
           "at_ns": 1736175600000000000,
-          "id": "B",
-          "qty": "6",
-          "instrument": "I3",
-          "price": "100",
-          "fee": "1",
-          "route": "direct"
+          "intents": [
+            {
+              "op": "order",
+              "at_ns": 1736175600000000000,
+              "id": "B",
+              "qty": "1",
+              "instrument": "I2",
+              "price": "1",
+              "fee": "1",
+              "route": "direct"
+            },
+            {
+              "op": "order",
+              "at_ns": 1736175600000000000,
+              "id": "A",
+              "qty": "6",
+              "instrument": "I1",
+              "price": "100",
+              "fee": "1",
+              "route": "direct"
+            }
+          ]
         },
         {
           "op": "snapshot",
@@ -746,7 +819,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q23_sigma05-q1"
         },
         {
           "op": "snapshot",
@@ -787,7 +861,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q23_sigma01-q1"
         },
         {
           "op": "snapshot",
@@ -828,7 +903,8 @@
           "bid": "100",
           "ask": "100.03",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q23_above_ceiling-q1"
         },
         {
           "op": "snapshot",
@@ -869,7 +945,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q23_zero-q1"
         },
         {
           "op": "snapshot",
@@ -910,7 +987,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q23_null-q1"
         },
         {
           "op": "snapshot",
@@ -988,7 +1066,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q24_five-q1"
         },
         {
           "op": "snapshot",
@@ -1001,7 +1080,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q24_five-q2"
         },
         {
           "op": "snapshot",
@@ -1045,7 +1125,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q24_one-q1"
         },
         {
           "op": "snapshot",
@@ -1058,7 +1139,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q24_one-q2"
         },
         {
           "op": "snapshot",
@@ -1106,7 +1188,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q24_early-q1"
         },
         {
           "op": "snapshot",
@@ -1119,7 +1202,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q24_early-q2"
         },
         {
           "op": "snapshot",
@@ -1167,7 +1251,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q24_dst-q1"
         },
         {
           "op": "snapshot",
@@ -1180,7 +1265,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q24_dst-q2"
         },
         {
           "op": "snapshot",
@@ -1228,7 +1314,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q24_halt-q1"
         },
         {
           "op": "snapshot",
@@ -1241,7 +1328,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "HALTED"
+          "status": "HALTED",
+          "quote_id": "Q24_halt-q2"
         },
         {
           "op": "snapshot",
@@ -1254,7 +1342,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q24_halt-q3"
         },
         {
           "op": "snapshot",
@@ -1302,7 +1391,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q24_no_quote-q1"
         },
         {
           "op": "snapshot",
@@ -1343,7 +1433,8 @@
         {
           "op": "mark",
           "at_ns": 1736175600000000000,
-          "equity": "9800"
+          "equity": "9800",
+          "mark_ref": "E-Q25-daily"
         },
         {
           "op": "order",
@@ -1390,7 +1481,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q25_daily-q1"
         },
         {
           "op": "snapshot",
@@ -1421,7 +1513,8 @@
         {
           "op": "mark",
           "at_ns": 1736175600000000000,
-          "equity": "9800.01"
+          "equity": "9800.01",
+          "mark_ref": "E-Q25-daily_below"
         },
         {
           "op": "order",
@@ -1448,7 +1541,18 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q25_daily_below-q1"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175603000000000,
+          "id": "POST",
+          "qty": "1",
+          "instrument": "I2",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "direct"
         },
         {
           "op": "snapshot",
@@ -1479,7 +1583,8 @@
         {
           "op": "mark",
           "at_ns": 1736175600000000000,
-          "equity": "9200"
+          "equity": "9200",
+          "mark_ref": "E-Q25-drawdown"
         },
         {
           "op": "order",
@@ -1526,7 +1631,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q25_drawdown-q1"
         },
         {
           "op": "snapshot",
@@ -1557,7 +1663,8 @@
         {
           "op": "mark",
           "at_ns": 1736175600000000000,
-          "equity": "9200.01"
+          "equity": "9200.01",
+          "mark_ref": "E-Q25-drawdown_below"
         },
         {
           "op": "order",
@@ -1604,7 +1711,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q25_drawdown_below-q1"
         },
         {
           "op": "snapshot",
@@ -1635,7 +1743,8 @@
         {
           "op": "mark",
           "at_ns": 1736175600000000000,
-          "equity": null
+          "equity": null,
+          "mark_ref": "E-Q25-unknown"
         },
         {
           "op": "order",
@@ -1682,7 +1791,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q25_unknown-q1"
         },
         {
           "op": "snapshot",
@@ -1713,12 +1823,14 @@
         {
           "op": "mark",
           "at_ns": 1736175600000000000,
-          "equity": "9800"
+          "equity": "9800",
+          "mark_ref": "E-Q25-midnight_daily"
         },
         {
           "op": "session",
           "at_ns": 1736208000000000000,
-          "explicit": false
+          "explicit": false,
+          "session_id": "2025-01-07"
         },
         {
           "op": "order",
@@ -1758,12 +1870,14 @@
         {
           "op": "mark",
           "at_ns": 1736175600000000000,
-          "equity": "9800"
+          "equity": "9800",
+          "mark_ref": "E-Q25-new_session_daily"
         },
         {
           "op": "session",
           "at_ns": 1736208000000000000,
-          "explicit": true
+          "explicit": true,
+          "session_id": "2025-01-07"
         },
         {
           "op": "order",
@@ -1803,12 +1917,14 @@
         {
           "op": "mark",
           "at_ns": 1736175600000000000,
-          "equity": "9200"
+          "equity": "9200",
+          "mark_ref": "E-Q25-new_session_drawdown"
         },
         {
           "op": "session",
           "at_ns": 1736208000000000000,
-          "explicit": true
+          "explicit": true,
+          "session_id": "2025-01-07"
         },
         {
           "op": "order",
@@ -1839,7 +1955,8 @@
         }
       ],
       "checks": [
-        "cash"
+        "cash",
+        "halts"
       ],
       "mark": "100",
       "steps": [
@@ -1859,6 +1976,16 @@
           "id": "B",
           "qty": "-3",
           "instrument": "I1",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "ENTRY",
+          "qty": "1",
+          "instrument": "I2",
           "price": "100.07001",
           "fee": "1",
           "route": "direct"
@@ -1913,7 +2040,15 @@
         }
       ],
       "daily": true,
-      "scripted": true
+      "scripted": true,
+      "day_start": "5500",
+      "high_water": "5500",
+      "initial_halt": {
+        "kind": "seed_latch",
+        "reason": "DAILY_LOSS",
+        "at_ns": 1736175599000000000,
+        "ref": "E-Q26-initial-halt"
+      }
     },
     {
       "case_id": "Q26_stale",
@@ -2135,7 +2270,8 @@
           "bid": "100",
           "ask": "100.02",
           "size": "1000",
-          "status": "TRADABLE"
+          "status": "TRADABLE",
+          "quote_id": "Q33_fill-q1"
         },
         {
           "op": "snapshot",

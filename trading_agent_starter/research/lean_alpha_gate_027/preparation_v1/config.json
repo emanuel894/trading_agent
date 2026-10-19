@@ -1,7 +1,0 @@
-{
-  "trading_enabled": false,
-  "allow_paper_orders": false,
-  "alpaca_live_trade": false,
-  "network": "none",
-  "source_pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137"
-}

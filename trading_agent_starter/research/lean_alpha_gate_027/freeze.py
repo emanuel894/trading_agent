@@ -27,8 +27,9 @@ for name,extra,ss in [('compete',[],[snap(cash='1000',reserve='601')]),
  ('request',[step('cancel_request',id='A')],[snap(cash='1000',reserve='601')]),
  ('ack',[step('cancel_request',id='A'),step('cancel_ack',id='A'),step('cancel_ack',id='A')],[snap(cash='1000')]),
  ('reject',[step('reject',id='A'),step('reject',id='A')],[snap(cash='1000')])]:
- case('Q21_'+name,finish([order(qty='6',price='100'),order('B',qty='6',price='100',instrument='I2')]+extra),business([decision(qty='6'),decision('B',False,'CASH')],ss),cash='1000')
-case('Q21_unfilled_sale',finish([order('S','-5','I2','100'),order(qty='6',price='100'),order('B','6','I3','100')]),business([decision('S',qty='-5'),decision(qty='6'),decision('B',False,'CASH')],[snap(cash='1000',reserve='601')]),cash='1000',holdings=[dict(instrument='I2',qty='5',mark='100')])
+ case('Q21_'+name,finish([step('batch',intents=[order('B',qty='6',price='100',instrument='I2'),order(qty='6',price='100')])]+extra),business([decision(qty='6'),decision('B',False,'CASH')],ss),cash='1000')
+case('Q21_unfilled_sale',finish([order('S','-5','I2','100'),step('batch',intents=[order('B','6','I3','100'),order(qty='6',price='100')])]),business([decision('S',qty='-5'),decision(qty='6'),decision('B',False,'CASH')],[snap(cash='1000',reserve='601')]),cash='1000',holdings=[dict(instrument='I2',qty='5',mark='100')])
+case('Q21_exact_cash',finish([step('batch',intents=[order('B','1','I2','1'),order(qty='6',price='100')])]),business([decision(qty='6'),decision('B',False,'CASH')],[snap(cash='601',reserve='601')]),cash='601')
 for field,reason in [('price','PRICE_BOUND'),('fee','FEE_BOUND')]:
  o=order();o[field]=None
  case('Q21_unknown_'+field,finish([o]),business([decision(allow=False,reason=reason)],[snap()]))
@@ -94,7 +95,7 @@ for name in ['five','one','early','dst','halt','no_quote']:
 
 # Q25: risk observations update native holdings marks; fresh valid exits remain possible.
 for name,equity,daily,drawdown in [('daily','9800',True,False),('daily_below','9800.01',False,False),('drawdown','9200',True,True),('drawdown_below','9200.01',True,False),('unknown',None,False,False)]:
- ops=[step('mark',equity=equity),order('D',instrument='I2'),dict(order('T',instrument='I2'),route='target'),dict(order('H',instrument='I2'),route='setholdings'),step('snapshot',label='entry_checked'),step('due',at=2*10**9),step('quote',at=3*10**9,bid='100',ask='100.02',size='1000',status='TRADABLE')]
+ ops=[step('mark',equity=equity,mark_ref='E-Q25-'+name),order('D',instrument='I2'),dict(order('T',instrument='I2'),route='target'),dict(order('H',instrument='I2'),route='setholdings'),step('snapshot',label='entry_checked'),step('due',at=2*10**9),step('quote',at=3*10**9,bid='100',ask='100.02',size='1000',status='TRADABLE')]
  allowed=not daily and equity is not None
  reason='OK' if allowed else 'NAV_UNKNOWN' if equity is None else 'DAILY_HALT'
  # Positive SetHoldings/target control is separate: below-boundary entry uses direct route,
@@ -103,15 +104,17 @@ for name,equity,daily,drawdown in [('daily','9800',True,False),('daily_below','9
  ids=['D'] if allowed else ['D','T','H']
  ds=[decision(i,allowed,reason,'1',True if allowed else None,True if allowed else None) for i in ids]+[decision('EXIT',qty='-5',gross=True,symbol=True)]
  sn=[snap('entry_checked',cash='9000',reserve='101.07001' if allowed else '0',qty='5',daily=daily,drawdown=drawdown),snap(cash='9498.75',reserve='101.07001' if allowed else '0',qty='0',daily=daily,drawdown=drawdown)]
+ if name=='daily_below':
+  ops.append(dict(order('POST',instrument='I2'),at_ns=D+3*10**9));ds.append(decision('POST',False,'DAILY_HALT'));sn[-1]['daily']=True
  case('Q25_'+name,finish(ops),business(ds,sn,[dict(id='EXIT',quantity='-5',price='99.95',fee='1')]),cash='9000',holdings=[dict(instrument='I1',qty='5',mark='200')],checks=('cash','limits','halts'),exit_due_ns=D+2*10**9)
 for name,equity,explicit,day,dd in [('midnight_daily','9800',False,True,False),('new_session_daily','9800',True,False,False),('new_session_drawdown','9200',True,False,True)]:
- ops=[step('mark',equity=equity),step('session',at=ns('2025-01-07T00:00:00Z')-D,explicit=explicit),dict(order(instrument='I2'),at_ns=ns('2025-01-07T15:00:00Z'))]
+ ops=[step('mark',equity=equity,mark_ref='E-Q25-'+name),step('session',at=ns('2025-01-07T00:00:00Z')-D,explicit=explicit,session_id='2025-01-07'),dict(order(instrument='I2'),at_ns=ns('2025-01-07T15:00:00Z'))]
  reason='DAILY_HALT' if day else 'DRAWDOWN_HALT' if dd else 'OK'
  case('Q25_'+name,finish(ops),business([decision(allow=not(day or dd),reason=reason,gross=True if not(day or dd) else None,symbol=True if not(day or dd) else None)],[snap(cash='9000',reserve='101.07001' if not(day or dd) else '0',qty='5',daily=day,drawdown=dd)]),cash='9000',holdings=[dict(instrument='I1',qty='5',mark='200')],checks=('cash','limits','halts'))
 
 # Q26: scripted local executions enter native accounting, never sidecar holding edits.
-ops=[order('S','-4'),order('B','-3'),step('cancel_request',id='S'),step('snapshot',label='request'),step('execution',at=10**9,id='S',execution_id='e1',qty='-2',price='99.95',fee='1'),step('snapshot',at=10**9,label='partial'),step('execution',at=10**9,id='S',execution_id='e1',qty='-2',price='99.95',fee='1'),step('cancel_ack',at=2*10**9,id='S'),step('cancel_ack',at=2*10**9,id='S')]
-case('Q26_sequence',finish(ops),business([decision('S',qty='-4'),decision('B',False,'SELL_SHARES')],[snap('request',cash='5000',qty='5',sell='4',daily=True),snap('partial',cash='5198.9',qty='3',sell='2',daily=True),snap(cash='5198.9',qty='3',daily=True)],[dict(id='S',quantity='-2',price='99.95',fee='1')]),cash='5000',holdings=[dict(instrument='I1',qty='5',mark='100')],daily=True,scripted=True)
+ops=[order('S','-4'),order('B','-3'),order('ENTRY',instrument='I2'),step('cancel_request',id='S'),step('snapshot',label='request'),step('execution',at=10**9,id='S',execution_id='e1',qty='-2',price='99.95',fee='1'),step('snapshot',at=10**9,label='partial'),step('execution',at=10**9,id='S',execution_id='e1',qty='-2',price='99.95',fee='1'),step('cancel_ack',at=2*10**9,id='S'),step('cancel_ack',at=2*10**9,id='S')]
+case('Q26_sequence',finish(ops),business([decision('S',qty='-4'),decision('B',False,'SELL_SHARES'),decision('ENTRY',False,'DAILY_HALT')],[snap('request',cash='5000',qty='5',sell='4',daily=True),snap('partial',cash='5198.9',qty='3',sell='2',daily=True),snap(cash='5198.9',qty='3',daily=True)],[dict(id='S',quantity='-2',price='99.95',fee='1')]),cash='5000',holdings=[dict(instrument='I1',qty='5',mark='100')],daily=True,scripted=True,checks=('cash','halts'),day_start='5500',high_water='5500',initial_halt=dict(kind='seed_latch',reason='DAILY_LOSS',at_ns=D-10**9,ref='E-Q26-initial-halt'))
 for state in ['STALE','AMBIGUOUS']:
  case('Q26_'+state.lower(),finish([order('S','-4')]),business([decision('S',False,'DESTINATION_STATE')],[snap(cash='5000',qty='5')]),cash='5000',holdings=[dict(instrument='I1',qty='5',mark='100')],destination_state=state)
 
@@ -133,6 +136,32 @@ for mode in ['fill','no_fill','unresolved']:
  claim_path='../lean_terminal_017/evidence/Q01_explicit_unknown.attempt09.json'
  claim=dict(path=claim_path,sha256=hashlib.sha256((R/claim_path).read_bytes()).hexdigest()) if mode=='unresolved' else None
  case('Q33_'+mode,finish(ops),expected,cash='9000' if mode=='unresolved' else '10000',holdings=seed,arm_mode=mode,run_cost='0.25',reused_claim=claim)
+
+# Provenance fields are authored from fixture source instants, never engine dispatch.
+for c in CASES:
+ quotes=[s for s in c['steps'] if s['op']=='quote']
+ for i,s in enumerate(quotes,1):s['quote_id']=c['case_id']+'-q'+str(i)
+ bs=[a['accounting'] for a in ORACLES[c['case_id']]['arms'].values()] if c['fixture']=='Q33' else [ORACLES[c['case_id']]]
+ for b in bs:
+  if 'snapshots' not in b:continue
+  b['risk_records']=[]
+  for f in b['fills']:
+   if c['fixture']=='Q26':source_id='e1';at=D+10**9
+   else:
+    eligible=(b['due_ns']+10**9) if c['fixture']=='Q24' else D+(3 if c['fixture']=='Q25' else 1)*10**9
+    source=next(s for s in quotes if s['status']=='TRADABLE' and s['at_ns']>=eligible);source_id=source['quote_id'];at=source['at_ns']
+   f.update(source_id=source_id,source_ns=at,native_dispatch_ns=((at+99)//100)*100)
+  if c['fixture']=='Q26' and c.get('initial_halt'):b['risk_records']=[c['initial_halt']]
+  if c['fixture']=='Q25':
+   mark=c['steps'][0];equity=mark['equity'];ref=mark['mark_ref'];name=c['case_id'][4:]
+   rows=[dict(kind='mark',at_ns=D,ref=ref,equity=equity)]
+   initial_daily=name!='daily_below' and name!='unknown';initial_dd=name in ['drawdown','new_session_drawdown']
+   for triggered,reason in [(initial_daily,'DAILY_LOSS'),(initial_dd,'DRAWDOWN')]:
+    if triggered:rows.append(dict(kind='latch',reason=reason,at_ns=D,ref=ref,equity=equity,day_start='10000',high_water='10000'))
+   if name=='daily_below':rows.append(dict(kind='latch',reason='DAILY_LOSS',at_ns=D+3*10**9,ref='fill:EXIT',equity='9498.75',day_start='10000',high_water='10000'))
+   session=next((s for s in c['steps'] if s['op']=='session' and s['explicit']),None)
+   if session:rows.append(dict(kind='session_reset',at_ns=session['at_ns'],session_id=session['session_id'],day_start=equity,high_water='10000',previous_daily=True))
+   b['risk_records']=rows
 
 def main():
  dest=R/'fixtures'

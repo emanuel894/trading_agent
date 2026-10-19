@@ -27,7 +27,8 @@
         ],
         "fills": [],
         "ranked": [],
-        "due_ns": null
+        "due_ns": null,
+        "risk_records": []
       },
       "evaluation": {
         "opportunities": 1,
@@ -64,7 +65,8 @@
         ],
         "fills": [],
         "ranked": [],
-        "due_ns": null
+        "due_ns": null,
+        "risk_records": []
       },
       "evaluation": {
         "opportunities": 1,
@@ -101,7 +103,8 @@
         ],
         "fills": [],
         "ranked": [],
-        "due_ns": null
+        "due_ns": null,
+        "risk_records": []
       },
       "evaluation": {
         "opportunities": 1,
@@ -138,7 +141,8 @@
         ],
         "fills": [],
         "ranked": [],
-        "due_ns": null
+        "due_ns": null,
+        "risk_records": []
       },
       "evaluation": {
         "opportunities": 1,

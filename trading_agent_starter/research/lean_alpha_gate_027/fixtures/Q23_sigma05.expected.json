@@ -38,9 +38,13 @@
       "id": "A",
       "quantity": "4",
       "price": "100.07001",
-      "fee": "1"
+      "fee": "1",
+      "source_id": "Q23_sigma05-q1",
+      "source_ns": 1736175601000000000,
+      "native_dispatch_ns": 1736175601000000000
     }
   ],
   "ranked": [],
-  "due_ns": null
+  "due_ns": null,
+  "risk_records": []
 }

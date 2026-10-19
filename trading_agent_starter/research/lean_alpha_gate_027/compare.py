@@ -35,9 +35,19 @@ def assess(actual,expected,case):
 def reconcile(business,native,case):
  require(native['end_observed'] is True and native['status']=='Completed','Native completion missing')
  require(len(native['crosswalk'])==7 and len(set(native['crosswalk'].values()))==7,'Research identity collapsed')
+ expected_decisions=[d for d in business['decisions'] if d['reason']!='VOLATILITY']
+ require(native['gate_calls']==len(expected_decisions),'Actual native submission bypass/missing gate call')
+ require({e['intent'] for e in native['events']}=={d['id'] for d in expected_decisions},'Native orders differ from policy decisions')
+ for d in expected_decisions:
+  events=[e for e in native['events'] if e['intent']==d['id']]
+  require(any(e['status']=='Submitted' for e in events) if d['allowed'] else all(e['status']=='Invalid' for e in events),'Native admission result differs: '+d['id'])
  fills=[e for e in native['events'] if e['status'] in ['Filled','PartiallyFilled']]
- projected=[dict(id=e['intent'],quantity=e['quantity'],price=e['price'],fee=e['fee']) for e in fills]
- exact(projected,business['fills'])
+ projected=[dict(id=e['intent'],quantity=e['quantity'],price=e['price'],fee=e['fee'],native_dispatch_ns=e['native_dispatch_ns']) for e in fills]
+ exact(projected,[{k:f[k] for k in ['id','quantity','price','fee','native_dispatch_ns']} for f in business['fills']])
+ for f in business['fills']:
+  source=next((s for s in case['steps'] if s.get('quote_id',s.get('execution_id'))==f['source_id']),None)
+  require(source is not None and source['at_ns']==f['source_ns'],'Fill source provenance differs')
+  require((f['source_ns']+99)//100*100==f['native_dispatch_ns'],'Native dispatch replaced source precision')
  cash=D(case['cash'])-sum((D(e['quantity'])*D(e['price'])+D(e['fee']) for e in fills),D(0))
  require(cash==D(native['cash']),'Native cash does not reconcile')
  for instrument in native['quantities']:

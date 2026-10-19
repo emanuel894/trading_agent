@@ -66,16 +66,24 @@ public static class Program
    Config.Set("data-folder","/work/source/Data");Config.Set("live-mode","false");Config.Set("results-destination-folder","/tmp/results");Config.Set("composer-dll-directory","/packet/host/bin/Release/net10.0");
    if((string)test["fixture"]! =="Q33")
    {
-    var arms=new JObject();var native=new JObject();
+    var arms=new JObject();var native=new JObject();JObject outcome=null;
+    if((string)test["arm_mode"]! =="unresolved")
+    {
+     var reference=(JObject)test["reused_claim"]!;var path=Path.GetFullPath(Path.Combine("/prior",((string)reference["path"]!)[3..]));
+     if(!path.StartsWith("/prior/lean_terminal_017/evidence/",StringComparison.Ordinal))throw new InvalidOperationException("Claim path escape");
+     var claimBytes=File.ReadAllBytes(path);if(Hash(claimBytes)!=(string)reference["sha256"]!)throw new InvalidOperationException("Prior claim binding changed");
+     var prior=JObject.Parse(System.Text.Encoding.UTF8.GetString(claimBytes));outcome=(JObject)((JArray)prior["snapshots"]!).Last!;
+     if((bool)prior["execution_complete"]! !=true||(string)outcome["engine_quantity"]! !="10"||(string)outcome["cash"]! !="9000")throw new InvalidOperationException("Prior claim evidence invalid");
+    }
     foreach(var arm in new[]{"A","B","C","N"})
     {
      active=new ResearchAlgorithm(test);var result=Run(active,guard);
      arms[arm]=new JObject{["accounting"]=active.Business(),["diagnostics"]=new JObject{["equity"]=arm=="C"?"999999":"-23",["sharpe"]=arm=="N"?"999":"-999"}};native[arm]=result;
     }
-    o["business"]=new JObject{["arms"]=arms};o["native"]=native;
+    o["business"]=new JObject{["arms"]=arms,["reused_outcome"]=outcome};o["native"]=native;
    }
    else{active=new ResearchAlgorithm(test);o["native"]=Run(active,guard);o["business"]=active.Business();}
-   o["case_complete"]=true;o["execution_complete"]=true;
+   o["provider_calls"]=guard.Calls;o["case_complete"]=true;o["execution_complete"]=true;
   }
   catch(OfflineViolation e)
   {
@@ -88,6 +96,16 @@ public static class Program
  static JObject Run(ResearchAlgorithm a,OfflineData guard)
  {
   var hours=MarketHoursDatabase.FromDataFolder();var permissions=new DataPermissionManager();
+  if((string)a.Case["fixture"]! =="Q24")
+  {
+   // The matrix's synthetic sessions are authoritative, including Jan9. Never substitute today's provider calendar.
+   var schedule=(JObject)((JArray)a.Case["steps"]!).First(s=>(string)s["op"]! =="schedule");
+   var closes=((JArray)schedule["closes_ns"]!).Select(n=>Time((long)n).ConvertFromUtc(TimeZones.NewYork)).ToArray();
+   var dates=closes.Select(n=>n.Date).ToHashSet();var holidays=new List<DateTime>();for(var d=closes.First().Date;d<=closes.Last().Date;d=d.AddDays(1))if(!dates.Contains(d))holidays.Add(d);
+   var original=hours.GetEntry(Market.USA,a.Symbols["I1"].Value,SecurityType.Equity).ExchangeHours;
+   var projected=new SecurityExchangeHours(TimeZones.NewYork,holidays,original.MarketHours.ToDictionary(p=>p.Key,p=>p.Value),closes.Where(n=>n.TimeOfDay<TimeSpan.FromHours(16)).ToDictionary(n=>n.Date,n=>n.TimeOfDay),new Dictionary<DateTime,TimeSpan>());
+   foreach(var symbol in a.Symbols.Values)hours.SetEntry(Market.USA,symbol.Value,SecurityType.Equity,projected,TimeZones.NewYork);
+  }
   var service=new SecurityService(a.Portfolio.CashBook,hours,SymbolPropertiesDatabase.FromDataFolder(),a,RegisteredSecurityDataTypesProvider.Null,new SecurityCacheProvider(a.Portfolio),algorithm:a);a.Securities.SetSecurityService(service);
   var selection=new UniverseSelection(a,service,permissions,guard);var manager=new DataManager(new FixtureFeed(a),selection,a,a.TimeKeeper,hours,false,RegisteredSecurityDataTypesProvider.Null,permissions);
   a.SubscriptionManager.SetDataManager(manager);a.Initialize();a.OnEndOfTimeStep();a.SetFinishedWarmingUp();
@@ -110,7 +128,7 @@ public static class Program
    }
    engine.Run(job,a,new FixtureStream(a,manager,selection),transaction,result,realtime,new LocalLeanManager(),new CancellationTokenSource(),new PerformanceTrackingTool());
    if(a.RunTimeError!=null)throw new InvalidOperationException("Native algorithm error",a.RunTimeError);if(!a.EndObserved)throw new InvalidOperationException("Native end missing");guard.Check();
-   var orders=new JArray(transaction.OrderEvents.Select(e=>new JObject{["order_id"]=e.OrderId,["intent"]=a.IntentFor(e.OrderId),["instrument"]=a.Instrument(e.Symbol),["sid"]=e.Symbol.ID.ToString(),["status"]=e.Status.ToString(),["quantity"]=Num(e.FillQuantity),["price"]=Num(e.FillPrice),["fee"]=Num(e.OrderFee.Value.Amount)}));
+   var orders=new JArray(transaction.OrderEvents.Select(e=>new JObject{["order_id"]=e.OrderId,["intent"]=a.IntentFor(e.OrderId),["instrument"]=a.Instrument(e.Symbol),["sid"]=e.Symbol.ID.ToString(),["status"]=e.Status.ToString(),["quantity"]=Num(e.FillQuantity),["price"]=Num(e.FillPrice),["fee"]=Num(e.OrderFee.Value.Amount),["native_dispatch_ns"]=(e.UtcTime.Ticks-DateTime.UnixEpoch.Ticks)*100}));
    return new JObject{["end_observed"]=a.EndObserved,["status"]=a.Status.ToString(),["cash"]=Num(a.Portfolio.CashBook["USD"].Amount),["quantities"]=new JObject(a.Symbols.Select(p=>new JProperty(p.Key,Num(a.Securities[p.Value].Holdings.Quantity)))),["crosswalk"]=new JObject(a.Symbols.Select(p=>new JProperty(p.Key,p.Value.ID.ToString()))),["events"]=orders,["gate_calls"]=a.GateCalls,["open_orders"]=a.Transactions.GetOpenOrders().Count};
   }
   finally{transaction.Exit();realtime.Exit();manager.RemoveAllSubscriptions();}
@@ -140,11 +158,19 @@ public sealed class FixtureFeed:IDataFeed
  {
   var points=new List<SubscriptionData>();
   if(request.IsUniverseSubscription){var start=a.UtcTime;points.Add(new SubscriptionData(new BaseDataCollection(start.ConvertFromUtc(TimeZones.NewYork),request.Configuration.Symbol,Array.Empty<BaseData>()),start));}
-  else if(request.Configuration.Symbol==a.Symbols["I1"])foreach(var ns in a.Frames){var utc=Program.Time(ns);var price=Program.Dec(a.Case["mark"]!);points.Add(new SubscriptionData(new TradeBar(utc.ConvertFromUtc(TimeZones.NewYork),request.Configuration.Symbol,price,price,price,price,0m,TimeSpan.Zero),utc));}
+  else if(request.Configuration.Symbol==a.Symbols["I1"])foreach(var ns in a.Frames)
+  {
+   var utc=Program.Time(ns);BaseData data;
+   if(ns==a.Frames[0]){var price=Program.Dec(a.Case["mark"]!);data=new TradeBar(utc.ConvertFromUtc(TimeZones.NewYork),request.Configuration.Symbol,price,price,price,price,0m,TimeSpan.Zero);}
+   else data=new ClockPulse{Symbol=request.Configuration.Symbol,Time=utc.ConvertFromUtc(TimeZones.NewYork),Value=0};
+   points.Add(new SubscriptionData(data,utc));
+  }
   return new Subscription(request,points.GetEnumerator(),new TimeZoneOffsetProvider(request.Configuration.ExchangeTimeZone,request.StartTimeUtc,request.EndTimeUtc));
  }
  public void RemoveSubscription(Subscription s){}public void Exit(){}
 }
+// Zero-valued Base data paces clocks without overwriting evidenced security marks.
+public sealed class ClockPulse:BaseData{}
 public sealed class FrozenClock:ITimeProvider{public DateTime Time;public DateTime GetUtcNow()=>Time;}
 public sealed class FixtureStream:ISynchronizer
 {
