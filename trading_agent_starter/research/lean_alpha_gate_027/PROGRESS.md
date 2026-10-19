@@ -19,3 +19,5 @@ Scale: immutable evidence reuse and thin shared admission boundary reduce repeat
 Next action: complete pinned build restoration and source coverage, freeze new matrix variants/oracles. Do not run native cases before approval.
 Stop state: IN_PROGRESS (not a gate claim). Q27 crash recovery and Q28–Q31 unqualified.
 
+
+Milestone2: source/reuse map and51 pre-execution cases frozen; 913 prior packet files preserved. Source build PASS, new host preparation compile fixes in progress; no native fixture execution. Seven adversarial comparator/evaluator checks observed RED then GREEN. Source reviewer confirmed public seams and Q22 all-other-rules interpretation; oracle/build review next. All prior native runs remain0.

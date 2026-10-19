@@ -1,0 +1,54 @@
+{
+  "decisions": [
+    {
+      "id": "D",
+      "allowed": true,
+      "reason": "OK",
+      "quantity": "1",
+      "gross_ok": true,
+      "symbol_ok": true
+    },
+    {
+      "id": "EXIT",
+      "allowed": true,
+      "reason": "OK",
+      "quantity": "-5",
+      "gross_ok": null,
+      "symbol_ok": null
+    }
+  ],
+  "snapshots": [
+    {
+      "label": "entry_checked",
+      "cash": "9000",
+      "reserved_cash": "101.07001",
+      "free_cash": "8898.92999",
+      "quantity": "5",
+      "reserved_sell": "0",
+      "daily": false,
+      "drawdown": false,
+      "pending_exit": false
+    },
+    {
+      "label": "final",
+      "cash": "9498.75",
+      "reserved_cash": "101.07001",
+      "free_cash": "9397.67999",
+      "quantity": "0",
+      "reserved_sell": "0",
+      "daily": false,
+      "drawdown": false,
+      "pending_exit": false
+    }
+  ],
+  "fills": [
+    {
+      "id": "EXIT",
+      "quantity": "-5",
+      "price": "99.95",
+      "fee": "1"
+    }
+  ],
+  "ranked": [],
+  "due_ns": null
+}

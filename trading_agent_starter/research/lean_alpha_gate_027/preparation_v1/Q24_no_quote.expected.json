@@ -1,0 +1,50 @@
+{
+  "decisions": [
+    {
+      "id": "EXIT",
+      "allowed": true,
+      "reason": "OK",
+      "quantity": "-5",
+      "gross_ok": null,
+      "symbol_ok": null
+    }
+  ],
+  "snapshots": [
+    {
+      "label": "before_eligible",
+      "cash": "9500",
+      "reserved_cash": "0",
+      "free_cash": "9500",
+      "quantity": "5",
+      "reserved_sell": "5",
+      "daily": false,
+      "drawdown": false,
+      "pending_exit": true
+    },
+    {
+      "label": "waiting",
+      "cash": "9500",
+      "reserved_cash": "0",
+      "free_cash": "9500",
+      "quantity": "5",
+      "reserved_sell": "5",
+      "daily": false,
+      "drawdown": false,
+      "pending_exit": true
+    },
+    {
+      "label": "final",
+      "cash": "9500",
+      "reserved_cash": "0",
+      "free_cash": "9500",
+      "quantity": "5",
+      "reserved_sell": "5",
+      "daily": false,
+      "drawdown": false,
+      "pending_exit": true
+    }
+  ],
+  "fills": [],
+  "ranked": [],
+  "due_ns": 1736542500000000000
+}

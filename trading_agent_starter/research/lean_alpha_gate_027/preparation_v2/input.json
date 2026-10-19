@@ -1,0 +1,2217 @@
+{
+  "source_pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
+  "seed": 894,
+  "capture_mode": "fixture",
+  "cases": [
+    {
+      "case_id": "Q21_compete",
+      "fixture": "Q21",
+      "cash": "1000",
+      "holdings": [],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "6",
+          "instrument": "I1",
+          "price": "100",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "B",
+          "qty": "6",
+          "instrument": "I2",
+          "price": "100",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q21_request",
+      "fixture": "Q21",
+      "cash": "1000",
+      "holdings": [],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "6",
+          "instrument": "I1",
+          "price": "100",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "B",
+          "qty": "6",
+          "instrument": "I2",
+          "price": "100",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "cancel_request",
+          "at_ns": 1736175600000000000,
+          "id": "A"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q21_ack",
+      "fixture": "Q21",
+      "cash": "1000",
+      "holdings": [],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "6",
+          "instrument": "I1",
+          "price": "100",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "B",
+          "qty": "6",
+          "instrument": "I2",
+          "price": "100",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "cancel_request",
+          "at_ns": 1736175600000000000,
+          "id": "A"
+        },
+        {
+          "op": "cancel_ack",
+          "at_ns": 1736175600000000000,
+          "id": "A"
+        },
+        {
+          "op": "cancel_ack",
+          "at_ns": 1736175600000000000,
+          "id": "A"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q21_reject",
+      "fixture": "Q21",
+      "cash": "1000",
+      "holdings": [],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "6",
+          "instrument": "I1",
+          "price": "100",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "B",
+          "qty": "6",
+          "instrument": "I2",
+          "price": "100",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "reject",
+          "at_ns": 1736175600000000000,
+          "id": "A"
+        },
+        {
+          "op": "reject",
+          "at_ns": 1736175600000000000,
+          "id": "A"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q21_unfilled_sale",
+      "fixture": "Q21",
+      "cash": "1000",
+      "holdings": [
+        {
+          "instrument": "I2",
+          "qty": "5",
+          "mark": "100"
+        }
+      ],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "S",
+          "qty": "-5",
+          "instrument": "I2",
+          "price": "100",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "6",
+          "instrument": "I1",
+          "price": "100",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "B",
+          "qty": "6",
+          "instrument": "I3",
+          "price": "100",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q21_unknown_price",
+      "fixture": "Q21",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "1",
+          "instrument": "I1",
+          "price": null,
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q21_unknown_fee",
+      "fixture": "Q21",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "1",
+          "instrument": "I1",
+          "price": "100.07001",
+          "fee": null,
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q22_gross_over",
+      "fixture": "Q22",
+      "cash": "4001",
+      "holdings": [
+        {
+          "instrument": "I2",
+          "qty": "3000",
+          "mark": "1"
+        },
+        {
+          "instrument": "I4",
+          "qty": "2999",
+          "mark": "1"
+        }
+      ],
+      "checks": [
+        "cash",
+        "limits"
+      ],
+      "mark": "1",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "2",
+          "instrument": "I1",
+          "price": "1",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q22_gross_exact",
+      "fixture": "Q22",
+      "cash": "4002",
+      "holdings": [
+        {
+          "instrument": "I2",
+          "qty": "3000",
+          "mark": "1"
+        },
+        {
+          "instrument": "I4",
+          "qty": "2998",
+          "mark": "1"
+        }
+      ],
+      "checks": [
+        "cash",
+        "limits"
+      ],
+      "mark": "1",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "2",
+          "instrument": "I1",
+          "price": "1",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q22_symbol_over",
+      "fixture": "Q22",
+      "cash": "9001",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "999",
+          "mark": "1"
+        }
+      ],
+      "checks": [
+        "cash",
+        "limits"
+      ],
+      "mark": "1",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "2",
+          "instrument": "I1",
+          "price": "1",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q22_symbol_exact_flat",
+      "fixture": "Q22",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash",
+        "limits"
+      ],
+      "mark": "1",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "1000",
+          "instrument": "I1",
+          "price": "1",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q22_symbol_exact_overlap",
+      "fixture": "Q22",
+      "cash": "9002",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "998",
+          "mark": "1"
+        }
+      ],
+      "checks": [
+        "cash",
+        "limits"
+      ],
+      "mark": "1",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "2",
+          "instrument": "I1",
+          "price": "1",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q22_sixth",
+      "fixture": "Q22",
+      "cash": "9950",
+      "holdings": [
+        {
+          "instrument": "I2",
+          "qty": "10",
+          "mark": "1"
+        },
+        {
+          "instrument": "I4",
+          "qty": "10",
+          "mark": "1"
+        },
+        {
+          "instrument": "I5",
+          "qty": "10",
+          "mark": "1"
+        },
+        {
+          "instrument": "I6",
+          "qty": "10",
+          "mark": "1"
+        },
+        {
+          "instrument": "I7",
+          "qty": "10",
+          "mark": "1"
+        }
+      ],
+      "checks": [
+        "cash",
+        "limits"
+      ],
+      "mark": "1",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "2",
+          "instrument": "I1",
+          "price": "1",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q22_issuer_other_class",
+      "fixture": "Q22",
+      "cash": "9990",
+      "holdings": [
+        {
+          "instrument": "I3",
+          "qty": "10",
+          "mark": "1"
+        }
+      ],
+      "checks": [
+        "cash",
+        "limits"
+      ],
+      "mark": "1",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "2",
+          "instrument": "I1",
+          "price": "1",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q22_pending_buy",
+      "fixture": "Q22",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash",
+        "limits"
+      ],
+      "mark": "1",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "P",
+          "qty": "2",
+          "instrument": "I3",
+          "price": "1",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "2",
+          "instrument": "I1",
+          "price": "1",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q22_pending_sell",
+      "fixture": "Q22",
+      "cash": "4001",
+      "holdings": [
+        {
+          "instrument": "I2",
+          "qty": "3000",
+          "mark": "1"
+        },
+        {
+          "instrument": "I4",
+          "qty": "2999",
+          "mark": "1"
+        }
+      ],
+      "checks": [
+        "cash",
+        "limits"
+      ],
+      "mark": "1",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "S",
+          "qty": "-500",
+          "instrument": "I2",
+          "price": "1",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "2",
+          "instrument": "I1",
+          "price": "1",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q22_short",
+      "fixture": "Q22",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash",
+        "limits"
+      ],
+      "mark": "1",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "-1",
+          "instrument": "I1",
+          "price": "1",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q22_pending_gross",
+      "fixture": "Q22",
+      "cash": "4003",
+      "holdings": [
+        {
+          "instrument": "I2",
+          "qty": "3000",
+          "mark": "1"
+        },
+        {
+          "instrument": "I4",
+          "qty": "2997",
+          "mark": "1"
+        }
+      ],
+      "checks": [
+        "cash",
+        "limits"
+      ],
+      "mark": "1",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "P",
+          "qty": "2",
+          "instrument": "I5",
+          "price": "1",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "2",
+          "instrument": "I1",
+          "price": "1",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q23_sigma05",
+      "fixture": "Q23",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash",
+        "limits",
+        "halts"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "sized_order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "sigma": "0.05",
+          "price": "100.07001",
+          "fee": "1",
+          "instrument": "I1"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000000,
+          "label": "frozen"
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736175601000000000,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175601000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q23_sigma01",
+      "fixture": "Q23",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash",
+        "limits",
+        "halts"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "sized_order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "sigma": "0.01",
+          "price": "100.07001",
+          "fee": "1",
+          "instrument": "I1"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000000,
+          "label": "frozen"
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736175601000000000,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175601000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q23_above_ceiling",
+      "fixture": "Q23",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash",
+        "limits",
+        "halts"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "sized_order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "sigma": "0.05",
+          "price": "100.07001",
+          "fee": "1",
+          "instrument": "I1"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000000,
+          "label": "frozen"
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736175601000000000,
+          "bid": "100",
+          "ask": "100.03",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175601000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q23_zero",
+      "fixture": "Q23",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash",
+        "limits",
+        "halts"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "sized_order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "sigma": "0",
+          "price": "100.07001",
+          "fee": "1",
+          "instrument": "I1"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000000,
+          "label": "frozen"
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736175601000000000,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175601000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q23_null",
+      "fixture": "Q23",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash",
+        "limits",
+        "halts"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "sized_order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "sigma": null,
+          "price": "100.07001",
+          "fee": "1",
+          "instrument": "I1"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000000,
+          "label": "frozen"
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736175601000000000,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175601000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q23_tie",
+      "fixture": "Q23",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "rank",
+          "at_ns": 1736175600000000000,
+          "candidates": [
+            {
+              "instrument": "I2",
+              "score": "2"
+            },
+            {
+              "instrument": "I1",
+              "score": "2"
+            }
+          ]
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q24_five",
+      "fixture": "Q24",
+      "cash": "9500",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "5",
+          "mark": "100"
+        }
+      ],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "schedule",
+          "at_ns": 1736175600000000000,
+          "horizon": 5,
+          "closes_ns": [
+            1736197200000000000,
+            1736283600000000000,
+            1736370000000000000,
+            1736456400000000000,
+            1736542800000000000
+          ]
+        },
+        {
+          "op": "due",
+          "at_ns": 1736542500000000000
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736542500999999999,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736542500999999999,
+          "label": "before_eligible"
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736542501000000000,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736542501000000100,
+          "label": "final"
+        }
+      ],
+      "start_ns": 1736175600000000000
+    },
+    {
+      "case_id": "Q24_one",
+      "fixture": "Q24",
+      "cash": "9500",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "5",
+          "mark": "100"
+        }
+      ],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "schedule",
+          "at_ns": 1736175600000000000,
+          "horizon": 1,
+          "closes_ns": [
+            1736197200000000000
+          ]
+        },
+        {
+          "op": "due",
+          "at_ns": 1736196900000000000
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736196900999999999,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736196900999999999,
+          "label": "before_eligible"
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736196901000000000,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736196901000000100,
+          "label": "final"
+        }
+      ],
+      "start_ns": 1736175600000000000
+    },
+    {
+      "case_id": "Q24_early",
+      "fixture": "Q24",
+      "cash": "9500",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "5",
+          "mark": "100"
+        }
+      ],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "schedule",
+          "at_ns": 1763737200000000000,
+          "horizon": 5,
+          "closes_ns": [
+            1763758800000000000,
+            1764018000000000000,
+            1764104400000000000,
+            1764190800000000000,
+            1764352800000000000
+          ]
+        },
+        {
+          "op": "due",
+          "at_ns": 1764352500000000000
+        },
+        {
+          "op": "quote",
+          "at_ns": 1764352500999999999,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1764352500999999999,
+          "label": "before_eligible"
+        },
+        {
+          "op": "quote",
+          "at_ns": 1764352501000000000,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1764352501000000100,
+          "label": "final"
+        }
+      ],
+      "start_ns": 1763737200000000000
+    },
+    {
+      "case_id": "Q24_dst",
+      "fixture": "Q24",
+      "cash": "9500",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "5",
+          "mark": "100"
+        }
+      ],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "schedule",
+          "at_ns": 1741273200000000000,
+          "horizon": 5,
+          "closes_ns": [
+            1741294800000000000,
+            1741381200000000000,
+            1741636800000000000,
+            1741723200000000000,
+            1741809600000000000
+          ]
+        },
+        {
+          "op": "due",
+          "at_ns": 1741809300000000000
+        },
+        {
+          "op": "quote",
+          "at_ns": 1741809300999999999,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1741809300999999999,
+          "label": "before_eligible"
+        },
+        {
+          "op": "quote",
+          "at_ns": 1741809301000000000,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1741809301000000100,
+          "label": "final"
+        }
+      ],
+      "start_ns": 1741273200000000000
+    },
+    {
+      "case_id": "Q24_halt",
+      "fixture": "Q24",
+      "cash": "9500",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "5",
+          "mark": "100"
+        }
+      ],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "schedule",
+          "at_ns": 1736175600000000000,
+          "horizon": 5,
+          "closes_ns": [
+            1736197200000000000,
+            1736283600000000000,
+            1736370000000000000,
+            1736456400000000000,
+            1736542800000000000
+          ]
+        },
+        {
+          "op": "due",
+          "at_ns": 1736542500000000000
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736542500999999999,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736542500999999999,
+          "label": "before_eligible"
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736542501000000000,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "HALTED"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736542501000000000,
+          "label": "waiting"
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736542502000000000,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736542502000000100,
+          "label": "final"
+        }
+      ],
+      "start_ns": 1736175600000000000
+    },
+    {
+      "case_id": "Q24_no_quote",
+      "fixture": "Q24",
+      "cash": "9500",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "5",
+          "mark": "100"
+        }
+      ],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "schedule",
+          "at_ns": 1736175600000000000,
+          "horizon": 5,
+          "closes_ns": [
+            1736197200000000000,
+            1736283600000000000,
+            1736370000000000000,
+            1736456400000000000,
+            1736542800000000000
+          ]
+        },
+        {
+          "op": "due",
+          "at_ns": 1736542500000000000
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736542500999999999,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736542500999999999,
+          "label": "before_eligible"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736542501000000000,
+          "label": "waiting"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736542501000000100,
+          "label": "final"
+        }
+      ],
+      "start_ns": 1736175600000000000
+    },
+    {
+      "case_id": "Q25_daily",
+      "fixture": "Q25",
+      "cash": "9000",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "5",
+          "mark": "200"
+        }
+      ],
+      "checks": [
+        "cash",
+        "limits",
+        "halts"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "mark",
+          "at_ns": 1736175600000000000,
+          "equity": "9800"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "D",
+          "qty": "1",
+          "instrument": "I2",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "T",
+          "qty": "1",
+          "instrument": "I2",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "target"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "H",
+          "qty": "1",
+          "instrument": "I2",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "setholdings"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000000,
+          "label": "entry_checked"
+        },
+        {
+          "op": "due",
+          "at_ns": 1736175602000000000
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736175603000000000,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175603000000100,
+          "label": "final"
+        }
+      ],
+      "exit_due_ns": 1736175602000000000
+    },
+    {
+      "case_id": "Q25_daily_below",
+      "fixture": "Q25",
+      "cash": "9000",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "5",
+          "mark": "200"
+        }
+      ],
+      "checks": [
+        "cash",
+        "limits",
+        "halts"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "mark",
+          "at_ns": 1736175600000000000,
+          "equity": "9800.01"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "D",
+          "qty": "1",
+          "instrument": "I2",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000000,
+          "label": "entry_checked"
+        },
+        {
+          "op": "due",
+          "at_ns": 1736175602000000000
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736175603000000000,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175603000000100,
+          "label": "final"
+        }
+      ],
+      "exit_due_ns": 1736175602000000000
+    },
+    {
+      "case_id": "Q25_drawdown",
+      "fixture": "Q25",
+      "cash": "9000",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "5",
+          "mark": "200"
+        }
+      ],
+      "checks": [
+        "cash",
+        "limits",
+        "halts"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "mark",
+          "at_ns": 1736175600000000000,
+          "equity": "9200"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "D",
+          "qty": "1",
+          "instrument": "I2",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "T",
+          "qty": "1",
+          "instrument": "I2",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "target"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "H",
+          "qty": "1",
+          "instrument": "I2",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "setholdings"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000000,
+          "label": "entry_checked"
+        },
+        {
+          "op": "due",
+          "at_ns": 1736175602000000000
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736175603000000000,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175603000000100,
+          "label": "final"
+        }
+      ],
+      "exit_due_ns": 1736175602000000000
+    },
+    {
+      "case_id": "Q25_drawdown_below",
+      "fixture": "Q25",
+      "cash": "9000",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "5",
+          "mark": "200"
+        }
+      ],
+      "checks": [
+        "cash",
+        "limits",
+        "halts"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "mark",
+          "at_ns": 1736175600000000000,
+          "equity": "9200.01"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "D",
+          "qty": "1",
+          "instrument": "I2",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "T",
+          "qty": "1",
+          "instrument": "I2",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "target"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "H",
+          "qty": "1",
+          "instrument": "I2",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "setholdings"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000000,
+          "label": "entry_checked"
+        },
+        {
+          "op": "due",
+          "at_ns": 1736175602000000000
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736175603000000000,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175603000000100,
+          "label": "final"
+        }
+      ],
+      "exit_due_ns": 1736175602000000000
+    },
+    {
+      "case_id": "Q25_unknown",
+      "fixture": "Q25",
+      "cash": "9000",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "5",
+          "mark": "200"
+        }
+      ],
+      "checks": [
+        "cash",
+        "limits",
+        "halts"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "mark",
+          "at_ns": 1736175600000000000,
+          "equity": null
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "D",
+          "qty": "1",
+          "instrument": "I2",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "T",
+          "qty": "1",
+          "instrument": "I2",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "target"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "H",
+          "qty": "1",
+          "instrument": "I2",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "setholdings"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000000,
+          "label": "entry_checked"
+        },
+        {
+          "op": "due",
+          "at_ns": 1736175602000000000
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736175603000000000,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175603000000100,
+          "label": "final"
+        }
+      ],
+      "exit_due_ns": 1736175602000000000
+    },
+    {
+      "case_id": "Q25_midnight_daily",
+      "fixture": "Q25",
+      "cash": "9000",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "5",
+          "mark": "200"
+        }
+      ],
+      "checks": [
+        "cash",
+        "halts"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "mark",
+          "at_ns": 1736175600000000000,
+          "equity": "9800"
+        },
+        {
+          "op": "session",
+          "at_ns": 1736208000000000000,
+          "explicit": false
+        },
+        {
+          "op": "order",
+          "at_ns": 1736262000000000000,
+          "id": "A",
+          "qty": "1",
+          "instrument": "I2",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736262000000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q25_new_session_daily",
+      "fixture": "Q25",
+      "cash": "9000",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "5",
+          "mark": "200"
+        }
+      ],
+      "checks": [
+        "cash",
+        "halts"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "mark",
+          "at_ns": 1736175600000000000,
+          "equity": "9800"
+        },
+        {
+          "op": "session",
+          "at_ns": 1736208000000000000,
+          "explicit": true
+        },
+        {
+          "op": "order",
+          "at_ns": 1736262000000000000,
+          "id": "A",
+          "qty": "1",
+          "instrument": "I2",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736262000000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q25_new_session_drawdown",
+      "fixture": "Q25",
+      "cash": "9000",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "5",
+          "mark": "200"
+        }
+      ],
+      "checks": [
+        "cash",
+        "halts"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "mark",
+          "at_ns": 1736175600000000000,
+          "equity": "9200"
+        },
+        {
+          "op": "session",
+          "at_ns": 1736208000000000000,
+          "explicit": true
+        },
+        {
+          "op": "order",
+          "at_ns": 1736262000000000000,
+          "id": "A",
+          "qty": "1",
+          "instrument": "I2",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736262000000000100,
+          "label": "final"
+        }
+      ]
+    },
+    {
+      "case_id": "Q26_sequence",
+      "fixture": "Q26",
+      "cash": "5000",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "5",
+          "mark": "100"
+        }
+      ],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "S",
+          "qty": "-4",
+          "instrument": "I1",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "B",
+          "qty": "-3",
+          "instrument": "I1",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "cancel_request",
+          "at_ns": 1736175600000000000,
+          "id": "S"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000000,
+          "label": "request"
+        },
+        {
+          "op": "execution",
+          "at_ns": 1736175601000000000,
+          "id": "S",
+          "execution_id": "e1",
+          "qty": "-2",
+          "price": "99.95",
+          "fee": "1"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175601000000000,
+          "label": "partial"
+        },
+        {
+          "op": "execution",
+          "at_ns": 1736175601000000000,
+          "id": "S",
+          "execution_id": "e1",
+          "qty": "-2",
+          "price": "99.95",
+          "fee": "1"
+        },
+        {
+          "op": "cancel_ack",
+          "at_ns": 1736175602000000000,
+          "id": "S"
+        },
+        {
+          "op": "cancel_ack",
+          "at_ns": 1736175602000000000,
+          "id": "S"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175602000000100,
+          "label": "final"
+        }
+      ],
+      "daily": true,
+      "scripted": true
+    },
+    {
+      "case_id": "Q26_stale",
+      "fixture": "Q26",
+      "cash": "5000",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "5",
+          "mark": "100"
+        }
+      ],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "S",
+          "qty": "-4",
+          "instrument": "I1",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ],
+      "destination_state": "STALE"
+    },
+    {
+      "case_id": "Q26_ambiguous",
+      "fixture": "Q26",
+      "cash": "5000",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "5",
+          "mark": "100"
+        }
+      ],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "S",
+          "qty": "-4",
+          "instrument": "I1",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ],
+      "destination_state": "AMBIGUOUS"
+    },
+    {
+      "case_id": "Q32_complete",
+      "fixture": "Q32",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ],
+      "ingress": "complete"
+    },
+    {
+      "case_id": "Q32_empty",
+      "fixture": "Q32",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ],
+      "ingress": "empty"
+    },
+    {
+      "case_id": "Q32_missing",
+      "fixture": "Q32",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ],
+      "ingress": "missing"
+    },
+    {
+      "case_id": "Q32_tampered",
+      "fixture": "Q32",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ],
+      "ingress": "tampered"
+    },
+    {
+      "case_id": "Q32_config_tampered",
+      "fixture": "Q32",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ],
+      "ingress": "config_tampered"
+    },
+    {
+      "case_id": "Q32_download",
+      "fixture": "Q32",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ],
+      "ingress": "download"
+    },
+    {
+      "case_id": "Q32_history",
+      "fixture": "Q32",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ],
+      "ingress": "history"
+    },
+    {
+      "case_id": "Q33_fill",
+      "fixture": "Q33",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "5",
+          "instrument": "I1",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "quote",
+          "at_ns": 1736175601000000000,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175601000000100,
+          "label": "final"
+        }
+      ],
+      "arm_mode": "fill",
+      "run_cost": "0.25",
+      "reused_claim": null
+    },
+    {
+      "case_id": "Q33_no_fill",
+      "fixture": "Q33",
+      "cash": "10000",
+      "holdings": [],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "order",
+          "at_ns": 1736175600000000000,
+          "id": "A",
+          "qty": "5",
+          "instrument": "I1",
+          "price": "100.07001",
+          "fee": "1",
+          "route": "direct"
+        },
+        {
+          "op": "cancel_request",
+          "at_ns": 1736175605000000000,
+          "id": "A"
+        },
+        {
+          "op": "cancel_ack",
+          "at_ns": 1736175605000000000,
+          "id": "A"
+        },
+        {
+          "op": "snapshot",
+          "at_ns": 1736175605000000100,
+          "label": "final"
+        }
+      ],
+      "arm_mode": "no_fill",
+      "run_cost": "0.25",
+      "reused_claim": null
+    },
+    {
+      "case_id": "Q33_unresolved",
+      "fixture": "Q33",
+      "cash": "9000",
+      "holdings": [
+        {
+          "instrument": "I1",
+          "qty": "10",
+          "mark": "100"
+        }
+      ],
+      "checks": [
+        "cash"
+      ],
+      "mark": "100",
+      "steps": [
+        {
+          "op": "snapshot",
+          "at_ns": 1736175600000000100,
+          "label": "final"
+        }
+      ],
+      "arm_mode": "unresolved",
+      "run_cost": "0.25",
+      "reused_claim": {
+        "path": "../lean_terminal_017/evidence/Q01_explicit_unknown.attempt09.json",
+        "sha256": "99d6e84c4439cbe42008122d3ce5879432c535bdf9fb1dc8f6832f2416a17217"
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "decisions": [
+    {
+      "id": "D",
+      "allowed": false,
+      "reason": "DAILY_HALT",
+      "quantity": null,
+      "gross_ok": null,
+      "symbol_ok": null
+    },
+    {
+      "id": "T",
+      "allowed": false,
+      "reason": "DAILY_HALT",
+      "quantity": null,
+      "gross_ok": null,
+      "symbol_ok": null
+    },
+    {
+      "id": "H",
+      "allowed": false,
+      "reason": "DAILY_HALT",
+      "quantity": null,
+      "gross_ok": null,
+      "symbol_ok": null
+    },
+    {
+      "id": "EXIT",
+      "allowed": true,
+      "reason": "OK",
+      "quantity": "-5",
+      "gross_ok": null,
+      "symbol_ok": null
+    }
+  ],
+  "snapshots": [
+    {
+      "label": "entry_checked",
+      "cash": "9000",
+      "reserved_cash": "0",
+      "free_cash": "9000",
+      "quantity": "5",
+      "reserved_sell": "0",
+      "daily": true,
+      "drawdown": true,
+      "pending_exit": false
+    },
+    {
+      "label": "final",
+      "cash": "9498.75",
+      "reserved_cash": "0",
+      "free_cash": "9498.75",
+      "quantity": "0",
+      "reserved_sell": "0",
+      "daily": true,
+      "drawdown": true,
+      "pending_exit": false
+    }
+  ],
+  "fills": [
+    {
+      "id": "EXIT",
+      "quantity": "-5",
+      "price": "99.95",
+      "fee": "1"
+    }
+  ],
+  "ranked": [],
+  "due_ns": null
+}

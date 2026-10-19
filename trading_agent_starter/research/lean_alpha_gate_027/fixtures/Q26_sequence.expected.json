@@ -1,0 +1,65 @@
+{
+  "decisions": [
+    {
+      "id": "S",
+      "allowed": true,
+      "reason": "OK",
+      "quantity": "-4",
+      "gross_ok": null,
+      "symbol_ok": null
+    },
+    {
+      "id": "B",
+      "allowed": false,
+      "reason": "SELL_SHARES",
+      "quantity": null,
+      "gross_ok": null,
+      "symbol_ok": null
+    }
+  ],
+  "snapshots": [
+    {
+      "label": "request",
+      "cash": "5000",
+      "reserved_cash": "0",
+      "free_cash": "5000",
+      "quantity": "5",
+      "reserved_sell": "4",
+      "daily": true,
+      "drawdown": false,
+      "pending_exit": false
+    },
+    {
+      "label": "partial",
+      "cash": "5198.9",
+      "reserved_cash": "0",
+      "free_cash": "5198.9",
+      "quantity": "3",
+      "reserved_sell": "2",
+      "daily": true,
+      "drawdown": false,
+      "pending_exit": false
+    },
+    {
+      "label": "final",
+      "cash": "5198.9",
+      "reserved_cash": "0",
+      "free_cash": "5198.9",
+      "quantity": "3",
+      "reserved_sell": "0",
+      "daily": true,
+      "drawdown": false,
+      "pending_exit": false
+    }
+  ],
+  "fills": [
+    {
+      "id": "S",
+      "quantity": "-2",
+      "price": "99.95",
+      "fee": "1"
+    }
+  ],
+  "ranked": [],
+  "due_ns": null
+}

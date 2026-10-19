@@ -1,0 +1,24 @@
+# Source-first delta and evidence reuse
+
+Exact foundation: 7fc2e91b01194a01cdc59f05fbd9d9f778cceebc.
+Pinned LEAN: d4cac37514427c84d40064cecbf3f0e6be4b0137; no tracked source modification.
+Original Q01–Q20 evidence remains bound to original binaries/oracles/configs; reuse-proof.json preserves every prior packet file hash. Restoring absent source/build tools is not a prior fixture replay.
+
+| Rows | Reused fact / source | New falsification |
+| --- | --- | --- |
+| Q21 | Q19 buy/cancel arithmetic and Q13 nonspendable receivable, original bindings. Native handler CanSubmitOrder immediately precedes placement (BrokerageTransactionHandler.cs961–991). | Competing entry reserves atomically at actual native submission; cancellation request retains, acknowledgement/rejection releases once; sale proceeds unavailable until fill; unknown bounds reject. |
+| Q22 | Q04 distinct listing/class/issuer identity. Framework risk is not a direct-order gate (QCAlgorithm.Framework.cs200/243 vs Trading.cs810–819). | Gross and per-symbol exact/over boundaries, positions, issuer overlap through I3, pending buys/sells and shorts at public brokerage gate. Exact symbol1000 from flat passes; seeded998+2 cap predicate passes but issuer gate rejects; seeded999+2 cap predicate fails explicitly. No issuer-rule exemption. |
+| Q23 | Q07/Q17 quote/fill economics and Q20 fee primitives. | Size from independently provided decision price/fee bounds, freeze4/9, null/zero volatility, stable tie sort, later price over ceiling cannot resize/fill. |
+| Q24 | Q16 already-due halt/resume semantics, original evidence. SecurityExchangeHours supports timezone-aware close lookup. | Frozen session list checked against native exchange hours; one/five, early/DST, preeligible quote, first executable due+1s, halt/no quote preserving pending exit. |
+| Q25 | Q01 unknown-NAV guard is primitive evidence, not integrated risk. Prototype risk.py has different limits and blocks halted sells; it is untouched and not reused as policy authority. | Native marks produce exact2%/8% inclusive latches and just-below controls; direct MarketOrder, ImmediateExecutionModel targets and SetHoldings all encounter native brokerage gate; exits remain allowed; midnight alone does not reset, explicit new session does, drawdown stays latched. |
+| Q26 | Q19's scripted public brokerage event seam, not a new broker. Native handler1385–1416 applies partial fills through Portfolio.ProcessFills. Default reduction shortcut does not reserve shares. | One native partial-sell/cancel sequence with competing sells; native holdings/cash must reconcile independently; stale/ambiguous local destination flag rejects without reconciliation implementation. |
+| Q32 | Prior network-none sentinels, hash validation and public Raw ingress are partial evidence. DefaultDataProvider returns null for missing data; native readers may silently skip. | Complete store vs empty/missing/data/config tamper. Actual QCAlgorithm.Download through deny API and actual History through SubscriptionDataReaderHistoryProvider/guarded IDataProvider must reach sticky attempt sentinel, then prevent all business output even if native reader swallows the exception. No remote/auth call. |
+| Q33 | Original Q01 unresolved outcome reused as claim evidence; Q17/Q20 fill/fee primitives. | Four separately initialized native algorithms in each case, independent evaluator consumes exported accounting, explicit costs/denominator/null failure. Engine diagnostic mutation cannot affect evaluator. No forecast/returns/promotion. |
+
+Public CanUpdateOrder denies frozen-intent quantity/price mutation. Reservations are not mutated in repeated native buying-power scans. Native fill/portfolio pipeline alone changes economic holdings/cash; gate journals remaining obligations only.
+
+51 authored new cases, each requires two clean processes. No native process run before reviewed input/comparator/host/build binding. Q33 runs four isolated native algorithms inside each new process. No standalone Q27 crash cuts or Q28–Q31.
+
+Preparation_v1 and preparation_v2 preserve pre-execution authored input/oracle revisions. Self-review changed Q25 positive entry instrument to I2 so the one-open-issuer rule remains applicable, aligned diagnostic cap predicates for reduce-only exits, and enabled the full limit gate on new-session positive control. No economic threshold, quantity, fee, clock or registered rule changed; no native output informed these revisions.
+
+Build preparation failures are retained: initial binary-reference project omitted transitive packages; source-project reference restores the locked dependency graph. Then SetHoldings' current asynchronous parameter required named arguments. Neither compiled host executed a fixture. Upstream pinned package audit warnings remain disclosed, not suppressed.
