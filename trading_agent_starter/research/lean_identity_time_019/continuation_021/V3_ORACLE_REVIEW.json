@@ -1,0 +1,22 @@
+{
+  "approved": true,
+  "reviewer": "issue21_v3_oracle",
+  "requested_route": "gpt-6-astra/high",
+  "served_id": "unobservable",
+  "cross_provider": false,
+  "v3_input_sha256": "681e9bf1859acc68d9662ccdd48080efe3546d0138b75ee5a3ca655229c0627e",
+  "v3_manifest_sha256": "4eb100de481b7ad14d5cfbcadf04c6518125df467f36c56f92b40d2ceb49d1fb",
+  "source_files_manifest_sha256": "f7bc9af7e0301ce270dc528c3ea3edb7dd32017103a677d27a8cf286bc58916a",
+  "reuse_approved": [
+    "Q04_before",
+    "Q04_at",
+    "Q04_after"
+  ],
+  "verified": [
+    "Four permitted clock scalars only; all57expected bytes/every other input field unchanged.",
+    "All185prior files/6510source/125runtime/13locks/2config files unchanged.",
+    "Original3pairs validated against originalv2; unchanged case/oracle in v3; never relabel old outputsv3."
+  ],
+  "remaining_native_cases": 54,
+  "scope": "Pre-execution oracle/reuse approval only; not a gate-pass determination."
+}
