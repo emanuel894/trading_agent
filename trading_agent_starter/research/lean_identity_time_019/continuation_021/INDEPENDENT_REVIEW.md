@@ -7,3 +7,9 @@ Focused static/evidence disposition: no new material defect or forbidden behavio
 Important retained limits: Q09future_records and Q11factors/adjusted_decoy never enter native paths, so full gatePASS is unsupported even if all frozen subchecks match. Q10 supports verified external unit conversion/supplied gap/custom-fill checks; no native depth or gap detection qualification. These support INCOMPLETE, not a demonstrated LEAN blocker.
 
 Final runtime totals, final report consistency and exact-head Foundation CI await an evidence addendum; the prefix review does not attest future output. No rerun or code rewrite requested without changed bindings.
+
+## Final evidence addendum
+
+Reviewer independently re-compared all108new outputs:54v3cases passed twice with byte-identical pairs, attempts13–120. Three preservedv2pairs yield57frozen subchecks/114accepted processes, zero new divergences and zero frozen cases unrun. Cross-case comparisons, validation-log hashes and final reuse-proof consistency verified. No material report correction needed.
+
+Disposition: LEAN_IDENTITY_TIME_GATE_INCOMPLETE, existing draftPR20 publication only. Q09/Q11coverage gaps remain; neither full gatePASS nor demonstrated LEAN blocker supported. Exact-final-head Ubuntu/Windows CI remains separately pending at review time. No writes/native runs performed.

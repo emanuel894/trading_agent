@@ -7,3 +7,7 @@ Fresh independent adjudication finds authored fixture error: malformed variants 
 All original tracked packet files are frozen by preserved_c70aa32_sha256.json. No prior artifact overwritten.
 
 Milestone: 21new paired cases accepted through current journal. Original185files unchanged. Driver remains active; pending entries are prelaunch intent and must be reconciled on resume, not repeated.
+
+## Final runtime state — supersedes active-driver checkpoints
+
+All54newv3cases completed108clean network-none processes, identical pairs, no new divergence. Original3v2pairs verified/reused asv2. Total57frozen subchecks/114accepted processes. No native driver remains active. All185original files preserved; source/config/runtime reverified. Q09/Q11native ingress gaps prevent full acceptance: LEAN_IDENTITY_TIME_GATE_INCOMPLETE, not engine blocker. Final independent evidence addendum/exact-head CI/PR20metadata pending; no more native execution, no merge.
