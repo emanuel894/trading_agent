@@ -27,7 +27,8 @@
     "primary_document": "fmbh-20250331.htm",
     "primary_document_type": "10-Q",
     "primary_listed_bytes": 7305910,
-    "complete_submission_listed_bytes": 30606368
+    "complete_submission_listed_bytes": 30606368,
+    "timezone_resolution_limitation": "D03/D04EST label retained; modern DST/serialization and cross-source agreement unresolved"
   },
   "header": {
     "capture": "H01",
@@ -38,7 +39,8 @@
     "acceptance_native": "20250509095226",
     "acceptance_source_timezone": null,
     "filing_date": "20250509",
-    "date_of_filing_date_change": "20250509"
+    "date_of_filing_date_change": "20250509",
+    "official_definition_timezone_label": "EST (D03FAQ; D04PDS control block)"
   },
   "primary_retrieval": {
     "capture": "P01",

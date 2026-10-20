@@ -31,7 +31,7 @@
   "historical_receipt_policy": "UNKNOWN/null unless independently evidenced; no such historical logs exist in this packet",
   "scientific_blocker_proven": false,
   "scientific_changes_made": false,
-  "eric_fmbh_dependency": "Separate issuer/class/listing exact-validity and economic eligibility gates; no adjudication here",
+  "eric_fmbh_dependency": "Live Issue7 final GENUINE_SOURCE_BLOCKER (2026-10-20): FMBH remainsUNRESOLVED, source path parked; Eric declined further record-specific information. No re-contact/purchase/skip/amendment authorized here.",
   "further_critical_source_timing": "Only resolve the specific SEC acceptance/source-version contradictions before original events can feed registered freeze/acquisition audit. No broad feed/source audit or more LEAN qualification justified.",
   "complete_captures": 8,
   "oversized_aborted_captures": 1,
@@ -39,10 +39,11 @@
   "performance_inspected": false,
   "mdna_inspected": false,
   "next_three": [
-    "Resolve the bounded SEC clock and primary-representation contradictions using exact authoritative facts/retained raw lineage, runnable while Eric is pending.",
-    "Separately obtain/adjudicate Eric/FMBH required-field delta and independent exact-validity/class-completeness evidence under005; do not advance candidates.",
-    "After both source boundaries and eligibility pass, perform registered freeze/acquisition-latency audit; keep600seconds provisional, freeze a performance deadline only through the existing pre-performance procedure."
+    "Owner decision whether to keep the first-alpha track parked under Issue7GENUINE_SOURCE_BLOCKER; a scientific-change proposal requires separate explicit authorization, never implemented here.",
+    "Only if the track is pursued, resolve the exact SEC clock and primary-representation contradictions using authoritative semantics/retained source lineage, no broad audit or paid/record-specific provider loop.",
+    "Only after source/eligibility gates clear, registered freeze/acquisition-latency audit with600seconds still provisional and the existing pre-performance deadline procedure unchanged."
   ],
   "direct_capture_http_attempts": 9,
-  "browser_discovery": "Official documentation search/open/find also used before direct immutable captures; these browser requests are not included in the nine direct-capture attempts."
+  "browser_discovery": "Official documentation search/open/find also used before direct immutable captures; these browser requests are not included in the nine direct-capture attempts.",
+  "eric_fmbh_state_reference": "https://github.com/emanuel894/trading_agent/issues/7#issuecomment-6289186654"
 }
