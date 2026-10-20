@@ -283,8 +283,13 @@ class OfflineTests(unittest.TestCase):
         record = self.capture.run_one()
         backup = Path(self.tmp.name) / 'backup'
         backup.mkdir()
-        with sqlite3.connect(backup / 'evidence.sqlite') as destination:
+        destination = sqlite3.connect(backup / 'evidence.sqlite')
+        try:
             self.capture.store.db.backup(destination)
+        finally:
+            destination.close()
+        with self.assertRaises(sqlite3.ProgrammingError):
+            destination.execute('SELECT 1')
         shutil.copytree(self.capture.store.objects, backup / 'objects')
         self.capture.close()
         self.root = backup
@@ -569,3 +574,65 @@ class OfflineTests(unittest.TestCase):
         with self.assertRaisesRegex(AuditFailure, 'STORAGE_FAILURE'):
             self.capture.assess(record['id'], acceptance=[])
         self.assertEqual(self.capture.summary()['control']['halted'], 'STORAGE_FAILURE')
+
+    def test_parse_failure_record_storage_error_blocks_calls_and_restart(self):
+        for failure in (sqlite3.OperationalError, OSError):
+            with self.subTest(failure=failure.__name__):
+                self.capture.close()
+                self.root = Path(self.tmp.name) / ('parse-failure-' + failure.__name__)
+                self.capture = self.open()
+                self.capture.enqueue(DISC, 'discovery', 'poll')
+                self.transport.results.append(self.response(b'discovery-body'))
+                observation = self.capture.run_one()
+                self.capture.enqueue(PRIMARY, 'primary', 'pending')
+                original = self.capture.store.append_in_transaction
+                def fail_record(kind, *args, **kwargs):
+                    if kind == 'preservation.parse_failure':
+                        raise failure('synthetic failure-log storage error')
+                    return original(kind, *args, **kwargs)
+                calls = len(self.transport.calls)
+                with patch.object(self.capture.store, 'append_in_transaction', side_effect=fail_record):
+                    with self.assertRaisesRegex(AuditFailure, 'STORAGE_FAILURE'):
+                        self.capture.parse_discovery(observation['id'], [claim(cik='invalid')])
+                self.assertEqual(self.records('parse_failure'), [])
+                self.assertEqual(self.capture.store.raw(observation), b'discovery-body')
+                for reopened in (False, True):
+                    if reopened:
+                        self.restart()
+                    with self.assertRaisesRegex(AuditFailure, 'STORAGE_FAILURE'):
+                        self.capture.run_one()
+                    with self.assertRaisesRegex(AuditFailure, 'STORAGE_FAILURE'):
+                        self.capture.parse_discovery(observation['id'], [claim()])
+                    self.assertEqual(self.capture.summary()['control']['halted'], 'STORAGE_FAILURE')
+                    self.assertEqual(self.capture.summary()['control']['requests'], 1)
+                    self.assertEqual(len(self.transport.calls), calls)
+                    self.assertEqual(self.capture.jobs()[-1]['state'], 'PENDING')
+
+    def test_storage_failure_record_error_blocks_calls_and_restart(self):
+        for failure in (sqlite3.OperationalError, OSError):
+            with self.subTest(failure=failure.__name__):
+                self.capture.close()
+                self.root = Path(self.tmp.name) / ('storage-failure-' + failure.__name__)
+                self.capture = self.open()
+                self.capture.enqueue(PRIMARY, 'primary', 'pending')
+                self.transport.results.append(self.response())
+                original = self.capture.store.append_in_transaction
+                def fail_record(kind, *args, **kwargs):
+                    if kind == 'preservation.storage_failure':
+                        raise failure('synthetic failure-log storage error')
+                    return original(kind, *args, **kwargs)
+                with patch.object(self.capture.store, '_finalize_blob', side_effect=OSError('synthetic disk full')), \
+                     patch.object(self.capture.store, 'append_in_transaction', side_effect=fail_record):
+                    with self.assertRaisesRegex(AuditFailure, 'STORAGE_FAILURE'):
+                        self.capture.run_one()
+                calls = len(self.transport.calls)
+                self.assertEqual(self.records('storage_failure'), [])
+                for reopened in (False, True):
+                    if reopened:
+                        self.restart()
+                    with self.assertRaisesRegex(AuditFailure, 'STORAGE_FAILURE'):
+                        self.capture.run_one()
+                    self.assertEqual(self.capture.summary()['control']['halted'], 'STORAGE_FAILURE')
+                    self.assertEqual(self.capture.jobs()[0]['attempts'], 1)
+                    self.assertNotEqual(self.capture.jobs()[0]['state'], 'COMPLETE')
+                    self.assertEqual(len(self.transport.calls), calls)

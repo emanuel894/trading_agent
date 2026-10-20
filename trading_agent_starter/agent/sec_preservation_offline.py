@@ -453,7 +453,7 @@ class OfflinePreserver:
         except (OSError, sqlite3.Error):
             self._broken = 'STORAGE_FAILURE'
             try:
-                with self.store.transaction():
+                with self._public_transaction():
                     self._append('storage_failure', job['job_id'], {'failure': 'STORAGE_FAILURE', 'state': 'QUARANTINED'})
                     self.db.execute("UPDATE preservation_jobs SET state='QUARANTINED',failure='STORAGE_FAILURE' WHERE job_id=?", (job['job_id'],))
                     self.db.execute("UPDATE preservation_control SET halted='STORAGE_FAILURE' WHERE id=1")
@@ -521,7 +521,7 @@ class OfflinePreserver:
                                 (observation_id, claims_hash, canonical(keys).decode()))
         except (KeyError, TypeError, AuditFailure) as exc:
             reason = str(exc) if isinstance(exc, AuditFailure) else 'INVALID_DISCOVERY_ASSERTION'
-            with self.store.transaction():
+            with self._public_transaction():
                 self._append('parse_failure', observation_id, {'failure': reason, 'parse_completed': parsed})
             raise AuditFailure(reason) from None
         return keys
