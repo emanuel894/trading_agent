@@ -1,0 +1,151 @@
+[
+  {
+    "id": "D01",
+    "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+    "purpose": "Current API semantics; conditional revalidation of preserved S01",
+    "started_utc": "2026-10-20T10:49:55.674728+00:00",
+    "historical_first_machine_observable_at": null,
+    "historical_receipt_at": null,
+    "conditional_etag": "\"1792221261-gzip\"",
+    "status": 200,
+    "final_url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+    "response_headers": {
+      "content-type": "text/html; charset=utf-8",
+      "last-modified": "Mon, 19 Oct 2026 19:58:58 GMT",
+      "etag": "\"1792439938-gzip\"",
+      "date": "Tue, 20 Oct 2026 10:49:55 GMT"
+    },
+    "headers_received_utc": "2026-10-20T10:49:56.008159+00:00",
+    "completed_utc": "2026-10-20T10:49:56.057082+00:00",
+    "path": "sources/D01.raw.gz",
+    "raw_bytes": 69012,
+    "raw_sha256": "b7cda21992995f0c4f30b2907f1f2c921e6be16b426b8a9a76feb51671c87cfb",
+    "archive_sha256": "9678332949fd56ea43f279d8d07ee35687b7b068b0231d2c25b5fd133a4d9f52"
+  },
+  {
+    "id": "D02",
+    "url": "https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data",
+    "purpose": "Official access, index, accession and PAC semantics",
+    "started_utc": "2026-10-20T10:49:57.160955+00:00",
+    "historical_first_machine_observable_at": null,
+    "historical_receipt_at": null,
+    "status": 200,
+    "final_url": "https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data",
+    "response_headers": {
+      "content-type": "text/html; charset=utf-8",
+      "last-modified": "Mon, 19 Oct 2026 19:59:17 GMT",
+      "etag": "\"1792439957-gzip\"",
+      "date": "Tue, 20 Oct 2026 10:49:57 GMT"
+    },
+    "headers_received_utc": "2026-10-20T10:49:57.316599+00:00",
+    "completed_utc": "2026-10-20T10:49:57.338410+00:00",
+    "path": "sources/D02.raw.gz",
+    "raw_bytes": 80368,
+    "raw_sha256": "cbffac23aeb278b4d1a870bc6bb45dfb296f2f623ad247114a96af42ff42841e",
+    "archive_sha256": "e7f6964e9d7ce15792b79812abbb4a18ae0a5910fab014e1c84ad2265e82f6d5"
+  },
+  {
+    "id": "D03",
+    "url": "https://www.sec.gov/about/webmaster-frequently-asked-questions",
+    "purpose": "Official header timestamp definitions",
+    "started_utc": "2026-10-20T10:49:58.442535+00:00",
+    "historical_first_machine_observable_at": null,
+    "historical_receipt_at": null,
+    "status": 200,
+    "final_url": "https://www.sec.gov/about/webmaster-frequently-asked-questions",
+    "response_headers": {
+      "content-type": "text/html; charset=utf-8",
+      "last-modified": "Mon, 19 Oct 2026 20:01:55 GMT",
+      "etag": "\"1792440115-gzip\"",
+      "date": "Tue, 20 Oct 2026 10:49:58 GMT"
+    },
+    "headers_received_utc": "2026-10-20T10:49:58.561246+00:00",
+    "completed_utc": "2026-10-20T10:49:58.579680+00:00",
+    "path": "sources/D03.raw.gz",
+    "raw_bytes": 96768,
+    "raw_sha256": "dc454d357ff16b0dcfb0e3010e22ebcbe1d705c2771dc7d1be54f7ed375cbf37",
+    "archive_sha256": "bb37486a12dedfe1974b3eb883c796315a4b897c50152a1e9c3d3e67fb6311c8"
+  },
+  {
+    "id": "D04",
+    "url": "https://www.sec.gov/files/info/edgar/specifications/pds_dissemination_spec.pdf",
+    "purpose": "Official acceptance control block, dissemination and PAC semantics",
+    "started_utc": "2026-10-20T10:49:59.683916+00:00",
+    "historical_first_machine_observable_at": null,
+    "historical_receipt_at": null,
+    "status": 200,
+    "final_url": "https://www.sec.gov/files/info/edgar/specifications/pds_dissemination_spec.pdf",
+    "response_headers": {
+      "content-type": "application/pdf",
+      "content-length": "804517",
+      "last-modified": "Tue, 22 Sep 2026 18:21:54 GMT",
+      "date": "Tue, 20 Oct 2026 10:49:59 GMT"
+    },
+    "headers_received_utc": "2026-10-20T10:49:59.903880+00:00",
+    "completed_utc": "2026-10-20T10:49:59.979565+00:00",
+    "path": "sources/D04.raw.gz",
+    "raw_bytes": 804517,
+    "raw_sha256": "074d0dfbf6d59ac86839f309e0e16aa781c2dc603d1ffe629c5188010cb7f410",
+    "archive_sha256": "600aaeb2180909f35281086fd36b36b61e8b576f054b94ce9f24c73fc78a6643"
+  },
+  {
+    "id": "M01",
+    "url": "https://data.sec.gov/submissions/CIK0000700565.json",
+    "purpose": "One issuer metadata; prior raw store absent, new vintage not relabeled",
+    "started_utc": "2026-10-20T10:50:01.108612+00:00",
+    "historical_first_machine_observable_at": null,
+    "historical_receipt_at": null,
+    "status": 200,
+    "final_url": "https://data.sec.gov/submissions/CIK0000700565.json",
+    "response_headers": {
+      "content-type": "application/json",
+      "date": "Tue, 20 Oct 2026 10:50:01 GMT"
+    },
+    "headers_received_utc": "2026-10-20T10:50:01.405089+00:00",
+    "completed_utc": "2026-10-20T10:50:01.470304+00:00",
+    "path": "sources/M01.raw.gz",
+    "raw_bytes": 158301,
+    "raw_sha256": "d829a1d3a4217160e1ed602ec0275b8e152758d667ae8ff5a459b2b381641561",
+    "archive_sha256": "10e6a69db6e4995d1ee637bfd1f17c929196ab69c0cf9fd81e15a5160ef1ddce"
+  },
+  {
+    "id": "I01",
+    "url": "https://www.sec.gov/Archives/edgar/data/700565/000095017025067613/0000950170-25-067613-index.html",
+    "purpose": "One known original accession index/primary identity",
+    "started_utc": "2026-10-20T10:50:02.585044+00:00",
+    "historical_first_machine_observable_at": null,
+    "historical_receipt_at": null,
+    "status": 200,
+    "final_url": "https://www.sec.gov/Archives/edgar/data/700565/000095017025067613/0000950170-25-067613-index.html",
+    "response_headers": {
+      "content-type": "text/html; charset=UTF-8",
+      "last-modified": "Fri, 09 May 2025 13:52:26 GMT",
+      "date": "Tue, 20 Oct 2026 10:50:02 GMT",
+      "content-length": "10050"
+    },
+    "headers_received_utc": "2026-10-20T10:50:02.696583+00:00",
+    "completed_utc": "2026-10-20T10:50:02.697392+00:00",
+    "path": "sources/I01.raw.gz",
+    "raw_bytes": 10050,
+    "raw_sha256": "3e77eed3cdc64af7918b8d4379bbe8a5d356acec9c8ded9e79cf6a3a749aa230",
+    "archive_sha256": "ba96cab55809cfa5a7012bbdbd10ccc9f94d3241c12909c47dcc7cda16e23465"
+  },
+  {
+    "id": "T01",
+    "url": "https://www.sec.gov/Archives/edgar/data/700565/000095017025067613/0000950170-25-067613.txt",
+    "purpose": "Bounded opaque complete-submission capture; no body text inspected",
+    "status": 200,
+    "outcome": "ABORTED_SIZE_CAP",
+    "bytes_read": 12000001,
+    "byte_limit": 12000000,
+    "retained_body_bytes": 0,
+    "raw_sha256": null,
+    "started_utc": null,
+    "completed_utc": null,
+    "failure_recorded_utc": "2026-10-20T10:51:41.119514+00:00",
+    "clock_limitation": "Initial one-off capture asserted cap before journaling this failed response; actual request/completion timestamps and response headers were not retained. Do not invent them. This record is reconstructed from observed command failure, not complete response provenance.",
+    "error": "AssertionError: Bound exceeded",
+    "historical_first_machine_observable_at": null,
+    "historical_receipt_at": null
+  }
+]

@@ -1,0 +1,1 @@
+One-off capture exited1: T01 read(12000001) exceeded12000000 byte cap; raised AssertionError: Bound exceeded. Body not retained or inspected. Other D01-D04/M01/I01 captures persisted before failure. Complete submission is30606368bytes per captured accession index; do not retry whole object. Next bounded objects are accession header and primary document7305910bytes, opaque.

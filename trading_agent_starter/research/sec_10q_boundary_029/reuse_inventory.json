@@ -1,0 +1,79 @@
+{
+  "version": "sec-10q-reuse-inventory-v1",
+  "before_new_sec_http": true,
+  "raw_present": [
+    {
+      "path": "docs/event-evidence/sources/S01.raw.gz",
+      "decoded_sha256": "a43713b1f7b26bd0e95eb4b5cb4e08b4947a4a86166efe9bb9ae4fadc49b5e19",
+      "role": "official SEC API documentation, October18 capture"
+    }
+  ],
+  "assertions_reused_raw_absent": {
+    "review_path": "trading_agent_starter/research/acquisition_candidate_001_004_review.json",
+    "original_events": {
+      "acceptance_rows": 3,
+      "at_least_two_eligible_originals": "UNRESOLVED",
+      "at_least_two_originals": true,
+      "earliest_two_qualifying_selected": false,
+      "events": [
+        {
+          "accepted_at": "2025-05-09T13:52:26.000Z",
+          "accession": "0000950170-25-067613",
+          "cik": "0000700565",
+          "eligibility": "UNRESOLVED",
+          "form": "10-Q",
+          "primary_document": "fmbh-20250331.htm",
+          "report_date": "2025-03-31",
+          "simulated_action_at": "2025-05-09T14:03:00+00:00",
+          "source_record": "6321b462819148d2804a163bb502ead6"
+        },
+        {
+          "accepted_at": "2025-08-08T14:05:48.000Z",
+          "accession": "0000950170-25-105507",
+          "cik": "0000700565",
+          "eligibility": "UNRESOLVED",
+          "form": "10-Q",
+          "primary_document": "fmbh-20250630.htm",
+          "report_date": "2025-06-30",
+          "simulated_action_at": "2025-08-08T14:16:00+00:00",
+          "source_record": "6321b462819148d2804a163bb502ead6"
+        },
+        {
+          "accepted_at": "2025-11-07T20:49:03.000Z",
+          "accession": "0001193125-25-272249",
+          "cik": "0000700565",
+          "eligibility": "UNRESOLVED",
+          "form": "10-Q",
+          "primary_document": "fmbh-20250930.htm",
+          "report_date": "2025-09-30",
+          "simulated_action_at": "2025-11-10T14:35:00+00:00",
+          "source_record": "6321b462819148d2804a163bb502ead6"
+        }
+      ],
+      "original_index_pairs": 3,
+      "overlapping_history_pages": 0,
+      "provenance_limit": "SEC retrospective metadata with preserved retrieval time; not historical first-receipt evidence.",
+      "sec_recent_range": [
+        "2017-05-02",
+        "2026-08-07"
+      ],
+      "status": "RECONCILED"
+    },
+    "submissions_capture": {
+      "bytes": 158148,
+      "http_status": 200,
+      "record_id": "6321b462819148d2804a163bb502ead6",
+      "retrieved_at": "2026-09-22T15:31:21.730659+00:00",
+      "sha256": "0aba40faee08a92ba42ac6913d9963b1cea0de7de3abb55d812e0b50d6a1d63b",
+      "url": "https://data.sec.gov/submissions/CIK0000700565.json"
+    },
+    "old_stores_locally_present": false,
+    "boundary": "Accepted review assertions reused; original raw response hash not independently replayable in this workspace. New capture, if needed, is a new vintage with separate bytes/hash/actual retrieval."
+  },
+  "quarterly_index_provenance": "Four pinned official quarterly-index hashes and prior verified frame are reused from Amendment004/candidate review; do not rerun or retrieve broad frame. Current sample index/header must independently reconcile one known accession.",
+  "new_needed": [
+    "Current official acceptance timezone/precision, PAC/index and dissemination/access semantics not covered by old S01",
+    "One original accession filing/index/complete-header representation",
+    "Current submissions object only because old raw object unavailable"
+  ]
+}
