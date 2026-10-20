@@ -1,6 +1,7 @@
 """Append-only audit evidence. No broker, strategy, model or executable documents."""
 from __future__ import annotations
 
+from contextlib import contextmanager
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -64,6 +65,8 @@ class EvidenceStore:
         self.root = Path(root)
         self.objects = self.root / "objects"
         self.objects.mkdir(parents=True, exist_ok=True)
+        self.spool = self.root / "spool"
+        self.spool.mkdir(mode=0o700, exist_ok=True)
         self.db = sqlite3.connect(self.root / "evidence.sqlite", timeout=30)
         self.db.execute("PRAGMA foreign_keys=ON")
         self.db.execute("PRAGMA synchronous=FULL")
@@ -87,31 +90,70 @@ class EvidenceStore:
         self.db.close()
 
     def append(self, kind, key, metadata, raw=None):
-        # Serialize first so bad metadata cannot leave a partly committed record.
-        metadata = strict_json(canonical(metadata))
+        with self.transaction():
+            return self.append_in_transaction(kind, key, metadata, raw)
+
+    @contextmanager
+    def transaction(self):
+        """Explicit shared evidence/queue commit; no implicit nested commits."""
+        if self.db.in_transaction:
+            raise AuditFailure("NESTED_TRANSACTION")
         with self.db:
             self.db.execute("BEGIN IMMEDIATE")
-            previous = self.db.execute(
+            yield
+
+    @staticmethod
+    def sync_directory(path):
+        # Windows has no portable stdlib directory fsync. Atomic publication and
+        # process-crash recovery are tested there; power-loss durability is not.
+        if os.name != "nt":
+            descriptor = os.open(path, os.O_RDONLY | os.O_DIRECTORY)
+            try:
+                os.fsync(descriptor)
+            finally:
+                os.close(descriptor)
+
+    def _finalize_blob(self, raw):
+        sha = digest(raw)
+        path = self.objects / sha
+        if path.exists():
+            if digest(path.read_bytes()) != sha:
+                raise AuditFailure("BLOB_HASH_MISMATCH")
+            return sha
+        temporary = self.spool / uuid.uuid4().hex
+        with temporary.open("xb") as handle:
+            handle.write(raw)
+            handle.flush()
+            os.fsync(handle.fileno())
+        # A hard link publishes the complete object atomically without replacing
+        # an existing object. Failed/partial spools remain for forensic recovery.
+        try:
+            os.link(temporary, path)
+        except FileExistsError:
+            if digest(path.read_bytes()) != sha:
+                raise AuditFailure("BLOB_HASH_MISMATCH") from None
+        self.sync_directory(self.objects)
+        temporary.unlink()
+        self.sync_directory(self.spool)
+        return sha
+
+    def append_in_transaction(self, kind, key, metadata, raw=None):
+        """Append inside the caller's transaction; blobs may outlive rollback."""
+        if not self.db.in_transaction:
+            raise AuditFailure("TRANSACTION_REQUIRED")
+        # Serialize first so bad metadata cannot leave a partly committed record.
+        metadata = strict_json(canonical(metadata))
+        previous = self.db.execute(
                 "SELECT id FROM records WHERE kind=? AND source_key=? ORDER BY seq DESC LIMIT 1",
                 (kind, key)).fetchone()
-            chain = self.db.execute("SELECT record_hash FROM records ORDER BY seq DESC LIMIT 1").fetchone()
-            sha = digest(raw) if raw is not None else None
-            if sha:
-                path = self.objects / sha
-                try:
-                    with path.open("xb") as handle:
-                        handle.write(raw)
-                        handle.flush()
-                        os.fsync(handle.fileno())
-                except FileExistsError:
-                    if digest(path.read_bytes()) != sha:
-                        raise AuditFailure("BLOB_HASH_MISMATCH") from None
-            envelope = dict(id=uuid.uuid4().hex, kind=kind, source_key=key,
+        chain = self.db.execute("SELECT record_hash FROM records ORDER BY seq DESC LIMIT 1").fetchone()
+        sha = self._finalize_blob(raw) if raw is not None else None
+        envelope = dict(id=uuid.uuid4().hex, kind=kind, source_key=key,
                             recorded_at=utc_now(), blob_sha=sha,
                             previous_version=previous[0] if previous else None,
                             previous_chain=chain[0] if chain else None, metadata=metadata)
-            record_hash = digest(canonical(envelope))
-            self.db.execute("""INSERT INTO records
+        record_hash = digest(canonical(envelope))
+        self.db.execute("""INSERT INTO records
                 (id,kind,source_key,recorded_at,blob_sha,previous_version,previous_chain,record_hash,metadata)
                 VALUES (?,?,?,?,?,?,?,?,?)""", (
                 envelope["id"], kind, key, envelope["recorded_at"], sha,
