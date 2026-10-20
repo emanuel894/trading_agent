@@ -529,7 +529,15 @@ class OfflinePreserver:
     def assess(self, observation_id, *, acceptance):
         self._ready()
         record = self.store.get(observation_id)
-        self.store.raw(record)
+        try:
+            self.store.raw(record)
+        except OSError:
+            self._halt('STORAGE_FAILURE')
+            raise AuditFailure('STORAGE_FAILURE') from None
+        except AuditFailure as exc:
+            if str(exc) == 'BLOB_HASH_MISMATCH':
+                self._halt(str(exc))
+            raise
         if not isinstance(acceptance, list) or len(acceptance) > 10:
             raise AuditFailure('INVALID_ACCEPTANCE_ASSERTIONS')
         resolved = []

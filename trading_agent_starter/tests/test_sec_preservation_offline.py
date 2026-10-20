@@ -545,3 +545,27 @@ class OfflineTests(unittest.TestCase):
         self.assertEqual(len(record['metadata']['headers']['etag']), 2048)
         self.assertEqual(self.capture.jobs()[0]['state'], 'FAILED')
         self.assertIsNone(record['metadata']['document_receipt'])
+
+    def test_review_assessment_detected_corruption_halts_all_later_requests(self):
+        self.capture.enqueue(PRIMARY, 'primary', 'one')
+        self.transport.results.append(self.response(b'retained'))
+        first = self.capture.run_one()
+        self.capture.enqueue(SUBMISSION, 'submission', 'two')
+        (self.capture.store.objects / first['blob_sha']).write_bytes(b'corrupt')
+        with self.assertRaisesRegex(AuditFailure, 'BLOB_HASH_MISMATCH'):
+            self.capture.assess(first['id'], acceptance=[])
+        calls = len(self.transport.calls)
+        self.transport.results.append(self.response(b'different'))
+        with self.assertRaisesRegex(AuditFailure, 'BLOB_HASH_MISMATCH'):
+            self.capture.run_one()
+        self.assertEqual(len(self.transport.calls), calls)
+        self.assertEqual(self.capture.summary()['control']['halted'], 'BLOB_HASH_MISMATCH')
+
+    def test_assessment_missing_blob_is_storage_failure_and_halts_requests(self):
+        self.capture.enqueue(PRIMARY, 'primary', 'one')
+        self.transport.results.append(self.response())
+        record = self.capture.run_one()
+        (self.capture.store.objects / record['blob_sha']).unlink()
+        with self.assertRaisesRegex(AuditFailure, 'STORAGE_FAILURE'):
+            self.capture.assess(record['id'], acceptance=[])
+        self.assertEqual(self.capture.summary()['control']['halted'], 'STORAGE_FAILURE')
