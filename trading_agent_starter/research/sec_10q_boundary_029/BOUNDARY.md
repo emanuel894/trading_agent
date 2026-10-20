@@ -1,0 +1,82 @@
+# Original SEC 10-Q source boundary — Issue 29
+
+Decision candidate: **SEC_10Q_SOURCE_BOUNDARY_INCOMPLETE**. Document/accession identity and retained-response provenance are supported for one original. A concrete acceptance-clock disagreement and primary-response/index-size disagreement prevent defensible admission of this sample. Neither proves that the registered comparison requires a scientific change. Independent final review and final-head validation receipts will be recorded on the draft PR/issue without changing the validated head.
+
+## Authority and reuse
+
+Exact foundation: `d90f13035cf47e4d96ac8a33aed25d784dc589fe`, the live merge of PR 28. ADR001 §8, Amendment 004 and its `acquisition_frame_registration_004.json` remain unchanged. Accepted Issue 12 semantics distinguish source publication, channel observation, collector receipt and actual retrieval; a hash is not historical availability. `reuse_manifest.json` binds the reused files. `reuse_inventory.json` distinguishes locally verified raw bytes from prior reviewed assertions whose private raw stores are absent here.
+
+Reused first: the October 18 SEC API documentation capture S01, verified decoded SHA-256 `a43713b1f7b26bd0e95eb4b5cb4e08b4947a4a86166efe9bb9ae4fadc49b5e19`; the candidate review's three original accession/period/primary assertions and original source-record/hash references; and the already verified four-quarter index/frame provenance. No frame replay, quarterly-index download or candidate screening was repeated. The old FMBH submissions response hash is a prior reference, not a locally replayed object. Current captures are separate vintages, not replacements for it.
+
+## Responsibility and precedence
+
+| Source | Responsibility | Limit / precedence rule |
+| --- | --- | --- |
+| [SEC API documentation](https://www.sec.gov/search-filings/edgar-application-programming-interfaces), D01 and reused S01 | Describes submissions-history transport and update timing. Updates follow dissemination; documented typical processing delay is not a per-filing guarantee. No API key is required for these public data APIs. | Discovery metadata is not a historical receiver log. Bulk data is a different, nightly edition; no bulk download here. |
+| [Accessing EDGAR Data](https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data), D02 | Canonical archive paths, accession identity, indexes, access policy and post-acceptance corrections/deletions. Accession prefix can identify a filing agent, not necessarily the registrant. | Use the filing's own CIK, not accession-prefix inference. Index filing dates are date-level. Full/quarterly indexes incorporate later corrections; a later-retrieved index is not an unrevised historical vintage. |
+| [SEC Webmaster FAQ](https://www.sec.gov/about/webmaster-frequently-asked-questions), D03 | Explains acceptance versus report/filing/change-date header fields and points to PDS definitions. | Filing date can be assigned/changed; it is not the intraday publication time. |
+| [PDS specification](https://www.sec.gov/files/info/edgar/specifications/pds_dissemination_spec.pdf), D04 | Describes acceptance, downstream dissemination, header corrections, deletion notices and document/form-type changes. Its control-block acceptance time is six digits labeled EST. PAC documentation says document text is not updated by that transaction type. | PDS is a distinct channel/specification; do not equate its control block with the archive tag without qualification or treat its wording as a live receiver timestamp. The inspected document does not define the archive's `ACCEPTANCE-DATETIME` tag. A generic PAC statement does not explain a particular byte/clock mismatch. No subscription/auth/PDS acquisition here. |
+| Official issuer submissions JSON, M01 | CIK and aligned accession/form/report/filing/acceptance/primary metadata fields. | Current official assertion, with raw response and retrieval clock. Resolve duplicates, missing fields and cross-source contradictions; do not prefer it automatically over a conflicting archive header. |
+| Accession filing index, I01; header `.hdr.sgml`, H01 | Official accession-specific document table and header identities/native acceptance value. | Corroborate the exact accession, CIK, form, period and primary filename. Preserve the index/header's native clock strings and absent offsets. An archive header is a complete-header representation, not a retained complete submission. |
+| Primary document, P01 | Canonical accession-relative filename and opaque retrieved bytes/hash. | Primary document is distinct from complete submission, exhibits, generated XBRL/R1 covers, index and metadata. No rendered/normalized/current-facts replacement. No primary text was inspected. |
+
+There is no universal “winning source” that erases disagreement. Source responsibilities define what each object asserts; material contradictions quarantine the event until source-grounded resolution. Never select earliest, latest, majority, a convenient timezone or a convenient source to obtain admission.
+
+Fair access: current D02 documents a 10-request/second ceiling and efficient bounded requests with a declared user agent. This run used sequential requests separated by at least 1.1 seconds, a public repository contact in the user agent, preserved proxy/TLS, no credentials and only official SEC hosts. Browser documentation discovery was additional; the nine direct HTTP capture attempts are enumerated separately. No issuer populations or market data were acquired.
+
+## Canonical evidence fields and version linkage
+
+Retain CIK, accession, exact form, report period, filing date, primary filename/type, canonical URL, response/vintage ID, raw byte length/SHA-256/content type, actual request/header/body-completion clocks, relevant transport headers, capture mode, source-dictionary/qualification version, raw field locators and parsed derivation lineage. Keep native acceptance string, zone/offset, precision and UTC assertion separately for each source, plus a separately assessed resolved clock or null. Missing keys and explicit null are not dates, zero latency or an empty valid document.
+
+Logical target key is registrant CIK plus exact original accession; document identity also includes filename, source representation and raw hash. Exact form must be `10-Q`. A `10-Q/A` is another filing/version with separate accession, clocks and retained bytes. Link `amends`/`corrects`/`supersedes` only from source-backed relationships; matching CIK/period alone does not prove its parent. A later original 10-Q is another event, not a replacement for the earlier original. Never overwrite or silently update the target to the current/latest filing.
+
+Post-acceptance header/type corrections and withdrawals differ from an issuer-filed amendment. Append newly observed metadata/bytes, preserve both source assertions and revision relationships, and keep the correction's availability separate. A date-of-change field remains date-only; it cannot timestamp the correction to a second. Changed bytes at an unchanged URL require another evidence version/hash even if the accession is unchanged. Keep prior admission assessments immutable. Unknown correction time stays unknown.
+
+Later retrieval can establish which exact bytes were obtained from a canonical original-accession path at that retrieval. It does not by itself establish equality to the first 2025 disseminated bytes or prove original historical receipt. Original form identity is distinct from proof of the historical byte edition. Primary/index size disagreement here prevents the stronger identity claim; preserve it explicitly rather than attributing a cause. ETag, HTTP Date and Last-Modified are transport assertions, not historical publication or receipt proof.
+
+## Clock table for the bounded sample
+
+Target: CIK `0000700565`, accession `0000950170-25-067613`, form `10-Q`, period `2025-03-31`, primary `fmbh-20250331.htm`. These agree across retained metadata/index/header. They establish no FMBH eligibility or selected cohort.
+
+| Clock | Retained source value / precision | Qualified interpretation |
+| --- | --- | --- |
+| Report/event period | M01/I01 `2025-03-31`; H01 `20250331`, date | Reporting-period end, no UTC publication instant. |
+| Filing date | M01/I01 `2025-05-09`; H01 `20250509`, date | SEC filing-date assertion, not an intraday publication clock. |
+| API acceptance assertion | M01 `/filings/recent/acceptanceDateTime`, target row: `2025-05-09T17:52:26.000Z` | Explicit UTC serialization. Preserve `.000` without inferring measured subsecond accuracy. It conflicts with other retained sources; resolved acceptance is null. |
+| Index/header acceptance | I01 `2025-05-09 09:52:26`; H01 `20250509095226`, second fields without an offset | Preserve native values with timezone null pending qualification. Earlier review asserted `13:52:26Z`; a New York DST conversion would also give that value, whereas literal fixed EST would give `14:52:26Z`. Neither reconciles M01. Neither interpretation is adopted as the resolved clock. |
+| Official public dissemination/publication | No per-filing measured publication instant retained | Null. Acceptance is a separately labeled potential research proxy, not proof of exact public dissemination or payload receipt. |
+| Historical first machine observable | No named observer/channel log for this 2025 version | Null, including any globally-earliest claim. General API/feed update timing does not fill it. |
+| Historical collector receipt | No 2025 collector/session/body-completion log | Null. Do not copy acceptance, index time, HTTP headers or current retrieval. |
+| Current retrieval | Per-object start, headers received and complete-body UTC intervals in `sources/captures.json`, October 20, 2026 | Actual current capture clocks only. They are not backdated or relabeled as historical observations. |
+| Revision/amendment | H01 date-of-change `20250509`; no independently resolved revision instant | Date-only assertion; revision UTC null. No amendment sample was acquired. |
+
+Use explicit source offsets where supported. A qualified local clock conversion needs its source timezone, the applicable IANA/tzdb rules and unambiguous offset; source precision and uncertainty survive conversion. Never apply the workstation timezone, fixed EST throughout DST, guessed midnight, or invented subsecond ordering. Here the archive-tag timezone is deliberately unqualified rather than normalized by assumption. No action timestamp is computed for the conflicted sample.
+
+## Historical admission interpretation — unchanged registrations
+
+**Acquisition/provenance feasibility proxy:** Amendment 004 already anchors simulated action to SEC acceptance, not live receipt, retaining provisional 600 seconds and the existing `choose_action` session/minute rule. A resolved, source-backed original acceptance is a prerequisite. Unknown historical receipt remains null. This mode studies acquisition feasibility; it does not prove a 2025 executable observation, original-version completeness, economic eligibility or alpha. The present sample is quarantined, so its provisional action is not selected.
+
+**Historical performance proxy:** Issue 12 permits an explicitly registered historical publication/latency scenario with original-version evidence. ADR001 §8 requires a pre-performance deadline based on representative prospective latency (p95 plus jitter reserve), permissible RTH action and an independently justified information window. The current acquisition 600-second setting is neither optimized nor frozen as that performance deadline. This task neither changes nor freezes it. Any future historical use must carry that declared proxy mode, admissible version/dependencies, uncertainty and the registered deadline; it cannot be relabeled prospective observation. Unknown receipt does not authorize arbitrary historical timing or tuning by returns.
+
+**Prospective-observed admission:** independently retained channel discovery and actual complete-payload receipt, ingestion/verification/feature completion and collector-clock evidence are required. Use the latest required causal completion and the registered cutoff; missing or ambiguous clocks quarantine/abstain. An acceptance stamp alone cannot satisfy this mode. No retrospective source response can manufacture those 2025 logs.
+
+## Falsification and exact missing facts
+
+`sample.json` records raw field assertions; `falsifications.json` distinguishes actual source contradictions from synthetic negative mutations. They cover original versus 10-Q/A, distinct later accession, missing acceptance/date-only fallback, invented receipt, ambiguous timezone and changed bytes under the same URL. These are source-contract adjudication checks, not a new production ingestor or live adapter. A synthetic 10-Q/A mutation is not claimed as an acquired amendment.
+
+The two actual material discrepancies remain unresolved:
+
+1. **Acceptance/zone/serialization:** reconcile M01's `17:52:26.000Z` with I01/H01's `09:52:26` and the old reviewed `13:52:26Z` assertion using authoritative SEC semantics and source correction/version lineage. The old raw metadata is absent, so this packet does not claim to establish what changed. Additional offsets or the current metadata alone are not a repair.
+2. **Primary representation:** I01 lists **7,305,910 bytes**; P01 returned **7,306,016 bytes**, SHA-256 `0d87c401bf7b1f5bfa4e0174f90988b4de70f4cf1807077b7b1df24e85076ce4`. Need an authoritative representation/transport/version explanation or matching canonical bytes/manifest. Hashing today's response cannot resolve the 106-byte discrepancy or certify first-disseminated historical bytes.
+
+Do not repair either by changing registration, assigning receipt, choosing another filing/issuer, inspecting MD&A/performance or increasing acquisition scope. These bounded source facts justify INCOMPLETE, rather than READY or a proven scientific BLOCKER.
+
+## Capture limits, validation and stop
+
+Eight official responses are fully retained, compressed with raw/archive hashes. One complete-submission attempt was aborted at the 12 MB cap; the index lists 30,606,368 bytes. Its partial body was not retained/inspected and its hash and original transport timestamps remain unknown; the reconstructed failure record states this limitation. The primary and header are separate successful objects, not a relabeled full-submission capture. No repeated/broad retrieval or new source call is needed to document this decision.
+
+The packet verifier checks raw/archive hashes, source field extraction, unknown clocks, the actual contradictions, original/amendment/distinct-accession falsifications and unchanged foundation artifacts. Existing repository tests/demo are fixture engineering checks only; generated performance reports are not inspected. Final independent review and exact-head Foundation CI are recorded in the draft PR/issue receipt.
+
+This does **not** close the first-alpha 10-Q source-timing dependency. The specific acceptance and byte-version facts remain critical before registered freeze/acquisition audit. It proves no historical receipt, complete event feed, earlier issuer disclosure coverage, parsability/MD&A novelty, FMBH structural eligibility, liquidity, rights for unrelated data, model latency, alpha, or trading readiness. Full LEAN recovery/broker work remains outside scope and is not needed to resolve these facts.
+
+Eric/FMBH remains a separate issuer/class/listing exact-validity and eligibility dependency. Next three tasks: (1) resolve only the SEC clock/primary-representation facts, runnable while Eric is pending; (2) separately obtain/adjudicate Eric's required-field delta and independent validity/class-completeness evidence; (3) after source and eligibility gates clear, perform the registered freeze/acquisition-latency audit, retaining the existing pre-performance deadline procedure. No candidate advancement, freeze or audit is performed here.

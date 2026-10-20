@@ -1,0 +1,48 @@
+{
+  "version": "sec-10q-source-decision-v1",
+  "state": "SEC_10Q_SOURCE_BOUNDARY_INCOMPLETE",
+  "issue": 29,
+  "foundation": "d90f13035cf47e4d96ac8a33aed25d784dc589fe",
+  "reason_codes": [
+    "ACCEPTANCE_CLOCK_CONFLICT",
+    "ARCHIVE_HEADER_TIMEZONE_NOT_INDEPENDENTLY_RESOLVED",
+    "PRIMARY_INDEX_SIZE_CONFLICT"
+  ],
+  "exact_missing_facts": [
+    {
+      "field": "Defensible SEC acceptance UTC for accession0000950170-25-067613",
+      "conflicting_sources": [
+        "M01 /filings/recent/acceptanceDateTime=2025-05-09T17:52:26.000Z",
+        "I01 Accepted=2025-05-09 09:52:26",
+        "H01 ACCEPTANCE-DATETIME=20250509095226"
+      ],
+      "needed": "Authoritative SEC archive-header timezone/serialization semantics and source correction/PAC or retained original metadata lineage sufficient to reconcile the conflicting assertions; no silent offset/earliest/latest/majority choice."
+    },
+    {
+      "field": "Exact original primary representation identity",
+      "conflicting_sources": [
+        "I01 filename fmbh-20250331.htm lists7305910bytes",
+        "P01same canonical path returned7306016bytes"
+      ],
+      "needed": "Source-grounded representation/transport/version explanation or matching authoritative bytes/manifest. Current response/hash alone proves only current retrieved representation; not equality to2025as-disseminated bytes."
+    }
+  ],
+  "provenance_clock_dependency_closed": false,
+  "historical_receipt_policy": "UNKNOWN/null unless independently evidenced; no such historical logs exist in this packet",
+  "scientific_blocker_proven": false,
+  "scientific_changes_made": false,
+  "eric_fmbh_dependency": "Separate issuer/class/listing exact-validity and economic eligibility gates; no adjudication here",
+  "further_critical_source_timing": "Only resolve the specific SEC acceptance/source-version contradictions before original events can feed registered freeze/acquisition audit. No broad feed/source audit or more LEAN qualification justified.",
+  "complete_captures": 8,
+  "oversized_aborted_captures": 1,
+  "paid_calls": 0,
+  "performance_inspected": false,
+  "mdna_inspected": false,
+  "next_three": [
+    "Resolve the bounded SEC clock and primary-representation contradictions using exact authoritative facts/retained raw lineage, runnable while Eric is pending.",
+    "Separately obtain/adjudicate Eric/FMBH required-field delta and independent exact-validity/class-completeness evidence under005; do not advance candidates.",
+    "After both source boundaries and eligibility pass, perform registered freeze/acquisition-latency audit; keep600seconds provisional, freeze a performance deadline only through the existing pre-performance procedure."
+  ],
+  "direct_capture_http_attempts": 9,
+  "browser_discovery": "Official documentation search/open/find also used before direct immutable captures; these browser requests are not included in the nine direct-capture attempts."
+}

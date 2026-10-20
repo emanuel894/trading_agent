@@ -24,20 +24,20 @@ Publication versus acceptance versus receipt; zone/DST/native precision; origina
 
 ### Task 1: Reconcile and inventory existing authority
 
-- [ ] Record live foundation/Issue29/PR28 merge and existing owner/PR state.
-- [ ] Read trusted project skill/policy, ADR001§8, Amendment004/action registration and Issue12 envelope semantics.
-- [ ] Hash reusable official captures and identify which old issuer raw objects are locally present versus hash-referenced only. Preserve that distinction.
-- [ ] Commit the inventory/checkpoint before new SEC retrieval.
+- [x] Record live foundation/Issue29/PR28 merge and existing owner/PR state.
+- [x] Read trusted project skill/policy, ADR001§8, Amendment004/action registration and Issue12 envelope semantics.
+- [x] Hash reusable official captures and identify which old issuer raw objects are locally present versus hash-referenced only. Preserve that distinction.
+- [x] Commit the inventory/checkpoint before new SEC retrieval.
 
 ### Task 2: Qualify the smallest missing source boundary
 
-- [ ] Review official SEC documentation on access, submissions, acceptance/zone, version/index/feed/update semantics. Reuse current captures where sufficient; log bounded official-only retrievals/failures.
-- [ ] Reconcile one known original accession against retained assertions and minimal current metadata/index/submission bytes; never inspect MD&A. Retain opaque bytes/hash where needed.
-- [ ] Record amendment/distinct-accession rejection and at least one missing/disagreement fail-closed path, with evidence boundaries explicit.
-- [ ] Commit source captures, clock/precedence contract, sample and provisional decision with exact missing facts if any.
+- [x] Review official SEC documentation on access, submissions, acceptance/zone, version/index/feed/update semantics. Reuse current captures where sufficient; log bounded official-only retrievals/failures.
+- [x] Reconcile one known original accession against retained assertions and minimal current metadata/index/submission bytes; never inspect MD&A. Retain opaque bytes/hash where needed.
+- [x] Record amendment/distinct-accession rejection and at least one missing/disagreement fail-closed path, with evidence boundaries explicit.
+- [x] Commit source captures, clock/precedence contract, sample and provisional decision with exact missing facts if any.
 
 ### Task 3: Review and publish the exact decision
 
-- [ ] Run offline packet/protected-artifact checks; fresh independent final review of the source-boundary decision (no duplicate acquisition).
+- [x] Run offline packet/protected-artifact checks; fresh independent final review pending of the source-boundary decision (no duplicate acquisition).
 - [ ] Commit final packet; run required final-head repository tests/demo and exact-head Ubuntu/Windows Foundation CI through a draft PR.
 - [ ] Record exact decision/review/validation receipts on Issue29/PR without changing the validated head; stop. State dependency closed/open, Eric/FMBH boundary, further timing work, next3 tasks.
