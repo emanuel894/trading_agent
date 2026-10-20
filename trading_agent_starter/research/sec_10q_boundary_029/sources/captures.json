@@ -147,5 +147,55 @@
     "error": "AssertionError: Bound exceeded",
     "historical_first_machine_observable_at": null,
     "historical_receipt_at": null
+  },
+  {
+    "id": "H01",
+    "url": "https://www.sec.gov/Archives/edgar/data/700565/000095017025067613/0000950170-25-067613.hdr.sgml",
+    "purpose": "Canonical submission header only, no MD&A",
+    "started_utc": "2026-10-20T10:51:45.787343+00:00",
+    "historical_first_machine_observable_at": null,
+    "historical_receipt_at": null,
+    "status": 200,
+    "final_url": "https://www.sec.gov/Archives/edgar/data/700565/000095017025067613/0000950170-25-067613.hdr.sgml",
+    "response_headers": {
+      "content-type": "text/sgml",
+      "last-modified": "Fri, 09 May 2025 13:53:04 GMT",
+      "etag": "\"3669eafab0a543af045f99dfb395be0e-gzip\"",
+      "date": "Tue, 20 Oct 2026 10:51:46 GMT",
+      "content-length": "1073"
+    },
+    "headers_received_utc": "2026-10-20T10:51:46.231085+00:00",
+    "completed_utc": "2026-10-20T10:51:46.231260+00:00",
+    "capture_complete": true,
+    "outcome": "COMPLETE",
+    "bytes_read": 1073,
+    "path": "sources/H01.raw.gz",
+    "raw_bytes": 1073,
+    "raw_sha256": "021f51387876a9252c1e29fe865d3534b4d5c85d32f0e5ea177907af18c5a34d",
+    "archive_sha256": "042c7fde58e7227507a3ac5bdb86e3af814d924ddfe6a312c74fe953904b5620"
+  },
+  {
+    "id": "P01",
+    "url": "https://www.sec.gov/Archives/edgar/data/700565/000095017025067613/fmbh-20250331.htm",
+    "purpose": "One original primary representation, retain opaque raw bytes/hash only; do not inspect or render body",
+    "started_utc": "2026-10-20T10:51:47.334588+00:00",
+    "historical_first_machine_observable_at": null,
+    "historical_receipt_at": null,
+    "status": 200,
+    "final_url": "https://www.sec.gov/Archives/edgar/data/700565/000095017025067613/fmbh-20250331.htm",
+    "response_headers": {
+      "content-type": "text/html",
+      "last-modified": "Fri, 09 May 2025 13:53:04 GMT",
+      "date": "Tue, 20 Oct 2026 10:51:47 GMT"
+    },
+    "headers_received_utc": "2026-10-20T10:51:47.622771+00:00",
+    "completed_utc": "2026-10-20T10:51:48.196274+00:00",
+    "capture_complete": true,
+    "outcome": "COMPLETE",
+    "bytes_read": 7306016,
+    "path": "sources/P01.raw.gz",
+    "raw_bytes": 7306016,
+    "raw_sha256": "0d87c401bf7b1f5bfa4e0174f90988b4de70f4cf1807077b7b1df24e85076ce4",
+    "archive_sha256": "e5d17630c8902366b8cf72a48d768a34ff60e812ab98bde962ade435d4aa557b"
   }
 ]
