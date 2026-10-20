@@ -72,7 +72,7 @@ class OfflinePreserver:
         self.transport, self.clock, self.limits = transport, clock, limits
         self.store = None
         self._lock = None
-        self._broken = False
+        self._broken = None
         try:
             self._lock_writer()
             self.store = EvidenceStore(self.root)
@@ -184,7 +184,7 @@ class OfflinePreserver:
             with self.store.transaction():
                 yield
         except (OSError, sqlite3.Error):
-            self._broken = True
+            self._broken = 'STORAGE_FAILURE'
             try:
                 with self.store.transaction():
                     self.db.execute("UPDATE preservation_control SET halted='STORAGE_FAILURE' WHERE id=1")
@@ -197,33 +197,87 @@ class OfflinePreserver:
             raise
 
     def _verify_queue(self):
-        attempts = self.store.records('preservation.attempt')
-        if self._control()['requests'] != len(attempts):
-            raise AuditFailure('QUEUE_CORRUPT')
-        for job in self.jobs():
-            if (job['state'] not in {'PENDING', 'INFLIGHT', 'COMPLETE', 'FAILED', 'QUARANTINED'}
-                    or job['role'] not in self.ROLES
-                    or not 0 <= job['attempts'] <= self.limits.max_attempts
-                    or job['attempts'] != sum(r['source_key'] == job['job_id'] for r in attempts)):
+        """Fail closed if mutable indexes disagree with append-only facts."""
+        expected_jobs, expected_events, expected_parsed = {}, {}, {}
+        requests, charged, must_halt = 0, 0, False
+        ceiling = self.limits.max_response_bytes + 1
+        try:
+            for record in self.store.records():
+                kind = record['kind'].removeprefix('preservation.')
+                meta, key = record['metadata'], record['source_key']
+                if not record['kind'].startswith('preservation.'):
+                    continue
+                if kind == 'queued':
+                    identity = digest(canonical([meta['event_key'], meta['uri'],
+                                                 meta['role'], meta['request_key']]))
+                    if key != identity or key in expected_jobs:
+                        raise AuditFailure('QUEUE_CORRUPT')
+                    expected_jobs[key] = dict(job_id=key, event_key=meta['event_key'],
+                        uri=meta['uri'], role=meta['role'], state='PENDING', attempts=0,
+                        not_before=None, observation=None, failure=None)
+                    self._uri(meta['uri'])
+                elif kind == 'attempt':
+                    job = expected_jobs[key]
+                    if job['state'] != 'PENDING' or meta['attempt'] != job['attempts'] + 1:
+                        raise AuditFailure('QUEUE_CORRUPT')
+                    job.update(state='INFLIGHT', attempts=meta['attempt'])
+                    requests += 1
+                    charged += ceiling
+                elif kind == 'observation':
+                    job = expected_jobs[meta['job_id']]
+                    if (job['state'] != 'INFLIGHT' or meta['attempt'] != job['attempts']
+                            or any(meta[k] != job[k] for k in ('uri', 'role', 'event_key'))
+                            or meta['byte_count'] != len(self.store.raw(record))
+                            or not 0 <= meta['byte_count'] <= ceiling):
+                        raise AuditFailure('QUEUE_CORRUPT')
+                    job.update(state=meta['queue_state'], observation=record['id'],
+                               failure=meta['failure'], not_before=meta['retry_not_before'])
+                    charged -= ceiling - meta['byte_count']
+                    must_halt |= meta['http_status'] == 403
+                elif kind == 'recovery':
+                    job = expected_jobs[key]
+                    state = 'FAILED' if job['attempts'] >= self.limits.max_attempts else 'PENDING'
+                    if job['state'] != 'INFLIGHT' or meta['state'] != state:
+                        raise AuditFailure('QUEUE_CORRUPT')
+                    job.update(state=state, failure='CRASH_INTERRUPTED')
+                elif kind == 'storage_failure':
+                    expected_jobs[key].update(state='QUARANTINED', failure='STORAGE_FAILURE')
+                    must_halt = True
+                elif kind == 'discovery':
+                    claim = meta['assertion']
+                    cik = str(claim['cik']).zfill(10)
+                    accession, form = claim['accession'], claim['form']
+                    event = expected_events.get(accession)
+                    if event is None:
+                        source = self.store.get(meta['source_observation'])
+                        expected_events[accession] = dict(event_key='SEC:' + cik + ':' + accession,
+                            accession=accession, cik=cik, form=form, target=int(form == '10-Q'),
+                            first_discovery=record['id'], late=int(source['metadata']['role'] == 'index'), conflict=0)
+                    elif event['cik'] != cik or event['form'] != form:
+                        event.update(conflict=1, target=max(event['target'], int(form == '10-Q')))
+                elif kind == 'parse_completed':
+                    expected_parsed[key] = dict(observation=key, claims_hash=meta['claims_hash'],
+                                                result=canonical(meta['event_keys']).decode())
+            actual_jobs = {j['job_id']: j for j in self.jobs()}
+            actual_events = {e['accession']: e for e in self.events()}
+            actual_parsed = {r['observation']: dict(r) for r in self.db.execute('SELECT * FROM preservation_parsed')}
+            control = self._control()
+            if (actual_jobs != expected_jobs or actual_events != expected_events
+                    or actual_parsed != expected_parsed or control['requests'] != requests
+                    or control['bytes_charged'] != charged or requests > self.limits.max_requests
+                    or charged > self.limits.max_total_bytes or (must_halt and not control['halted'])):
                 raise AuditFailure('QUEUE_CORRUPT')
-            self._uri(job['uri'])
-            if job['state'] == 'COMPLETE':
-                if not job['observation']:
-                    raise AuditFailure('QUEUE_CORRUPT')
-                record = self.store.get(job['observation'])
-                if (record['kind'] != 'preservation.observation'
-                        or record['metadata']['job_id'] != job['job_id']
-                        or record['metadata']['failure'] or not record['metadata']['document_receipt']):
-                    raise AuditFailure('QUEUE_CORRUPT')
+        except (KeyError, TypeError, ValueError):
+            raise AuditFailure('QUEUE_CORRUPT') from None
 
     def _halt(self, reason):
-        self._broken = True
+        self._broken = reason
         with self.store.transaction():
             self.db.execute('UPDATE preservation_control SET halted=? WHERE id=1', (reason,))
 
     def _ready(self):
         if self._broken:
-            raise AuditFailure('STORAGE_FAILURE')
+            raise AuditFailure(self._broken)
         reason = self._control()['halted']
         if reason:
             raise AuditFailure(reason)
@@ -284,14 +338,19 @@ class OfflinePreserver:
         raw = bytearray()
         status, headers, failure, body_completed = None, {}, None, None
         header_receipt = None
+        headers_truncated = False
         try:
             response = self.transport(job['uri'], self.limits.max_response_bytes + 1)
             if not isinstance(response, Response):
                 raise AuditFailure('INVALID_FIXTURE_RESPONSE')
             status = response.status
-            headers = {str(k).lower(): str(v) for k, v in response.headers.items()
-                       if str(k).lower() in {'content-type', 'content-length', 'date', 'etag',
-                           'last-modified', 'retry-after', 'content-encoding'}}
+            for name in ('content-type', 'content-length', 'date', 'etag',
+                         'last-modified', 'retry-after', 'content-encoding'):
+                values = [str(v) for k, v in response.headers.items() if str(k).lower() == name]
+                if values:
+                    value = values[0]
+                    headers_truncated |= len(value) > 2048 or len(values) > 1
+                    headers[name] = value[:2048]
             header_receipt = self._sample()
             for chunk in response.chunks:
                 if not isinstance(chunk, bytes):
@@ -308,6 +367,8 @@ class OfflinePreserver:
                     failure = 'SIZE_CONFLICT'
                 else:
                     body_completed = self._sample()
+            if failure is None and headers_truncated:
+                failure = 'RESPONSE_METADATA_LIMIT'
             if failure is None and status != 200:
                 failure = 'HTTP_' + str(status)
         except (OSError, TimeoutError):
@@ -326,7 +387,7 @@ class OfflinePreserver:
         return bytes(raw), dict(request_started=started, header_receipt=header_receipt,
             body_completed=body_completed, document_receipt=body_completed if status == 200 and not failure else None,
             retrieval_completed=body_completed, attempt_ended=ended, http_status=status,
-            headers=headers, failure=failure, timing_flags=flags, source_revision_at=None,
+            headers=headers, headers_truncated=headers_truncated, failure=failure, timing_flags=flags, source_revision_at=None,
             historical_receipt_utc=None, transport_encoding='injected identity bytes')
 
     def run_one(self):
@@ -366,6 +427,7 @@ class OfflinePreserver:
                         delay = max(delay, int(value))
             state = 'COMPLETE' if not failure else ('PENDING' if retry and job['attempts'] + 1 < self.limits.max_attempts else 'FAILED')
             not_before = (timestamp(metadata['attempt_ended']['utc']) + timedelta(seconds=delay)).isoformat() if retry else None
+            metadata.update(queue_state=state, retry_not_before=not_before)
             key = canonical([job['event_key'], job['role'], job['uri']]).decode()
             prior = [r for r in self.store.records('preservation.observation', key)
                      if r['blob_sha'] == digest(raw) and r['metadata']['document_receipt']]
@@ -380,15 +442,16 @@ class OfflinePreserver:
                                 (state, record['id'], failure, not_before, job['job_id']))
                 self.db.execute('UPDATE preservation_control SET bytes_charged=bytes_charged-? WHERE id=1',
                                 (self.limits.max_response_bytes + 1 - len(raw),))
-                if failure == 'HTTP_403':
+                if metadata['http_status'] == 403:
                     self.db.execute("UPDATE preservation_control SET halted='HTTP_403' WHERE id=1")
             return record
         except AuditFailure as exc:
-            if str(exc).endswith('BUDGET_EXHAUSTED'):
+            if str(exc).endswith('BUDGET_EXHAUSTED') or str(exc) in {
+                    'BLOB_HASH_MISMATCH', 'RECORD_CHAIN_MISMATCH'}:
                 self._halt(str(exc))
             raise
         except (OSError, sqlite3.Error):
-            self._broken = True
+            self._broken = 'STORAGE_FAILURE'
             try:
                 with self.store.transaction():
                     self._append('storage_failure', job['job_id'], {'failure': 'STORAGE_FAILURE', 'state': 'QUARANTINED'})
@@ -452,6 +515,8 @@ class OfflinePreserver:
                             if representation['role'] not in {'primary', 'submission', 'accession_index'}:
                                 raise AuditFailure('INVALID_REPRESENTATION')
                             self._enqueue(representation['uri'], representation['role'], observation_id, key)
+                self._append('parse_completed', observation_id, {'claims_hash': claims_hash,
+                             'event_keys': keys, 'parse_completed': parsed})
                 self.db.execute('INSERT INTO preservation_parsed VALUES (?,?,?)',
                                 (observation_id, claims_hash, canonical(keys).decode()))
         except (KeyError, TypeError, AuditFailure) as exc:

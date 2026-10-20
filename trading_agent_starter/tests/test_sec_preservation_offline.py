@@ -474,3 +474,74 @@ class OfflineTests(unittest.TestCase):
         self.assertEqual(len(obs['metadata']['code_hash']), 64)
         self.assertEqual(obs['metadata']['config_hash'], self.capture.summary()['control']['binding'])
         self.assertEqual(obs['metadata']['rights_reference'], 'synthetic-fixtures-only')
+
+    def test_review_projection_tampering_is_detected_on_reopen(self):
+        for name, sql in [
+            ('bytes', 'UPDATE preservation_control SET bytes_charged=-100'),
+            ('lost-job', "UPDATE preservation_jobs SET state='FAILED' WHERE role='primary'"),
+            ('denominator', 'UPDATE preservation_events SET target=0'),
+            ('deleted-job', "DELETE FROM preservation_jobs WHERE role='primary'"),
+            ('parse-cache', 'DELETE FROM preservation_parsed')]:
+            with self.subTest(name=name):
+                self.capture.close()
+                self.root = Path(self.tmp.name) / name
+                self.capture = self.open()
+                self.discovery()
+                with self.capture.store.transaction():
+                    self.capture.db.execute(sql)
+                self.capture.close()
+                candidate = None
+                try:
+                    with self.assertRaisesRegex(AuditFailure, 'QUEUE_CORRUPT'):
+                        candidate = self.open()
+                finally:
+                    if candidate is not None:
+                        candidate.close()
+
+    def test_review_403_with_oversized_or_partial_body_always_stops_requests(self):
+        for name, response in [('oversized', self.response(b'x' * 65, status=403)),
+                               ('partial', self.response(b'partial', status=403, complete=False))]:
+            with self.subTest(name=name):
+                self.transport.results.clear()
+                self.capture.close()
+                self.root = Path(self.tmp.name) / name
+                self.capture = self.open()
+                self.capture.enqueue(PRIMARY, 'primary', 'one')
+                self.capture.enqueue(SUBMISSION, 'submission', 'two')
+                self.transport.results.append(response)
+                record = self.capture.run_one()
+                self.assertEqual(record['metadata']['http_status'], 403)
+                self.transport.results.append(self.response())
+                with self.assertRaisesRegex(AuditFailure, 'HTTP_403'):
+                    self.capture.run_one()
+                self.restart()
+                with self.assertRaisesRegex(AuditFailure, 'HTTP_403'):
+                    self.capture.run_one()
+
+    def test_review_detected_blob_corruption_halts_subsequent_requests(self):
+        self.capture.enqueue(PRIMARY, 'primary', 'one')
+        self.transport.results.append(self.response(b'same'))
+        first = self.capture.run_one()
+        (self.capture.store.objects / first['blob_sha']).write_bytes(b'corrupt')
+        self.capture.enqueue(PRIMARY, 'primary', 'two')
+        self.capture.enqueue(SUBMISSION, 'submission', 'three')
+        self.transport.results.append(self.response(b'same'))
+        with self.assertRaisesRegex(AuditFailure, 'BLOB_HASH_MISMATCH'):
+            self.capture.run_one()
+        before = len(self.transport.calls)
+        self.transport.results.append(self.response())
+        with self.assertRaises(AuditFailure):
+            self.capture.run_one()
+        self.assertEqual(len(self.transport.calls), before)
+        self.assertEqual(self.capture.summary()['control']['halted'], 'BLOB_HASH_MISMATCH')
+
+    def test_review_large_header_is_bounded_failure_with_body_evidence(self):
+        self.capture.enqueue(PRIMARY, 'primary', 'one')
+        self.transport.results.append(self.response(b'important body', headers={'etag': 'x' * 65537}))
+        record = self.capture.run_one()
+        self.assertEqual(self.capture.store.raw(record), b'important body')
+        self.assertEqual(record['metadata']['failure'], 'RESPONSE_METADATA_LIMIT')
+        self.assertTrue(record['metadata']['headers_truncated'])
+        self.assertEqual(len(record['metadata']['headers']['etag']), 2048)
+        self.assertEqual(self.capture.jobs()[0]['state'], 'FAILED')
+        self.assertIsNone(record['metadata']['document_receipt'])
