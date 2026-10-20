@@ -308,6 +308,28 @@ class OfflineSECDriver:
             raise TimeoutError()
         return Response(reply.status, dict(reply.headers), (reply.body,), reply.complete)
 
+    def _prior_poll_records(self, observation):
+        # Follow durable page ancestry to the poll's cycle marker. Only evidence
+        # committed before that marker can establish overlap, including on replay.
+        # Unscoped discovery requests have no qualified prior-poll frontier.
+        for _ in range(self.max_pages):
+            queued = self.capture.store.records('preservation.queued', observation['metadata']['job_id'])
+            key = queued[0]['metadata']['request_key']
+            match = re.fullmatch(r'poll:([0-9]+):0', key)
+            if match:
+                cycles = self.capture.store.records('preactivation.cycle', match[1])
+                if cycles:
+                    prior = set()
+                    for record in self.capture.store.records():
+                        if record['id'] == cycles[0]['id']:
+                            return prior
+                        prior.add(record['id'])
+                break
+            if not key.startswith('page:'):
+                break
+            observation = self.capture.store.get(key[5:])
+        return set()
+
     def _parse(self, observation, plan):
         raw = self.capture.store.raw(observation)
         value = strict_json(raw)
@@ -322,11 +344,9 @@ class OfflineSECDriver:
         assertions = [FilingAssertion.from_fixture(v) for v in value['items']]
         if plan.cik is not None and any(a.cik != plan.cik for a in assertions):
             raise AuditFailure('SEC_CIK_MISMATCH')
-        # A replay after the event commit must not treat this very response as
-        # overlap. Its immutable first-discovery reference survives the crash.
+        prior = self._prior_poll_records(observation) if plan.kind == 'discovery' else set()
         old = {(e['cik'], e['accession'], e['form']) for e in self.capture.events()
-               if not e['conflict'] and self.capture.store.get(e['first_discovery'])
-               ['metadata']['source_observation'] != observation['id']}
+               if not e['conflict'] and e['first_discovery'] in prior}
         overlap = any((a.cik, a.accession, a.form) in old and a.form == '10-Q' for a in assertions)
         claims = []
         for assertion in assertions:

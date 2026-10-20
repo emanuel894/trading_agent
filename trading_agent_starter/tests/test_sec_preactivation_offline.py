@@ -247,6 +247,48 @@ class DriverTests(unittest.TestCase):
         self.restart()
         self.assertTrue(any(r['metadata']['plan']['start'] == 100 for r in self.records('request')))
 
+    def test_same_poll_page_movement_is_not_prior_poll_overlap_even_after_restart(self):
+        plans = [adapter.plan_request('discovery', start=start) for start in (0, 100, 200)]
+        later = item(accession='0000099999-26-000003')
+        fixtures = {plans[0].url: (adapter.FixtureReply(page([item()], next_start=100)),),
+                    plans[1].url: (adapter.FixtureReply(page([item()], next_start=200)),),
+                    plans[2].url: (adapter.FixtureReply(page([later])),)}
+        for assertion in (item(), later):
+            for kind in ('primary', 'submission', 'accession_index'):
+                plan = adapter.plan_request(kind, cik=CIK, accession=assertion['accession'],
+                    filename='synthetic.htm' if kind == 'primary' else None)
+                fixtures[plan.url] = tuple(adapter.FixtureReply(b'opaque') for _ in range(2))
+        self.open(fixtures, max_pages=3)
+        self.driver.poll(0)
+        self.step()
+        self.restart()
+        for _ in range(12):
+            self.step()
+        starts = [r['metadata']['plan']['start'] for r in self.records('request')]
+        self.assertEqual(starts, [0, 100, 200])
+        self.assertEqual(self.driver.summary()['known_originals'], 2)
+        self.assertIn('OVERLAP_NOT_ESTABLISHED', {r['source_key'] for r in self.records('gap')})
+
+    def test_prior_poll_frontier_stops_pagination_without_false_gap(self):
+        poll = adapter.plan_request('discovery')
+        fixtures = {poll.url: (adapter.FixtureReply(page([item()])),
+                               adapter.FixtureReply(page([item()], next_start=100)))}
+        for kind in ('primary', 'submission', 'accession_index'):
+            plan = adapter.plan_request(kind, cik=CIK, accession=ACC,
+                filename='synthetic.htm' if kind == 'primary' else None)
+            fixtures[plan.url] = (adapter.FixtureReply(b'opaque'),) * 2
+        self.open(fixtures)
+        self.driver.poll(0)
+        for _ in range(4):
+            self.step()
+        gaps = len(self.records('gap'))
+        self.clock.advance(60)
+        self.driver.poll(1)
+        self.restart()
+        self.step()
+        self.assertEqual(len(self.records('request')), 2)
+        self.assertEqual(len(self.records('gap')), gaps)
+
     def test_server_retry_after_pauses_all_dispatch_and_survives_reopen(self):
         plan = adapter.plan_request('daily_index', day='2026-01-01')
         self.open({plan.url: (adapter.FixtureReply(b'busy', status=503, headers=(('Retry-After', '20'),)),
