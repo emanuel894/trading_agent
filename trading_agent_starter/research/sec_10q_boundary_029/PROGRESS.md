@@ -1,0 +1,49 @@
+# Issue29 durable checkpoint
+
+Base d90f13035cf47e4d96ac8a33aed25d784dc589fe; branch research/issue-29-sec-10q-source-boundary. Live GitHub confirms PR28 merged as this exact foundation; no competing Issue29 PR/comments. PR1 foundation→main remains open and is outside this task. Old project-state snapshot is superseded for LEAN completion and Eric's reply, not silently edited.
+
+Plan: PLAN.md. One source reviewer/implementer now, one fresh independent final reviewer later; no duplicate audit. Reuse official SEC/Issue12 and FMBH metadata assertions before new retrieval. S01 official SEC API raw documentation is locally preserved from October18, hash a43713b1f7b26bd0e95eb4b5cb4e08b4947a4a86166efe9bb9ae4fadc49b5e19. Existing candidate review binds original2025 accession 0000950170-25-067613, CIK0000700565, form10-Q, period2025-03-31, primary fmbh-20250331.htm and retrospective acceptance2025-05-09T13:52:26.000Z, source record6321b462819148d2804a163bb502ead6/raw hash0aba40faee08a92ba42ac6913d9963b1cea0de7de3abb55d812e0b50d6a1d63b. These assertions do not establish historical receipt or eligibility.
+
+Critical path: finish local raw-object availability/hash inventory -> missing official semantics and bounded sample -> independent source-boundary decision. FMBH structural admission remains separately external/UNRESOLVED. No new SEC request yet. Cloud network unrestricted/enforced, current observations; no configured credentials/identities. Included usage only, paid calls/purchases0; monetary/token accounting unavailable.
+
+Adopt official SEC objects/accepted evidence semantics and standard hashes; build no general ingestor. Avoid old frame replays, LEAN reruns, broad SEC/issuer downloads and scientific changes. Next3: inventory byte provenance; falsify acceptance/version/receipt contract; review exact decision. All runnable before Eric/FMBH. Leverage: one qualified event-source boundary reused by later acquisition rather than another parser/framework audit.
+
+Next action: finish reuse inventory including missing private old stores; commit this checkpoint before any new SEC retrieval. Gate undecided; no source/alpha admission claim.
+
+## Source-first milestone: live clock conflict, fail closed
+
+Six official raw captures persisted: D01API documentation conditional request returned200/new bytes; D02access/index/PAC; D03FAQ; D04PDS specification; M01one-issuer submissions; I01known original accession index. reuse_inventory.json records absent old raw stores. T01complete-submission attempt exceeded12MB cap (index says30,606,368 bytes); stopped without body inspection, no retained body/hash. Failure metadata explicitly reconstructed from stderr, original transport clocks not retained/null. Do not repeat this whole-object attempt.
+
+Critical finding: M01 target acceptanceDateTime=2025-05-09T17:52:26.000Z. I01Accepted=2025-05-09 09:52:26 (naive Eastern display), matching prior review13:52:26Z with DST conversion, not current M01. Old raw metadata hash is absent, so no assertion of what changed. Source disagreements must quarantine instead of selecting earliest/latest/majority or retuning latency. Required resolved acceptance/publication proxy stays unknown pending exact source adjudication. This is presently a bounded INCOMPLETE candidate, not proof the registered hypothesis needs an amendment.
+
+Next smallest missing representations: official accession header and primary bytes7305910bytes (opaque/hash only). No broad/index population or repeated source audit. One implementer then independent review; no registration, ledger, FMBH structural or performance work. Included usage only, paidcalls0; next3: finish minimal byte provenance, define conflict/null/version contract, independent exact decision. These remain independent of Eric.
+
+## Minimal source capture complete; no more SEC retrieval planned
+
+H01official .hdr.sgml returned200: ACCEPTANCE-DATETIME20250509095226, accession/form/period/CIK match I01 and prior review. This does not reconcile M01acceptance17:52:26Z. D04PDS control block calls its time EST, but it does not define the archive header tag; do not manufacture a timezone rule or resolve the discrepancy by fixed-offset choice. Sample acceptance UTC remains null/unresolved; preserve source-specific assertions.
+
+P01primary was retained opaque without render/text inspection:7,306,016 response bytes, hash0d87c401bf7b1f5bfa4e0174f90988b4de70f4cf1807077b7b1df24e85076ce4. I01lists7,305,910bytes for that filename; this106-byte size discrepancy also prevents an unqualified original-byte identity claim. Exact URL/accession plus a hash establish the retrieved representation, not 2025 receipt or byte equality to the index-described object. Keep both source facts; no content/performance inspection to explain it.
+
+Official-only GET attempts9:8 complete retained captures plus1aborted oversized complete-submission capture. Prior SEC documentation/metadata assertions/index hashes were reused first; no history page, other issuer or full-index retrieval. Historical first observation and receipt stay null; all actual retained retrieval intervals logged separately.
+
+Decision candidateSEC_10Q_SOURCE_BOUNDARY_INCOMPLETE: precise source-clock and primary-representation size disagreements remain, not a demonstrated scientific blocker. Critical path now document/verify the bounded contract -> independent final review -> exact-head tests/CI/draft publication. No further retrieval or implementation of ingestion. One implementer plus one final reviewer; paidcalls/purchases0, no credentials, no MD&A/performance/eligibility/science work. Next3: report exact missing SEC facts; resolve Eric/FMBH separately; only after source gates clear, registered freeze/acquisition audit with unchanged provisional600s.
+
+## Qualification packet complete for independent final review
+
+BOUNDARY.md and decision.json preserve exact decision candidateSEC_10Q_SOURCE_BOUNDARY_INCOMPLETE; sample.json records per-source identities, native clocks and null resolved/historical clocks; falsifications.json distinguishes2actual conflicts from6contract counterexamples (synthetic/reused metadata, no amendment retrieval claimed). Offline verify_packet.py passed:8raw/archive hashes,9direct-attempt records including the aborted body, source-field extraction, clock conflict,106-byte size conflict, original/amendment/later accession checks, reused artifact hashes and unchanged protected foundation. It is a packet assertion script, not a new production admission/ingestion API. No further SEC retrieval is planned.
+
+Complete retained direct-capture bytes8,526,105; one aborted unretained prefix12,000,001bytes, original transport clocks/hash unknown and explicitly disclosed. Browser official-documentation discovery is additional and not counted as direct captures. No MD&A decoding/rendering or returns/performance inspection. Monetary/token accounting unavailable; paid calls/purchases0, no credentials.
+
+Critical path: one fresh independent final review of exact packet -> final-head240-test suite/packet verifier/demo -> draftPR and exact-head Ubuntu/Windows CI -> publish INCOMPLETE receipt if review confirms, then stop. Existing Python3.13 isolated environment/dependencies can be reused; do not install or rerun old LEAN evidence. No old source/schema/scientific artifact is changed, so no duplicate prior source audit or broad framework comparisons.
+
+Ruling: the requested deliverable is source adjudication, not a production feature. The only Python additions are offline assertion/final-check scripts; negative cases are explicitly contract counterexamples, not native collector qualification. No generic ingestor or production admission code is built. Cost if wrong: a future adapter still needs its own implementation qualification; this packet claims none.
+
+Next3/stop: resolve the exact SEC clock and primary-representation facts (can proceed while Eric waits); separately resolve Eric/FMBH source/eligibility gates; after both, registered freeze/acquisition audit with600s still provisional and no performance-tuned deadline. No change to registrations, ledger, candidate order, first-alpha science or trading. Final review/check/CI receipts belong in GitHub comments to avoid changing the tested head.
+
+## Live-state correction and independent review
+
+Independent final reviewer accepted SEC_10Q_SOURCE_BOUNDARY_INCOMPLETE atc0535eb, no blocking findings; independently ran only offline packet verification. Optional D03FAQ EST-label traceability clarification is incorporated alongside D04, without adopting a resolved timezone or altering the decision. No P01text, MD&A/performance or structural adjudication was inspected by reviewer. Actual served model/effort IDs unavailable; no cross-provider claim.
+
+Fresh Issue7 comments now supersede the earlier “Eric pending” next-task wording: owner reports record-specific follow-up declined; final comment6289186654 at2026-10-20T10:49:10Z recordsGENUINE_SOURCE_BLOCKER. FMBH remainsUNRESOLVED; path parked unless materially new evidence closes the registered gaps. Do not email-loop, purchase, build a replacement master, advance candidate2 or change science. This is a live-state reference correction, not a new eligibility/source adjudication by Issue29. Earlier checkpoints remain historical records, not current next instructions.
+
+Next3 now: owner decision on keeping the track parked (any amendment proposal separately authorized); if pursued, resolve only exact SEC clock/byte-representation facts; only after source/eligibility gates clear, registered freeze/acquisition audit. No further SEC request here. The originalc0535eb full240tests/packet/demo passed; preserve receipt outsidegit. This documentation/context correction changes head, so revalidate new exact head and request a bounded independent review of the delta; do not repeat underlying source audit/retrieval.

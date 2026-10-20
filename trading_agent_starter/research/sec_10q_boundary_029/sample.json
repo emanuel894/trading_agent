@@ -1,0 +1,86 @@
+{
+  "version": "sec-original-10q-sample-v1",
+  "event_key": {
+    "cik": "0000700565",
+    "accession": "0000950170-25-067613"
+  },
+  "scope": "Source/version/clocks only; not eligibility or selected cohort",
+  "submissions": {
+    "capture": "M01",
+    "pointer": "/filings/recent",
+    "row_index": 130,
+    "fields": {
+      "accessionNumber": "0000950170-25-067613",
+      "form": "10-Q",
+      "reportDate": "2025-03-31",
+      "filingDate": "2025-05-09",
+      "acceptanceDateTime": "2025-05-09T17:52:26.000Z",
+      "primaryDocument": "fmbh-20250331.htm"
+    }
+  },
+  "index": {
+    "capture": "I01",
+    "form": "10-Q",
+    "accepted_native": "2025-05-09 09:52:26",
+    "accepted_source_timezone": null,
+    "period_of_report": "2025-03-31",
+    "primary_document": "fmbh-20250331.htm",
+    "primary_document_type": "10-Q",
+    "primary_listed_bytes": 7305910,
+    "complete_submission_listed_bytes": 30606368,
+    "timezone_resolution_limitation": "D03/D04EST label retained; modern DST/serialization and cross-source agreement unresolved"
+  },
+  "header": {
+    "capture": "H01",
+    "accession": "0000950170-25-067613",
+    "cik": "0000700565",
+    "type": "10-Q",
+    "period": "20250331",
+    "acceptance_native": "20250509095226",
+    "acceptance_source_timezone": null,
+    "filing_date": "20250509",
+    "date_of_filing_date_change": "20250509",
+    "official_definition_timezone_label": "EST (D03FAQ; D04PDS control block)"
+  },
+  "primary_retrieval": {
+    "capture": "P01",
+    "filename": "fmbh-20250331.htm",
+    "actual_bytes": 7306016,
+    "raw_sha256": "0d87c401bf7b1f5bfa4e0174f90988b4de70f4cf1807077b7b1df24e85076ce4",
+    "body_policy": "Opaque bytes/hash only; no rendering, MD&A extraction or text inspection",
+    "matches_index_size": false,
+    "size_delta_bytes": 106,
+    "original_2025_bytes_guaranteed": false
+  },
+  "clock_interpretations_not_adopted": [
+    {
+      "basis": "Existing prior review assertion / America/New_York DST interpretation of09:52:26",
+      "candidate_utc": "2025-05-09T13:52:26Z",
+      "status": "Not independently resolved against contradictory current API; old raw metadata absent"
+    },
+    {
+      "basis": "Literal fixed EST(-05) interpretation of PDS control-block label; archive-tag equivalence not established",
+      "candidate_utc": "2025-05-09T14:52:26Z",
+      "status": "Not adopted; neither equals current API"
+    }
+  ],
+  "resolved_clocks": {
+    "report_period": "2025-03-31",
+    "sec_acceptance_utc": null,
+    "official_public_dissemination_utc": null,
+    "historical_first_machine_observable_utc": null,
+    "historical_first_receipt_utc": null,
+    "source_revision_instant_utc": null,
+    "primary_retrieval_started_utc": "2026-10-20T10:51:47.334588+00:00",
+    "primary_retrieval_completed_utc": "2026-10-20T10:51:48.196274+00:00"
+  },
+  "disposition": "QUARANTINE",
+  "reason_codes": [
+    "ACCEPTANCE_CLOCK_CONFLICT",
+    "ARCHIVE_HEADER_TIMEZONE_NOT_INDEPENDENTLY_RESOLVED",
+    "PRIMARY_INDEX_SIZE_CONFLICT"
+  ],
+  "historical_acquisition_proxy_admitted": false,
+  "historical_performance_admitted": false,
+  "prospective_observed_admitted": false
+}
