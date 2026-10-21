@@ -74,5 +74,102 @@ validate fixes; execute once if checks pass and stops permit; publish exact
 measurement/unknowns in Issue40. Existing components reduce duplicate maintenance;
 six diagnostic responses cannot establish seasonal volume or economic alpha.
 
-Live receipt and final validation links will be appended after execution. External
-spend so far exactly $0; no SEC request at this preflight checkpoint.
+## Executed once — 2026-10-21
+
+**Overall bounded G4 measurement: INCOMPLETE. External spend exactly $0.**
+Transport/body preservation completed all six fixed jobs inside every cap; physical
+UTC uncertainty and source acceptance/representation contracts remain unqualified.
+No continuous capture, G3 registration, scientific admission or trading follows.
+
+Execution head: `c09133fc1b540c00e2e8cc1495b5ec908d5bf6bd`. Independent review found
+no remaining findings; [exact-head CI39614990177](https://github.com/emanuel894/trading_agent/actions/runs/39614990177)
+passed343 tests and demo on Ubuntu and Windows before the invocation.
+
+| Canonical job | Attempts/statuses | Body bytes, including errors |
+|---|---|---:|
+| Discovery, start0 | 1:200 | 21,188 |
+| Submissions, CIK0000700565 | 1:200 | 158,301 |
+| Accession index,0000950170-25-067613 | 2:503 then200 | 7,747 +10,050 |
+| Complete submission | 1:200 | 30,606,368 |
+| Direct primary,fmbh-20250331.htm | 1:200 | 7,306,025 |
+| Daily index,2025-05-09 | 1:200 | 482,876 |
+
+**Six jobs, seven attempts,38,592,555 aggregate response-body bytes; largest
+30,606,368 bytes; elapsed24.60776813099983 seconds.** First request
+14:16:46.066211UTC (17:16:46.066211 Asia/Jerusalem); last complete body
+14:17:10.466069UTC (17:17:10.466069 Asia/Jerusalem). Elapsed includes initialization,
+parsing and terminal store verification through closure, sampled before local
+receipt serialization. All response bodies, including503, have exact size/hash
+and completion evidence. Discovery/index/error used Content-Length; submissions,
+complete submission, primary and daily index used verified chunked completion.
+No403 or hard cap occurred. No SEC requests were made after this session.
+
+The503 and successful index are separate immutable observations with different
+hashes and a version link; the503 has no successful document receipt. It is not a
+filing revision assertion. Same-hash live refetch/version stability was not tested;
+offline idempotency tests do not establish source immutability.
+
+### Clocks and Issue29
+
+Every attempt preserves request/header/body/end UTC and monotonic samples under
+session `3c3c07c08b774794b74195a80c518205`. No sample discontinuity was observed;
+offset/uncertainty are null and all seven observations are CLOCK_UNCERTAIN. HTTP
+Date and nanosecond clock resolution do not establish UTC accuracy.
+
+The submissions response still asserts `2025-05-09T17:52:26.000Z`. The index says
+`2025-05-09 09:52:26`; SGML header says `20250509095226`. The latter strings have
+no explicit timezone. No zone, publication instant or missing precision was
+invented. Resolved acceptance/publication and historical observation/receipt remain
+null. Atom supplies updated strings with explicit-04:00 offset, not a published
+field in this response; those are retained without relabeling acceptance.
+
+The index reports7,305,910 bytes. This direct primary is7,306,025 bytes (+115),
+where Issue29 previously reported7,306,016 (+9 difference between retrievals).
+The exact TEXT-tag-delimited embedded primary span is7,305,926 bytes, with its own
+hash and boundary/wrapper semantics. It is not silently equated with the direct
+primary or index. No authoritative correction/serialization/version explanation
+is established; Issue29 stays INCOMPLETE and eligibility remains unresolved.
+
+Offline processing found the initial index extractor had read the Type cell
+`10-Q` as its size because iXBRL adds nested text. A failing regression reproduced
+this; the adapter now reads the actual Size cell. The original g4.native assertion
+and original receipt remain intact; a new version appends the correction and
+reverifies the29-record evidence chain. This involved **zero additional SEC
+requests**. The manifest exposes both the initial assertion and corrected value.
+
+### Actual storage and durable evidence
+
+At session closure, the evidence subtree had38,703,148 apparent bytes and
+38,723,584 allocated bytes. Unique raw objects:38,592,555 apparent/38,604,800
+allocated. SQLite:110,592 apparent/114,688 allocated; writer lock:1/4,096.
+Across23 samples, maximum observed allocation was38,735,872; maximum observed
+rollback-journal allocation20,480. No spool files remained; spool peaks were not
+measured. Free disk recorded31,973,072,896 bytes, above5,180,000,000 required.
+Overlay-filesystem st_blocks is an allocation observation, not a media/durability
+guarantee. Backup footprint/restore, retention, production volume and exhaustive
+transient peaks remain UNMEASURED. No backup copy was created.
+
+[measurement.json](measurement.json) contains exact hashes, per-attempt clocks,
+headers, latest native fields, append-only correction references and separately
+measured postprocessing footprint. Original exact bytes, SQLite, run intent and
+receipt remain under ignored `runs/issue40-g4/live-20261021`; no source bodies are
+published in Git. Original28-record chain head:
+`c9e9c72f85214acbf11a94a69acf7a13bbdee60a3092474aa708e469ffe84673`.
+After offline correction,29-record chain head:
+`dce9e60f780b902cb7f157d5abee8c184998cacbcba31aa11714ddfbd3b79806`.
+
+### Final decision record
+
+Critical path is the owner's assessment of measured facts and remaining clock/
+source/operations unknowns; no automatic G3 registration or G4 activation follows.
+One implementer/one independent reviewer suffices; another collection worker would
+duplicate work and violate this session's scope. Reuse the committed measurements,
+accepted planner and preserved conflicts. External spend exactly$0; no paid route.
+
+Next three highest-information-value tasks: (1) independently verify the receipt
+and offline parser correction; (2) obtain qualified physical-clock/source-contract
+evidence if the owner pursues timing qualification; (3) reconsider proposed
+operational budgets only within explicit owner decisions. No further SEC request,
+capacity extrapolation, science redesign, candidate advancement, alpha run or
+trading is authorized by this result. Reusing the receipt avoids repeated source
+retrieval and development; six jobs cannot support a seasonal capacity forecast.

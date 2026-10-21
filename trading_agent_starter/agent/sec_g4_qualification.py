@@ -85,8 +85,23 @@ class TextOnly(HTMLParser):
     def __init__(self):
         super().__init__()
         self.parts = []
+        self.rows, self.row, self.cell = [], None, None
+    def handle_starttag(self, tag, attrs):
+        if tag == 'tr':
+            self.row = []
+        elif tag in {'td', 'th'} and self.row is not None:
+            self.cell = []
+    def handle_endtag(self, tag):
+        if tag in {'td', 'th'} and self.row is not None and self.cell is not None:
+            self.row.append(' '.join(self.cell))
+            self.cell = None
+        elif tag == 'tr' and self.row is not None:
+            self.rows.append(self.row)
+            self.row, self.cell = None, None
     def handle_data(self, data):
         self.parts.append(data.strip())
+        if self.cell is not None and data.strip():
+            self.cell.append(data.strip())
 
 
 def native_metadata(plan, raw):
@@ -129,8 +144,11 @@ def native_metadata(plan, raw):
         for field in ('Accepted', 'Filing Date', 'Period of Report'):
             positions = [i for i, p in enumerate(parts[:-1]) if p == field]
             result[field] = [parts[i + 1] for i in positions]
-        result['indexed_primary_sizes_native'] = [parts[i + 2] for i, p in enumerate(parts[:-2])
-            if p == 'fmbh-20250331.htm']
+        sizes = [row[4] for row in parser.rows if len(row) == 5
+                 and 'fmbh-20250331.htm' in row[2].split() and row[3] == '10-Q']
+        if any(not re.fullmatch(r'[0-9]+', size) for size in sizes):
+            raise AuditFailure('NATIVE_INDEX_SIZE_INVALID')
+        result['indexed_primary_sizes_native'] = sizes
     elif plan.kind == 'submission':
         header = raw.split(b'<DOCUMENT>', 1)[0]
         result['acceptance_native'] = [m.decode('ascii') for m in

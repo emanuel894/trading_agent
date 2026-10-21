@@ -243,6 +243,10 @@ class QualificationTests(unittest.TestCase):
         self.assertIsNone(v['resolved_acceptance_utc'])
         with self.assertRaises(AuditFailure):
             g4.native_metadata(g4.six_plans()[1], raw.replace(b'10-Q', b'10-Q/A'))
+    def test_accession_index_extracts_size_from_the_size_cell(self):
+        raw = b'<table class="tableFile"><tr><th>Seq</th><th>Description</th><th>Document</th><th>Type</th><th>Size</th></tr><tr><td>1</td><td>10-Q</td><td><a>fmbh-20250331.htm</a> iXBRL</td><td>10-Q</td><td>7305910</td></tr></table>'
+        v = g4.native_metadata(g4.six_plans()[2], raw)
+        self.assertEqual(v['indexed_primary_sizes_native'], ['7305910'])
     def test_atom_dtd_is_rejected_and_publication_keeps_native_precision(self):
         p = g4.six_plans()[0]
         v = g4.native_metadata(p, b'<feed xmlns="http://www.w3.org/2005/Atom"><updated>2026-10-21T12:00:00-04:00</updated></feed>')
