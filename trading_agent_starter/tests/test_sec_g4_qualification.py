@@ -44,7 +44,7 @@ class WireSocket:
 
 
 def wire(raw):
-    response = http.client.HTTPResponse(WireSocket(raw))
+    response = g4.StrictResponse(WireSocket(raw))
     response.begin()
     return response
 
@@ -87,7 +87,8 @@ class QualificationTests(unittest.TestCase):
     def test_truncated_or_ambiguous_framing_never_becomes_receipt(self):
         for headers in ((('Content-Length','9'),), (('Content-Length','3'),('Content-Length','3')),
                         (('Content-Length','3'),('Transfer-Encoding','chunked')),
-                        (('Content-Encoding','gzip'),)):
+                        (('Content-Encoding','gzip'),),
+                        (('Content-Encoding','gzip'),('Content-Encoding','identity'))):
             with self.subTest(headers=headers), tempfile.TemporaryDirectory() as root:
                 q = g4.Qualification(root, authorization_ref='fixture', opener=Opener(Reply(headers=headers)))
                 try:
@@ -162,6 +163,15 @@ class QualificationTests(unittest.TestCase):
         self.limits = replace(self.limits, max_requests=19)
         with self.assertRaises(AuditFailure):
             self.open()
+    def test_corrupt_cumulative_accounting_stops_before_next_request(self):
+        self.opener.replies.append(Reply())
+        q = self.open()
+        q.fetch(q.plans[0])
+        with q.db:
+            q.db.execute('UPDATE preservation_control SET requests=0,bytes_charged=0')
+        with self.assertRaisesRegex(AuditFailure, 'QUEUE_CORRUPT'):
+            q.fetch(q.plans[1])
+        self.assertEqual(len(self.opener.calls), 1)
     def test_actual_chunked_and_close_delimited_entity_bytes(self):
         for raw in (b'HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\n\r\n3\r\nabc\r\n0\r\n\r\n',
                     b'HTTP/1.0 200 OK\r\n\r\nabc'):
@@ -184,6 +194,18 @@ class QualificationTests(unittest.TestCase):
                     self.assertIsNone(r['metadata']['document_receipt'])
                     with self.assertRaises(AuditFailure):
                         q.fetch(q.plans[1])
+                finally:
+                    q.close()
+    def test_chunk_framing_is_not_entity_data_and_missing_trailer_cannot_complete(self):
+        for tail in (b'3\r\nabc\r', b'3\r\nabc\r\n0\r\n', b'3\r\nabcXY0\r\n\r\n'):
+            with self.subTest(tail=tail), tempfile.TemporaryDirectory() as root:
+                raw = b'HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\n\r\n' + tail
+                q = g4.Qualification(root, authorization_ref='fixture', opener=Opener(wire(raw)))
+                try:
+                    r = q.fetch(q.plans[0])
+                    self.assertEqual(q.store.raw(r), b'abc')
+                    self.assertEqual(r['metadata']['byte_count'], 3)
+                    self.assertIsNone(r['metadata']['document_receipt'])
                 finally:
                     q.close()
     def test_aggregate_reservation_exhaustion_does_not_send_second_request(self):

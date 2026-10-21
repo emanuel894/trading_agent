@@ -7,17 +7,14 @@ No scheduler, pagination, credentials, automatic restart or source admission.
 """
 from dataclasses import asdict
 from datetime import datetime, timezone
-from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 import http.client
-import os
 from pathlib import Path
 import re
 import shutil
-import sqlite3
 import time
 from urllib.error import HTTPError
-from urllib.request import Request, build_opener
+from urllib.request import HTTPSHandler, Request, build_opener
 import uuid
 import xml.etree.ElementTree as ET
 
@@ -32,6 +29,48 @@ USER_AGENT = 'emanuel894 trading_agent bounded SEC research contact https://gith
 CAPS = Limits(max_requests=18, max_total_bytes=100_000_000,
               max_response_bytes=39_999_999, max_jobs=6, max_events=100, max_records=1000)
 DISK_RESERVE = 5_000_000_000
+
+
+class StrictResponse(http.client.HTTPResponse):
+    """Tighten stdlib's intentionally permissive chunk completion checks.
+
+    Keep urllib proxy/TLS behavior; distinguish framing failures from entity
+    bytes. IncompleteRead.partial from _safe_read(CRLF) is never entity data.
+    """
+    def _get_chunk_left(self):
+        if self.chunk_left == 0:
+            if self.fp.read(2) != b'\r\n':
+                raise AuditFailure('PARTIAL_BODY')
+            self.chunk_left = None
+        return super()._get_chunk_left()
+
+    def _read_next_chunk_size(self):
+        line = self.fp.readline(65537)
+        size = line.split(b';', 1)[0].removesuffix(b'\r\n')
+        if len(line) > 65536 or not line.endswith(b'\r\n') or not re.fullmatch(br'[0-9a-fA-F]+', size):
+            raise AuditFailure('PARTIAL_BODY')
+        return int(size, 16)
+
+    def _read_and_discard_trailer(self):
+        size = 0
+        self.trailers_native = []
+        while True:
+            line = self.fp.readline(65537)
+            size += len(line)
+            if not line.endswith(b'\r\n') or size > 65536:
+                raise AuditFailure('PARTIAL_BODY')
+            if line == b'\r\n':
+                return
+            self.trailers_native.append(line.decode('iso-8859-1'))
+
+
+class StrictHTTPSConnection(http.client.HTTPSConnection):
+    response_class = StrictResponse
+
+
+class StrictHTTPSHandler(HTTPSHandler):
+    def https_open(self, req):
+        return self.do_open(StrictHTTPSConnection, req, context=self._context)
 
 
 def six_plans():
@@ -131,7 +170,7 @@ class Qualification(OfflinePreserver):
         self.last_end = self.started - 2
         self.trace, self.current_response = {}, None
         self.storage_samples = []
-        self.opener = opener or build_opener(NoRedirect())
+        self.opener = opener or build_opener(NoRedirect(), StrictHTTPSHandler())
         self.root = Path(root)
         self.root.mkdir(parents=True, exist_ok=True)
         self._disk()
@@ -208,6 +247,7 @@ class Qualification(OfflinePreserver):
             received = 0
             problem = None
             if (counts.count('content-length') > 1 or counts.count('transfer-encoding') > 1
+                    or counts.count('content-encoding') > 1
                     or (length is not None and (not re.fullmatch(r'[0-9]+', length) or transfer))
                     or transfer not in (None, 'chunked') or encoding not in (None, 'identity')):
                 problem = 'G4_UNPRESERVABLE_ENCODING_OR_FRAMING'
@@ -216,11 +256,6 @@ class Qualification(OfflinePreserver):
                 self._disk()
                 try:
                     chunk = response.read1(min(65536, limit - received))
-                except http.client.IncompleteRead as exc:
-                    if exc.partial:
-                        received += len(exc.partial)
-                        yield exc.partial
-                    raise AuditFailure('PARTIAL_BODY') from None
                 except http.client.HTTPException:
                     raise AuditFailure('PARTIAL_BODY') from None
                 if not chunk:
@@ -238,6 +273,8 @@ class Qualification(OfflinePreserver):
         self.trace = {}
         try:
             raw, meta = super()._receive(job, started)
+            if self.current_response is not None:
+                self.trace['trailers_native'] = getattr(self.current_response, 'trailers_native', [])
             meta.update(self.trace, transport_encoding='Exact HTTP entity bytes; transfer framing removed, no content decoding')
             if meta['failure'] is None:
                 try:
@@ -256,6 +293,8 @@ class Qualification(OfflinePreserver):
         if plan not in self.plans:
             raise AuditFailure('G4_JOB_OUTSIDE_MANIFEST')
         try:
+            self.store.verify()
+            self._verify_queue()
             job_id = self.enqueue(plan.url, plan.role, plan.kind)
             while True:
                 job = next(j for j in self.jobs() if j['job_id'] == job_id)
@@ -275,6 +314,7 @@ class Qualification(OfflinePreserver):
                     raise AuditFailure('G4_UNEXPECTED_QUEUE_STATE')
                 self.last_end = self.timer()
                 self.store.verify()
+                self._verify_queue()
                 meta = record['metadata']
                 status, failure = meta['http_status'], meta['failure']
                 if status == 403:
@@ -287,14 +327,10 @@ class Qualification(OfflinePreserver):
                 value = meta['headers'].get('retry-after')
                 delay = 2 ** (meta['attempt'] - 1)
                 if value is not None:
-                    try:
-                        delay = max(delay, int(value) if value.isdigit() else
-                            (parsedate_to_datetime(value) - datetime.now(timezone.utc)).total_seconds())
-                        if delay > 900 or delay < 0:
-                            raise ValueError
-                    except (ValueError, TypeError, OverflowError):
+                    if not value.isdigit() or int(value) > 900:
                         self._halt('RETRY_AFTER_UNSUPPORTED')
                         return record
+                    delay = max(delay, int(value))
                 if job['attempts'] + 1 >= self.limits.max_attempts:
                     self._halt('G4_RETRIES_EXHAUSTED')
                     return record
@@ -308,6 +344,7 @@ class Qualification(OfflinePreserver):
             raise
 
     def summary(self):
+        self._verify_queue()
         result = super().summary()
         result.update(mode=self.mode, elapsed_seconds=self.timer() - self.started,
                       storage_samples=self.storage_samples, disk_free_bytes=shutil.disk_usage(self.root).free,
