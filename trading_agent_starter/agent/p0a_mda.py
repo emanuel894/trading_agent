@@ -6,6 +6,7 @@ HTML fails closed; citation validity is not semantic entailment or human review.
 """
 from array import array
 from html import unescape
+from pathlib import Path
 import re
 import sqlite3
 import time
@@ -15,6 +16,7 @@ from .audit_text import VisibleText, SUSPICIOUS
 
 VERSION = 'p0a-v1'
 ALGORITHM = 'p0a-mapped-visible-v2'
+PROCESSING_CODE_SHA256 = digest(Path(__file__).read_bytes())
 CHUNK_CHARS = 2000
 MAX_BYTES = 40_000_000
 MAX_TEXT = 2_000_000
@@ -139,6 +141,9 @@ class MappedVisibleText(VisibleText):
                                     '500', '600', '700', '800', '900'},
                     'text-align': {'left', 'right', 'center', 'justify'},
                     'text-decoration': {'none', 'underline', 'line-through'}}
+    INERT_ATTRS = {'id', 'name', 'class', 'lang', 'xml:lang', 'style', 'hidden', 'title',
+                  'href', 'colspan', 'rowspan', 'scope', 'contextref', 'unitref',
+                  'decimals', 'scale', 'sign', 'format', 'continuedat', 'escape'}
 
     def __init__(self, html, offset):
         super().__init__()
@@ -166,6 +171,9 @@ class MappedVisibleText(VisibleText):
         if len(dict(attrs)) != len(attrs):
             raise AuditFailure('UNSUPPORTED_HTML_ATTRIBUTES')
         attrs = dict(attrs)
+        if any((key not in self.INERT_ATTRS and key != 'xmlns' and not key.startswith('xmlns:'))
+               or (value is None and key != 'hidden') for key, value in attrs.items()):
+            raise AuditFailure('UNSUPPORTED_HTML_ATTRIBUTES')
         if tag == 'ix:nonnumeric':
             self.fact_stack.append((attrs.get('name', '').rsplit(':', 1)[-1].lower(), []))
         if tag in {'style', 'link', 'iframe', 'object', 'embed', 'form', 'script'}:
@@ -322,6 +330,7 @@ def prepare(raw, meta, stages=None, *, source_evidence=None):
     mda, spans, kinds = _stage(stages, 'normalization', lambda: _normalize(parsed, boundary))
     chunks = _stage(stages, 'chunking', lambda: _chunks(mda))
     return dict(schema_version=VERSION, algorithm=ALGORITHM, accession=meta['accession'],
+                processing_code_sha256=PROCESSING_CODE_SHA256,
                 source_sha256=digest(raw), mda_sha256=digest(mda.encode()),
                 mda=mda, source_map=spans, content_kind=kinds, chunks=chunks,
                 normalization='whitespace-only-v1', chunk_chars=CHUNK_CHARS,

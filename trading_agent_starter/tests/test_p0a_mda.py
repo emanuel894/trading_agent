@@ -121,6 +121,15 @@ class PreparationTests(unittest.TestCase):
             with self.subTest(markup=markup), self.assertRaises(AuditFailure):
                 prepare(raw, identity(raw))
 
+    def test_legacy_presentation_attributes_cannot_bypass_visibility_policy(self):
+        for markup in ('<font color="#ffffff">HIDDEN</font>',
+                       '<font size="0">HIDDEN</font>',
+                       '<div bgcolor="#ffffff">HIDDEN</div>',
+                       '<p style>UNKNOWN</p>'):
+            raw = fixture(markup + '<p>' + SENTENCE * 12 + '</p>')
+            with self.subTest(markup=markup), self.assertRaises(AuditFailure):
+                prepare(raw, identity(raw))
+
     def test_provenance_resolver_binds_existing_raw_uri_role_and_chain(self):
         raw = fixture()
         meta = identity(raw)
@@ -184,6 +193,12 @@ class PreparationTests(unittest.TestCase):
         self.assertEqual(a, b)
         self.assertEqual(a['mda_sha256'], digest(a['mda'].encode()))
         self.assertEqual(''.join(c['text'] for c in a['chunks']), a['mda'])
+
+    def test_prepared_evidence_binds_exact_processing_code_bytes(self):
+        raw = fixture()
+        p = prepare(raw, identity(raw))
+        source = Path(__file__).resolve().parents[1] / 'agent/p0a_mda.py'
+        self.assertEqual(p['processing_code_sha256'], digest(source.read_bytes()))
 
 
 class ValidationTests(unittest.TestCase):

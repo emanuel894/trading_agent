@@ -13,7 +13,7 @@ import tracemalloc
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from agent.audit_store import AuditFailure, EvidenceStore, canonical, digest, strict_json, utc_now
-from agent.p0a_mda import process, prepare
+from agent.p0a_mda import process, prepare, PROCESSING_CODE_SHA256
 
 HERE = Path(__file__).resolve().parent
 STARTER = HERE.parents[1]
@@ -147,6 +147,8 @@ def main():
     seconds = sorted(r['offline_processing_seconds'] for r in success)
     # Nearest-rank descriptive p95 for a tiny sample; no inferential interpretation.
     report = dict(decision='P0A_INCOMPLETE', external_spend_usd=0,
+                  processing_code_sha256=PROCESSING_CODE_SHA256,
+                  runner_code_sha256=digest(Path(__file__).read_bytes()),
                   source_inventory=source_inventory, selection_sha256=digest(selection_raw),
                   authentic_target=12, authentic_coverage='INCOMPLETE',
                   attempts=results, unexpected_outcomes=mismatches, store_verification=verification,

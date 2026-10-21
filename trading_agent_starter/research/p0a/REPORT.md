@@ -71,8 +71,8 @@ but missing native identity is not invented. No human or population qualificatio
 Fixed selection: [fixture_selection.json](fixture_selection.json), frozen before
 processing; all six named synthetic fixtures, sorted lexicographically. No issuer
 selection or financial outcomes. [measurement.json](measurement.json) is the
-post-review v2 run; [measurement-accounting.json](measurement-accounting.json) retains the intermediate accounting run; [measurement-initial.json](measurement-initial.json)
-retains the first six-attempt run. All three ran the same selected cases, not additional
+final post-review v2 run; [measurement-review-v2.json](measurement-review-v2.json) retains the first v2 run; [measurement-accounting.json](measurement-accounting.json) retains the intermediate accounting run; [measurement-initial.json](measurement-initial.json)
+retains the first six-attempt run. All four ran the same selected cases, not additional
 independent observations. All attempts and three intended rejections per run are
 preserved. No per-attempt retries or manual repair of fixture source contents.
 
@@ -92,11 +92,11 @@ extraction or model-quality estimates. Material assertion support and manual
 intervention on authentic filings are NOT_MEASURED, not zero-error rates.
 
 Corrected run, Python3.12.14 on Ubuntu with tracemalloc enabled: valid fixture
-median **0.111108s**, maximum/nearest-rank descriptive p95 **0.965288s** (n=3).
+median **0.045153s**, maximum/nearest-rank descriptive p95 **0.113064s** (n=3).
 These durations include durable source/derived writes and chain verification,
 exclude the final timing-receipt append and reproduce neither source delivery nor
 LLM processing. Cold/warm, disk-cache and host-load effects are uncontrolled;
-the initial median0.084961s/max0.417196s and intermediate median0.068189s/max0.180863s are preserved, not hidden. The final run overlapped full-suite verification; CPU and wall measurements are separate, and no favorable timing was selected.
+the initial median0.084961s/max0.417196s and intermediate median0.068189s/max0.180863s are preserved, not hidden. The first v2 run (median0.111108s/max0.965288s) overlapped full-suite verification; the final code-bound run ran before full-suite checks. CPU and wall measurements are separate. All four sessions are preserved; no favorable timing is selected from a fixed-code repeat.
 
 Each attempt records identity, parsing, MD&A boundary extraction, normalization,
 chunking, validation and persistence separately. Unreached stages are NOT_RUN;
@@ -111,22 +111,22 @@ Mean stage durations for the final three valid **synthetic** preparations (secon
 
 | Stage | Mean seconds |
 |---|---:|
-| Identity verification | 0.000501 |
-| Parsing | 0.121533 |
-| MD&A boundary extraction | 0.012005 |
-| Normalization | 0.009239 |
-| Chunking | 0.000757 |
+| Identity verification | 0.000210 |
+| Parsing | 0.017737 |
+| MD&A boundary extraction | 0.002378 |
+| Normalization | 0.001496 |
+| Chunking | 0.000123 |
 | Inference | NOT_MEASURED |
-| Preparation validation | 0.000238 |
-| Persistence/serialization/integrity | 0.230456 |
+| Preparation validation | 0.000096 |
+| Persistence/serialization/integrity | 0.040451 |
 
 Unattributed overhead is explicitly recorded per attempt; these stage means do
 not include the final timing-receipt append. Real LLM validation is NOT_MEASURED.
 
-The corrected local store verifies **19 records**, chain head
-`1cd79e50d2b75bb3eb3e345f02be4c42c366db3dc306bc84317ff15b90208ef1`.
+The final local store verifies **19 records**, chain head
+`e304679c25e59036a7db8dca4a425962f09b4c05c6bcf09f2d786bfb6d6ab061`.
 Derived preparation hashes reproduce within each session; review repairs intentionally versioned the algorithm from v1 to v2, changing preparation/chunk hashes. Earlier hashes and measurements remain preserved. Original and derived
-objects are under ignored `runs/p0a-20261021-{a,b,c}/evidence`; the Git packet retains
+objects are under ignored `runs/p0a-20261021-{a,b,c,d}/evidence`; the Git packet retains
 reports and fixtures, **not a durable hosted copy of those SQLite stores**.
 The reports alone cannot reconstruct an identical timestamped evidence chain.
 
@@ -142,17 +142,17 @@ that stage needs separate owner approval of one exact usable zero-spend route,
 model/version, data destination, bounded calls/tokens and permitted configuration.
 Paid calls/new credentials remain outside this mandate.
 
-Traced Python allocation peak **1,430,979 bytes** (whole runner); RSS/OS peak,
+Traced Python allocation peak **1,431,707 bytes** (whole runner); RSS/OS peak,
 physical storage durability, backup footprint and production capacity unmeasured.
-Before final report output: **232,545 apparent /270,336 allocated bytes**, 13 files
+Before final report output: **232,821 apparent /270,336 allocated bytes**, 13 files
 in the run directory on overlay storage. Average successful fixture source+derived
-payload **61,190.67 bytes**. Per-case source/derived sizes and CPU/wall stage timing
+payload **61,282.67 bytes**. Per-case source/derived sizes and CPU/wall stage timing
 are in measurement.json. Allocation tracing adds overhead; these tiny documents
 do not approximate the unavailable 7.3MB/30.6MB originals.
 
 Linear **fixture-only projections**, no inference, metadata/backup expansion or
-concurrency: 100/1,000/10,000 cases → **37.52/375.17/3,751.66 seconds** and
-**6.12/61.19/611.91MB** source+derived payload. These are arithmetic estimates,
+concurrency: 100/1,000/10,000 cases → **6.27/62.73/627.33 seconds** and
+**6.13/61.28/612.83MB** source+derived payload. These are arithmetic estimates,
 not production forecasts or evidence of scalability. Per-codepoint span storage,
 repeated chain verification and serialization dominate scale; benchmark authentic
 sizes before choosing compressed span runs or incremental validation. No architecture
@@ -161,16 +161,16 @@ redesign is justified by these fixtures alone.
 ## Validation, review and continuation
 
 Baseline Python3.12.14:344 tests,335 pass/9 Alpaca-SDK skips. Existing dependency
-environment `/workspace/audit-upstreams/test-venv`: **375/375 tests passed**, no
+environment `/workspace/audit-upstreams/test-venv`: **377/377 tests passed**, no
 skips; `python -m agent demo` exited0. No dependency installation or upgrades.
-Focused21 tests, then24, and final31 tests cover nested Size-cell-like structures, hidden tags,
+Focused21 tests, then24, and final33 tests cover nested Size-cell-like structures, hidden tags,
 entities, SGML/exhibits, conflicting form/CIK, truncation, schema/citations,
 chunk loss/duplication, failures, idempotency and read-only provenance verification.
 RED evidence is retained in `/tmp/p0a-red-{2,3}.log`; full output
-`/tmp/p0a-full-1.log` (368 tests) and `/tmp/p0a-full-2.log` (375 tests). Review defect RED reproductions are `/tmp/p0a-review-red.log` and `/tmp/p0a-css-red.log`. Protected-artifact comparison against46737267 is empty.
+`/tmp/p0a-full-1.log` (368 tests) and `/tmp/p0a-full-2.log` (375 tests), and `/tmp/p0a-full-final.log` (377 tests). Review defect RED reproductions are `/tmp/p0a-review-red.log` and `/tmp/p0a-css-red.log`. Protected-artifact comparison against46737267 is empty.
 
-Fresh independent Sol High review of7f85636 found four defects: unsupported hidden CSS/DOM text, self-asserted authentic provenance, table-heading silent truncation, and recoverable SQLite/identity errors escaping receipts. Each reproduced RED and was repaired with regressions; v2 requires resolved source evidence, rejects unqualified markup/styles, uses table-aware and unambiguous end boundaries, and preserves recoverable failures. Exact repaired-head re-review and hosted Ubuntu/Windows CI are pending at this checkpoint. Initial-head CI39622179853 passed; it does not qualify the repaired head. Actual parent serving model/effort is not exposed. Requested
-route Sol High; reviewer requested `gpt-6.1-sol/high`, actual serving identity/effort unavailable. No Astra escalation. No human validation or qualified cross-provider
+Fresh independent Sol High review of7f85636 found four defects: unsupported hidden CSS/DOM text, self-asserted authentic provenance, table-heading silent truncation, and recoverable SQLite/identity errors escaping receipts. Each reproduced RED and was repaired with regressions; v2 requires resolved source evidence, rejects unqualified markup/styles/legacy presentation attributes, uses table-aware and unambiguous end boundaries, and preserves recoverable failures. Re-review of8442d57 confirmed the original four repairs, found a legacy font-color/bgcolor attribute bypass, and passed31 focused tests. A second repair reproduced that bypass RED, added a small inert-attribute allowlist and passed33 focused tests. Exact final-head re-review and hosted Ubuntu/Windows CI are pending at this checkpoint; the PR conversation records their final receipts. Earlier-head CI39622179853 and39623026348 passed; neither qualifies the final head. Actual parent serving model/effort is not exposed. Requested
+route Sol High; reviewer requested `gpt-6.1-sol/high`, actual serving identity/effort unavailable. No Astra escalation. New code and runner SHA256 bindings are in measurement.json; earlier runs explicitly predate that binding. No human validation or qualified cross-provider
 review is claimed. G4's completed review is reused only for G4 and not duplicated.
 
 Critical path: restore genuine source bytes with provenance, then separately
