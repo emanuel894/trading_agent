@@ -57,12 +57,12 @@ unsupported assertions and numerical confidence. A matching quote establishes
 citation grounding, **not semantic support**. The frozen prompt is inert and has
 never been sent to a model. No inference adapter or paid route was added.
 
-Limits: conservative HTML subset; strict nesting can reject valid HTML with
-omitted end tags. CSS stylesheets and active markup are rejected. Heading
+Limits: conservative allowlisted HTML and CSS subset; strict nesting can reject valid HTML with
+omitted end tags. CSS stylesheets, active markup, unqualified CSS (including opacity/font size/colors) and inert template content are rejected. Only exact qualified visibility rules and four narrow cosmetic property/value sets are accepted. Heading
 variants, TOCs and complex tables may abstain; no universal SEC parser claim.
 The section's minimum length and explicit closing heading do not independently
 prove authentic document completeness. Boilerplate *inside* MD&A is retained
-as source text; semantic boilerplate classification is NOT_MEASURED. Primary
+as source text; semantic boilerplate classification is NOT_MEASURED. Authentic preparation requires an explicit source EvidenceStore resolver: verified chain, existing successful observation, original bytes/hash/size, URI and representation must agree. An SEC-looking URL or arbitrary provenance string cannot admit a source. Primary
 accession is provenance-bound; conflicting native DEI form/CIK is rejected,
 but missing native identity is not invented. No human or population qualification.
 
@@ -71,8 +71,8 @@ but missing native identity is not invented. No human or population qualificatio
 Fixed selection: [fixture_selection.json](fixture_selection.json), frozen before
 processing; all six named synthetic fixtures, sorted lexicographically. No issuer
 selection or financial outcomes. [measurement.json](measurement.json) is the
-corrected accounting run; [measurement-initial.json](measurement-initial.json)
-retains the first six-attempt run. Both ran the same selected cases, not additional
+post-review v2 run; [measurement-accounting.json](measurement-accounting.json) retains the intermediate accounting run; [measurement-initial.json](measurement-initial.json)
+retains the first six-attempt run. All three ran the same selected cases, not additional
 independent observations. All attempts and three intended rejections per run are
 preserved. No per-attempt retries or manual repair of fixture source contents.
 
@@ -92,11 +92,11 @@ extraction or model-quality estimates. Material assertion support and manual
 intervention on authentic filings are NOT_MEASURED, not zero-error rates.
 
 Corrected run, Python3.12.14 on Ubuntu with tracemalloc enabled: valid fixture
-median **0.068189s**, maximum/nearest-rank descriptive p95 **0.180863s** (n=3).
+median **0.111108s**, maximum/nearest-rank descriptive p95 **0.965288s** (n=3).
 These durations include durable source/derived writes and chain verification,
 exclude the final timing-receipt append and reproduce neither source delivery nor
 LLM processing. Cold/warm, disk-cache and host-load effects are uncontrolled;
-the initial median0.084961s/max0.417196s is preserved, not hidden.
+the initial median0.084961s/max0.417196s and intermediate median0.068189s/max0.180863s are preserved, not hidden. The final run overlapped full-suite verification; CPU and wall measurements are separate, and no favorable timing was selected.
 
 Each attempt records identity, parsing, MD&A boundary extraction, normalization,
 chunking, validation and persistence separately. Unreached stages are NOT_RUN;
@@ -106,10 +106,27 @@ writes and integrity verification. The initial report omitted an explicit overhe
 field and mislabeled a wall-time projection as CPU; the corrected runner accounts
 for overhead and labels wall time accurately. Initial data is retained as-is.
 
+
+Mean stage durations for the final three valid **synthetic** preparations (seconds):
+
+| Stage | Mean seconds |
+|---|---:|
+| Identity verification | 0.000501 |
+| Parsing | 0.121533 |
+| MD&A boundary extraction | 0.012005 |
+| Normalization | 0.009239 |
+| Chunking | 0.000757 |
+| Inference | NOT_MEASURED |
+| Preparation validation | 0.000238 |
+| Persistence/serialization/integrity | 0.230456 |
+
+Unattributed overhead is explicitly recorded per attempt; these stage means do
+not include the final timing-receipt append. Real LLM validation is NOT_MEASURED.
+
 The corrected local store verifies **19 records**, chain head
-`c84ac832ec8e394d0c7326db4bf8b8aedd7f1d2458ea68f30e0070321c53e18b`.
-Derived preparation hashes reproduced in both sessions. Original and derived
-objects are under ignored `runs/p0a-20261021-{a,b}/evidence`; the Git packet retains
+`1cd79e50d2b75bb3eb3e345f02be4c42c366db3dc306bc84317ff15b90208ef1`.
+Derived preparation hashes reproduce within each session; review repairs intentionally versioned the algorithm from v1 to v2, changing preparation/chunk hashes. Earlier hashes and measurements remain preserved. Original and derived
+objects are under ignored `runs/p0a-20261021-{a,b,c}/evidence`; the Git packet retains
 reports and fixtures, **not a durable hosted copy of those SQLite stores**.
 The reports alone cannot reconstruct an identical timestamped evidence chain.
 
@@ -125,7 +142,7 @@ that stage needs separate owner approval of one exact usable zero-spend route,
 model/version, data destination, bounded calls/tokens and permitted configuration.
 Paid calls/new credentials remain outside this mandate.
 
-Traced Python allocation peak **1,430,240 bytes** (whole runner); RSS/OS peak,
+Traced Python allocation peak **1,430,979 bytes** (whole runner); RSS/OS peak,
 physical storage durability, backup footprint and production capacity unmeasured.
 Before final report output: **232,545 apparent /270,336 allocated bytes**, 13 files
 in the run directory on overlay storage. Average successful fixture source+derived
@@ -134,7 +151,7 @@ are in measurement.json. Allocation tracing adds overhead; these tiny documents
 do not approximate the unavailable 7.3MB/30.6MB originals.
 
 Linear **fixture-only projections**, no inference, metadata/backup expansion or
-concurrency: 100/1,000/10,000 cases → **10.44/104.42/1,044.17 seconds** and
+concurrency: 100/1,000/10,000 cases → **37.52/375.17/3,751.66 seconds** and
 **6.12/61.19/611.91MB** source+derived payload. These are arithmetic estimates,
 not production forecasts or evidence of scalability. Per-codepoint span storage,
 repeated chain verification and serialization dominate scale; benchmark authentic
@@ -144,17 +161,16 @@ redesign is justified by these fixtures alone.
 ## Validation, review and continuation
 
 Baseline Python3.12.14:344 tests,335 pass/9 Alpaca-SDK skips. Existing dependency
-environment `/workspace/audit-upstreams/test-venv`: **368/368 tests passed**, no
+environment `/workspace/audit-upstreams/test-venv`: **375/375 tests passed**, no
 skips; `python -m agent demo` exited0. No dependency installation or upgrades.
-Focused21 tests then24 tests cover nested Size-cell-like structures, hidden tags,
+Focused21 tests, then24, and final31 tests cover nested Size-cell-like structures, hidden tags,
 entities, SGML/exhibits, conflicting form/CIK, truncation, schema/citations,
 chunk loss/duplication, failures, idempotency and read-only provenance verification.
 RED evidence is retained in `/tmp/p0a-red-{2,3}.log`; full output
-`/tmp/p0a-full-1.log`. Protected-artifact comparison against46737267 is empty.
+`/tmp/p0a-full-1.log` (368 tests) and `/tmp/p0a-full-2.log` (375 tests). Review defect RED reproductions are `/tmp/p0a-review-red.log` and `/tmp/p0a-css-red.log`. Protected-artifact comparison against46737267 is empty.
 
-Fresh independent model review and new-head hosted Ubuntu/Windows CI are pending
-at this checkpoint. Actual parent serving model/effort is not exposed. Requested
-route Sol High, no Astra escalation. No human validation or qualified cross-provider
+Fresh independent Sol High review of7f85636 found four defects: unsupported hidden CSS/DOM text, self-asserted authentic provenance, table-heading silent truncation, and recoverable SQLite/identity errors escaping receipts. Each reproduced RED and was repaired with regressions; v2 requires resolved source evidence, rejects unqualified markup/styles, uses table-aware and unambiguous end boundaries, and preserves recoverable failures. Exact repaired-head re-review and hosted Ubuntu/Windows CI are pending at this checkpoint. Initial-head CI39622179853 passed; it does not qualify the repaired head. Actual parent serving model/effort is not exposed. Requested
+route Sol High; reviewer requested `gpt-6.1-sol/high`, actual serving identity/effort unavailable. No Astra escalation. No human validation or qualified cross-provider
 review is claimed. G4's completed review is reused only for G4 and not duplicated.
 
 Critical path: restore genuine source bytes with provenance, then separately

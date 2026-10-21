@@ -7,13 +7,14 @@ HTML fails closed; citation validity is not semantic entailment or human review.
 from array import array
 from html import unescape
 import re
+import sqlite3
 import time
 
 from .audit_store import AuditFailure, canonical, digest, strict_json, utc_now
 from .audit_text import VisibleText, SUSPICIOUS
 
 VERSION = 'p0a-v1'
-ALGORITHM = 'p0a-mapped-visible-v1'
+ALGORITHM = 'p0a-mapped-visible-v2'
 CHUNK_CHARS = 2000
 MAX_BYTES = 40_000_000
 MAX_TEXT = 2_000_000
@@ -43,7 +44,10 @@ def _stage(stages, name, action):
     return result
 
 
-def _identity(raw, meta):
+def _identity(raw, meta, source_evidence):
+    if not isinstance(meta, dict) or any(not isinstance(meta.get(k), str)
+                                       for k in ('accession', 'cik', 'form', 'representation')):
+        raise AuditFailure('INCORRECT_FILING_IDENTIFICATION')
     if (not isinstance(raw, bytes) or not 0 < len(raw) <= MAX_BYTES
             or not isinstance(meta, dict)
             or not re.fullmatch(r'[0-9]{10}-[0-9]{2}-[0-9]{6}', meta.get('accession', ''))
@@ -63,6 +67,26 @@ def _identity(raw, meta):
         valid = str(meta.get('source_ref', '')).startswith(prefix)
     if not valid:
         raise AuditFailure('PROVENANCE_UNVERIFIED')
+    if not meta['synthetic']:
+        if source_evidence is None:
+            raise AuditFailure('PROVENANCE_UNVERIFIED')
+        try:
+            source_evidence.verify()
+            record = source_evidence.get(meta['provenance_ref'])
+            observation = record['metadata']
+            if (record['kind'] != 'preservation.observation'
+                    or record['blob_sha'] != meta['source_sha256']
+                    or source_evidence.raw(record) != raw
+                    or observation.get('uri') != meta['source_ref']
+                    or observation.get('role') != meta['representation']
+                    or observation.get('byte_count') != len(raw)
+                    or observation.get('http_status') != 200
+                    or observation.get('method') != 'GET'
+                    or observation.get('failure') is not None
+                    or not observation.get('document_receipt')):
+                raise AuditFailure('PROVENANCE_UNVERIFIED')
+        except (AuditFailure, OSError, sqlite3.Error, KeyError, TypeError):
+            raise AuditFailure('PROVENANCE_UNVERIFIED') from None
 
 
 def _primary(raw, meta):
@@ -104,6 +128,17 @@ class MappedVisibleText(VisibleText):
     BLOCKS = VisibleText.BLOCKS | {'td', 'th'}
     VOID = {'br', 'img', 'meta', 'link', 'input', 'hr', 'area', 'base', 'col',
             'embed', 'param', 'source', 'track', 'wbr'}
+    INERT_TAGS = {'html', 'body', 'head', 'title', 'meta', 'div', 'span', 'p', 'b', 'i',
+                  'u', 's', 'strong', 'em', 'sup', 'sub', 'br', 'hr', 'font', 'a',
+                  'table', 'thead', 'tbody', 'tfoot', 'tr', 'td', 'th', 'ul', 'ol', 'li',
+                  'dl', 'dt', 'dd', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'caption',
+                  'colgroup', 'col', 'ix:nonnumeric', 'ix:nonfraction', 'ix:fraction',
+                  'ix:continuation', 'ix:hidden', 'ix:header'}
+    COSMETIC_CSS = {'font-style': {'normal', 'italic', 'oblique'},
+                    'font-weight': {'normal', 'bold', '100', '200', '300', '400',
+                                    '500', '600', '700', '800', '900'},
+                    'text-align': {'left', 'right', 'center', 'justify'},
+                    'text-decoration': {'none', 'underline', 'line-through'}}
 
     def __init__(self, html, offset):
         super().__init__()
@@ -126,14 +161,29 @@ class MappedVisibleText(VisibleText):
         self.kinds.extend(['table' if self.tables else 'prose'] * len(text))
 
     def handle_starttag(self, tag, attrs):
+        if tag not in self.INERT_TAGS:
+            raise AuditFailure('UNSUPPORTED_OR_ACTIVE_HTML')
+        if len(dict(attrs)) != len(attrs):
+            raise AuditFailure('UNSUPPORTED_HTML_ATTRIBUTES')
         attrs = dict(attrs)
         if tag == 'ix:nonnumeric':
             self.fact_stack.append((attrs.get('name', '').rsplit(':', 1)[-1].lower(), []))
         if tag in {'style', 'link', 'iframe', 'object', 'embed', 'form', 'script'}:
             raise AuditFailure('UNSUPPORTED_OR_ACTIVE_HTML')
-        style = re.sub(r'\s+', '', attrs.get('style', '')).lower()
-        if 'visibility:hidden' in style or 'display:none' in style:
-            attrs['hidden'] = ''
+        style = attrs.get('style', '')
+        if re.search(r'/\*|[\\{}@]|url\s*\(|var\s*\(|expression\s*\(', style, re.I):
+            raise AuditFailure('UNSUPPORTED_CSS')
+        for declaration in style.split(';'):
+            if not declaration.strip():
+                continue
+            prop, separator, value = declaration.partition(':')
+            prop, value = prop.strip().lower(), value.strip().lower()
+            if not separator or not value or '!important' in value:
+                raise AuditFailure('UNSUPPORTED_CSS')
+            if (prop, value) in {('display', 'none'), ('visibility', 'hidden')}:
+                attrs['hidden'] = ''
+            elif value not in self.COSMETIC_CSS.get(prop, set()):
+                raise AuditFailure('UNSUPPORTED_CSS')
         if tag not in self.VOID:
             self.stack.append(tag)
         if tag == 'table':
@@ -221,10 +271,14 @@ def _boundary(parsed):
                               r'discussion\s+and\s+analysis', text))
     if len(starts) != 1:
         raise AuditFailure('MDA_BOUNDARY_MISSING_OR_AMBIGUOUS')
-    end = re.search(r'(?im)^\s*item\s+[34]\s*[.\-–:]?\s*(?:quantitative|controls)',
-                    text[starts[0].end():])
-    if not end:
+    ends = list(re.finditer(r'(?im)^\s*(?P<heading>item\s+(?P<number>[34])\s*[.\-–:]?\s*'
+                            r'(?:quantitative|controls))', text[starts[0].end():]))
+    ends = [e for e in ends if parsed[2][starts[0].end() + e.start('heading')] != 'table']
+    # Item4 can legitimately follow Item3; two prose Item3 candidates are ambiguous.
+    preferred = [e for e in ends if e['number'] == '3'] or [e for e in ends if e['number'] == '4']
+    if len(preferred) != 1:
         raise AuditFailure('MDA_BOUNDARY_MISSING_OR_AMBIGUOUS')
+    end = preferred[0]
     left, right = starts[0].start(), starts[0].end() + end.start()
     if right - left < 500:
         raise AuditFailure('INCOMPLETE_MDA_SECTION')
@@ -260,9 +314,9 @@ def _chunks(text):
             for a in range(0, len(text), CHUNK_CHARS)]
 
 
-def prepare(raw, meta, stages=None):
+def prepare(raw, meta, stages=None, *, source_evidence=None):
     stages = stages if stages is not None else {}
-    _stage(stages, 'identity', lambda: _identity(raw, meta))
+    _stage(stages, 'identity', lambda: _identity(raw, meta, source_evidence))
     parsed = _stage(stages, 'parsing', lambda: _parse(raw, meta))
     boundary = _stage(stages, 'mda_extraction', lambda: _boundary(parsed))
     mda, spans, kinds = _stage(stages, 'normalization', lambda: _normalize(parsed, boundary))
@@ -335,7 +389,7 @@ def validate_output(raw, prepared):
                 contradictions='NOT_MEASURED', human_review='NOT_PERFORMED')
 
 
-def process(store, raw, meta):
+def process(store, raw, meta, *, source_evidence=None):
     """Process once, preserving all failed attempts. No actual/model mock call.
 
     Persistence timing includes original/derived durable writes + verification;
@@ -349,35 +403,38 @@ def process(store, raw, meta):
                   inference_quality='NOT_MEASURED', external_spend_usd=0,
                   synthetic=meta.get('synthetic'), retries=0)
     persistence = 0.0
-    try:
+    def persist(action):
+        nonlocal persistence
         p_tick = time.perf_counter()
-        source = store.append('p0a_source', meta.get('accession', 'invalid'),
-                              dict(supplied_identity=meta, verification='PENDING', untrusted=True), raw)
-        persistence += time.perf_counter() - p_tick
-        prepared = prepare(raw, meta, stages)
+        try:
+            return action()
+        finally:
+            persistence += time.perf_counter() - p_tick
+    try:
+        source = persist(lambda: store.append('p0a_source', meta.get('accession', 'invalid'),
+                         dict(supplied_identity=meta, verification='PENDING', untrusted=True), raw))
+        prepared = prepare(raw, meta, stages, source_evidence=source_evidence)
         stages['llm_inference'] = dict(status='NOT_MEASURED', seconds=None,
                                       reason='No configured authorized zero-spend inference path')
         _stage(stages, 'validation', lambda: _verify_prepared(prepared))
         stages['validation']['scope'] = 'Preparation integrity only; real output validation NOT_MEASURED'
-        p_tick = time.perf_counter()
-        prepared_raw = canonical(prepared)
-        record = store.append('p0a_prepared', meta['accession'],
-                              dict(source_id=source['id'], source_sha256=digest(raw),
-                                   schema_version=VERSION, untrusted=True), prepared_raw)
-        verification = store.verify()
-        persistence += time.perf_counter() - p_tick
+        def write_prepared():
+            prepared_raw = canonical(prepared)
+            record = store.append('p0a_prepared', meta['accession'],
+                                  dict(source_id=source['id'], source_sha256=digest(raw),
+                                       schema_version=VERSION, untrusted=True), prepared_raw)
+            return record, len(prepared_raw), store.verify()
+        record, derived_bytes, verification = persist(write_prepared)
         result.update(status='PREPARED_NO_INFERENCE', prepared_sha256=record['blob_sha'],
                       prepared_id=record['id'], mda_sha256=prepared['mda_sha256'],
                       mda_chars=len(prepared['mda']), chunks=len(prepared['chunks']),
-                      source_bytes=len(raw), derived_bytes=len(prepared_raw),
+                      source_bytes=len(raw), derived_bytes=derived_bytes,
                       store_verification=verification)
-    except (AuditFailure, OSError, UnicodeError, ValueError, KeyError) as error:
+    except (AuditFailure, OSError, sqlite3.Error, UnicodeError, ValueError, KeyError, TypeError) as error:
         # Only stable codes, never arbitrary source content/OS errors in reports.
         result['failure'] = str(error) if isinstance(error, AuditFailure) else 'PERSISTENCE_OR_AUDIT_FAILURE'
-        p_tick = time.perf_counter()
-        store.append('p0a_failure', meta.get('accession', 'invalid'),
-                     dict(failure=result['failure'], stages=stages, untrusted=True))
-        persistence += time.perf_counter() - p_tick
+        persist(lambda: store.append('p0a_failure', meta.get('accession', 'invalid'),
+                dict(failure=result['failure'], stages=stages, untrusted=True)))
     stages.setdefault('llm_inference', dict(status='NOT_MEASURED', seconds=None))
     for name in ('identity', 'parsing', 'mda_extraction', 'normalization', 'chunking', 'validation'):
         stages.setdefault(name, dict(status='NOT_RUN', seconds=None))

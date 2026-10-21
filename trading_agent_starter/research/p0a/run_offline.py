@@ -100,6 +100,8 @@ def main():
     store.append('p0a_selection', 'p0a', dict(frozen_at=utc_now()),
                  canonical(dict(source_inventory=source_inventory, fixture_selection=selection)))
     results, mismatches = [], []
+    source_evidence = (ReadOnlyEvidence(Path(source_inventory['root']) / 'evidence')
+                       if source_inventory['independent_authentic_filings'] else None)
     tracemalloc.start()
     tick = time.perf_counter()
     try:
@@ -122,11 +124,11 @@ def main():
                                     synthetic=True, representation=item['representation']),
                            item['path'], item['expected_status']))
         for raw, meta, name, expected in inputs:
-            result = process(store, raw, meta)
+            result = process(store, raw, meta, source_evidence=source_evidence)
             result['sample'] = name
             if result['status'] == 'PREPARED_NO_INFERENCE':
                 first = store.raw(store.get(result['prepared_id']))
-                second = canonical(prepare(raw, meta))
+                second = canonical(prepare(raw, meta, source_evidence=source_evidence))
                 result['preparation_reproduced'] = first == second
                 if first != second:
                     mismatches.append(name + ':NONDETERMINISTIC_PREPARATION')
@@ -136,6 +138,8 @@ def main():
         verification = store.verify()
     finally:
         store.close()
+        if source_evidence is not None:
+            source_evidence.close()
     _, peak = tracemalloc.get_traced_memory()
     tracemalloc.stop()
     elapsed = time.perf_counter() - tick
