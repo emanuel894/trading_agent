@@ -1,0 +1,14 @@
+<SEC-HEADER>
+ACCESSION NUMBER: 0000950170-25-067613
+CONFORMED SUBMISSION TYPE: 10-Q
+CENTRAL INDEX KEY: 0000700565
+</SEC-HEADER>
+<DOCUMENT>
+<TYPE>10-Q
+<TEXT>
+<html><body><p>Unrelated boilerplate</p><p><b>Item <span>2.</span></b> <ix:nonNumeric>Management’s Discussion and Analysis</ix:nonNumeric></p><p>Management expects stable demand while costs remain uncertain. Management expects stable demand while costs remain uncertain. Management expects stable demand while costs remain uncertain. Management expects stable demand while costs remain uncertain. Management expects stable demand while costs remain uncertain. Management expects stable demand while costs remain uncertain. Management expects stable demand while costs remain uncertain. Management expects stable demand while costs remain uncertain. Management expects stable demand while costs remain uncertain. Management expects stable demand while costs remain uncertain. Management expects stable demand while costs remain uncertain. Management expects stable demand while costs remain uncertain. </p><p>Item 3. Quantitative and Qualitative Disclosures</p><p>Unrelated exhibit</p></body></html>
+</TEXT>
+</DOCUMENT>
+<DOCUMENT>
+<TYPE>EX-99
+<TEXT>EXHIBIT</TEXT></DOCUMENT>

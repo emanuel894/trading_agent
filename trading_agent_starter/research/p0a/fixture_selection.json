@@ -1,0 +1,55 @@
+{
+  "version": "p0a-synthetic-selection-v1",
+  "selection_rule": "All six fixed named fixtures in lexicographic order; no authentic observations",
+  "frozen_at": "2026-10-21",
+  "items": [
+    {
+      "path": "fixtures/01-simple.html",
+      "sha256": "4d266d17ce23b2cf475e7782ca2f35140080490f6f0abed6c35fefe32b3ce0c1",
+      "bytes": 1000,
+      "representation": "primary",
+      "expected_status": "PREPARED_NO_INFERENCE",
+      "synthetic": true
+    },
+    {
+      "path": "fixtures/02-nested-ixbrl.html",
+      "sha256": "e75950afb5ce5ff75c400eae71d1875dc139b4025bf7494e5a28d5e336abf5cc",
+      "bytes": 6753,
+      "representation": "primary",
+      "expected_status": "PREPARED_NO_INFERENCE",
+      "synthetic": true
+    },
+    {
+      "path": "fixtures/03-submission.txt",
+      "sha256": "f670557ecd14ec2174542354afc65649aceca26928e280c6d5f0e3a91ebcb513",
+      "bytes": 1232,
+      "representation": "submission",
+      "expected_status": "PREPARED_NO_INFERENCE",
+      "synthetic": true
+    },
+    {
+      "path": "fixtures/04-ambiguous.html",
+      "sha256": "8831816748fb233331348e2d9716201d768e2368435245de79e3a62f69bad576",
+      "bytes": 2000,
+      "representation": "primary",
+      "expected_status": "FAILED",
+      "synthetic": true
+    },
+    {
+      "path": "fixtures/05-truncated.html",
+      "sha256": "733b19e044cfd1c7f8dc127fcbc953dbfd0fac7d548f626f108623f96d292227",
+      "bytes": 1000,
+      "representation": "primary",
+      "expected_status": "FAILED",
+      "synthetic": true
+    },
+    {
+      "path": "fixtures/06-injection.html",
+      "sha256": "793dbc9f63e374acc20685ff4790fb53131e5e90bec0f54e2407a5bc04fee1c9",
+      "bytes": 288,
+      "representation": "primary",
+      "expected_status": "FAILED",
+      "synthetic": true
+    }
+  ]
+}
