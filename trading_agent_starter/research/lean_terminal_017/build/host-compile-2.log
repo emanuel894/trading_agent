@@ -1,0 +1,101 @@
+/work/host/LeanTerminal.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/host/LeanTerminal.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/Engine/QuantConnect.Lean.Engine.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Engine/QuantConnect.Lean.Engine.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/AlgorithmFactory/QuantConnect.AlgorithmFactory.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/AlgorithmFactory/QuantConnect.AlgorithmFactory.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/Algorithm/QuantConnect.Algorithm.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Algorithm/QuantConnect.Algorithm.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/Algorithm.CSharp/QuantConnect.Algorithm.CSharp.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Algorithm.CSharp/QuantConnect.Algorithm.CSharp.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/Api/QuantConnect.Api.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Api/QuantConnect.Api.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/Algorithm.Framework/QuantConnect.Algorithm.Framework.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Algorithm.Framework/QuantConnect.Algorithm.Framework.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/Common/QuantConnect.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Common/QuantConnect.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/Compression/QuantConnect.Compression.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Compression/QuantConnect.Compression.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+  QuantConnect.Logging -> /work/source/Logging/bin/Release/QuantConnect.Logging.dll
+  SelectedOptimization 
+  QuantConnect.Compression -> /work/source/Compression/bin/Release/QuantConnect.Compression.dll
+  SelectedOptimization 
+/work/source/Indicators/QuantConnect.Indicators.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Indicators/QuantConnect.Indicators.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+  QuantConnect.Configuration -> /work/source/Configuration/bin/Release/QuantConnect.Configuration.dll
+  SelectedOptimization 
+  QuantConnect -> /work/source/Common/bin/Release/QuantConnect.Common.dll
+  SelectedOptimization 
+  QuantConnect.Api -> /work/source/Api/bin/Release/QuantConnect.Api.dll
+  SelectedOptimization 
+  QuantConnect.Indicators -> /work/source/Indicators/bin/Release/QuantConnect.Indicators.dll
+  SelectedOptimization 
+/work/source/Brokerages/QuantConnect.Brokerages.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Brokerages/QuantConnect.Brokerages.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+  QuantConnect.Brokerages -> /work/source/Brokerages/bin/Release/QuantConnect.Brokerages.dll
+  SelectedOptimization 
+  QuantConnect.Algorithm -> /work/source/Algorithm/bin/Release/QuantConnect.Algorithm.dll
+  QuantConnect.AlgorithmFactory -> /work/source/AlgorithmFactory/bin/Release/QuantConnect.AlgorithmFactory.dll
+  QuantConnect.Algorithm.Framework -> /work/source/Algorithm.Framework/bin/Release/QuantConnect.Algorithm.Framework.dll
+  QuantConnect.Algorithm.CSharp -> /work/source/Algorithm.CSharp/bin/Release/QuantConnect.Algorithm.CSharp.dll
+/usr/share/dotnet/sdk/10.0.402/Microsoft.CSharp.CurrentVersion.targets(130,9): warning MSB3884: Could not find rule set file "MinimumRecommendedRules.ruleset". [/work/source/Engine/QuantConnect.Lean.Engine.csproj]
+  QuantConnect.Lean.Engine -> /work/source/Engine/bin/Release/QuantConnect.Lean.Engine.dll
+  SelectedOptimization 
+/work/host/Program.cs(144,30): warning CS0108: 'TerminalAlgorithm.D' hides inherited member 'QCAlgorithm.D(Symbol, Symbol, decimal?, decimal?, OptionPricingModelType?, OptionPricingModelType?, Resolution?)'. Use the new keyword if hiding was intended. [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(250,54): warning CS1690: Accessing a member on 'TerminalAlgorithm.D' may cause a runtime exception because it is a field of a marshal-by-reference class [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(250,147): warning CS1690: Accessing a member on 'TerminalAlgorithm.D' may cause a runtime exception because it is a field of a marshal-by-reference class [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(252,80): warning CS1690: Accessing a member on 'TerminalAlgorithm.D' may cause a runtime exception because it is a field of a marshal-by-reference class [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(252,170): warning CS1690: Accessing a member on 'TerminalAlgorithm.D' may cause a runtime exception because it is a field of a marshal-by-reference class [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(167,19): error CS0119: 'QCAlgorithm.Symbol(string)' is a method, which is not valid in the given context [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(266,40): warning CS1690: Accessing a member on 'TerminalAlgorithm.D' may cause a runtime exception because it is a field of a marshal-by-reference class [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(273,24): warning CS1690: Accessing a member on 'TerminalAlgorithm.D' may cause a runtime exception because it is a field of a marshal-by-reference class [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(93,30): error CS1061: 'TerminalAlgorithm' does not contain a definition for 'RuntimeError' and no accessible extension method 'RuntimeError' accepting a first argument of type 'TerminalAlgorithm' could be found (are you missing a using directive or an assembly reference?) [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(93,127): error CS1061: 'TerminalAlgorithm' does not contain a definition for 'RuntimeError' and no accessible extension method 'RuntimeError' accepting a first argument of type 'TerminalAlgorithm' could be found (are you missing a using directive or an assembly reference?) [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(187,31): error CS1503: Argument 2: cannot convert from 'decimal' to 'int' [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(187,37): error CS1503: Argument 4: cannot convert from 'string' to 'bool' [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(187,67): error CS1503: Argument 2: cannot convert from 'decimal' to 'int' [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(187,77): error CS1503: Argument 4: cannot convert from 'string' to 'bool' [/work/host/LeanTerminal.csproj]
+
+Build FAILED.
+
+/work/host/LeanTerminal.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/host/LeanTerminal.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/Engine/QuantConnect.Lean.Engine.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Engine/QuantConnect.Lean.Engine.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/AlgorithmFactory/QuantConnect.AlgorithmFactory.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/AlgorithmFactory/QuantConnect.AlgorithmFactory.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/Algorithm/QuantConnect.Algorithm.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Algorithm/QuantConnect.Algorithm.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/Algorithm.CSharp/QuantConnect.Algorithm.CSharp.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Algorithm.CSharp/QuantConnect.Algorithm.CSharp.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/Api/QuantConnect.Api.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Api/QuantConnect.Api.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/Algorithm.Framework/QuantConnect.Algorithm.Framework.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Algorithm.Framework/QuantConnect.Algorithm.Framework.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/Common/QuantConnect.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Common/QuantConnect.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/Compression/QuantConnect.Compression.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Compression/QuantConnect.Compression.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/Indicators/QuantConnect.Indicators.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Indicators/QuantConnect.Indicators.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/Brokerages/QuantConnect.Brokerages.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Brokerages/QuantConnect.Brokerages.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/usr/share/dotnet/sdk/10.0.402/Microsoft.CSharp.CurrentVersion.targets(130,9): warning MSB3884: Could not find rule set file "MinimumRecommendedRules.ruleset". [/work/source/Engine/QuantConnect.Lean.Engine.csproj]
+/work/host/Program.cs(144,30): warning CS0108: 'TerminalAlgorithm.D' hides inherited member 'QCAlgorithm.D(Symbol, Symbol, decimal?, decimal?, OptionPricingModelType?, OptionPricingModelType?, Resolution?)'. Use the new keyword if hiding was intended. [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(250,54): warning CS1690: Accessing a member on 'TerminalAlgorithm.D' may cause a runtime exception because it is a field of a marshal-by-reference class [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(250,147): warning CS1690: Accessing a member on 'TerminalAlgorithm.D' may cause a runtime exception because it is a field of a marshal-by-reference class [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(252,80): warning CS1690: Accessing a member on 'TerminalAlgorithm.D' may cause a runtime exception because it is a field of a marshal-by-reference class [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(252,170): warning CS1690: Accessing a member on 'TerminalAlgorithm.D' may cause a runtime exception because it is a field of a marshal-by-reference class [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(266,40): warning CS1690: Accessing a member on 'TerminalAlgorithm.D' may cause a runtime exception because it is a field of a marshal-by-reference class [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(273,24): warning CS1690: Accessing a member on 'TerminalAlgorithm.D' may cause a runtime exception because it is a field of a marshal-by-reference class [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(167,19): error CS0119: 'QCAlgorithm.Symbol(string)' is a method, which is not valid in the given context [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(93,30): error CS1061: 'TerminalAlgorithm' does not contain a definition for 'RuntimeError' and no accessible extension method 'RuntimeError' accepting a first argument of type 'TerminalAlgorithm' could be found (are you missing a using directive or an assembly reference?) [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(93,127): error CS1061: 'TerminalAlgorithm' does not contain a definition for 'RuntimeError' and no accessible extension method 'RuntimeError' accepting a first argument of type 'TerminalAlgorithm' could be found (are you missing a using directive or an assembly reference?) [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(187,31): error CS1503: Argument 2: cannot convert from 'decimal' to 'int' [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(187,37): error CS1503: Argument 4: cannot convert from 'string' to 'bool' [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(187,67): error CS1503: Argument 2: cannot convert from 'decimal' to 'int' [/work/host/LeanTerminal.csproj]
+/work/host/Program.cs(187,77): error CS1503: Argument 4: cannot convert from 'string' to 'bool' [/work/host/LeanTerminal.csproj]
+    30 Warning(s)
+    7 Error(s)
+
+Time Elapsed 00:00:08.13

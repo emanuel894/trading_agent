@@ -1,0 +1,14 @@
+{
+  "pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
+  "sha256": {
+    "Algorithm/QCAlgorithm.Framework.cs": "e9360fa1eef29fa99aa8662989fa7095a718749173806460738ae4725e3d956a",
+    "Algorithm/QCAlgorithm.Trading.cs": "a8c279c5568d5d67773f3064f1551b4b269613a82d3032ef49279cc0428f4d6f",
+    "Engine/TransactionHandlers/BrokerageTransactionHandler.cs": "7eb8d10b2582c8f4d1a4578eaa4db66c021b70305abcbff378f0c899be95a00c",
+    "Common/Brokerages/DefaultBrokerageModel.cs": "a2b3ba5da4f0e71c50aa301eb45a9c12561bf93b7570fd1a48d14782ddbc4e60",
+    "Common/Securities/BuyingPowerModel.cs": "70447794a729be06c0b84db827647fcaec217b05ac3c43a5d51a279d05f12ecd",
+    "Common/Securities/SecurityExchangeHours.cs": "a077a91047dcb169d0a9dfadd65da146380249b24070bd4ed67e6282b2d448e2",
+    "Engine/HistoricalData/SubscriptionDataReaderHistoryProvider.cs": "a700f85a0448fe3a2516955f5a9a98ad27b695128f48538aad17259611492842",
+    "Engine/DataFeeds/DefaultDataProvider.cs": "1ba57930c5ffa0cc83a4abd5c7b5b9292e77e67570f0ed5efb63b77067fcdbe5",
+    "Engine/DataFeeds/SubscriptionDataReader.cs": "166ee7616fd91f0739eb1aee0f018d16041e7956c737c373e6ff15aa3f55160e"
+  }
+}

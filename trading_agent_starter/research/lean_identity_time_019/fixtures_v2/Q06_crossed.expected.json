@@ -1,0 +1,20 @@
+{
+  "admitted": false,
+  "reason": "MALFORMED_PRICE",
+  "fill": null,
+  "cash": "10000",
+  "quantity": "0",
+  "native_order_statuses": [],
+  "decision_receipt_ns": null,
+  "clock_mode": "simulated_historical",
+  "routes": [],
+  "structural": null,
+  "raw_marks": [],
+  "contract_state": "COMPLETE",
+  "positions": {
+    "I1": "0",
+    "I2": "0",
+    "I3": "0"
+  },
+  "initial_average": "0"
+}

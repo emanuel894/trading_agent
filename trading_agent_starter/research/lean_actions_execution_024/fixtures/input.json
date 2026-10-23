@@ -1,0 +1,2047 @@
+{
+  "schema_version": "issue24-v1",
+  "capture_mode": "fixture",
+  "rights_ref": "synthetic-owned",
+  "source_pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
+  "decision_ns": 1736175600000000000,
+  "calendar": {
+    "zone": "America/New_York",
+    "sessions": [
+      "2025-01-06",
+      "2025-01-07",
+      "2025-01-08"
+    ],
+    "regular_open": "09:30",
+    "regular_close": "16:00"
+  },
+  "cases": [
+    {
+      "case_id": "Q12_reverse_claim",
+      "fixture": "Q12",
+      "variant": "reverse",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "3",
+      "events": [
+        {
+          "id": "reverse",
+          "kind": "reverse",
+          "event_ns": 1736179200000000000,
+          "available_ns": 1736179200000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "factor": "2",
+          "claim": "0.5",
+          "whole": "1",
+          "post_price": "200",
+          "evidence": "E-REVERSE"
+        },
+        {
+          "id": "reverse",
+          "kind": "reverse",
+          "event_ns": 1736179200000000000,
+          "available_ns": 1736179200000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "factor": "2",
+          "claim": "0.5",
+          "whole": "1",
+          "post_price": "200",
+          "evidence": "E-REVERSE",
+          "delivery_sequence": 2
+        },
+        {
+          "id": "split_warning",
+          "kind": "split_warning",
+          "event_ns": 1736179200000000000,
+          "available_ns": 1736179200000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 3
+        },
+        {
+          "id": "settle_claim",
+          "kind": "settle_claim",
+          "event_ns": 1736182800000000000,
+          "available_ns": 1736182800000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "amount": "37",
+          "evidence": "E-CIL"
+        },
+        {
+          "id": "settle_claim",
+          "kind": "settle_claim",
+          "event_ns": 1736182800000000000,
+          "available_ns": 1736182800000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "amount": "37",
+          "evidence": "E-CIL",
+          "delivery_sequence": 2
+        }
+      ],
+      "oracle": "Q12_reverse_claim.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q13_payable",
+      "fixture": "Q13",
+      "variant": "known",
+      "decision_ns": 1736175600000000000,
+      "cash": "9000",
+      "seed": "10",
+      "events": [
+        {
+          "id": "dividend",
+          "kind": "dividend",
+          "event_ns": 1736179200000000000,
+          "available_ns": 1736179200000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "distribution": "2",
+          "post_price": "98",
+          "evidence": "E-DIV",
+          "payable_ns": 1736348400000000000
+        },
+        {
+          "id": "dividend",
+          "kind": "dividend",
+          "event_ns": 1736179200000000000,
+          "available_ns": 1736179200000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "distribution": "2",
+          "post_price": "98",
+          "evidence": "E-DIV",
+          "payable_ns": 1736348400000000000,
+          "delivery_sequence": 2
+        },
+        {
+          "id": "dividend_pay",
+          "kind": "dividend_pay",
+          "event_ns": 1736348400000000000,
+          "available_ns": 1736348400000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "evidence": "E-PAY"
+        },
+        {
+          "id": "dividend_pay",
+          "kind": "dividend_pay",
+          "event_ns": 1736348400000000000,
+          "available_ns": 1736348400000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "evidence": "E-PAY",
+          "delivery_sequence": 2
+        }
+      ],
+      "oracle": "Q13_payable.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q13_missing_payable",
+      "fixture": "Q13",
+      "variant": "missing",
+      "decision_ns": 1736175600000000000,
+      "cash": "9000",
+      "seed": "10",
+      "events": [
+        {
+          "id": "dividend",
+          "kind": "dividend",
+          "event_ns": 1736179200000000000,
+          "available_ns": 1736179200000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "distribution": "2",
+          "post_price": "98",
+          "evidence": "E-DIV",
+          "payable_ns": null
+        },
+        {
+          "id": "dividend",
+          "kind": "dividend",
+          "event_ns": 1736179200000000000,
+          "available_ns": 1736179200000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "distribution": "2",
+          "post_price": "98",
+          "evidence": "E-DIV",
+          "payable_ns": null,
+          "delivery_sequence": 2
+        }
+      ],
+      "oracle": "Q13_missing_payable.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q14_known",
+      "fixture": "Q14",
+      "variant": "known",
+      "decision_ns": 1736175600000000000,
+      "cash": "9000",
+      "seed": "10",
+      "events": [
+        {
+          "id": "merger",
+          "kind": "merger",
+          "event_ns": 1736179200000000000,
+          "available_ns": 1736179200000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "ratio": "0.5",
+          "cash_per_share": "7",
+          "evidence": "E-M",
+          "conflict": false,
+          "successor": "I2",
+          "post_price": "180"
+        },
+        {
+          "id": "merger_pay",
+          "kind": "merger_pay",
+          "event_ns": 1736182800000000000,
+          "available_ns": 1736182800000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "amount": "70",
+          "evidence": "E-M-PAY"
+        },
+        {
+          "id": "merger_pay",
+          "kind": "merger_pay",
+          "event_ns": 1736182800000000000,
+          "available_ns": 1736182800000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "amount": "70",
+          "evidence": "E-M-PAY",
+          "delivery_sequence": 2
+        }
+      ],
+      "oracle": "Q14_known.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q14_missing",
+      "fixture": "Q14",
+      "variant": "missing",
+      "decision_ns": 1736175600000000000,
+      "cash": "9000",
+      "seed": "10",
+      "events": [
+        {
+          "id": "merger",
+          "kind": "merger",
+          "event_ns": 1736179200000000000,
+          "available_ns": 1736179200000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "ratio": null,
+          "cash_per_share": null,
+          "evidence": null,
+          "conflict": false,
+          "successor": null,
+          "post_price": "180"
+        }
+      ],
+      "oracle": "Q14_missing.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q14_conflicting",
+      "fixture": "Q14",
+      "variant": "conflicting",
+      "decision_ns": 1736175600000000000,
+      "cash": "9000",
+      "seed": "10",
+      "events": [
+        {
+          "id": "merger",
+          "kind": "merger",
+          "event_ns": 1736179200000000000,
+          "available_ns": 1736179200000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "ratio": "0.5",
+          "cash_per_share": "7",
+          "evidence": "E-M",
+          "conflict": true,
+          "successor": "I2",
+          "post_price": "180"
+        }
+      ],
+      "oracle": "Q14_conflicting.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q15_exact",
+      "fixture": "Q15",
+      "variant": "exact",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "10",
+      "events": [
+        {
+          "id": "rename",
+          "kind": "rename",
+          "event_ns": 1736179200000000000,
+          "available_ns": 1736179200000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "ticker": "NEW",
+          "resolution": "exact",
+          "evidence": "E-NAME"
+        },
+        {
+          "id": "old_quote",
+          "kind": "quote",
+          "event_ns": 1736179200000001000,
+          "available_ns": 1736179200000001000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "ticker": "AAA",
+          "bid": "89.99",
+          "ask": "90",
+          "size": "1000",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "session": "RTH"
+        },
+        {
+          "id": "new_quote",
+          "kind": "quote",
+          "event_ns": 1736179200000002000,
+          "available_ns": 1736179200000002000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "ticker": "NEW",
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "session": "RTH"
+        }
+      ],
+      "initial_mapping": {
+        "available_ns": 1736175599000000000,
+        "ticker": "AAA",
+        "resolution": "exact",
+        "effective_date": "2025-01-06",
+        "evidence": "E-MAP-INITIAL"
+      },
+      "oracle": "Q15_exact.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q15_date_only",
+      "fixture": "Q15",
+      "variant": "date_only",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "10",
+      "events": [
+        {
+          "id": "rename",
+          "kind": "rename",
+          "event_ns": 1736179200000000000,
+          "available_ns": 1736179200000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "ticker": "NEW",
+          "resolution": "date_only",
+          "evidence": "E-NAME"
+        },
+        {
+          "id": "old_quote",
+          "kind": "quote",
+          "event_ns": 1736179200000001000,
+          "available_ns": 1736179200000001000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "ticker": "AAA",
+          "bid": "89.99",
+          "ask": "90",
+          "size": "1000",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "session": "RTH"
+        },
+        {
+          "id": "new_quote",
+          "kind": "quote",
+          "event_ns": 1736179200000002000,
+          "available_ns": 1736179200000002000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "ticker": "NEW",
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "session": "RTH"
+        }
+      ],
+      "initial_mapping": {
+        "available_ns": 1736175599000000000,
+        "ticker": "AAA",
+        "resolution": "date_only",
+        "effective_date": "2025-01-06",
+        "evidence": "E-MAP-INITIAL"
+      },
+      "oracle": "Q15_date_only.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q15_overlap",
+      "fixture": "Q15",
+      "variant": "overlap",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "10",
+      "events": [
+        {
+          "id": "rename",
+          "kind": "rename",
+          "event_ns": 1736179200000000000,
+          "available_ns": 1736179200000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "ticker": "NEW",
+          "resolution": "overlap",
+          "evidence": "E-NAME"
+        },
+        {
+          "id": "old_quote",
+          "kind": "quote",
+          "event_ns": 1736179200000001000,
+          "available_ns": 1736179200000001000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "ticker": "AAA",
+          "bid": "89.99",
+          "ask": "90",
+          "size": "1000",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "session": "RTH"
+        },
+        {
+          "id": "new_quote",
+          "kind": "quote",
+          "event_ns": 1736179200000002000,
+          "available_ns": 1736179200000002000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "ticker": "NEW",
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N",
+          "session": "RTH"
+        }
+      ],
+      "initial_mapping": {
+        "available_ns": 1736175599000000000,
+        "ticker": "AAA",
+        "resolution": "overlap",
+        "effective_date": "2025-01-06",
+        "evidence": "E-MAP-INITIAL"
+      },
+      "oracle": "Q15_overlap.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q16_resume",
+      "fixture": "Q16",
+      "variant": "resume",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "0",
+      "events": [
+        {
+          "id": "halt",
+          "kind": "halt",
+          "event_ns": 1736175600500000000,
+          "available_ns": 1736175600500000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1
+        },
+        {
+          "id": "q1_halted",
+          "kind": "quote",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "session": "RTH",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N"
+        },
+        {
+          "id": "resume",
+          "kind": "resume",
+          "event_ns": 1736175603000000000,
+          "available_ns": 1736175603000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1
+        },
+        {
+          "id": "resumed_fresh",
+          "kind": "quote",
+          "event_ns": 1736175603100000000,
+          "available_ns": 1736175603100000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "session": "RTH",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N"
+        },
+        {
+          "id": "deadline",
+          "kind": "deadline",
+          "event_ns": 1736175605000001000,
+          "available_ns": 1736175605000001000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1
+        }
+      ],
+      "initial_status": "TRADABLE",
+      "oracle": "Q16_resume.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q16_no_resume",
+      "fixture": "Q16",
+      "variant": "no_resume",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "0",
+      "events": [
+        {
+          "id": "halt",
+          "kind": "halt",
+          "event_ns": 1736175600500000000,
+          "available_ns": 1736175600500000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1
+        },
+        {
+          "id": "q1_halted",
+          "kind": "quote",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "session": "RTH",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N"
+        },
+        {
+          "id": "deadline",
+          "kind": "deadline",
+          "event_ns": 1736175605000001000,
+          "available_ns": 1736175605000001000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1
+        }
+      ],
+      "initial_status": "TRADABLE",
+      "oracle": "Q16_no_resume.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q16_unknown",
+      "fixture": "Q16",
+      "variant": "unknown",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "0",
+      "events": [
+        {
+          "id": "q1_halted",
+          "kind": "quote",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "session": "RTH",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N"
+        },
+        {
+          "id": "deadline",
+          "kind": "deadline",
+          "event_ns": 1736175605000001000,
+          "available_ns": 1736175605000001000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1
+        }
+      ],
+      "initial_status": "UNKNOWN",
+      "oracle": "Q16_unknown.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q16_no_fresh",
+      "fixture": "Q16",
+      "variant": "no_fresh",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "0",
+      "events": [
+        {
+          "id": "halt",
+          "kind": "halt",
+          "event_ns": 1736175600500000000,
+          "available_ns": 1736175600500000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1
+        },
+        {
+          "id": "q1_halted",
+          "kind": "quote",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "session": "RTH",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N"
+        },
+        {
+          "id": "resume",
+          "kind": "resume",
+          "event_ns": 1736175603000000000,
+          "available_ns": 1736175603000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1
+        },
+        {
+          "id": "deadline",
+          "kind": "deadline",
+          "event_ns": 1736175605000001000,
+          "available_ns": 1736175605000001000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1
+        },
+        {
+          "id": "late_fresh",
+          "kind": "quote",
+          "event_ns": 1736175606000000000,
+          "available_ns": 1736175606000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "session": "RTH",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N"
+        }
+      ],
+      "initial_status": "TRADABLE",
+      "oracle": "Q16_no_fresh.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q16_exit",
+      "fixture": "Q16",
+      "variant": "exit",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "5",
+      "events": [
+        {
+          "id": "halt",
+          "kind": "halt",
+          "event_ns": 1736175600500000000,
+          "available_ns": 1736175600500000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1
+        },
+        {
+          "id": "q1_halted",
+          "kind": "quote",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "session": "RTH",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N"
+        },
+        {
+          "id": "resume",
+          "kind": "resume",
+          "event_ns": 1736175603000000000,
+          "available_ns": 1736175603000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1
+        },
+        {
+          "id": "extended_decoy",
+          "kind": "quote",
+          "event_ns": 1736175603050000000,
+          "available_ns": 1736175603050000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "bid": "200",
+          "ask": "200.02",
+          "size": "1000",
+          "session": "EXT",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N"
+        },
+        {
+          "id": "resumed_fresh",
+          "kind": "quote",
+          "event_ns": 1736175603100000000,
+          "available_ns": 1736175603100000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "session": "RTH",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N"
+        },
+        {
+          "id": "deadline",
+          "kind": "deadline",
+          "event_ns": 1736175605000001000,
+          "available_ns": 1736175605000001000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1
+        }
+      ],
+      "initial_status": "TRADABLE",
+      "oracle": "Q16_exit.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q17_sell_5",
+      "fixture": "Q17",
+      "variant": "fill",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "5",
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "session": "RTH",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N"
+        }
+      ],
+      "side": "sell",
+      "bps": 5,
+      "oracle": "Q17_sell_5.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q17_buy_10",
+      "fixture": "Q17",
+      "variant": "fill",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "0",
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "session": "RTH",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N"
+        }
+      ],
+      "side": "buy",
+      "bps": 10,
+      "oracle": "Q17_buy_10.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q17_sell_10",
+      "fixture": "Q17",
+      "variant": "fill",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "5",
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "session": "RTH",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N"
+        }
+      ],
+      "side": "sell",
+      "bps": 10,
+      "oracle": "Q17_sell_10.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q18_shared_capacity",
+      "fixture": "Q18",
+      "variant": "capacity",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "0",
+      "events": [
+        {
+          "id": "budget_q1",
+          "kind": "quote",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "50",
+          "session": "RTH",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N"
+        },
+        {
+          "id": "budget_q2",
+          "kind": "quote",
+          "event_ns": 1736175602000000000,
+          "available_ns": 1736175602000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "50",
+          "session": "RTH",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N"
+        }
+      ],
+      "oracle": "Q18_shared_capacity.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q19_canonical",
+      "fixture": "Q19",
+      "variant": "canonical",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "0",
+      "events": [
+        {
+          "id": "e1",
+          "kind": "execution",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "qty": "4",
+          "price": "100.07001",
+          "verified_fee": "0"
+        },
+        {
+          "id": "cancel_request",
+          "kind": "cancel_request",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 2
+        },
+        {
+          "id": "e2",
+          "kind": "execution",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 3,
+          "qty": "2",
+          "price": "100.07001",
+          "verified_fee": "0"
+        },
+        {
+          "id": "cancel_ack",
+          "kind": "cancel_ack",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 4
+        }
+      ],
+      "oracle": "Q19_canonical.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      },
+      "fee_bound": "1"
+    },
+    {
+      "case_id": "Q19_reordered_duplicates",
+      "fixture": "Q19",
+      "variant": "adversarial",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "0",
+      "events": [
+        {
+          "id": "cancel_ack",
+          "kind": "cancel_ack",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 4
+        },
+        {
+          "id": "e2",
+          "kind": "execution",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 3,
+          "qty": "2",
+          "price": "100.07001",
+          "verified_fee": "0"
+        },
+        {
+          "id": "e1",
+          "kind": "execution",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "qty": "4",
+          "price": "100.07001",
+          "verified_fee": "0"
+        },
+        {
+          "id": "cancel_request",
+          "kind": "cancel_request",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 2
+        },
+        {
+          "id": "e2",
+          "kind": "execution",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 3,
+          "qty": "2",
+          "price": "100.07001",
+          "verified_fee": "0"
+        },
+        {
+          "id": "e1",
+          "kind": "execution",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "qty": "4",
+          "price": "100.07001",
+          "verified_fee": "0"
+        },
+        {
+          "id": "cancel_ack",
+          "kind": "cancel_ack",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 4
+        },
+        {
+          "id": "stale_status",
+          "kind": "stale_status",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 5,
+          "status": "Submitted"
+        }
+      ],
+      "oracle": "Q19_reordered_duplicates.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      },
+      "fee_bound": "1"
+    },
+    {
+      "case_id": "Q20_total_0",
+      "fixture": "Q20",
+      "variant": "total",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "0",
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "session": "RTH",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N"
+        }
+      ],
+      "verified_total": "0",
+      "oracle": "Q20_total_0.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q20_total_1",
+      "fixture": "Q20",
+      "variant": "total",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "0",
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "session": "RTH",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N"
+        }
+      ],
+      "verified_total": "1",
+      "oracle": "Q20_total_1.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q20_total_1_25",
+      "fixture": "Q20",
+      "variant": "total",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "0",
+      "events": [
+        {
+          "id": "q1",
+          "kind": "quote",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "bid": "100",
+          "ask": "100.02",
+          "size": "1000",
+          "session": "RTH",
+          "normalization": "Raw",
+          "unit": "shares",
+          "conditions": [
+            "R"
+          ],
+          "gap": false,
+          "source": "SIP_FIXTURE",
+          "tape": "A",
+          "exchange": "N"
+        }
+      ],
+      "verified_total": "1.25",
+      "oracle": "Q20_total_1_25.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q20_no_fill",
+      "fixture": "Q20",
+      "variant": "no_fill",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "0",
+      "events": [
+        {
+          "id": "deadline",
+          "kind": "deadline",
+          "event_ns": 1736175605000001000,
+          "available_ns": 1736175605000001000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1
+        }
+      ],
+      "fee_bound": "1",
+      "oracle": "Q20_no_fill.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q20_missing",
+      "fixture": "Q20",
+      "variant": "missing",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "0",
+      "events": [
+        {
+          "id": "deadline",
+          "kind": "deadline",
+          "event_ns": 1736175605000001000,
+          "available_ns": 1736175605000001000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1
+        }
+      ],
+      "fee_bound": null,
+      "oracle": "Q20_missing.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      }
+    },
+    {
+      "case_id": "Q20_unbounded",
+      "fixture": "Q20",
+      "variant": "unbounded",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "0",
+      "events": [
+        {
+          "id": "deadline",
+          "kind": "deadline",
+          "event_ns": 1736175605000001000,
+          "available_ns": 1736175605000001000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1
+        }
+      ],
+      "fee_bound": null,
+      "oracle": "Q20_unbounded.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      },
+      "fee_evidence": {
+        "verified": true,
+        "bound": null,
+        "evidence": "E-UNBOUNDED-FEE"
+      }
+    },
+    {
+      "case_id": "Q20_partial_correction",
+      "fixture": "Q20",
+      "variant": "partial",
+      "decision_ns": 1736175600000000000,
+      "cash": "10000",
+      "seed": "0",
+      "events": [
+        {
+          "id": "f1",
+          "kind": "execution",
+          "event_ns": 1736175601000000000,
+          "available_ns": 1736175601000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "qty": "1",
+          "price": "100.07001",
+          "verified_fee": "0.40"
+        },
+        {
+          "id": "f2",
+          "kind": "execution",
+          "event_ns": 1736175602000000000,
+          "available_ns": 1736175602000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "qty": "1",
+          "price": "100.07001",
+          "verified_fee": "0.80"
+        },
+        {
+          "id": "f3",
+          "kind": "execution",
+          "event_ns": 1736175603000000000,
+          "available_ns": 1736175603000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "qty": "1",
+          "price": "100.07001",
+          "verified_fee": "1.20"
+        },
+        {
+          "id": "cancel_request",
+          "kind": "cancel_request",
+          "event_ns": 1736175604000000000,
+          "available_ns": 1736175604000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1
+        },
+        {
+          "id": "cancel_ack",
+          "kind": "cancel_ack",
+          "event_ns": 1736175605000000000,
+          "available_ns": 1736175605000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1
+        },
+        {
+          "id": "fee-v2",
+          "kind": "fee_correction",
+          "event_ns": 1736175606000000000,
+          "available_ns": 1736175606000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "verified_fee": "1.10",
+          "evidence": "E-FEE-CORR"
+        },
+        {
+          "id": "fee-v2",
+          "kind": "fee_correction",
+          "event_ns": 1736175606000000000,
+          "available_ns": 1736175606000000000,
+          "receipt_ns": null,
+          "clock_mode": "simulated_historical",
+          "sequence": 1,
+          "verified_fee": "1.10",
+          "evidence": "E-FEE-CORR",
+          "delivery_sequence": 2
+        }
+      ],
+      "oracle": "Q20_partial_correction.expected.json",
+      "decision_quote": {
+        "id": "q0",
+        "kind": "quote",
+        "event_ns": 1736175599500000000,
+        "available_ns": 1736175599500000000,
+        "receipt_ns": null,
+        "clock_mode": "simulated_historical",
+        "sequence": 1,
+        "bid": "99.99",
+        "ask": "100",
+        "size": "1000",
+        "normalization": "Raw",
+        "unit": "shares",
+        "conditions": [
+          "R"
+        ],
+        "gap": false,
+        "source": "SIP_FIXTURE",
+        "tape": "A",
+        "exchange": "N",
+        "session": "RTH"
+      },
+      "fee_bound": "1.2"
+    }
+  ]
+}

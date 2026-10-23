@@ -1,0 +1,59 @@
+{
+  "approved": true,
+  "review_kind": "Independent pre-execution source/oracle/build-binding review only",
+  "reviewed_head": "f4357e88d240435be37507c77ee963a81865a98e",
+  "reviewer": "issue27_source_review; independent agent context",
+  "model_id": "Actual served model ID unavailable; inherited configuration",
+  "reasoning_effort": "Actual served reasoning effort unavailable; inherited configuration",
+  "binding": {
+    "build.json": "a1d91ad46c7016948811b076b7961c30297fbf1507df9de4fee96b3bb0249e9d",
+    "fixtures/manifest.json": "e7e209693a627e712c0cc916cf0f292f3ae0ae1eb7c7e52bd7f6da7c39399f93",
+    "compare.py": "e4ddec9cdbcdb672b7a64728ed7a3f91c64cb810da487f2f56514862cb086172",
+    "evaluate.py": "ac3a1570cb80a9b1c61a9a8e97c739319dfde1e186d3e0911c9a833229a07b53",
+    "run_gate.py": "8f9ee19d402e5abefe111459dbc29a5ed5c2439d2609d1650c8872b7b67a602a",
+    "reuse-proof.json": "fe4150dcc888c56e85f6029f7e7f0d667a404baf800419a912f65f29c9b8e929",
+    "host/Program.cs": "c67e247d1c6ab377eef1a068ff786401e510f01ef14b6e08f495ce3c0129e382",
+    "host/ResearchAlgorithm.cs": "ef7f3e7aa76cd59aa42a97169d821ff4cbf9b4c6f5b1cfe6f9eb26a71fc2ed84",
+    "host/LeanResearch.csproj": "376a8366ddae4f6549f839a482425bf67d5a6327465ccb187f69c8ca504be673"
+  },
+  "checked": {
+    "new_cases": 52,
+    "frozen_oracles_matched_to_authored_freeze": 52,
+    "tracked_upstream_source_files_verified": 6510,
+    "shared_runtime_files_identical_to_original_accepted_binding": 63,
+    "prior_evidence_preservation": "Verified by run_gate.binding()",
+    "comparator_checks": "Read-only wrong-cash, wrong-order and wrong-type rejection checks; no native execution"
+  },
+  "findings_closed": [
+    {
+      "finding": "Candidate fee self-inclusion in reserved cash",
+      "resolution": "ReservedCash filters Allowed; exact cash601 acceptance and competing-entry rejection frozen."
+    },
+    {
+      "finding": "Q26 halt flag not enforced",
+      "resolution": "Halt checks enabled, seeded halt lineage bound and new ENTRY rejected under same daily halt while sell reduction remains allowed."
+    },
+    {
+      "finding": "Q25 native marks overwritten and risk lineage omitted",
+      "resolution": "ClockPulse preserves marks; explicit native NAV assertion, RefreshRisk on positive admission/quote/fill, immutable mark/latch/session records and explicit monotonic RTH session reset frozen."
+    },
+    {
+      "finding": "Q24 fill-time/source provenance missing",
+      "resolution": "Selected source ID/nanoseconds and separate native dispatch nanoseconds exported, independently frozen and reconciled to native events."
+    }
+  ],
+  "contract_adjudications": [
+    "Q22 flat symbol1000 positive, seeded998+2 issuer rejection with passing cap predicate, and seeded999+2 failing cap predicate preserve the all-other-rules proviso.",
+    "Q21/Q22 policy seeded exposures remain isolated matrix initial conditions; Q23 qualifies end-to-end sizing.",
+    "Q24 native calendar projects frozen synthetic session inputs, including Jan9, without current provider calendar substitution.",
+    "Q32 attempts actual public Download and History through sticky deny guards; runtime must establish attempted calls and absent accepted business output.",
+    "Q33 reuses hash-bound original Q01 unknown-claim outcome without rerunning Q01 and initializes independent native algorithms for each arm."
+  ],
+  "limitations": [
+    "This approves execution of the exact bound frozen cases; it is not a LEAN_ALPHA_RESEARCH_GATE_PASS or final evidence review.",
+    "No native process, build, repository test suite, network, broker/provider authentication or paid call was executed by this reviewer.",
+    "Native runtime outcomes, clean-pair equality, container execution, CI and final head review remain unverified.",
+    "Actual served model and effort IDs are unavailable; this review does not claim cross-provider acceptance.",
+    "Q01-Q20 evidence remains accepted under original bindings; the new host does not requalify those rows. Full Q27 crash recovery and Q28-Q31 remain outside scope."
+  ]
+}

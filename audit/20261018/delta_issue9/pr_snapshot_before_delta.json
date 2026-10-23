@@ -1,0 +1,46 @@
+{
+  "retrieved_at_utc": "2026-10-18T07:59:02.729061+00:00",
+  "command": [
+    "gh",
+    "pr",
+    "view",
+    "10",
+    "--repo",
+    "emanuel894/trading_agent",
+    "--json",
+    "number,title,body,state,isDraft,baseRefName,headRefName,headRefOid,url,statusCheckRollup"
+  ],
+  "response": {
+    "baseRefName": "feat/alpaca-paper-foundation",
+    "body": "This audit selects a small scientific control layer, standard Python research tooling, and conditional LEAN integration for simulation and future IBKR/Alpaca execution. TradingAgents, RD-Agent(Q), FinRL/FinRL-X, Qlib, NautilusTrader and other alternatives receive source-grounded adoption or benchmark decisions.\n\nThe PR is now rebased cleanly onto the current scientific branch after merged PR #8. Its diff contains only the long-term build-vs-adopt audit and verification/source packet.\n\nOnly audit documentation, decisions and reproducibility evidence are added. Scientific registrations, Amendment 005, FMBH UNRESOLVED, candidate ordering, broker flags, existing code and workflows remain unchanged. No framework migration, alpha experiment, paid provider call, data purchase or trading occurred.\n\nValidation reported by the audit: 240 existing tests passed locally; hosted CI should be treated as authoritative after this rebased head reruns.\n\nIssue: #9",
+    "headRefName": "docs/long-term-build-vs-adopt-20261018",
+    "headRefOid": "4dd7703f429df01a6f7e67912294ec26e93b4ad0",
+    "isDraft": true,
+    "number": 10,
+    "state": "OPEN",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-18T07:47:31Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/emanuel894/trading_agent/actions/runs/39108950920/job/117622139517",
+        "name": "tests (ubuntu-latest)",
+        "startedAt": "2026-10-18T07:46:53Z",
+        "status": "COMPLETED",
+        "workflowName": "Foundation tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-18T07:55:50Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/emanuel894/trading_agent/actions/runs/39108950920/job/117622138848",
+        "name": "tests (windows-latest)",
+        "startedAt": "2026-10-18T07:54:35Z",
+        "status": "COMPLETED",
+        "workflowName": "Foundation tests"
+      }
+    ],
+    "title": "Audit long-term trading frameworks and maintained-tool adoption",
+    "url": "https://github.com/emanuel894/trading_agent/pull/10"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "url": "https://github.com/emanuel894/trading_agent/issues/12",
+  "title": "Design point-in-time macro government and news evidence contract",
+  "issue_number": 12,
+  "body": "## Objective\n\nDesign the portable point-in-time evidence contract for future macro/Fed/government/regulation/news event research so this event family can later compete against the same cheap controls and AI/hybrid challengers without lookahead.\n\nThis work can proceed while FMBH/Databento remains unresolved because it defines evidence semantics and source responsibilities only. It must not run an alpha experiment or alter the existing 10-Q registration.\n\nBase/source of truth: `feat/alpaca-paper-foundation`. Read the current draft PR #10 architecture audit for context, but do not modify PR #10.\n\n## Scope\n\nCover at minimum:\n- Federal Reserve decisions/statements/minutes/speeches where publication timing is material\n- CPI/PPI/employment/GDP and other major scheduled US macro releases\n- revisions/vintages and later corrections\n- federal regulations/rules/notices\n- tariffs, sanctions and trade-policy actions\n- material government contracts/awards where public timestamps can be established\n- issuer releases / earnings / guidance only insofar as they share the same event-evidence envelope\n- licensed or prospectively captured financial news, including updates/retractions/duplicates.\n\nDo not broaden into geopolitical prediction or strategy generation.\n\n## Required scientific semantics\n\nFor each source/event family define separately where available:\n- event/economic effective time\n- official publication/release time\n- first machine-observable/receipt time\n- revision/update/correction time\n- retrieval time\n- source/version/document identifier\n- timezone and native precision\n- raw immutable payload/document retention\n- correction/supersession linkage\n- duplicate/retraction semantics\n- entity/exposure linkage as-of the historical time, not today's profile.\n\nUnknown clocks must remain unknown. Never assign midnight to date-only data or infer a historical receipt time from retrieval time.\n\n## Source qualification\n\nInspect current authoritative/public documentation and maintained clients where useful for candidates such as:\n- FRED/ALFRED and Federal Reserve sources\n- BLS\n- BEA\n- Federal Register / official agency publications\n- Treasury/OFAC/USTR/Commerce or other relevant official government sources\n- SEC/issuer releases where relevant\n- historical news providers only at the level necessary to define acceptance criteria.\n\nSeparate official source semantics from community wrappers. Do not claim completeness from API reachability alone.\n\n## Cheap-control-first requirement\n\nFor each event family propose the simplest non-LLM controls that must exist before AI is tested, such as:\n- surprise vs consensus where legally/licensably available\n- release-vs-prior deltas and revisions\n- deterministic term/topic/numeric extraction\n- scheduled-event indicators\n- simple market-reaction baselines.\n\nAI/LLM extraction must be optional and removable. Do not define a multi-agent debate as the default.\n\n## Required output\n\nPersist:\n1. a canonical event-evidence schema\n2. source-responsibility matrix by event family\n3. point-in-time admission rules\n4. correction/revision rules\n5. entity-linking rules\n6. cheap-control baseline requirements\n7. licensing/retention unknowns that require later qualification\n8. the smallest separately registered experiment that should be run first once the current acquisition gate is cleared.\n\nFinish with one status:\n- `EVENT_CONTRACT_READY`\n- `EVENT_SOURCE_QUALIFICATION_NEEDED`\n- `SCIENTIFIC_SCOPE_BLOCKER`.\n\n## Constraints\n\n- no alpha experiment\n- no candidate #2\n- no change to Amendment 005 or existing registrations\n- no paid data/provider/model calls\n- no purchases/subscriptions\n- no broker/trading actions\n- no secret handling\n- no broad ingestion platform build\n- no modifications to PR #10.\n\nUse HIGH reasoning. Stop at contract/source-qualification design.",
+  "state": "open",
+  "user": {
+    "login": "emanuel894",
+    "name": "emanuel894",
+    "email": null,
+    "avatar_url": "https://avatars.githubusercontent.com/u/192386963?v=4",
+    "id": 192386963
+  },
+  "assignees": null,
+  "labels": null,
+  "milestone": null,
+  "state_reason": null,
+  "comments": 0,
+  "created_at": "2026-10-18T07:54:37Z",
+  "updated_at": "2026-10-18T07:54:37Z",
+  "closed_at": null,
+  "display_url": "https://github.com/emanuel894/trading_agent/issues/12",
+  "display_title": "Design point-in-time macro government and news evidence contract"
+}

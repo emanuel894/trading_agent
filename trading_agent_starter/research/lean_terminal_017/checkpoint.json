@@ -1,0 +1,93 @@
+{
+  "issue": 17,
+  "branch": "research/issue-17-lean-terminal-spike",
+  "base_sha": "e20a1410fe0130b7eddfacf97d1fca7860f25d3c",
+  "source_pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
+  "allowed_fixtures": [
+    "Q01",
+    "Q02",
+    "Q03"
+  ],
+  "status": "LEAN_TERMINAL_GATE_PASS",
+  "phase": "terminal runtime complete; do not execute more fixtures",
+  "completed": [
+    "Read live issue17, merged design, Q01\u2013Q03 definitions and canonical policy/operating skill.",
+    "Selected clean current protected base; created mandated branch only.",
+    "Checked namespaces: bwrap/unshare denied uid-map by environment; Docker daemon available.",
+    "Fetched exact LEAN source pin into separate host workspace.",
+    "Pulled and pinned official .NET10 SDK container digest; first source build passed (0 errors).",
+    "Frozen ten exact Q01\u2013Q03 cases/oracles before fixture execution.",
+    "Fixture preparation revision makes duplicate/conflicting payload bytes explicit before execution; independent expected oracles unchanged.",
+    "C# compile corrected public API names/signatures; no runtime fixture or engine mismatch observed.",
+    "Pinned13project locks and28resolvedpackages; NuGet normalized and raw-package hashes distinguished/verified; SDK10.0.402/runtime10.0.13.",
+    "Host executes actual AlgorithmManager, SubscriptionSynchronizer, DataManager/UniverseSelection and BacktestingTransactionHandler. Native metrics/publication only disabled.",
+    "Immediate per-frame blocker checks and partial output capture prepared. No LEAN fixture has run yet.",
+    "First network-none Q01 process proved real interception and retained10/cash9000 through4hour/end, but mandatory buy/sell were not admitted; NOT a passing fixture.",
+    "Attempt01 rejected, root cause: equity quote data excluded from native last-data HasData. Corrected only native fixture seed to TradeBar; mandatory order response checks added.",
+    "Attempt02 retained quantity10/cash9000 and canceled both admitted orders, but authored callback-order oracle diverged. Run stopped; no subsequent case executed.",
+    "Fresh independent high-reasoning boundary review requested before deciding whether any source-grounded callback-order correction is within the frozen design.",
+    "Independent RED review permits source-grounded versioned callback permutation; no economic/denominator/settlement changes.",
+    "Executable unknown-NAV admission probe and known-NAV positive control added; exact event/identity/hash/phase/reservation-until-ack checks strengthened.",
+    "First v2 Q01 user-defined passed exact strengthened assertions (attempt03). Second launch failed before engine due disk exhaustion.",
+    "Preserved all container controls/exits, removed only stopped issue17 containers and cold-archived task NuGet cache under /tmp/issue17-spill. Measured free disk25GB. Native runtime/source/fixtures/output hashes retained.",
+    "Resumed validated v2 attempt03 without rerunning it; attempt05 PASS, both canonical bytes hash5563172cc21a757077a62d349130f3539cb5c17deb1744d438a152b4fd384ace.",
+    "Final host passes all10variants through20fresh network-none processes; each casepaircanonicalJSON bytehashidentical.",
+    "Both required negative controls detect actual native cached-price delisting fill; interception prevents it.",
+    "Repository240testsPASS, syntheticdemo300bars/zeroorders, comparator12adversarialchecksPASS.",
+    "Fresh independent whole-packet RED review PASS for draft publication; zero critical/important findings; two bounded runner/exporter limitations documented in INDEPENDENT_REVIEW.md. Fresh suite240/comparator12/demo300 PASS."
+  ],
+  "next_action": "No additional implementation or fixture execution. Reconcile the branch draft PR and native final-head Ubuntu/Windows Foundation checks on GitHub; publish only if absent, then report LEAN_TERMINAL_GATE_PASS and stop. Never merge in this issue.",
+  "policy_and_design_sha256": {
+    "AGENTS.md": "291514f0c3017fae9534ce9cd64f71928698e0c6e7faaac24989c035b3b0483c",
+    "AI_PROJECT_POLICY.md": "69795c12456a1a7228d6936d433a256a829760453361d04b3686c2a2669237ce",
+    ".agents/skills/trading-project/SKILL.md": "ae1069018bdfe1b58284f0425b16abb6bdfeac5e39aac68af9530f77e60c2973",
+    "trading_agent_starter/LEAN_CONTRACT_QUALIFICATION_20261018.md": "9467bde7ef6698decbcf158e5c0d26a57af54283e9f30d2b7a1938beb382e835",
+    "trading_agent_starter/research/lean_qualification_011/FIXTURE_MATRIX.md": "a002fb8d9ae2add7486a196c4d590a47395428f64a24c1a611b159ea8e4ab076"
+  },
+  "usage": {
+    "paid_provider_calls": 0,
+    "purchases": 0,
+    "framework_fixture_runs": 25,
+    "repair_cycles": 2,
+    "final_host_clean_runs": 20,
+    "host_processes": 25,
+    "native_algorithm_manager_runs": 24,
+    "framework_fixture_runs_definition": "Host processes including one pre-lifecycle calendar failure; excludes failed Docker launch04."
+  },
+  "scheduling": {
+    "available_tool": false,
+    "quota_reset_time": "unknown",
+    "resume_scheduled": false,
+    "reason": "No scheduling tool appears in active tool catalog; quota reset is not exposed. Do not invent a reset or create recurring polling."
+  },
+  "pending_side_effects": [
+    "As of this prepublication checkpoint: draft PR publication and exact-final-head hosted CI; final outcomes belong to the GitHub PR/native checks, not a self-referencing commit. Reconcile before retry."
+  ],
+  "stop_conditions": "Issue17 immediate stop list is authoritative; no Q04\u2013Q33.",
+  "runtime_workspace": "/workspace/issue-17-lean",
+  "container_image": "mcr.microsoft.com/dotnet/sdk@sha256:0d99ebf1ccad15037b5c98c9fe8979d6b8dbac23812feae2277a0b277b5c5ffa",
+  "attempts_evidence": [
+    "attempts/01",
+    "attempts/02"
+  ],
+  "oracle_revision": "ORACLE_REVISION.md; v1 retained in fixtures; v2 corrects callback permutation and adds stronger probes/time/identity/assertions.",
+  "cold_cache_archive": {
+    "path": "/tmp/issue17-spill/packages.tar.gz",
+    "sha256": "0756b57656de11fff914f33b585f2a448c7a97d0dca078494ef810f6a1fd0f6c",
+    "not_needed_for_compiled_fixture_execution": true
+  },
+  "host_preparation_corrections": [
+    "equity seed HasData representation",
+    "source-grounded callback order/probe coverage correction",
+    "explicit Base universe calendar registration via public SetEntry"
+  ],
+  "automatic_provider_repair_cycles": 0,
+  "final_artifacts": {
+    "decision": "decision.json",
+    "report": "LEAN_TERMINAL_GATE_20261018.md",
+    "validation": "validation.json",
+    "native_results": "evidence/gate-attempts.json"
+  },
+  "updated_utc": "2026-10-18T20:07:19.851033+00:00",
+  "independent_final_review": "PASS_FOR_DRAFT_PUBLICATION; INDEPENDENT_REVIEW.md"
+}

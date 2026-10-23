@@ -1,0 +1,12 @@
+{
+  "version": "issue23-v1",
+  "sha256": {
+    "Q09_typed_historical.expected.json": "6798e513d9cfa511a76dcd3318c5b2a95651fb1b5674e712122f692f16709255",
+    "Q09_typed_prospective.expected.json": "a443afd2e69a69c4fb2dde5a218b64743b819cc78413e79f42f7bc5ee5d3b020",
+    "Q11_ingress_future_factor.expected.json": "4e292e2dc1c39737b42e89a1b2aa94079eabbb61b7c56e8e698e23c07ef3d057",
+    "Q11_ingress_raw.expected.json": "4e292e2dc1c39737b42e89a1b2aa94079eabbb61b7c56e8e698e23c07ef3d057",
+    "Q11_ingress_wrong_metadata.expected.json": "0706ac6b23a9a8ee85c3294b77e7ebda024aa8eac2a3d0f73b77df79833ab98a",
+    "Q11_integral_coupling.expected.json": "d5776f884073db4e9235ae04e13754c156d8b77c25f0caa76887e144b23eefa3",
+    "input.json": "ff63d33caa73896bd95c09cef8e98b82f3a9e080f93792cace8f3f1c20f06115"
+  }
+}

@@ -1,0 +1,940 @@
+[
+  {
+    "url": "https://docs.x.ai/grok-bot/overview.md",
+    "final_url": "https://docs.x.ai/grok-bot/overview.md",
+    "retrieved_utc": "2026-10-18T07:50:14.808544+00:00",
+    "status": 200,
+    "file": "0929dc9bb02d.raw",
+    "sha256": "a57afa5cd9ce28de66f681a29cf270d4189231365a7393992673bca41231114a",
+    "bytes": 5804,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:14 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "0929dc9bb02d.json",
+    "id": "G01"
+  },
+  {
+    "url": "https://docs.x.ai/grok-bot/bots.md",
+    "final_url": "https://docs.x.ai/grok-bot/bots.md",
+    "retrieved_utc": "2026-10-18T07:50:14.809377+00:00",
+    "status": 200,
+    "file": "629d09dac441.raw",
+    "sha256": "b7b5176123b282da500bf7c0f2fd22788a624020f9f630284b224abb19528366",
+    "bytes": 5687,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "629d09dac441.json",
+    "id": "G02"
+  },
+  {
+    "url": "https://docs.x.ai/grok-bot/computer-and-apps.md",
+    "final_url": "https://docs.x.ai/grok-bot/computer-and-apps.md",
+    "retrieved_utc": "2026-10-18T07:50:14.811259+00:00",
+    "status": 200,
+    "file": "66f8474b6279.raw",
+    "sha256": "00c5a77469e98f06a308ad93e833922f040ff86a4c616fc0f3f84f7c968e8da8",
+    "bytes": 4804,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "66f8474b6279.json",
+    "id": "G03"
+  },
+  {
+    "url": "https://docs.x.ai/grok-bot/chat-and-collaboration.md",
+    "final_url": "https://docs.x.ai/grok-bot/chat-and-collaboration.md",
+    "retrieved_utc": "2026-10-18T07:50:14.810570+00:00",
+    "status": 200,
+    "file": "e9e607079034.raw",
+    "sha256": "f901de4b8b92025138c416c85ba50598eb5f51d60e9d0352ee4e0cf381d569a3",
+    "bytes": 7329,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:14 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "e9e607079034.json",
+    "id": "G04"
+  },
+  {
+    "url": "https://docs.x.ai/grok-bot/skills-routines-and-automations.md",
+    "final_url": "https://docs.x.ai/grok-bot/skills-routines-and-automations.md",
+    "retrieved_utc": "2026-10-18T07:50:14.812263+00:00",
+    "status": 200,
+    "file": "f83b070bcd43.raw",
+    "sha256": "7b43556d143bdc7938783e675f3ecf28edf016ba15bb491eb41324e206a0a006",
+    "bytes": 5496,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "f83b070bcd43.json",
+    "id": "G05"
+  },
+  {
+    "url": "https://docs.x.ai/grok-bot/approvals-security-and-privacy.md",
+    "final_url": "https://docs.x.ai/grok-bot/approvals-security-and-privacy.md",
+    "retrieved_utc": "2026-10-18T07:50:14.817998+00:00",
+    "status": 200,
+    "file": "f4f9970d898b.raw",
+    "sha256": "c490e26c083efb8c8674084038f6a8032010af387ae7483d1a50736788f5d39a",
+    "bytes": 8405,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:14 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "f4f9970d898b.json",
+    "id": "G06"
+  },
+  {
+    "url": "https://docs.x.ai/grok-bot/security.md",
+    "final_url": "https://docs.x.ai/grok-bot/security.md",
+    "retrieved_utc": "2026-10-18T07:50:14.818571+00:00",
+    "status": 200,
+    "file": "ad6347a7c57c.raw",
+    "sha256": "9b1c99639143274e7280063ca6b9b1f68b59f687c5617db502a727b9a6ba1dfc",
+    "bytes": 17926,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:14 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "ad6347a7c57c.json",
+    "id": "G07"
+  },
+  {
+    "url": "https://docs.x.ai/grok-bot/security-faq.md",
+    "final_url": "https://docs.x.ai/grok-bot/security-faq.md",
+    "retrieved_utc": "2026-10-18T07:50:14.948959+00:00",
+    "status": 200,
+    "file": "c3a96d460b92.raw",
+    "sha256": "b2a63795e8a4770ebcb8f6de1a2d2c93760deb29eb59005eb1b23eae3fe746b4",
+    "bytes": 8733,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "c3a96d460b92.json",
+    "id": "G08"
+  },
+  {
+    "url": "https://docs.x.ai/developers/model-capabilities/text/multi-agent.md",
+    "final_url": "https://docs.x.ai/developers/model-capabilities/text/multi-agent.md",
+    "retrieved_utc": "2026-10-18T07:50:15.086629+00:00",
+    "status": 200,
+    "file": "33cd02145c25.raw",
+    "sha256": "d830cd1460ad6c86c13c545627c1c57b22d60fe873a8c7201067251ba22a5543",
+    "bytes": 19608,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "33cd02145c25.json",
+    "id": "G09"
+  },
+  {
+    "url": "https://docs.x.ai/developers/tools/overview.md",
+    "final_url": "https://docs.x.ai/developers/tools/overview.md",
+    "retrieved_utc": "2026-10-18T07:50:15.095698+00:00",
+    "status": 200,
+    "file": "ac43ad4cc64f.raw",
+    "sha256": "4454ac7fb13009472a45550f4cd29bf7800dcf146b6ae85c65645077d13a2da8",
+    "bytes": 5451,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "ac43ad4cc64f.json",
+    "id": "G10"
+  },
+  {
+    "url": "https://docs.x.ai/developers/tools/function-calling.md",
+    "final_url": "https://docs.x.ai/developers/tools/function-calling.md",
+    "retrieved_utc": "2026-10-18T07:50:57.310405+00:00",
+    "status": 200,
+    "file": "2a9a7a0c6f71.raw",
+    "sha256": "38b7952cd832aec2bf56ff8b81a326e386f6f0cc2aa0ce01c65f7fa91fa31307",
+    "bytes": 14178,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:57 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "2a9a7a0c6f71.json",
+    "id": "G11"
+  },
+  {
+    "url": "https://docs.x.ai/developers/tools/remote-mcp.md",
+    "final_url": "https://docs.x.ai/developers/tools/remote-mcp.md",
+    "retrieved_utc": "2026-10-18T07:50:57.313995+00:00",
+    "status": 200,
+    "file": "8dff3caddbec.raw",
+    "sha256": "149dc1a1c0dd5e729fc156632c77ba7e138f33f2681b06f8a159d52ba515fc41",
+    "bytes": 7238,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:57 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "8dff3caddbec.json",
+    "id": "G12"
+  },
+  {
+    "url": "https://docs.x.ai/build/overview.md",
+    "final_url": "https://docs.x.ai/build/overview.md",
+    "retrieved_utc": "2026-10-18T07:50:15.022377+00:00",
+    "status": 200,
+    "file": "4fa77860feb6.raw",
+    "sha256": "3edf9fc3a63dad3f663d48ade2f6fb597d7829087d65d0b219ba157826b69802",
+    "bytes": 3733,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "4fa77860feb6.json",
+    "id": "G13"
+  },
+  {
+    "url": "https://docs.x.ai/build/features/subagents.md",
+    "final_url": "https://docs.x.ai/build/features/subagents.md",
+    "retrieved_utc": "2026-10-18T07:50:15.027754+00:00",
+    "status": 200,
+    "file": "fa5306558170.raw",
+    "sha256": "42511685ebf61b0e7fb1e188d2e97b08d33afe033f4cc7135a68da5c0bdb8d0b",
+    "bytes": 736,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "fa5306558170.json",
+    "id": "G14"
+  },
+  {
+    "url": "https://docs.x.ai/build/cli/headless-scripting.md",
+    "final_url": "https://docs.x.ai/build/cli/headless-scripting.md",
+    "retrieved_utc": "2026-10-18T07:50:15.044928+00:00",
+    "status": 200,
+    "file": "5b520c61d7a0.raw",
+    "sha256": "a4f39daf25f81aba5dba79265d12d0e4ec444e6b28dcbe3c2335c05401052097",
+    "bytes": 5304,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "5b520c61d7a0.json",
+    "id": "G15"
+  },
+  {
+    "url": "https://docs.x.ai/build/features/sandbox.md",
+    "final_url": "https://docs.x.ai/build/features/sandbox.md",
+    "retrieved_utc": "2026-10-18T07:50:15.072552+00:00",
+    "status": 200,
+    "file": "abee8772e63a.raw",
+    "sha256": "6795d7dde08430ad2db159803a8b5e5763e2530ea423637b871334326de52d06",
+    "bytes": 2122,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "abee8772e63a.json",
+    "id": "G16"
+  },
+  {
+    "url": "https://docs.x.ai/build/features/sessions.md",
+    "final_url": "https://docs.x.ai/build/features/sessions.md",
+    "retrieved_utc": "2026-10-18T07:50:15.083779+00:00",
+    "status": 200,
+    "file": "9c92f335f329.raw",
+    "sha256": "1bb367bcc0f77a5e5800e9a84ab7220853ae23872eb615908ff338488ec7d366",
+    "bytes": 2893,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "9c92f335f329.json",
+    "id": "G17"
+  },
+  {
+    "url": "https://docs.x.ai/build/features/background-tasks.md",
+    "final_url": "https://docs.x.ai/build/features/background-tasks.md",
+    "retrieved_utc": "2026-10-18T07:50:57.308024+00:00",
+    "status": 200,
+    "file": "f48b4c95cc78.raw",
+    "sha256": "75c33f70566d9fdc94000428e32970a9ccaf6a3b8db3b137be1f7634aeb8856b",
+    "bytes": 1803,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:57 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "f48b4c95cc78.json",
+    "id": "G18"
+  },
+  {
+    "url": "https://docs.x.ai/grok-bot/teams-and-enterprises.md",
+    "final_url": "https://docs.x.ai/grok-bot/teams-and-enterprises.md",
+    "retrieved_utc": "2026-10-18T07:50:14.993601+00:00",
+    "status": 200,
+    "file": "909d0f239713.raw",
+    "sha256": "fd59378b8383810511ea5eb6a823346e93028815e8a42824dd4c0c488c1c673e",
+    "bytes": 30463,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "909d0f239713.json",
+    "id": "G19"
+  },
+  {
+    "url": "https://docs.x.ai/grok-bot/files-and-results.md",
+    "final_url": "https://docs.x.ai/grok-bot/files-and-results.md",
+    "retrieved_utc": "2026-10-18T07:50:14.992735+00:00",
+    "status": 200,
+    "file": "9b5cc565f263.raw",
+    "sha256": "861cd7542dbb1c036069cc398cdcab9af2e3410619576ff4943fc2384ae6e5ca",
+    "bytes": 3999,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "9b5cc565f263.json",
+    "id": "G20"
+  },
+  {
+    "url": "https://cursor.com/docs/cloud-agent/security",
+    "final_url": "https://cursor.com/docs/cloud-agent/security",
+    "retrieved_utc": "2026-10-18T07:51:27.507544+00:00",
+    "status": 200,
+    "file": "eaeb4ae92dc3.raw",
+    "sha256": "4c7ca3900187b5c30b8e851eacb1a3a9ab055d165e1a6dc5869d7aa286280fa0",
+    "bytes": 376928,
+    "headers": {
+      "content-type": "text/html; charset=utf-8",
+      "date": "Sun, 18 Oct 2026 07:51:27 GMT",
+      "etag": "\"c685b4a092844dcdeb0c3113033ae571\"",
+      "link": "</llms.txt>; rel=\"describedby\"; type=\"text/plain\"; title=\"llms.txt\", </docs/sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
+    },
+    "metadata_file": "eaeb4ae92dc3.json",
+    "id": "G21"
+  },
+  {
+    "url": "https://docs.x.ai/x-subscription/grok-bot.md",
+    "final_url": "https://docs.x.ai/x-subscription/grok-bot.md",
+    "retrieved_utc": "2026-10-18T07:50:15.153762+00:00",
+    "status": 200,
+    "file": "0297c5314558.raw",
+    "sha256": "bd715286ae70b15f851262d693b56f8b14bf155cebccb8c7f33417756b295cc7",
+    "bytes": 3243,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "0297c5314558.json",
+    "id": "G22"
+  },
+  {
+    "url": "https://docs.x.ai/x-subscription/pricing.md",
+    "final_url": "https://docs.x.ai/x-subscription/pricing.md",
+    "retrieved_utc": "2026-10-18T07:50:57.306505+00:00",
+    "status": 200,
+    "file": "922c42cfbbc5.raw",
+    "sha256": "1c317f26e6820635b393c4ff3bf4da97d066d441dfaeb26c2ad2f4a0f00763d5",
+    "bytes": 3210,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:57 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "922c42cfbbc5.json",
+    "id": "G23"
+  },
+  {
+    "url": "https://docs.x.ai/x-subscription/spending-caps.md",
+    "final_url": "https://docs.x.ai/x-subscription/spending-caps.md",
+    "retrieved_utc": "2026-10-18T07:51:27.508594+00:00",
+    "status": 200,
+    "file": "3ce73201d7c1.raw",
+    "sha256": "dfb6bf6b79491ab38b9edf9c968a7b12a5e777b4772a93e06e6471543f9a8c03",
+    "bytes": 2374,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:51:27 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "3ce73201d7c1.json",
+    "id": "G24"
+  },
+  {
+    "url": "https://docs.x.ai/developers/pricing.md",
+    "final_url": "https://docs.x.ai/developers/pricing.md",
+    "retrieved_utc": "2026-10-18T07:50:15.151155+00:00",
+    "status": 200,
+    "file": "1914b0f1b14a.raw",
+    "sha256": "6eaf389fdb187de071e90e3c3d4e6d2a3eba2d831e27430fbeecdf268a0f8a77",
+    "bytes": 10970,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "1914b0f1b14a.json",
+    "id": "G25"
+  },
+  {
+    "url": "https://api.github.com/repos/xai-org/grok-build/commits/main",
+    "final_url": "https://api.github.com/repos/xai-org/grok-build/commits/main",
+    "retrieved_utc": "2026-10-18T07:50:15.168820+00:00",
+    "status": 200,
+    "file": "68e3ad0a539d.raw",
+    "sha256": "ba8458628d06ef54776c58ae704e902c9daeaa6e56afa66496cd3cc908fe76c9",
+    "bytes": 564037,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "etag": "\"bae6224ec6952ddd847f646b209d8a8974d0ece673c3a9c10ff321f7d42ff1bc\"",
+      "last-modified": "Tue, 29 Sep 2026 16:57:09 GMT"
+    },
+    "metadata_file": "68e3ad0a539d.json",
+    "id": "G26"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/xai-org/xai-sdk-python/1d9e1dffc9a0521ede0e6bc7f2b906177b940d34/src/xai_sdk/chat.py",
+    "final_url": "https://raw.githubusercontent.com/xai-org/xai-sdk-python/1d9e1dffc9a0521ede0e6bc7f2b906177b940d34/src/xai_sdk/chat.py",
+    "retrieved_utc": "2026-10-18T07:50:57.468653+00:00",
+    "status": 200,
+    "file": "c6daf5be00c4.raw",
+    "sha256": "ec6baac96844237d62ee59beace59a0cea599c5f32814c5f5e7d8f02794f0919",
+    "bytes": 69973,
+    "headers": {
+      "content-type": "text/plain; charset=utf-8",
+      "etag": "\"03930e9c32f6a79df96fa8310a953c19b406d05e4bc1c2aee3ed0bbe02771187\"",
+      "date": "Sun, 18 Oct 2026 07:50:57 GMT"
+    },
+    "metadata_file": "c6daf5be00c4.json",
+    "id": "G27"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/xai-org/grok-build/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/crates/codegen/xai-grok-shell/src/agent/subagent/spawn.rs",
+    "final_url": "https://raw.githubusercontent.com/xai-org/grok-build/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/crates/codegen/xai-grok-shell/src/agent/subagent/spawn.rs",
+    "retrieved_utc": "2026-10-18T07:51:11.819864+00:00",
+    "status": 200,
+    "file": "29bd4bb3dca6.raw",
+    "sha256": "5f617d4ac17b43eaa3b197169fa64a6affa45fb0a6a747ad81767d827284a400",
+    "bytes": 28816,
+    "headers": {
+      "content-type": "text/plain; charset=utf-8",
+      "etag": "\"c889e9bf83a250d31a81a3896954506b82239c5e2e5b050802672efa482dc7ee\"",
+      "date": "Sun, 18 Oct 2026 07:51:12 GMT"
+    },
+    "metadata_file": "29bd4bb3dca6.json",
+    "id": "G28"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/xai-org/grok-build/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/crates/codegen/xai-grok-shell/src/extensions/subagent_message.rs",
+    "final_url": "https://raw.githubusercontent.com/xai-org/grok-build/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/crates/codegen/xai-grok-shell/src/extensions/subagent_message.rs",
+    "retrieved_utc": "2026-10-18T07:51:11.821354+00:00",
+    "status": 200,
+    "file": "98b30c5c4b83.raw",
+    "sha256": "3398ca6200f2e3d12c2374c3dfee68cc4c22af8928e6a3ed8ee47771bc76c922",
+    "bytes": 5229,
+    "headers": {
+      "content-type": "text/plain; charset=utf-8",
+      "etag": "\"c37670f53c31b8e918450df6cbccf606fc08c3f54ae65db09ca8341ddc2a4c44\"",
+      "date": "Sun, 18 Oct 2026 07:51:12 GMT"
+    },
+    "metadata_file": "98b30c5c4b83.json",
+    "id": "G29"
+  },
+  {
+    "url": "https://docs.x.ai/grok-bot/team-bots.md",
+    "final_url": "https://docs.x.ai/grok-bot/team-bots.md",
+    "retrieved_utc": "2026-10-18T07:50:14.809977+00:00",
+    "status": 200,
+    "file": "2d28979484f9.raw",
+    "sha256": "2898ad0ab02a0ab3acea5874ccbe504a2d69f37d5fd126bf00b028d9bd586daa",
+    "bytes": 19961,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "2d28979484f9.json",
+    "id": "G30"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/xai-org/grok-build/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/LICENSE",
+    "final_url": "https://raw.githubusercontent.com/xai-org/grok-build/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/LICENSE",
+    "retrieved_utc": "2026-10-18T07:50:57.460346+00:00",
+    "status": 200,
+    "file": "b65f7e164ff9.raw",
+    "sha256": "116f7778b9802e569b7fa3a532b17bd80eb13c67837def01eed093d4ea472f28",
+    "bytes": 11388,
+    "headers": {
+      "content-type": "text/plain; charset=utf-8",
+      "etag": "\"19adeeb16ea7587a456409a6f60e71a051ebb0771344e7f23535126a0ba66a1b\"",
+      "date": "Sun, 18 Oct 2026 07:50:57 GMT"
+    },
+    "metadata_file": "b65f7e164ff9.json",
+    "id": "G31"
+  },
+  {
+    "url": "https://api.github.com/repos/xai-org/xai-sdk-python/commits/main",
+    "final_url": "https://api.github.com/repos/xai-org/xai-sdk-python/commits/main",
+    "retrieved_utc": "2026-10-18T07:50:15.174814+00:00",
+    "status": 200,
+    "file": "071503a6ed68.raw",
+    "sha256": "902a6197bedbd89b124de4da4fb6832600052e6fecd8bf492224e1ae74f83a13",
+    "bytes": 153999,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "etag": "\"c7247beae505ef237e45fedb82441f6b54d486aa5159c3c57df0df644b09991b\"",
+      "last-modified": "Mon, 28 Sep 2026 14:25:37 GMT"
+    },
+    "metadata_file": "071503a6ed68.json",
+    "id": "G32"
+  },
+  {
+    "url": "https://api.github.com/repos/xai-org/xai-sdk-python/releases/latest",
+    "final_url": "https://api.github.com/repos/xai-org/xai-sdk-python/releases/latest",
+    "retrieved_utc": "2026-10-18T07:51:11.822703+00:00",
+    "status": 200,
+    "file": "329229ea3a92.raw",
+    "sha256": "d0fabbeceb876dc9b34c7765aa91c56551b71b8bd5e228b805af1a6b583b24e5",
+    "bytes": 5922,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:51:12 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "etag": "\"a28a5e121a216007ad32efa3fc2c0b370f61ff77f28177ffb6b0488cd2fb1758\"",
+      "last-modified": "Thu, 24 Sep 2026 18:05:54 GMT"
+    },
+    "metadata_file": "329229ea3a92.json",
+    "id": "G33"
+  },
+  {
+    "url": "https://api.github.com/orgs/xai-org/repos?per_page=100",
+    "final_url": "https://api.github.com/orgs/xai-org/repos?per_page=100",
+    "retrieved_utc": "2026-10-18T07:49:53.544317+00:00",
+    "status": 200,
+    "file": "bf77ce4d48db.raw",
+    "sha256": "6af47faecbf4814c2fc582239829e189f61e2161fcd62e00b20572abcee42ca7",
+    "bytes": 59111,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:49:54 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "etag": "\"5e908d3c9eaf44d0ad1a41876a67ab2a451c938b9b9b3e28955272b566240c95\""
+    },
+    "metadata_file": "bf77ce4d48db.json",
+    "id": "G34"
+  },
+  {
+    "url": "https://api.github.com/repos/xai-org/grok-build/git/trees/main?recursive=1",
+    "final_url": "https://api.github.com/repos/xai-org/grok-build/git/trees/main?recursive=1",
+    "retrieved_utc": "2026-10-18T07:50:15.190263+00:00",
+    "status": 200,
+    "file": "839f0f42afc6.raw",
+    "sha256": "bf9bdf7ec22cee1eebc8b10dfc7d31c744205e51efe408e0b80a4b16b26b2882",
+    "bytes": 1367353,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "etag": "\"90c78456d60948fd9f433e52403ee5931509050c2fb1e1c0410ad6965737512e\"",
+      "last-modified": "Sun, 18 Oct 2026 07:19:31 GMT"
+    },
+    "metadata_file": "839f0f42afc6.json",
+    "id": "G35"
+  },
+  {
+    "url": "https://api.github.com/repos/xai-org/grok-build/releases/latest",
+    "retrieved_utc": "2026-10-18T07:51:11.822221+00:00",
+    "error": "HTTP Error 404: Not Found",
+    "metadata_file": "87cc464bea0a.json",
+    "id": "G36"
+  },
+  {
+    "url": "https://api.github.com/repos/xai-org/xai-sdk-python/git/trees/main?recursive=1",
+    "final_url": "https://api.github.com/repos/xai-org/xai-sdk-python/git/trees/main?recursive=1",
+    "retrieved_utc": "2026-10-18T07:50:15.199858+00:00",
+    "status": 200,
+    "file": "20781b61697e.raw",
+    "sha256": "371e8313d6e6ef15c24dff97c05d409449bdaba3759401be01a8582a4d40fcb1",
+    "bytes": 63541,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "etag": "\"90be3ccd8b302d301da3b74a1d31cbc7af15543ea17e7034e7914a30d8add38a\"",
+      "last-modified": "Sat, 17 Oct 2026 09:19:40 GMT"
+    },
+    "metadata_file": "20781b61697e.json",
+    "id": "G37"
+  },
+  {
+    "url": "https://cursor.com/docs/cloud-agent",
+    "final_url": "https://cursor.com/docs/cloud-agent",
+    "retrieved_utc": "2026-10-18T07:51:27.506191+00:00",
+    "status": 200,
+    "file": "fa42e42f5ea2.raw",
+    "sha256": "016cfac97099cb3e470546a407f636ad239289cf716ae5f800fbf30891b8cd03",
+    "bytes": 349644,
+    "headers": {
+      "content-type": "text/html; charset=utf-8",
+      "date": "Sun, 18 Oct 2026 07:51:27 GMT",
+      "etag": "\"f1f64b5fc733b268593c7646ed2e9a7f\"",
+      "link": "</llms.txt>; rel=\"describedby\"; type=\"text/plain\"; title=\"llms.txt\", </docs/sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
+    },
+    "metadata_file": "fa42e42f5ea2.json",
+    "id": "G38"
+  },
+  {
+    "url": "https://cursor.com/docs/cloud-agent/overview",
+    "retrieved_utc": "2026-10-18T07:51:27.506973+00:00",
+    "error": "HTTP Error 404: Not Found",
+    "metadata_file": "2d0a209805bc.json",
+    "id": "G39"
+  },
+  {
+    "url": "https://cursor.com/help/grok-bot/plans",
+    "final_url": "https://cursor.com/help/grok-bot/plans",
+    "retrieved_utc": "2026-10-18T07:50:57.305594+00:00",
+    "status": 200,
+    "file": "36c32d3d4e18.raw",
+    "sha256": "2a499823c9958a78b717a04136a4c8ec833b3b8804515d006531e8035f924dda",
+    "bytes": 297984,
+    "headers": {
+      "content-type": "text/html; charset=utf-8",
+      "date": "Sun, 18 Oct 2026 07:50:57 GMT",
+      "etag": "\"dd49117c4c5c558b0870a2b800decd5a\"",
+      "link": "</llms.txt>; rel=\"describedby\"; type=\"text/plain\"; title=\"llms.txt\", </docs/sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
+    },
+    "metadata_file": "36c32d3d4e18.json",
+    "id": "G40"
+  },
+  {
+    "url": "https://docs.x.ai/build/features/permissions.md",
+    "final_url": "https://docs.x.ai/build/features/permissions.md",
+    "retrieved_utc": "2026-10-18T07:50:57.307554+00:00",
+    "status": 200,
+    "file": "ab582d6d4916.raw",
+    "sha256": "c5bad5c416aa9aa1178ba178de33d36a1c45739ad5b727bdf28332eca5eb4791",
+    "bytes": 2190,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:57 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "ab582d6d4916.json",
+    "id": "G41"
+  },
+  {
+    "url": "https://docs.x.ai/developers/advanced-api-usage/async.md",
+    "final_url": "https://docs.x.ai/developers/advanced-api-usage/async.md",
+    "retrieved_utc": "2026-10-18T07:50:57.318784+00:00",
+    "status": 200,
+    "file": "744ceb7f2530.raw",
+    "sha256": "4194d3f7794b51b7afd107743fcdceff648d9579247edf0a2a4418cc10417d0e",
+    "bytes": 4291,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:57 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "744ceb7f2530.json",
+    "id": "G42"
+  },
+  {
+    "url": "https://docs.x.ai/developers/cost-tracking.md",
+    "final_url": "https://docs.x.ai/developers/cost-tracking.md",
+    "retrieved_utc": "2026-10-18T07:51:27.508037+00:00",
+    "status": 200,
+    "file": "41f8134bea16.raw",
+    "sha256": "c88fe3940f28a06c73d45228006a147ad8eaabe8684d6ef8266655867a5f4f23",
+    "bytes": 10400,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:51:27 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "41f8134bea16.json",
+    "id": "G43"
+  },
+  {
+    "url": "https://docs.x.ai/developers/tools/code-execution.md",
+    "final_url": "https://docs.x.ai/developers/tools/code-execution.md",
+    "retrieved_utc": "2026-10-18T07:51:27.509006+00:00",
+    "status": 200,
+    "file": "e9001857a7e4.raw",
+    "sha256": "1750ed48bafa4729c61e97842270322262269603043ef4d6bab6812973d14cfc",
+    "bytes": 10780,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:51:27 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "e9001857a7e4.json",
+    "id": "G44"
+  },
+  {
+    "url": "https://docs.x.ai/docs/guides/tools/agent-tools",
+    "retrieved_utc": "2026-10-18T07:49:53.544872+00:00",
+    "error": "HTTP Error 404: Not Found",
+    "metadata_file": "6d7e95b41296.json",
+    "id": "G45"
+  },
+  {
+    "url": "https://docs.x.ai/grok-bot/faq.md",
+    "final_url": "https://docs.x.ai/grok-bot/faq.md",
+    "retrieved_utc": "2026-10-18T07:50:14.985242+00:00",
+    "status": 200,
+    "file": "8fc964bc3cdf.raw",
+    "sha256": "6dbd3940a0e403c2d09b828269476235e9942c248f5d3cbe4b0e3112afd4cb9e",
+    "bytes": 6877,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:15 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "8fc964bc3cdf.json",
+    "id": "G46"
+  },
+  {
+    "url": "https://docs.x.ai/grok-bot/settings-and-notifications.md",
+    "final_url": "https://docs.x.ai/grok-bot/settings-and-notifications.md",
+    "retrieved_utc": "2026-10-18T07:51:11.825963+00:00",
+    "status": 200,
+    "file": "c6415e8037b0.raw",
+    "sha256": "5fdbe7c06d83d8ac99b5ef2c17829e136951a51dddad2c309b26b1765a209311",
+    "bytes": 7211,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:51:12 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "c6415e8037b0.json",
+    "id": "G47"
+  },
+  {
+    "url": "https://docs.x.ai/grok-bot/use-cases.md",
+    "final_url": "https://docs.x.ai/grok-bot/use-cases.md",
+    "retrieved_utc": "2026-10-18T07:51:11.826901+00:00",
+    "status": 200,
+    "file": "7ac13f17f678.raw",
+    "sha256": "8e31da97d549b9b7c5bd9fec80f93c73be878468b350643571e0fe22c28df316",
+    "bytes": 5489,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:51:12 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "7ac13f17f678.json",
+    "id": "G48"
+  },
+  {
+    "url": "https://docs.x.ai/llms-full.txt",
+    "final_url": "https://docs.x.ai/llms-full.txt",
+    "retrieved_utc": "2026-10-18T07:49:53.542702+00:00",
+    "status": 200,
+    "file": "291f57515f35.raw",
+    "sha256": "6ad01f713b2a45413952550e9810756acaba343aad75414a085162119f7b4ebf",
+    "bytes": 1790070,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:49:53 GMT",
+      "content-type": "text/plain; charset=utf-8"
+    },
+    "metadata_file": "291f57515f35.json",
+    "id": "G49"
+  },
+  {
+    "url": "https://docs.x.ai/llms.txt",
+    "final_url": "https://docs.x.ai/llms.txt",
+    "retrieved_utc": "2026-10-18T07:49:53.541314+00:00",
+    "status": 200,
+    "file": "a1d2b0922240.raw",
+    "sha256": "9d9ebff2c1e65f63ac59552f44064b0714ad441cdd55c15ad54bf40b3c9534d6",
+    "bytes": 19292,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:49:53 GMT",
+      "content-type": "text/plain; charset=utf-8"
+    },
+    "metadata_file": "a1d2b0922240.json",
+    "id": "G50"
+  },
+  {
+    "url": "https://docs.x.ai/x-subscription/usage-limits.md",
+    "final_url": "https://docs.x.ai/x-subscription/usage-limits.md",
+    "retrieved_utc": "2026-10-18T07:50:57.307012+00:00",
+    "status": 200,
+    "file": "7aa77da068fc.raw",
+    "sha256": "140ace43219cf489c65559ab7474ae7a94c1ffb30e949ac3c45f1b7473b1dd21",
+    "bytes": 2666,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:50:57 GMT",
+      "content-type": "text/markdown; charset=utf-8"
+    },
+    "metadata_file": "7aa77da068fc.json",
+    "id": "G51"
+  },
+  {
+    "url": "https://github.com/xai-org/grok-build.git",
+    "retrieved_utc": "2026-10-18T07:51:57.461963+00:00",
+    "command": [
+      "git",
+      "ls-remote",
+      "https://github.com/xai-org/grok-build.git",
+      "HEAD",
+      "refs/heads/main"
+    ],
+    "exit_code": 0,
+    "file": "git-grok-build.txt",
+    "sha256": "b833fced542d28c5380fbe57088cd50f8860de50d1e13ba3fa249c27aeb915ed",
+    "bytes": 103,
+    "stderr": "",
+    "metadata_file": "git-grok-build.json",
+    "id": "G52"
+  },
+  {
+    "url": "https://github.com/xai-org/xai-sdk-python.git",
+    "retrieved_utc": "2026-10-18T07:51:57.875196+00:00",
+    "command": [
+      "git",
+      "ls-remote",
+      "https://github.com/xai-org/xai-sdk-python.git",
+      "HEAD",
+      "refs/heads/main"
+    ],
+    "exit_code": 0,
+    "file": "git-xai-sdk-python.txt",
+    "sha256": "833bd26b6380d068868d1d538e650d7550c1613f37ac4dff0b9d64e5c420b967",
+    "bytes": 103,
+    "stderr": "",
+    "metadata_file": "git-xai-sdk-python.json",
+    "id": "G53"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/xai-org/grok-build/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/README.md",
+    "final_url": "https://raw.githubusercontent.com/xai-org/grok-build/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/README.md",
+    "retrieved_utc": "2026-10-18T07:50:57.451103+00:00",
+    "status": 200,
+    "file": "799f3babe808.raw",
+    "sha256": "322066de9f5bc136295bd0ae4f1752cef3d8dcb1a8f9d88044609e7b6d7abcf7",
+    "bytes": 5757,
+    "headers": {
+      "content-type": "text/plain; charset=utf-8",
+      "etag": "\"4017bfb57a7fb84c8213064815f00281de77132dd2f65ba82143068608561036\"",
+      "date": "Sun, 18 Oct 2026 07:50:57 GMT"
+    },
+    "metadata_file": "799f3babe808.json",
+    "id": "G54"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/xai-org/grok-build/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/crates/codegen/xai-grok-config-types/src/sandbox.rs",
+    "final_url": "https://raw.githubusercontent.com/xai-org/grok-build/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/crates/codegen/xai-grok-config-types/src/sandbox.rs",
+    "retrieved_utc": "2026-10-18T07:50:57.462275+00:00",
+    "status": 200,
+    "file": "1fb45a1eae4e.raw",
+    "sha256": "ac5ab5ca6b2e115440fab68adff9e22b4c0817ee7902595fa52773dac43d8aab",
+    "bytes": 5338,
+    "headers": {
+      "content-type": "text/plain; charset=utf-8",
+      "etag": "\"1d2172b711ad75cb70bf64f0322a2234a24801f5876785a2cf708c4851626d3e\"",
+      "date": "Sun, 18 Oct 2026 07:50:57 GMT"
+    },
+    "metadata_file": "1fb45a1eae4e.json",
+    "id": "G55"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/xai-org/grok-build/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/crates/codegen/xai-grok-sandbox/src/profiles.rs",
+    "final_url": "https://raw.githubusercontent.com/xai-org/grok-build/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/crates/codegen/xai-grok-sandbox/src/profiles.rs",
+    "retrieved_utc": "2026-10-18T07:51:27.509867+00:00",
+    "status": 200,
+    "file": "ec0cd748a190.raw",
+    "sha256": "3eb64b922341a5113e144e52dd65529c972976eede7ccd5ae55f53075d4252df",
+    "bytes": 46675,
+    "headers": {
+      "content-type": "text/plain; charset=utf-8",
+      "etag": "\"34ae3503958fce9f0c6ec68313e9f13aeb5298be892a39c772bfb1181f20f57a\"",
+      "date": "Sun, 18 Oct 2026 07:51:27 GMT"
+    },
+    "metadata_file": "ec0cd748a190.json",
+    "id": "G56"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/xai-org/grok-build/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/crates/codegen/xai-grok-shell/src/agent/subagent/attempt_store/recovery.rs",
+    "final_url": "https://raw.githubusercontent.com/xai-org/grok-build/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/crates/codegen/xai-grok-shell/src/agent/subagent/attempt_store/recovery.rs",
+    "retrieved_utc": "2026-10-18T07:51:11.820764+00:00",
+    "status": 200,
+    "file": "3046a1262344.raw",
+    "sha256": "eefc01dddb0c1b305c8de1190ca0302214f3f6f48120f6a9b5f044d1a2ccd842",
+    "bytes": 10990,
+    "headers": {
+      "content-type": "text/plain; charset=utf-8",
+      "etag": "\"286f8fbe93bec52f99a09529484d3c2c5596f3e3f2f1b0f8a53a3c24c2777527\"",
+      "date": "Sun, 18 Oct 2026 07:51:12 GMT"
+    },
+    "metadata_file": "3046a1262344.json",
+    "id": "G57"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/xai-org/xai-sdk-python/1d9e1dffc9a0521ede0e6bc7f2b906177b940d34/pyproject.toml",
+    "final_url": "https://raw.githubusercontent.com/xai-org/xai-sdk-python/1d9e1dffc9a0521ede0e6bc7f2b906177b940d34/pyproject.toml",
+    "retrieved_utc": "2026-10-18T07:50:57.477365+00:00",
+    "status": 200,
+    "file": "b39ff6e60c3d.raw",
+    "sha256": "7aecbd7e04c05ecd47b7d2ddd05ffd8fe682c2e58b480103083799fa6a2e5a2b",
+    "bytes": 5269,
+    "headers": {
+      "content-type": "text/plain; charset=utf-8",
+      "etag": "\"81b6ae7e300500f69e12de7baa646a48165113212a49a1475c075f64e1f81593\"",
+      "date": "Sun, 18 Oct 2026 07:50:57 GMT"
+    },
+    "metadata_file": "b39ff6e60c3d.json",
+    "id": "G58"
+  },
+  {
+    "url": "https://x.ai/api",
+    "final_url": "https://x.ai/api",
+    "retrieved_utc": "2026-10-18T07:49:53.545465+00:00",
+    "status": 200,
+    "file": "4e544edee071.raw",
+    "sha256": "b90a8b7332fc9e6cfe90f66275746ee03cc5d91dff6081ad8efc9085ea5dbdaf",
+    "bytes": 363035,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:49:53 GMT",
+      "content-type": "text/html; charset=utf-8"
+    },
+    "metadata_file": "4e544edee071.json",
+    "id": "G59"
+  },
+  {
+    "url": "https://x.ai/grok",
+    "final_url": "https://x.ai/grok",
+    "retrieved_utc": "2026-10-18T07:49:53.543821+00:00",
+    "status": 200,
+    "file": "5536a1c4dfc0.raw",
+    "sha256": "6df984cb64e6dfa6371846309f8b8b2bed29a186b9d4d831d7d75676350629bf",
+    "bytes": 185041,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:49:53 GMT",
+      "content-type": "text/html; charset=utf-8"
+    },
+    "metadata_file": "5536a1c4dfc0.json",
+    "id": "G60"
+  },
+  {
+    "url": "https://x.ai/legal/privacy-policy",
+    "final_url": "https://x.ai/legal/privacy-policy",
+    "retrieved_utc": "2026-10-18T07:49:53.546093+00:00",
+    "status": 200,
+    "file": "3576d0a9f8ab.raw",
+    "sha256": "1de8a406514f41b8b67eddca20cf507f1ea4332ffafa0a4284b982ece3e19411",
+    "bytes": 187869,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:49:53 GMT",
+      "content-type": "text/html; charset=utf-8"
+    },
+    "metadata_file": "3576d0a9f8ab.json",
+    "id": "G61"
+  },
+  {
+    "url": "https://x.ai/sitemap.xml",
+    "final_url": "https://x.ai/sitemap.xml",
+    "retrieved_utc": "2026-10-18T07:49:53.543384+00:00",
+    "status": 200,
+    "file": "39424ad1458d.raw",
+    "sha256": "b11352737df06c2f16279959020977372e8fb3a2a1111158fbe2d0ef06f94811",
+    "bytes": 43897,
+    "headers": {
+      "date": "Sun, 18 Oct 2026 07:49:53 GMT",
+      "content-type": "application/xml"
+    },
+    "metadata_file": "39424ad1458d.json",
+    "id": "G62"
+  }
+]

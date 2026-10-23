@@ -1,0 +1,657 @@
+{
+  "decision": "LEAN_Q12_Q20_GATE_PASS",
+  "scope": "Q12-Q20 only; no Q21-Q33 qualification",
+  "foundation": "ba213d8d775c20db7a299932a9ea3319c9bc8a59",
+  "source_pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
+  "new_launches": 59,
+  "new_accepted_processes": 58,
+  "new_paired_cases": 29,
+  "accepted_v1_processes_repeated": 0,
+  "Q01_Q11_native_reruns": 0,
+  "original_reused_pairs": {
+    "Q17_buy5bps": {
+      "case_id": "Q06_age_exact",
+      "attempts": [
+        25,
+        26
+      ],
+      "output_sha256": "372e947257bb1810ff59db5dacb0869b7d03173fdd44cd80acaebbc1a8b20c8a",
+      "original_binding": {
+        "build_manifest_sha256": "42d884810f95a8e8ce422d7870bfd8b9532f72779a92c80e9aef3cd5b5c023ce",
+        "fixture_manifest_sha256": "4eb100de481b7ad14d5cfbcadf04c6518125df467f36c56f92b40d2ceb49d1fb",
+        "host_source_sha256": "28b00ff69402ce81ec710a26b7a252bc7b80d4c20dbcb9a27773b98f3fe76da8",
+        "image": "mcr.microsoft.com/dotnet/sdk@sha256:0d99ebf1ccad15037b5c98c9fe8979d6b8dbac23812feae2277a0b277b5c5ffa",
+        "verification_sha256": "759f0f70f5569ef80067c38c8a30bfa6704a5c52bb20c0417a7c7c35ec71ab23",
+        "runner_sha256": "d6cf223f6543b88b509fd3c7d4c79e8e079da42d5707ac08543ecaab0c8d63d2",
+        "comparator_sha256": "73dbfd4bbc799701cfb557f0a0ad627b987f12d60ce25ec0e8445913bd2d048c",
+        "verifier_sha256": "f86ea6b9dd8219ee3c3cdeda2c031a12e83993a68a16fbd3e955a390be352f50"
+      }
+    },
+    "Q12_integral": {
+      "case_id": "Q11_integral_coupling",
+      "attempts": [
+        132,
+        133
+      ],
+      "output_sha256": "e86f7215cf3877605f6b8f6262b33af3690e8abf4c080ac620a316891c487c51",
+      "original_binding": {
+        "build.json": "54bc24245395f27c7c1e5cdb5b5bdac6d0f2fb86ca517b83cd2f25c7e6bd759d",
+        "fixtures/manifest.json": "cac8ea81d670223a63e08e44a769a648668b81173087eff648cd8874919eeb08",
+        "compare.py": "ed1c5e1f665715cb16e639f843559e3e65812984bde67c69c286745d94320b27",
+        "verify_reuse.py": "f808a98d6ad1f14a30f8d93d6c09a9e34310a5129f863193e7f83fc8e0a39726",
+        "run_gate.py": "adb6856e05f74e68d9140fbefc683ffe4ce9db34e182090f6c273c047b82bac6",
+        "host/Program.cs": "de1dbbb0e9ef9edc9a33a371615ad6bc9c9f6a1c29fe126e44082e7c02dd687b",
+        "host/Gap.cs": "93b2bb2b1dc32795be9e04152fe7c18a204d1df23fc10134295c12035029e521",
+        "host/LeanGap.csproj": "8cbc96493e4c895a5ae8a3565652e3dd189c2ea478054f012ec2b970ff7b54c2"
+      }
+    },
+    "old_native_processes_rerun": 0,
+    "original_runtime_files_verified": 125,
+    "continuation_runtime_files_verified": 68
+  },
+  "failures_preserved": [
+    {
+      "attempt": 33,
+      "case_id": "Q17_sell_10",
+      "verdict": "LEAN_Q12_Q20_GATE_INCOMPLETE",
+      "first_divergence": "$.fills[0].price: '99.9' != '99.90'",
+      "output_sha256": "25eee7ab4345473af3a27be42aead2ece7e181595f188c6d160715bd0dcca872"
+    }
+  ],
+  "pairs": {
+    "Q12_reverse_claim": {
+      "evidence_root": ".",
+      "attempts": [
+        1,
+        2
+      ],
+      "output_sha256": "f93b85bd096bf842a4c59ff6f2bd2c8669c8120588659a907f441798b49ba924",
+      "binding": {
+        "build.json": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+        "fixtures/manifest.json": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+        "compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-proof.json": "07742d8439595316eb1e77499c5c4eb80955a48eb361fe401c7f110c29aaae63",
+        "run_gate.py": "616802106af8bbca9eb45b2b688dda70ded3e5015392d062916c4e91b0861db1",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "7ea240173edd0fc6b8ba19150221c393b2bdc877e3c05428eab39afe59bcfc15",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q13_payable": {
+      "evidence_root": ".",
+      "attempts": [
+        3,
+        4
+      ],
+      "output_sha256": "aeb6136da367cb1dd1d3e40eb90fa97fe2f51511e29def845296ba3d910b7905",
+      "binding": {
+        "build.json": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+        "fixtures/manifest.json": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+        "compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-proof.json": "07742d8439595316eb1e77499c5c4eb80955a48eb361fe401c7f110c29aaae63",
+        "run_gate.py": "616802106af8bbca9eb45b2b688dda70ded3e5015392d062916c4e91b0861db1",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "7ea240173edd0fc6b8ba19150221c393b2bdc877e3c05428eab39afe59bcfc15",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q13_missing_payable": {
+      "evidence_root": ".",
+      "attempts": [
+        5,
+        6
+      ],
+      "output_sha256": "d6711e2ed871e445143b59e8bace25c01a784b0e6ba3d6d2fb2faeb3bd75afd7",
+      "binding": {
+        "build.json": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+        "fixtures/manifest.json": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+        "compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-proof.json": "07742d8439595316eb1e77499c5c4eb80955a48eb361fe401c7f110c29aaae63",
+        "run_gate.py": "616802106af8bbca9eb45b2b688dda70ded3e5015392d062916c4e91b0861db1",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "7ea240173edd0fc6b8ba19150221c393b2bdc877e3c05428eab39afe59bcfc15",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q14_known": {
+      "evidence_root": ".",
+      "attempts": [
+        7,
+        8
+      ],
+      "output_sha256": "0032240e50ae8d2b89e4b660fa9f721f4321950931c2c637d0a321e1909ac319",
+      "binding": {
+        "build.json": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+        "fixtures/manifest.json": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+        "compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-proof.json": "07742d8439595316eb1e77499c5c4eb80955a48eb361fe401c7f110c29aaae63",
+        "run_gate.py": "616802106af8bbca9eb45b2b688dda70ded3e5015392d062916c4e91b0861db1",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "7ea240173edd0fc6b8ba19150221c393b2bdc877e3c05428eab39afe59bcfc15",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q14_missing": {
+      "evidence_root": ".",
+      "attempts": [
+        9,
+        10
+      ],
+      "output_sha256": "719c6421dae2ee5c9d96246807b7a64a1ff58dad45be5b66ad9a31374a70b14d",
+      "binding": {
+        "build.json": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+        "fixtures/manifest.json": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+        "compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-proof.json": "07742d8439595316eb1e77499c5c4eb80955a48eb361fe401c7f110c29aaae63",
+        "run_gate.py": "616802106af8bbca9eb45b2b688dda70ded3e5015392d062916c4e91b0861db1",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "7ea240173edd0fc6b8ba19150221c393b2bdc877e3c05428eab39afe59bcfc15",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q14_conflicting": {
+      "evidence_root": ".",
+      "attempts": [
+        11,
+        12
+      ],
+      "output_sha256": "8b6aa2b0f30d3023afa5c1977511c944301e5e4a306fc33212613aa9fe8e83b3",
+      "binding": {
+        "build.json": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+        "fixtures/manifest.json": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+        "compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-proof.json": "07742d8439595316eb1e77499c5c4eb80955a48eb361fe401c7f110c29aaae63",
+        "run_gate.py": "616802106af8bbca9eb45b2b688dda70ded3e5015392d062916c4e91b0861db1",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "7ea240173edd0fc6b8ba19150221c393b2bdc877e3c05428eab39afe59bcfc15",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q15_exact": {
+      "evidence_root": ".",
+      "attempts": [
+        13,
+        14
+      ],
+      "output_sha256": "c613f2cb29941df2e61923d5dfe4e4b9f2e4809cadd274f7f7e91e4dfff64033",
+      "binding": {
+        "build.json": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+        "fixtures/manifest.json": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+        "compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-proof.json": "07742d8439595316eb1e77499c5c4eb80955a48eb361fe401c7f110c29aaae63",
+        "run_gate.py": "616802106af8bbca9eb45b2b688dda70ded3e5015392d062916c4e91b0861db1",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "7ea240173edd0fc6b8ba19150221c393b2bdc877e3c05428eab39afe59bcfc15",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q15_date_only": {
+      "evidence_root": ".",
+      "attempts": [
+        15,
+        16
+      ],
+      "output_sha256": "ae5cf3e325bc2b60ed169bd87998a4d55ee3c6dee960093fa8e71d5b81832a4a",
+      "binding": {
+        "build.json": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+        "fixtures/manifest.json": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+        "compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-proof.json": "07742d8439595316eb1e77499c5c4eb80955a48eb361fe401c7f110c29aaae63",
+        "run_gate.py": "616802106af8bbca9eb45b2b688dda70ded3e5015392d062916c4e91b0861db1",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "7ea240173edd0fc6b8ba19150221c393b2bdc877e3c05428eab39afe59bcfc15",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q15_overlap": {
+      "evidence_root": ".",
+      "attempts": [
+        17,
+        18
+      ],
+      "output_sha256": "2c54cedd965c7ecfc6313cb41fdf4258f0a7c440493f36df1f6c6e683deaa2bc",
+      "binding": {
+        "build.json": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+        "fixtures/manifest.json": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+        "compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-proof.json": "07742d8439595316eb1e77499c5c4eb80955a48eb361fe401c7f110c29aaae63",
+        "run_gate.py": "616802106af8bbca9eb45b2b688dda70ded3e5015392d062916c4e91b0861db1",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "7ea240173edd0fc6b8ba19150221c393b2bdc877e3c05428eab39afe59bcfc15",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q16_resume": {
+      "evidence_root": ".",
+      "attempts": [
+        19,
+        20
+      ],
+      "output_sha256": "2fff4d75e5a48371108b6dd050691fa98feda75ff84cc67b37077bd96ba3d93c",
+      "binding": {
+        "build.json": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+        "fixtures/manifest.json": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+        "compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-proof.json": "07742d8439595316eb1e77499c5c4eb80955a48eb361fe401c7f110c29aaae63",
+        "run_gate.py": "616802106af8bbca9eb45b2b688dda70ded3e5015392d062916c4e91b0861db1",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "7ea240173edd0fc6b8ba19150221c393b2bdc877e3c05428eab39afe59bcfc15",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q16_no_resume": {
+      "evidence_root": ".",
+      "attempts": [
+        21,
+        22
+      ],
+      "output_sha256": "4dbab2e29e6acaf1102f1f1651df23ee1b05bf26d4bddefd24d443f4603c03b9",
+      "binding": {
+        "build.json": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+        "fixtures/manifest.json": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+        "compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-proof.json": "07742d8439595316eb1e77499c5c4eb80955a48eb361fe401c7f110c29aaae63",
+        "run_gate.py": "616802106af8bbca9eb45b2b688dda70ded3e5015392d062916c4e91b0861db1",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "7ea240173edd0fc6b8ba19150221c393b2bdc877e3c05428eab39afe59bcfc15",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q16_unknown": {
+      "evidence_root": ".",
+      "attempts": [
+        23,
+        24
+      ],
+      "output_sha256": "cce489b83ca6275609493205fede8e4675cbff9f182e126c62444931d2243d38",
+      "binding": {
+        "build.json": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+        "fixtures/manifest.json": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+        "compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-proof.json": "07742d8439595316eb1e77499c5c4eb80955a48eb361fe401c7f110c29aaae63",
+        "run_gate.py": "616802106af8bbca9eb45b2b688dda70ded3e5015392d062916c4e91b0861db1",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "7ea240173edd0fc6b8ba19150221c393b2bdc877e3c05428eab39afe59bcfc15",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q16_no_fresh": {
+      "evidence_root": ".",
+      "attempts": [
+        25,
+        26
+      ],
+      "output_sha256": "4fc2931f89fb9498908915d08b8aa89fdccf774f83fcca2404d232e262a036c9",
+      "binding": {
+        "build.json": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+        "fixtures/manifest.json": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+        "compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-proof.json": "07742d8439595316eb1e77499c5c4eb80955a48eb361fe401c7f110c29aaae63",
+        "run_gate.py": "616802106af8bbca9eb45b2b688dda70ded3e5015392d062916c4e91b0861db1",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "7ea240173edd0fc6b8ba19150221c393b2bdc877e3c05428eab39afe59bcfc15",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q16_exit": {
+      "evidence_root": ".",
+      "attempts": [
+        27,
+        28
+      ],
+      "output_sha256": "b82b3c710b0dc45ef92dac590e8a091f5d11dc23eb51204b8a664a73e5e1f32d",
+      "binding": {
+        "build.json": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+        "fixtures/manifest.json": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+        "compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-proof.json": "07742d8439595316eb1e77499c5c4eb80955a48eb361fe401c7f110c29aaae63",
+        "run_gate.py": "616802106af8bbca9eb45b2b688dda70ded3e5015392d062916c4e91b0861db1",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "7ea240173edd0fc6b8ba19150221c393b2bdc877e3c05428eab39afe59bcfc15",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q17_sell_5": {
+      "evidence_root": ".",
+      "attempts": [
+        29,
+        30
+      ],
+      "output_sha256": "8bef7b4dc542aae9f410b392add061eb8750623909119754ec6324cbceacbffc",
+      "binding": {
+        "build.json": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+        "fixtures/manifest.json": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+        "compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-proof.json": "07742d8439595316eb1e77499c5c4eb80955a48eb361fe401c7f110c29aaae63",
+        "run_gate.py": "616802106af8bbca9eb45b2b688dda70ded3e5015392d062916c4e91b0861db1",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "7ea240173edd0fc6b8ba19150221c393b2bdc877e3c05428eab39afe59bcfc15",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q17_buy_10": {
+      "evidence_root": ".",
+      "attempts": [
+        31,
+        32
+      ],
+      "output_sha256": "80ddce96685d110608258f099ce48eae420151ccd6540a252ac709f95ebc3e98",
+      "binding": {
+        "build.json": "affe4576f7142112b2af4049d3fc648d96e56cc903aa6f554e92a468cc29c8f8",
+        "fixtures/manifest.json": "1098ebe3aad9b7facda01689284c0c8e0ac4acf852a89f2e5b101e25182b6d03",
+        "compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-proof.json": "07742d8439595316eb1e77499c5c4eb80955a48eb361fe401c7f110c29aaae63",
+        "run_gate.py": "616802106af8bbca9eb45b2b688dda70ded3e5015392d062916c4e91b0861db1",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "7ea240173edd0fc6b8ba19150221c393b2bdc877e3c05428eab39afe59bcfc15",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q17_sell_10": {
+      "evidence_root": "continuation_v2",
+      "attempts": [
+        34,
+        35
+      ],
+      "output_sha256": "c0eebf1a19aa388e0c01ca952543c74af52d1c04e6e916c4a04ef5eff07f644e",
+      "binding": {
+        "build.json": "488e5edc6720a9810058230fc397b92aaff977215787a937d06b0940f5ed00b4",
+        "fixtures/manifest.json": "b36acb6f0bbc97dcd35e5df1e2434ae2f80b651a90d51fa8e72e9eff165e2103",
+        "../compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-v1.json": "a69abefa0aef62966beae25caa99f764c02473e2ef142abd58350832fa8fcc2c",
+        "parent-preserved.json": "626caea04410479ee59f647a842a948f10a3f694b23628ad507926b5edaca16e",
+        "run_gate.py": "9ae421a90e25e419b640f0cca48226cf79858a5799ae4c65f0ed5242e9fef32f",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "b5fdfb4c4c1486a03f84113dbfcb900d636ccd288f80ee654aea1473f45d12cb",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q18_shared_capacity": {
+      "evidence_root": "continuation_v2",
+      "attempts": [
+        36,
+        37
+      ],
+      "output_sha256": "21c61d8324647d74c68ce80515f6ecdd8dd7bbe516a14a24669412cb8f74397e",
+      "binding": {
+        "build.json": "488e5edc6720a9810058230fc397b92aaff977215787a937d06b0940f5ed00b4",
+        "fixtures/manifest.json": "b36acb6f0bbc97dcd35e5df1e2434ae2f80b651a90d51fa8e72e9eff165e2103",
+        "../compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-v1.json": "a69abefa0aef62966beae25caa99f764c02473e2ef142abd58350832fa8fcc2c",
+        "parent-preserved.json": "626caea04410479ee59f647a842a948f10a3f694b23628ad507926b5edaca16e",
+        "run_gate.py": "9ae421a90e25e419b640f0cca48226cf79858a5799ae4c65f0ed5242e9fef32f",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "b5fdfb4c4c1486a03f84113dbfcb900d636ccd288f80ee654aea1473f45d12cb",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q19_canonical": {
+      "evidence_root": "continuation_v2",
+      "attempts": [
+        38,
+        39
+      ],
+      "output_sha256": "9d14eb5e003e267f9090236e72d3f73b0b696e2c4ba379870bc4947ab8e24c18",
+      "binding": {
+        "build.json": "488e5edc6720a9810058230fc397b92aaff977215787a937d06b0940f5ed00b4",
+        "fixtures/manifest.json": "b36acb6f0bbc97dcd35e5df1e2434ae2f80b651a90d51fa8e72e9eff165e2103",
+        "../compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-v1.json": "a69abefa0aef62966beae25caa99f764c02473e2ef142abd58350832fa8fcc2c",
+        "parent-preserved.json": "626caea04410479ee59f647a842a948f10a3f694b23628ad507926b5edaca16e",
+        "run_gate.py": "9ae421a90e25e419b640f0cca48226cf79858a5799ae4c65f0ed5242e9fef32f",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "b5fdfb4c4c1486a03f84113dbfcb900d636ccd288f80ee654aea1473f45d12cb",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q19_reordered_duplicates": {
+      "evidence_root": "continuation_v2",
+      "attempts": [
+        40,
+        41
+      ],
+      "output_sha256": "ccc77156085967056d1d723e5ea2cacb715a092667098f37b71e0dc868effeff",
+      "binding": {
+        "build.json": "488e5edc6720a9810058230fc397b92aaff977215787a937d06b0940f5ed00b4",
+        "fixtures/manifest.json": "b36acb6f0bbc97dcd35e5df1e2434ae2f80b651a90d51fa8e72e9eff165e2103",
+        "../compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-v1.json": "a69abefa0aef62966beae25caa99f764c02473e2ef142abd58350832fa8fcc2c",
+        "parent-preserved.json": "626caea04410479ee59f647a842a948f10a3f694b23628ad507926b5edaca16e",
+        "run_gate.py": "9ae421a90e25e419b640f0cca48226cf79858a5799ae4c65f0ed5242e9fef32f",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "b5fdfb4c4c1486a03f84113dbfcb900d636ccd288f80ee654aea1473f45d12cb",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q20_total_0": {
+      "evidence_root": "continuation_v2",
+      "attempts": [
+        42,
+        43
+      ],
+      "output_sha256": "79076c7d275ea375d6fa058e206d51f857185cba987b7e562ea336966a927d9f",
+      "binding": {
+        "build.json": "488e5edc6720a9810058230fc397b92aaff977215787a937d06b0940f5ed00b4",
+        "fixtures/manifest.json": "b36acb6f0bbc97dcd35e5df1e2434ae2f80b651a90d51fa8e72e9eff165e2103",
+        "../compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-v1.json": "a69abefa0aef62966beae25caa99f764c02473e2ef142abd58350832fa8fcc2c",
+        "parent-preserved.json": "626caea04410479ee59f647a842a948f10a3f694b23628ad507926b5edaca16e",
+        "run_gate.py": "9ae421a90e25e419b640f0cca48226cf79858a5799ae4c65f0ed5242e9fef32f",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "b5fdfb4c4c1486a03f84113dbfcb900d636ccd288f80ee654aea1473f45d12cb",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q20_total_1": {
+      "evidence_root": "continuation_v2",
+      "attempts": [
+        44,
+        45
+      ],
+      "output_sha256": "f1f194ca696d5e1a9db2873a877411f744e5621d53ba71a7447e8291307d96f4",
+      "binding": {
+        "build.json": "488e5edc6720a9810058230fc397b92aaff977215787a937d06b0940f5ed00b4",
+        "fixtures/manifest.json": "b36acb6f0bbc97dcd35e5df1e2434ae2f80b651a90d51fa8e72e9eff165e2103",
+        "../compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-v1.json": "a69abefa0aef62966beae25caa99f764c02473e2ef142abd58350832fa8fcc2c",
+        "parent-preserved.json": "626caea04410479ee59f647a842a948f10a3f694b23628ad507926b5edaca16e",
+        "run_gate.py": "9ae421a90e25e419b640f0cca48226cf79858a5799ae4c65f0ed5242e9fef32f",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "b5fdfb4c4c1486a03f84113dbfcb900d636ccd288f80ee654aea1473f45d12cb",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q20_total_1_25": {
+      "evidence_root": "continuation_v2",
+      "attempts": [
+        46,
+        47
+      ],
+      "output_sha256": "94761b7f8cc5ffef8e39c674a9cdccbb9d49b9c07f977ca96d4080adbf08e775",
+      "binding": {
+        "build.json": "488e5edc6720a9810058230fc397b92aaff977215787a937d06b0940f5ed00b4",
+        "fixtures/manifest.json": "b36acb6f0bbc97dcd35e5df1e2434ae2f80b651a90d51fa8e72e9eff165e2103",
+        "../compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-v1.json": "a69abefa0aef62966beae25caa99f764c02473e2ef142abd58350832fa8fcc2c",
+        "parent-preserved.json": "626caea04410479ee59f647a842a948f10a3f694b23628ad507926b5edaca16e",
+        "run_gate.py": "9ae421a90e25e419b640f0cca48226cf79858a5799ae4c65f0ed5242e9fef32f",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "b5fdfb4c4c1486a03f84113dbfcb900d636ccd288f80ee654aea1473f45d12cb",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q20_no_fill": {
+      "evidence_root": "continuation_v2",
+      "attempts": [
+        48,
+        49
+      ],
+      "output_sha256": "2fe6fa92b1aad65f037c09f695f39dac3d48a49c6c9b3f1e4ac473c7ae9d4b97",
+      "binding": {
+        "build.json": "488e5edc6720a9810058230fc397b92aaff977215787a937d06b0940f5ed00b4",
+        "fixtures/manifest.json": "b36acb6f0bbc97dcd35e5df1e2434ae2f80b651a90d51fa8e72e9eff165e2103",
+        "../compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-v1.json": "a69abefa0aef62966beae25caa99f764c02473e2ef142abd58350832fa8fcc2c",
+        "parent-preserved.json": "626caea04410479ee59f647a842a948f10a3f694b23628ad507926b5edaca16e",
+        "run_gate.py": "9ae421a90e25e419b640f0cca48226cf79858a5799ae4c65f0ed5242e9fef32f",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "b5fdfb4c4c1486a03f84113dbfcb900d636ccd288f80ee654aea1473f45d12cb",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q20_missing": {
+      "evidence_root": "continuation_v2",
+      "attempts": [
+        50,
+        51
+      ],
+      "output_sha256": "5ece94cdbfb520199ddb9823977fb37f3e324a7ca564ba4f2ae99eb568c5e145",
+      "binding": {
+        "build.json": "488e5edc6720a9810058230fc397b92aaff977215787a937d06b0940f5ed00b4",
+        "fixtures/manifest.json": "b36acb6f0bbc97dcd35e5df1e2434ae2f80b651a90d51fa8e72e9eff165e2103",
+        "../compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-v1.json": "a69abefa0aef62966beae25caa99f764c02473e2ef142abd58350832fa8fcc2c",
+        "parent-preserved.json": "626caea04410479ee59f647a842a948f10a3f694b23628ad507926b5edaca16e",
+        "run_gate.py": "9ae421a90e25e419b640f0cca48226cf79858a5799ae4c65f0ed5242e9fef32f",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "b5fdfb4c4c1486a03f84113dbfcb900d636ccd288f80ee654aea1473f45d12cb",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q20_unbounded": {
+      "evidence_root": "continuation_v2",
+      "attempts": [
+        52,
+        53
+      ],
+      "output_sha256": "cd1473eae5449d4bf574594011fa46de8e9fa72b1c2f99a83b351bdbd63d44e5",
+      "binding": {
+        "build.json": "488e5edc6720a9810058230fc397b92aaff977215787a937d06b0940f5ed00b4",
+        "fixtures/manifest.json": "b36acb6f0bbc97dcd35e5df1e2434ae2f80b651a90d51fa8e72e9eff165e2103",
+        "../compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-v1.json": "a69abefa0aef62966beae25caa99f764c02473e2ef142abd58350832fa8fcc2c",
+        "parent-preserved.json": "626caea04410479ee59f647a842a948f10a3f694b23628ad507926b5edaca16e",
+        "run_gate.py": "9ae421a90e25e419b640f0cca48226cf79858a5799ae4c65f0ed5242e9fef32f",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "b5fdfb4c4c1486a03f84113dbfcb900d636ccd288f80ee654aea1473f45d12cb",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q20_partial_correction": {
+      "evidence_root": "continuation_v2",
+      "attempts": [
+        54,
+        55
+      ],
+      "output_sha256": "6374699ad92f5ff34fa76ce93cb3000fae600b4309bb4fd707c0a17bd6828af4",
+      "binding": {
+        "build.json": "488e5edc6720a9810058230fc397b92aaff977215787a937d06b0940f5ed00b4",
+        "fixtures/manifest.json": "b36acb6f0bbc97dcd35e5df1e2434ae2f80b651a90d51fa8e72e9eff165e2103",
+        "../compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-v1.json": "a69abefa0aef62966beae25caa99f764c02473e2ef142abd58350832fa8fcc2c",
+        "parent-preserved.json": "626caea04410479ee59f647a842a948f10a3f694b23628ad507926b5edaca16e",
+        "run_gate.py": "9ae421a90e25e419b640f0cca48226cf79858a5799ae4c65f0ed5242e9fef32f",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "b5fdfb4c4c1486a03f84113dbfcb900d636ccd288f80ee654aea1473f45d12cb",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q14_known_duplicate": {
+      "evidence_root": "continuation_v2",
+      "attempts": [
+        56,
+        57
+      ],
+      "output_sha256": "3b15b33e27e81c4a0f464343d498330897851dabee2504e12a4cfd53cbc9ec51",
+      "binding": {
+        "build.json": "488e5edc6720a9810058230fc397b92aaff977215787a937d06b0940f5ed00b4",
+        "fixtures/manifest.json": "b36acb6f0bbc97dcd35e5df1e2434ae2f80b651a90d51fa8e72e9eff165e2103",
+        "../compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-v1.json": "a69abefa0aef62966beae25caa99f764c02473e2ef142abd58350832fa8fcc2c",
+        "parent-preserved.json": "626caea04410479ee59f647a842a948f10a3f694b23628ad507926b5edaca16e",
+        "run_gate.py": "9ae421a90e25e419b640f0cca48226cf79858a5799ae4c65f0ed5242e9fef32f",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "b5fdfb4c4c1486a03f84113dbfcb900d636ccd288f80ee654aea1473f45d12cb",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    },
+    "Q15_exact_duplicate": {
+      "evidence_root": "continuation_v2",
+      "attempts": [
+        58,
+        59
+      ],
+      "output_sha256": "9ab0022044c77201fabaecdfabf627522bec7904b52408d4eeec07b4956de180",
+      "binding": {
+        "build.json": "488e5edc6720a9810058230fc397b92aaff977215787a937d06b0940f5ed00b4",
+        "fixtures/manifest.json": "b36acb6f0bbc97dcd35e5df1e2434ae2f80b651a90d51fa8e72e9eff165e2103",
+        "../compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+        "reuse-v1.json": "a69abefa0aef62966beae25caa99f764c02473e2ef142abd58350832fa8fcc2c",
+        "parent-preserved.json": "626caea04410479ee59f647a842a948f10a3f694b23628ad507926b5edaca16e",
+        "run_gate.py": "9ae421a90e25e419b640f0cca48226cf79858a5799ae4c65f0ed5242e9fef32f",
+        "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+        "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+        "host/Actions.cs": "b5fdfb4c4c1486a03f84113dbfcb900d636ccd288f80ee654aea1473f45d12cb",
+        "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+        "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+      }
+    }
+  },
+  "caveat": "Staged bindings:16pairs original v1;13pairs v2; original accepted processes are never relabeled as v2. Final PASS also requires independent review and final-head checks/CI reported in the PR."
+}

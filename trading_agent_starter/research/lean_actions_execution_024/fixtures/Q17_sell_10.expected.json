@@ -1,0 +1,35 @@
+{
+  "snapshots": [
+    {
+      "label": "filled",
+      "cash": "10498.5",
+      "I1_quantity": "0",
+      "I1_average": "0",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "1",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "-5",
+          "filled": "-5",
+          "status": "Filled",
+          "limit": null
+        }
+      ],
+      "stock_slippage": "0",
+      "at_ns": 1736175601000000000,
+      "native_dispatch_ns": 1736175601000000000
+    }
+  ],
+  "fills": [
+    {
+      "order_id": 1,
+      "quote_id": "q1",
+      "quantity": "-5",
+      "price": "99.90",
+      "fee": "1",
+      "available_ns": 1736175601000000000
+    }
+  ]
+}

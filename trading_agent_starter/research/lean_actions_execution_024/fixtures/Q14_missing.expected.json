@@ -1,0 +1,23 @@
+{
+  "snapshots": [
+    {
+      "label": "unresolved",
+      "cash": "9000",
+      "I1_quantity": "10",
+      "I1_average": "100",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "0",
+      "orders": [],
+      "receivable": null,
+      "lineage": null,
+      "tax_basis_allocation": null,
+      "economic_value": null,
+      "valuation_entry_allowed": false,
+      "unresolved": true,
+      "at_ns": 1736179200000000000,
+      "native_dispatch_ns": 1736179200000000000
+    }
+  ],
+  "fills": []
+}

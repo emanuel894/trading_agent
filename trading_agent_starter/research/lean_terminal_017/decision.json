@@ -1,0 +1,231 @@
+{
+  "status": "LEAN_TERMINAL_GATE_PASS",
+  "issue": 17,
+  "base_sha": "e20a1410fe0130b7eddfacf97d1fca7860f25d3c",
+  "branch": "research/issue-17-lean-terminal-spike",
+  "source_pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
+  "container_image": "mcr.microsoft.com/dotnet/sdk@sha256:0d99ebf1ccad15037b5c98c9fe8979d6b8dbac23812feae2277a0b277b5c5ffa",
+  "sdk": "10.0.402",
+  "runtime": "10.0.13",
+  "fixtures": "fixtures_v2",
+  "fixture_manifest_sha256": "fcca84dddad0042b448e611f66e38dfa0f577b2adfd700d372ca06eae706cd49",
+  "build_manifest_sha256": "10b1e4f20e6f0cea40afefcabddd24865cb03cd07fc68d2070e67498d26e71cb",
+  "host_dll_sha256": "27846cb9dfe0b565149534b76c2f9a8e39f73cff7e2b5e7efc3432b2f4047f38",
+  "case_count": 10,
+  "final_host_clean_processes": 20,
+  "cases": [
+    {
+      "case_id": "Q01_user_defined_unknown",
+      "fixture": "Q01",
+      "universe": "user_defined",
+      "mode": "unknown",
+      "verdict": "PASS",
+      "attempts": [
+        7,
+        8
+      ],
+      "clean_processes": 2,
+      "output_sha256": "5563172cc21a757077a62d349130f3539cb5c17deb1744d438a152b4fd384ace",
+      "outputs": [
+        "evidence/Q01_user_defined_unknown.attempt07.json",
+        "evidence/Q01_user_defined_unknown.attempt08.json"
+      ],
+      "host_dll_sha256": "27846cb9dfe0b565149534b76c2f9a8e39f73cff7e2b5e7efc3432b2f4047f38",
+      "network_mode": "none",
+      "deterministic_byte_identical": true
+    },
+    {
+      "case_id": "Q02_user_defined_known",
+      "fixture": "Q02",
+      "universe": "user_defined",
+      "mode": "known",
+      "verdict": "PASS",
+      "attempts": [
+        11,
+        12
+      ],
+      "clean_processes": 2,
+      "output_sha256": "19abdc4de3d44530d7ed34d059e58dd573a8b965b576971ce4819c962aa72477",
+      "outputs": [
+        "evidence/Q02_user_defined_known.attempt11.json",
+        "evidence/Q02_user_defined_known.attempt12.json"
+      ],
+      "host_dll_sha256": "27846cb9dfe0b565149534b76c2f9a8e39f73cff7e2b5e7efc3432b2f4047f38",
+      "network_mode": "none",
+      "deterministic_byte_identical": true
+    },
+    {
+      "case_id": "Q02_user_defined_conflict",
+      "fixture": "Q02",
+      "universe": "user_defined",
+      "mode": "conflict",
+      "verdict": "PASS",
+      "attempts": [
+        15,
+        16
+      ],
+      "clean_processes": 2,
+      "output_sha256": "f7b56754c8d3e54cf8d300c5d8a5ee141680c9fed905b7eba49b07cad8c4b13f",
+      "outputs": [
+        "evidence/Q02_user_defined_conflict.attempt15.json",
+        "evidence/Q02_user_defined_conflict.attempt16.json"
+      ],
+      "host_dll_sha256": "27846cb9dfe0b565149534b76c2f9a8e39f73cff7e2b5e7efc3432b2f4047f38",
+      "network_mode": "none",
+      "deterministic_byte_identical": true
+    },
+    {
+      "case_id": "Q02_user_defined_zero",
+      "fixture": "Q02",
+      "universe": "user_defined",
+      "mode": "zero",
+      "verdict": "PASS",
+      "attempts": [
+        13,
+        14
+      ],
+      "clean_processes": 2,
+      "output_sha256": "e859db07918b5286194643adb9849bb04e221c9a356b44c707fb95f668929276",
+      "outputs": [
+        "evidence/Q02_user_defined_zero.attempt13.json",
+        "evidence/Q02_user_defined_zero.attempt14.json"
+      ],
+      "host_dll_sha256": "27846cb9dfe0b565149534b76c2f9a8e39f73cff7e2b5e7efc3432b2f4047f38",
+      "network_mode": "none",
+      "deterministic_byte_identical": true
+    },
+    {
+      "case_id": "Q03_user_defined_negative",
+      "fixture": "Q03",
+      "universe": "user_defined",
+      "mode": "negative",
+      "verdict": "CONTRACT_VIOLATION_DETECTED_AS_REQUIRED",
+      "attempts": [
+        23,
+        24
+      ],
+      "clean_processes": 2,
+      "output_sha256": "d5277f456b689e8b2932104e327bd839d60675e4dfbac6e51cc0cd1d0d94cd53",
+      "outputs": [
+        "evidence/Q03_user_defined_negative.attempt23.json",
+        "evidence/Q03_user_defined_negative.attempt24.json"
+      ],
+      "host_dll_sha256": "27846cb9dfe0b565149534b76c2f9a8e39f73cff7e2b5e7efc3432b2f4047f38",
+      "network_mode": "none",
+      "deterministic_byte_identical": true
+    },
+    {
+      "case_id": "Q01_explicit_unknown",
+      "fixture": "Q01",
+      "universe": "explicit",
+      "mode": "unknown",
+      "verdict": "PASS",
+      "attempts": [
+        9,
+        10
+      ],
+      "clean_processes": 2,
+      "output_sha256": "99d6e84c4439cbe42008122d3ce5879432c535bdf9fb1dc8f6832f2416a17217",
+      "outputs": [
+        "evidence/Q01_explicit_unknown.attempt09.json",
+        "evidence/Q01_explicit_unknown.attempt10.json"
+      ],
+      "host_dll_sha256": "27846cb9dfe0b565149534b76c2f9a8e39f73cff7e2b5e7efc3432b2f4047f38",
+      "network_mode": "none",
+      "deterministic_byte_identical": true
+    },
+    {
+      "case_id": "Q02_explicit_known",
+      "fixture": "Q02",
+      "universe": "explicit",
+      "mode": "known",
+      "verdict": "PASS",
+      "attempts": [
+        17,
+        18
+      ],
+      "clean_processes": 2,
+      "output_sha256": "dbcfc4efabad27a18587ea0e656247a4f4ab136c51e9beb681e48588ded21915",
+      "outputs": [
+        "evidence/Q02_explicit_known.attempt17.json",
+        "evidence/Q02_explicit_known.attempt18.json"
+      ],
+      "host_dll_sha256": "27846cb9dfe0b565149534b76c2f9a8e39f73cff7e2b5e7efc3432b2f4047f38",
+      "network_mode": "none",
+      "deterministic_byte_identical": true
+    },
+    {
+      "case_id": "Q02_explicit_conflict",
+      "fixture": "Q02",
+      "universe": "explicit",
+      "mode": "conflict",
+      "verdict": "PASS",
+      "attempts": [
+        21,
+        22
+      ],
+      "clean_processes": 2,
+      "output_sha256": "ea88a29785d69d137aa564a26df1b5fab1a3a0b27ce7084d30c7d36f0e6df9e1",
+      "outputs": [
+        "evidence/Q02_explicit_conflict.attempt21.json",
+        "evidence/Q02_explicit_conflict.attempt22.json"
+      ],
+      "host_dll_sha256": "27846cb9dfe0b565149534b76c2f9a8e39f73cff7e2b5e7efc3432b2f4047f38",
+      "network_mode": "none",
+      "deterministic_byte_identical": true
+    },
+    {
+      "case_id": "Q02_explicit_zero",
+      "fixture": "Q02",
+      "universe": "explicit",
+      "mode": "zero",
+      "verdict": "PASS",
+      "attempts": [
+        19,
+        20
+      ],
+      "clean_processes": 2,
+      "output_sha256": "1b3edb7f0502bfc5b34da3918520b9b88cad83a7ea4b7ba7622f47172018eed7",
+      "outputs": [
+        "evidence/Q02_explicit_zero.attempt19.json",
+        "evidence/Q02_explicit_zero.attempt20.json"
+      ],
+      "host_dll_sha256": "27846cb9dfe0b565149534b76c2f9a8e39f73cff7e2b5e7efc3432b2f4047f38",
+      "network_mode": "none",
+      "deterministic_byte_identical": true
+    },
+    {
+      "case_id": "Q03_explicit_negative",
+      "fixture": "Q03",
+      "universe": "explicit",
+      "mode": "negative",
+      "verdict": "CONTRACT_VIOLATION_DETECTED_AS_REQUIRED",
+      "attempts": [
+        25,
+        26
+      ],
+      "clean_processes": 2,
+      "output_sha256": "0ddd04505e81f6dc5cee7a84f44f73dbf718cf90ea096b4e67ef019821fafdd5",
+      "outputs": [
+        "evidence/Q03_explicit_negative.attempt25.json",
+        "evidence/Q03_explicit_negative.attempt26.json"
+      ],
+      "host_dll_sha256": "27846cb9dfe0b565149534b76c2f9a8e39f73cff7e2b5e7efc3432b2f4047f38",
+      "network_mode": "none",
+      "deterministic_byte_identical": true
+    }
+  ],
+  "negative_controls": "Both universe variants detect the required CONTRACT_VIOLATION (-10 at100,fee0,cash10000); those economics remain rejected. Intercepted variants prevent it.",
+  "Q04_Q33": "NOT_RUN; no continuation authorized",
+  "production_or_research_engine_qualified": false,
+  "prior_attempts": "Preserved unqualified host/oracle/calendar attempts, previous-host successes and one infrastructure launch failure; see attempts/,evidence/ and ORACLE_REVISION.md.",
+  "spending_and_safety": {
+    "paid_model_provider_calls": 0,
+    "purchases": 0,
+    "broker_calls": 0,
+    "credentials_used": false,
+    "Paper_Live_enabled": false,
+    "alpha_work": false,
+    "science_registration_changes": false
+  }
+}

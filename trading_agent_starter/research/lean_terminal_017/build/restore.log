@@ -1,0 +1,36 @@
+  Determining projects to restore...
+  Restored /work/source/Logging/QuantConnect.Logging.csproj (in 4.22 sec).
+/work/host/LeanTerminal.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf
+/work/source/Brokerages/QuantConnect.Brokerages.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf [/work/host/LeanTerminal.csproj]
+/work/source/Algorithm.CSharp/QuantConnect.Algorithm.CSharp.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf [/work/host/LeanTerminal.csproj]
+/work/host/LeanTerminal.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj
+/work/source/Brokerages/QuantConnect.Brokerages.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj [/work/host/LeanTerminal.csproj]
+/work/source/Algorithm.CSharp/QuantConnect.Algorithm.CSharp.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj [/work/host/LeanTerminal.csproj]
+/work/source/Common/QuantConnect.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf [/work/host/LeanTerminal.csproj]
+/work/source/AlgorithmFactory/QuantConnect.AlgorithmFactory.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf [/work/host/LeanTerminal.csproj]
+/work/source/Common/QuantConnect.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj [/work/host/LeanTerminal.csproj]
+/work/source/AlgorithmFactory/QuantConnect.AlgorithmFactory.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj [/work/host/LeanTerminal.csproj]
+  Restored /work/source/Common/QuantConnect.csproj (in 579 ms).
+  Restored /work/source/Algorithm.CSharp/QuantConnect.Algorithm.CSharp.csproj (in 4.83 sec).
+  Restored /work/source/Brokerages/QuantConnect.Brokerages.csproj (in 4.84 sec).
+  Restored /work/source/AlgorithmFactory/QuantConnect.AlgorithmFactory.csproj (in 4.83 sec).
+  Restored /work/host/LeanTerminal.csproj (in 4.83 sec).
+/work/source/Algorithm/QuantConnect.Algorithm.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf [/work/host/LeanTerminal.csproj]
+/work/source/Algorithm/QuantConnect.Algorithm.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj [/work/host/LeanTerminal.csproj]
+/work/source/Api/QuantConnect.Api.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf [/work/host/LeanTerminal.csproj]
+/work/source/Api/QuantConnect.Api.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj [/work/host/LeanTerminal.csproj]
+/work/source/Indicators/QuantConnect.Indicators.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf [/work/host/LeanTerminal.csproj]
+/work/source/Indicators/QuantConnect.Indicators.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj [/work/host/LeanTerminal.csproj]
+/work/source/Algorithm.Framework/QuantConnect.Algorithm.Framework.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf [/work/host/LeanTerminal.csproj]
+/work/source/Algorithm.Framework/QuantConnect.Algorithm.Framework.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj [/work/host/LeanTerminal.csproj]
+  Restored /work/source/Algorithm/QuantConnect.Algorithm.csproj (in 8 ms).
+/work/source/Engine/QuantConnect.Lean.Engine.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf [/work/host/LeanTerminal.csproj]
+/work/source/Engine/QuantConnect.Lean.Engine.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj [/work/host/LeanTerminal.csproj]
+  Restored /work/source/Api/QuantConnect.Api.csproj (in 9 ms).
+  Restored /work/source/Indicators/QuantConnect.Indicators.csproj (in 7 ms).
+/work/source/Compression/QuantConnect.Compression.csproj : warning NU1903: Package 'DotNetZip' 1.16.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhg6-9j5j-w4vf [/work/host/LeanTerminal.csproj]
+/work/source/Compression/QuantConnect.Compression.csproj : warning NU1904: Package 'System.Drawing.Common' 4.7.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-rxg9-xrhp-64gj [/work/host/LeanTerminal.csproj]
+  Restored /work/source/Algorithm.Framework/QuantConnect.Algorithm.Framework.csproj (in 9 ms).
+  Restored /work/source/Configuration/QuantConnect.Configuration.csproj (in 4 ms).
+  Restored /work/source/Compression/QuantConnect.Compression.csproj (in 7 ms).
+  Restored /work/source/Engine/QuantConnect.Lean.Engine.csproj (in 15 ms).

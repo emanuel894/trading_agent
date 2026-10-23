@@ -1,0 +1,25 @@
+{
+  "schema_version": 2,
+  "frozen_utc": "2026-10-18T14:46:52.515588+00:00",
+  "frozen_before_any_v2_execution": true,
+  "supersedes_without_erasing": {
+    "directory": "fixtures",
+    "manifest_sha256": "94954ba8333711009c00203c787d7b350c24f31c77b11bd73d2576056053755d",
+    "attempts": "01 and02 remain unqualified; neither is relabeled PASS"
+  },
+  "correction": "Only source-grounded native cancellation callback ordering changes. Economic values, event multiset/counts, outcomes, denominator, original variants and scientific requirements unchanged. Additional time/identity/native-event/snapshot/NAV-probe assertions strengthen acceptance.",
+  "source_rationale": "See ORACLE_REVISION.md; independently reviewed before v2 execution.",
+  "sha256": {
+    "Q01_explicit_unknown.expected.json": "f02274ae4cd9508b9a9552666c7c400dec34845417d42f29af1ea19af9140bb0",
+    "Q01_user_defined_unknown.expected.json": "f44d6414a7245aa5d5456ed6d02cc9e3714e67f1776a709637f9e08d078a5ba6",
+    "Q02_explicit_conflict.expected.json": "c01c537faa4cd63f9f3a629585fbb3ef1f0b04fc3b950eaf144de5d3a3f5ebd7",
+    "Q02_explicit_known.expected.json": "3b8bdf9ef033a0897570cfdfcdffaee7116934b62f3a19ca960124e24ad7cb9f",
+    "Q02_explicit_zero.expected.json": "8f15ef65e9c6e0f7f1eedad28bd1d84c63f32ae99ca7667f245a23115fb4b458",
+    "Q02_user_defined_conflict.expected.json": "7bf5fc5bc977082416aa59575d4f3cc70ef8b80acb2196d09851cabc144a33ed",
+    "Q02_user_defined_known.expected.json": "65afce3e4176a828eb1a39ba3b1831dfdfd1339212a73d727798fa64180d299c",
+    "Q02_user_defined_zero.expected.json": "c360834f435f579bae6b1a872821dc920be94224666c0c688ba6e667a02aefd5",
+    "Q03_explicit_negative.expected.json": "1f21698bb565f59c0589ae7200aac17e79a4e57dadc14cc6d53ba9ae72a186eb",
+    "Q03_user_defined_negative.expected.json": "6638dd258783b2e599b144e8091fb3b97c4e8e8e696236114c18bd15ff87cf89",
+    "input.json": "c08d733b1cb8aa297dae3957b70d9cfe27682f93592805d401516588d0fbf4d9"
+  }
+}

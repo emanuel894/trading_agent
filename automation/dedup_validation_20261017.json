@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-17T17:38:11.165359+00:00",
+  "branch": "feat/issue-3-autonomous-dev-loop",
+  "reviewed_implementation_commit": "d7775efbd3bc97ce9cd43c66d0fc5cffd60e8b9e",
+  "control_commit": "6ea9f622ae3392b716d53803da2c2184886c4075",
+  "scenarios": [
+    {
+      "scenario": "happy",
+      "state": "READY_FOR_HUMAN",
+      "repair_cycles": 0,
+      "provider_calls": 2,
+      "reason": "SYNTHETIC_ACCEPTANCE_ONLY",
+      "exit_code": 0
+    },
+    {
+      "scenario": "repair-once",
+      "state": "READY_FOR_HUMAN",
+      "repair_cycles": 1,
+      "provider_calls": 4,
+      "reason": "SYNTHETIC_ACCEPTANCE_ONLY",
+      "exit_code": 0
+    },
+    {
+      "scenario": "repair-cap",
+      "state": "BLOCKED",
+      "repair_cycles": 2,
+      "provider_calls": 6,
+      "reason": "REPAIR_CAP_REACHED",
+      "exit_code": 2
+    },
+    {
+      "scenario": "provider-failure",
+      "state": "BLOCKED",
+      "repair_cycles": 0,
+      "provider_calls": 1,
+      "reason": "PROVIDER_FAILED",
+      "exit_code": 2
+    },
+    {
+      "scenario": "budget",
+      "state": "PAUSED_BUDGET",
+      "repair_cycles": 0,
+      "provider_calls": 0,
+      "reason": "PER_RUN_BUDGET_EXHAUSTED",
+      "exit_code": 2
+    },
+    {
+      "scenario": "stale-review",
+      "state": "BLOCKED",
+      "repair_cycles": 0,
+      "provider_calls": 2,
+      "reason": "STALE_OR_INVALID_REVIEW",
+      "exit_code": 2
+    },
+    {
+      "scenario": "stale-ci",
+      "state": "BLOCKED",
+      "repair_cycles": 0,
+      "provider_calls": 1,
+      "reason": "STALE_OR_INVALID_CI",
+      "exit_code": 2
+    },
+    {
+      "scenario": "path-escape",
+      "state": "BLOCKED",
+      "repair_cycles": 0,
+      "provider_calls": 1,
+      "reason": "PATH_ESCAPE",
+      "exit_code": 2
+    },
+    {
+      "scenario": "control-path",
+      "state": "BLOCKED",
+      "repair_cycles": 0,
+      "provider_calls": 1,
+      "reason": "CONTROL_PATH_REJECTED",
+      "exit_code": 2
+    },
+    {
+      "scenario": "ci-failure",
+      "state": "BLOCKED",
+      "repair_cycles": 2,
+      "provider_calls": 3,
+      "reason": "REPAIR_CAP_REACHED",
+      "exit_code": 2
+    },
+    {
+      "scenario": "partial-resume",
+      "first_state": "REVIEWING",
+      "final_state": "READY_FOR_HUMAN",
+      "preserved_journal_prefix": true,
+      "repair_cycles": 1
+    }
+  ],
+  "tool_version": "synthetic-devloop-2",
+  "suite": [
+    {
+      "python": "3.13.5",
+      "platform": "Linux",
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "duration_seconds": 8.32,
+      "log_sha256": "ecf52401fba99f9d34858a77990132aea15f0fee47d033f01572c0cde5d2d228",
+      "tests": 240,
+      "foundation_tests": 204,
+      "automation_tests": 36,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "python": "3.12.14",
+      "platform": "Linux",
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "duration_seconds": 8.669,
+      "log_sha256": "dcf396248e0c49fa38b99174a20994907d20ed00d988457ad88166f8182b850c",
+      "tests": 240,
+      "foundation_tests": 204,
+      "automation_tests": 36,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "workflow_checks": {
+    "actionlint_version": "1.7.7",
+    "command": "actionlint -shellcheck= .github/workflows/autonomous-dev-dry-run.yml",
+    "exit_code": 0,
+    "shellcheck_run": false,
+    "trusted_guard_js": "executed with synthetic Octokit fixtures and no inherited credentials; five test methods plus rejection subcases",
+    "node": "24.19.0"
+  },
+  "source_inspection": {
+    "repositories": 9,
+    "verified_files": 72,
+    "inventory_sha256": "2e826d2fbf455de4505b43a06e2e0acd8ccbcde596bc6159dbccf3c623addf8e",
+    "upstream_agents_executed": false
+  },
+  "review": {
+    "scope": "fresh-context code/source-evidence review, not independent Gemini provider acceptance",
+    "blocking_findings": 0,
+    "guard_tests_rerun": 36,
+    "corrected": "Actual shared OpenHands helper source snapshotted and cited instead of symlink text",
+    "qualification_limit": "download-artifact v7 warns on digest mismatch; no privileged publisher activated; hard receipt/byte integrity gate remains required before future publication"
+  },
+  "synthetic_demo_bars": 300,
+  "protected_registrations": {
+    "004": "REGISTRATION_VERIFIED",
+    "005": "registration() completed successfully"
+  },
+  "protected_paths_unchanged_from_reviewed_commit": [
+    ".github/workflows/tests.yml",
+    "AI_PROJECT_POLICY.md",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "GEMINI.md",
+    "automation/control.json",
+    "trading_agent_starter/agent",
+    "trading_agent_starter/research",
+    "trading_agent_starter/config",
+    "trading_agent_starter/requirements.txt",
+    "trading_agent_starter/.env.example"
+  ],
+  "existing_ci_sha256": "4bc704a519de01468bb80d6fb1fac8e93ae33f7bcd23bfc11f14c01534f0ceba",
+  "tested_code_sha256": {
+    ".github/workflows/autonomous-dev-dry-run.yml": "9b4cb1422005f87c92e91e9b4cb15ab08ec3247a6a75d3fc9886a8dd8a393fff",
+    "trading_agent_starter/devloop/__init__.py": "9636465f3ece5e05b0cb7c98644cb3ce98095a50e8e35abcc8a56dbe65ea0986",
+    "trading_agent_starter/devloop/control.py": "13d8ef1df9eab53ede893b4ec4b15bbfde2f8f02ea2077ad743eaf8ef0fee3cc",
+    "trading_agent_starter/tests/test_dev_loop.py": "12b84608d0a5c914aad492125b74de6fcd0e70678c6966873f5270db6f1bc812",
+    "trading_agent_starter/tests/test_dev_loop_github.py": "4123f8ec13ff00993ec743a953e4658767de73db13ece7e933b2f1a59953dea5"
+  },
+  "paid_model_requests": 0,
+  "broker_or_data_requests": 0,
+  "orders": 0,
+  "stop_state": "AUTOMATION_DEDUP_READY",
+  "limitations": [
+    "Windows/hosted CI not executed locally; no hosted workflow dispatched",
+    "Real provider tools, credential isolation, monthly billing reservations and privileged publisher remain inactive/unqualified",
+    "GitHub API denied by runtime proxy earlier in task; no hosted CI status inferred",
+    "Synthetic journal hash chain is not proof against a complete malicious rewrite",
+    "Prior tool-version-1 journals intentionally incompatible; fresh synthetic task required"
+  ]
+}

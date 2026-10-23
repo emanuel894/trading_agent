@@ -1,0 +1,37 @@
+{
+  "decisions": [
+    {
+      "id": "A",
+      "allowed": true,
+      "reason": "OK",
+      "quantity": "6",
+      "gross_ok": null,
+      "symbol_ok": null
+    },
+    {
+      "id": "B",
+      "allowed": false,
+      "reason": "CASH",
+      "quantity": null,
+      "gross_ok": null,
+      "symbol_ok": null
+    }
+  ],
+  "snapshots": [
+    {
+      "label": "final",
+      "cash": "1000",
+      "reserved_cash": "601",
+      "free_cash": "399",
+      "quantity": "0",
+      "reserved_sell": "0",
+      "daily": false,
+      "drawdown": false,
+      "pending_exit": false
+    }
+  ],
+  "fills": [],
+  "ranked": [],
+  "due_ns": null,
+  "risk_records": []
+}

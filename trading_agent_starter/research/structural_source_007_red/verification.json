@@ -1,0 +1,60 @@
+{
+  "recorded_at_utc": "2026-10-17T21:22:30.516133+00:00",
+  "reviewed_commit": "090e8bbb80ceec58bb76e75a3e69fd79719b8737",
+  "suite": {
+    "python": "3.13.5",
+    "platform": "Linux",
+    "command": "python -m unittest discover -s tests -v",
+    "tests": 240,
+    "seconds": 8.192,
+    "result": "PASS",
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "log_sha256": "1f7af8851c84cc23a6941117a856b86970e5d3b8f3e72a905d450acd26214a65"
+  },
+  "registrations_004_005": "VERIFIED",
+  "protected_hashes": {
+    "STRUCTURAL_IDENTITY_AMENDMENT_005.md": "5d7a7526863fb5cc2d4a5bc91a6ca161b3989ae1d3e0086db6e0be1cc3ae55eb",
+    "agent/acquisition_registration.py": "b790d2ac19df6e5c2576418f3a8bf6df252cce9d9782d5e1a80c9204fb7b923c",
+    "agent/alpaca_daily_contract.py": "8fc983b89af15e5d8528474e859edd3c8a67f1706914c3d4f3b793615259a561",
+    "agent/cohort_selector.py": "f6318d8c47f02f4fcbe32d5efb6f884fe912419dca38b651273b34ba7fad2d37",
+    "agent/cohort_selector_v3.py": "22bebe7390f09711197cb2dd448586a4e8ba10bc633588095bb5bdb0130b0bae",
+    "research/acquisition_candidate_001_004_ledger.json": "ed0ecce6d50be2b11372e1734e0d336e6d8c268c5640cb42814e5d323b3b2a94",
+    "research/acquisition_frame_registration_004.json": "c4dfc00f202ef93a3b87cfb8928f75c4a7e152db6a3253260187bdb9b0173409",
+    "research/acquisition_priority_order_004.json": "f90430aeb8c92031317e376080142e3513bb648dc64522cec6c0d526fdc59a69",
+    "research/cohort_selection_registration_003.json": "af7e721326576b0e6b131debd1b5f8665c474adc2472ab75d483fb654f35eed2"
+  },
+  "original_tracked_files_byte_unchanged": true,
+  "prior_packet_hashes_checked": true,
+  "prior_raw_sources_verified": 87,
+  "prior_exact_excerpts_verified": 18,
+  "new_raw_sources_verified": 43,
+  "new_raw_or_decoded_excerpts_verified": 16,
+  "synthetic_demo": {
+    "bars": 300,
+    "orders": 0,
+    "model_training": false,
+    "purpose": "engineering regression only"
+  },
+  "independent_model_review": {
+    "model": "gpt-6.1-sol",
+    "context": "fresh independent review, then final artifact review",
+    "blocking_findings": 0,
+    "not_source_authority": true
+  },
+  "unrun": [
+    "Windows CI",
+    "Hosted CI",
+    "Authenticated Reference access",
+    "FMBH production sample"
+  ],
+  "artifact_sha256": {
+    "trading_agent_starter/research/structural_source_007_red/PROVIDER_REQUEST.md": "9b7a4c84393c729442ed3bdff8de18691f4e52a87d8eabf6349d54d951ff65f0",
+    "trading_agent_starter/research/structural_source_007_red/decision.json": "0e7a26cd44dc03fc2a8f5419d7d121963e413fc9bf882be2838584384123d461",
+    "trading_agent_starter/research/structural_source_007_red/issue_snapshot.json": "c4d7a517d662e2e3fa91a7308c233be7dd7cd250ce6012ec54f5987e4350957b",
+    "trading_agent_starter/research/structural_source_007_red/review_excerpts.json": "0d6b85ec8372618789f65f09d6c9644d58e696a59d791ecfed1734795a230286",
+    "trading_agent_starter/research/structural_source_007_red/review_sources.json": "38986dfebf2e07764e01395fb9d42d5e26651bffd80ba6ab1e9d452303fa3982",
+    "trading_agent_starter/SECURITY_MASTER_RED_REVIEW_20261018.md": "160df05e547d5c9e7cfca35ac381c8011ed7677b90277a31d935690595ffde4e"
+  }
+}

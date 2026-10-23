@@ -1,0 +1,37 @@
+{
+  "requested_model": "gpt-6.1-sol",
+  "requested_reasoning": "high",
+  "actual_backend_model_build": "not separately exposed by built-in subagent interface",
+  "method": "fresh-context built-in independent reviewer; read-only; no external model API",
+  "cross_provider_acceptance": false,
+  "initial_reviewed_commit": "484659faab7f6568a399fba93e3909b6703c0636",
+  "initial_findings": [
+    {
+      "priority": "P2",
+      "finding": "Cutoff-specific admission embedded in immutable source envelope",
+      "resolution": "Separate immutable admissionAssessment binds source evidence hash, dependency manifest, experiment, arm and cutoff."
+    },
+    {
+      "priority": "P2",
+      "finding": "Synthetic corrected v2 publication and fact vintage inherited original date",
+      "resolution": "v2 publication/vintage now 2024-09-12; v1 remains 2024-09-11; proxy revision/relation bounds explicit."
+    }
+  ],
+  "rechecked_commit": "332cd0e8f93e8ba7055c0bf295448bd129bacdfb",
+  "remaining_material_blockers": 0,
+  "scope": [
+    "All design documents and schema/examples/verifier",
+    "Capture metadata and surrounding context for 24 existing source claims",
+    "Limited fixes and verification log packaging"
+  ],
+  "reviewer_reran_full_suite": false,
+  "reviewer_reran_offline_artifact_verifier": true,
+  "source_qualification_granted": false,
+  "reviewed_artifact_sha256": {
+    "CONTRACT.md": "f75264bc05d07fa35417e8945e9d52130d0697318b00949f31468971c46aca9d",
+    "event-evidence.schema.json": "b0f31f8b915c1b7bd1698fb2d51f7c21631d8b4d8c74c8b1e54278f3b771e99c",
+    "examples/admission-assessments.json": "1d75cf5577fd7146b827178a6f7a1274f287eb4ef5218ad346dd3748645f043d",
+    "examples/date-only-backfill.json": "8693813d7505cc610d86580ddc86ebff6296df5f0a433b1667dd64ebd87b8754",
+    "examples/later-correction.json": "adc5c69c5d094d955b8b09dc24570594d9222da15bc8dfc64ea0ced393125ea3"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "arms": {
+    "A": {
+      "accounting": {
+        "decisions": [],
+        "snapshots": [
+          {
+            "label": "final",
+            "cash": "9000",
+            "reserved_cash": "0",
+            "free_cash": "9000",
+            "quantity": "10",
+            "reserved_sell": "0",
+            "daily": false,
+            "drawdown": false,
+            "pending_exit": false
+          }
+        ],
+        "fills": [],
+        "ranked": [],
+        "due_ns": null,
+        "risk_records": []
+      },
+      "evaluation": {
+        "opportunities": 1,
+        "failures": 1,
+        "run_cost": "0.25",
+        "terminal_value": null,
+        "status": "unresolved"
+      }
+    },
+    "B": {
+      "accounting": {
+        "decisions": [],
+        "snapshots": [
+          {
+            "label": "final",
+            "cash": "9000",
+            "reserved_cash": "0",
+            "free_cash": "9000",
+            "quantity": "10",
+            "reserved_sell": "0",
+            "daily": false,
+            "drawdown": false,
+            "pending_exit": false
+          }
+        ],
+        "fills": [],
+        "ranked": [],
+        "due_ns": null,
+        "risk_records": []
+      },
+      "evaluation": {
+        "opportunities": 1,
+        "failures": 1,
+        "run_cost": "0.25",
+        "terminal_value": null,
+        "status": "unresolved"
+      }
+    },
+    "C": {
+      "accounting": {
+        "decisions": [],
+        "snapshots": [
+          {
+            "label": "final",
+            "cash": "9000",
+            "reserved_cash": "0",
+            "free_cash": "9000",
+            "quantity": "10",
+            "reserved_sell": "0",
+            "daily": false,
+            "drawdown": false,
+            "pending_exit": false
+          }
+        ],
+        "fills": [],
+        "ranked": [],
+        "due_ns": null,
+        "risk_records": []
+      },
+      "evaluation": {
+        "opportunities": 1,
+        "failures": 1,
+        "run_cost": "0.25",
+        "terminal_value": null,
+        "status": "unresolved"
+      }
+    },
+    "N": {
+      "accounting": {
+        "decisions": [],
+        "snapshots": [
+          {
+            "label": "final",
+            "cash": "9000",
+            "reserved_cash": "0",
+            "free_cash": "9000",
+            "quantity": "10",
+            "reserved_sell": "0",
+            "daily": false,
+            "drawdown": false,
+            "pending_exit": false
+          }
+        ],
+        "fills": [],
+        "ranked": [],
+        "due_ns": null,
+        "risk_records": []
+      },
+      "evaluation": {
+        "opportunities": 1,
+        "failures": 1,
+        "run_cost": "0.25",
+        "terminal_value": null,
+        "status": "unresolved"
+      }
+    }
+  },
+  "diagnostic_invariance": true
+}

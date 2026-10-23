@@ -1,0 +1,198 @@
+{
+  "normalization": "UTF-8 replacement decode; HTMLParser text excluding script/style when HTML; collapse whitespace",
+  "claims": [
+    {
+      "source_id": "F01",
+      "quote": "YYYY-MM-DD formatted dates that default to today's date",
+      "normalized_character_start": 1790,
+      "normalized_character_end": 1845,
+      "interpretation": "Vintage defaults and precision are date-based; no intraday receipt follows.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "F02",
+      "quote": "excluding release dates when the data for the series did not change",
+      "normalized_character_start": 1245,
+      "normalized_character_end": 1312,
+      "interpretation": "A vintage-date inventory is not a complete scheduled-event inventory.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "F04",
+      "quote": "Series with a copyright notice are owned by third parties and have special restrictions.",
+      "normalized_character_start": 2376,
+      "normalized_character_end": 2464,
+      "interpretation": "Rights must be assessed per series and purpose; free reachability does not settle retention or AI-use rights.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "M01",
+      "quote": "The minutes of regularly scheduled meetings are released three weeks after the date of the policy decision.",
+      "normalized_character_start": 8151,
+      "normalized_character_end": 8258,
+      "interpretation": "Minutes are distinct later publications, not meeting-date evidence.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "M02",
+      "quote": "For release at 2:00 p.m. EDT",
+      "normalized_character_start": 7763,
+      "normalized_character_end": 7791,
+      "interpretation": "Document asserts a release time; it is not a receipt log.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "M03",
+      "quote": "August 23, 2024",
+      "normalized_character_start": 7702,
+      "normalized_character_end": 7717,
+      "interpretation": "A speech date alone does not establish when prepared text, delivery, or Q&A became machine-observable.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "B01",
+      "quote": "\"periodName\": \"November\"",
+      "normalized_character_start": 5545,
+      "normalized_character_end": 5569,
+      "interpretation": "API sample carries reference periods, values and footnotes; no historical receipt evidence is demonstrated.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "B02",
+      "quote": "additional information that was not available at the time of the initial release",
+      "normalized_character_start": 4206,
+      "normalized_character_end": 4286,
+      "interpretation": "Revisions incorporate later information and cannot replace initial predictive values.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "B04",
+      "quote": "Errata",
+      "normalized_character_start": 0,
+      "normalized_character_end": 6,
+      "interpretation": "Corrections must be monitored separately from scheduled revisions; archive coverage still needs qualification.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "E02",
+      "quote": "Previously published estimates contain historical data and have since been revised.",
+      "normalized_character_start": 3665,
+      "normalized_character_end": 3748,
+      "interpretation": "BEA provides routes to prior estimates and vintage history; current GDP values are not original releases.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "E03",
+      "quote": "Data may be superseded.",
+      "normalized_character_start": 1277,
+      "normalized_character_end": 1300,
+      "interpretation": "Archive discovery does not establish completeness or immutable original content.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "E04",
+      "quote": "Python and R packages",
+      "normalized_character_start": 1968,
+      "normalized_character_end": 1989,
+      "interpretation": "BEA links its own client projects; agency provenance differs from independent wrappers.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "R01",
+      "quote": "It is not an official legal edition of the Federal Register",
+      "normalized_character_start": 812,
+      "normalized_character_end": 871,
+      "interpretation": "Use discovery XML separately from authoritative legal renditions.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "R02",
+      "quote": "the exact time may vary depending upon server usage and other factors",
+      "normalized_character_start": 4201,
+      "normalized_character_end": 4270,
+      "interpretation": "Official filing and online posting clocks may differ; do not equate them.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "R03",
+      "quote": "official legal equivalent of the paper and microfiche editions",
+      "normalized_character_start": 33949,
+      "normalized_character_end": 34011,
+      "interpretation": "GovInfo official edition is the legal-rendition cross-check, not a receipt-time service.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "O01",
+      "quote": "Designation, removal, and update information is organized chronologically by list and by year.",
+      "normalized_character_start": 2139,
+      "normalized_character_end": 2233,
+      "interpretation": "OFAC provides historical change discovery; exact instants and complete payload replay need qualification.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "A01",
+      "quote": "their amount, type, action date, action type, modification number, and description",
+      "normalized_character_start": 340,
+      "normalized_character_end": 422,
+      "interpretation": "Award action dates are transaction semantics, not demonstrated public-release clocks.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "A02",
+      "quote": "Typically, `action_date` represents the date of the latest transaction associated with the award.",
+      "normalized_character_start": 5768,
+      "normalized_character_end": 5865,
+      "interpretation": "Filter dates must not be used to backdate public availability.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "S01",
+      "quote": "These APIs do not require any authentication or API keys to access.",
+      "normalized_character_start": 3630,
+      "normalized_character_end": 3697,
+      "interpretation": "Official submissions transport is accessible without credentials; issuer/wire earlier releases remain separate.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "N03",
+      "quote": "Delta sync by last update time. Useful for polling.",
+      "normalized_character_start": 4491,
+      "normalized_character_end": 4542,
+      "interpretation": "Update polling and removal IDs alone do not establish replay of every original article version.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "N06",
+      "quote": "Replay up to the last 100 cached messages",
+      "normalized_character_start": 2685,
+      "normalized_character_end": 2726,
+      "interpretation": "Bounded stream replay is not a historical full-version archive or complete outage recovery guarantee.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "W02",
+      "quote": "data = df[df['realtime_start'] <= as_of_date] return data",
+      "normalized_character_start": 6683,
+      "normalized_character_end": 6740,
+      "interpretation": "Pinned fredapi as-of helper filters revisions but does not select a unique latest row per observation.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "W04",
+      "quote": "A Python library library to make it easier to retrieve and work with BEA data.",
+      "normalized_character_start": 19,
+      "normalized_character_end": 97,
+      "interpretation": "Officially linked BEA client is transport/convenience, not proof of vintage completeness.",
+      "interpretation_is_design_inference": true
+    },
+    {
+      "source_id": "A04",
+      "quote": "on a 90-day delay in the Federal Procurement Data System (FPDS).",
+      "normalized_character_start": 41388,
+      "normalized_character_end": 41452,
+      "interpretation": "Official guidance documents delayed DOD/USACE procurement reporting; action dates cannot establish contemporaneous public announcements.",
+      "interpretation_is_design_inference": true,
+      "decoded_text_path": "A04.text.gz"
+    }
+  ]
+}

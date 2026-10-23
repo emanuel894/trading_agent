@@ -1,0 +1,21 @@
+{
+  "snapshots": [
+    {
+      "label": "unresolved",
+      "cash": "10000",
+      "I1_quantity": "10",
+      "I1_average": "100",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "0",
+      "orders": [],
+      "mapping_version": 1,
+      "ticker": "AAA",
+      "unresolved": true,
+      "entry_allowed": false,
+      "at_ns": 1736179200000000000,
+      "native_dispatch_ns": 1736179200000000000
+    }
+  ],
+  "fills": []
+}

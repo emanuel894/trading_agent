@@ -1,0 +1,38 @@
+{
+  "reviewer": "issue24_final_review_v2",
+  "review_type": "Fresh independent Codex context via collaboration.spawn_agent; actual served model/effort IDs unavailable; no cross-provider qualification",
+  "reviewed_parent_head": "c0a6f479300055902a98ad2e8d29341aeefc04bd",
+  "reviewed_utc": "2026-10-19T13:03:41.588450+00:00",
+  "material_findings": [],
+  "eligibility": "LEAN_Q12_Q20_GATE_PASS contingent on final-head local validation and Ubuntu/Windows Foundation CI",
+  "verified": {
+    "accepted_new_outputs": 58,
+    "deterministic_pairs": 29,
+    "v1_original_bound_processes": 32,
+    "v2_processes": 26,
+    "original_reused_pairs": [
+      "Q12_integral132/133",
+      "Q17_buy5bps25/26"
+    ],
+    "preserved_parent_hashes": 115,
+    "approved_v2_bindings": 11,
+    "failed_attempt33_preserved": true
+  },
+  "binding": {
+    "build.json": "488e5edc6720a9810058230fc397b92aaff977215787a937d06b0940f5ed00b4",
+    "fixtures/manifest.json": "b36acb6f0bbc97dcd35e5df1e2434ae2f80b651a90d51fa8e72e9eff165e2103",
+    "../compare.py": "de0b26a3e87ce4209b54f3736346dd566e3c7a3bc6a0fde317bc0cd768a9dbc9",
+    "reuse-v1.json": "a69abefa0aef62966beae25caa99f764c02473e2ef142abd58350832fa8fcc2c",
+    "parent-preserved.json": "626caea04410479ee59f647a842a948f10a3f694b23628ad507926b5edaca16e",
+    "run_gate.py": "9ae421a90e25e419b640f0cca48226cf79858a5799ae4c65f0ed5242e9fef32f",
+    "host/Program.cs": "9063fd9e1f8d6c5474ed88043953c8f6509b78e6cd62d92ba619c9dfb9a65df2",
+    "host/StageAlgorithm.cs": "de3ea51fa8db4e646c249429cd8dd148326bacb6eba4f01c72a6683aa7530cd3",
+    "host/Actions.cs": "b5fdfb4c4c1486a03f84113dbfcb900d636ccd288f80ee654aea1473f45d12cb",
+    "host/Execution.cs": "089542b2393a050f6a2a050c07db1a306127c6a34c657597049976ac4fd1b2b6",
+    "host/LeanStage.csproj": "8757946f9c9d4f46d715d55c8577bfb6d4a6df0964121e67d4a279076c616a33"
+  },
+  "native_result_sha256": "ec6b9ddb1cb15412955cd856aa668830a806dc7847fc52622472386b4e56e4e0",
+  "findings": "All58 accepted outputs/pairs independently passed exactcomparators/hashes/identities/bindings/completion/isolation; original2reusedpairs passed originalcomparators/bindings;33failed mismatch independently reproduced and one-scalar correction adjudicated. Original27inputs unchanged,onlytwoOnceguards/twogenuineduplicatecases. MatrixQ12-Q20completewithinexplicitfixtureboundaries. No private/reflection/corepatch/inventedeconomics/scopeexpansion.",
+  "limitations": "Isolated admission probes/frozenQ15variantdispatch/fake-destinationpartials qualify fixtureboundaries only, not productionadmissionintegration/nativeautomaticpartials. See RESULT.md.",
+  "review_actions": "Read-only;no native/build/fullsuite/CI/paidcall"
+}

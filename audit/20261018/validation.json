@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-18T07:37:33.325385+00:00",
+  "reviewed_repository_commit": "ad45afbf9aa1de402926b0a84da3e914faae5bd1",
+  "audit_date": "2026-10-18",
+  "user_timezone": "Asia/Jerusalem",
+  "suite": {
+    "command": "python -m unittest discover -s tests -v",
+    "python": "3.13.5",
+    "platform": "Linux",
+    "tests": 240,
+    "seconds": 9.62,
+    "result": "PASS",
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "log_sha256": "4ea828586b0da7d3078bf2c6c85d262fec58722c76c1a0e3e7cb81f89e4e2ab7",
+    "log_path": "/workspace/audit-upstreams/framework-audit-20261018/repository-tests-python313.log"
+  },
+  "registrations_004_005": "VERIFIED",
+  "synthetic_demo": {
+    "bars": 300,
+    "orders": 0,
+    "trained_or_promoted_model": false,
+    "purpose": "engineering regression only"
+  },
+  "all_preexisting_tracked_files_unchanged": true,
+  "protected_artifacts_sha256": {
+    "STRUCTURAL_IDENTITY_AMENDMENT_005.md": "5d7a7526863fb5cc2d4a5bc91a6ca161b3989ae1d3e0086db6e0be1cc3ae55eb",
+    "agent/acquisition_registration.py": "b790d2ac19df6e5c2576418f3a8bf6df252cce9d9782d5e1a80c9204fb7b923c",
+    "agent/alpaca_daily_contract.py": "8fc983b89af15e5d8528474e859edd3c8a67f1706914c3d4f3b793615259a561",
+    "agent/cohort_selector.py": "f6318d8c47f02f4fcbe32d5efb6f884fe912419dca38b651273b34ba7fad2d37",
+    "agent/cohort_selector_v3.py": "22bebe7390f09711197cb2dd448586a4e8ba10bc633588095bb5bdb0130b0bae",
+    "research/acquisition_candidate_001_004_ledger.json": "ed0ecce6d50be2b11372e1734e0d336e6d8c268c5640cb42814e5d323b3b2a94",
+    "research/acquisition_frame_registration_004.json": "c4dfc00f202ef93a3b87cfb8928f75c4a7e152db6a3253260187bdb9b0173409",
+    "research/acquisition_priority_order_004.json": "f90430aeb8c92031317e376080142e3513bb648dc64522cec6c0d526fdc59a69",
+    "research/cohort_selection_registration_003.json": "af7e721326576b0e6b131debd1b5f8665c474adc2472ab75d483fb654f35eed2",
+    "AI_PROJECT_POLICY.md": "92031d4c363964ff3b2bc47e7b39d2d7b3a2dd04baae159068f30e74e50f9765",
+    "AGENTS.md": "6f41fa1e3cf2cf4b46153954ad341a6513cd1dd45fc3791d3cee9a4c2814dbf2",
+    "automation/control.json": "6b978c57fb70f2a72e4c5139ebea06552a07d7e5fa94040c0e9503c84e5547f3",
+    ".github/workflows/tests.yml": "4bc704a519de01468bb80d6fb1fac8e93ae33f7bcd23bfc11f14c01534f0ceba",
+    "trading_agent_starter/agent/risk.py": "2069ae54b1f4fb464ab426b0648808d8b31a2ed9661e739bcf88dc5c5125c757",
+    "trading_agent_starter/agent/broker.py": "343b77407ba16c938a6fc2767f1c3aecd4c1dc2dd7cda90a99bc53fc306f9261",
+    "trading_agent_starter/agent/alpaca_paper.py": "a6a181d7c5eb71bac12a936206015a8f7e1a4c740eefeb4214dc1bd6aaf20da8"
+  },
+  "source_integrity": {
+    "distinct_indexed_files_verified": 604,
+    "ai_line_excerpts_verified": 60,
+    "additional_byte_excerpts_verified": 27,
+    "execution_numbered_excerpt_blocks_verified": 27,
+    "raw_archive_sha256_verified": true,
+    "integrity_is_not_source_completeness_or_qualification": true
+  },
+  "independent_model_review": {
+    "model": "gpt-6-astra",
+    "method": "fresh-context bounded static review",
+    "blocking_findings": 0,
+    "reviewed_artifact_sha256": {
+      "LONG_TERM_BUILD_VS_ADOPT_20261018.md": "3fcfe1f73244517bf05c0562422a036d6a52203ad4714ef3879436986fa1b0ae",
+      "audit/20261018/README.md": "420e43a84b5bb67df4dc5e033cbbd07cf8c305e3d2b6ab1ce5f761546cca67b6",
+      "audit/20261018/decisions.json": "5c01be848d12bf4f98d7a49e3f3cd4009475816f2f8c8434b66d635d531cdd85"
+    },
+    "reviewer_reran_suite": false,
+    "reviewer_read_all_604_files": false,
+    "not_source_authority_or_human_merge_approval": true
+  },
+  "checks": {
+    "git_diff_check": "PASS",
+    "audit_local_links": "PASS",
+    "no_existing_code_or_policy_or_scientific_files_modified": true
+  },
+  "unrun": [
+    "Hosted Ubuntu/Windows CI at time of local record",
+    "Third-party installation/build/runtime compatibility",
+    "Cross-engine/fill/latency benchmarks",
+    "Source completeness and actual paid-data/broker entitlements",
+    "Alpha experiments",
+    "Paper/live execution"
+  ],
+  "external_spend": {
+    "purchases": 0,
+    "subscriptions": 0,
+    "paid_provider_model_api_calls": 0,
+    "authenticated_market_data_calls": 0,
+    "broker_calls": 0,
+    "Massive_calls": 0
+  },
+  "artifact_sha256": {
+    "audit/20261018/README.md": "420e43a84b5bb67df4dc5e033cbbd07cf8c305e3d2b6ab1ce5f761546cca67b6",
+    "audit/20261018/ai_sources.json": "b7a4a72a755b1a92665cffbbbc8e3852a8031b3246c821275c470362cef0d93b",
+    "audit/20261018/core_sources.json": "5d5d8cb82255c9336ad2ed3b36f84c6182b41261b209b81d0baa7d7a38a95c96",
+    "audit/20261018/critical_excerpts.json": "273ee425bc0790d1953df59ebde48c624e9c05178d4c965d3a68de617a8c244f",
+    "audit/20261018/decisions.json": "5c01be848d12bf4f98d7a49e3f3cd4009475816f2f8c8434b66d635d531cdd85",
+    "audit/20261018/execution_excerpts.md": "1a1b72e58b6331d7497a0f17d1b7bd74a02729596a96536d0a8083882b0774d2",
+    "audit/20261018/execution_sources.json": "b0376d90d5d2576541619fb8cca272ffacfc5904e0fb94869b88dd86415f537d",
+    "audit/20261018/finrl_sources.json": "4bcb98e81e62ba52fbe8f0a3b75edda01ee75c3b28c6d4eca3eaa756c56eb185",
+    "audit/20261018/metadata_captures.json": "e40bde47859f3f218ba36f8dad1ae77ce5fa3832fe1d7c4e1ee5bfce7b96d108",
+    "audit/20261018/quantrocket_sources.json": "0c407f21ceb7fdb92ab7cc685b59973dcb39eca1d82ddb96fda1b288fd98ceaf",
+    "audit/20261018/raw_retention.json": "3239f01d20b90a84066d22077be46c74020ebd6ed097a168f6a675d2a2454517",
+    "LONG_TERM_BUILD_VS_ADOPT_20261018.md": "3fcfe1f73244517bf05c0562422a036d6a52203ad4714ef3879436986fa1b0ae"
+  }
+}

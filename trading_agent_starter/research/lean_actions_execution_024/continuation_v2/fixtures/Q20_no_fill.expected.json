@@ -1,0 +1,27 @@
+{
+  "snapshots": [
+    {
+      "label": "finished",
+      "cash": "10000",
+      "I1_quantity": "0",
+      "I1_average": "0",
+      "I2_quantity": "0",
+      "I2_average": "0",
+      "fees": "0",
+      "orders": [
+        {
+          "id": 1,
+          "quantity": "1",
+          "filled": "0",
+          "status": "Canceled",
+          "limit": null
+        }
+      ],
+      "fee_state": "NO_FILL",
+      "entry_allowed": true,
+      "at_ns": 1736175605000001000,
+      "native_dispatch_ns": 1736175605000001000
+    }
+  ],
+  "fills": []
+}

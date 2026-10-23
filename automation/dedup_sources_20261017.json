@@ -1,0 +1,549 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-17T17:34:52.198144+00:00",
+  "reviewed_implementation_commit": "d7775efbd3bc97ce9cd43c66d0fc5cffd60e8b9e",
+  "method": "Resolved current HEAD with git ls-remote; fetched immutable raw URLs or commit archives; inspected source/docs/licenses without executing upstream agents. Official GitHub action revisions resolved from v8.0.0/v7 refs. File hashes are raw fetched bytes. Failed guessed paths are not evidence of absent functionality.",
+  "reproduction": "Fetch each files[].url at the recorded commit and verify SHA-256; never resolve moving HEAD instead of the recorded commit. No provider credentials are needed.",
+  "repositories": [
+    {
+      "repository": "OpenHands/OpenHands",
+      "commit": "61a3bd93e642a0ff4def73b29496a73245628209",
+      "license_observed": "MIT",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/OpenHands/OpenHands/61a3bd93e642a0ff4def73b29496a73245628209/README.md",
+          "bytes": 12877,
+          "sha256": "ba3c3b5c271353eb44d78feb1e1d991146a23d68c83cd3dc5351c46e369978a0"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/OpenHands/OpenHands/61a3bd93e642a0ff4def73b29496a73245628209/LICENSE",
+          "bytes": 1096,
+          "sha256": "e1d1fa9f3a8d7bef24449d488fcd8f00f8f272cac297bb9bed161eb6175b876a"
+        }
+      ]
+    },
+    {
+      "repository": "OpenHands/software-agent-sdk",
+      "commit": "5966c781ed014efc96c028a99bddd4ff78426741",
+      "license_observed": "MIT",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/OpenHands/software-agent-sdk/5966c781ed014efc96c028a99bddd4ff78426741/README.md",
+          "bytes": 10835,
+          "sha256": "95094c9745c7cc58136d4eaa1688fb6038aafefec2be05344293f6df7e55dbf8"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/OpenHands/software-agent-sdk/5966c781ed014efc96c028a99bddd4ff78426741/LICENSE",
+          "bytes": 1079,
+          "sha256": "14a9b631c658eee682c6c2973525fbdf808c3457176bc47513052c559cc5ce86"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/OpenHands/software-agent-sdk/5966c781ed014efc96c028a99bddd4ff78426741/pyproject.toml",
+          "bytes": 4442,
+          "sha256": "6ca189574974a2723a4d2eb6034186d72893be5c21e662a3615f6fb30cb73c1d"
+        },
+        {
+          "path": "examples/01_standalone_sdk/10_persistence.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/software-agent-sdk/5966c781ed014efc96c028a99bddd4ff78426741/examples/01_standalone_sdk/10_persistence.py",
+          "bytes": 2463,
+          "sha256": "e443115ab0b710fa864de2bb66289bc2876d671eca77827b7b3ab3dc54d499fd"
+        },
+        {
+          "path": "examples/03_github_workflows/01_basic_action/README.md",
+          "url": "https://raw.githubusercontent.com/OpenHands/software-agent-sdk/5966c781ed014efc96c028a99bddd4ff78426741/examples/03_github_workflows/01_basic_action/README.md",
+          "bytes": 4848,
+          "sha256": "9f79ca66a06a3238172ed17507e1e8db2d976ec9613b5102980416967a664266"
+        },
+        {
+          "path": "examples/03_github_workflows/01_basic_action/agent_script.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/software-agent-sdk/5966c781ed014efc96c028a99bddd4ff78426741/examples/03_github_workflows/01_basic_action/agent_script.py",
+          "bytes": 4643,
+          "sha256": "807fc9b2af2b04dd5e0ee0a33bb9a440d8afebdb38889b0f33a24f2e557053b2"
+        },
+        {
+          "path": "examples/03_github_workflows/01_basic_action/workflow.yml",
+          "url": "https://raw.githubusercontent.com/OpenHands/software-agent-sdk/5966c781ed014efc96c028a99bddd4ff78426741/examples/03_github_workflows/01_basic_action/workflow.yml",
+          "bytes": 4948,
+          "sha256": "6c05137db66dfb2c36b60d215b9aa6f28370f7c332b678611f4ebd186137b397"
+        },
+        {
+          "path": "examples/03_github_workflows/02_pr_review/workflow.yml",
+          "url": "https://raw.githubusercontent.com/OpenHands/software-agent-sdk/5966c781ed014efc96c028a99bddd4ff78426741/examples/03_github_workflows/02_pr_review/workflow.yml",
+          "bytes": 1543,
+          "sha256": "5b54d157fdbe670b92d37e4aa8ed9e8a0250324353e2d7beecbac4880692236c"
+        },
+        {
+          "path": "openhands-sdk/openhands/sdk/security/confirmation_policy.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/software-agent-sdk/5966c781ed014efc96c028a99bddd4ff78426741/openhands-sdk/openhands/sdk/security/confirmation_policy.py",
+          "bytes": 2145,
+          "sha256": "6ecac839fa3740e5cdc8aae6515cd0cf4ef4177c5b27bb99a7d593af844c765f"
+        },
+        {
+          "path": "tests/sdk/conversation/local/test_client_tools_persistence.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/software-agent-sdk/5966c781ed014efc96c028a99bddd4ff78426741/tests/sdk/conversation/local/test_client_tools_persistence.py",
+          "bytes": 6227,
+          "sha256": "3b99abc12232efd738323d297eb327d81019e919b4e1647c2cdeeab2b1c73272"
+        }
+      ]
+    },
+    {
+      "repository": "obra/superpowers",
+      "commit": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+      "license_observed": "MIT",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/README.md",
+          "bytes": 14589,
+          "sha256": "9b7be460027bf53c29f628eee72dceeebb83e52dd5e94a1b6f9828a64c579198"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/LICENSE",
+          "bytes": 1070,
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+        },
+        {
+          "path": "skills/subagent-driven-development/SKILL.md",
+          "url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/subagent-driven-development/SKILL.md",
+          "bytes": 32577,
+          "sha256": "8dde5589ee083fb4999106d116f01c8fdaf3116a8a9813fdedeb80329de49046"
+        },
+        {
+          "path": "skills/executing-plans/SKILL.md",
+          "url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/executing-plans/SKILL.md",
+          "bytes": 20405,
+          "sha256": "f38e8f2ddcf079f65493adc713c1fed78421dfaf5f4dbf6b3a6b2b1d95466e71"
+        },
+        {
+          "path": "skills/requesting-code-review/SKILL.md",
+          "url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/requesting-code-review/SKILL.md",
+          "bytes": 2974,
+          "sha256": "2180e14a448e9410bec88e6646a2d1f0ce7fdd58de27388c1e052e929679d2bc"
+        },
+        {
+          "path": "skills/finishing-a-development-branch/SKILL.md",
+          "url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/finishing-a-development-branch/SKILL.md",
+          "bytes": 7781,
+          "sha256": "8db5a922b242dd4e1bf824cb91c13b3e8d8e8a86d6ceaf7f0774eb9cce909d65"
+        }
+      ]
+    },
+    {
+      "repository": "google-github-actions/run-gemini-cli",
+      "commit": "387c8ddb7a72078825da941758b811b9153c71e8",
+      "license_observed": "Apache-2.0",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/README.md",
+          "bytes": 19295,
+          "sha256": "9c49d5dfb35c9bacf34288837d1b3aba682cf4eb5cf334f1a6e82e91850cca7c"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/LICENSE",
+          "bytes": 11357,
+          "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+        },
+        {
+          "path": "action.yml",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/action.yml",
+          "bytes": 22149,
+          "sha256": "deace8fe05c2a99af825d7145ebef313c80463542945dacc45cadeb94763728d"
+        },
+        {
+          "path": "docs/authentication.md",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/docs/authentication.md",
+          "bytes": 15041,
+          "sha256": "fe5f07ff3117cc5eced9628d0226b9b5f9c12530e826201444b70829722f9916"
+        },
+        {
+          "path": "examples/workflows/pr-review/gemini-review.yml",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/examples/workflows/pr-review/gemini-review.yml",
+          "bytes": 4525,
+          "sha256": "dd07693609e29be793a7aca8ee17607551e5168745c25b150bffbcf452359c98"
+        },
+        {
+          "path": "examples/workflows/pr-review/README.md",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/examples/workflows/pr-review/README.md",
+          "bytes": 12228,
+          "sha256": "94bde27042e97994af8d8e4a08ff469afc1dfbe7e0c34d20d905f4dc0d09e3f7"
+        },
+        {
+          "path": "examples/workflows/gemini-dispatch/gemini-dispatch.yml",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/examples/workflows/gemini-dispatch/gemini-dispatch.yml",
+          "bytes": 8335,
+          "sha256": "944a33957ad265148cef7471c22b01643e0374ce50811bbb3af8b5c77e8cecb4"
+        },
+        {
+          "path": "examples/workflows/gemini-assistant/gemini-invoke.yml",
+          "url": "https://raw.githubusercontent.com/google-github-actions/run-gemini-cli/387c8ddb7a72078825da941758b811b9153c71e8/examples/workflows/gemini-assistant/gemini-invoke.yml",
+          "bytes": 5166,
+          "sha256": "195bcf4ab8184b633c0f7beb25e5cd43e0ab919bc59ca12fda8ec01d54c16cdc"
+        }
+      ]
+    },
+    {
+      "repository": "openai/codex-action",
+      "commit": "a8d8be6ee028bea4525bc722d16f36687b408c81",
+      "license_observed": "Apache-2.0",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/openai/codex-action/a8d8be6ee028bea4525bc722d16f36687b408c81/README.md",
+          "bytes": 17938,
+          "sha256": "00083d3f3b7ab6b887e1efa198c79a3791e53c5aae534588c9eba6c7b056b741"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/openai/codex-action/a8d8be6ee028bea4525bc722d16f36687b408c81/LICENSE",
+          "bytes": 10926,
+          "sha256": "d17f227e4df5da1600391338865ce0f3055211760a36688f816941d58232d8dc"
+        },
+        {
+          "path": "action.yml",
+          "url": "https://raw.githubusercontent.com/openai/codex-action/a8d8be6ee028bea4525bc722d16f36687b408c81/action.yml",
+          "bytes": 16776,
+          "sha256": "448852e9e59565440bf25174b54bbf661bd66102be295af2e526fa09eaaf3bd7"
+        },
+        {
+          "path": "docs/security.md",
+          "url": "https://raw.githubusercontent.com/openai/codex-action/a8d8be6ee028bea4525bc722d16f36687b408c81/docs/security.md",
+          "bytes": 7227,
+          "sha256": "06d1039180fc0a40515f23b68bb980c30c5430116389e904d57500a47694aa05"
+        },
+        {
+          "path": "src/main.ts",
+          "url": "https://raw.githubusercontent.com/openai/codex-action/a8d8be6ee028bea4525bc722d16f36687b408c81/src/main.ts",
+          "bytes": 14739,
+          "sha256": "cd5ad02d75725b03fcdbf603ed9be7ef55bff81c41ef9ed86ee905643ebcdda2"
+        }
+      ]
+    },
+    {
+      "repository": "OpenHands/extensions",
+      "commit": "d05780951082d4d83f785cb1d4c7f2be6d1c14a5",
+      "license_observed": "MIT",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/LICENSE",
+          "bytes": 1066,
+          "sha256": "fe425248fc51d1d1805ab1442ba8add98d770ad8a132051eaac8c93d7eee3ebe"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/README.md",
+          "bytes": 20002,
+          "sha256": "4389f1159d4cf5d1ed1e52672c1963ce2eacf7fdb18a6dcbf46c48dadca45a53"
+        },
+        {
+          "path": "plugins/pr-review/.plugin/plugin.json",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/plugins/pr-review/.plugin/plugin.json",
+          "bytes": 449,
+          "sha256": "6ca46234ce7521364c506b5d64efef45155bec22cc2149b26d24f1494bf0723d"
+        },
+        {
+          "path": "plugins/pr-review/README.md",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/plugins/pr-review/README.md",
+          "bytes": 18041,
+          "sha256": "7aa34bccb7dda4b8b0d2b8050e52200ba2b4fd6b40ee153c13fb9582710c1bfb"
+        },
+        {
+          "path": "plugins/pr-review/action.yml",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/plugins/pr-review/action.yml",
+          "bytes": 13087,
+          "sha256": "0e7b3e375ab494de266f1551d8430ddcf3f987bef0a5da36fce3ca8a5b6e204c"
+        },
+        {
+          "path": "plugins/pr-review/scripts/agent_script.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/plugins/pr-review/scripts/agent_script.py",
+          "bytes": 47601,
+          "sha256": "f19f2924446572d93afe85003ac26334a789ab6cd869cd0864e4f3e8f7a14d2e"
+        },
+        {
+          "path": "plugins/pr-review/scripts/evaluate_review.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/plugins/pr-review/scripts/evaluate_review.py",
+          "bytes": 21915,
+          "sha256": "7847c2953ff0e66252fb764d51620b8c2b00f8d8f35ba0733036aedf6653e9d7"
+        },
+        {
+          "path": "plugins/pr-review/scripts/prompt.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/plugins/pr-review/scripts/prompt.py",
+          "bytes": 14524,
+          "sha256": "d8e3eeaa70e0e7865d6df6c9e78ffef049d6a80e02de005a64a511f2164b91c3"
+        },
+        {
+          "path": "plugins/pr-review/workflows/pr-review-by-openhands.yml",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/plugins/pr-review/workflows/pr-review-by-openhands.yml",
+          "bytes": 2789,
+          "sha256": "b9aed24f7b966f6cc1a60fe582676a13e4cddc7658589eda3f25d726346482e6"
+        },
+        {
+          "path": "plugins/pr-review/workflows/pr-review-evaluation.yml",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/plugins/pr-review/workflows/pr-review-evaluation.yml",
+          "bytes": 3325,
+          "sha256": "4e99c20b36d5e937af559ead7cf24c5334729baaeb4713ae4c6b3be37642e585"
+        },
+        {
+          "path": "skills/github-issue-to-pr/README.md",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/skills/github-issue-to-pr/README.md",
+          "bytes": 3792,
+          "sha256": "8777ce24a7c185022b902780ae396faf978272c910827d5fec7632a1b2147cbb"
+        },
+        {
+          "path": "skills/github-issue-to-pr/SKILL.md",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/skills/github-issue-to-pr/SKILL.md",
+          "bytes": 17616,
+          "sha256": "602425d9c99c774e2b4a31ac816313f3e64171a72ff34dcc6aa50a1c6b14ba6a"
+        },
+        {
+          "path": "skills/github-issue-to-pr/references/state-schema.md",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/skills/github-issue-to-pr/references/state-schema.md",
+          "bytes": 5447,
+          "sha256": "f752a504346669dba07dd54e3013ab2d626858d54b9d8a8fcaf97e9ba6d6b84c"
+        },
+        {
+          "path": "skills/github-issue-to-pr/scripts/main.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/skills/github-issue-to-pr/scripts/main.py",
+          "bytes": 49682,
+          "sha256": "c0b0cdec04df9db9f946efc005f6277ebceb638cd4ad0e71384f6f11582812bc"
+        },
+        {
+          "path": "skills/github-issue-to-pr/scripts/worker.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/skills/github-issue-to-pr/scripts/worker.py",
+          "bytes": 6879,
+          "sha256": "e46e32537bdd904ec77f8d2bc12985351d206784d194c248f7eecbf2f2971173"
+        },
+        {
+          "path": "skills/github-issue-to-pr/scripts/github_client.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/skills/github-issue-to-pr/scripts/github_client.py",
+          "bytes": 37,
+          "sha256": "d2a6204c39a9fdd7a5f81705eed95bbf46b53978b985d0c4ad373aaa2218a1a0"
+        },
+        {
+          "path": "skills/github-issue-to-pr/scripts/agent_conversation.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/skills/github-issue-to-pr/scripts/agent_conversation.py",
+          "bytes": 42,
+          "sha256": "feb2e47d2560d58f271e9de3858495afceffe9beaa9be46bea0c044f66ccaa8e"
+        },
+        {
+          "path": "automations/catalog/github-issue-to-pr/manifest.json",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/automations/catalog/github-issue-to-pr/manifest.json",
+          "bytes": 4209,
+          "sha256": "bfced75c8bb5898202c881cc2aa99c5acea5ba5400a08cf09a2ee55c4a3b75b4"
+        },
+        {
+          "path": "tests/test_github_issue_to_pr.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/tests/test_github_issue_to_pr.py",
+          "bytes": 20437,
+          "sha256": "6d4816862762e01c576f1cc28babeb59df503b4de7f777a97b3c888253ad90c8"
+        },
+        {
+          "path": "skills/github/scripts/agent_conversation.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/skills/github/scripts/agent_conversation.py",
+          "bytes": 25443,
+          "sha256": "151990a5529297ec39f9592423c92853d81d992caabfc6e096e743cb6e9130a4"
+        },
+        {
+          "path": "skills/github/scripts/github_client.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/extensions/d05780951082d4d83f785cb1d4c7f2be6d1c14a5/skills/github/scripts/github_client.py",
+          "bytes": 15091,
+          "sha256": "7959665555b5178631799f9c8260ffea748e4e589dcc58613befb578255df0f3"
+        }
+      ]
+    },
+    {
+      "repository": "OpenHands/automation",
+      "commit": "bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2",
+      "license_observed": "MIT",
+      "files": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "url": "https://raw.githubusercontent.com/OpenHands/automation/bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2/.github/workflows/ci.yml",
+          "bytes": 698,
+          "sha256": "fb749c1374f61620629acfcb3ab37ffec9fb378d4428bf50c19b5062b82ead1e"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/OpenHands/automation/bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2/LICENSE",
+          "bytes": 1079,
+          "sha256": "14a9b631c658eee682c6c2973525fbdf808c3457176bc47513052c559cc5ce86"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/OpenHands/automation/bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2/README.md",
+          "bytes": 3302,
+          "sha256": "7e558b75a90df40760995a98c6a035958558558296dcc2591315779c0b3b2fe0"
+        },
+        {
+          "path": "openhands/automation/dispatcher.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/automation/bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2/openhands/automation/dispatcher.py",
+          "bytes": 27045,
+          "sha256": "ff689319d0dc59f080bf3bcf335479be332840f088dd92ad67febd0b273d3c97"
+        },
+        {
+          "path": "openhands/automation/execution.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/automation/bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2/openhands/automation/execution.py",
+          "bytes": 21749,
+          "sha256": "50e3c49f35c7405be87999f8000ec6784ff9bdb10d42e0a3132e4185ad470403"
+        },
+        {
+          "path": "openhands/automation/models.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/automation/bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2/openhands/automation/models.py",
+          "bytes": 35969,
+          "sha256": "7c5f79f83e04a92e7a89c3977f15f8bb6ddb5c22f4471c2e0ba51051c4ad4c74"
+        },
+        {
+          "path": "openhands/automation/presets/plugin/sdk_main.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/automation/bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2/openhands/automation/presets/plugin/sdk_main.py",
+          "bytes": 25336,
+          "sha256": "12210793c656e3f932cd91823c4075dd5bbfb8d6dc0e10da6def4c00c409495b"
+        },
+        {
+          "path": "openhands/automation/presets/prompt/sdk_main.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/automation/bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2/openhands/automation/presets/prompt/sdk_main.py",
+          "bytes": 23456,
+          "sha256": "d51b41c9a4b107e61ef39b846a8ca95c183114a619366ddc7b6c3934590000b9"
+        },
+        {
+          "path": "openhands/automation/schemas.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/automation/bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2/openhands/automation/schemas.py",
+          "bytes": 44288,
+          "sha256": "3e9fa5c020727962dae7c3c8f830e0c25d05a8c1aa6ba046286ddc532a443eee"
+        },
+        {
+          "path": "openhands/automation/utils/model_profiles.py",
+          "url": "https://raw.githubusercontent.com/OpenHands/automation/bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2/openhands/automation/utils/model_profiles.py",
+          "bytes": 6007,
+          "sha256": "eda6dc51d325563b678b4da2faeb4e287bf7cd701bc938d0886183668a2e8858"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/OpenHands/automation/bc4cca7c7e2eab5cb7d0ff671bec5dd113d3e2c2/pyproject.toml",
+          "bytes": 3334,
+          "sha256": "6e9b253a1b7930020c01a2d54fabd59381f50f4671050541b58099d5fbc517cb"
+        }
+      ]
+    },
+    {
+      "repository": "actions/github-script",
+      "commit": "ed597411d8f924073f98dfc5c65a23a2325f34cd",
+      "license_observed": "MIT",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/actions/github-script/ed597411d8f924073f98dfc5c65a23a2325f34cd/README.md",
+          "bytes": 18780,
+          "sha256": "d56ce5bcd312ef65443119894710e251e9af402b95f45025ab33267b78bc7465"
+        },
+        {
+          "path": "action.yml",
+          "url": "https://raw.githubusercontent.com/actions/github-script/ed597411d8f924073f98dfc5c65a23a2325f34cd/action.yml",
+          "bytes": 1610,
+          "sha256": "2155c7b84863afcfe81a73ab8eafcb2c2f304a995cbe282c31617aa847dff1d8"
+        },
+        {
+          "path": ".licensed.yml",
+          "url": "https://raw.githubusercontent.com/actions/github-script/ed597411d8f924073f98dfc5c65a23a2325f34cd/.licensed.yml",
+          "bytes": 140,
+          "sha256": "00d90a720e53f989b37ea61d1a9425830d1dbb76f35aa5b37d91c1bde5467d32"
+        },
+        {
+          "path": "LICENSE.md",
+          "url": "https://raw.githubusercontent.com/actions/github-script/ed597411d8f924073f98dfc5c65a23a2325f34cd/LICENSE.md",
+          "bytes": 1096,
+          "sha256": "14f02e2212076f3d23828a604c7b495c2862ef960e9899e469c106454c5f1d4f"
+        },
+        {
+          "path": "src/main.ts",
+          "url": "https://raw.githubusercontent.com/actions/github-script/ed597411d8f924073f98dfc5c65a23a2325f34cd/src/main.ts",
+          "bytes": 2809,
+          "sha256": "e03d2df878a5eca45f3fc87427d2afb61e97749394cbb733fc10e4af946ca3b3"
+        }
+      ]
+    },
+    {
+      "repository": "actions/download-artifact",
+      "commit": "37930b1c2abaa49bbe596cd826c3c89aef350131",
+      "license_observed": "MIT",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/actions/download-artifact/37930b1c2abaa49bbe596cd826c3c89aef350131/README.md",
+          "bytes": 12512,
+          "sha256": "9925d2eeb338b5462202a2babc074a5becdfd2d4e736c6cd4604dd8b0ed4c286"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/actions/download-artifact/37930b1c2abaa49bbe596cd826c3c89aef350131/LICENSE",
+          "bytes": 1097,
+          "sha256": "3e855ffa704114a51628ef8f0bf3aeb41728adf9d9070e263bf58aa5640b0eb5"
+        },
+        {
+          "path": "action.yml",
+          "url": "https://raw.githubusercontent.com/actions/download-artifact/37930b1c2abaa49bbe596cd826c3c89aef350131/action.yml",
+          "bytes": 2137,
+          "sha256": "834f2e0884ebc4b61150ecb61b3538786ee2f9e9910740a74463246268db3bd2"
+        },
+        {
+          "path": "src/download-artifact.ts",
+          "url": "https://raw.githubusercontent.com/actions/download-artifact/37930b1c2abaa49bbe596cd826c3c89aef350131/src/download-artifact.ts",
+          "bytes": 6467,
+          "sha256": "f14131bb3c2023b678a13ae75a76523cd945eb58d18154817fd84ea9422b1916"
+        }
+      ]
+    }
+  ],
+  "unavailable_guessed_paths": [
+    {
+      "repository": "OpenHands/OpenHands",
+      "path": "openhands/resolver/README.md",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "repository": "OpenHands/OpenHands",
+      "path": "openhands/resolver/resolve_issue.py",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "repository": "OpenHands/OpenHands",
+      "path": ".github/workflows/openhands-resolver.yml",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "repository": "OpenHands/OpenHands",
+      "path": "pyproject.toml",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "repository": "google-github-actions/run-gemini-cli",
+      "path": "docs/security.md",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "repository": "openai/codex-action",
+      "path": "src/runCodex.ts",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "repository": "actions/github-script",
+      "path": "LICENSE",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "repository": "actions/github-script",
+      "path": "src/download-artifact.ts",
+      "reason": "HTTP Error 404: Not Found"
+    }
+  ],
+  "additional_failed_repository_guess": "OpenHands/automations (plural) refs unavailable; inspected actual OpenHands/automation (singular) instead.",
+  "provider_requests": 0,
+  "installed_or_executed_upstream_agents": false
+}

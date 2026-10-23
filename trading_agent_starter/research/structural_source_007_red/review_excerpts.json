@@ -1,0 +1,146 @@
+{
+  "excerpts": [
+    {
+      "source_id": "red-f205917d97a9",
+      "url": "https://raw.githubusercontent.com/databento/databento-rs/72316bd104b47a2a9c24d10eb10f6daad9b36735/src/reference/security.rs",
+      "source_sha256": "193ba63a6258239d663e2984be92aa1756b236a55892509ab0261beb0ce66401",
+      "representation": "raw bytes",
+      "start_byte": 6382,
+      "end_byte_exclusive": 7223,
+      "text": "/// The timestamp (UTC) the record last changed.\n    #[serde(deserialize_with = \"deserialize_date_time\")]\n    pub ts_record: OffsetDateTime,\n    /// The timestamp (UTC) the record details are effective from.\n    #[serde(deserialize_with = \"deserialize_date_time\")]\n    pub ts_effective: OffsetDateTime,\n    /// Unique listing numerical ID. Concatenation of a sequence number and the\n    /// `listing_group_id`.\n    pub listing_id: String,\n    /// Groups all listings for the same security on a specific exchange, often in\n    /// different trading currencies.\n    pub listing_group_id: String,\n    /// Security level numerical ID. Can be used to link all multiple listings together.\n    pub security_id: String,\n    /// Issuer level numerical ID. Can be used to link all securities of a company\n    /// together.\n    pub issuer_id: String,\n\n"
+    },
+    {
+      "source_id": "red-f205917d97a9",
+      "url": "https://raw.githubusercontent.com/databento/databento-rs/72316bd104b47a2a9c24d10eb10f6daad9b36735/src/reference/security.rs",
+      "source_sha256": "193ba63a6258239d663e2984be92aa1756b236a55892509ab0261beb0ce66401",
+      "representation": "raw bytes",
+      "start_byte": 4854,
+      "end_byte_exclusive": 5055,
+      "text": "/// Whether the request should allocate any new ISINs for plans that are\n    /// ISIN-limited. If `false`, the request will drop any rows that would create\n    /// new allocations. Defaults to `true`.\n"
+    },
+    {
+      "source_id": "red-f205917d97a9",
+      "url": "https://raw.githubusercontent.com/databento/databento-rs/72316bd104b47a2a9c24d10eb10f6daad9b36735/src/reference/security.rs",
+      "source_sha256": "193ba63a6258239d663e2984be92aa1756b236a55892509ab0261beb0ce66401",
+      "representation": "raw bytes",
+      "start_byte": 3730,
+      "end_byte_exclusive": 4246,
+      "text": "/// The inclusive start time of the request range. Filters on `index`.\n    #[builder(with = |dt: impl DateTimeLike| dt.to_date_time())]\n    pub start: OffsetDateTime,\n    /// The exclusive end time of the request range. Filters on `index`.\n    ///\n    /// If `None`, all data after `start` will be included in the response.\n    #[builder(with = |dt: impl DateTimeLike| dt.to_date_time())]\n    pub end: Option<OffsetDateTime>,\n    /// The timestamp to use for filtering.\n    #[builder(default)]\n    pub index: Index,\n"
+    },
+    {
+      "source_id": "red-f006e0ae322e",
+      "url": "https://raw.githubusercontent.com/databento/databento-rs/72316bd104b47a2a9c24d10eb10f6daad9b36735/src/reference/corporate.rs",
+      "source_sha256": "1c298d2db339f9673042bdd513e697eca7571cee98d954f683db1d66a453ff1b",
+      "representation": "raw bytes",
+      "start_byte": 7441,
+      "end_byte_exclusive": 8719,
+      "text": "/// Record action status code.\n    pub event_action: Action,\n    /// Event type. The event_id where applicable links all payments rows of an event\n    /// together to show all the payment options.\n    pub event: Event,\n    /// Event subtype. This is only used for a limited number of events where the event\n    /// data supplied falls into distinct sub-groupings.\n    pub event_subtype: Option<EventSubType>,\n    /// The main calendar date name for the event.\n    pub event_date_label: String,\n    /// The primary date associated with the event, often marking when the event is\n    /// scheduled to occur or take effect.\n    pub event_date: Option<Date>,\n    /// The date on which the event was officially created or recorded in the system.\n    pub event_created_date: Date,\n    /// The date on which the event becomes effective or is executed, signifying when\n    /// the changes or actions are officially recognized.\n    pub effective_date: Option<Date>,\n    /// The ex-dividend date.\n    pub ex_date: Option<Date>,\n    /// The date on which a company reviews its records to determine the eligible\n    /// shareholders entitled to receive dividends or participate in the event. The\n    /// record date is one business day after the ex-date.\n    pub record_date: Option<Date>,\n"
+    },
+    {
+      "source_id": "red-d4c5202ed6ff",
+      "url": "https://raw.githubusercontent.com/databento/databento-python/25eef4ee8e66559e2370166a57c20925ce244d49/CHANGELOG.md",
+      "source_sha256": "10e57aede23136f6070961961e7db5b6a29f6f24075063ca304c095d3b28c3de",
+      "representation": "raw bytes",
+      "start_byte": 1052,
+      "end_byte_exclusive": 2685,
+      "text": "## 0.84.0 - 2026-08-18\n\n#### Enhancements\n- Added support for `listing_id`, `issuer_id`, and `security_id` as `stype_in`\n  values for the security master and corporate actions reference data\n  endpoints, and `security_id` for the adjustment factors endpoint\n- Added a `dataset` parameter to `MetadataHttpAPI.list_fields()`. If not\n  provided, the returned fields are for the latest DBN encoding version,\n  which may not match a specific dataset's schema\n- Upgraded `databento-dbn` to 0.67.0:\n  - Improved performance of record field accessors that convert a raw value to an enum, such\n    as `side()`, `action()` and `rtype()`, by no longer copying the description when\n    constructing the conversion error\n\n## 0.83.0 - 2026-08-04\n\n#### Enhancements\n- Added `CorporateActionsHttpAPI.list_events()` and `list_enums()` for fetching\n  documentation on supported corporate action event types and enum values\n- Added `REPLAY_DATA_AGED_OUT` variant to `ErrorCode` enum\n- Added new publisher values for JPX\n- Added an `allocate_isins` parameter to `AdjustmentFactorsHttpAPI.get_range()`,\n  `CorporateActionsHttpAPI.get_range()`, `SecurityMasterHttpAPI.get_range()`,\n  and `SecurityMasterHttpAPI.get_last()` to control whether new ISINs are\n  allocated for plans that are ISIN-limited\n- Upgraded `databento-dbn` to 0.65.0:\n  - Added `finish()` method to the Python Transcoder and a context manager\n    to call this method on exit. This will ensure compressed output contains the\n    end-of-frame block\n\n#### Bug fixes\n- Fixed an issue where the `Live` client's monitor task would not get recreated\nfor the new session after a reconnection\n\n"
+    },
+    {
+      "source_id": "red-df3c1235908d",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/StandardDatafeed/v2/README.md",
+      "source_sha256": "82d502d185e837df066547d2d887bbe8ae00a6c095cd185e0737e06c90512828",
+      "representation": "raw bytes",
+      "start_byte": 1373,
+      "end_byte_exclusive": 1670,
+      "text": "This API allows users to retrieve\n\n* Both SDF and the QFL (Quant Factor Library (Factor Family & Factor Groups)) packages they have subscriptions for, with data available since January 1, 1995.\n\nAdditional parameters are available to filter requests to get the exact files users are looking for.\n\n"
+    },
+    {
+      "source_id": "red-df3c1235908d",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/StandardDatafeed/v2/README.md",
+      "source_sha256": "82d502d185e837df066547d2d887bbe8ae00a6c095cd185e0737e06c90512828",
+      "representation": "raw bytes",
+      "start_byte": 14223,
+      "end_byte_exclusive": 14768,
+      "text": "*SDFAndQFLContentLibraryApi* | [**get_list_files**](https://github.com/FactSet/enterprise-sdk/tree/main/code/python/StandardDatafeed/v2/docs/SDFAndQFLContentLibraryApi.md#get_list_files) | **GET** /list-files | Returns delta &amp; full files for the schemas.\n*SDFAndQFLContentLibraryApi* | [**gethistorical_files**](https://github.com/FactSet/enterprise-sdk/tree/main/code/python/StandardDatafeed/v2/docs/SDFAndQFLContentLibraryApi.md#gethistorical_files) | **GET** /historical-files | Returns full historic data of specified schema and bundle.\n"
+    },
+    {
+      "source_id": "red-ce7215903908",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/Symbology/v3/docs/HistoricalIdentifierResolutionApi.md",
+      "source_sha256": "b07ff9f42e6ac5e219fca5678e33c456a82b155a639f30f62d55608abe9defd1",
+      "representation": "raw bytes",
+      "start_byte": 972,
+      "end_byte_exclusive": 1388,
+      "text": "This endpoint enables the retrieval of historical CUSIP, SEDOL, ISIN, and tickerRegion identifiers. Users can input any of the listed identifiers and resolve one input symbol to multiple different output symbols in a single request. Both input and output symbols must be declared. The `asOfDate` field allows users to retrieve the full history of an identifier or the specific identifiers as of the requested date.  "
+    },
+    {
+      "source_id": "red-0d26a51aa18f",
+      "url": "https://raw.githubusercontent.com/factset/enterprise-sdk/814439cdd02f3c2d90735e56dd90568ce9385631/code/python/FactSetEntity/v1/docs/EntitySecuritiesApi.md",
+      "source_sha256": "a72c9e08d2a02c43248fcde5ffa27cb7ac328893069c2221a20be9e49fe91d85",
+      "representation": "raw bytes",
+      "start_byte": 310,
+      "end_byte_exclusive": 434,
+      "text": "Returns all Equity Exchange Listings and all debt instruments issued for the requested entity.\n[**post_entity_securities**]("
+    },
+    {
+      "source_id": "red-0781b4957552",
+      "url": "https://raw.githubusercontent.com/wharton/wrds/5d7bf38de5bd367852b7ccdd05079c1a1820f888/README.md",
+      "source_sha256": "a4687ac351d97e18f774cd2687f53ea171339c8342d6e2cabf24f6a0d88ade04",
+      "representation": "raw bytes",
+      "start_byte": 2866,
+      "end_byte_exclusive": 3046,
+      "text": "       name    nullable              type\r\n0      permno      True  DOUBLE PRECISION\r\n1      namedt      True              DATE\r\n2   nameenddt      True              DATE\r\n...\r\n\r\nI"
+    },
+    {
+      "source_id": "red-8d842a275a73",
+      "url": "https://raw.githubusercontent.com/EodHistoricalData/EODHD-APIs-Python-Financial-Library/440e028dea70fd726bf9da3dddb6031bf42e88f6/eodhd/APIs/TradingHours_StockMarketHolidays_SymbolsChangeHistoryAPI.py",
+      "source_sha256": "93d5b49c22ab9ac06d8fcb6dc56cc03c1a7558e521627cc87f4eb4ad900017ff",
+      "representation": "raw bytes",
+      "start_byte": 661,
+      "end_byte_exclusive": 1087,
+      "text": "    def symbol_change_history(self, api_token: str, from_date=None, to_date=None):\n\n        endpoint = 'symbol-change-history'\n\n        query_string = ''\n\n        if from_date is not None:\n            query_string += '&from=' + str(from_date)\n        if to_date is not None:\n            query_string += '&to=' + str(to_date)\n\n        return self._rest_get_method(api_key=api_token, endpoint=endpoint, querystring=query_string)"
+    },
+    {
+      "source_id": "red-7389a8bafc25",
+      "url": "https://pypi.org/pypi/norgatedata/json",
+      "source_sha256": "4748a39cc97039a42469ecc76647c483a21b6b9854b979f47621b3cf4c0a3f14",
+      "representation": "decoded JSON info.description substrings",
+      "package_version": "1.0.77",
+      "text_parts": [
+        "### Major Exchange Listed \r\n\r\n```py\r\nmajexch = norgatedata.major_exchange_listed_timeseries(\r\n    symbol,\r\n    timeseriesformat = \"numpy-recarray\")\r\n```\r\n\r\nProvides indication about US stocks on whether they are listed on a major exchange (e.g. NYSE, Nasdaq, NYSE American, NYSE Arca, Cboe BZX, IEX) (value = 1) or as an OTC/Pink Sheet stock (value = 0) for each trading date is available for all Equities and ETPs.\r\n\r\nNote:  Data is only available for this item from 2000 onwards.\r\n\r\nNote: Access to major exchange listing requires a Norgate Data Stocks subscription at the Platinum or Diamond level.\r\n\r\n<a id=\"blank-check-company\"></a>\r\n",
+        "## Accessing data by assetid instead of symbol \r\n\r\nInstead of using a security's symbol, you can obtain its unique Norgate-provided identity known as assetid.  This is an unchanging number and is therefore useful when storing positions/orders into data files where the symbol may change in the future.\r\n\r\nAll of the calls above that reference 'symbol' (as a string) can also take an assetid (as an integer).  For example, symbol MSFT = assetid 134016.  symbol AMZN = assetid 129769.\r\n\r\n<a id=\"error-handling\"></a>\r\n## Error Handling \r\n\r\nIf an invalid symbol or invalid parameters are specified, then ",
+        "0, 3.11, 3.12, 3.13, 3.14)\r\n* Microsoft Windows 10/11 or Microsoft Windows 2019 Server/2022 Server/2025 Server.  Note: Server versions are limited to a single installed account on the server.  It is not designed to be a server-wide application accessible by any users on that server.\r\n* Packages: pandas, numpy",
+        "s a Windows-only application. NDU must be running for this Python package to work.\r\n\r\nIf you use Windows Subsystem for Linux (WSL2), it is possible for you to have all of your Python code operating within the WSL environnment.  However, make sure you set Networking Mode set to mirrored.\r\n\r\nIf you use a Mac or",
+        "edata.symbol(assetid)\r\n```\r\n\r\nTranslates assetid to the current symbol.\r\n\r\n#### Domicile\r\n\r\n```py\r\ndomicile = norgatedata.domicile(symbol)\r\n```\r\n\r\nProvides the country code for the domicile of the company.\r\n\r\n#### Currency \r\n\r\n```py\r\ncurrency = norgatedata.currency(symbol)\r\n```\r\n\r\nCurrency that the security t",
+        "abase List\":\r\n'US Equities', 'US Equities Delisted', 'US Indices', 'World Indices','Economic', 'Forex Spot', and 'Futures Continuous'.\r\n\r\n#### Database Symbols\r\n\r\n```py\r\ndatabasename = 'US Equities'\r\nsymbols = norgatedata.database_symbols(databasename)\r\n\r\ndatabasename = 'World Indices'\r\nsymbols = norgatedata."
+      ]
+    },
+    {
+      "source_id": "red-0611ccfb6cf0",
+      "url": "https://raw.githubusercontent.com/LSEG-API-Samples/Article.TickHistory.Postman.ISINToRIC/5a0db3ad89edac61a2b539423986cc2e5dbd08e0/Tick%20History%20REST%20ISIN%20TO%20RICS.postman_collection_v2.json",
+      "source_sha256": "335a4e2450fbd1d2a9d2b33581657975ac42e202521aac6aa11864016e834835",
+      "representation": "decoded JSON item named 3a: Historical Bulk Search",
+      "request_body": "{\r\n  \"Request\": {\r\n    \"Identifiers\": [\r\n      { \"Identifier\": \"US4592001014\", \"IdentifierType\": \"Isin\", \"Exchange\": \"NYS\", \"Currency\": \"USD\"}\r\n    ],\r\n    \"Range\": {\r\n      \"Start\": \"2017-05-31T00:00:00.000Z\",\r\n      \"End\": \"2017-05-31T00:00:00.000Z\"\r\n    }\r\n  }\r\n}"
+    },
+    {
+      "source_id": "red-0611ccfb6cf0",
+      "url": "https://raw.githubusercontent.com/LSEG-API-Samples/Article.TickHistory.Postman.ISINToRIC/5a0db3ad89edac61a2b539423986cc2e5dbd08e0/Tick%20History%20REST%20ISIN%20TO%20RICS.postman_collection_v2.json",
+      "source_sha256": "335a4e2450fbd1d2a9d2b33581657975ac42e202521aac6aa11864016e834835",
+      "representation": "decoded JSON item named 3c: Find histo RICs for ISIN: Request Histo Ref",
+      "request_body": "{\r\n  \"ExtractionRequest\": {\r\n    \"@odata.type\": \"#DataScope.Select.Api.Extractions.ExtractionRequests.HistoricalReferenceExtractionRequest\",\r\n    \"ContentFieldNames\": [\r\n      \"RIC\", \"ISIN\", \"Exchange Code\", \"Currency Code\", \"Change Date\"\r\n    ],\r\n    \"IdentifierList\": {\r\n      \"@odata.type\": \"#DataScope.Select.Api.Extractions.ExtractionRequests.InstrumentIdentifierList\",\r\n      \"InstrumentIdentifiers\": [\r\n        { \"Identifier\": \"US4592001014\", \"IdentifierType\": \"Isin\" }\r\n      ],\r\n      \"ValidationOptions\": {\r\n        \"AllowHistoricalInstruments\": true,\r\n        \"AllowInactiveInstruments\": true,\r\n        \"AllowOpenAccessInstruments\": true      \t\r\n      },\r\n      \"UseUserPreferencesForValidationOptions\": false\r\n    },\r\n    \"Condition\": {\r\n      \"StartDate\": \"2017-05-31T00:00:00.000Z\",\r\n      \"EndDate\": \"2017-05-31T00:00:00.000Z\"\r\n    }\r\n  }\r\n}"
+    },
+    {
+      "source_id": "red-0611ccfb6cf0",
+      "url": "https://raw.githubusercontent.com/LSEG-API-Samples/Article.TickHistory.Postman.ISINToRIC/5a0db3ad89edac61a2b539423986cc2e5dbd08e0/Tick%20History%20REST%20ISIN%20TO%20RICS.postman_collection_v2.json",
+      "source_sha256": "335a4e2450fbd1d2a9d2b33581657975ac42e202521aac6aa11864016e834835",
+      "representation": "decoded JSON item named 3e: Find histo EXC & CUR for a RIC",
+      "request_body": "{\r\n  \"Request\": {\r\n    \"Rics\": [\r\n      \"DE0001135317=EX\",\"DE113531=BE\",\"DE113531=D\",\"DE113531=H\",\r\n      \"DE113531=HA\",\"DE113531=MU\",\"DE0001135317=LUSG\"\r\n    ],\r\n    \"Range\": {\r\n      \"Start\": \"2017-03-31T00:00:00.000Z\",\r\n      \"End\": \"2017-03-31T00:00:00.000Z\"\r\n    }\r\n  }\r\n}"
+    },
+    {
+      "source_id": "red-0611ccfb6cf0",
+      "url": "https://raw.githubusercontent.com/LSEG-API-Samples/Article.TickHistory.Postman.ISINToRIC/5a0db3ad89edac61a2b539423986cc2e5dbd08e0/Tick%20History%20REST%20ISIN%20TO%20RICS.postman_collection_v2.json",
+      "source_sha256": "335a4e2450fbd1d2a9d2b33581657975ac42e202521aac6aa11864016e834835",
+      "representation": "decoded JSON item named 4b: Find current Equity RICs for ISIN",
+      "request_body": "{\r\n  \"SearchRequest\": {\r\n    \"AssetStatus\": \"Active\",\r\n    \"AssetCategoryCodes\": null,\r\n    \"SubTypeCodes\": null,\r\n    \"CurrencyCodes\": [ \"USD\" ],\r\n    \"CompanyName\": null,\r\n    \"Description\": null,\r\n    \"DomicileCodes\": null,\r\n    \"ExchangeCodes\": [ \"NAS\", \"NYS\", \"GSM\", \"NSM\", \"SWX\" ],\r\n    \"FairValueIndicator\": null,\r\n    \"FileCodes\": null,\r\n    \"GicsCodes\": null,\r\n    \"OrgId\": null,\r\n    \"Ticker\": null,\r\n    \"Identifier\": \"US4592001014\",\r\n    \"IdentifierType\": \"Isin\",\r\n    \"PreferredIdentifierType\": \"Ric\"\r\n  }\r\n}"
+    }
+  ]
+}

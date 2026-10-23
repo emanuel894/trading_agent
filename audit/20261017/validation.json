@@ -1,0 +1,66 @@
+{
+  "baseline": "9ff6aa4c5fcedd1051ee3265a7d7982fa4215f9b",
+  "branch": "feat/alpaca-paper-foundation",
+  "recorded_at_utc": "2026-10-17T16:04:22.417707+00:00",
+  "platform": "Linux x86_64",
+  "full_suite": [
+    {
+      "python": "3.12.14",
+      "command": "python -m unittest discover -s tests -v",
+      "working_directory": "trading_agent_starter",
+      "tests": 204,
+      "duration_seconds": 8.397,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "log_sha256": "3563f03088c7e8e770d3ebb7a9fb6c7bf77277f583ee356a0a407757b2088cd6"
+    },
+    {
+      "python": "3.13.5",
+      "command": "python -m unittest discover -s tests -v",
+      "working_directory": "trading_agent_starter",
+      "tests": 204,
+      "duration_seconds": 7.976,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "log_sha256": "a312a4ca7804b2654035cfaefdcb2e93f6f1f68da15f0ac9d5bc3563c2d40eaf"
+    }
+  ],
+  "demo": {
+    "bars": 300,
+    "synthetic": true,
+    "exit_code": 0
+  },
+  "registration_004": "REGISTRATION_VERIFIED",
+  "registration_005": "ADR001-STRUCTURAL-005 protected hashes verified",
+  "pip_check_python313": "No broken requirements found",
+  "authenticated_provider_requests": 0,
+  "orders_submitted": 0,
+  "limitations": [
+    "Windows CI not run in this audit",
+    "No actual broker, market-data or SEC acquisition",
+    "Third-party framework behavior not executed or benchmarked",
+    "No GitHub settings, automation, protected branches or secrets configured"
+  ],
+  "pr_prepublication_validation": {
+    "recorded_at_utc": "2026-10-17T16:22:12.787548+00:00",
+    "branch": "docs/build-vs-adopt-audit-20261017",
+    "base_branch": "feat/alpaca-paper-foundation",
+    "base_commit": "9ff6aa4c5fcedd1051ee3265a7d7982fa4215f9b",
+    "python": "3.13.5",
+    "command": "python -m unittest discover -s tests -v",
+    "working_directory": "trading_agent_starter",
+    "tests": 204,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "duration_seconds": 8.059,
+    "log_sha256": "3501fdd5b3979d4f6bd22da3466d28ed4cf15a301bfab0d2fd0e1fe28e0a1d7d",
+    "synthetic_demo_bars": 300,
+    "registration_004": "REGISTRATION_VERIFIED"
+  }
+}

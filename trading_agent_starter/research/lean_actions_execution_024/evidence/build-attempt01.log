@@ -1,0 +1,14 @@
+  Determining projects to restore...
+  Restored /stage/host/LeanStage.csproj (in 96 ms).
+/stage/host/Execution.cs(25,19): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context. [/stage/host/LeanStage.csproj]
+/stage/host/StageAlgorithm.cs(51,29): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context. [/stage/host/LeanStage.csproj]
+  LeanStage -> /stage/host/bin/Release/net10.0/LeanStage.dll
+
+Build succeeded.
+
+/stage/host/Execution.cs(25,19): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context. [/stage/host/LeanStage.csproj]
+/stage/host/StageAlgorithm.cs(51,29): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context. [/stage/host/LeanStage.csproj]
+    2 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:05.05

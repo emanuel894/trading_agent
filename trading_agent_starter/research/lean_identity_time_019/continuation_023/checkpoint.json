@@ -1,0 +1,36 @@
+{
+  "issue": 23,
+  "branch": "research/issue-19-lean-identity-time-spike",
+  "starting_head": "ee72ca97c6682e2a2200cc996fc51a26e1c65380",
+  "foundation_sha": "67317e573624529e247d98a4964f946421b571e7",
+  "pr": 20,
+  "phase": "Native scope and independent final review complete. Final packet commit precedes one-time finalhead local validation andOSCI publication.",
+  "next_action": "Run Python3.13 validate_final.py on finalcommit; push/verify exactheadFoundationUbuntuWindows; publish finalvalidation/decision onexistingdraftPR20. No nativefixtures or code expansion.",
+  "old_accepted_processes": 114,
+  "new_native_attempts": 13,
+  "paid_calls": 0,
+  "pending_side_effects": [
+    "finalhead local verification",
+    "finalheadpush/UbuntuWindowsCI",
+    "existingPR20validationcomment/title/body update"
+  ],
+  "q12_overall": "UNQUALIFIED",
+  "completed": [
+    "Authenticated livehead/foundation/fetch/push reconciled",
+    "All oldsource/runtime/config/code and114output bindings verified",
+    "Three focused adversarial tests pass",
+    "Build03 passes with0warnings/0errors",
+    "Clock relabeling defect in draftcontrol corrected before execution"
+  ],
+  "oracle_approved": true,
+  "completed_host_processes": 12,
+  "repairs": [
+    "Launch121: task-owned directory created0700; changed only newworkspace directory readability for unprivilegedUID65534"
+  ],
+  "new_accepted_processes": 12,
+  "old_replayed": 0,
+  "last_attempt": 133,
+  "launch_failure_attempt": 121,
+  "independent_final_review": "No material findings; all12 outputs/6pairs,493preservedfiles,8approvalbindings/runtimehashes checked; originalQ04\u2013Q11supported; Q12overallunqualified",
+  "publication_reconciliation": "Checkpoint precedes finalhead validation/CI. Reconcile native GitHub checks and PR20 final validation comment before resuming; never rerun accepted native processes."
+}

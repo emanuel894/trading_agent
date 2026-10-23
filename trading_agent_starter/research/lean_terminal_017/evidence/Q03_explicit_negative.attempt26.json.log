@@ -1,0 +1,9 @@
+20261018 15:00:01.034 TRACE:: Composer(): Loading Assemblies from /work/host/bin/Release/net10.0
+20261018 15:00:02.516 TRACE:: AlgorithmManager.CreateTokenBucket(): Initializing LeakyBucket: Capacity: 120 RefillAmount: 18 TimeInterval: 1440
+20261018 15:00:02.530 TRACE:: Event Name "Daily Sampling", scheduled to run.
+20261018 15:00:02.531 TRACE:: AlgorithmManager.Run(): Begin DataStream - Start: 01/06/2025 00:00:00 Stop: 01/06/2025 23:59:59 Time: 01/06/2025 09:59:59 Warmup: False
+20261018 15:00:02.698 TRACE:: BrokerageTransactionHandler.HandleDelistingNotification(): UtcTime: 01/06/2025 15:01:00 clearing position for delisted holding: Symbol: AAA YOSP0ROPF1WL, Quantity: 10
+20261018 15:00:02.709 TRACE:: AlgorithmManager.Run(): 1: OrderId: 1 (BrokerId: 1) CancelPending Limit order for 2 units of AAA YOSP0ROPF1WL: buy2 at limit $1 Request Count: 2 Response Count: 2
+20261018 15:00:02.710 TRACE:: AlgorithmManager.Run(): 2: OrderId: 2 (BrokerId: 2) CancelPending Limit order for -3 units of AAA YOSP0ROPF1WL: sell3 at limit $1000 Request Count: 2 Response Count: 2
+20261018 15:00:02.713 TRACE:: AlgorithmManager.Run(): Firing On End Of Algorithm...
+20261018 15:00:02.728 TRACE:: OrderRequestProcessingPool.Dispose(): completed

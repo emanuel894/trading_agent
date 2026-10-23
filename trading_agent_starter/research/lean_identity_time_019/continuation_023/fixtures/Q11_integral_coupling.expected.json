@@ -1,0 +1,98 @@
+{
+  "split": {
+    "owner": "public_action_projection",
+    "applications": 1,
+    "quantity": "20",
+    "average": "50",
+    "pending_quantity": "4",
+    "pending_limit": "50",
+    "reserved_notional": "200",
+    "fee_bound": "1",
+    "cash": "10000",
+    "profit": "0",
+    "post_bid": "50",
+    "post_ask": "50.01",
+    "native_fill_count": 0,
+    "initial_quantity": "10",
+    "initial_average": "100",
+    "initial_pending_quantity": "2",
+    "initial_pending_limit": "100",
+    "initial_reserved_notional": "200"
+  },
+  "split_delivery": [
+    "WARNING_NO_APPLY",
+    "APPLIED",
+    "DUPLICATE_NO_APPLY"
+  ],
+  "action_journal": [
+    {
+      "record": {
+        "id": "S1",
+        "version_id": "S1-v1",
+        "kind": "split_warning",
+        "instrument": "I1",
+        "event_ns": 1736179200000000000,
+        "effective_ns": 1736179200000000000,
+        "publication_ns": null,
+        "available_ns": 1736179200000000000,
+        "receipt_ns": null,
+        "sequence": 1,
+        "factor": "0.5",
+        "reference_price": "100",
+        "evidence": "E-S1",
+        "owner": "public_action_projection"
+      },
+      "admitted_ns": 1736179200000000000,
+      "dispatch_ns": 1736179200000000000,
+      "owner": "public_action_projection",
+      "result": "WARNING_NO_APPLY",
+      "applications": 0
+    },
+    {
+      "record": {
+        "id": "S1",
+        "version_id": "S1-v1",
+        "kind": "split_occurred",
+        "instrument": "I1",
+        "event_ns": 1736179200000000000,
+        "effective_ns": 1736179200000000000,
+        "publication_ns": null,
+        "available_ns": 1736179200000000000,
+        "receipt_ns": null,
+        "sequence": 2,
+        "factor": "0.5",
+        "reference_price": "100",
+        "evidence": "E-S1",
+        "owner": "public_action_projection"
+      },
+      "admitted_ns": 1736179200000000000,
+      "dispatch_ns": 1736179200000000000,
+      "owner": "public_action_projection",
+      "result": "APPLIED",
+      "applications": 1
+    },
+    {
+      "record": {
+        "id": "S1",
+        "version_id": "S1-v1",
+        "kind": "split_occurred",
+        "instrument": "I1",
+        "event_ns": 1736179200000000000,
+        "effective_ns": 1736179200000000000,
+        "publication_ns": null,
+        "available_ns": 1736179200000000000,
+        "receipt_ns": null,
+        "sequence": 3,
+        "factor": "0.5",
+        "reference_price": "100",
+        "evidence": "E-S1",
+        "owner": "public_action_projection"
+      },
+      "admitted_ns": 1736179200000000000,
+      "dispatch_ns": 1736179200000000000,
+      "owner": "public_action_projection",
+      "result": "DUPLICATE_NO_APPLY",
+      "applications": 1
+    }
+  ]
+}
