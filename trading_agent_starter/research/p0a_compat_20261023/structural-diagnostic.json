@@ -1,0 +1,56 @@
+{
+  "scope": "Inert byte inspection; no sanitization or extra processing attempt; not MD&A extraction",
+  "processing_code_sha256": "22600e3afbc3ebae4df5bd68e9917230b118c26385f3dfe9a05fa532b95a1f85",
+  "representations": [
+    {
+      "role": "primary",
+      "source_sha256": "7813247ab8b09da0683ca568373aef17da4881984b9488f2eb8bd10e2edf8d56",
+      "selected_byte_count": 7306025,
+      "selected_original_byte_span": [
+        0,
+        7306025
+      ],
+      "selected_sha256": "7813247ab8b09da0683ca568373aef17da4881984b9488f2eb8bd10e2edf8d56",
+      "passive_meta": "<meta http-equiv=\"Content-Type\" content=\"text/html\"/>",
+      "meta_original_byte_span": [
+        1344,
+        1397
+      ],
+      "first_body_tag": "<body style=\"padding:8px;margin:auto!important;z-index:0;position:relative;\">",
+      "body_original_byte_span": [
+        1408,
+        1485
+      ],
+      "script_elements": [
+        {
+          "source_byte_span": [
+            7305894,
+            7306009
+          ],
+          "sha256": "66eed38e6ee26fe01f0b25a1506ae68cf4dbab6aecd60d557f7b702c3db27944"
+        }
+      ]
+    },
+    {
+      "role": "submission",
+      "source_sha256": "306a47c1a8a325f173ef8a63b6669a0ff48a8dad2053aa00c4d7a9262f8d17a3",
+      "selected_byte_count": 7305911,
+      "selected_original_byte_span": [
+        1351,
+        7307262
+      ],
+      "selected_sha256": "6bd336e6c4f70a2d3a3a26118801d271c2c081b6f654cc4ceb3d1f8244119828",
+      "passive_meta": "<meta http-equiv=\"Content-Type\" content=\"text/html\"/>",
+      "meta_original_byte_span": [
+        2696,
+        2749
+      ],
+      "first_body_tag": "<body style=\"padding:8px;margin:auto!important;z-index:0;position:relative;\">",
+      "body_original_byte_span": [
+        2760,
+        2837
+      ],
+      "script_elements": []
+    }
+  ]
+}
