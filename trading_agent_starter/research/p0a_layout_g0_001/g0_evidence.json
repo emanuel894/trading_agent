@@ -1,0 +1,121 @@
+{
+  "actions": {
+    "authentic_replays": 0,
+    "broker_actions": 0,
+    "container_builds": 0,
+    "container_pulls": 0,
+    "container_runs": 0,
+    "external_spend_usd": 0,
+    "font_or_native_package_downloads": 0,
+    "layout_invocations": 0,
+    "merges": 0,
+    "parser_patches": 0,
+    "protected_scientific_changes": 0,
+    "research_inference": 0,
+    "sec_requests": 0,
+    "source_rewrites": 0,
+    "synthetic_fixture_executions": 0
+  },
+  "actual_model_id": null,
+  "actual_reasoning_effort": null,
+  "base": "f812f2afb5b94fd3be2f40f1bd38454c72cfda47",
+  "cross_provider_qualification": false,
+  "decision": "BLOCKED",
+  "first_disqualifying_prerequisite": "G0_FONT_IDENTITY_AND_LICENSE_UNQUALIFIED",
+  "font_availability": {
+    "aliases_or_fallbacks_selected": false,
+    "artifact_hashes": null,
+    "exact_approved_artifacts": [],
+    "exact_family_counts": {
+      "Arial Narrow": 0,
+      "Calibri": 0,
+      "Segoe UI Symbol": 0,
+      "Times New Roman": 0
+    },
+    "global_availability_claim": false,
+    "license_evidence": null,
+    "records": 583,
+    "returncode": 0,
+    "source": "local fc-list inventory plus accepted PR50 unresolved lock",
+    "stderr": "Fontconfig error: No writable cache directories"
+  },
+  "freeze": {
+    "adversarial_families": 16,
+    "aggregate_wall_seconds": 600,
+    "cpu_per_fixture_seconds": 15,
+    "max_adapter_supervisor_nonblank_lines": 500,
+    "max_variants": 64,
+    "memory_bytes": 1073741824,
+    "positive_families": 16,
+    "repair_rounds": 0,
+    "scope": "UNCHANGED_PR50_IMMUTABLE_REFERENCE",
+    "wall_per_fixture_seconds": 20
+  },
+  "g0_status": "NOT_QUALIFIED",
+  "model_requested": "Sol-class High",
+  "os_observations": {
+    "cached_images": 0,
+    "cgroup_writable": false,
+    "default_docker_info": "socket EPERM",
+    "effective_capabilities": "0000000000000000",
+    "narrow_socket_grant": "sandbox mount-target setup error exit101; not automatic approval rejection",
+    "no_new_privileges": 1,
+    "outer_seccomp": 2,
+    "privileged_container_or_policy_relaxation": false,
+    "qualified_worker_enforcement": false,
+    "read_only_approved_local_docker_info": {
+      "cgroup_driver": "cgroupfs",
+      "cgroup_version": "2",
+      "security_options": [
+        "name=seccomp,profile=builtin",
+        "name=cgroupns"
+      ],
+      "server": "28.4.0"
+    },
+    "task_uid": 1000,
+    "unshare_probe": "cannot open /proc/self/uid_map: Read-only file system"
+  },
+  "overall": "P0A_INCOMPLETE",
+  "pinned_candidate": {
+    "declared_version": "70.0",
+    "name": "WeasyPrint",
+    "revision": "7e2dda0d7833916d2698c35e707bc80ddea1ed24"
+  },
+  "pr50_live": {
+    "draft": true,
+    "head": "f812f2afb5b94fd3be2f40f1bd38454c72cfda47",
+    "merged": false
+  },
+  "previous_owner_packet_files_sha256": {
+    "OWNER_DECISION.md": "ca34e694e05c4089d849dacf17723113f0066033c405fa659dab94f00380b37b",
+    "evidence.json": "42568d5132ba606f3dac4abd307613140b295e642928a7a4d19559f0cd6a19bc"
+  },
+  "proposed_amendment": {
+    "active": false,
+    "applied": false,
+    "expected_proposed_target_sha256": "4ec131c8a2cb0751ab810633dbaf8a1550ccaba2e82966c224264966893540a8",
+    "immutable_pr50_gate_spec_sha256": "ca34e694e05c4089d849dacf17723113f0066033c405fa659dab94f00380b37b",
+    "patch_sha256": "de7462a9bc01a906f26c34ac313e6971fdf65291d119ee48cf81f8b5fa9c7258",
+    "target_sha256": "8e550b45447c616138704715f2de4424c392bacc0d4b7939aa077a72657b3641"
+  },
+  "protected_and_previous_inputs_sha256": {
+    "AGENTS.md": "291514f0c3017fae9534ce9cd64f71928698e0c6e7faaac24989c035b3b0483c",
+    "AI_PROJECT_POLICY.md": "69795c12456a1a7228d6936d433a256a829760453361d04b3686c2a2669237ce",
+    "BUILD_VS_ADOPT_20261017.md": "b3ffb5d0911ba587295db5aa3b03a20833a45d70eda8de023be1da9cebfea427",
+    "LONG_TERM_BUILD_VS_ADOPT_20261018.md": "1880bd1a80940ed0baf6269ffb9d71ed8668764ede419f1a00db9cc4dd160769",
+    "trading_agent_starter/ARCHITECTURE_DECISION_001.md": "8e550b45447c616138704715f2de4424c392bacc0d4b7939aa077a72657b3641",
+    "trading_agent_starter/agent/p0a_mda.py": "22600e3afbc3ebae4df5bd68e9917230b118c26385f3dfe9a05fa532b95a1f85",
+    "trading_agent_starter/research/p0a/REGISTRATION.md": "0043d7e6681615e63960c38fdb342f02e6a1331a2d8d898db6275ba8d9984f7b"
+  },
+  "runtime": {
+    "container_image_digest": null,
+    "host_executable": "/usr/bin/python3.13",
+    "host_executable_sha256": "889c603f0d17cb54060951bcf4c4f9b8c9ebd9e52b392c70209bbb9755d797d9",
+    "host_is_qualified_runtime": false,
+    "host_observed": "Python3.13.5",
+    "native_transitive_artifact_license_lock": null,
+    "required": "CPython3.13.16 Linux x86_64 canonical OCI image",
+    "resolution": "STOPPED_AT_FONT_PREREQUISITE"
+  },
+  "schema_version": 1
+}
