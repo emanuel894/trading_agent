@@ -30,7 +30,84 @@ def identity(raw, representation='primary'):
                 synthetic=True, representation=representation)
 
 
+def submission(primary):
+    header = ('<SEC-HEADER>\nACCESSION NUMBER: ' + ACC +
+              '\nCONFORMED SUBMISSION TYPE: 10-Q\nCENTRAL INDEX KEY: 0000700565\n</SEC-HEADER>\n').encode()
+    return (header + b'<DOCUMENT>\n<TYPE>10-Q\n<TEXT>\n' + primary +
+            b'\n</TEXT>\n</DOCUMENT>\n<DOCUMENT>\n<TYPE>EX-99\n<TEXT>EXHIBIT</TEXT></DOCUMENT>')
+
+
 class PreparationTests(unittest.TestCase):
+    def test_authentic_content_type_metadata_is_inert_and_source_mapped(self):
+        # Exact metadata spelling retained in the G4 primary; body is synthetic.
+        raw = fixture().replace(b'<html>', b'<html><head><title>10-Q</title>'
+                                b'<meta http-equiv="Content-Type" content="text/html"/>'
+                                b'</head>')
+        prepared = prepare(raw, identity(raw))
+        self.assertNotIn('text/html', prepared['mda'])
+        i = prepared['mda'].index(SENTENCE.strip())
+        self.assertEqual(raw[slice(*prepared['source_map'][i])], b'M')
+
+    def test_metadata_permission_is_tag_context_and_value_specific(self):
+        for tag in (b'<meta http-equiv="refresh" content="0;url=https://example.invalid"/>',
+                    b'<meta http-equiv="set-cookie" content="x=y"/>',
+                    b'<meta http-equiv="Content-Type" content="text/javascript"/>',
+                    b'<meta http-equiv="Content-Type" content="text/html" onload="run()"/>',
+                    b'<meta http-equiv="Content-Type" content="text/html" content="text/html"/>',
+                    b'<meta http-equiv="Content-Type"/>',
+                    b'<meta content="text/html"/>',
+                    b'<meta http-equiv="Content-Type" content/>',
+                    b'<div http-equiv="Content-Type" content="text/html"></div>'):
+            raw = fixture().replace(b'<html>', b'<html><head>' + tag + b'</head>')
+            with self.subTest(tag=tag), self.assertRaisesRegex(AuditFailure, 'HTML_ATTRIBUTES'):
+                prepare(raw, identity(raw))
+        tag = b'<meta http-equiv="Content-Type" content="text/html"/>'
+        for raw in (fixture(tag.decode()), tag + fixture(),
+                    fixture().replace(b'<html>', b'<html><head><div>' + tag + b'</div></head>')):
+            with self.subTest(context=raw[:90]), self.assertRaisesRegex(AuditFailure, 'HTML_ATTRIBUTES'):
+                prepare(raw, identity(raw))
+
+    def test_submission_outer_xbrl_preserves_original_offsets_and_exhibit_isolation(self):
+        primary = fixture('<p>Costs &amp; demand café. ' + SENTENCE * 12 + '</p>')
+        raw = submission(b'<XBRL>\n' + primary + b'\n</XBRL>')
+        prepared = prepare(raw, identity(raw, 'submission'))
+        self.assertEqual(prepared['mda'], prepare(primary, identity(primary))['mda'])
+        self.assertNotIn('EXHIBIT', prepared['mda'])
+        for text, spelling in [('Management', b'M'), ('&', b'&amp;'), ('é', 'é'.encode())]:
+            i = prepared['mda'].index(text)
+            self.assertEqual(raw[slice(*prepared['source_map'][i])], spelling)
+
+    def test_wrapper_permission_cannot_hide_active_or_unsafe_markup(self):
+        primary = fixture()
+        for wrapped in (b'<XBRL onclick="run()">' + primary + b'</XBRL>',
+                        b'<XBRL><XBRL>' + primary + b'</XBRL></XBRL>',
+                        b'<XBRL>' + primary + b'</XBRL><XBRL></XBRL>',
+                        b'OUTSIDE<XBRL>' + primary + b'</XBRL>',
+                        b'<XBRL>' + primary + b'</XBRL>OUTSIDE',
+                        b'<XBRL>' + primary,
+                        primary + b'</XBRL>',
+                        b'<XBRL><script>run()</script>' + primary + b'</XBRL>',
+                        b'<XBRL><iframe src="x"></iframe>' + primary + b'</XBRL>',
+                        b'<XBRL><div style="opacity:0">HIDDEN</div>' + primary + b'</XBRL>'):
+            raw = submission(wrapped)
+            with self.subTest(wrapped=wrapped[:50]), self.assertRaises(AuditFailure):
+                prepare(raw, identity(raw, 'submission'))
+        raw = b'<XBRL>' + primary + b'</XBRL>'
+        with self.assertRaisesRegex(AuditFailure, 'UNSUPPORTED_OR_ACTIVE_HTML'):
+            prepare(raw, identity(raw))
+
+    def test_compatibility_does_not_admit_authentic_css_or_scripts(self):
+        for body, failure in (('<body style="padding:8px;margin:auto!important;z-index:0;position:relative;">',
+                               'UNSUPPORTED_CSS'),
+                              ('<body><script type="text/javascript" src="/untrusted.js"></script>',
+                               'UNSUPPORTED_OR_ACTIVE_HTML')):
+            primary = fixture().replace(b'<body>', body.encode()).replace(
+                b'<html>', b'<html><head><meta http-equiv="Content-Type" content="text/html"/></head>')
+            for raw, role in ((primary, 'primary'),
+                              (submission(b'<XBRL>\n' + primary + b'\n</XBRL>'), 'submission')):
+                with self.subTest(body=body, role=role), self.assertRaisesRegex(AuditFailure, failure):
+                    prepare(raw, identity(raw, role))
+
     def test_nested_heading_has_complete_mda_and_no_exhibit(self):
         raw = fixture()
         p = prepare(raw, identity(raw))

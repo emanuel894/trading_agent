@@ -15,7 +15,7 @@ from .audit_store import AuditFailure, canonical, digest, strict_json, utc_now
 from .audit_text import VisibleText, SUSPICIOUS
 
 VERSION = 'p0a-v1'
-ALGORITHM = 'p0a-mapped-visible-v2'
+ALGORITHM = 'p0a-mapped-visible-v3'
 PROCESSING_CODE_SHA256 = digest(Path(__file__).read_bytes())
 CHUNK_CHARS = 2000
 MAX_BYTES = 40_000_000
@@ -117,7 +117,16 @@ def _primary(raw, meta):
                 candidates.append((text[1], doc.start(1) + text.start(1)))
     if len(candidates) != 1:
         raise AuditFailure('INCORRECT_FILING_IDENTIFICATION')
-    return candidates[0]
+    primary, offset = candidates[0]
+    # SEC complete submissions can frame the selected HTML in one attribute-free
+    # XBRL envelope. Recognize only that whole TEXT envelope, never an HTML tag
+    # permission. Inner markup still passes the full fail-closed parser below.
+    if re.search(br'</?xbrl\b', primary, re.I):
+        wrapper = re.fullmatch(br'[ \t\r\n]*<XBRL>(.*?)</XBRL>[ \t\r\n]*', primary, re.S | re.I)
+        if not wrapper or re.search(br'</?xbrl\b', wrapper[1], re.I):
+            raise AuditFailure('UNSUPPORTED_OR_ACTIVE_HTML')
+        return wrapper[1], offset + wrapper.start(1)
+    return primary, offset
 
 
 class MappedVisibleText(VisibleText):
@@ -171,7 +180,15 @@ class MappedVisibleText(VisibleText):
         if len(dict(attrs)) != len(attrs):
             raise AuditFailure('UNSUPPORTED_HTML_ATTRIBUTES')
         attrs = dict(attrs)
-        if any((key not in self.INERT_ATTRS and key != 'xmlns' and not key.startswith('xmlns:'))
+        # Admit the observed passive declaration only in the document head.
+        # Refresh, cookies, alternate encodings and generic content/http-equiv
+        # attributes stay unsupported, including in hidden/head subtrees.
+        passive_meta = (tag == 'meta' and self.stack == ['html', 'head']
+                        and set(attrs) == {'http-equiv', 'content'}
+                        and attrs['http-equiv'] is not None and attrs['content'] is not None
+                        and attrs['http-equiv'].lower() == 'content-type'
+                        and attrs['content'].lower() == 'text/html')
+        if not passive_meta and any((key not in self.INERT_ATTRS and key != 'xmlns' and not key.startswith('xmlns:'))
                or (value is None and key != 'hidden') for key, value in attrs.items()):
             raise AuditFailure('UNSUPPORTED_HTML_ATTRIBUTES')
         if tag == 'ix:nonnumeric':
