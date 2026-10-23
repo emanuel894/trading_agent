@@ -68,7 +68,7 @@ def verify(work, inventory):
         if x["style_status"] == "NATIVE_EMBOLDENING_REQUIRED_NOT_QUALIFIED":
             assert fonts[x["font_file"]]["name"].getDebugName(2) == "Regular"
     assert all(c not in fonts["notosanssymbols.ttf"].getBestCmap() for c in (0x2610, 0x2612))
-    with tarfile.open(work / "artifacts" / lock["narrow_corresponding_source"], "r:gz") as t:
+    with tarfile.open(work / "artifacts" / lock["narrow_publisher_source_archive"], "r:gz") as t:
         names = {Path(m.name).name for m in t.getmembers() if m.isfile()}
         assert {"COPYING", "License.txt", "Makefile"}.issubset(names)
         assert {f"LiberationSansNarrow-{s}.sfd" for s in

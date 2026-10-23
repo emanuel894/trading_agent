@@ -4,6 +4,7 @@
     "not_candidate_native_runtime": true,
     "version": "4.61.1"
   },
+  "binary_or_container_redistribution": "NOT_CLEARED; independently establish sufficient corresponding source and rights for exact Narrow binaries first",
   "downloaded_artifacts": [
     {
       "bytes": 2385008,
@@ -139,6 +140,7 @@
     }
   ],
   "font_binaries_modified": false,
+  "font_binary_redistribution_in_evidence": false,
   "fontconfig_candidate_mapping": "PROPOSED_NOT_INSTALLED_OR_EXECUTED",
   "fonts": [
     {
@@ -610,7 +612,10 @@
       "sha256": "b118dd41337806a5d4797052c77caf3bd096aed783e5eb21b4d11154351e1ac0"
     }
   ],
-  "narrow_corresponding_source": "liberation-narrow-fonts-1.07.6.tar.gz",
+  "narrow_binary_nameID5_version": "1.07.5",
+  "narrow_publisher_source_archive": "liberation-narrow-fonts-1.07.6.tar.gz",
+  "narrow_source_headers_version": "1.07.6",
+  "narrow_source_to_binary_build_equivalence": "NOT_VERIFIED",
   "native_emboldening": "PROPOSED_REQUIRED_FOR_2_SOURCE_RUNS_NOT_QUALIFIED",
   "native_shaping_or_layout": "NOT_RUN",
   "overall": "P0A_INCOMPLETE",
@@ -622,6 +627,7 @@
     "Liberation_Serif_source_commit": "4b0192046158094654e865245832c66d2104219e",
     "generated_upstream_info_is_not_license_authority": true
   },
+  "route_scope": "PRIVATE_SYNTHETIC_QUALIFICATION_RECOMMENDATION_ONLY",
   "schema_version": 1,
   "selected_files": 13,
   "spending_usd": 0,

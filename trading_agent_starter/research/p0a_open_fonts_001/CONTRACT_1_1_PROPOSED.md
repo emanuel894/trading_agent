@@ -4,6 +4,11 @@ Proposal ID `p0a-canonical-visibility-1.1.0-open-fonts-proposed`.
 **UNAPPLIED / INACTIVE.** V1.0.0 remains the accepted baseline; PR52 is preserved.
 No rendering/gate/processing authority arises from this document.
 
+This proposal is for private synthetic qualification. Font files remain unmodified.
+Narrow's publisher source archive is retained, but source-to-binary build equivalence
+is unverified; no font-binary/container redistribution is cleared. Such distribution
+requires an independent corresponding-source/rights check for the exact binaries.
+
 Replace only V1 §2's logical-font-only assumption and the corresponding §5 font
 qualification with the following explicit **processing assumptions** once reviewed:
 

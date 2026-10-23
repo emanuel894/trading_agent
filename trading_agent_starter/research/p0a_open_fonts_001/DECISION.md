@@ -1,6 +1,6 @@
 # Bounded open-font decision 1.0.0
 
-**OPEN_FONT_ROUTE_RECOMMENDED**, subject to the unapplied contract proposal and
+**OPEN_FONT_ROUTE_RECOMMENDED** for private synthetic qualification, subject to the unapplied contract proposal and
 remaining G0 below. This recommends a lawful, retrievable candidate bundle, not
 approved equivalence, rendering qualification, cleared G0 or gate authorization.
 P0A_INCOMPLETE. PR52 and all protected registrations remain unchanged.
@@ -18,20 +18,28 @@ rediscovered or fetched. No five-gap architectural analysis was repeated.
 | Candidate | Exact artifact/version result | Rights and required handling |
 | --- | --- | --- |
 | Liberation Serif | Upstream binary archive2.1.5, four static faces, embedded Version2.1.5 | OFL1.1; preserve copyright/license and original binaries; no standalone font sale or modified Reserved Font Names. |
-| Liberation Sans Narrow | Upstream binary/source archives1.07.6; four faces internally labelled Version1.07.5 | **GPLv2 with Liberation exceptions/additional terms**, not OFL. Preserve COPYING, License.txt, AUTHORS and Oracle copyright in binaries; accompany any redistributed binary bundle with the complete upstream corresponding source archive and required source/modification/reinstallation rights. No modification, renaming or relicensing is proposed. |
+| Liberation Sans Narrow | Upstream binary/source archives1.07.6; four faces internally labelled Version1.07.5 | **GPLv2 with Liberation exceptions/additional terms**, not OFL. Preserve COPYING, License.txt, AUTHORS and Oracle copyright. Private unmodified inspection/use is distinct from binary distribution. Before any binary/container redistribution, independently establish legally sufficient corresponding source for the exact binaries and required source/modification/reinstallation rights. No modification, renaming or relicensing is proposed. |
 | Carlito | Four static1.104 faces at Google Fonts commit e7db6ca603fd4862010383ff17ffd6cc4ffac1c0 | OFL1.1, Carlito Reserved Font Name; preserve copyright/license and unmodified fonts. |
 | Noto Sans Symbols / Symbols2 | Noto Sans Symbols v2.003 variable font inspected but lacks U+2610/U+2612; **select only Noto Sans Symbols 2 Regular v2.008** from the same Google Fonts commit | OFL1.1; preserve original copyright/license. No variable instance generation or font binary modification. Symbols2's native synthesis question below remains unresolved. |
 
 The selected bundle has13 unmodified TTFs. FONT_ARTIFACTS.json records **every
 individual font's SHA256, internal version, face and static metrics**, binary
 archive/source URLs and SHA256, and licenses/notices. The evidence archive includes
-all required notices and the Narrow source archive. No Microsoft binary, purchase,
+notices and the publisher-supplied Narrow source archive, **no font binaries**.
+The candidate binaries remain private inspection artifacts. No Microsoft binary, purchase,
 proprietary extraction or unverified mirror was used. Fonts were retrieved through
 HTTPS from publisher-controlled GitHub release links or pinned Google Fonts paths.
 Hashes establish reproducible retrieval pins, not signed-build attestation or
 proof of bit-reproducible source compilation. No compilation was attempted.
 
-The Narrow release/internal-version discrepancy is preserved, not corrected.
+The Narrow release/internal-version discrepancy is preserved, not corrected. Its
+four SFD source headers say Version1.07.6; binary nameID5 says Version1.07.5.
+The release provides a publisher-supplied source archive; **source-to-binary build
+equivalence is NOT_VERIFIED**. Those version fields alone prove neither identical
+builds nor mismatched outlines. This decision does not claim independently proven
+GPL source correspondence or clear a distributable runtime. Redistribution is a
+hard stop pending the exact source-compliance check; the recommended smallest route
+is private synthetic qualification, not publication of a binary font/container bundle.
 Its upstream README notes a historical licensing distinction and that it is not
 part of the later OFL2.x family; that is why its own GPL/exception text and source
 are retained. Do not label the complete bundle OFL or infer that font licensing
@@ -141,7 +149,10 @@ all direct/transitive/native artifacts, OCI image, font/Fontconfig/UA files and
 supervisor by digest; validate the proposed native symbol bold treatment; qualify
 no-network/no-fetch/no-exec/no-host-evidence isolation and all PR50 hard limits;
 freeze independent fixture/oracle manifests under the unchanged16+16/64-variant/
-500-line/20s wall/15s CPU/1GiB/600s aggregate/no-repair contract. Do not confuse the
+500-line/20s wall/15s CPU/1GiB/600s aggregate/no-repair contract. Any future binary/
+container redistribution additionally requires the Narrow source-compliance check;
+if it fails, stop that distribution path without changing fonts or weakening rights.
+Do not confuse the
 base-image availability or font cmap result with those passes. Lack of an enforced
 worker or a style/visibility mismatch still stops the candidate without substitution.
 
