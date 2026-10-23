@@ -1,0 +1,5 @@
+{
+  "allow_paper_orders": false,
+  "alpaca_live_trade": false,
+  "trading_enabled": false
+}

@@ -1,0 +1,625 @@
+{
+  "baseline": {
+    "bars": [
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:54:04+00:00",
+          "observed": "2025-01-06 14:54:02+00:00",
+          "published": "2025-01-06 14:54:01+00:00",
+          "received": "2025-01-06 14:54:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:54:05+00:00"
+        },
+        "close": 100,
+        "end": "2025-01-06 14:54:00+00:00",
+        "evidence_id": "synthetic:minute:0:r1",
+        "high": 101,
+        "low": 99,
+        "open": 100,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:55:04+00:00",
+          "observed": "2025-01-06 14:55:02+00:00",
+          "published": "2025-01-06 14:55:01+00:00",
+          "received": "2025-01-06 14:55:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:55:05+00:00"
+        },
+        "close": 100,
+        "end": "2025-01-06 14:55:00+00:00",
+        "evidence_id": "synthetic:minute:1:r1",
+        "high": 101,
+        "low": 99,
+        "open": 100,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:56:04+00:00",
+          "observed": "2025-01-06 14:56:02+00:00",
+          "published": "2025-01-06 14:56:01+00:00",
+          "received": "2025-01-06 14:56:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:56:05+00:00"
+        },
+        "close": 100,
+        "end": "2025-01-06 14:56:00+00:00",
+        "evidence_id": "synthetic:minute:2:r1",
+        "high": 101,
+        "low": 99,
+        "open": 100,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:57:04+00:00",
+          "observed": "2025-01-06 14:57:02+00:00",
+          "published": "2025-01-06 14:57:01+00:00",
+          "received": "2025-01-06 14:57:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:57:05+00:00"
+        },
+        "close": 101,
+        "end": "2025-01-06 14:57:00+00:00",
+        "evidence_id": "synthetic:minute:3:r1",
+        "high": 102,
+        "low": 100,
+        "open": 101,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:58:04+00:00",
+          "observed": "2025-01-06 14:58:02+00:00",
+          "published": "2025-01-06 14:58:01+00:00",
+          "received": "2025-01-06 14:58:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:58:05+00:00"
+        },
+        "close": 102,
+        "end": "2025-01-06 14:58:00+00:00",
+        "evidence_id": "synthetic:minute:4:r1",
+        "high": 103,
+        "low": 101,
+        "open": 102,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:59:04+00:00",
+          "observed": "2025-01-06 14:59:02+00:00",
+          "published": "2025-01-06 14:59:01+00:00",
+          "received": "2025-01-06 14:59:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:59:05+00:00"
+        },
+        "close": 103,
+        "end": "2025-01-06 14:59:00+00:00",
+        "evidence_id": "synthetic:minute:5:r1",
+        "high": 104,
+        "low": 102,
+        "open": 103,
+        "previous_version": null,
+        "volume": 100
+      }
+    ],
+    "releases": [
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:50:03+00:00",
+          "observed": "2025-01-06 14:50:01+00:00",
+          "published": "2025-01-06 14:50:00+00:00",
+          "received": "2025-01-06 14:50:02+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:50:04+00:00"
+        },
+        "effective": "2025-01-07 15:00:00+00:00",
+        "event_id": "synthetic:release:A",
+        "evidence_id": "synthetic:release:A:r1",
+        "previous_version": null,
+        "text": "SYNTHETIC ONLY. Target range: 4.50 to 4.75 percent."
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:59:33+00:00",
+          "observed": "2025-01-06 14:59:31+00:00",
+          "published": "2025-01-06 14:59:30+00:00",
+          "received": "2025-01-06 14:59:32+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:59:34+00:00"
+        },
+        "effective": "2025-01-07 15:00:00+00:00",
+        "event_id": "synthetic:release:B",
+        "evidence_id": "synthetic:release:B:r1",
+        "previous_version": null,
+        "text": "SYNTHETIC ONLY. Target range: 4.25 to 4.50 percent."
+      }
+    ],
+    "sessions": [
+      "2025-01-06 14:54:00+00:00",
+      "2025-01-06 14:55:00+00:00",
+      "2025-01-06 14:56:00+00:00",
+      "2025-01-06 14:57:00+00:00",
+      "2025-01-06 14:58:00+00:00",
+      "2025-01-06 14:59:00+00:00"
+    ]
+  },
+  "equal_clock": {
+    "bars": [
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:54:04+00:00",
+          "observed": "2025-01-06 14:54:02+00:00",
+          "published": "2025-01-06 14:54:01+00:00",
+          "received": "2025-01-06 14:54:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:54:05+00:00"
+        },
+        "close": 100,
+        "end": "2025-01-06 14:54:00+00:00",
+        "evidence_id": "synthetic:minute:0:r1",
+        "high": 101,
+        "low": 99,
+        "open": 100,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:55:04+00:00",
+          "observed": "2025-01-06 14:55:02+00:00",
+          "published": "2025-01-06 14:55:01+00:00",
+          "received": "2025-01-06 14:55:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:55:05+00:00"
+        },
+        "close": 100,
+        "end": "2025-01-06 14:55:00+00:00",
+        "evidence_id": "synthetic:minute:1:r1",
+        "high": 101,
+        "low": 99,
+        "open": 100,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:56:04+00:00",
+          "observed": "2025-01-06 14:56:02+00:00",
+          "published": "2025-01-06 14:56:01+00:00",
+          "received": "2025-01-06 14:56:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:56:05+00:00"
+        },
+        "close": 100,
+        "end": "2025-01-06 14:56:00+00:00",
+        "evidence_id": "synthetic:minute:2:r1",
+        "high": 101,
+        "low": 99,
+        "open": 100,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:57:04+00:00",
+          "observed": "2025-01-06 14:57:02+00:00",
+          "published": "2025-01-06 14:57:01+00:00",
+          "received": "2025-01-06 14:57:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:57:05+00:00"
+        },
+        "close": 101,
+        "end": "2025-01-06 14:57:00+00:00",
+        "evidence_id": "synthetic:minute:3:r1",
+        "high": 102,
+        "low": 100,
+        "open": 101,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:58:04+00:00",
+          "observed": "2025-01-06 14:58:02+00:00",
+          "published": "2025-01-06 14:58:01+00:00",
+          "received": "2025-01-06 14:58:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:58:05+00:00"
+        },
+        "close": 102,
+        "end": "2025-01-06 14:58:00+00:00",
+        "evidence_id": "synthetic:minute:4:r1",
+        "high": 103,
+        "low": 101,
+        "open": 102,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:59:04+00:00",
+          "observed": "2025-01-06 14:59:02+00:00",
+          "published": "2025-01-06 14:59:01+00:00",
+          "received": "2025-01-06 14:59:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:59:05+00:00"
+        },
+        "close": 103,
+        "end": "2025-01-06 14:59:00+00:00",
+        "evidence_id": "synthetic:minute:5:r1",
+        "high": 104,
+        "low": 102,
+        "open": 103,
+        "previous_version": null,
+        "volume": 100
+      }
+    ],
+    "releases": [
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:50:03+00:00",
+          "observed": "2025-01-06 14:50:01+00:00",
+          "published": "2025-01-06 14:50:00+00:00",
+          "received": "2025-01-06 14:50:02+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:50:04+00:00"
+        },
+        "effective": "2025-01-07 15:00:00+00:00",
+        "event_id": "synthetic:release:A",
+        "evidence_id": "synthetic:release:A:r1",
+        "previous_version": null,
+        "text": "SYNTHETIC ONLY. Target range: 4.50 to 4.75 percent."
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:59:33+00:00",
+          "observed": "2025-01-06 14:59:31+00:00",
+          "published": "2025-01-06 14:59:30+00:00",
+          "received": "2025-01-06 14:59:32+00:00",
+          "revised": null,
+          "verified": "2025-01-06 15:00:00+00:00"
+        },
+        "effective": "2025-01-07 15:00:00+00:00",
+        "event_id": "synthetic:release:B",
+        "evidence_id": "synthetic:release:B:r1",
+        "previous_version": null,
+        "text": "SYNTHETIC ONLY. Target range: 4.25 to 4.50 percent."
+      }
+    ],
+    "sessions": [
+      "2025-01-06 14:54:00+00:00",
+      "2025-01-06 14:55:00+00:00",
+      "2025-01-06 14:56:00+00:00",
+      "2025-01-06 14:57:00+00:00",
+      "2025-01-06 14:58:00+00:00",
+      "2025-01-06 14:59:00+00:00"
+    ]
+  },
+  "future_revision": {
+    "bars": [
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:54:04+00:00",
+          "observed": "2025-01-06 14:54:02+00:00",
+          "published": "2025-01-06 14:54:01+00:00",
+          "received": "2025-01-06 14:54:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:54:05+00:00"
+        },
+        "close": 100,
+        "end": "2025-01-06 14:54:00+00:00",
+        "evidence_id": "synthetic:minute:0:r1",
+        "high": 101,
+        "low": 99,
+        "open": 100,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:55:04+00:00",
+          "observed": "2025-01-06 14:55:02+00:00",
+          "published": "2025-01-06 14:55:01+00:00",
+          "received": "2025-01-06 14:55:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:55:05+00:00"
+        },
+        "close": 100,
+        "end": "2025-01-06 14:55:00+00:00",
+        "evidence_id": "synthetic:minute:1:r1",
+        "high": 101,
+        "low": 99,
+        "open": 100,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:56:04+00:00",
+          "observed": "2025-01-06 14:56:02+00:00",
+          "published": "2025-01-06 14:56:01+00:00",
+          "received": "2025-01-06 14:56:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:56:05+00:00"
+        },
+        "close": 100,
+        "end": "2025-01-06 14:56:00+00:00",
+        "evidence_id": "synthetic:minute:2:r1",
+        "high": 101,
+        "low": 99,
+        "open": 100,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:57:04+00:00",
+          "observed": "2025-01-06 14:57:02+00:00",
+          "published": "2025-01-06 14:57:01+00:00",
+          "received": "2025-01-06 14:57:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:57:05+00:00"
+        },
+        "close": 101,
+        "end": "2025-01-06 14:57:00+00:00",
+        "evidence_id": "synthetic:minute:3:r1",
+        "high": 102,
+        "low": 100,
+        "open": 101,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:58:04+00:00",
+          "observed": "2025-01-06 14:58:02+00:00",
+          "published": "2025-01-06 14:58:01+00:00",
+          "received": "2025-01-06 14:58:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:58:05+00:00"
+        },
+        "close": 102,
+        "end": "2025-01-06 14:58:00+00:00",
+        "evidence_id": "synthetic:minute:4:r1",
+        "high": 103,
+        "low": 101,
+        "open": 102,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:59:04+00:00",
+          "observed": "2025-01-06 14:59:02+00:00",
+          "published": "2025-01-06 14:59:01+00:00",
+          "received": "2025-01-06 14:59:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:59:05+00:00"
+        },
+        "close": 103,
+        "end": "2025-01-06 14:59:00+00:00",
+        "evidence_id": "synthetic:minute:5:r1",
+        "high": 104,
+        "low": 102,
+        "open": 103,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 15:00:04+00:00",
+          "observed": "2025-01-06 15:00:02+00:00",
+          "published": "2025-01-06 15:00:01+00:00",
+          "received": "2025-01-06 15:00:03+00:00",
+          "revised": "2025-01-06 15:00:01+00:00",
+          "verified": "2025-01-06 15:00:05+00:00"
+        },
+        "close": 10000,
+        "end": "2025-01-06 14:59:00+00:00",
+        "evidence_id": "synthetic:minute:5:r2",
+        "high": 10001,
+        "low": 102,
+        "open": 103,
+        "previous_version": "synthetic:minute:5:r1",
+        "volume": 100
+      }
+    ],
+    "releases": [
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:50:03+00:00",
+          "observed": "2025-01-06 14:50:01+00:00",
+          "published": "2025-01-06 14:50:00+00:00",
+          "received": "2025-01-06 14:50:02+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:50:04+00:00"
+        },
+        "effective": "2025-01-07 15:00:00+00:00",
+        "event_id": "synthetic:release:A",
+        "evidence_id": "synthetic:release:A:r1",
+        "previous_version": null,
+        "text": "SYNTHETIC ONLY. Target range: 4.50 to 4.75 percent."
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:59:33+00:00",
+          "observed": "2025-01-06 14:59:31+00:00",
+          "published": "2025-01-06 14:59:30+00:00",
+          "received": "2025-01-06 14:59:32+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:59:34+00:00"
+        },
+        "effective": "2025-01-07 15:00:00+00:00",
+        "event_id": "synthetic:release:B",
+        "evidence_id": "synthetic:release:B:r1",
+        "previous_version": null,
+        "text": "SYNTHETIC ONLY. Target range: 4.25 to 4.50 percent."
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 15:00:04+00:00",
+          "observed": "2025-01-06 15:00:02+00:00",
+          "published": "2025-01-06 15:00:01+00:00",
+          "received": "2025-01-06 15:00:03+00:00",
+          "revised": "2025-01-06 15:00:01+00:00",
+          "verified": "2025-01-06 15:00:05+00:00"
+        },
+        "effective": "2025-01-07 15:00:00+00:00",
+        "event_id": "synthetic:release:B",
+        "evidence_id": "synthetic:release:B:r2",
+        "previous_version": "synthetic:release:B:r1",
+        "text": "Target range: 9.00 to 9.25 percent."
+      }
+    ],
+    "sessions": [
+      "2025-01-06 14:54:00+00:00",
+      "2025-01-06 14:55:00+00:00",
+      "2025-01-06 14:56:00+00:00",
+      "2025-01-06 14:57:00+00:00",
+      "2025-01-06 14:58:00+00:00",
+      "2025-01-06 14:59:00+00:00"
+    ]
+  },
+  "missing_bar": {
+    "bars": [
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:54:04+00:00",
+          "observed": "2025-01-06 14:54:02+00:00",
+          "published": "2025-01-06 14:54:01+00:00",
+          "received": "2025-01-06 14:54:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:54:05+00:00"
+        },
+        "close": 100,
+        "end": "2025-01-06 14:54:00+00:00",
+        "evidence_id": "synthetic:minute:0:r1",
+        "high": 101,
+        "low": 99,
+        "open": 100,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:55:04+00:00",
+          "observed": "2025-01-06 14:55:02+00:00",
+          "published": "2025-01-06 14:55:01+00:00",
+          "received": "2025-01-06 14:55:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:55:05+00:00"
+        },
+        "close": 100,
+        "end": "2025-01-06 14:55:00+00:00",
+        "evidence_id": "synthetic:minute:1:r1",
+        "high": 101,
+        "low": 99,
+        "open": 100,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:56:04+00:00",
+          "observed": "2025-01-06 14:56:02+00:00",
+          "published": "2025-01-06 14:56:01+00:00",
+          "received": "2025-01-06 14:56:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:56:05+00:00"
+        },
+        "close": 100,
+        "end": "2025-01-06 14:56:00+00:00",
+        "evidence_id": "synthetic:minute:2:r1",
+        "high": 101,
+        "low": 99,
+        "open": 100,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:57:04+00:00",
+          "observed": "2025-01-06 14:57:02+00:00",
+          "published": "2025-01-06 14:57:01+00:00",
+          "received": "2025-01-06 14:57:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:57:05+00:00"
+        },
+        "close": 101,
+        "end": "2025-01-06 14:57:00+00:00",
+        "evidence_id": "synthetic:minute:3:r1",
+        "high": 102,
+        "low": 100,
+        "open": 101,
+        "previous_version": null,
+        "volume": 100
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:58:04+00:00",
+          "observed": "2025-01-06 14:58:02+00:00",
+          "published": "2025-01-06 14:58:01+00:00",
+          "received": "2025-01-06 14:58:03+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:58:05+00:00"
+        },
+        "close": 102,
+        "end": "2025-01-06 14:58:00+00:00",
+        "evidence_id": "synthetic:minute:4:r1",
+        "high": 103,
+        "low": 101,
+        "open": 102,
+        "previous_version": null,
+        "volume": 100
+      }
+    ],
+    "releases": [
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:50:03+00:00",
+          "observed": "2025-01-06 14:50:01+00:00",
+          "published": "2025-01-06 14:50:00+00:00",
+          "received": "2025-01-06 14:50:02+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:50:04+00:00"
+        },
+        "effective": "2025-01-07 15:00:00+00:00",
+        "event_id": "synthetic:release:A",
+        "evidence_id": "synthetic:release:A:r1",
+        "previous_version": null,
+        "text": "SYNTHETIC ONLY. Target range: 4.50 to 4.75 percent."
+      },
+      {
+        "clocks": {
+          "ingested": "2025-01-06 14:59:33+00:00",
+          "observed": "2025-01-06 14:59:31+00:00",
+          "published": "2025-01-06 14:59:30+00:00",
+          "received": "2025-01-06 14:59:32+00:00",
+          "revised": null,
+          "verified": "2025-01-06 14:59:34+00:00"
+        },
+        "effective": "2025-01-07 15:00:00+00:00",
+        "event_id": "synthetic:release:B",
+        "evidence_id": "synthetic:release:B:r1",
+        "previous_version": null,
+        "text": "SYNTHETIC ONLY. Target range: 4.25 to 4.50 percent."
+      }
+    ],
+    "sessions": [
+      "2025-01-06 14:54:00+00:00",
+      "2025-01-06 14:55:00+00:00",
+      "2025-01-06 14:56:00+00:00",
+      "2025-01-06 14:57:00+00:00",
+      "2025-01-06 14:58:00+00:00",
+      "2025-01-06 14:59:00+00:00"
+    ]
+  }
+}

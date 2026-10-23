@@ -1,0 +1,81 @@
+{
+  "attempts": [
+    {
+      "case_id": "INTRADAY_baseline",
+      "command": [
+        "docker",
+        "--host=unix:///var/run/docker.sock",
+        "run",
+        "--name",
+        "INTRADAY_baseline-1",
+        "--pull=never",
+        "--network",
+        "none",
+        "--read-only",
+        "--cap-drop",
+        "ALL",
+        "--security-opt",
+        "no-new-privileges",
+        "--user",
+        "65534:65534",
+        "--tmpfs",
+        "/tmp:rw,nosuid,nodev,size=128m",
+        "--volume",
+        "/workspace/issue-27-lean:/work:ro",
+        "--volume",
+        "/workspace/issue-27-lean/packet:/packet:ro",
+        "--volume",
+        "/workspace/issue-27-lean/intraday-20261023/inputs:/inputs:ro",
+        "--volume",
+        "/workspace/issue-27-lean/intraday-20261023/outputs:/out",
+        "--workdir",
+        "/work",
+        "--env",
+        "DOTNET_CLI_HOME=/tmp/dotnet",
+        "--env",
+        "DOTNET_CLI_TELEMETRY_OPTOUT=1",
+        "--env",
+        "TRADING_ENABLED=false",
+        "--env",
+        "ALLOW_PAPER_ORDERS=false",
+        "--env",
+        "ALPACA_LIVE_TRADE=false",
+        "mcr.microsoft.com/dotnet/sdk@sha256:0d99ebf1ccad15037b5c98c9fe8979d6b8dbac23812feae2277a0b277b5c5ffa",
+        "sh",
+        "-c",
+        "dotnet /packet/host/bin/Release/net10.0/LeanResearch.dll /inputs INTRADAY_baseline /out/INTRADAY_baseline-1.json /inputs; native_exit=$?; cat /sys/fs/cgroup/memory.peak > /out/INTRADAY_baseline-1.memory; exit \"$native_exit\""
+      ],
+      "controls": {
+        "CapDrop": [
+          "ALL"
+        ],
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "SecurityOpt": [
+          "no-new-privileges"
+        ]
+      },
+      "error": "AssertionError()",
+      "exit_code": 3,
+      "repeat": 1,
+      "status": "FAILED",
+      "user": "65534:65534",
+      "wall_seconds": 6.254599242999973
+    }
+  ],
+  "base_sha": "051c6c2d99f1ef6cfefd082ff646ed1c1cd88a09",
+  "build_manifest_sha256": "dbf0134509f550f9333548c59c12fa1d556bdf54f42ce70c2da74ba05c251ebb",
+  "code_sha256": {
+    "integration.py": "cac6dd5c6f6799ff4925e2a4e9e2ca232a992746c85646cafcb8752e49fff759",
+    "run.py": "a2e1ba3cdfe72edf542778ebd155a7d4b3f80ee589e38988aace0d8f27d049c8"
+  },
+  "external_spend_usd": 0,
+  "fixture_manifest_sha256": "5d801454762ef337df8ff0da33b87ff6330debcfd57b182bd982ff9608878554",
+  "image": "mcr.microsoft.com/dotnet/sdk@sha256:0d99ebf1ccad15037b5c98c9fe8979d6b8dbac23812feae2277a0b277b5c5ffa",
+  "image_id": "sha256:9cd0d6fa04def99891bf4d5a29eb9a3878b6041f9cc25cb389ea0df2177d23fd",
+  "pr36_code_sha256": "3792abe6b53e5ac365393d57d2758da9655e4fc908085ae043df8ef6c7b3bdc2",
+  "python": "3.13.5",
+  "runtime_verified_files": 71,
+  "source_pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137",
+  "status": "STOPPED"
+}

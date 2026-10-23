@@ -1,0 +1,16 @@
+{
+  "status": "EXECUTOR_RECOVERED",
+  "foundation": "051c6c2d99f1ef6cfefd082ff646ed1c1cd88a09",
+  "integration_execution_commit": "4ecb1557614cfe010d0fba34da213ce2972c75a8",
+  "source_files_verified": 6510,
+  "source_mismatches": 0,
+  "runtime_files_verified": 71,
+  "config_files_verified": 2,
+  "packet_code_files_verified": 9,
+  "lockfiles_verified": 13,
+  "qualification_native_reruns": 0,
+  "new_accepted_native_runs": 8,
+  "new_failed_preinit_attempts": 1,
+  "external_spend_usd": 0,
+  "post_execution_change": "Explicit Python -O refusal and regression only; unchanged integration.py, frozen inputs, native binary and native oracle."
+}

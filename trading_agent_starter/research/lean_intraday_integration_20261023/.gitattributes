@@ -1,0 +1,2 @@
+# New native receipts retain original bytes on Windows; no accepted packet changes.
+evidence/** -text

@@ -1,0 +1,142 @@
+{
+  "capture_mode": "fixture",
+  "cases": [
+    {
+      "case_id": "INTRADAY_baseline",
+      "cash": "10000",
+      "checks": [
+        "cash",
+        "limits",
+        "halts"
+      ],
+      "fixture": "Q23",
+      "holdings": [],
+      "mark": "100",
+      "start_ns": 1736175600000000000,
+      "steps": [
+        {
+          "at_ns": 1736175600000000000,
+          "fee": "1",
+          "id": "SYNTHETIC_ENTRY",
+          "instrument": "I1",
+          "op": "order",
+          "price": "100.07001",
+          "qty": "9",
+          "route": "direct"
+        },
+        {
+          "ask": "100.02",
+          "at_ns": 1736175601000000000,
+          "bid": "100",
+          "op": "quote",
+          "quote_id": "synthetic:execution:quote",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "at_ns": 1736175601000000100,
+          "label": "final",
+          "op": "snapshot"
+        }
+      ]
+    },
+    {
+      "case_id": "INTRADAY_future_revision",
+      "cash": "10000",
+      "checks": [
+        "cash",
+        "limits",
+        "halts"
+      ],
+      "fixture": "Q23",
+      "holdings": [],
+      "mark": "100",
+      "start_ns": 1736175600000000000,
+      "steps": [
+        {
+          "at_ns": 1736175600000000000,
+          "fee": "1",
+          "id": "SYNTHETIC_ENTRY",
+          "instrument": "I1",
+          "op": "order",
+          "price": "100.07001",
+          "qty": "9",
+          "route": "direct"
+        },
+        {
+          "ask": "100.02",
+          "at_ns": 1736175601000000000,
+          "bid": "100",
+          "op": "quote",
+          "quote_id": "synthetic:execution:quote",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "at_ns": 1736175601000000100,
+          "label": "final",
+          "op": "snapshot"
+        }
+      ]
+    },
+    {
+      "case_id": "INTRADAY_missing_bar",
+      "cash": "10000",
+      "checks": [
+        "cash",
+        "limits",
+        "halts"
+      ],
+      "fixture": "Q23",
+      "holdings": [],
+      "mark": "100",
+      "start_ns": 1736175600000000000,
+      "steps": [
+        {
+          "ask": "100.02",
+          "at_ns": 1736175601000000000,
+          "bid": "100",
+          "op": "quote",
+          "quote_id": "synthetic:execution:quote",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "at_ns": 1736175601000000100,
+          "label": "final",
+          "op": "snapshot"
+        }
+      ]
+    },
+    {
+      "case_id": "INTRADAY_equal_clock",
+      "cash": "10000",
+      "checks": [
+        "cash",
+        "limits",
+        "halts"
+      ],
+      "fixture": "Q23",
+      "holdings": [],
+      "mark": "100",
+      "start_ns": 1736175600000000000,
+      "steps": [
+        {
+          "ask": "100.02",
+          "at_ns": 1736175601000000000,
+          "bid": "100",
+          "op": "quote",
+          "quote_id": "synthetic:execution:quote",
+          "size": "1000",
+          "status": "TRADABLE"
+        },
+        {
+          "at_ns": 1736175601000000100,
+          "label": "final",
+          "op": "snapshot"
+        }
+      ]
+    }
+  ],
+  "source_pin": "d4cac37514427c84d40064cecbf3f0e6be4b0137"
+}

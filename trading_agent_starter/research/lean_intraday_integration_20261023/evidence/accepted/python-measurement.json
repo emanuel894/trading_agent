@@ -1,0 +1,11 @@
+{
+  "feature_and_input_p50_ns": 1081891.5,
+  "feature_and_input_python_peak_bytes": 23005,
+  "incremental_python_peak_bytes": 22181,
+  "limits": "Warm six-bar/two-release fixture, Python allocations only; no real-time/source/large-scale latency claim.",
+  "paired_increment_p50_ns": 1080586.5,
+  "paired_increment_p95_ns": 1213070,
+  "prepared_input_p50_ns": 1443.0,
+  "prepared_input_python_peak_bytes": 824,
+  "samples": 100
+}
