@@ -1,0 +1,132 @@
+{
+  "authentic_extraction_replays": 0,
+  "authentic_text_classification": "NOT_PERFORMED",
+  "baseline": {
+    "contract_id": "p0a-canonical-visibility-1.0.0",
+    "draft_open_unmerged_verified": true,
+    "files_sha256": {
+      "CHANGE_CONTROL.md": "f2c5460cfb1423a71879b7d431f8add0838240bc50f46e45a32f0b5f069ca6fc",
+      "COMPONENT_DECISION.md": "4462c2b95ade919b15798754cdb001f19134aef7da03e4147ce06307522a1c95",
+      "CONTRACT.md": "a2c70920d7f9b3c44e21c3e8ba411a1be15bf46fd8db8269c98e0b9ab24d8d90",
+      "DECISION.md": "ec85ddca0ba3b6752d845efdb1013a7dcae39ea2b585e4bb6b9049b44c478561",
+      "TEST_MATRIX.md": "e136713b982318b275f880f7be712bd25c927016022c2e8b5e82cdc7f594d4ba",
+      "evidence.json": "8b562cf469bfc16b540a0c3f5b0269006163ae7bc9e65263543b131ebfa709b7"
+    },
+    "head": "2678ff551696adf9fe0524c9d1c89ec73bf304e8",
+    "pr": 48
+  },
+  "counts": {
+    "collapsed_rows": 81,
+    "gap_results": {
+      "F": {
+        "instances": 140,
+        "local_results": {
+          "LOCAL_CLOSED": 56,
+          "NEEDS_CERTIFICATE": 84
+        }
+      },
+      "H": {
+        "instances": 1,
+        "local_results": {
+          "NEEDS_CERTIFICATE": 1
+        }
+      },
+      "P": {
+        "instances": 169,
+        "local_results": {
+          "LOCAL_CLOSED": 169
+        }
+      },
+      "T": {
+        "instances": 18853,
+        "local_results": {
+          "LOCAL_CLOSED": 81,
+          "NEEDS_CERTIFICATE": 18772
+        }
+      },
+      "W": {
+        "instances": 33813,
+        "local_results": {
+          "NEEDS_CERTIFICATE": 33813
+        }
+      }
+    },
+    "inline_ineffective_fit_content": 17931,
+    "nodes": 62084,
+    "nowrap_cells": 6142,
+    "records": 52976,
+    "row_backgrounds": {
+      "#cff0fc": 479,
+      "#ffffff": 586
+    },
+    "styles": 54365,
+    "table_roles": {
+      "table": 81,
+      "td": 17594,
+      "tr": 1178
+    },
+    "unique_evaluated_nodes": 37080,
+    "width_declarations": 1244
+  },
+  "decision": "B_ARCHITECTURAL_BLOCKER_NO_GO",
+  "design_only": true,
+  "details": {
+    "file": "instances.jsonl.gz",
+    "sha256": "e184c1575b21a7d989dc7c1f11108ea2d9d77c95741bf488f25faeae5f13f688",
+    "uncompressed_sha256": "17a7187ef4cd4ffb6a72b53c9f6bac9d9e404bd52e53fd037b8964ef85c2ba81"
+  },
+  "evaluation_id": "p0a-final-composition-1.0.0",
+  "external_spend_usd": 0,
+  "hanging_indent": {
+    "containing_width_px": "1264",
+    "first_line_reference_x_px": "6.54640",
+    "gap": "H",
+    "glyph_left_bearing_bound": null,
+    "has_nonwhitespace_descendant": true,
+    "indent_px": "-43.58272",
+    "local": "NEEDS_CERTIFICATE",
+    "node": 4996,
+    "padding_px": "42.12912",
+    "parent": 4968,
+    "reason": "H_REFERENCE_POINT_SAFE_INK_BEARING_UNKNOWN",
+    "span": [
+      361570,
+      362409
+    ],
+    "tag": "p"
+  },
+  "inventory_sha256": {
+    "attributes.json": "7fc568f0e86bdfb232af34a30b6fbda8492c7ae1acf276f468bd4db3ba4df05c",
+    "boundary-constructs.json": "0f58a06806b0694b25d4058aa9cffb52699ea7b10765b767f748a0cef067cd2d",
+    "critical-constructs.json": "4f9dba6a3d2068a9d230520e6cadc006483096375558d11a146ef4b8ea8dcd94",
+    "css.json": "e2e6940a24ea6fae5c6f5faafeb6543121d333bd51cdd2c639329538643d8869",
+    "hidden-ixbrl.json": "06552d0875875e11f6599d00827458e8d4184b8a08067b836ed67d2fb6bc87c0",
+    "inventory-console.json": "21a63bc63aa0a12b6e19209786017c82c6d4c14554fe6610d2d51a10b8b4fbcc",
+    "inventory.json": "53aba319ce36db196e6606ce12db4684c15c0150cfdec6567c2dbbc2129cd179",
+    "inventory_submission.py": "4e86f2f87642cc7f02bf42f423355817905a281695591890e4e18b85341da6d8",
+    "nodes.json": "5a91e7d927c44a5d85b166bec1bbaf5e9afa2d862cd344a16f1509873d4b7f17"
+  },
+  "oracle_arithmetic": {
+    "F_negative_marker_overhang": true,
+    "F_positive_supplied_metrics": true,
+    "H_negative_supplied_bearing": true,
+    "H_positive_supplied_bearing": true,
+    "P_negative_owner_ink_overlap": true,
+    "P_positive_disjoint_owner_y": true,
+    "T_negative_ink_crosses_next_row": true,
+    "T_positive_ink_within_row": true,
+    "W_negative_advance_does_not_fit": true,
+    "W_positive_advance_fits": true
+  },
+  "oracles_executed": "10 scalar assertions on supplied synthetic premises only; no CSS/DOM processor",
+  "processing_latency_memory": "NOT_MEASURED; JSON evaluation is not extraction or inference",
+  "renders": 0,
+  "research_inference_calls": 0,
+  "source_parses": 0,
+  "table_grid_evaluation": {
+    "all_row_column_sums_consistent": true,
+    "details_in_packet": "evaluation.json tables; each table has its own column grid",
+    "nested_tables": 0,
+    "tables": 81
+  }
+}
