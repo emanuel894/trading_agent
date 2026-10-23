@@ -119,3 +119,13 @@ latency budget, stop at unresolved source clocks/identity; (3) measure a separat
 authorized representative workload only after that contract is frozen, keeping
 native per-event and source-to-decision latency distinct. None requires another
 vendor search, security master or repetition of Q01–Q33.
+
+### Windows evidence-byte repair
+
+PR CI40021522980 at844df3a: Ubuntu PASS; Windows failed exactly one of332 tests,
+archived evidence-byte hashing. Windows autocrlf changed the first new native log
+from SHA256bd2b027e... to f68e0e6e...; converting its LF bytes to CRLF reproduces
+that exact hash. A packet-local `.gitattributes` now marks only NEW `evidence/**`
+bytes -text. Forced core.autocrlf=true checkout independently reproduced all41
+manifest hashes without mismatch. No assertion weakened, old evidence changed,
+native rerun, or source/runtime repair. Final exact-head CI/review follows on PR.

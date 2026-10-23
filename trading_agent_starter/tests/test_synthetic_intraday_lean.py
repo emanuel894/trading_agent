@@ -15,7 +15,7 @@ class SyntheticIntradayTests(unittest.TestCase):
     def test_retained_new_native_pairs_and_accounting(self):
         root=Path(m.__file__).parent
         for name,digest in json.loads((root/'evidence-sha256.json').read_text()).items():
-            self.assertEqual(hashlib.sha256((root/name).read_bytes()).hexdigest(),digest)
+            self.assertEqual(hashlib.sha256((root/name).read_bytes()).hexdigest(),digest,name)
         evidence=root/'evidence/accepted'
         receipt=json.loads((evidence/'receipt.json').read_text())
         self.assertEqual(receipt['status'],'SYNTHETIC_INTRADAY_INTEGRATION_PASS')
