@@ -1,0 +1,108 @@
+{
+  "base_head": "f22e92832f4a77d23158a86a541d05b4cece9329",
+  "completed_inventory_files": {
+    "inventory_submission.py": "4e86f2f87642cc7f02bf42f423355817905a281695591890e4e18b85341da6d8",
+    "inventory.json": "53aba319ce36db196e6606ce12db4684c15c0150cfdec6567c2dbbc2129cd179",
+    "inventory-console.json": "21a63bc63aa0a12b6e19209786017c82c6d4c14554fe6610d2d51a10b8b4fbcc",
+    "nodes.json": "5a91e7d927c44a5d85b166bec1bbaf5e9afa2d862cd344a16f1509873d4b7f17",
+    "css.json": "e2e6940a24ea6fae5c6f5faafeb6543121d333bd51cdd2c639329538643d8869",
+    "attributes.json": "7fc568f0e86bdfb232af34a30b6fbda8492c7ae1acf276f468bd4db3ba4df05c",
+    "hidden-ixbrl.json": "06552d0875875e11f6599d00827458e8d4184b8a08067b836ed67d2fb6bc87c0",
+    "boundary-constructs.json": "0f58a06806b0694b25d4058aa9cffb52699ea7b10765b767f748a0cef067cd2d",
+    "critical-constructs.json": "4f9dba6a3d2068a9d230520e6cadc006483096375558d11a146ef4b8ea8dcd94"
+  },
+  "inventory_review_sha256": "0fe1b4336f8f6c6f88eb8b9d578b8382d6722cc1f201f776dfa97fd19d8dd70f",
+  "source_sha256": "306a47c1a8a325f173ef8a63b6669a0ff48a8dad2053aa00c4d7a9262f8d17a3",
+  "source_bytes": 30606368,
+  "selected_primary_span": [
+    1351,
+    7307262
+  ],
+  "original_chain_head": "dce9e60f780b902cb7f157d5abee8c184998cacbcba31aa11714ddfbd3b79806",
+  "original_records": 29,
+  "inventory_reused_no_rescan": true,
+  "counts": {
+    "elements": 62084,
+    "tag_kinds": 38,
+    "style_attributes": 54365,
+    "css_properties": 45,
+    "css_property_value_pairs": 370,
+    "collapsed_rows": 81,
+    "collapsed_rows_with_nonwhitespace": 0,
+    "relative_divs": 168,
+    "xbrl_contexts": 595,
+    "xbrl_units": 9,
+    "typed_references": 4811,
+    "sec_ix_hidden_references": 15
+  },
+  "white_period": {
+    "element_span": [
+      362751,
+      362940
+    ],
+    "text_span": [
+      362932,
+      362933
+    ],
+    "text": ".",
+    "foreground": "#ffffff",
+    "explicit_ancestor_background": false
+  },
+  "weasyprint": {
+    "repository": "Kozea/WeasyPrint",
+    "revision": "7e2dda0d7833916d2698c35e707bc80ddea1ed24",
+    "declared_version": "70.0",
+    "direct_python_dependencies": [
+      "pydyf >=0.13.0",
+      "cffi >=0.6",
+      "tinyhtml5 >=2.0.0b1",
+      "tinycss2 >=1.5.0",
+      "cssselect2 >=0.10.0",
+      "Pyphen >=0.9.1",
+      "Pillow >=12.1.0",
+      "fonttools[woff] >=4.59.2"
+    ],
+    "files": [
+      {
+        "path": "docs__first_steps.rst.txt",
+        "url": "https://raw.githubusercontent.com/Kozea/WeasyPrint/7e2dda0d7833916d2698c35e707bc80ddea1ed24/docs/first_steps.rst",
+        "sha256": "3c794114f700506c927ba965d5a96c9da3e0006c61139d5b7a562cfd1b1bd02c",
+        "bytes": 24082,
+        "lines": 711
+      },
+      {
+        "path": "pyproject.toml.txt",
+        "url": "https://raw.githubusercontent.com/Kozea/WeasyPrint/7e2dda0d7833916d2698c35e707bc80ddea1ed24/pyproject.toml",
+        "sha256": "6bd1a97a4bdb3c0455fd26fc5d929db644fac80266b5f8a508784096c586d68e",
+        "bytes": 2472,
+        "lines": 77
+      },
+      {
+        "path": "weasyprint____init__.py.txt",
+        "url": "https://raw.githubusercontent.com/Kozea/WeasyPrint/7e2dda0d7833916d2698c35e707bc80ddea1ed24/weasyprint/__init__.py",
+        "sha256": "7cd0f4ae8569eac9e1a9dc5e58a2c7aed8b164c008f27a2f4f99b0cf1fbf185d",
+        "bytes": 15143,
+        "lines": 379
+      },
+      {
+        "path": "weasyprint__css__validation____init__.py.txt",
+        "url": "https://raw.githubusercontent.com/Kozea/WeasyPrint/7e2dda0d7833916d2698c35e707bc80ddea1ed24/weasyprint/css/validation/__init__.py",
+        "sha256": "6edd11aa7e49b7628bafa8c55dabbc427a2c348933f370f14a571ad6dd3ae215",
+        "bytes": 8469,
+        "lines": 246
+      }
+    ],
+    "inspection": "Pinned source/docs only; not installed or executed; maintenance snapshot is not deterministic-render qualification"
+  },
+  "measurements": {
+    "renderer_runtime_latency": null,
+    "renderer_memory": null,
+    "implementation_lines_added": 0,
+    "finite_profile_runtime_latency": null,
+    "complexity_scope": "Counts and source/dependency inspection only; no performance benchmark or implementation estimate"
+  },
+  "external_spend_usd": 0,
+  "sec_requests": 0,
+  "authentic_replays": 0,
+  "research_inference_requests": 0
+}
