@@ -1,0 +1,30 @@
+{
+  "base_sha": "fe7cb972794ad1ec50a88467c08eab71841fb428",
+  "processing_head": "cfe4a1b99e7f7555b003d1126b1caf277a5656aa",
+  "python": "Python 3.12.14",
+  "local_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "passed": 382,
+    "failed": 0,
+    "skipped": 0,
+    "log_sha256": "e398830436266b816f44d337dab53dea5b7eb8be29a101f8ff5bfebea7a98e1c"
+  },
+  "focused_tests": {
+    "command": "python -m unittest discover -s tests -p test_p0a_mda.py -v",
+    "passed": 38,
+    "red_before_fix": [
+      "UNSUPPORTED_HTML_ATTRIBUTES",
+      "UNSUPPORTED_OR_ACTIVE_HTML"
+    ]
+  },
+  "demo": {
+    "command": "python -m agent demo",
+    "exit_code": 0
+  },
+  "protected_artifacts_changed": [],
+  "implementer_actual_model_id": null,
+  "implementer_actual_reasoning_effort": null,
+  "requested_execution": "Sol-class High; serving ID and effort not exposed",
+  "review_status": "See draft PR conversation for independent review and exact-head CI receipts",
+  "external_spend_usd": 0
+}
