@@ -1,5 +1,10 @@
 """New integration only; never launches accepted LEAN qualification cases."""
 import copy
+import hashlib
+import json
+from pathlib import Path
+import subprocess
+import sys
 from dataclasses import replace
 from datetime import timedelta
 import unittest
@@ -7,6 +12,27 @@ from research.lean_intraday_integration_20261023 import integration as m
 
 
 class SyntheticIntradayTests(unittest.TestCase):
+    def test_retained_new_native_pairs_and_accounting(self):
+        root=Path(m.__file__).parent
+        for name,digest in json.loads((root/'evidence-sha256.json').read_text()).items():
+            self.assertEqual(hashlib.sha256((root/name).read_bytes()).hexdigest(),digest)
+        evidence=root/'evidence/accepted'
+        receipt=json.loads((evidence/'receipt.json').read_text())
+        self.assertEqual(receipt['status'],'SYNTHETIC_INTRADAY_INTEGRATION_PASS')
+        self.assertEqual(len(receipt['attempts']),8)
+        for name,inputs in m.scenarios().items():
+            paths=[evidence/'outputs'/f'INTRADAY_{name}-{repeat}.json' for repeat in (1,2)]
+            self.assertEqual(paths[0].read_bytes(),paths[1].read_bytes())
+            m.check_native(json.loads(paths[0].read_text()),m.decide(*inputs)['signal'])
+
+    def test_optimized_runner_rejected_before_runtime_access(self):
+        result = subprocess.run([sys.executable,'-O','-m',
+                                 'research.lean_intraday_integration_20261023.run'],
+                                capture_output=True,text=True)
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn('Assertions must be enabled',result.stderr)
+        self.assertNotIn('FileNotFoundError',result.stderr)
+
     def test_input_order_does_not_change_signal(self):
         sessions, bars, releases = m.fixture()
         self.assertEqual(m.decide(sessions,bars,releases),

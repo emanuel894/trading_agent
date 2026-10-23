@@ -29,6 +29,8 @@ def write(path, value):
 
 
 def main():
+    if not __debug__:
+        raise RuntimeError('Assertions must be enabled')
     accepted=STARTER/'research/lean_alpha_gate_027/continuation_v2'
     build=json.loads((accepted/'build.json').read_text())
     assert sha(accepted/'build.json') == 'dbf0134509f550f9333548c59c12fa1d556bdf54f42ce70c2da74ba05c251ebb', 'Trusted PR28 build manifest changed'
@@ -40,8 +42,6 @@ def main():
     image=build['image']
     inspected=json.loads(subprocess.check_output(DOCKER+['image','inspect',image]))[0]
     assert image in inspected['RepoDigests']
-    # Refuse -O: this engineering runner and accepted host rely on assertions.
-    assert __debug__, 'Assertions must be enabled'
     OUTPUT.mkdir(mode=0o755,exist_ok=False)
     OUTPUT.chmod(0o755)  # Only this NEW public-synthetic packet; never system/accepted paths.
     inputs=OUTPUT/'inputs'; inputs.mkdir(mode=0o755);inputs.chmod(0o755)

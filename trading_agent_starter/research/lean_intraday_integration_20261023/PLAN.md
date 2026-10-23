@@ -11,20 +11,20 @@ registration, source request or accepted qualification rerun. The new packet
 uses the accepted Q23 input grammar for NEW integration scenarios; it does not
 reclassify them as new qualification rows. All signals are fixture wiring only.
 
-- [ ] Freeze six one-minute synthetic bars, two synthetic policy releases and a
+- [x] Freeze six one-minute synthetic bars, two synthetic policy releases and a
   single 2025-01-06 15:00 UTC decision. Fixed illustrative condition: SMA3>SMA5
   and the lower target-range value decreased. Missing inputs abstain. This is
   not a fitted or proposed scientific strategy.
-- [ ] Unit-test hand-computable features, strict completion boundaries, future
+- [x] Unit-test hand-computable features, strict completion boundaries, future
   revision invariance, gaps, no-signal paths and exact native cost accounting.
-- [ ] Execute baseline, future-revision, missing-bar and equal-clock scenarios
+- [x] Execute baseline, future-revision, missing-bar and equal-clock scenarios
   twice each in fresh network-disabled read-only unprivileged containers.
   Compare complete outputs byte-for-byte. Never run the old gate runner.
-- [ ] Verify native nine-share buy at 100.07001 (100.02 ask +5bp slippage),
+- [x] Verify native nine-share buy at 100.07001 (100.02 ask +5bp slippage),
   one-dollar fee and 9098.36991 cash. Negative cases submit zero orders.
   Measure Python feature/prepared-input overhead separately from container
   wall time and cgroup peak memory; no source/market latency claim.
-- [ ] Preserve logs, inputs, hashes, measurements, failures and source pin in
+- [x] Preserve logs, inputs, hashes, measurements, failures and source pin in
   this new packet. Verify all tracked existing files/accepted evidence unchanged.
   Run full tests/demo, independent bounded review; retain a durable checkpoint.
 
