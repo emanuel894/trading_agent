@@ -1,0 +1,629 @@
+{
+  "analysis_tool": {
+    "name": "fontTools static SFNT reader",
+    "not_candidate_native_runtime": true,
+    "version": "4.61.1"
+  },
+  "downloaded_artifacts": [
+    {
+      "bytes": 2385008,
+      "final_url_host": "objects.githubusercontent.com",
+      "kind": "binary_archive",
+      "name": "liberation-fonts-ttf-2.1.5.tar.gz",
+      "sha256": "7191c669bf38899f73a2094ed00f7b800553364f90e2637010a69c0e268f25d0",
+      "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+    },
+    {
+      "bytes": 300832,
+      "final_url_host": "objects.githubusercontent.com",
+      "kind": "binary_archive",
+      "name": "liberation-narrow-fonts-ttf-1.07.6.tar.gz",
+      "sha256": "8879d89b5ff7b506c9fc28efc31a5c0b954bbe9333e66e5283d27d20a8519ea3",
+      "url": "https://github.com/liberationfonts/liberation-sans-narrow/files/2579431/liberation-narrow-fonts-ttf-1.07.6.tar.gz"
+    },
+    {
+      "bytes": 676777,
+      "final_url_host": "objects.githubusercontent.com",
+      "kind": "corresponding_source_archive",
+      "name": "liberation-narrow-fonts-1.07.6.tar.gz",
+      "sha256": "5244818c804dd590d7852d49ab08b18edaaecc54a70e3f79a0779235c5a751c8",
+      "url": "https://github.com/liberationfonts/liberation-sans-narrow/files/2579430/liberation-narrow-fonts-1.07.6.tar.gz"
+    },
+    {
+      "bytes": 628032,
+      "commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "final_url_host": "raw.githubusercontent.com",
+      "kind": "binary",
+      "name": "carlito-Carlito-Regular.ttf",
+      "sha256": "f6418f708baede9789daef5d458c0f53d2a888af9820e8062934e504fedc6595",
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/carlito/Carlito-Regular.ttf"
+    },
+    {
+      "bytes": 682468,
+      "commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "final_url_host": "raw.githubusercontent.com",
+      "kind": "binary",
+      "name": "carlito-Carlito-Bold.ttf",
+      "sha256": "bb5d20f79b82599ec72983597437373a80f2d2085fa91fc144fd74e876a594db",
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/carlito/Carlito-Bold.ttf"
+    },
+    {
+      "bytes": 615236,
+      "commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "final_url_host": "raw.githubusercontent.com",
+      "kind": "binary",
+      "name": "carlito-Carlito-Italic.ttf",
+      "sha256": "0b019225e58d702bfedcbd35c21696769f8ee115cb6343f84c2f240312450d1c",
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/carlito/Carlito-Italic.ttf"
+    },
+    {
+      "bytes": 808508,
+      "commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "final_url_host": "raw.githubusercontent.com",
+      "kind": "binary",
+      "name": "carlito-Carlito-BoldItalic.ttf",
+      "sha256": "b32928186c119599e03ca6a1ffc680fdcb7fac95772f4b95d989cf6cd3861517",
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/carlito/Carlito-BoldItalic.ttf"
+    },
+    {
+      "bytes": 4424,
+      "commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "final_url_host": "raw.githubusercontent.com",
+      "kind": "license_or_metadata",
+      "name": "carlito-OFL.txt",
+      "sha256": "58402f82a7c332a700294988fe7554fbb0a63a8d27ccc1ee3bbc640311990a00",
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/carlito/OFL.txt"
+    },
+    {
+      "bytes": 3053,
+      "commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "final_url_host": "raw.githubusercontent.com",
+      "kind": "license_or_metadata",
+      "name": "carlito-upstream_info.md",
+      "sha256": "42696fc6365c0781533d887a4907c99a53ac2011eadc88b52efd3bb1e854c4c6",
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/carlito/upstream_info.md"
+    },
+    {
+      "bytes": 372684,
+      "commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "final_url_host": "raw.githubusercontent.com",
+      "kind": "binary",
+      "name": "notosanssymbols.ttf",
+      "sha256": "f7e7e04b4a24b6c78893d50cbfd2b2f6cae49617ab047bfef668d252adb128f7",
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanssymbols/NotoSansSymbols%5Bwght%5D.ttf"
+    },
+    {
+      "bytes": 4383,
+      "commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "final_url_host": "raw.githubusercontent.com",
+      "kind": "license",
+      "name": "notosanssymbols-OFL.txt",
+      "sha256": "b118dd41337806a5d4797052c77caf3bd096aed783e5eb21b4d11154351e1ac0",
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanssymbols/OFL.txt"
+    },
+    {
+      "bytes": 756,
+      "commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "final_url_host": "raw.githubusercontent.com",
+      "kind": "metadata",
+      "name": "notosanssymbols-upstream_info.md",
+      "sha256": "6955f37dec7323e151001e8d6bde9de9a1a42db65feaf86888dcb8416525dfa1",
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanssymbols/upstream_info.md"
+    },
+    {
+      "bytes": 1233128,
+      "commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "final_url_host": "raw.githubusercontent.com",
+      "kind": "binary",
+      "name": "notosanssymbols2.ttf",
+      "sha256": "7d5fb73b7ca67a6798101741f5d280a3d016a56a197afcd4199dbb57b4b82a21",
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanssymbols2/NotoSansSymbols2-Regular.ttf"
+    },
+    {
+      "bytes": 4383,
+      "commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "final_url_host": "raw.githubusercontent.com",
+      "kind": "license",
+      "name": "notosanssymbols2-OFL.txt",
+      "sha256": "b118dd41337806a5d4797052c77caf3bd096aed783e5eb21b4d11154351e1ac0",
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanssymbols2/OFL.txt"
+    },
+    {
+      "bytes": 934,
+      "commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+      "final_url_host": "raw.githubusercontent.com",
+      "kind": "metadata",
+      "name": "notosanssymbols2-upstream_info.md",
+      "sha256": "e19829081a0628ff2ec8096278000eb9d7252e964d53a961455a05be12ab4dce",
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanssymbols2/upstream_info.md"
+    }
+  ],
+  "font_binaries_modified": false,
+  "fontconfig_candidate_mapping": "PROPOSED_NOT_INSTALLED_OR_EXECUTED",
+  "fonts": [
+    {
+      "bytes": 110260,
+      "copyright": "Copyright 2010 Oracle and/or its affiliates",
+      "family": "Liberation Sans Narrow",
+      "file": "LiberationSansNarrow-Bold.ttf",
+      "license": "GPL-2.0 with Liberation Font Exceptions/additional terms (exact bundled text)",
+      "license_files": [
+        "LiberationSansNarrow-License.txt",
+        "LiberationSansNarrow-COPYING",
+        "LiberationSansNarrow-AUTHORS"
+      ],
+      "license_name_record": "Licensed under the Liberation Fonts license, see https://fedoraproject.org/wiki/Licensing/LiberationFontLicense",
+      "metrics": {
+        "hheaAscent": 1916,
+        "hheaDescent": -434,
+        "hheaLineGap": 0,
+        "sTypoAscender": 1491,
+        "sTypoDescender": -431,
+        "sTypoLineGap": 269,
+        "unitsPerEm": 2048
+      },
+      "selected": true,
+      "sha256": "8e5eb5090ef4a3143794c230b82f174f7f2fbbfcd6cb789ccfa1f90bf8795d54",
+      "style": "Bold",
+      "symbol_glyphs": {
+        "U+2610": null,
+        "U+2612": null
+      },
+      "variable_axes": [],
+      "version": "Version 1.07.5"
+    },
+    {
+      "bytes": 128476,
+      "copyright": "Copyright 2010 Oracle and/or its affiliates",
+      "family": "Liberation Sans Narrow",
+      "file": "LiberationSansNarrow-BoldItalic.ttf",
+      "license": "GPL-2.0 with Liberation Font Exceptions/additional terms (exact bundled text)",
+      "license_files": [
+        "LiberationSansNarrow-License.txt",
+        "LiberationSansNarrow-COPYING",
+        "LiberationSansNarrow-AUTHORS"
+      ],
+      "license_name_record": "Licensed under the Liberation Fonts license, see https://fedoraproject.org/wiki/Licensing/LiberationFontLicense",
+      "metrics": {
+        "hheaAscent": 1916,
+        "hheaDescent": -434,
+        "hheaLineGap": 0,
+        "sTypoAscender": 1491,
+        "sTypoDescender": -431,
+        "sTypoLineGap": 269,
+        "unitsPerEm": 2048
+      },
+      "selected": true,
+      "sha256": "57fe1513fa84379d36e7da6fd9a45d053ded5e895042ab36692d8d05a8c4f4d8",
+      "style": "Bold Italic",
+      "symbol_glyphs": {
+        "U+2610": null,
+        "U+2612": null
+      },
+      "variable_axes": [],
+      "version": "Version 1.07.5"
+    },
+    {
+      "bytes": 132460,
+      "copyright": "Copyright 2010 Oracle and/or its affiliates",
+      "family": "Liberation Sans Narrow",
+      "file": "LiberationSansNarrow-Italic.ttf",
+      "license": "GPL-2.0 with Liberation Font Exceptions/additional terms (exact bundled text)",
+      "license_files": [
+        "LiberationSansNarrow-License.txt",
+        "LiberationSansNarrow-COPYING",
+        "LiberationSansNarrow-AUTHORS"
+      ],
+      "license_name_record": "Licensed under the Liberation Fonts license, see https://fedoraproject.org/wiki/Licensing/LiberationFontLicense",
+      "metrics": {
+        "hheaAscent": 1916,
+        "hheaDescent": -434,
+        "hheaLineGap": 0,
+        "sTypoAscender": 1491,
+        "sTypoDescender": -431,
+        "sTypoLineGap": 269,
+        "unitsPerEm": 2048
+      },
+      "selected": true,
+      "sha256": "c5de4127c273dbcfc173414d170448cbe800c3a7fb1f97beaeee1b076d6a5eea",
+      "style": "Italic",
+      "symbol_glyphs": {
+        "U+2610": null,
+        "U+2612": null
+      },
+      "variable_axes": [],
+      "version": "Version 1.07.5"
+    },
+    {
+      "bytes": 113036,
+      "copyright": "Copyright 2010 Oracle and/or its affiliates",
+      "family": "Liberation Sans Narrow",
+      "file": "LiberationSansNarrow-Regular.ttf",
+      "license": "GPL-2.0 with Liberation Font Exceptions/additional terms (exact bundled text)",
+      "license_files": [
+        "LiberationSansNarrow-License.txt",
+        "LiberationSansNarrow-COPYING",
+        "LiberationSansNarrow-AUTHORS"
+      ],
+      "license_name_record": "Licensed under the Liberation Fonts license, see https://fedoraproject.org/wiki/Licensing/LiberationFontLicense",
+      "metrics": {
+        "hheaAscent": 1916,
+        "hheaDescent": -434,
+        "hheaLineGap": 0,
+        "sTypoAscender": 1491,
+        "sTypoDescender": -431,
+        "sTypoLineGap": 269,
+        "unitsPerEm": 2048
+      },
+      "selected": true,
+      "sha256": "546e8957e5dccece4ac07ea02f57a5cdb3dc3b0e902ea75a837a7784ba4b7eef",
+      "style": "Regular",
+      "symbol_glyphs": {
+        "U+2610": null,
+        "U+2612": null
+      },
+      "variable_axes": [],
+      "version": "Version 1.07.5"
+    },
+    {
+      "bytes": 370096,
+      "copyright": "Digitized data copyright (c) 2010 Google Corporation.\nCopyright (c) 2012 Red Hat, Inc.",
+      "family": "Liberation Serif",
+      "file": "LiberationSerif-Bold.ttf",
+      "license": "OFL-1.1",
+      "license_files": [
+        "LiberationSerif-LICENSE",
+        "LiberationSerif-AUTHORS"
+      ],
+      "license_name_record": "Licensed under the SIL Open Font License, Version 1.1",
+      "metrics": {
+        "hheaAscent": 1825,
+        "hheaDescent": -443,
+        "hheaLineGap": 87,
+        "sTypoAscender": 1387,
+        "sTypoDescender": -442,
+        "sTypoLineGap": 307,
+        "unitsPerEm": 2048
+      },
+      "selected": true,
+      "sha256": "d754ba427cfe0bca54ae052384baa8f842da5bd6550ad4da024ac441e7a7d5ce",
+      "style": "Bold",
+      "symbol_glyphs": {
+        "U+2610": null,
+        "U+2612": null
+      },
+      "variable_axes": [],
+      "version": "Version 2.1.5"
+    },
+    {
+      "bytes": 376772,
+      "copyright": "Digitized data copyright (c) 2010 Google Corporation.\nCopyright (c) 2012 Red Hat, Inc.",
+      "family": "Liberation Serif",
+      "file": "LiberationSerif-BoldItalic.ttf",
+      "license": "OFL-1.1",
+      "license_files": [
+        "LiberationSerif-LICENSE",
+        "LiberationSerif-AUTHORS"
+      ],
+      "license_name_record": "Licensed under the SIL Open Font License, Version 1.1",
+      "metrics": {
+        "hheaAscent": 1825,
+        "hheaDescent": -443,
+        "hheaLineGap": 87,
+        "sTypoAscender": 1387,
+        "sTypoDescender": -442,
+        "sTypoLineGap": 307,
+        "unitsPerEm": 2048
+      },
+      "selected": true,
+      "sha256": "f17db8af71e24d2066b587546021d4f0b296be389512b658dec3c09affeb11a7",
+      "style": "Bold Italic",
+      "symbol_glyphs": {
+        "U+2610": null,
+        "U+2612": null
+      },
+      "variable_axes": [],
+      "version": "Version 2.1.5"
+    },
+    {
+      "bytes": 375632,
+      "copyright": "Digitized data copyright (c) 2010 Google Corporation.\nCopyright (c) 2012 Red Hat, Inc.",
+      "family": "Liberation Serif",
+      "file": "LiberationSerif-Italic.ttf",
+      "license": "OFL-1.1",
+      "license_files": [
+        "LiberationSerif-LICENSE",
+        "LiberationSerif-AUTHORS"
+      ],
+      "license_name_record": "Licensed under the SIL Open Font License, Version 1.1",
+      "metrics": {
+        "hheaAscent": 1825,
+        "hheaDescent": -443,
+        "hheaLineGap": 87,
+        "sTypoAscender": 1422,
+        "sTypoDescender": -442,
+        "sTypoLineGap": 307,
+        "unitsPerEm": 2048
+      },
+      "selected": true,
+      "sha256": "0e3dea9f8d613e006ccfa62201f33e265d19167bd0907725c3e145368b04fc2e",
+      "style": "Italic",
+      "symbol_glyphs": {
+        "U+2610": null,
+        "U+2612": null
+      },
+      "variable_axes": [],
+      "version": "Version 2.1.5"
+    },
+    {
+      "bytes": 393576,
+      "copyright": "Digitized data copyright (c) 2010 Google Corporation.\nCopyright (c) 2012 Red Hat, Inc.",
+      "family": "Liberation Serif",
+      "file": "LiberationSerif-Regular.ttf",
+      "license": "OFL-1.1",
+      "license_files": [
+        "LiberationSerif-LICENSE",
+        "LiberationSerif-AUTHORS"
+      ],
+      "license_name_record": "Licensed under the SIL Open Font License, Version 1.1",
+      "metrics": {
+        "hheaAscent": 1825,
+        "hheaDescent": -443,
+        "hheaLineGap": 87,
+        "sTypoAscender": 1420,
+        "sTypoDescender": -442,
+        "sTypoLineGap": 307,
+        "unitsPerEm": 2048
+      },
+      "selected": true,
+      "sha256": "058ea80864aef09a23f45cbec2bb5400bc3dfbdea01c3f10538a21fcb497fb74",
+      "style": "Regular",
+      "symbol_glyphs": {
+        "U+2610": null,
+        "U+2612": null
+      },
+      "variable_axes": [],
+      "version": "Version 2.1.5"
+    },
+    {
+      "bytes": 682468,
+      "copyright": "Copyright 2013 The Carlito Project Authors (https://github.com/googlefonts/carlito)",
+      "family": "Carlito",
+      "file": "carlito-Carlito-Bold.ttf",
+      "license": "OFL-1.1",
+      "license_files": [
+        "carlito-OFL.txt"
+      ],
+      "license_name_record": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL",
+      "metrics": {
+        "hheaAscent": 1950,
+        "hheaDescent": -550,
+        "hheaLineGap": 0,
+        "sTypoAscender": 1536,
+        "sTypoDescender": -512,
+        "sTypoLineGap": 452,
+        "unitsPerEm": 2048
+      },
+      "selected": true,
+      "sha256": "bb5d20f79b82599ec72983597437373a80f2d2085fa91fc144fd74e876a594db",
+      "style": "Bold",
+      "symbol_glyphs": {
+        "U+2610": null,
+        "U+2612": null
+      },
+      "variable_axes": [],
+      "version": "Version 1.104"
+    },
+    {
+      "bytes": 808508,
+      "copyright": "Copyright 2013 The Carlito Project Authors (https://github.com/googlefonts/carlito)",
+      "family": "Carlito",
+      "file": "carlito-Carlito-BoldItalic.ttf",
+      "license": "OFL-1.1",
+      "license_files": [
+        "carlito-OFL.txt"
+      ],
+      "license_name_record": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL",
+      "metrics": {
+        "hheaAscent": 1950,
+        "hheaDescent": -550,
+        "hheaLineGap": 0,
+        "sTypoAscender": 1536,
+        "sTypoDescender": -512,
+        "sTypoLineGap": 452,
+        "unitsPerEm": 2048
+      },
+      "selected": true,
+      "sha256": "b32928186c119599e03ca6a1ffc680fdcb7fac95772f4b95d989cf6cd3861517",
+      "style": "Bold Italic",
+      "symbol_glyphs": {
+        "U+2610": null,
+        "U+2612": null
+      },
+      "variable_axes": [],
+      "version": "Version 1.104"
+    },
+    {
+      "bytes": 615236,
+      "copyright": "Copyright 2013 The Carlito Project Authors (https://github.com/googlefonts/carlito)",
+      "family": "Carlito",
+      "file": "carlito-Carlito-Italic.ttf",
+      "license": "OFL-1.1",
+      "license_files": [
+        "carlito-OFL.txt"
+      ],
+      "license_name_record": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL",
+      "metrics": {
+        "hheaAscent": 1950,
+        "hheaDescent": -550,
+        "hheaLineGap": 0,
+        "sTypoAscender": 1536,
+        "sTypoDescender": -512,
+        "sTypoLineGap": 452,
+        "unitsPerEm": 2048
+      },
+      "selected": true,
+      "sha256": "0b019225e58d702bfedcbd35c21696769f8ee115cb6343f84c2f240312450d1c",
+      "style": "Italic",
+      "symbol_glyphs": {
+        "U+2610": null,
+        "U+2612": null
+      },
+      "variable_axes": [],
+      "version": "Version 1.104"
+    },
+    {
+      "bytes": 628032,
+      "copyright": "Copyright 2013 The Carlito Project Authors (https://github.com/googlefonts/carlito)",
+      "family": "Carlito",
+      "file": "carlito-Carlito-Regular.ttf",
+      "license": "OFL-1.1",
+      "license_files": [
+        "carlito-OFL.txt"
+      ],
+      "license_name_record": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL",
+      "metrics": {
+        "hheaAscent": 1950,
+        "hheaDescent": -550,
+        "hheaLineGap": 0,
+        "sTypoAscender": 1536,
+        "sTypoDescender": -512,
+        "sTypoLineGap": 452,
+        "unitsPerEm": 2048
+      },
+      "selected": true,
+      "sha256": "f6418f708baede9789daef5d458c0f53d2a888af9820e8062934e504fedc6595",
+      "style": "Regular",
+      "symbol_glyphs": {
+        "U+2610": null,
+        "U+2612": null
+      },
+      "variable_axes": [],
+      "version": "Version 1.104"
+    },
+    {
+      "bytes": 372684,
+      "copyright": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/symbols)",
+      "family": "Noto Sans Symbols",
+      "file": "notosanssymbols.ttf",
+      "license": "OFL-1.1",
+      "license_files": [
+        "notosanssymbols-OFL.txt"
+      ],
+      "license_name_record": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL",
+      "metrics": {
+        "hheaAscent": 1480,
+        "hheaDescent": -570,
+        "hheaLineGap": 0,
+        "sTypoAscender": 1480,
+        "sTypoDescender": -570,
+        "sTypoLineGap": 0,
+        "unitsPerEm": 1000
+      },
+      "selected": false,
+      "sha256": "f7e7e04b4a24b6c78893d50cbfd2b2f6cae49617ab047bfef668d252adb128f7",
+      "style": "Regular",
+      "symbol_glyphs": {
+        "U+2610": null,
+        "U+2612": null
+      },
+      "variable_axes": [
+        {
+          "axis": "wght",
+          "default": 400.0,
+          "max": 900.0,
+          "min": 100.0
+        }
+      ],
+      "version": "Version 2.003"
+    },
+    {
+      "bytes": 1233128,
+      "copyright": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/symbols)",
+      "family": "Noto Sans Symbols 2",
+      "file": "notosanssymbols2.ttf",
+      "license": "OFL-1.1",
+      "license_files": [
+        "notosanssymbols2-OFL.txt"
+      ],
+      "license_name_record": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL",
+      "metrics": {
+        "hheaAscent": 1069,
+        "hheaDescent": -630,
+        "hheaLineGap": 0,
+        "sTypoAscender": 1069,
+        "sTypoDescender": -630,
+        "sTypoLineGap": 0,
+        "unitsPerEm": 1000
+      },
+      "selected": true,
+      "sha256": "7d5fb73b7ca67a6798101741f5d280a3d016a56a197afcd4199dbb57b4b82a21",
+      "style": "Regular",
+      "symbol_glyphs": {
+        "U+2610": "uni2610",
+        "U+2612": "uni2612"
+      },
+      "variable_axes": [],
+      "version": "Version 2.008; ttfautohint (v1.8.4.7-5d5b)"
+    }
+  ],
+  "glyph_shapes_or_metrics_compared_to_Microsoft_fonts": false,
+  "license_files": [
+    {
+      "bytes": 609,
+      "file": "LiberationSansNarrow-AUTHORS",
+      "sha256": "dd2cb26a85fb6f9d7ae0220deb651c5a8adbafd5c12376968a3b689ea93d6580"
+    },
+    {
+      "bytes": 17987,
+      "file": "LiberationSansNarrow-COPYING",
+      "sha256": "ab15fd526bd8dd18a9e77ebc139656bf4d33e97fc7238cd11bf60e2b9b8666c6"
+    },
+    {
+      "bytes": 4012,
+      "file": "LiberationSansNarrow-License.txt",
+      "sha256": "c40dd6adebad817defd68c7edad151d9c13d2ac3b4e1790ce2b727b024438b6d"
+    },
+    {
+      "bytes": 379,
+      "file": "LiberationSerif-AUTHORS",
+      "sha256": "b627404917ef824675cb24c32e2facd0b57650627955f3fc3d8a8863c5d0adfc"
+    },
+    {
+      "bytes": 4414,
+      "file": "LiberationSerif-LICENSE",
+      "sha256": "93fed46019c38bbe566b479d22148e2e8a1e85ada614accb0211c37b2c61c19b"
+    },
+    {
+      "bytes": 4424,
+      "file": "carlito-OFL.txt",
+      "sha256": "58402f82a7c332a700294988fe7554fbb0a63a8d27ccc1ee3bbc640311990a00"
+    },
+    {
+      "bytes": 4383,
+      "file": "notosanssymbols-OFL.txt",
+      "sha256": "b118dd41337806a5d4797052c77caf3bd096aed783e5eb21b4d11154351e1ac0"
+    },
+    {
+      "bytes": 4383,
+      "file": "notosanssymbols2-OFL.txt",
+      "sha256": "b118dd41337806a5d4797052c77caf3bd096aed783e5eb21b4d11154351e1ac0"
+    }
+  ],
+  "narrow_corresponding_source": "liberation-narrow-fonts-1.07.6.tar.gz",
+  "native_emboldening": "PROPOSED_REQUIRED_FOR_2_SOURCE_RUNS_NOT_QUALIFIED",
+  "native_shaping_or_layout": "NOT_RUN",
+  "overall": "P0A_INCOMPLETE",
+  "provenance": {
+    "Google_Fonts_distribution_commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+    "Liberation_Narrow_release": "https://github.com/liberationfonts/liberation-sans-narrow/releases/tag/1.07.6",
+    "Liberation_Narrow_source_commit": "5462920fee502b688604472e65af49af951bdd56",
+    "Liberation_Serif_release": "https://github.com/liberationfonts/liberation-fonts/releases/tag/2.1.5",
+    "Liberation_Serif_source_commit": "4b0192046158094654e865245832c66d2104219e",
+    "generated_upstream_info_is_not_license_authority": true
+  },
+  "schema_version": 1,
+  "selected_files": 13,
+  "spending_usd": 0,
+  "status": "PROPOSED_STATIC_INSPECTION_NOT_G0_ACCEPTANCE"
+}
