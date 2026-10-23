@@ -15,13 +15,15 @@ constructs again nor produces authentic extracted text.
 | Gap | Exhaustive retained-instance evaluation | Conclusion |
 | --- | --- | --- |
 | Flex defaults, shrink, min-content | 140 containers: 56 column (55 nonempty), 42 row wrappers, 42 inline-flex markers; all direct element/anonymous text items recorded | Column main-size and empty-container obligations close locally. All84 row/marker contexts need ink/min-content bounds absent from the baseline. `display:inline` flex items are blockified; width100% remains relevant. |
-| Table painting/visibility | All81 tables,1,178 rows,17,594 cells (18,853 records); each table's column sums agree, no nested tables/rowspan; all81 collapse rows empty without visibility overrides | Empty-collapse exclusion closes locally. All other18,772 structural contexts lack a text-ink containment/paint certificate. Grid consistency and minimum row heights are insufficient. |
+| Table painting/visibility | All81 tables,1,178 rows,17,594 cells (18,853 records); each table's column sums agree, no nested tables/rowspan; all81 collapse rows empty without visibility overrides | Empty-collapse exclusion closes locally. The other18,772 records track unresolved table geometry/painting contexts, not18,772 indispensable ink certificates. Grid consistency and minimum row heights are insufficient. |
 | Relative positioning/stacking | All169: body z0;112 divs z2;56 divs z5; no offsets or other displacement/clipping properties | Zero translation and finite paint ordering close locally. They do not certify disjoint painted text/background extents of the owned subtrees. |
 | Width/nowrap/background | Every33,813 element with any width, min-width, whitespace or background declaration;1,244 width declarations,6,142 nowrap cells,1,065 row backgrounds; all17,931 fit-content spans are ordinary inline boxes | `min-width` does not constrain those ordinary inline spans. Auto tables may expand to content minima; no actual overflow is asserted. Their allocation, line/ink extents and painting remain unproved. |
 | Hanging indent | The sole negative indent, node4996, original bytes[361570,362409), evaluated algebraically with its full ancestor context | First-line reference x=6.5464px is inside the canvas. The left ink bearing of its checkbox is unbounded by the logical font contract; whole-run containment does not close. |
 
 52,976 gap-instance records cover37,080 distinct inventoried nodes. Memberships
-overlap and are not independent samples or counts of actual hidden text. The
+overlap and are not independent samples or counts of actual hidden text. Empty
+roles can affect sizing/painting without containing text; collapse proof covers
+its descendants, even though their table-context records remain in the list. The
 remaining nodes have none of these directly inventoried declarations/structural
 roles; ancestors and all direct flex items are retained in the records. This is
 exhaustive coverage of the five specified construct sets, not a new source audit
@@ -35,8 +37,8 @@ and adversarial expectations independently of the application parser. Local
 proofs do remove uncertainty: collapse emptiness, table grids, default flex rules,
 zero displacement, paint ordering and hanging-indent reference arithmetic are
 now decided. What remains is a shared, concrete dependency: **bounds on text
-advances, bearings, line boxes and their painted relationship to opaque table
-backgrounds and other stacking contexts**.
+advances, bearings, line boxes and their relationship to adjacent text, finite
+table backdrops and other stacking contexts**.
 
 V1 deliberately specifies logical font names and uninterpreted normal line height,
 with no physical fonts, glyph metrics, wrapping or paint geometry. The inventory

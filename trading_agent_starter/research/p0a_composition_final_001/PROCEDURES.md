@@ -84,7 +84,7 @@ asserted. This cannot close for the observed context from metric-free input alon
    whitespace/spans; retain the collapsed row's sizing/grid influence. A nonempty
    collapse row may never leak into visible text or be silently counted complete;
    abstain under this narrow proof. All81 observed cases close this local predicate.
-4. Paint table/column-group/column/row-group/row/cell layers in their defined order
+4. Distinguish table/column-group/column/row-group/row/cell background layers
    where present (observed source has table/row/cell only), then borders/content
    at their actual painting steps; transparency exposes lower layers. A row
    background is **not** an inherited CSS background or an infinite rectangle.
@@ -93,15 +93,23 @@ asserted. This cannot close for the observed context from metric-free input alon
    and outer stacking contexts. No certificate or partial coverage => A.
 
 **Observed evaluation:** all18,853 roles inspected;81 local empty-collapse proofs;
-remaining18,772 roles await containment.1,088 row height declarations and1,065
+remaining18,772 records track table-context obligations, not a demand for an ink
+certificate for each empty box.11,673 td are text-empty, including1,121 beneath
+the proven empty collapsed rows; collapse's local exclusion proof covers those
+descendants. Empty cells elsewhere can still affect adjacent allocation/painting.
+1,088 row height declarations and1,065
 opaque row backgrounds (586 white/479 cyan) are covered. Repeated headings/values
 in financial tables are not inferred to be MD&A; no boundaries extracted.
 
 **Obstruction:** row minimum height and valid grids do not provide line/glyph ink
-bounds relative to later painted row backgrounds. Normal line-height is explicitly
-uninterpreted in V1. T− is a countermodel to “minimum height means no occlusion,”
-not a claim that this source actually has such overflow. A sound finite interval
-decision can verify supplied bounds without rasterizing; it cannot invent them.
+bounds relative to adjacent text. Normal line-height is explicitly uninterpreted
+in V1. T− is a countermodel to “minimum height proves ink containment,” not a
+claim that this source actually has such overflow. A later row background must
+not simply be assumed to paint above prior cell text: background layers and cell
+content have distinct painting steps. Numeric row crossing alone proves neither
+actual occlusion nor its absence. The finite proof needs contained/disjoint ink
+or a separately established non-occlusion certificate. A sound interval decision
+can verify supplied bounds without rasterizing; it cannot invent them.
 
 ## P — Relative position and stacking
 
@@ -153,11 +161,14 @@ divs are direct flex items and blockified, however. The ineffective span propert
 is not stripped or generalized into accepted arbitrary CSS; its no-sizing-effect
 semantics is recorded, while the containing composition still abstains.
 
-**Obstruction:** equal palette colors can settle contrast only with a known
-painted backdrop. Row backgrounds have finite painted regions, and another row
-can paint over unbounded ink. Metrics/line allocation are absent. W− invalidates
-an independent width/nowrap/bg allowlist; it does not assert that an auto table
-uses the adversary's fixed cell allocation on this authentic source.
+**Obstruction:** the observed black/blue foreground palette has admitted local
+contrast against both observed opaque backgrounds; that favorable local result
+does not prove nonintersecting ink or used-width containment. Row backdrops are
+finite painted regions, not inherited infinite colors. Metrics/line allocation
+are absent. W− invalidates an independent width/nowrap/bg allowlist; it does not
+assert that an auto table uses the adversary's fixed allocation, or that a later
+cell/row background necessarily paints above earlier cell text. Actual foreign
+overpainting must be established by paint order, never presumed from source order.
 
 ## H — The observed hanging indent
 
