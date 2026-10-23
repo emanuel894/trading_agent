@@ -17,6 +17,7 @@ not authorized by this document or the design GO recommendation.
 | ADR001 §1, §3 | Original Part I Item2, comparable prior-year quarter; immutable processing/source/time distinction | Canvas is a processing assumption; preserve source/processing versions and unknown historical display/time |
 | ADR001 §5 table, A/B/C; §6 extraction gate | Same documents/passages across arms; independent calibration accuracy/schema/time thresholds | No arm/feature/extraction gate change. Future use must process comparable inputs consistently; current architecture work neither qualifies nor activates those gates |
 | ADR001 §8, line277, acquisition gate | Original50 filings/>=25 issuers; >=48 complete sets; unresolved cases retained; one documented parser/access repair cycle | Unchanged and distinct from P0-A12-case engineering. V2's extra engineering cycle does not amend/reset this scientific gate |
+| ADR001 §8, lines296–298 | Never execute, render or follow untrusted document instructions/links | Non-rendering finite parsing only; renderer comparison grants no exception |
 | Amendments003/004/005 | SIP liquidity/population/priority/identity/clock constraints | No change; canonical viewing does not establish historical source availability, identity eligibility or candidate progression |
 
 **Assessment:** the proposed canonical environment can be an engineering
@@ -51,6 +52,7 @@ analysis, not authority to apply it to the confirmatory experiment.
 | Treat white-canvas output as historical investor-visible information or infer availability/actionability | Not admissible as a display-default inference. Requires new independent historical/source-time evidence; any changed scientific availability premise requires explicit ADR001 §3/§4 and applicable registered clock/causality amendment, not a processing note |
 | Accept untraceable text, omit exclusion records or silently normalize nonwhitespace | No waiver in this contract; revises P0-A zero-loss/traceability requirements and scientific source-span/evidence contract in ADR001 §3. Stop for explicit versioned approval before any affected processing |
 | Use additional engineering rounds to bypass original50-filing one-repair stopping rule | Explicit amendment to ADR001 §8 acquisition-gate row and linked execution registration, with human scientific review; V2 alone supplies no such amendment |
+| Render authentic untrusted filings, even with scripts disabled | Explicit reviewed amendment to ADR001 §8 Untrusted documents and consistent trusted security policy defining a bounded inert-rendering exception before use; sandbox/settings alone cannot waive the no-render rule |
 | Apply different visibility filters to comparator/LLM arms or tune them on outcomes | Explicit scientific amendment to ADR001 §5 arm/input fairness and relevant frozen transform/tuning registration before affected evaluation |
 
 No listed departure is part of this design. If later independent review finds

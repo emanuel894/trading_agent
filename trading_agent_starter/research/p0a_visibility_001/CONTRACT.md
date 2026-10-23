@@ -2,7 +2,8 @@
 
 Contract ID: `p0a-canonical-visibility-1.0.0`. Date: 2026-10-23 UTC.
 **Design only; implementation and one authentic replay require separate owner
-authorization. Overall P0A_INCOMPLETE.** This specifies a canonical processing
+authorization. NO-GO for implementation/replay readiness until composition rules
+are qualified. Overall P0A_INCOMPLETE.** This specifies a canonical processing
 view, not a reconstruction of any historical investor's display or knowledge.
 
 Normative MUST/REJECT requirements below apply to the proposed finite semantic
@@ -34,8 +35,8 @@ styles, system theme, installed fonts or error recovery may supply hidden defaul
 | Initial element background | Transparent; resolve contrast against the nearest admitted opaque ancestor background, then white canvas |
 | View | Screen, light scheme, zoom 100%, device scale 1, CSS reference pixel 1/96 inch; 1pt = 4/3 CSS px |
 | Nominal viewport | 1280 x 720 CSS px; continuous document with unlimited scrolling; viewport position never deletes text |
-| Initial font/flow | Logical `Times New Roman`, 16 CSS px, normal weight/style, normal line-height; document-order reading, LTR horizontal flow |
-| UA block/inline defaults | Explicit structural blocks html/body/div/p/h1–h6/table/tr/li/dl/dt/dd; cells have cell boundaries; spans and iXBRL facts/continuations are inline; head/title/meta are metadata |
+| Initial font/flow | Logical `Times New Roman`, 16 CSS px, normal weight/style; normal line-height is an uninterpreted annotation, never measured font height; document-order reading, LTR horizontal flow |
+| UA structure/box defaults | Closed roles below; margin/padding/border=0, background transparent, position static, z-index auto, visibility visible, opacity1, no clipping/offset/order/transform; no platform stylesheet imports |
 | Link state | Inert, unvisited; no hover/focus/visited/user stylesheet variation or URL activation |
 | Fonts and glyph layout | Only the finite font-family vocabulary below; family names remain logical labels, not permission for platform font discovery or downloads |
 | Dynamic/foreign content | No scripts, event handlers, frames, embedded objects, images, forms, SVG, MathML, animations, transitions, generated content, external CSS/fonts or network |
@@ -51,6 +52,29 @@ hashes; the logical font names above would not pin its physical rendering.
 Document-supplied colors/backgrounds override defaults only through admitted
 inline declarations. No stylesheet, media query, CSS variable, URL, downloaded
 schema, UA import or system preference can alter the environment.
+
+Closed roles for all38 observed kinds:
+
+| Kinds | Structural role |
+| --- | --- |
+| html, body | One document root and one flow root respectively |
+| div, p, h1, h2 | Ordered block boundaries; no implicit heading font or margins |
+| span, a | Inline text; a inert |
+| br, hr | Structural separator, no invented narrative; generated intervals null |
+| table, tr, td | Table container, row, cell respectively; never equate row/cell semantics with ordinary blocks; positive integer colspan, source order |
+| head, title, meta | Non-narrative head metadata; passive meta rules required |
+| ix:nonnumeric, ix:nonfraction, ix:continuation | Inline facts/continuations unless qualified metadata ancestry hides them |
+| ix:header, ix:hidden, ix:references, ix:resources | Typed metadata containers; section7 schema mandatory |
+| link:schemaref | Passive nontext schema reference, never fetched |
+| xbrli:context/entity/identifier/period/segment/startdate/enddate/instant | Typed context metadata under resources |
+| xbrldi:explicitmember | Typed dimensional metadata under segment |
+| xbrli:unit/divide/measure/unitnumerator/unitdenominator | Typed unit metadata under resources |
+
+Legacy tags not in these38 kinds are not automatically in this submission profile.
+Unknown roles reject/abstain; none is inherited from a browser. This table defines
+source structure, not table-painting geometry. Actual rendering of untrusted
+filings remains prohibited by ADR001 §8 lines296–298; a documentary comparison
+does not authorize an exception.
 
 ## 3. Outcomes and whole-document admission
 
@@ -76,6 +100,13 @@ Document admission requires zero AMBIGUOUS runs/constructs in the entire selecte
 document, no active/integrity failures, and complete classification accounting.
 Unresolved materiality of an exclusion also blocks complete-extraction acceptance.
 Do not relabel an abstention as successful partial extraction.
+
+Evaluation precedence: hard rejection first; any unproved syntax/context/composition
+then makes the final outcome AMBIGUOUS and blocks the document. Only after those
+guards may proven HIDDEN or VISIBLE be assigned for admission. Local contrast
+subresults may be recorded diagnostically; they cannot override unknown ancestor
+painting or discard text from a failed document. Parent contrast hiding is not
+a subtree flag; metadata/display hiding is, with all descendants still validated.
 
 For every nonwhitespace HIDDEN run, distinguish typed non-narrative metadata from
 possible narrative/heading/table content. Possible material MD&A text, or content
@@ -131,6 +162,8 @@ Every admitted declaration needs a tag/parent/context rule plus the predicates
 below; observing a string in authentic bytes never makes it safe. Exact grammar,
 context policy and structured exclusions must be frozen/hash-bound before any
 future authentic replay. Unknown syntax/values/contexts abstain; no fallback.
+The explicit palette adds black-background unit-oracle cases beyond observed
+backgrounds; this grants no unqualified layout context.
 
 | Property family | Required qualification |
 | --- | --- |
@@ -165,12 +198,23 @@ receipt for each qualified context. If that proof needs a general layout engine,
 stop this finite profile; do not declare the context cosmetic. The inventory shows
 why a finite proof is plausible, not that every proof has already passed.
 
+**Closed decision for version1.0.0:** complete finite decision procedures/witness
+schemas for flex defaults/shrink/min-content, table painting, relative stacking,
+hanging-indent geometry and interacting width/nowrap/background are not supplied
+by this packet. Every such composition without a normative procedure is AMBIGUOUS;
+an implementer cannot invent an acceptance rule and call it qualified. The authentic
+source uses these cases, so this version cannot admit it. NO-GO for implementation
+and replay until a reviewed next profile/design version supplies those bounded
+procedures or an explicitly permitted alternative. This conservative abstention
+defines a deterministic reference contract, not an implemented source-compatible
+CSS profile.
+
 ## 6. Concrete white-period adjudication
 
 Source element interval `[362751,362940)`; period itself `[362932,362933)` in the
 original complete submission. It is a span with explicit white foreground and no
 opaque background ancestor. Under **this contract's white canvas assumption**, its
-resolved backdrop is white and its outcome is **HIDDEN_CONTRAST**. Keep `.` and
+resolved backdrop is white and its **local contrast oracle is HIDDEN_CONTRAST**. Keep `.` and
 both intervals in the exclusion ledger, with this contract hash and assumption
 label. Do not transform punctuation through whitespace normalization.
 
@@ -178,7 +222,10 @@ This is a generic color/backdrop rule, not an exception for an accession, span,
 period or location outside MD&A. The V2 source still establishes only the white
 foreground and lack of explicit background. Its historical visibility remains
 UNKNOWN; no investor display, theme or publication/knowledge time is inferred.
-The independent source review must confirm this exclusion's non-MD&A/nonmaterial
+This resolves the canvas-default design question, not unqualified ancestor
+painting/layout. Final source-run/document admission remains AMBIGUOUS until those
+separate composition predicates pass. Independent source review must confirm any
+eventual exclusion's non-MD&A/nonmaterial
 role before complete-extraction acceptance. Classification is a design adjudication;
 no parser or authentic replay has implemented/verified it in this task.
 
@@ -210,6 +257,51 @@ ix:hidden. Preserve the span's own text/bytes. The observed 15 references includ
 single/1, twenty/twenty years and labels/taxonomy URIs; none authorizes substitution,
 fact promotion, conversion or hiding of the visible span. -sec-extract:exhibit is
 an inert audit annotation on a qualified link, never a request to follow it.
+
+### Closed passive metadata schema
+
+Core namespace bindings are html=`http://www.w3.org/1999/xhtml`,
+ix=`http://www.xbrl.org/2013/inlineXBRL`,
+xbrli=`http://www.xbrl.org/2003/instance`,
+xbrldi=`http://xbrl.org/2006/xbrldi`,
+link=`http://www.xbrl.org/2003/linkbase`,
+xlink=`http://www.w3.org/1999/xlink`,
+xsi=`http://www.w3.org/2001/XMLSchema-instance`.
+Other taxonomy bindings must match the root pairs in hash-bound V2 attributes.json;
+new pairs need a reviewed profile version. No nested rebinding, arbitrary prefix
+acceptance, DTD/entity resolution or namespace/schema fetch.
+
+| Node | Exact metadata context/content/attribute schema |
+| --- | --- |
+| ix:header | At most one, under div with proven display:none; no attrs; children ix:hidden then ix:references then ix:resources, whitespace otherwise |
+| ix:hidden | Header only, no attrs; typed nonnumeric/nonfraction facts only; hidden text still validated |
+| ix:references | Header only, no attrs; one schemaRef, whitespace otherwise |
+| link:schemaRef | references only; empty; exactly xlink:type=simple and xlink:href ASCII basename ending .xsd, <=128 chars, no slash/colon/percent/query/fragment/'..'; never fetched |
+| ix:resources | Header only, no attrs; context/unit children, whitespace otherwise |
+| xbrli:context | resources only; one unique id attribute; entity then period |
+| xbrli:entity | context only, no attrs; identifier then optional segment |
+| xbrli:identifier | entity only; scheme=http://www.sec.gov/CIK only; digit text equals verified filing CIK; no children |
+| xbrli:segment | entity only, no attrs; one or more explicitMember children |
+| xbrldi:explicitMember | segment only; dimension bound QName attribute; bound QName text, no children |
+| xbrli:period | context only, no attrs; instant OR startDate then endDate; ISO dates and start<=end |
+| xbrli:instant/startDate/endDate | period only, no attrs/children; one ISO date |
+| xbrli:unit | resources only; one unique id; one measure OR one divide |
+| xbrli:divide | unit only, no attrs; unitNumerator then unitDenominator |
+| xbrli:unitNumerator/unitDenominator | divide only, no attrs; one measure |
+| xbrli:measure | unit or numerator/denominator only, no attrs/children; one bound QName text |
+
+Facts require unique id, bound-QName name and valid contextref. Optional unitref,
+decimals, scale, sign, format, continuedAt, escape and xsi:nil require the typed
+fact rule: decimals signed integer/INF; scale signed integer; sign '-' only;
+format bound QName; escape/nil true/false. True nil forbids nonwhitespace content.
+No other attrs. Continuations require unique id, optional continuedAt only, visible
+flow ancestry (not resources). Each continuedAt has one target, no target has more
+than one incoming continuation edge, the graph is acyclic and chain length<=128.
+Context/unit references resolve to exact resource types; vendor refs resolve to
+hidden facts. No suffix-name matching or hidden fact supplies missing provenance.
+These are declarative design requirements, not implemented validators. Existing
+40,000,000-byte input and2,000,000-codepoint text limits stay unchanged; any new
+execution limits must be frozen before separately authorized processing.
 
 ## 8. Evidence, admission and next authorization
 

@@ -1,55 +1,82 @@
-# Design recommendation
+# Design qualification decision
 
-**Proposed GO for one separately authorized bounded implementation and one
-complete-submission replay; P0A_INCOMPLETE.** This is a design recommendation,
-pending independent review of this packet. It authorizes no execution or merge.
+**NO-GO for a separately authorized implementation and authentic replay at this
+stage. Overall P0A_INCOMPLETE.** This is an architectural readiness decision,
+not P0A_ENGINEERING_NO_GO, a rejection of the scientific hypothesis, or permission
+for another cycle. No implementation, rendering, replay, inference or merge occurred.
 
-CONTRACT.md version1.0.0 resolves the undefined canvas as an explicitly labelled
-white-canvas processing assumption. The known period is HIDDEN_CONTRAST under that
-view, retains its original source/exclusion record, and remains historically
-visibility-UNKNOWN. Ambiguous visibility anywhere blocks admission. Hidden material
-or unresolved narrative exclusion cannot improve the completeness denominator.
+## Established design outcomes
 
-Recommend the finite semantic CSS/DOM profile, with a maintained tokenizer only
-if needed and separately qualified. A pinned WeasyPrint70.0 source comparison
-shows broader layout support plus font/native/resource and ignored-CSS concerns;
-no renderer installation, execution or deterministic-render claim was made.
+CONTRACT.md version1.0.0 defines an explicit white-canvas processing view,
+foreground/backdrop inheritance, conservative finite contrast states, complete
+source/exclusion accounting and whole-document ambiguity abstention. It defines
+the full38-kind structural role table and closed passive namespace/resource/
+reference schemas. These are declarative design requirements, not code.
 
-The design is consistent with the listed frozen scientific requirements only
-under CHANGE_CONTROL.md's conservative guards. Thresholds, sample, denominators,
-traceability, zero silent loss, source/knowledge clocks, arm fairness and original
-50-filing single-repair stop stay unchanged. That exact original stop is ADR001
-§8 line277; V2's extra P0-A engineering cycle does not amend it. Any departure
-identified by implementation/review must STOP before dependent processing and
-name the required versioned engineering/scientific amendment.
+The known period at original text bytes[362932,362933), element[362751,362940),
+has local contrast HIDDEN_CONTRAST under the chosen white backdrop. Historical
+visibility remains UNKNOWN. No punctuation is normalized away, no span-specific
+bypass is added, and unknown ancestor composition still blocks final admission.
+The undefined-canvas design question is resolved without claiming actual extraction.
 
-The future authorization must specify: one implementation scope/profile freeze,
-synthetic/adversarial qualification with valid provenance controls, independent
-code/evidence review, full required CI, one original complete-submission replay,
-resource/stage/exclusion measurements and first-failure stop. It must reconcile
-the existing repair count: PR47 implemented one cycle, V2 stopped before another;
-this design consumes no implementation/replay allowance. No automatic third
-repair, direct-primary sanitization, research inference or scientific audit run.
+The proposed processing semantics can remain consistent with frozen scientific
+requirements under CHANGE_CONTROL.md's strict materiality/denominator guards:
+no accepted material omission, reference-oracle shrink, sample replacement,
+threshold change, source/time inference or arm-specific filtering. Ambiguous
+visibility anywhere and unresolved hidden narrative remain failed/incomplete.
+The contract does not itself authorize applying the new view to a scientific arm.
 
-If any normative predicate cannot be established, return NO-GO for that finite
-implementation rather than weakening the contract, growing a layout engine or
-selecting another renderer per failing filing. The GO does not promise that the
-authentic filing will prepare successfully or satisfy original P0-A acceptance.
+## Why implementation/replay is NO-GO
 
-Current evidence remains: provenance-verified independent filing coverage1/12;
-authentic MD&A successes0/1; last real processor failureUNSUPPORTED_CSS; proposed
-parser/security profile unimplemented/unqualified; research inference, quality,
-tokens, latency/memory and cost NOT_MEASURED; G4 clocks/source conflicts UNRESOLVED.
-All original/earlier outputs and scientific registrations stay preserved.
+The finite profile still lacks closed, independently checkable composition
+decision procedures for flex defaults/sizing, table painting, relative stacking,
+width/nowrap interaction and the hanging-indent pattern. V1 explicitly returns
+AMBIGUOUS for those cases; it does not delegate invention of acceptance rules to
+an implementer. The retained authentic source uses these constructs, so coding
+V1 now would knowingly fail its admission gate. No new parser patch or authentic
+replay should be authorized from this packet alone.
 
-Design-only validation consists of artifact/policy/source bindings, document
-consistency and independent review. No parser implementation, authentic scan or
-replay, test-matrix execution, model research inference, SEC/market/broker request,
-credentials, external expenditure or PR merge. Public renderer source/docs were
-read through the existing GitHub connector at a fixed revision. External spend$0.
+Recommend completing a finite non-rendering semantic profile first, keeping the
+existing mapper/store. This is a design direction, not implementation readiness.
+Pinned WeasyPrint70.0 source comparison shows broader layout support but requires
+strict unsupported-CSS, fetching, source-map and deterministic dependency/font
+qualification. ADR001 §8 lines296–298 expressly prohibit rendering untrusted
+documents: an authentic rendering alternative needs an explicit reviewed amendment
+to that protected rule before use. No browser is assumed necessary, installed or run.
 
-One author and one fresh independent reviewer. Requested reviewer preset
-gpt-6.1-sol/high; actual serving model/effort unavailable unless verifiable in its
-receipt. Included model review is not human or qualified cross-provider review.
-CI on any documentation PR is separately labelled repository regression only,
-not validation that the contract is implemented or that authentic extraction works.
+## Next bounded decision and authorization boundary
+
+1. Specify exact finite layout/context/composition procedures and independently
+   expected positive/negative oracles, or retain NO-GO if this needs a general
+   layout engine. Reuse this inventory; no new source scan is needed.
+2. Recheck those rules against complete-extraction, materiality, zero-silent-loss
+   and no-render requirements. Stop before any scientific/security departure;
+   CHANGE_CONTROL.md identifies exact governing clauses/amendment triggers.
+3. Only after a reviewed implementation-ready design exists, seek a separate
+   bounded implementation/one-replay authorization with required code/evidence
+   review, tests/CI, resource/stage measurements and first-failure stop.
+
+PR47 implemented one authentic engineering cycle; V2 stopped before another;
+this design spends/resets none. The original scientific50-filing single-repair
+rule is ADR001 §8 line277 and is not amended by V2's extra P0-A engineering cycle.
+No automatic third repair, direct-primary sanitization, renderer fallback,
+research inference or scientific audit run is authorized.
+
+Current evidence stays: independent authentic coverage1/12; successful authentic
+MD&A0/1; last actual processor failureUNSUPPORTED_CSS; parser/security profile
+unimplemented/unqualified; actual research inference/quality/tokens/latency/cost
+NOT_MEASURED; G4 clocks/source conflicts UNRESOLVED. Full required acceptance is
+unchanged and unmet. Original evidence/registrations and PR47/dependencies remain
+preserved/unmerged.
+
+One author and one independent design reviewer; requested preset gpt-6.1-sol/high,
+actual serving model/effort unavailable, no human/cross-provider qualification.
+Review receipts are recorded in the documentation PR conversation and local
+artifact bundle. Initial design-GO overclaim was rejected in independent review
+and corrected here; earlier commit/receipt remain preserved.
+
+No test-matrix execution, parser implementation, source rescan, authentic replay,
+research inference, SEC/market/broker request, credentials, expenditure or merge.
+Public renderer source/docs were read via the existing connector at a pinned
+revision. Any documentation CI is ordinary repository regression evidence only,
+not execution or qualification of this contract. External spend$0.

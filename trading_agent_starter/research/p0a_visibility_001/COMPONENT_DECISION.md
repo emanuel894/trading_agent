@@ -4,8 +4,10 @@
 existing source mapper, strict document/provenance checks and EvidenceStore.
 Consider a maintained CSS tokenizer behind the strict profile where it replaces
 fragile lexical code. Do not implement a general CSS layout engine. WeasyPrint
-is a maintained rendering challenger for a separately authorized comparison if
-the finite profile's compositional proof fails; it is not an automatic fallback.
+is a maintained rendering candidate for documentary comparison, not an automatic
+fallback. ADR001 §8 lines296–298 currently forbid rendering untrusted documents;
+using authentic filings in such a backend requires an explicit reviewed security/
+scientific change-control exception, not merely engineering configuration.
 
 ## Measured/static evidence and limits
 
@@ -50,14 +52,15 @@ dependency count;370 source values is not the count of semantic proof obligation
 
 ## Future choice gate
 
-A separately authorized implementer should freeze the finite grammar/context
-policy and demonstrate the matrix and document-wide composition predicates before
-the single authentic replay. An established CSS tokenizer such as tinycss2 may
+**NO-GO for implementation/replay now:** a next reviewed design must first specify
+finite grammar/context and composition decision procedures. Contract1.0.0 blocks
+unspecified layout as AMBIGUOUS; the observed source uses those constructs.
+An established CSS tokenizer such as tinycss2 may
 parse syntax; it cannot turn unsupported values into accepted semantics. No new
 dependency is approved or installed by this design recommendation.
 
-If sound finite classification cannot be demonstrated within that bounded scope,
-stop and return NO-GO for that implementation. Then propose one maintained-engine
-comparison with pinned environment/font/resource policies and original-byte-map
-oracles. A renderer does not remove the need for the canonical viewing contract,
-scientific change-control check or independent extraction validation.
+If sound finite classification cannot be specified within a bounded extension,
+retain NO-GO. A maintained-engine proposal must reconcile the protected no-render
+rule before authentic rendering, plus pin environment/font/resource policies and
+original-byte-map oracles. A renderer does not remove the need for the canonical
+contract, scientific change control or independent extraction validation.
