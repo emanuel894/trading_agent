@@ -86,6 +86,12 @@ slice hashes and exact original offsets through the existing read-only evidence
 path. No source rewriting, injected text/IDs, script removal or hidden-fact
 substitution is part of the route.
 
+Use only the named `HTML(string=...)` input with strict UTF-8 validation/decoding,
+explicit screen media, deny-all fetcher and `base_url=None`; never positional
+guessing or filename/URL/file-object entry points. Source base elements are
+unsupported and rejected before invocation. These are proposed settings from
+the inspected API, not a runtime-verified constructor call.
+
 **Bridge requirements, tested before adoption:**
 
 1. Keep the existing source token/entity map authoritative. Bind engine DOM
