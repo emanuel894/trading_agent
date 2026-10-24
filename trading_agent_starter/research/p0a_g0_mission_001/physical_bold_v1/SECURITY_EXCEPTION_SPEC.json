@@ -1,0 +1,16 @@
+{
+  "PR50_gate_reference_sha256": "ca34e694e05c4089d849dacf17723113f0066033c405fa659dab94f00380b37b",
+  "active": false,
+  "contract_sha256": "bbd9441a78322ef1a81ff3808a6864b109c4d740711466468358e1be04552cee",
+  "expected_proposed_target_sha256": "def37acfdcf6dc203e65cd975a96ae17b1ced3e1e2374e2ad03c4549503d665b",
+  "fontconfig_sha256": "b13d9df6c21100198790eb63f9b4e0a8a4020687fdb0e9382326e8dd4e85b106",
+  "fonts_catalog_sha256": "5259200d252c518adf767d3cbb654a5e18dfd20a246c8cabd05d0aef027eece4",
+  "oracle_definitions_sha256": "9810756eb3fed23c455d30a407c7b99189cd8c44aa28a3fa4715e8920561957c",
+  "original_bytes_preserved": true,
+  "owner_acceptance": false,
+  "patch_sha256": "d49a0dea3972208e98d6244cbc28dea7cc0b766cc80f3e092cc89bc1192b2a35",
+  "scientific_criteria_changed": false,
+  "status": "UNAPPLIED_INACTIVE_ALTERNATIVE_TO_PR54_NOT_CUMULATIVE",
+  "target_original_ADR_sha256": "8e550b45447c616138704715f2de4424c392bacc0d4b7939aa077a72657b3641",
+  "worker_spec_sha256": "8a2b28837dee51e574b3d490ae79aed17eba39688e4cd59599620c9bb2641f4e"
+}

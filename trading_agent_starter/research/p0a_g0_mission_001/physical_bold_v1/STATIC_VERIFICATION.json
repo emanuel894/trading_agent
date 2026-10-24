@@ -1,0 +1,14 @@
+{
+  "result": "PASS_STATIC_ONLY",
+  "head": "7c761456d0175824976bd7c36e591e135082e4b9",
+  "protected_inputs": 32,
+  "evidence_hashes": 24,
+  "immutable_files": 15,
+  "denial_definitions": 30,
+  "maximum_variants": 64,
+  "maximum_worker_invocations": 102,
+  "font_files_in_git": 0,
+  "native_or_layout_or_security_execution": false,
+  "checks": "hashes/source sizes modes; XML syntax only; pin counts; fresh-worker accounting; UTF8 spans; exact rational geometry; inactive cross-bindings; changed-path scope",
+  "verifier_sha256": "d67ca9e1fab2d02657599e7047217ce7cb6b011c6e35675cb7753de5c0b55ead"
+}

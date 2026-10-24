@@ -1,0 +1,114 @@
+<fontconfig>
+  <dir>/opt/p0a/fonts</dir>
+  <cachedir>/opt/p0a/font-cache</cachedir>
+  <match target="pattern">
+    <test name="family" compare="eq" qual="any">
+      <string>Times New Roman</string>
+    </test>
+    <edit name="family" mode="assign_replace" binding="strong">
+      <string>Liberation Serif</string>
+    </edit>
+  </match>
+  <match target="pattern">
+    <test name="family" compare="eq" qual="any">
+      <string>Arial Narrow</string>
+    </test>
+    <edit name="family" mode="assign_replace" binding="strong">
+      <string>Liberation Sans Narrow</string>
+    </edit>
+  </match>
+  <match target="pattern">
+    <test name="family" compare="eq" qual="any">
+      <string>Calibri</string>
+    </test>
+    <edit name="family" mode="assign_replace" binding="strong">
+      <string>Carlito</string>
+    </edit>
+  </match>
+  <match target="pattern">
+    <test name="family" compare="eq" qual="any">
+      <string>Segoe UI Symbol</string>
+    </test>
+    <test name="weight" compare="eq" qual="any">
+      <const>regular</const>
+    </test>
+    <test name="slant" compare="eq" qual="any">
+      <const>roman</const>
+    </test>
+    <edit name="family" mode="assign_replace" binding="strong">
+      <string>Noto Sans Symbols 2</string>
+    </edit>
+  </match>
+  <match target="pattern">
+    <test name="family" compare="eq" qual="any">
+      <string>Segoe UI Symbol</string>
+    </test>
+    <test name="weight" compare="eq" qual="any">
+      <const>bold</const>
+    </test>
+    <test name="slant" compare="eq" qual="any">
+      <const>roman</const>
+    </test>
+    <edit name="family" mode="assign_replace" binding="strong">
+      <string>DejaVu Sans</string>
+    </edit>
+  </match>
+  <match target="pattern">
+    <edit name="embolden" mode="assign">
+      <bool>false</bool>
+    </edit>
+    <edit name="hinting" mode="assign">
+      <bool>false</bool>
+    </edit>
+    <edit name="autohint" mode="assign">
+      <bool>false</bool>
+    </edit>
+    <edit name="embeddedbitmap" mode="assign">
+      <bool>false</bool>
+    </edit>
+    <edit name="antialias" mode="assign">
+      <bool>true</bool>
+    </edit>
+    <edit name="hintstyle" mode="assign">
+      <const>hintnone</const>
+    </edit>
+    <edit name="rgba" mode="assign">
+      <const>none</const>
+    </edit>
+    <edit name="lcdfilter" mode="assign">
+      <const>lcdnone</const>
+    </edit>
+    <edit name="dpi" mode="assign">
+      <double>96</double>
+    </edit>
+  </match>
+  <match target="font">
+    <edit name="embolden" mode="assign">
+      <bool>false</bool>
+    </edit>
+    <edit name="hinting" mode="assign">
+      <bool>false</bool>
+    </edit>
+    <edit name="autohint" mode="assign">
+      <bool>false</bool>
+    </edit>
+    <edit name="embeddedbitmap" mode="assign">
+      <bool>false</bool>
+    </edit>
+    <edit name="antialias" mode="assign">
+      <bool>true</bool>
+    </edit>
+    <edit name="hintstyle" mode="assign">
+      <const>hintnone</const>
+    </edit>
+    <edit name="rgba" mode="assign">
+      <const>none</const>
+    </edit>
+    <edit name="lcdfilter" mode="assign">
+      <const>lcdnone</const>
+    </edit>
+    <edit name="dpi" mode="assign">
+      <double>96</double>
+    </edit>
+  </match>
+</fontconfig>

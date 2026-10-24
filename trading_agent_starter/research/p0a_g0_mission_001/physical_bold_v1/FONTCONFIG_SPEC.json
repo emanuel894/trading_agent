@@ -1,0 +1,50 @@
+{
+  "CSS_to_Pango_to_Fontconfig_weights": {
+    "400": {
+      "Fontconfig": 80,
+      "const": "regular",
+      "pango": 400
+    },
+    "700": {
+      "Fontconfig": 200,
+      "const": "bold",
+      "pango": 700
+    }
+  },
+  "XML_validation": "Python ElementTree well-formed/noinclude/DTD checked only; not proof Fontconfig accepted or applied",
+  "admission_before_component": "Only existing registered sourcefamily/weight/style/stretch vocabulary, exactfamilylist and typedCSS; no unsupported weights/style/families/glyphs. Literal generic sans-serif suffix is not fallback permission. No document font/URL/local fontface.",
+  "catalog_sha256": "5259200d252c518adf767d3cbb654a5e18dfd20a246c8cabd05d0aef027eece4",
+  "config_file": "fonts.conf.proposed",
+  "config_sha256": "b13d9df6c21100198790eb63f9b4e0a8a4020687fdb0e9382326e8dd4e85b106",
+  "environment_rule": "Clear inherited environment, preserve only reviewed whitelist plus exact runtime library path; no credentials/proxies/userHome/plugin paths. Environment manifest bytes must be hashed before use.",
+  "font_directories": "Only14 exactfiles in private path; no system/hostfonts, no defaultconfigincludes, private read-only hashlisted cache generated beforeisolation under separately authorized preparation. Any cachemiss/writewarning/alternateface fails; no live fontdiscovery/fallback.",
+  "preparation_not_executed": [
+    "Fontconfig XML semantic parse",
+    "nativeweight conversion",
+    "face selection for14logicalmap requests",
+    "privatecachegeneration/manifest",
+    "resolvedHBfaceblob equality/index/glyphid checks",
+    "nohostfallback proving"
+  ],
+  "private_hosting": "No font-bearing upload/export/registrypush/shared image. Actual owner/operator/transfer legal boundary must be verified before authorized staging; source-binarybuildcorrespondence and Narrowredistribution remain unresolved.",
+  "runtime_config_path": "/opt/p0a/profile/fonts.conf",
+  "runtime_environment": {
+    "FONTCONFIG_FILE": "/opt/p0a/profile/fonts.conf",
+    "FONTCONFIG_PATH": "/opt/p0a/profile/empty",
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONHASHSEED": "0",
+    "TZ": "UTC",
+    "XDG_CACHE_HOME": "/opt/p0a/font-cache",
+    "XDG_CONFIG_HOME": "/nonexistent"
+  },
+  "source_families": {
+    "Arial Narrow": "Liberation Sans Narrow exact4faces",
+    "Calibri": "Carlito exact4faces",
+    "Segoe UI Symbol400normal": "NotoSansSymbols2Regular",
+    "Segoe UI Symbol700normal": "DejaVuSansBold",
+    "Times New Roman": "Liberation Serif exact4faces"
+  },
+  "status": "SPECIFIED_ONLY_UNEXECUTED"
+}

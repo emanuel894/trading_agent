@@ -1,0 +1,11 @@
+{
+  "checkpoint": "CP2_STATIC_SPEC_ONLY",
+  "python_pins": 13,
+  "native_payload_candidates": 26,
+  "native_signed_index_verified": true,
+  "native_dependency_constraints_checked": 56,
+  "payloads_downloaded_or_executed": false,
+  "Fontconfig_XML_semantics_or_selection": "NOT_RUN",
+  "actual_ELF_ABI_licenses_cache_finalOCI": "NOT_VERIFIED",
+  "verbatim_license_whitespace": "Original DejaVuLICENSE line77 has trailing space; preserved exact source bytes intentionally. Other authored files diffcheck normally."
+}

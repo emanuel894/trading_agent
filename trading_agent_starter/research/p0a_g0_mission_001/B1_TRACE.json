@@ -1,0 +1,200 @@
+{
+  "B1": "BLOCKED",
+  "binding_status": "NOT_ESTABLISHED_IN_EXAMINED_MAINTAINED_ROUTES",
+  "decision": "TECHNICAL_DECISION_REQUIRED",
+  "execution_authorization_request": null,
+  "independent_expectations": {
+    "negative_decisions": {
+      "CSS700_or_family_alias_only": "REJECT_AS_B1_EVIDENCE",
+      "FcEmbolden_without_consuming_supported_backend_binding": "REJECT_AS_B1_EVIDENCE",
+      "Regular_cmap_coverage_or_unmodified_face_blob_as_Bold": "REJECT_AS_B1_EVIDENCE",
+      "invented_1_24em_stroke_or_bbox_inflation": "PROHIBITED_NOT_AN_ORACLE",
+      "switch_painter_or_ad_hoc_modify_engine_hb_font_after_shaping_or_unsupported_hook": "NOT_AUTHORIZED_RESCUE",
+      "unknown_bold_ink_even_outside_MDA": "AMBIGUOUS_WHOLE_DOCUMENT_REJECT"
+    },
+    "not_runtime_test_results": true,
+    "positive_requirements_not_satisfied": [
+      "selected physical file SHA256 and face index must match, with source style preserved",
+      "CSS700 must have an explicit supported native bold mechanism/parameters bound before shaping/metric use; no Regular-for-Bold acceptance",
+      "independent expected advance/ink/paint bounds and source-cluster mapping for U+2610/U+2612, then material-visibility oracles within frozen PR50 gate"
+    ]
+  },
+  "layout_and_material_visibility": "NOT_MEASURED_NOT_QUALIFIED",
+  "mission_id": "P0A-G0-MISSION-001",
+  "native_emboldening_parameters": null,
+  "physical_face_guard_spec": {
+    "actual_selection_guard_executed": false,
+    "bold_request_acceptance": "BLOCKED_UNTIL_POSITIVE_SUPPORTED_BINDING_AND_ORACLES",
+    "bold_requests": 2,
+    "codepoints": [
+      "U+2610",
+      "U+2612"
+    ],
+    "face_index": 0,
+    "family": "Noto Sans Symbols 2",
+    "file_sha256": "7d5fb73b7ca67a6798101741f5d280a3d016a56a197afcd4199dbb57b4b82a21",
+    "regular_requests": 12,
+    "style": "Regular",
+    "variable_axes": [],
+    "version": "Version 2.008; ttfautohint (v1.8.4.7-5d5b)"
+  },
+  "scope_limit": "Not a proof of universal absence in every native version or future supported engine. No alternate runtime/version was approved. Positive exact binding required by CP1 was not obtained.",
+  "smallest_technical_decision": "Owner may separately authorize an explicit physical-Bold open-font mapping for these two source requests under versioned contract/license/coverage/scientific-security review; otherwise provide a maintained supported synthetic-bold binding/engine path compatible with fixed gate. Neither is authorized or investigated here.",
+  "trace": [
+    {
+      "excerpt_sha256": "30b6023484c075dc4ae6823ae005d0886e14b069197bfdcd8ec9ed20b1422d53",
+      "fact": "FontConfiguration uses pango_ft2_font_map_new and pango_fc_font_map_set_config; this is the relevant backend, not a Cairo paint route.",
+      "id": "W1",
+      "lines": [
+        92,
+        105
+      ],
+      "source": "weasyprint__text__fonts.py.txt",
+      "source_sha256": "59d74d0c161349b8416f1d13466e16dd47c1161f0a397ff1e4ca70814eb36091"
+    },
+    {
+      "excerpt_sha256": "85734b8947b9bf64ef27ff11d8f5355db76a2ae8efc9a6fed925dc9e2a1056ce",
+      "fact": "get_font_description passes computed font_weight into pango_font_description_set_weight. A request is not evidence of synthetic bold.",
+      "id": "W2",
+      "lines": [
+        327,
+        348
+      ],
+      "source": "weasyprint__text__fonts.py.txt",
+      "source_sha256": "59d74d0c161349b8416f1d13466e16dd47c1161f0a397ff1e4ca70814eb36091"
+    },
+    {
+      "excerpt_sha256": "d0debb2f6b69003268dc0f1c88622d77c3132e7dae1b390b448d334d193fce9d",
+      "fact": "Complete create_hb_font builds from mapped hb_face, sets scale/ptem, conditional synthetic slant and variable coordinates. No bold setup or embolden property consumption is present in this constructor.",
+      "id": "P1",
+      "lines": [
+        967,
+        1080
+      ],
+      "source": "pango__pangofc-font.c.txt",
+      "source_sha256": "9ab7a45e0416ceb83844033f3d1de05b00b5d8bd81f72a799c93ccd5532bae4f"
+    },
+    {
+      "excerpt_sha256": "e477ae83003923085e1896364401046a3e2c302607a7589eb42077fbcd686b4b",
+      "fact": "Raw extents/advance come from pango_font_get_hb_font via hb_font_get_glyph_extents and hb_font_get_glyph_advance_for_direction.",
+      "id": "P2",
+      "lines": [
+        810,
+        866
+      ],
+      "source": "pango__pangofc-font.c.txt",
+      "source_sha256": "9ab7a45e0416ceb83844033f3d1de05b00b5d8bd81f72a799c93ccd5532bae4f"
+    },
+    {
+      "excerpt_sha256": "fca781524007ad278079defe00639b844b77c8bf7a132d9a9bea59d1fafd424d",
+      "fact": "Face initialization handles antialias/hint/autohint, file/index, transform and size. This examined path does not bind an embolden parameter.",
+      "id": "P3",
+      "lines": [
+        171,
+        261
+      ],
+      "source": "pango__pangoft2.c.txt",
+      "source_sha256": "93d84ecbe8e96c9b7b4b4d077fd3d76fa612fc0c347065a56a4e00bcd8a5623c"
+    },
+    {
+      "excerpt_sha256": "0a0d7245b01020c968161a6810f9c42dccecf05363d32c77a0a1fee2bfc321c5",
+      "fact": "FT2 glyph-info/extents dispatch uses pango_fc_font_get_raw_extents for ordinary glyphs; caching/unknown-glyph handling supplies no missing bold binding.",
+      "id": "P4",
+      "lines": [
+        285,
+        389
+      ],
+      "source": "pango__pangoft2.c.txt",
+      "source_sha256": "93d84ecbe8e96c9b7b4b4d077fd3d76fa612fc0c347065a56a4e00bcd8a5623c"
+    },
+    {
+      "excerpt_sha256": "b068770dfa38081a07ddd96784e00fd629b8f69b66179d7b4be3dca209733196",
+      "fact": "Separate FT2 bitmap route loads/renders the glyph; it is not the path used by Weasy draw/text. Capability in another painter would not establish matching engine ink.",
+      "id": "P5",
+      "lines": [
+        215,
+        235
+      ],
+      "source": "pango__pangoft2-render.c.txt",
+      "source_sha256": "5a7bdeefe3eadf027fda2438b3e44a4de2d2e283f8c9f997b4015545ec51ea00"
+    },
+    {
+      "excerpt_sha256": "8df2de7db4c7095dd173a5e9545b1cd36aba07013d15f92472d976e86190c03c",
+      "fact": "Additional maintained snapshot constructor still exposes scale/ptem/slant/axes in the examined route, without a synthetic-bold binding. Snapshot is a comparison, not a selected runtime.",
+      "id": "M1",
+      "lines": [
+        937,
+        1056
+      ],
+      "source": "pango_current__pangofc-font.c.txt",
+      "source_sha256": "732b80b9f4faafc239479447407eff1b0df1fa93288f5e49ca456c4b593d8e7b"
+    },
+    {
+      "excerpt_sha256": "0a0d7245b01020c968161a6810f9c42dccecf05363d32c77a0a1fee2bfc321c5",
+      "fact": "Additional maintained snapshot extents path retains the raw-extents dispatch; no new runtime was approved.",
+      "id": "M2",
+      "lines": [
+        280,
+        384
+      ],
+      "source": "pango_current__pangoft2.c.txt",
+      "source_sha256": "2c365b79559d4e1ff490c7a425e7ee46e84d7138405092578dfd232da775124b"
+    },
+    {
+      "excerpt_sha256": "431267c559a137f4040bcb997428a1e543fab813ffcbfc7f1cdd6373a18a4379",
+      "fact": "hb_face/blob extraction does not transform a static Regular physical face into Bold.",
+      "id": "W3",
+      "lines": [
+        351,
+        383
+      ],
+      "source": "weasyprint__text__fonts.py.txt",
+      "source_sha256": "59d74d0c161349b8416f1d13466e16dd47c1161f0a397ff1e4ca70814eb36091"
+    },
+    {
+      "excerpt_sha256": "59ee3d63bfa72e7fbbd0f7b0be5c9d16e5d9b4228576fa2ea680b9a9ac7bfa0a",
+      "fact": "Font retains physical hb_face bytes and weight metadata; weight is not an emboldened outline.",
+      "id": "W4",
+      "lines": [
+        22,
+        43
+      ],
+      "source": "weasyprint__pdf__fonts.py.txt",
+      "source_sha256": "f92f40fd1df67d7b100929c4871cb16ee2ae19eac04b3b063aa902457734e08e"
+    },
+    {
+      "excerpt_sha256": "3230a813b9b80c54137f4cdf970c0c24ab7dd82da6780e560d3c49acf3c8c9e1",
+      "fact": "Variable-axis instantiation is not applicable to selected static Symbols2 with no variable axes.",
+      "id": "W5",
+      "lines": [
+        141,
+        172
+      ],
+      "source": "weasyprint__pdf__fonts.py.txt",
+      "source_sha256": "f92f40fd1df67d7b100929c4871cb16ee2ae19eac04b3b063aa902457734e08e"
+    },
+    {
+      "excerpt_sha256": "e4226e111747721713ef1a513ba39542ac767bf32f354a18da2207b0ddf44787",
+      "fact": "Stream creates the Font wrapper from the Pango font; no separate bold binding is established here.",
+      "id": "W6",
+      "lines": [
+        184,
+        188
+      ],
+      "source": "weasyprint__pdf__stream.py.txt",
+      "source_sha256": "7339e70c4a947d835d3ab4d60bcae4dff84f6a18850fa1df48dbc1cecdbc2faa"
+    },
+    {
+      "excerpt_sha256": "5f7b555ad6c760e3cd313f351f6aeb8f8dea2e90a1801b429f075a96128536f6",
+      "fact": "Draw path obtains glyph IDs, metrics and extents and writes to its stream. This is corroboration only: gate prohibits PDF export and primary blocker already exists on geometry-only path.",
+      "id": "W7",
+      "lines": [
+        142,
+        235
+      ],
+      "source": "weasyprint__draw__text.py.txt",
+      "source_sha256": "e6f69c63e8924560eba1ec690aa8b84315b3be227af1ddd72c394f08d279c8d5"
+    }
+  ],
+  "why_no_execution_request": "Installing/running the current candidate would not supply the missing supported binding without a technical choice. Do not spend a synthetic-gate attempt to discover a known unmet entry prerequisite."
+}
