@@ -1,0 +1,141 @@
+{
+  "comparator_native_approved": false,
+  "current_snapshot_native_approved": false,
+  "full_native_lock": "NOT_ESTABLISHED",
+  "mission_id": "P0A-G0-MISSION-001",
+  "pango_references": {
+    "approved_runtime": false,
+    "commit": "3d3f165e77178b630d7dc2b733e64af513c99f5f",
+    "maintained_snapshot_commit": "68e981d243d50e03f3df12fb400f31647ef570d2",
+    "tag": "1.50.12",
+    "tag_object_sha": "21547020b8f65004937bc291bb3bf727a36d6ac7",
+    "tag_verified": false
+  },
+  "previous_font_inventory_reused": true,
+  "source_texts_executed": false,
+  "sources": [
+    {
+      "bytes": 17942,
+      "cache_path": "/workspace/p0a-g0-mission-001/upstream/weasyprint__text__fonts.py.txt",
+      "commit": "7e2dda0d7833916d2698c35e707bc80ddea1ed24",
+      "id": "weasyprint__text__fonts.py.txt",
+      "repository": "Kozea/WeasyPrint",
+      "scope": "SOURCE_TEXT_INSPECTION_ONLY_NOT_NATIVE_RUNTIME_APPROVAL",
+      "sha256": "59d74d0c161349b8416f1d13466e16dd47c1161f0a397ff1e4ca70814eb36091",
+      "upstream_path": "weasyprint/text/fonts.py",
+      "url": "https://raw.githubusercontent.com/Kozea/WeasyPrint/7e2dda0d7833916d2698c35e707bc80ddea1ed24/weasyprint/text/fonts.py"
+    },
+    {
+      "bytes": 19882,
+      "cache_path": "/workspace/p0a-g0-mission-001/upstream/weasyprint__text__ffi.py.txt",
+      "commit": "7e2dda0d7833916d2698c35e707bc80ddea1ed24",
+      "id": "weasyprint__text__ffi.py.txt",
+      "repository": "Kozea/WeasyPrint",
+      "scope": "SOURCE_TEXT_INSPECTION_ONLY_NOT_NATIVE_RUNTIME_APPROVAL",
+      "sha256": "530e83118f7841d2791678ece23d5e43a7a24150ee1ea64bb4ba70c70b3eb5da",
+      "upstream_path": "weasyprint/text/ffi.py",
+      "url": "https://raw.githubusercontent.com/Kozea/WeasyPrint/7e2dda0d7833916d2698c35e707bc80ddea1ed24/weasyprint/text/ffi.py"
+    },
+    {
+      "bytes": 28741,
+      "cache_path": "/workspace/p0a-g0-mission-001/upstream/weasyprint__pdf__fonts.py.txt",
+      "commit": "7e2dda0d7833916d2698c35e707bc80ddea1ed24",
+      "id": "weasyprint__pdf__fonts.py.txt",
+      "repository": "Kozea/WeasyPrint",
+      "scope": "SOURCE_TEXT_INSPECTION_ONLY_NOT_NATIVE_RUNTIME_APPROVAL",
+      "sha256": "f92f40fd1df67d7b100929c4871cb16ee2ae19eac04b3b063aa902457734e08e",
+      "upstream_path": "weasyprint/pdf/fonts.py",
+      "url": "https://raw.githubusercontent.com/Kozea/WeasyPrint/7e2dda0d7833916d2698c35e707bc80ddea1ed24/weasyprint/pdf/fonts.py"
+    },
+    {
+      "bytes": 12421,
+      "cache_path": "/workspace/p0a-g0-mission-001/upstream/weasyprint__pdf__stream.py.txt",
+      "commit": "7e2dda0d7833916d2698c35e707bc80ddea1ed24",
+      "id": "weasyprint__pdf__stream.py.txt",
+      "repository": "Kozea/WeasyPrint",
+      "scope": "SOURCE_TEXT_INSPECTION_ONLY_NOT_NATIVE_RUNTIME_APPROVAL",
+      "sha256": "7339e70c4a947d835d3ab4d60bcae4dff84f6a18850fa1df48dbc1cecdbc2faa",
+      "upstream_path": "weasyprint/pdf/stream.py",
+      "url": "https://raw.githubusercontent.com/Kozea/WeasyPrint/7e2dda0d7833916d2698c35e707bc80ddea1ed24/weasyprint/pdf/stream.py"
+    },
+    {
+      "bytes": 32893,
+      "cache_path": "/workspace/p0a-g0-mission-001/upstream/pango__pangofc-font.c.txt",
+      "commit": "3d3f165e77178b630d7dc2b733e64af513c99f5f",
+      "id": "pango__pangofc-font.c.txt",
+      "repository": "GNOME/pango",
+      "scope": "SOURCE_TEXT_INSPECTION_ONLY_NOT_NATIVE_RUNTIME_APPROVAL",
+      "sha256": "9ab7a45e0416ceb83844033f3d1de05b00b5d8bd81f72a799c93ccd5532bae4f",
+      "upstream_path": "pango/pangofc-font.c",
+      "url": "https://raw.githubusercontent.com/GNOME/pango/3d3f165e77178b630d7dc2b733e64af513c99f5f/pango/pangofc-font.c"
+    },
+    {
+      "bytes": 14618,
+      "cache_path": "/workspace/p0a-g0-mission-001/upstream/pango__pangoft2.c.txt",
+      "commit": "3d3f165e77178b630d7dc2b733e64af513c99f5f",
+      "id": "pango__pangoft2.c.txt",
+      "repository": "GNOME/pango",
+      "scope": "SOURCE_TEXT_INSPECTION_ONLY_NOT_NATIVE_RUNTIME_APPROVAL",
+      "sha256": "93d84ecbe8e96c9b7b4b4d077fd3d76fa612fc0c347065a56a4e00bcd8a5623c",
+      "upstream_path": "pango/pangoft2.c",
+      "url": "https://raw.githubusercontent.com/GNOME/pango/3d3f165e77178b630d7dc2b733e64af513c99f5f/pango/pangoft2.c"
+    },
+    {
+      "bytes": 3468,
+      "cache_path": "/workspace/p0a-g0-mission-001/upstream/pango__pangoft2-private.h.txt",
+      "commit": "3d3f165e77178b630d7dc2b733e64af513c99f5f",
+      "id": "pango__pangoft2-private.h.txt",
+      "repository": "GNOME/pango",
+      "scope": "SOURCE_TEXT_INSPECTION_ONLY_NOT_NATIVE_RUNTIME_APPROVAL",
+      "sha256": "1629ab5c323c8e1f3457f56e46df765b3b11f7ad18757697292a6bf0332a60b2",
+      "upstream_path": "pango/pangoft2-private.h",
+      "url": "https://raw.githubusercontent.com/GNOME/pango/3d3f165e77178b630d7dc2b733e64af513c99f5f/pango/pangoft2-private.h"
+    },
+    {
+      "bytes": 20807,
+      "cache_path": "/workspace/p0a-g0-mission-001/upstream/pango__pangoft2-render.c.txt",
+      "commit": "3d3f165e77178b630d7dc2b733e64af513c99f5f",
+      "id": "pango__pangoft2-render.c.txt",
+      "repository": "GNOME/pango",
+      "scope": "SOURCE_TEXT_INSPECTION_ONLY_NOT_NATIVE_RUNTIME_APPROVAL",
+      "sha256": "5a7bdeefe3eadf027fda2438b3e44a4de2d2e283f8c9f997b4015545ec51ea00",
+      "upstream_path": "pango/pangoft2-render.c",
+      "url": "https://raw.githubusercontent.com/GNOME/pango/3d3f165e77178b630d7dc2b733e64af513c99f5f/pango/pangoft2-render.c"
+    },
+    {
+      "bytes": 32550,
+      "cache_path": "/workspace/p0a-g0-mission-001/upstream/pango_current__pangofc-font.c.txt",
+      "commit": "68e981d243d50e03f3df12fb400f31647ef570d2",
+      "id": "pango_current__pangofc-font.c.txt",
+      "repository": "GNOME/pango",
+      "scope": "SOURCE_TEXT_INSPECTION_ONLY_NOT_NATIVE_RUNTIME_APPROVAL",
+      "sha256": "732b80b9f4faafc239479447407eff1b0df1fa93288f5e49ca456c4b593d8e7b",
+      "upstream_path": "pango/pangofc-font.c",
+      "url": "https://raw.githubusercontent.com/GNOME/pango/68e981d243d50e03f3df12fb400f31647ef570d2/pango/pangofc-font.c"
+    },
+    {
+      "bytes": 14799,
+      "cache_path": "/workspace/p0a-g0-mission-001/upstream/pango_current__pangoft2.c.txt",
+      "commit": "68e981d243d50e03f3df12fb400f31647ef570d2",
+      "id": "pango_current__pangoft2.c.txt",
+      "repository": "GNOME/pango",
+      "scope": "SOURCE_TEXT_INSPECTION_ONLY_NOT_NATIVE_RUNTIME_APPROVAL",
+      "sha256": "2c365b79559d4e1ff490c7a425e7ee46e84d7138405092578dfd232da775124b",
+      "upstream_path": "pango/pangoft2.c",
+      "url": "https://raw.githubusercontent.com/GNOME/pango/68e981d243d50e03f3df12fb400f31647ef570d2/pango/pangoft2.c"
+    },
+    {
+      "bytes": 12938,
+      "cache_note": "retained UTF8 text; prior source receipt records possible terminal newline addition",
+      "cache_path": "/workspace/p0a-layout-adoption-20261023/upstream/weasyprint__draw__text.py.txt",
+      "commit": "7e2dda0d7833916d2698c35e707bc80ddea1ed24",
+      "id": "weasyprint__draw__text.py.txt",
+      "repository": "Kozea/WeasyPrint",
+      "reused_from_PR50": true,
+      "sha256": "e6f69c63e8924560eba1ec690aa8b84315b3be227af1ddd72c394f08d279c8d5",
+      "upstream_path": "weasyprint/draw/text.py",
+      "url": "https://raw.githubusercontent.com/Kozea/WeasyPrint/7e2dda0d7833916d2698c35e707bc80ddea1ed24/weasyprint/draw/text.py"
+    }
+  ],
+  "tag_files_compared_to_immutable_commit": "ALL4_EQUAL"
+}
