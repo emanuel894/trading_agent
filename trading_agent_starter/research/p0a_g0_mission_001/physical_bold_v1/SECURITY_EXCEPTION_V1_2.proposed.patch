@@ -1,0 +1,81 @@
+--- a/trading_agent_starter/ARCHITECTURE_DECISION_001.md
++++ b/trading_agent_starter/ARCHITECTURE_DECISION_001.md
+@@ -300,3 +300,78 @@
+ an allowlisted strict schema and source-span references. Deterministic validators
+ check identity, period, units, spans and contradictions; failures abstain. No
+ BUY/SELL schema, model escalation or conversational trading agents are added now.
++
++**P0-A synthetic inert-layout qualification exception.** The only exception to
++this paragraph's prohibition on rendering is one separately owner-authorized,
++offline, synthetic-only qualification of WeasyPrint70.0 at revision
++`7e2dda0d7833916d2698c35e707bc80ddea1ed24`. Before any layout invocation, independent
++security review must accept the exact runtime/native/container/font artifact
++hashes and licenses, enforced OS isolation/resource policy, and frozen synthetic
++fixture/oracle manifest; G0 must pass and the owner must then explicitly authorize
++the single gate. The immutable gate contract is PR50 head
++`f812f2afb5b94fd3be2f40f1bd38454c72cfda47`,
++`research/p0a_layout_adoption_001/OWNER_DECISION.md` section4, SHA256
++`ca34e694e05c4089d849dacf17723113f0066033c405fa659dab94f00380b37b`.
++Its16 positive/16 adversarial families, independent oracles, original-byte mapping,
++resource ceilings, aggregate budget, and no-repair rule may not be weakened.
++
++The only candidate physical-font assumptions are the existing13 files plus the
++one genuine physical Bold candidate specified in the proposed V1.2 catalog,
++`research/p0a_g0_mission_001/physical_bold_v1/FONT_CATALOG.proposed.json`, SHA256
++`5259200d252c518adf767d3cbb654a5e18dfd20a246c8cabd05d0aef027eece4`,
++and proposed contract `p0a-canonical-visibility-1.2.0-physical-bold-proposed`,
++`research/p0a_g0_mission_001/physical_bold_v1/CONTRACT_V1_2_PROPOSED.md`, SHA256
++`bbd9441a78322ef1a81ff3808a6864b109c4d740711466468358e1be04552cee`.
++Before use, owner and independent scientific/security review must accept these
++exact processing assumptions and the complete native/configuration manifest.
++They are not historical-display facts or Microsoft/Segoe-font equivalents and
++cannot change scientific extraction criteria or materiality. Preserve original
++family/style/weight declarations, original UTF8 spans and source order; retain
++every hidden/ambiguous run and the independent complete-MDA denominator.
++
++The global admitted Segoe UI Symbol CSS700 normal-style request maps explicitly
++to the pinned DejaVu Sans Bold physical face; CSS400 remains Symbols2 Regular.
++No synthetic bold/slant, alternate file, missing glyph or fallback is permitted.
++A finite catalog is insufficient: validate every selected physicalblob hash,
++face/index/style/glyph/cluster against the exact source request. Any unexpected
++selection, geometry/paint/source uncertainty or unresolved material exclusion
++blocks the whole selected document, including outside MD&A. Dynamic geometry
++must satisfy independent frozen expectations in the unchanged PR50 gate; native
++output cannot supply its own oracle or justify a threshold/denominator change.
++
++Private synthetic preparation does not authorize acquisition or distribution of
++font binaries or font-bearing images. Any later staging of the exact14 existing
++files requires explicit owner authorization and a verified actual non-distributing
++operator/hosting/transfer boundary. Preserve all Bitstream/Arev/OFL/GPL notices;
++Narrow exact-source/redistribution questions remain separately unresolved. No
++license purchase, font modification or alternative engine/runtime is authorized.
++Exact inactive Fontconfig/worker/oracle specification hashes are reviewed inputs,
++not proof of execution. Native artifact/ABI/license/image/cache/UA/code hashes,
++actual isolation/resource denial receipts and complete independent fixture/oracle
++freeze remain G0 requirements. No install/container/probe/layout activity is
++activated by this proposed paragraph or textual review acceptance alone.
++
++Documents remain untrusted data. Reject scripts, handlers, executable URLs,
++active/foreign content and unsupported markup/CSS before
++component invocation, including inside hidden content; never strip, ignore or
++execute active content. Prohibit all document-triggered execution, subprocesses,
++network or local URL fetching, schema/DTD resolution, document-provided fonts and
++following links. Permit only trusted pinned native runtime operations and loading
++preinstalled hash-listed runtime/font files. The worker must be nonroot, secretless,
++without host/evidence mounts or capabilities, with read-only runtime and enforced
++network/PID isolation, socket/exec/fork denial and hard OS CPU/memory/wall-time/
++storage/process limits. No alternate engine/font/runtime or weaker policy may
++substitute for a failed prerequisite. Any attempted fetch, unsupported/recovered
++content, unmapped text/geometry, ambiguous visibility or exhausted limit fails
++closed with an immutable receipt; no truncation, rescue or retry round.
++
++Preserve original bytes, source order, every text/exclusion span, typed passive
++iXBRL controls, whole-document ambiguity rejection and independently verified
++complete MD&A accounting. The existing qualified passive SEC metadata diagnostic
++handling in the referenced contract supplies no general ignored-CSS exception.
++This exception does not change scientific thresholds, denominators, selection,
++materiality, or the original single parser/access repair stopping rule. It permits
++no authentic SEC input/replay, acquisition, research inference, expenditure,
++broker action or merge. Review acceptance and G0 completion alone are not gate
++execution authorization. Authentic use requires its own explicit reviewed
++amendment and authorization; all other prohibitions remain in force.

@@ -1,0 +1,121 @@
+{
+  "HTTP_fetcher_separate_N03": "HTTP HTTPS file data FTP unknown scheme all deny beforeopening; no URLs/code/fonts in candidate; existing PR50 checks retained",
+  "accounting": "Serialize/hash exact trusted test payloads before first execution. Count each once in fixedN15/N16 variants and aggregate600sworkerbudget; no preparatoryrerun/repairround or later oracle adjustment. Kernel/parent denial receipts are independent of candidate output.",
+  "cases": [
+    {
+      "executed": false,
+      "family": "N16",
+      "id": "N16-network",
+      "renderer_invocations": 0,
+      "required_independent_result": "SIGSYS/parentSECURITY_POLICY; nointerface/DNS and0networkrequests",
+      "trusted_stimulus": "socket/connect loopback andinternet"
+    },
+    {
+      "executed": false,
+      "family": "N16",
+      "id": "N16-exec",
+      "renderer_invocations": 0,
+      "required_independent_result": "SIGSYS;0childexec",
+      "trusted_stimulus": "execve andexecveat"
+    },
+    {
+      "executed": false,
+      "family": "N16",
+      "id": "N16-fork",
+      "renderer_invocations": 0,
+      "required_independent_result": "SIGSYS;0childprocess",
+      "trusted_stimulus": "fork/vfork andclone withoutTHREAD"
+    },
+    {
+      "executed": false,
+      "family": "N16",
+      "id": "N16-clone3",
+      "renderer_invocations": 0,
+      "required_independent_result": "ENOSYS; no child; only filteredthreadclone permitted",
+      "trusted_stimulus": "clone3 process/thread requests"
+    },
+    {
+      "executed": false,
+      "family": "N16",
+      "id": "N16-host-read",
+      "renderer_invocations": 0,
+      "required_independent_result": "ENOENT/EACCES; contents never mounted orreturned",
+      "trusted_stimulus": "open designated nonexistent host/evidence/secret canary path"
+    },
+    {
+      "executed": false,
+      "family": "N16",
+      "id": "N16-root-write",
+      "renderer_invocations": 0,
+      "required_independent_result": "EROFS/EACCES; allhashes unchanged",
+      "trusted_stimulus": "write readonly runtime/config/font/cache"
+    },
+    {
+      "executed": false,
+      "family": "N16",
+      "id": "N16-mmap-exec",
+      "renderer_invocations": 0,
+      "required_independent_result": "SIGSYS; no executablemapping",
+      "trusted_stimulus": "mmap/mprotectPROT_EXEC aftertrustedinit"
+    },
+    {
+      "executed": false,
+      "family": "N16",
+      "id": "N16-escape",
+      "renderer_invocations": 0,
+      "required_independent_result": "SIGSYS; no externalstatechange",
+      "trusted_stimulus": "ptrace/process_vm/BPF/mount/setns/io_uring"
+    },
+    {
+      "executed": false,
+      "family": "N15",
+      "id": "N15-wall",
+      "renderer_invocations": 0,
+      "required_independent_result": "parentkills worker tree at20s; FAILwall",
+      "trusted_stimulus": "trusted sleep/boundeddeadlock"
+    },
+    {
+      "executed": false,
+      "family": "N15",
+      "id": "N15-cpu",
+      "renderer_invocations": 0,
+      "required_independent_result": "hard15sCPU/group accounting; worker killed/fails",
+      "trusted_stimulus": "trusted boundedCPUloop"
+    },
+    {
+      "executed": false,
+      "family": "N15",
+      "id": "N15-memory",
+      "renderer_invocations": 0,
+      "required_independent_result": "cgroup1GiB/OOM event; FAILmemory;wholeprocess tree",
+      "trusted_stimulus": "trusted allocation stress"
+    },
+    {
+      "executed": false,
+      "family": "N15",
+      "id": "N15-temp",
+      "renderer_invocations": 0,
+      "required_independent_result": "512MiBtmpfs capENOSPC/FAIL; norootwrite",
+      "trusted_stimulus": "trusted writes to private tmp"
+    },
+    {
+      "executed": false,
+      "family": "N15",
+      "id": "N15-output",
+      "renderer_invocations": 0,
+      "required_independent_result": "parentcap128MiB; fail andkill, nevertruncatedsuccess",
+      "trusted_stimulus": "trusted oversized stdout/stderr"
+    },
+    {
+      "executed": false,
+      "family": "N15",
+      "id": "N15-fdthread",
+      "renderer_invocations": 0,
+      "required_independent_result": "64FD/16task ceilings enforced; FAILresource",
+      "trusted_stimulus": "trustedFD/thread stress"
+    }
+  ],
+  "policy_sha256": "8a2b28837dee51e574b3d490ae79aed17eba39688e4cd59599620c9bb2641f4e",
+  "pre_gate_preparation": "Requires separate explicit owner authorization after acceptedexception; no layout/nativecandidate invocation. These definitions do not clear G0.",
+  "status": "FROZEN_REQUIREMENT_DEFINITIONS_ONLY_NOT_EXECUTED"
+}

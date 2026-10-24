@@ -1,0 +1,162 @@
+{
+  "authentic_materiality": "No authenticMD&A extraction or material-visibility acceptance. Whole-documentuncertainty andindependent complete-MDAreference/denominator controls remain mandatory.",
+  "font_sha256": "a4c5bc453ca281d90ea079e596da7ae0dfeb5777497c29ec254e76d97ff6f890",
+  "four_bold_variants": [
+    {
+      "definition": "two UTF8 source spans3bytes each, sourceorder preserved",
+      "executed": false,
+      "family": "P02",
+      "id": "bold-utf8",
+      "layout_constraints": "A16px glyph origin/baseline is an analytical placed-glyph suboracle; full HTML linebox/placement must be independently frozen and reconciled before execution, not inferred from this minimal string or its engineoutput.",
+      "local_visibility_expectation": "VISIBLE",
+      "source_UTF8": "<html><body><span style=\"font-family:'Segoe UI Symbol';font-weight:700;font-style:normal;font-size:16px;font-kerning:none;color:black\">\u2610\u2612</span></body></html>",
+      "source_sha256": "eb0ebc696b94de25e9fe86c95304be04ef5970f6405e3b4fb2643b223463b91c",
+      "source_spans": [
+        {
+          "codepoint": "U+2610",
+          "end": 138,
+          "start": 135
+        },
+        {
+          "codepoint": "U+2612",
+          "end": 141,
+          "start": 138
+        }
+      ]
+    },
+    {
+      "definition": "nowrap width20px withoverflowvisible;28.6875pxadvance doesnotpermit truncation",
+      "executed": false,
+      "family": "P05",
+      "id": "bold-nowrap",
+      "layout_constraints": "A16px glyph origin/baseline is an analytical placed-glyph suboracle; full HTML linebox/placement must be independently frozen and reconciled before execution, not inferred from this minimal string or its engineoutput.",
+      "local_visibility_expectation": "VISIBLE",
+      "source_UTF8": "<html><body><span style=\"font-family:'Segoe UI Symbol';font-weight:700;font-style:normal;font-size:16px;font-kerning:none;color:black\">\u2610\u2612</span></body></html>",
+      "source_sha256": "eb0ebc696b94de25e9fe86c95304be04ef5970f6405e3b4fb2643b223463b91c",
+      "source_spans": [
+        {
+          "codepoint": "U+2610",
+          "end": 138,
+          "start": 135
+        },
+        {
+          "codepoint": "U+2612",
+          "end": 141,
+          "start": 138
+        }
+      ]
+    },
+    {
+      "definition": "white on canonicalwhite with no overlap; excludeledger retains everyspan; not acceptedmaterialMDAsilently",
+      "executed": false,
+      "family": "P06",
+      "id": "bold-white",
+      "layout_constraints": "A16px glyph origin/baseline is an analytical placed-glyph suboracle; full HTML linebox/placement must be independently frozen and reconciled before execution, not inferred from this minimal string or its engineoutput.",
+      "local_visibility_expectation": "HIDDEN_CONTRAST",
+      "source_UTF8": "<html><body><span style=\"font-family:'Segoe UI Symbol';font-weight:700;font-style:normal;font-size:16px;font-kerning:none;color:white\">\u2610\u2612</span></body></html>",
+      "source_sha256": "0053af395eb91a71a6767390e340f8b48bed06190fd87f5f3b79d9b1d5dbe6f4",
+      "source_spans": [
+        {
+          "codepoint": "U+2610",
+          "end": 138,
+          "start": 135
+        },
+        {
+          "codepoint": "U+2612",
+          "end": 141,
+          "start": 138
+        }
+      ]
+    },
+    {
+      "definition": "analytic opaque overlay covers a verified leftstroke interiorwitness but leaves rightstroke; never infer fullvisible fromglyphbbox",
+      "executed": false,
+      "family": "N13",
+      "id": "bold-partial-occlusion",
+      "layout_constraints": "A16px glyph origin/baseline is an analytical placed-glyph suboracle; full HTML linebox/placement must be independently frozen and reconciled before execution, not inferred from this minimal string or its engineoutput.",
+      "local_visibility_expectation": "AMBIGUOUS_WHOLE_DOCUMENT_REJECT",
+      "source_UTF8": "<html><body><span style=\"font-family:'Segoe UI Symbol';font-weight:700;font-style:normal;font-size:16px;font-kerning:none;color:black\">\u2610</span></body></html>",
+      "source_sha256": "678c74c18540e6e9ac2dda46a52a29c19569f3e706b28e7d7460b53921bc145f",
+      "source_spans": [
+        {
+          "codepoint": "U+2610",
+          "end": 138,
+          "start": 135
+        }
+      ]
+    }
+  ],
+  "full_oracle_freeze_status": "NOT_COMPLETE_FOR_EXECUTION: exact32basefixturebytes, allplacement/linebox/rounding/paint/sourceexpectedresults andtrusteddenialpayloads still must be serialized/hashreviewed before anyruntimecall. Definitions are supplied now; nativeoutput cannot fill gaps.",
+  "gate_result": "NOT_RUN",
+  "geometry_assumptions": [
+    "no hinting/autohint/synthesis, no matrix/affine transform, no glyphreplacement/fallback",
+    "kern/ligature effects disabled only in explicitly declared analytic fixture cases; preserve and qualify authoredsourcefeaturebehavior separately",
+    "bbox bounds enclose ink, not solidfilledrectangles; contour holes matter; any unqualified paint/backdrop/occlusion staysAMBIGUOUS"
+  ],
+  "glyphs": {
+    "U+2610": {
+      "advance_font_units": 1836,
+      "all_points_on_curve": true,
+      "at_16px_baseline_origin": [
+        "16",
+        "32"
+      ],
+      "contours": 2,
+      "exact_unhinted_bbox_font_units": [
+        184,
+        0,
+        1653,
+        1493
+      ],
+      "expected_advance_px": "459/32",
+      "expected_ink_bbox_canvas_px": [
+        "279/16",
+        "2603/128",
+        "3701/128",
+        "32"
+      ],
+      "geometry_input_basis": "local static simple polygon outline/hmtx/cmap independently inspected; no rendereroutput, no hint program execution, no outline points distributed",
+      "gid": 3816,
+      "glyph": "uni2610"
+    },
+    "U+2612": {
+      "advance_font_units": 1836,
+      "all_points_on_curve": true,
+      "at_16px_baseline_origin": [
+        "16",
+        "32"
+      ],
+      "contours": 3,
+      "exact_unhinted_bbox_font_units": [
+        183,
+        0,
+        1654,
+        1493
+      ],
+      "expected_advance_px": "459/32",
+      "expected_ink_bbox_canvas_px": [
+        "2231/128",
+        "2603/128",
+        "1851/64",
+        "32"
+      ],
+      "geometry_input_basis": "local static simple polygon outline/hmtx/cmap independently inspected; no rendereroutput, no hint program execution, no outline points distributed",
+      "gid": 3818,
+      "glyph": "uni2612"
+    }
+  },
+  "line_metrics": "Different hhea/OS2metrics andadvance may alter wrapping/baselines/mincontent/painting/fragmentation. Nativeactuals unmeasured. No boldmatch is admitted bybboxcomparisonalone.",
+  "native_quantization": "At16CSSpx andPangoScale1024, glyphcoordinates scale by8PangoUnits, exactlyintegral. Other sizes require independently frozen conservative rational intervals. No tolerance may excusevisibility/source classification change.",
+  "positive_repetitions": 3,
+  "required_family_reuse": {
+    "N01-N14": "PR50 rejectboundaries; allpreflight negatives renderer0; N13partialgeometryambiguous,N14unexpectedfont/glyph/ignoredCSSfails",
+    "N15-N16": "DENIAL_MATRIX trustedindependentOS/supervisor expectations, renderer0",
+    "P01-P10": "PR50 immutabledefinitions; fullsource/byteidentity/visibility/MDAboundaries andexclusions independentlyexpected",
+    "P11-P15": "PR49 F/T/P/W/H suppliedmetric oracles with reviewed exactfont facts; no customlayoutalgorithm or rendererlearnedvalues",
+    "P16": "Independent continuousview vs pageheights720/1440/8192, zero margins and forcedbreak/sourceidentity invariance; do not simply call screenmedia continuous"
+  },
+  "scale_convention": "(x0+s*x/2048,y0-s*y/2048), advance=s*1836/2048; canvas ydown",
+  "serialization_limit": "32basefamilies +4boldsubcases +12extraN15/N16variants (14denialcasesreplace2basecases) =48 maximumproposed serializedvariants <=64; manifest must be completely frozen before firstexecution",
+  "status": "INDEPENDENT_INPUT_FACTS_AND_ANALYTICAL_DEFINITIONS_ONLY",
+  "units_per_em": 2048
+}
