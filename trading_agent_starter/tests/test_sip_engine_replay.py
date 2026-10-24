@@ -2,6 +2,11 @@ from copy import deepcopy
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 import unittest
+import tempfile
+import json
+import hashlib
+from pathlib import Path
+from research.sip_lean_bridge_20261024.engine import run
 from research.sip_lean_bridge_20261024.engine import prepare as p
 
 
@@ -19,6 +24,25 @@ def sessions():
 
 
 class EnginePreparationTests(unittest.TestCase):
+    def test_runtime_config_mutation_and_manifest_tamper_block(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);(root/'runtime').mkdir();(root/'config').mkdir()
+            (root/'runtime/a').write_bytes(b'assembly');(root/'config/b').write_bytes(b'calendar')
+            binding={'runtime_files_sha256':{'a':hashlib.sha256(b'assembly').hexdigest()},
+                     'config_sha256':{'b':hashlib.sha256(b'calendar').hexdigest()}}
+            manifest=root/'manifest.json';manifest.write_text(json.dumps(binding));digest=hashlib.sha256(manifest.read_bytes()).hexdigest()
+            run.verify_bindings(root/'runtime',root/'config',manifest,digest)
+            (root/'config/b').write_bytes(b'changed')
+            with self.assertRaises(RuntimeError):run.verify_bindings(root/'runtime',root/'config',manifest,digest)
+            (root/'config/b').write_bytes(b'calendar');manifest.write_bytes(b'changed manifest')
+            with self.assertRaises(RuntimeError):run.verify_bindings(root/'runtime',root/'config',manifest,digest)
+
+    def test_runtime_failure_must_preserve_reached_lifecycle(self):
+        wrong={'initialized':False,'ended':False,'orders':0,'error':'DELIVERY_ORACLE'}
+        with self.assertRaises(RuntimeError):run.check_output(wrong,{},'DELIVERY_ORACLE',True)
+        run.check_output({**wrong,'initialized':True,'ended':True},{},'DELIVERY_ORACLE',True)
+
+
     def test_bar_delivered_at_completion_and_quote_rounds_up(self):
         result=p.prepare(sample(),sessions())
         self.assertEqual(result['events'],2)

@@ -39,6 +39,7 @@ public static class Entry
  public static int Main(string[] args)
  {
   var result=new JObject{["initialized"]=false,["ended"]=false,["orders"]=0};
+  Diagnostic active=null;
   try
   {
    if(args.Length!=3||File.Exists(args[1]))throw new InvalidOperationException("new output/input binding required");
@@ -63,11 +64,11 @@ public static class Entry
    }
    if(events!=(int)input["events"]!)throw new InvalidOperationException("EVENT_COUNT");
    Config.Set("data-folder","/runtime-data");Config.Set("live-mode","false");Config.Set("results-destination-folder","/tmp/results");Config.Set("composer-dll-directory","/tmp/app");
-   var guard=new global::OfflineData();var algorithm=new Diagnostic(input);
+   var guard=new global::OfflineData();var algorithm=new Diagnostic(input);active=algorithm;
    Run(algorithm,guard);
    result=algorithm.Result();result["input_sha256"]=args[2];result["provider_calls"]=guard.Calls;guard.Check();
   }
-  catch(Exception error){result["error"]=error.ToString();}
+  catch(Exception error){result["initialized"]=active?.Initialized??false;result["ended"]=active?.Ended??false;result["on_data_batches"]=active?.Received??0;result["events"]=active?.Events??0;result["error"]=error.ToString();}
   if(args.Length>=2){using var f=new FileStream(args[1],FileMode.CreateNew,FileAccess.Write);using var w=new StreamWriter(f);w.Write(result.ToString(Formatting.None)+"\n");}
   return result["error"]==null?0:3;
  }

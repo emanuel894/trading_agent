@@ -55,11 +55,29 @@ def controls(name):
     return actual
 
 
+def verify_bindings(runtime, config_root, manifest, expected_manifest_sha):
+    if sha(manifest.read_bytes())!=expected_manifest_sha:raise RuntimeError('ACCEPTED_MANIFEST_CHANGED')
+    binding=json.loads(manifest.read_text())
+    for mapping,root in ((binding['runtime_files_sha256'],runtime),(binding['config_sha256'],config_root)):
+        for name,digest in mapping.items():
+            if sha((root/name).read_bytes())!=digest:raise RuntimeError('RUNTIME_OR_CONFIG_BINDING_CHANGED')
+    return binding
+
+
+def check_output(output, prepared, failure=None, expected_initialized=False):
+    if failure:
+        if (failure not in output.get('error','') or output['initialized'] is not expected_initialized
+            or (expected_initialized and not output['ended']) or output['orders']!=0):raise RuntimeError('NEGATIVE_ORACLE')
+    elif (output.get('error') or not output['initialized'] or not output['ended']
+          or output['on_data_batches']!=len(prepared['batches']) or output['events']!=prepared['events']
+          or output['trace_sha256']!=prepared['expected_trace_sha256'] or output['provider_calls']!=0
+          or output['orders']!=0 or output['execution_admitted']):raise RuntimeError('POSITIVE_ORACLE')
+
+
 def build(work):
     parent=HERE.parent.parent/'lean_alpha_gate_027/continuation_v2/build.json'
-    binding=json.loads(parent.read_text())
-    for name,digest in binding['runtime_files_sha256'].items():
-        if sha((RUNTIME/name).read_bytes())!=digest:raise RuntimeError('RUNTIME_BINDING_CHANGED')
+    verify_bindings(RUNTIME,Path('/workspace/issue-27-lean'),parent,
+                    'dbf0134509f550f9333548c59c12fa1d556bdf54f42ce70c2da74ba05c251ebb')
     files=[(n,(HERE/n).read_bytes()) for n in ('EngineReplay.cs','build-local.sh')]
     command=DOCKER+['run','--rm','--interactive','--pull=never','--network','none','--read-only','--cap-drop','ALL',
                     '--security-opt','no-new-privileges','--user','65534:65534','--tmpfs','/tmp:rw,nosuid,nodev,size=256m',
@@ -73,7 +91,7 @@ def build(work):
     return work/'build/app'
 
 
-def execute(work, app, name, prepared, repeat, failure=None):
+def execute(work, app, name, prepared, repeat, failure=None, expected_initialized=False):
     directory=work/f'{name}-{repeat}';directory.mkdir()
     data=p.encode(prepared);(directory/'input.json').write_bytes(data)
     container=f'sip-engine-{work.name}-{name}-{repeat}'
@@ -97,13 +115,8 @@ def execute(work, app, name, prepared, repeat, failure=None):
         unpack(directory/'artifacts.tar.gz',directory/'artifacts')
         raw=(directory/'artifacts/output.json').read_bytes();output=json.loads(raw)
         receipt['output_sha256']=sha(raw);receipt['cgroup_peak_bytes']=int((directory/'artifacts/memory.peak').read_text())
-        if failure:
-            if result.returncode!=3 or failure not in output.get('error','') or output['initialized'] or output['orders']!=0:raise RuntimeError('NEGATIVE_ORACLE')
-        else:
-            if (result.returncode or output.get('error') or not output['initialized'] or not output['ended']
-                or output['on_data_batches']!=len(prepared['batches']) or output['events']!=prepared['events']
-                or output['trace_sha256']!=prepared['expected_trace_sha256'] or output['provider_calls']!=0
-                or output['orders']!=0 or output['execution_admitted']):raise RuntimeError('POSITIVE_ORACLE')
+        if result.returncode!=(3 if failure else 0):raise RuntimeError('EXIT_ORACLE')
+        check_output(output,prepared,failure,expected_initialized)
         receipt['status']='PASS';return receipt
     except BaseException as error:
         receipt['status']='FAILED';receipt['failure']=repr(error)
@@ -115,29 +128,57 @@ def execute(work, app, name, prepared, repeat, failure=None):
 
 
 def main():
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--work',required=True);parser.add_argument('--projection',required=True)
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--work',required=True);parser.add_argument('--projection',required=True);parser.add_argument('--resume',action='store_true');parser.add_argument('--cases',nargs='+')
     args=parser.parse_args();work=Path(args.work).resolve();repo=HERE.parents[3]
     if work==repo or repo in work.parents:raise RuntimeError('PRIVATE_WORK_OUTSIDE_CHECKOUT_REQUIRED')
-    work.mkdir(mode=0o700,exist_ok=False)
+    if not args.resume:work.mkdir(mode=0o700,exist_ok=False)
+    elif not (work/'summary.json').is_file():raise RuntimeError('EXISTING_CHECKPOINT_REQUIRED')
     projection=Path(args.projection).read_bytes()
     if sha(projection)!='5097fa90a3080a60d20db230cc90849317654a37a3f5ce2ee6968dff7482f969':raise RuntimeError('PROJECTION_BINDING_CHANGED')
     real=p.prepare(json.loads(projection),[p.session('2025-01-15T14:30:00Z','2025-01-15T21:00:00Z','existing-2025-calendar-observation-premise')])
-    app=build(work);summary={'source_projection_sha256':sha(projection),'compiled_sha256':sha((app/'SipEngine.dll').read_bytes()),
-                             'code_sha256':{n:sha((HERE/n).read_bytes()) for n in ('EngineReplay.cs','prepare.py','run.py','build-local.sh','CONTRACT.md')},'attempts':[],'status':'RUNNING'}
-    write(work/'summary.json',summary)
+    names=('EngineReplay.cs','prepare.py','run.py','build-local.sh','CONTRACT.md',
+           'fixtures/synthetic-positive.json','fixtures/synthetic-gap.json','fixtures/synthetic-session-reject.json')
+    code={n:sha((HERE/n).read_bytes()) for n in names}
+    if args.resume:
+        summary=json.loads((work/'summary.json').read_text());app=work/'build/app'
+        if summary['code_sha256']!=code or summary['source_projection_sha256']!=sha(projection) or summary['compiled_sha256']!=sha((app/'SipEngine.dll').read_bytes()):raise RuntimeError('RESUME_BINDING_CHANGED')
+        verify_bindings(RUNTIME,Path('/workspace/issue-27-lean'),HERE.parent.parent/'lean_alpha_gate_027/continuation_v2/build.json',
+                        'dbf0134509f550f9333548c59c12fa1d556bdf54f42ce70c2da74ba05c251ebb')
+    else:
+        app=build(work);summary={'source_projection_sha256':sha(projection),'compiled_sha256':sha((app/'SipEngine.dll').read_bytes()),
+                                'code_sha256':code,'attempts':[],'status':'RUNNING'}
+        write(work/'summary.json',summary)
     cases=[('synthetic-positive',json.loads((HERE/'fixtures/synthetic-positive.json').read_text()),None),
            ('synthetic-gap',json.loads((HERE/'fixtures/synthetic-gap.json').read_text()),None),
            ('synthetic-session-reject',json.loads((HERE/'fixtures/synthetic-session-reject.json').read_text()),None)]
     bad=json.loads(p.encode(cases[0][1]));bad['mode']='EXECUTABLE';cases.append(('synthetic-execution-denied',bad,'OBSERVATION_SCOPE'))
     bad=json.loads(p.encode(cases[0][1]));bad['sessions']=[];cases.append(('synthetic-no-session',bad,'SESSION_BOUNDARY'))
+    bad=json.loads(p.encode(cases[0][1]));bad['expected_trace_sha256']='0'*64;cases.append(('synthetic-post-end-failure',bad,'DELIVERY_ORACLE'))
     cases.append(('real-observations',real,None))
+    selected=args.cases or (summary.get('selected_cases') if args.resume else None) or [c[0] for c in cases]
+    if len(selected)!=len(set(selected)) or set(selected)-{c[0] for c in cases}:raise RuntimeError('INVALID_CASE_SELECTION')
+    if args.resume and summary['selected_cases']!=selected:raise RuntimeError('RESUME_SCOPE_CHANGED')
+    cases=[c for c in cases if c[0] in selected];summary['selected_cases']=selected
+    completed={(a['case'],a['repeat']):a for a in summary['attempts']}
+    if len(completed)!=len(summary['attempts']):raise RuntimeError('DUPLICATE_ATTEMPT_IDENTITY')
+    executed=False
     for name,data,failure in cases:
         pair=[]
         for repeat in (1,2):
-            receipt=execute(work,app,name,data,repeat,failure);summary['attempts'].append(receipt);write(work/'summary.json',summary)
+            expected_init=name=='synthetic-post-end-failure'
+            if (name,repeat) in completed:
+                receipt=completed[(name,repeat)];raw=(work/f'{name}-{repeat}/artifacts/output.json').read_bytes()
+                if receipt['status']!='PASS' or receipt['input_sha256']!=sha(p.encode(data)) or receipt['output_sha256']!=sha(raw):raise RuntimeError('RESUME_RECEIPT_CHANGED')
+                check_output(json.loads(raw),data,failure,expected_init)
+                pair.append(receipt['output_sha256']);continue
+            if (work/f'{name}-{repeat}').exists():raise RuntimeError('RECONCILE_EXISTING_ATTEMPT_BEFORE_RESUME')
+            executed=True
+            receipt=execute(work,app,name,data,repeat,failure,expected_init);summary['attempts'].append(receipt);write(work/'summary.json',summary)
             pair.append(receipt['output_sha256']);print(name,repeat,'PASS',flush=True)
         if pair[0]!=pair[1]:raise RuntimeError('NONDETERMINISTIC_PAIR')
-    summary['status']='NATIVE_ENGINE_DIAGNOSTIC_PASS';write(work/'summary.json',summary)
+    if executed or summary['status']!='NATIVE_ENGINE_DIAGNOSTIC_PASS':
+        summary['status']='NATIVE_ENGINE_DIAGNOSTIC_PASS';write(work/'summary.json',summary)
+    else:print('Existing completion verified; zero native launches and no checkpoint writes',flush=True)
 
 
 if __name__=='__main__':main()
