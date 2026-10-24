@@ -9,7 +9,7 @@ No source collection, strategy/returns, scientific edits or trading.
    directory/database initialization. Reuse existing SIP bar/quote validators.
 2. Require exact SIP/raw/1Min/asof=- window and complete source page-token chains.
    Preserve source record/hash/row lineage and nanoseconds. Deduplicate identical
-   observations; fail ambiguous conflicting same-time rows. Exclude incomplete
+   observations; fail conflicting same-time bars. Preserve distinct same-time quote variants in observation-only groups; strict state selection rejects ambiguity. Exclude incomplete
    endpoint bars. Unknown historical receipt, status and size-unit qualification
    stay unknown; never infer them from quotes or retrieval clocks.
 3. Convert to pinned LEAN TradeBar/Tick public types in a tiny observation-only

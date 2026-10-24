@@ -11,7 +11,7 @@ START='2025-01-15T15:00:00Z'
 END='2025-01-15T15:05:00Z'
 
 
-def store_fixture(root, *, end_token=None, quote_change=None, other_only_first_page=False):
+def store_fixture(root, *, end_token=None, quote_change=None, other_only_first_page=False, cycle=False):
     store=EvidenceStore(root)
     bar={'t':START,'o':100,'h':101,'l':99,'c':100,'v':100}
     incomplete={**bar,'t':END}
@@ -22,6 +22,13 @@ def store_fixture(root, *, end_token=None, quote_change=None, other_only_first_p
                          ('quotes',{'quotes':{'SPY':[quote,quote]},'next_page_token':end_token})]:
         params={'feed':'sip','asof':'-','sort':'asc','start':START,'end':END}
         if kind=='bars':params.update(timeframe='1Min',adjustment='raw')
+        if kind=='quotes' and cycle:
+            for current,nxt in ((None,'A'),('A','B'),('B','A')):
+                qp=dict(params)
+                if current is not None:qp['page_token']=current
+                store.append('http','https://data.alpaca.markets/v2/stocks/quotes?'+urlencode(qp),
+                             {'http_status':200},raw=json.dumps({'quotes':{'SPY':[quote]},'next_page_token':nxt}).encode())
+            params['page_token']='A'
         if kind=='quotes' and other_only_first_page:
             store.append('http','https://data.alpaca.markets/v2/stocks/quotes?'+urlencode(params),
                          {'http_status':200},raw=json.dumps({'quotes':{'AAPL':[quote]},'next_page_token':'continue'}).encode())
@@ -34,6 +41,11 @@ def store_fixture(root, *, end_token=None, quote_change=None, other_only_first_p
 
 
 class SIPLeanBridgeTests(unittest.TestCase):
+    def test_cyclic_page_chain_fails_closed(self):
+        with tempfile.TemporaryDirectory() as d:
+            h=store_fixture(d,cycle=True)
+            with self.assertRaises(b.BridgeBlocked):b.project(d,expected_sha=h)
+
     def test_other_symbol_only_first_page_does_not_truncate_spy(self):
         with tempfile.TemporaryDirectory() as d:
             h=store_fixture(d,other_only_first_page=True)

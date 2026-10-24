@@ -80,12 +80,14 @@ def project(root, *, expected_sha=ORIGINAL_DB_SHA):
         if store.db.execute('pragma integrity_check').fetchone()[0]!='ok':raise BridgeBlocked('SQLITE_INTEGRITY')
         verified=store.verify()
         if not verified['records']:raise BridgeBlocked('EMPTY_STORE')
-        rows={'bars':[],'quotes':[]};expected={};complete=set();rejected=Counter();excluded=0;seen=Counter()
+        rows={'bars':[],'quotes':[]};expected={};complete=set();rejected=Counter();excluded=0;seen=Counter();tokens={'bars':set(),'quotes':set()};pages=Counter()
         for record in store.records('http'):
             url=urlsplit(record['source_key']);q=parse_qs(url.query,keep_blank_values=True)
             if url.scheme!='https' or url.netloc!='data.alpaca.markets' or url.path not in ('/v2/stocks/bars','/v2/stocks/quotes'):
                 raise BridgeBlocked('UNDECLARED_SOURCE')
             kind=url.path.rsplit('/',1)[1]
+            pages[kind]+=1
+            if pages[kind]>50:raise BridgeBlocked('PAGE_CAP_EXCEEDED')
             if (record['metadata'].get('http_status')!=200 or q.get('feed')!=['sip']
                 or q.get('asof')!=['-'] or q.get('sort')!=['asc']
                 or len(q.get('start',[]))!=1 or len(q.get('end',[]))!=1
@@ -100,6 +102,9 @@ def project(root, *, expected_sha=ORIGINAL_DB_SHA):
             if not isinstance(batch,dict) or any(k not in {'SPY','AAPL'} or not isinstance(v,list) for k,v in batch.items()):raise BridgeBlocked('MALFORMED_SYMBOL_ROWS')
             nxt=payload.get('next_page_token')
             if nxt is not None and (not isinstance(nxt,str) or not nxt or nxt==token[0]):raise BridgeBlocked('INVALID_PAGE_TOKEN')
+            if nxt is not None:
+                if nxt in tokens[kind]:raise BridgeBlocked('REPEATED_PAGE_TOKEN')
+                tokens[kind].add(nxt)
             expected[kind]=nxt
             if nxt is None:complete.add(kind)
             for index,row in enumerate(batch.get('SPY',[])):
