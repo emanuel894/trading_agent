@@ -53,19 +53,22 @@
     "independent initial review agrees bounded technical stop"
   ],
   "cross_provider_human_qualification": false,
-  "durability": "scoped manifest initially uncommitted; upstream cache local, not Git-durable",
+  "durability": "Substantive evidence committed and remote-verified at6717bc71f9990c0e5a9c82bfaa02440ba240794a. This final checkpoint/review version is committed/pushed as a permitted publication-only delta; verify live containing commit on resume. Raw upstream cache is local; immutable URLs/hashes permit rehydration without discovery.",
   "evidence_sha256": {
     "B1_TRACE.json": "145e173d9cc5d456b2d63e558f581bc5cc47dec6077edb5a2b1882b7863c671e",
+    "INDEPENDENT_REVIEW.json": "cd0963bfa28573207da1eb8ec200445715e68da95294899bd44f4171da1b83ae",
     "PROGRESS.md": "e430983e7e4788fabae2b1e101bcbeb8c295e92077eb1cd90bcba3998f607c3d",
     "SOURCE_BINDINGS.json": "1b95485d6721d5533feea241d749682d5aedb6d6a31d720cff78fdaee33eec40"
   },
   "execution_request_reason": "No supported executable B1 binding established; technical choice must precede useful G0 execution request.",
   "execution_status": "BLOCKED",
   "final_decision": "TECHNICAL_DECISION_REQUIRED",
-  "head_semantics": "exact repository HEAD at checkpoint preparation; pending scoped files explicitly uncommitted",
-  "head_sha": "29fb8e5b5fd48fa95f51a91d73f39b254d7ab5ba",
+  "head_semantics": "Exact independently reviewed substantive evidence HEAD. Later publication commit may change only CHECKPOINT.json metadata and add INDEPENDENT_REVIEW.json; B1_TRACE/SOURCE_BINDINGS/PROGRESS remain byte-identical. Git commit containing this checkpoint is the publication head; final remote receipt is also in /workspace/p0a-g0-mission-001/PUBLICATION.json.",
+  "head_sha": "6717bc71f9990c0e5a9c82bfaa02440ba240794a",
   "immutable_source_files": "15_HASH_SIZE_MODE_MATCH; dirs0555_files0444",
-  "independent_review": "INITIAL_ACCEPTS_TECHNICAL_STOP; FINAL_EXACT_HEAD_PENDING",
+  "independent_review": "ACCEPT_TECHNICAL_STOP_FOR_METADATA_ONLY_PUBLICATION; no blocking findings; not G0 or runtime qualification",
+  "independent_review_file": "INDEPENDENT_REVIEW.json",
+  "independent_review_sha256": "cd0963bfa28573207da1eb8ec200445715e68da95294899bd44f4171da1b83ae",
   "maximum_new_PRs": 1,
   "mission_id": "P0A-G0-MISSION-001",
   "new_PRs": 0,
@@ -114,6 +117,11 @@
     "trading_agent_starter/research/p0a_visibility_001/TEST_MATRIX.md": "e136713b982318b275f880f7be712bd25c927016022c2e8b5e82cdc7f594d4ba",
     "trading_agent_starter/research/p0a_visibility_001/evidence.json": "8b562cf469bfc16b540a0c3f5b0269006163ae7bc9e65263543b131ebfa709b7"
   },
+  "publication_metadata_allowlist": [
+    "trading_agent_starter/research/p0a_g0_mission_001/CHECKPOINT.json",
+    "trading_agent_starter/research/p0a_g0_mission_001/INDEPENDENT_REVIEW.json"
+  ],
+  "publication_rule": "Push this checkpoint/receipt only; verify remote exact containing commit and diff allowlist. No PR solely to report this blocker. No other writes/experiments pending.",
   "repository": "emanuel894/trading_agent",
   "requested_review_effort": "high",
   "requested_review_model": "gpt-6.1-sol",
@@ -149,6 +157,6 @@
     "report_parser_correction": "initial report assertion expected bare OK; corrected for explicit9skips; suite not rerun",
     "source_and_14_excerpt_integrity": "PASS"
   },
-  "updated_UTC": "2026-10-24T10:38:39.092194+00:00",
+  "updated_UTC": "2026-10-24T10:41:16.618619+00:00",
   "upstream_cache_index": "SOURCE_BINDINGS.json"
 }
