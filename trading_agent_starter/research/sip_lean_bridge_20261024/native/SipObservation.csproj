@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Deterministic>true</Deterministic></PropertyGroup>
+  <ItemGroup>
+    <Reference Include="QuantConnect.Common"><HintPath>/runtime/QuantConnect.Common.dll</HintPath></Reference>
+    <Reference Include="Newtonsoft.Json"><HintPath>/runtime/Newtonsoft.Json.dll</HintPath></Reference>
+    <Reference Include="NodaTime"><HintPath>/runtime/NodaTime.dll</HintPath></Reference>
+  </ItemGroup>
+</Project>
