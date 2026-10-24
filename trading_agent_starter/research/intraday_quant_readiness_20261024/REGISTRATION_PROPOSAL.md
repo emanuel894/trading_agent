@@ -47,7 +47,7 @@ conditional on this model; no live-actionability/PIT alpha claim is allowed.
 Both arms start with separate virtual$10,000 ledgers. Same long-only rules:
 position/gross cap10% own pre-entry NAV (one instrument), no leverage/shorts,
 daily loss entry halt2%, running drawdown entry halt8%; exits continue. Each uses
-integer quantity floor((0.10*NAV-1)/reserved_entry_price), further capped by
+integer quantity floor((0.10*NAV-f)/reserved_entry_price), further capped by
 10% of correctly converted displayed side shares; quantity≤0 abstains. Identical
 cash/fee reservations, source eligibility and entry/exit rules. Equal ex-ante
 limits do not imply equal realized volatility/exposure; report both, do not
@@ -58,13 +58,19 @@ and latest valid quote at/before D with source age≤2s. Reuse R-only-v1 numeric
 rules after explicit extension review for2025H2; preserve native nanoseconds,
 quote versions/exchange/tape and evidenced size units. Conflicting same-time
 ordering abstains. Entry is the first eligible quote from D+1s through D+5s;
-no retroactive bar-open fill. Buy at ask×1.0005, bounded by a reservation frozen
-from D's ask×1.0005; do not raise it using later data. No qualifying full-size
+no retroactive bar-open fill. Each run freezes fee f/slippage s first: primary
+f=$1,s=0.0005; cost stress f=$2,s=0.001; delay stress uses primary costs.
+Both arms use that run's frozen schedule for sizing/reservations/fills. Buy at
+ask×(1+s), bounded by a reservation frozen from D's ask×(1+s); do not raise it
+using later data. No qualifying full-size
 capacity means no fill, logged cancellation after the5s window; no assumed partial
 fill or invented broker acknowledgement. These are simulator events only.
 
 Exit due at official close−5min (12:55 on a13:00 early close); earliest eligible
-execution due+1s, sell at bid×0.9995. Retain original exposure until an evidenced
+execution due+1s, sell at bid×(1−s). Exit requires the same known tradable
+state, quote condition/spread/age rules and full held quantity≤10% of the
+contemporaneous converted displayed bid shares. Insufficient size or a quote
+gap leaves the whole position pending; no partial or forced fill. Retain original exposure until an evidenced
 valid exit; never force fill at close/last price or delete halted/missing outcomes.
 A missing exit or unresolved position blocks complete performance inference and
 requires explicit outcome accounting, not an automatic overnight strategy.
@@ -80,7 +86,9 @@ mandatory charges (never double count). Final fee schedule/rights must be pinned
 before replay; if incompatible with these assumptions stop for approval, not a
 post-result replacement. This is not an Alpaca fee quote or guaranteed live fill.
 Primary stress doubles adverse slippage to10bp and modeled fees to$2, without
-retuning. Allocate any actual research execution costs equally across eligible
+retuning. Each schedule must cover mandatory charges before freeze; if it cannot,
+stop for owner approval before outcome access. Do not apply stress costs to
+primary-run reservations or rebind a reservation after observing later prices. Allocate any actual research execution costs equally across eligible
 sessions; report unavailable accounting as unknown, not demonstrated zero cost.
 External acquisitions/subscriptions/spend remain unauthorized.
 
