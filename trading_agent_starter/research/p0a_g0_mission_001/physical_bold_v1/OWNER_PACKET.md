@@ -29,7 +29,7 @@ closed even outsideMD&A. No equivalence/historical-display claim is made.
 | --- | --- |
 | VERIFIED_STATIC | Existing local fontSHA/size/style/cmap, installedpackageMD5 consistency, independent polygon extrema/advance; full Bitstream/Arev notices; exact upstreamtag/sourcepackage metadata identities (source-build correspondence/signatures not established) |
 | VERIFIED_METADATA |13 wheel/build pins and7 activeRequiresDist edges match explicitCPython3.13 metadata;26 nativepayloadcandidates and56 dependencyversion constraints derive from an authenticated signedDebianindex. No packagepayloads fetched; metadata is not installedABI/license proof. |
-| SPECIFIED_ONLY | Exact inactive Fontconfig aliases/14-file guards; native/runtime assembly, private-hosting requirements; worker default-deny/limits and14 denial definitions;32-family and4bold analytical oracle definitions; exact unapplied syntheticsecurityexception. |
+| SPECIFIED_ONLY | Exact inactive Fontconfig aliases/14-file guards; native/runtime assembly, private-hosting requirements; worker default-deny/limits and30 denial definitions;32-family and4bold analytical oracle definitions; exact unapplied syntheticsecurityexception. |
 | REUSED | PR50–54 candidate/gate/source/font evidence; mission0835 synthetic-bold trace; fixed scientific criteria/byte mapper and prior independent-source inventory. No repeat architecture/source discovery. |
 
 B1/B2/B3 are **SPECIFIED_ONLY** for execution. CP1 candidate-feasibility and CP2/CP3
@@ -52,7 +52,7 @@ After contract/legal-boundary acceptance, consider only
 PREPARATION_AUTHORIZATION_REQUEST.json: one $0 private **nonlayout** preparation,
 exact packagepayload verification and one imagebuild, explicitly authorized staging
 of existing14 fontfiles only, cache/physical-selection validation, full oraclefreeze
-and14trusted denial/resource probes. No font download/export/registry distribution,
+and30trusted denial/resource probes. No font download/export/registry distribution,
 no HTML/render/shaping/rasterization/PDF, no real-source input. Probe failures stop;
 no repairround or repeat, and originalvariant/600sworkerbudget stays fixed. A600s
 build-preparation cap is separately measured and does not enlarge the workerbudget.

@@ -1,14 +1,17 @@
 {
   "checkpoint": "CP3_STATIC_SPEC_ONLY",
   "policy_sha256": "8a2b28837dee51e574b3d490ae79aed17eba39688e4cd59599620c9bb2641f4e",
-  "denial_matrix_sha256": "f8496db89eb1f99194497511c83ea7afe7a9745829a170df3b055feee2acf268",
-  "oracle_definitions_sha256": "61879258c29f10cffcfa01dad704fef8c461b6a565288d0ccc3fffce1d992e0a",
-  "denial_definitions": 14,
+  "denial_matrix_sha256": "43e1f0f312883f3956f71d47d384496eabd3c92e8dd17a8cb25927e410e170b9",
+  "oracle_definitions_sha256": "9810756eb3fed23c455d30a407c7b99189cd8c44aa28a3fa4715e8920561957c",
+  "denial_definitions": 30,
   "bold_suboracle_templates": 4,
-  "proposed_variant_ceiling": 48,
+  "proposed_variant_ceiling": 64,
   "actual_frozen_execution_manifest": "NOT_COMPLETE",
   "OS_enforcement": "NOT_RUN",
   "native_selection_geometry": "NOT_RUN",
   "layout_or_authentic_calls": 0,
-  "source_and_scientific_rules": "UNCHANGED"
+  "source_and_scientific_rules": "UNCHANGED",
+  "maximum_worker_invocations": 102,
+  "grouped_fatal_probe_defect": "CORRECTED_BEFORE_ANY_EXECUTION",
+  "mount_canary_corroboration": "REQUIRED_INDEPENDENT_SUPERVISOR_EVIDENCE"
 }

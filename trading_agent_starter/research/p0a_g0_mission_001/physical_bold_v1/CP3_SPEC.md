@@ -11,7 +11,7 @@ not permitted; unknown/latecalls fail without silent rule expansion. ActualBPF,
 kernel/OCI/UID/mount/enforcement/profile hashes and denial results remain missing.
 No custom nativecode or framework was created, and no policy/probe was executed.
 
-DENIAL_MATRIX defines14 trustedN15/N16 probes, rendererinvocations0. Exact trusted
+DENIAL_MATRIX defines30 trustedN15/N16 probes, rendererinvocations0. Exact trusted
 payloads still need serialization/hashreview before authorized preparation. These
 results must be independently evidenced by kernel/cgroup/supervisor receipts,
 not candidate success logs. Each is counted once in unchanged gate/variant/600s
@@ -29,8 +29,8 @@ occlusion matter. Unknown/backdrop/overlap/materiality blocks whole-document adm
 
 The4 bold source/span strings are analytical suboracle templates, **not complete
 execution-ready layout fixtures**. Full32-family fixturebytes, placement/linebox/
-paint/boundary expectations and14trusteddenialpayloads still require complete
-pre-execution freeze. Proposed allocation48variants stays under64 and adds no
+paint/boundary expectations and30trusteddenialpayloads still require complete
+pre-execution freeze. Proposed allocation64variants stays within64 and adds no
 family. Existing PR49 metric-case oracles/PR50 definitions are reused, not studied
 again. No oracle is learned from component output, no expected denominator is
 shrunk, and no synthetic result substitutes for authentic source evidence.
@@ -47,3 +47,8 @@ nonlayout preparation, package/font staging, containerbuild or denial probe need
 the separate bounded authorization request; actual syntheticlayoutgate needs a
 further explicit authorization after fullG0. Authentic processing needs its own
 later reviewed exception/authorization. No scientificamendment is applied here.
+
+Staticreview correction: fatal forbidden syscalls now have separate freshworker
+cases; no later-call coverage is inferred afterSIGSYS. Host exclusion requires
+supervisor mount/namespace inventory and a known nonsecret outside canary; worker
+ENOENT alone is not proof. No actual probe ran. All30payloads remain to be frozen.

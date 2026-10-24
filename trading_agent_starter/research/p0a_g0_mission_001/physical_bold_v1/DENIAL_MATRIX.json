@@ -1,120 +1,330 @@
 {
   "HTTP_fetcher_separate_N03": "HTTP HTTPS file data FTP unknown scheme all deny beforeopening; no URLs/code/fonts in candidate; existing PR50 checks retained",
-  "accounting": "Serialize/hash exact trusted test payloads before first execution. Count each once in fixedN15/N16 variants and aggregate600sworkerbudget; no preparatoryrerun/repairround or later oracle adjustment. Kernel/parent denial receipts are independent of candidate output.",
+  "accounting": "30trustedN15/N16 variants replace2basefamilyvariants. 32base+4bold-2+30=64maximumserializedvariants; <=102workerinvocations if19positives eachrepeat3 and45negatives eachonce. 600saggregateworkerwall/20swall/15sCPU/1GiBceilings remain unchanged; stopifbudgetexhausted, no repairs/retries or oracleupdates.",
   "cases": [
     {
+      "attempts_per_case": 1,
       "executed": false,
       "family": "N16",
-      "id": "N16-network",
+      "fresh_worker": true,
+      "id": "N16-socket",
       "renderer_invocations": 0,
-      "required_independent_result": "SIGSYS/parentSECURITY_POLICY; nointerface/DNS and0networkrequests",
-      "trusted_stimulus": "socket/connect loopback andinternet"
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY; no successful operation",
+      "syscall": "socket",
+      "trusted_stimulus": "one direct socket syscall only after policyactivation; harmless/self/invalid arguments where applicable, no external state modification"
     },
     {
+      "attempts_per_case": 1,
       "executed": false,
       "family": "N16",
-      "id": "N16-exec",
+      "fresh_worker": true,
+      "id": "N16-connect",
       "renderer_invocations": 0,
-      "required_independent_result": "SIGSYS;0childexec",
-      "trusted_stimulus": "execve andexecveat"
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY; no successful operation",
+      "syscall": "connect",
+      "trusted_stimulus": "one direct connect syscall only after policyactivation; harmless/self/invalid arguments where applicable, no external state modification"
     },
     {
+      "attempts_per_case": 1,
       "executed": false,
       "family": "N16",
+      "fresh_worker": true,
+      "id": "N16-execve",
+      "renderer_invocations": 0,
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY; no successful operation",
+      "syscall": "execve",
+      "trusted_stimulus": "one direct execve syscall only after policyactivation; harmless/self/invalid arguments where applicable, no external state modification"
+    },
+    {
+      "attempts_per_case": 1,
+      "executed": false,
+      "family": "N16",
+      "fresh_worker": true,
+      "id": "N16-execveat",
+      "renderer_invocations": 0,
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY; no successful operation",
+      "syscall": "execveat",
+      "trusted_stimulus": "one direct execveat syscall only after policyactivation; harmless/self/invalid arguments where applicable, no external state modification"
+    },
+    {
+      "attempts_per_case": 1,
+      "executed": false,
+      "family": "N16",
+      "fresh_worker": true,
       "id": "N16-fork",
       "renderer_invocations": 0,
-      "required_independent_result": "SIGSYS;0childprocess",
-      "trusted_stimulus": "fork/vfork andclone withoutTHREAD"
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY; no successful operation",
+      "syscall": "fork",
+      "trusted_stimulus": "one direct fork syscall only after policyactivation; harmless/self/invalid arguments where applicable, no external state modification"
     },
     {
+      "attempts_per_case": 1,
       "executed": false,
       "family": "N16",
-      "id": "N16-clone3",
+      "fresh_worker": true,
+      "id": "N16-vfork",
       "renderer_invocations": 0,
-      "required_independent_result": "ENOSYS; no child; only filteredthreadclone permitted",
-      "trusted_stimulus": "clone3 process/thread requests"
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY; no successful operation",
+      "syscall": "vfork",
+      "trusted_stimulus": "one direct vfork syscall only after policyactivation; harmless/self/invalid arguments where applicable, no external state modification"
     },
     {
+      "attempts_per_case": 1,
       "executed": false,
       "family": "N16",
-      "id": "N16-host-read",
+      "fresh_worker": true,
+      "id": "N16-ptrace",
       "renderer_invocations": 0,
-      "required_independent_result": "ENOENT/EACCES; contents never mounted orreturned",
-      "trusted_stimulus": "open designated nonexistent host/evidence/secret canary path"
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY; no successful operation",
+      "syscall": "ptrace",
+      "trusted_stimulus": "one direct ptrace syscall only after policyactivation; harmless/self/invalid arguments where applicable, no external state modification"
     },
     {
+      "attempts_per_case": 1,
       "executed": false,
       "family": "N16",
-      "id": "N16-root-write",
+      "fresh_worker": true,
+      "id": "N16-process_vm_readv",
       "renderer_invocations": 0,
-      "required_independent_result": "EROFS/EACCES; allhashes unchanged",
-      "trusted_stimulus": "write readonly runtime/config/font/cache"
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY; no successful operation",
+      "syscall": "process_vm_readv",
+      "trusted_stimulus": "one direct process_vm_readv syscall only after policyactivation; harmless/self/invalid arguments where applicable, no external state modification"
     },
     {
+      "attempts_per_case": 1,
       "executed": false,
       "family": "N16",
+      "fresh_worker": true,
+      "id": "N16-process_vm_writev",
+      "renderer_invocations": 0,
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY; no successful operation",
+      "syscall": "process_vm_writev",
+      "trusted_stimulus": "one direct process_vm_writev syscall only after policyactivation; harmless/self/invalid arguments where applicable, no external state modification"
+    },
+    {
+      "attempts_per_case": 1,
+      "executed": false,
+      "family": "N16",
+      "fresh_worker": true,
+      "id": "N16-bpf",
+      "renderer_invocations": 0,
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY; no successful operation",
+      "syscall": "bpf",
+      "trusted_stimulus": "one direct bpf syscall only after policyactivation; harmless/self/invalid arguments where applicable, no external state modification"
+    },
+    {
+      "attempts_per_case": 1,
+      "executed": false,
+      "family": "N16",
+      "fresh_worker": true,
+      "id": "N16-perf_event_open",
+      "renderer_invocations": 0,
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY; no successful operation",
+      "syscall": "perf_event_open",
+      "trusted_stimulus": "one direct perf_event_open syscall only after policyactivation; harmless/self/invalid arguments where applicable, no external state modification"
+    },
+    {
+      "attempts_per_case": 1,
+      "executed": false,
+      "family": "N16",
+      "fresh_worker": true,
+      "id": "N16-mount",
+      "renderer_invocations": 0,
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY; no successful operation",
+      "syscall": "mount",
+      "trusted_stimulus": "one direct mount syscall only after policyactivation; harmless/self/invalid arguments where applicable, no external state modification"
+    },
+    {
+      "attempts_per_case": 1,
+      "executed": false,
+      "family": "N16",
+      "fresh_worker": true,
+      "id": "N16-setns",
+      "renderer_invocations": 0,
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY; no successful operation",
+      "syscall": "setns",
+      "trusted_stimulus": "one direct setns syscall only after policyactivation; harmless/self/invalid arguments where applicable, no external state modification"
+    },
+    {
+      "attempts_per_case": 1,
+      "executed": false,
+      "family": "N16",
+      "fresh_worker": true,
+      "id": "N16-unshare",
+      "renderer_invocations": 0,
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY; no successful operation",
+      "syscall": "unshare",
+      "trusted_stimulus": "one direct unshare syscall only after policyactivation; harmless/self/invalid arguments where applicable, no external state modification"
+    },
+    {
+      "attempts_per_case": 1,
+      "executed": false,
+      "family": "N16",
+      "fresh_worker": true,
+      "id": "N16-io_uring_setup",
+      "renderer_invocations": 0,
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY; no successful operation",
+      "syscall": "io_uring_setup",
+      "trusted_stimulus": "one direct io_uring_setup syscall only after policyactivation; harmless/self/invalid arguments where applicable, no external state modification"
+    },
+    {
+      "attempts_per_case": 1,
+      "executed": false,
+      "family": "N16",
+      "fresh_worker": true,
+      "id": "N16-io_uring_enter",
+      "renderer_invocations": 0,
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY; no successful operation",
+      "syscall": "io_uring_enter",
+      "trusted_stimulus": "one direct io_uring_enter syscall only after policyactivation; harmless/self/invalid arguments where applicable, no external state modification"
+    },
+    {
+      "attempts_per_case": 1,
+      "executed": false,
+      "family": "N16",
+      "fresh_worker": true,
+      "id": "N16-io_uring_register",
+      "renderer_invocations": 0,
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY; no successful operation",
+      "syscall": "io_uring_register",
+      "trusted_stimulus": "one direct io_uring_register syscall only after policyactivation; harmless/self/invalid arguments where applicable, no external state modification"
+    },
+    {
+      "attempts_per_case": 1,
+      "executed": false,
+      "family": "N16",
+      "fresh_worker": true,
+      "id": "N16-clone-process",
+      "renderer_invocations": 0,
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY;0successfulforbiddenoperations",
+      "syscall": "clone",
+      "trusted_stimulus": "cloneflags withoutCLONE_THREAD"
+    },
+    {
+      "attempts_per_case": 1,
+      "executed": false,
+      "family": "N16",
+      "fresh_worker": true,
       "id": "N16-mmap-exec",
       "renderer_invocations": 0,
-      "required_independent_result": "SIGSYS; no executablemapping",
-      "trusted_stimulus": "mmap/mprotectPROT_EXEC aftertrustedinit"
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY;0successfulforbiddenoperations",
+      "syscall": "mmap",
+      "trusted_stimulus": "validanonymous mappingrequest withPROT_EXEC"
     },
     {
+      "attempts_per_case": 1,
       "executed": false,
       "family": "N16",
-      "id": "N16-escape",
+      "fresh_worker": true,
+      "id": "N16-mprotect-exec",
       "renderer_invocations": 0,
-      "required_independent_result": "SIGSYS; no externalstatechange",
-      "trusted_stimulus": "ptrace/process_vm/BPF/mount/setns/io_uring"
+      "required_independent_result": "workerSIGSYS/parentSECURITY_POLICY;0successfulforbiddenoperations",
+      "syscall": "mprotect",
+      "trusted_stimulus": "preinitialized privateRWpage requestPROT_EXEC"
     },
     {
+      "attempts_per_case": 1,
+      "executed": false,
+      "family": "N16",
+      "fresh_worker": true,
+      "id": "N16-clone3",
+      "renderer_invocations": 0,
+      "required_independent_result": "ENOSYS and0childtasks; only filtered threadclone can run",
+      "syscall": "clone3",
+      "trusted_stimulus": "one clone3request; no document input/probe selection"
+    },
+    {
+      "attempts_per_case": 1,
+      "executed": false,
+      "family": "N16",
+      "fresh_worker": true,
+      "id": "N16-host-read",
+      "renderer_invocations": 0,
+      "required_independent_result": "workerENOENT/EACCES AND independently captured supervisor hostcanaryexistence/hash, worker mountinventory, mount/PIDnamespace IDs, allowedmount comparison; absent-workerpath alone is insufficient",
+      "trusted_stimulus": "one read of a predeclared nonsecretcanary known by supervisor to exist outside workerroot; never use real evidence/credentials/secrets"
+    },
+    {
+      "attempts_per_case": 1,
+      "executed": false,
+      "family": "N16",
+      "fresh_worker": true,
+      "id": "N16-root-write",
+      "renderer_invocations": 0,
+      "required_independent_result": "EROFS/EACCES, exact asset hashes unchanged AND independently verified readonly mountflags",
+      "trusted_stimulus": "one write attempt to readonly runtime/config canaryasset"
+    },
+    {
+      "attempts_per_case": 1,
       "executed": false,
       "family": "N15",
+      "fresh_worker": true,
       "id": "N15-wall",
       "renderer_invocations": 0,
-      "required_independent_result": "parentkills worker tree at20s; FAILwall",
-      "trusted_stimulus": "trusted sleep/boundeddeadlock"
+      "required_independent_result": "parentkills worker tree with measuredwall<=20s; FAILwall",
+      "trusted_stimulus": "one trusted bounded sleep/deadlock"
     },
     {
+      "attempts_per_case": 1,
       "executed": false,
       "family": "N15",
+      "fresh_worker": true,
       "id": "N15-cpu",
       "renderer_invocations": 0,
-      "required_independent_result": "hard15sCPU/group accounting; worker killed/fails",
-      "trusted_stimulus": "trusted boundedCPUloop"
+      "required_independent_result": "RLIMIT/groupaccounting/parent kill with measuredwholeworkerCPU<=15s; FAILcpu",
+      "trusted_stimulus": "one trusted CPUloop"
     },
     {
+      "attempts_per_case": 1,
       "executed": false,
       "family": "N15",
+      "fresh_worker": true,
       "id": "N15-memory",
       "renderer_invocations": 0,
-      "required_independent_result": "cgroup1GiB/OOM event; FAILmemory;wholeprocess tree",
-      "trusted_stimulus": "trusted allocation stress"
+      "required_independent_result": "cgroup1GiB/OOM event; FAILmemory; treepeakverified",
+      "trusted_stimulus": "one trusted allocationstress"
     },
     {
+      "attempts_per_case": 1,
       "executed": false,
       "family": "N15",
+      "fresh_worker": true,
       "id": "N15-temp",
       "renderer_invocations": 0,
-      "required_independent_result": "512MiBtmpfs capENOSPC/FAIL; norootwrite",
-      "trusted_stimulus": "trusted writes to private tmp"
+      "required_independent_result": "512MiBtmpfscapENOSPC/FAIL, no rootchanges",
+      "trusted_stimulus": "one trusted private tmpwrite"
     },
     {
+      "attempts_per_case": 1,
       "executed": false,
       "family": "N15",
+      "fresh_worker": true,
       "id": "N15-output",
       "renderer_invocations": 0,
-      "required_independent_result": "parentcap128MiB; fail andkill, nevertruncatedsuccess",
-      "trusted_stimulus": "trusted oversized stdout/stderr"
+      "required_independent_result": "combined128MiBparentcap, fail/kill ratherthan truncationsuccess",
+      "trusted_stimulus": "one trusted oversized stdout/stderr"
     },
     {
+      "attempts_per_case": 1,
       "executed": false,
       "family": "N15",
-      "id": "N15-fdthread",
+      "fresh_worker": true,
+      "id": "N15-fd",
       "renderer_invocations": 0,
-      "required_independent_result": "64FD/16task ceilings enforced; FAILresource",
-      "trusted_stimulus": "trustedFD/thread stress"
+      "required_independent_result": "64FDcapEMFILE/FAIL; independentfdinventory",
+      "trusted_stimulus": "one trusted descriptorstress"
+    },
+    {
+      "attempts_per_case": 1,
+      "executed": false,
+      "family": "N15",
+      "fresh_worker": true,
+      "id": "N15-thread",
+      "renderer_invocations": 0,
+      "required_independent_result": "16taskcgroupcapEAGAIN/FAIL; independentpidspeak/events; nochildprocess",
+      "trusted_stimulus": "one trusted threadcreationstress"
     }
   ],
+  "coverage_rule": "Every fatal syscall attempt has a separate fresh-worker case; no success/coverage claimed for calls never reached. Selected syscall classes only; remaining never-allowed calls require independent exact compiledBPF/ABI review, not an exhaustive runtimecoverage claim.",
   "policy_sha256": "8a2b28837dee51e574b3d490ae79aed17eba39688e4cd59599620c9bb2641f4e",
   "pre_gate_preparation": "Requires separate explicit owner authorization after acceptedexception; no layout/nativecandidate invocation. These definitions do not clear G0.",
   "status": "FROZEN_REQUIREMENT_DEFINITIONS_ONLY_NOT_EXECUTED"

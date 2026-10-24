@@ -14,16 +14,19 @@
     "merge",
     "paidAPI/credentials/spending"
   ],
+  "full_manifest_before_probes": "Freeze exact trustedprobe payloads/expectedresults and allsamequalificationlineage variants before firstprobe. Any forbiddenfatal call has itsownfreshworker; no grouped postkillcoverage.",
+  "independent_host_canary": "Only a generated nonsecret supervisorcanary outsideworkerroot, never realhostevidence/secret files; independent mount/namespace evidence mandatory.",
   "max_attempts": 1,
   "operations": [
     "retrieve/verify only exact source/Python/native payload pins; inspect licenses/vendoredSBOM and actual baseinterpreter/ELFABI; no automaticdependency/fontinstalls or maintainer scripts",
     "one privateOCI build under reviewedlimits; record finalimage/executable/native/UA/fontconfigcache/adapter/supervisor/compiledseccompBPF hashes",
     "one nonlayout Fontconfig catalog/selection/face/style/hash validation for14logicalrequestslots; no HTML/shaping/layout/raster/PDF",
     "freeze complete independent syntheticfixture/oracle and trusteddenialpayload manifests before any futurecandidatecall",
-    "one trusted nonlayout denial/resource probe per14N15/N16definitions, counted once in fixed gate lineage, resourceceilings andremaining600s aggregateworkerbudget; failurestops no repair/retry"
+    "one trusted nonlayout denial/resource probe per30N15/N16freshworkerdefinitions, counted once in fixed gate lineage, resourceceilings andremaining600s aggregateworkerbudget; failurestops no repair/retry"
   ],
   "package_source_payload_download_cap_bytes": 268435456,
   "prerequisite": "Owner/independent acceptance of exactV1.2/fontcatalog/private-use boundary and reviewed synthetic-only exception text; no scientific criterion change. All unresolved operator/hosting rights stopfontstaging.",
+  "probe_count": 30,
   "scope": "ONE_BOUNDED_PRIVATE_NONLAYOUT_G0_PREPARATION",
   "spend_usd": 0,
   "status": "PROPOSED_AUTHORIZATION_REQUEST_ONLY_NOT_GRANTED",
