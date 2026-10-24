@@ -5,15 +5,18 @@
     "B2": "SPECIFIED_ONLY",
     "B3": "SPECIFIED_ONLY"
   },
-  "NEXT_ACTION": "Final independent scientific/security review of integrated inactiveV1.2/profile/locks/isolation/oracles and explicit bounded futurepreparation request; then CP4 ownercontracthandoff, no execution.",
-  "RESUME_PROMPT": "Read policy/skill and CHECKPOINT.json; fetch/verify docs/p0a-g0-mission-001 currenthead and evidence hashes. Preserve0835 trace and priorPRs. Resume first incomplete physical-Bold checkpoint (CP2 after CP1staticcompletion). Atmost2candidates alreadyevaluated; do notsearchagain/download/copyfonts. No native/layout/container/probe/authentic/inference/spend/merge authority. Verify pending commit/push outcomes and retain all counters.",
+  "NEXT_ACTION": "Obtain exact-head independent scientific/security review, resolve only concrete static defects, publish atmostone scoped draftPR with mandatoryordinaryCI, then stop at ownerV1.2contractreview. No install/fonttransfer/native/layout/probe/actualG0 authority.",
+  "RESUME_PROMPT": "Read canonicalpolicy/skill and CHECKPOINT.json. Fetch docs/p0a-g0-mission-001, verify current/evidence head andhashes plus preservedPR52-54; reconcile any PRcreation/push/review. PhysicalBoldcandidatesalready2evaluated, no repeatdiscovery/acquisition/transfer. CP1-CP3staticdone, resume CP4finalreview/publication. Candidatefeasibility isnotG0; no runtime/layout/probe/authentic/inference/spending/trading/merge authority, no budget/repair reset.",
   "actions": {
     "authentic_replays": 0,
     "containers_run": 0,
+    "font_acquisitions": 0,
+    "font_binary_copies": 0,
     "fonts_transferred": 0,
     "installs": 0,
     "layout_tests": 0,
     "merges": 0,
+    "native_package_payload_downloads": 0,
     "research_inference": 0,
     "security_probes": 0,
     "spend_usd": 0
@@ -23,7 +26,7 @@
   "base_sha": "29fb8e5b5fd48fa95f51a91d73f39b254d7ab5ba",
   "blocker_only_PR_prohibited": true,
   "branch": "docs/p0a-g0-mission-001",
-  "checkpoint_id": "CP3_STATIC_ISOLATION_ORACLES",
+  "checkpoint_id": "CP4_ACCEPTANCE_HANDOFF",
   "checkpoints": {
     "CP1": {
       "candidate": "DejaVuSansBold2.37",
@@ -45,7 +48,8 @@
       "status": "COMPLETED"
     },
     "CP4": {
-      "status": "NOT_STARTED"
+      "required": "finalindependent scientific/securityreview and exactownerhandoff/ordinaryCI; no contractadoption orG0activation",
+      "status": "IN_PROGRESS"
     }
   },
   "completed_deliverables": [
@@ -60,8 +64,12 @@
     "CP2exactinactiveFontconfig config and14fileguardcatalog",
     "13exactPythonwheel/buildmetadata pins withclosedactiveedges",
     "26nativepayloadcandidates fromverifiedsignedDebianindex, versionconstraintschecked, defaultfontdependenciesexplicitlyexcluded",
-    "privateuse/runtime/imagequalificationrequirements stated separately fromverifiedmetadata"
+    "privateuse/runtime/imagequalificationrequirements stated separately fromverifiedmetadata",
+    "CP3exactinactiveworkerpolicy and14trusteddenialdefinitions",
+    "Independentfontinput/analyticaloracles; fullruntimefixturefreeze explicitlyunready",
+    "ExactunappliedV1.2syntheticsecurityexception and boundedfuture nonlayoutpreparation request"
   ],
+  "continuation_base_sha": "0835aac05e1b154faaa243f0fa2e9178d259c547",
   "continuation_id": "PHYSICAL_BOLD_V1",
   "cross_provider_human_qualification": false,
   "durability": "CP1andCP2pushed; CP3staticproposalfiles pendingcheckpointcommit; no restrictednativeactivity",
@@ -80,6 +88,7 @@
     "physical_bold_v1/ISOLATION_POLICY.proposed.json": "8a2b28837dee51e574b3d490ae79aed17eba39688e4cd59599620c9bb2641f4e",
     "physical_bold_v1/NATIVE_LOCK.proposed.json": "4371bbc87ed0c495f49eaa4f8ea857fb2d99ad6ff19689677e195f93d0662db2",
     "physical_bold_v1/ORACLES.proposed.json": "61879258c29f10cffcfa01dad704fef8c461b6a565288d0ccc3fffce1d992e0a",
+    "physical_bold_v1/OWNER_PACKET.md": "2da18ff46f8bd198b3f8c60ac77620e1a63e2bf1676fa1885c87b74a6172a530",
     "physical_bold_v1/PREPARATION_AUTHORIZATION_REQUEST.json": "817ad0f62607fe3ca813e28c61c81c71b88ea3cf9e22d75b68329c504f470c9f",
     "physical_bold_v1/PYTHON_LOCK.proposed.json": "02f4dd68f80c2e6f181748e013eb45cb8d6051f981803fe1cd21f9868594092a",
     "physical_bold_v1/RUNTIME_SPEC.md": "d2be31b785c9a88bda207c4c531d0903647628686875c605cc68c167488e9bb6",
@@ -91,22 +100,25 @@
   },
   "execution_request_reason": "No supported executable B1 binding established; technical choice must precede useful G0 execution request.",
   "execution_status": "IN_PROGRESS",
-  "final_decision": null,
+  "final_decision": "CANDIDATE_READY_FOR_OWNER_CONTRACT_REVIEW_PENDING_FINAL_REVIEW",
   "head_semantics": "Exact evidenceHEAD before CP3checkpoint commit; publishedcontainingHEAD is separately bound",
-  "head_sha": "b374f46644995b404c33b065d477e3da7ca9376d",
+  "head_sha": "6d2a536dabd9958627154d8e9b9f086d1e3ca835",
   "immutable_source_files": "15_HASH_SIZE_MODE_MATCH; dirs0555_files0444",
-  "independent_review": "InitialCP1plausibilityreview preserved; final integratedreviewpending",
-  "independent_review_file": "INDEPENDENT_REVIEW.json",
-  "independent_review_sha256": "cd0963bfa28573207da1eb8ec200445715e68da95294899bd44f4171da1b83ae",
+  "independent_review": "FreshphysicalBoldinitialreviewcompleted; integratedfinalreviewpending; priorrootreceipt is historicalsynthetic-route review only",
+  "independent_review_file": null,
+  "independent_review_sha256": null,
   "maximum_new_PRs": 1,
   "mission_id": "P0A-G0-MISSION-001",
   "new_PRs": 0,
   "outstanding_blockers": [
-    "Owner/independent acceptance of proposedV1.2 beforeadoption",
-    "Native runtime/config/image/selection/materialgeometry/isolation qualification unexecuted"
+    "Owneracceptance ofexactV1.2/manifest/securityproposal andactualprivatehostingrights",
+    "Runtime/fontselection/geometry/ABI/license/image/cache/enforcement notexecuted",
+    "Full32-familyfixturebytes andexactplacement/paint/rounding/trustedprobe freeze notexecution-ready"
   ],
   "owner_authorization": "Bounded evaluate max2physicalBold candidates, no acquisition/adoption/transfer/install/layout/G0; continue static CP2/CP3 if viable",
-  "pending_side_effects": [],
+  "pending_side_effects": [
+    "final independent integratedreview; possible one scoped draftPR for new profile/lock/oracle artifacts (none createdyet)"
+  ],
   "preserved_remote_heads": {
     "LEAN_PR55": "ee33d7bcb7d3d33ef32976486a06611af0a84575",
     "PR50": "f812f2afb5b94fd3be2f40f1bd38454c72cfda47",
@@ -154,7 +166,7 @@
   "requested_review_effort": "high",
   "requested_review_model": "gpt-6.1-sol",
   "scientific_repair_gate": "UNCHANGED_SEPARATE_FROM_ENGINEERING_CYCLES",
-  "smallest_execution_authorization": null,
+  "smallest_execution_authorization": "See physical_bold_v1/PREPARATION_AUTHORIZATION_REQUEST.json: onlyfuture separatelyauthorized nonlayoutG0prep aftercontract/privateboundaryacceptance; no currentgrant/no layoutgate",
   "source_binding_result": "NO_SUPPORTED_POSITIVE_SYNTHETIC_BOLD_BINDING_ESTABLISHED_IN_EXAMINED_ROUTES",
   "starting_checkpoint_sha": "0835aac05e1b154faaa243f0fa2e9178d259c547",
   "tests": {
@@ -186,6 +198,6 @@
     "report_parser_correction": "initial report assertion expected bare OK; corrected for explicit9skips; suite not rerun",
     "source_and_14_excerpt_integrity": "PASS"
   },
-  "updated_UTC": "2026-10-24T11:21:28.292814+00:00",
+  "updated_UTC": "2026-10-24T11:25:37.911889+00:00",
   "upstream_cache_index": "SOURCE_BINDINGS.json"
 }

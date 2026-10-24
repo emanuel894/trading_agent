@@ -1,40 +1,23 @@
-# P0A-G0-MISSION-001 — CP1 blocked
+# P0A-G0-MISSION-001 — physical-Bold continuation
 
-**TECHNICAL_DECISION_REQUIRED. P0A_INCOMPLETE.** CP1/B1 BLOCKED;
-CP2/CP3 NOT_STARTED. B2/B3 remain inherited, partial SPECIFIED_ONLY descriptions.
-No blocker-only PR; no execution authorization is requested at this entry failure.
+Candidate-ready proposal: existing DejaVu Sans Bold2.37 for Segoe700, existing
+Symbols2Regular for400; CarlitoBold rejected for missingglyphs. No fonts acquired,
+copied, adopted or rendered. Prior synthetic-bold trace remains preserved.
 
-New evidence: SOURCE_BINDINGS.json pins11 source texts. B1_TRACE.json contains14
-call-path findings with source/excerpt hashes. Pinned WeasyPrint70.0 uses PangoFT2.
-In the examined comparator and fixed maintained snapshot, the hb_font constructor
-sets scale/ptem/slant/axes; the FT2 ink/advance path queries that font. No supported
-synthetic-bold parameter binding was established. CSS700, an FcEmbolden flag,
-cmap coverage and a static Regular face blob cannot supply that positive proof.
-The separate FT2 bitmap/PDF paths are no rescue for missing geometry-only evidence.
-This is a bounded failure to establish support, not universal native-version absence.
-No new native version was approved and no component was executed.
+CP1 candidate feasibility, CP2 static profile/metadata locks and CP3 isolation/
+independent-oracle definitions are completed specification deliverables. B1/B2/B3
+execution status remains SPECIFIED_ONLY; no G0 pass. CP4 final independent review
+and owner handoff are IN_PROGRESS. See physical_bold_v1/OWNER_PACKET.md and active
+CHECKPOINT.json; prior0835 state is archived, not the current nextaction.
 
-Symbols2 remains the exact static Regular2.008 already pinned in PR53, with two
-bold requests. No fake stroke,1/24em expansion, custom synthesis, alternate font,
-engine monkeypatch, renderer-derived oracle or historical equivalence is accepted.
-Unknown bold ink remains AMBIGUOUS and rejects the whole selected document.
+New exactFontconfig14-file profile,13Pythonwheel/buildpins,26nativepayloadcandidates
+fromverifiedsignedmetadata and14trusted denialdefinitions are durable commits.
+Complete runtimepayload/ABI/license/image/cache/BPF/enforcement and fullfixturebyte
+freeze remain pending futureauthorization. Scientificcriteria and originalbytes
+are unchanged. No layoutgate/authentic/inference/spending/trading/merge.
 
-**Decision needed:** separately authorize consideration of a genuine physical-Bold
-open-font mapping for those two requests, with exact rights/coverage and versioned
-contract plus scientific/security review; or supply a maintained supported native
-binding compatible with the fixed candidate/gate. No font is searched/selected here.
-Installing/running now would not close the missing supported entry binding.
-
-Local ordinary fixtures:382 run,373 passed,9 existing SDK dependency skips; demo
-passed. No dependency was installed. Windows was not rerun; prior PR54 both-OS
-regressions are historical evidence only. These results do not qualify native/G0.
-Protected files, PR52–54 and15 original hash/size/read-only modes match. Scientific
-single-repair gate stays separate/unchanged; coverage1/12, authenticMD&A0/1,
-inferenceNOT_MEASURED, G4conflictsUNRESOLVED. No spending, execution or merge.
-LEAN PR55 remains independently DATA_BLOCKED at ee33d7bcb7d3d33ef32976486a06611af0a84575;
-no edits, data/performance inspection, acquisition or new P0-A dependency imposed.
-
-NEXT_ACTION and RESUME_PROMPT are authoritative in CHECKPOINT.json: verify policy,
-remote mission branch/evidence head and hashes; reconcile publication side effects;
-resume CP1 only after the owner technical choice. Do not repeat accepted discovery
-or reset any authority, budget, gate or repair counter.
+NEXT_ACTION: finish final independent scientific/security review and hand off the
+inactive exactV1.2 candidate contract for ownerreview. No execution is authorized.
+RESUME_PROMPT: use CHECKPOINT.json, verify remote missionhead/evidence, reconcile
+publication/review sideeffects, resume first incomplete physicalBold checkpoint;
+do not repeat2candidate search or acquire/copy fonts. Preserve all priorlimits.
