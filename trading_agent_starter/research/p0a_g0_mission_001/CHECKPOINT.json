@@ -5,7 +5,7 @@
     "B2": "SPECIFIED_ONLY",
     "B3": "SPECIFIED_ONLY"
   },
-  "NEXT_ACTION": "Automatically continue CP2 static exactFontconfig/runtime-lock/private-use specs, then CP3 isolation/oracles, no font acquisition/transfer/nativeexecution; seek only final owner contract review at CP4.",
+  "NEXT_ACTION": "Continue CP3 precise worker isolation/denial matrix and independent analytical/source-oracle definitions without candidate execution; then final independent scientific/security review and owner contract handoff.",
   "RESUME_PROMPT": "Read policy/skill and CHECKPOINT.json; fetch/verify docs/p0a-g0-mission-001 currenthead and evidence hashes. Preserve0835 trace and priorPRs. Resume first incomplete physical-Bold checkpoint (CP2 after CP1staticcompletion). Atmost2candidates alreadyevaluated; do notsearchagain/download/copyfonts. No native/layout/container/probe/authentic/inference/spend/merge authority. Verify pending commit/push outcomes and retain all counters.",
   "actions": {
     "authentic_replays": 0,
@@ -23,7 +23,7 @@
   "base_sha": "29fb8e5b5fd48fa95f51a91d73f39b254d7ab5ba",
   "blocker_only_PR_prohibited": true,
   "branch": "docs/p0a-g0-mission-001",
-  "checkpoint_id": "CP1_PHYSICAL_BOLD",
+  "checkpoint_id": "CP2_STATIC_REPRODUCIBILITY",
   "checkpoints": {
     "CP1": {
       "candidate": "DejaVuSansBold2.37",
@@ -33,7 +33,10 @@
       "status": "COMPLETED"
     },
     "CP2": {
-      "status": "NOT_STARTED"
+      "fontconfig_executed": false,
+      "meaning": "STATIC_SPECIFICATIONS_ONLY: exact Fontconfig/configcatalog + metadata candidate locks/privateboundary requirements; actualpayload/native/ABI/cache/image execution unperformed",
+      "native_payloads_verified": false,
+      "status": "COMPLETED"
     },
     "CP3": {
       "status": "NOT_STARTED"
@@ -49,25 +52,39 @@
     "explicit physical-face guards/rejection expectations; no positive Bold oracle invented",
     "protected/PR52_54/original hash-size-mode preservation checks",
     "ordinary fixture suite/demo, distinct from native/G0",
-    "independent initial review agrees bounded technical stop"
+    "independent initial review agrees bounded technical stop",
+    "CP1physicalBold feasibility without acquisition",
+    "CP2exactinactiveFontconfig config and14fileguardcatalog",
+    "13exactPythonwheel/buildmetadata pins withclosedactiveedges",
+    "26nativepayloadcandidates fromverifiedsignedDebianindex, versionconstraintschecked, defaultfontdependenciesexplicitlyexcluded",
+    "privateuse/runtime/imagequalificationrequirements stated separately fromverifiedmetadata"
   ],
   "continuation_id": "PHYSICAL_BOLD_V1",
   "cross_provider_human_qualification": false,
-  "durability": "Physical-Bold CP1 initially uncommitted pending checkpoint commit; prior0835 remains durable. No restricted operation performed.",
+  "durability": "CP1candidate committed/pushed at6fc7d1836f904198da314b7d0e1a2a9eb53e94fd; CP2static artifacts pending checkpoint commit, no nativeactivity",
   "evidence_sha256": {
     "physical_bold_v1/CHECKPOINT_PARENT_0835aac.json": "46fb667e4f550c022daa7b837e01c4fef1190347a512f15a81a1fd3917f911dd",
     "physical_bold_v1/CONTRACT_V1_2_PROPOSED.md": "bbd9441a78322ef1a81ff3808a6864b109c4d740711466468358e1be04552cee",
     "physical_bold_v1/CP1_CANDIDATES.json": "48db5498a39c14ff261b52891e385330b3c8c9f60240fb9e1acda402ff1c25bf",
+    "physical_bold_v1/CP2_STATIC_CHECKS.json": "8935b5fba02d9e0f08881a380633f53e6f69b872fad7e6271d244c4837d137c8",
+    "physical_bold_v1/DEBIAN_METADATA_RECEIPT.json": "1a6efbea158604a82666709e96a7b6c0d6b6aac4fd0bb2ad05bb73d6902c2867",
     "physical_bold_v1/DejaVu-2.37.LICENSE.txt": "7a083b136e64d064794c3419751e5c7dd10d2f64c108fe5ba161eae5e5958a93",
-    "physical_bold_v1/fonts-dejavu_2.37-8.dsc.txt": "219f7f8fba98827caaa296520730171ec230d3090ed8b6d663edb66839b48847"
+    "physical_bold_v1/FONTCONFIG_SPEC.json": "a1775b305a71bc53f212eebad83e19fd2dfb703f5026885b8f5197560d0cd6c3",
+    "physical_bold_v1/FONT_CATALOG.proposed.json": "5259200d252c518adf767d3cbb654a5e18dfd20a246c8cabd05d0aef027eece4",
+    "physical_bold_v1/NATIVE_LOCK.proposed.json": "4371bbc87ed0c495f49eaa4f8ea857fb2d99ad6ff19689677e195f93d0662db2",
+    "physical_bold_v1/PYTHON_LOCK.proposed.json": "02f4dd68f80c2e6f181748e013eb45cb8d6051f981803fe1cd21f9868594092a",
+    "physical_bold_v1/RUNTIME_SPEC.md": "d2be31b785c9a88bda207c4c531d0903647628686875c605cc68c167488e9bb6",
+    "physical_bold_v1/fonts-dejavu_2.37-8.dsc.txt": "219f7f8fba98827caaa296520730171ec230d3090ed8b6d663edb66839b48847",
+    "physical_bold_v1/fonts.conf.proposed": "b13d9df6c21100198790eb63f9b4e0a8a4020687fdb0e9382326e8dd4e85b106",
+    "physical_bold_v1/requirements.proposed.txt": "120d572674bc0dbe2c98f3b87cf13e8d1305150ee95a5644223f75d397fbe31d"
   },
   "execution_request_reason": "No supported executable B1 binding established; technical choice must precede useful G0 execution request.",
   "execution_status": "IN_PROGRESS",
   "final_decision": null,
-  "head_semantics": "exact current repository HEAD before physical-Bold CP1 checkpoint commit; pending permitted scoped edits recorded",
-  "head_sha": "0835aac05e1b154faaa243f0fa2e9178d259c547",
+  "head_semantics": "Exact repository evidence HEAD before this checkpoint commit; publication receipt binds containing commit separately",
+  "head_sha": "6fc7d1836f904198da314b7d0e1a2a9eb53e94fd",
   "immutable_source_files": "15_HASH_SIZE_MODE_MATCH; dirs0555_files0444",
-  "independent_review": "Fresh initial CP1 review confirms plausible physical-face route; final integrated review pending",
+  "independent_review": "InitialCP1plausibilityreview preserved; final integratedreviewpending",
   "independent_review_file": "INDEPENDENT_REVIEW.json",
   "independent_review_sha256": "cd0963bfa28573207da1eb8ec200445715e68da95294899bd44f4171da1b83ae",
   "maximum_new_PRs": 1,
@@ -158,6 +175,6 @@
     "report_parser_correction": "initial report assertion expected bare OK; corrected for explicit9skips; suite not rerun",
     "source_and_14_excerpt_integrity": "PASS"
   },
-  "updated_UTC": "2026-10-24T10:41:16.618619+00:00",
+  "updated_UTC": "2026-10-24T11:10:50.662752+00:00",
   "upstream_cache_index": "SOURCE_BINDINGS.json"
 }

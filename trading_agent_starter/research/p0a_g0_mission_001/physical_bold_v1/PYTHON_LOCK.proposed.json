@@ -1,0 +1,352 @@
+{
+  "direct_and_build_requirements_checked": [
+    "pydyf>=0.13.0",
+    "cffi>=0.6",
+    "tinyhtml5>=2.0.0b1",
+    "tinycss2>=1.5.0",
+    "cssselect2>=0.10.0",
+    "Pyphen>=0.9.1",
+    "Pillow>=12.1.0",
+    "fonttools[woff]>=4.59.2",
+    "flit_core>=3.2,<5"
+  ],
+  "future_install": "OFFLINE_ONLY exact selected wheel filenames and --require-hashes --no-deps --no-index; no resolver or build isolation fetch. Build WeasyPrint source separately with pinnedflit, freeze source+wheel hashes.",
+  "metadata_integrity": "SHA256 over retrieved HTTPS JSON; wheel/source hashes are publisher-declared, not payload-verified",
+  "payloads_downloaded": false,
+  "satisfied_active_requires_dist_edges": [
+    {
+      "from": "cffi",
+      "requirement": "pycparser; implementation_name != \"PyPy\"",
+      "satisfied_by": "2.23",
+      "to": "pycparser"
+    },
+    {
+      "from": "cssselect2",
+      "requirement": "tinycss2",
+      "satisfied_by": "1.5.0",
+      "to": "tinycss2"
+    },
+    {
+      "from": "cssselect2",
+      "requirement": "webencodings",
+      "satisfied_by": "0.5.1",
+      "to": "webencodings"
+    },
+    {
+      "from": "fonttools",
+      "requirement": "brotli>=1.0.1; platform_python_implementation == \"CPython\" and extra == \"woff\"",
+      "satisfied_by": "1.2.0",
+      "to": "brotli"
+    },
+    {
+      "from": "fonttools",
+      "requirement": "zopfli>=0.1.4; extra == \"woff\"",
+      "satisfied_by": "0.4.0",
+      "to": "zopfli"
+    },
+    {
+      "from": "tinycss2",
+      "requirement": "webencodings>=0.4",
+      "satisfied_by": "0.5.1",
+      "to": "webencodings"
+    },
+    {
+      "from": "tinyhtml5",
+      "requirement": "webencodings>=0.5.1",
+      "satisfied_by": "0.5.1",
+      "to": "webencodings"
+    }
+  ],
+  "selected_wheels": [
+    {
+      "bytes": 1419737,
+      "declared_sha256": "67a91c5187e1eec76a61625c77a6c8c785650f5b576ca732bd33ef58b0dff49c",
+      "filename": "brotli-1.2.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "license_expression_or_metadata": "MIT",
+      "license_notices_and_vendored_SBOM": "NOT_FETCHED_NOT_QUALIFIED",
+      "metadata_sha256": "392fa77cce156d31fc0a86049bce58fd20c6ad85c8bbd0b17911de00292d9a55",
+      "metadata_url": "https://pypi.org/pypi/brotli/1.2.0/json",
+      "name": "brotli",
+      "payload_verified": false,
+      "requires_python": null,
+      "source_identity_metadata": [
+        {
+          "filename": "brotli-1.2.0.tar.gz",
+          "sha256": "e310f77e41941c13340a95976fe66a8a95b01e783d430eeaf7a2f87e0a57dd0a",
+          "url": "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
+        }
+      ],
+      "url": "https://files.pythonhosted.org/packages/5f/16/a1b22cbea436642e071adcaf8d4b350a2ad02f5e0ad0da879a1be16188a0/brotli-1.2.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "version": "1.2.0"
+    },
+    {
+      "bytes": 219499,
+      "declared_sha256": "c8d3b5532fc71b7a77c09192b4a5a200ea992702734a2e9279a37f2478236f26",
+      "filename": "cffi-2.0.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "license_expression_or_metadata": "MIT",
+      "license_notices_and_vendored_SBOM": "NOT_FETCHED_NOT_QUALIFIED",
+      "metadata_sha256": "176060f17977cb6a9df47b3ee7f97ee40d688832f30593649b465e8d064f4530",
+      "metadata_url": "https://pypi.org/pypi/cffi/2.0.0/json",
+      "name": "cffi",
+      "payload_verified": false,
+      "requires_python": ">=3.9",
+      "source_identity_metadata": [
+        {
+          "filename": "cffi-2.0.0.tar.gz",
+          "sha256": "44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529",
+          "url": "https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz"
+        }
+      ],
+      "url": "https://files.pythonhosted.org/packages/98/df/0a1755e750013a2081e863e7cd37e0cdd02664372c754e5560099eb7aa44/cffi-2.0.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "version": "2.0.0"
+    },
+    {
+      "bytes": 15489,
+      "declared_sha256": "f80848dab8ae74bd359b819dc85db349770d6a2861b6db737ca527c248269ec3",
+      "filename": "cssselect2-0.10.0-py3-none-any.whl",
+      "license_expression_or_metadata": null,
+      "license_notices_and_vendored_SBOM": "NOT_FETCHED_NOT_QUALIFIED",
+      "metadata_sha256": "1fe52a748ddb2cbee08a87a9311ea82fe46bd2ddeb1916c7d5d044e0851f8de6",
+      "metadata_url": "https://pypi.org/pypi/cssselect2/0.10.0/json",
+      "name": "cssselect2",
+      "payload_verified": false,
+      "requires_python": ">=3.10",
+      "source_identity_metadata": [
+        {
+          "filename": "cssselect2-0.10.0.tar.gz",
+          "sha256": "5bc3e3e8da5e77a4a7396a464b5582200d8813bca40fa940263ac5ae57aafccd",
+          "url": "https://files.pythonhosted.org/packages/d6/f5/333e585b6c7a479ed9fb5c92b991b9adf48ee2aa74b6fa194cbdfe4471f7/cssselect2-0.10.0.tar.gz"
+        }
+      ],
+      "url": "https://files.pythonhosted.org/packages/33/86/541fbb5c2dc931ca9dd7ea010b073ead7d66d04f2009e41c72f4094fefd1/cssselect2-0.10.0-py3-none-any.whl",
+      "version": "0.10.0"
+    },
+    {
+      "bytes": 45594,
+      "declared_sha256": "e7a0304069ea895172e3c7bb703292e992c5d1555dd1233ab7b5621b5b69e62c",
+      "filename": "flit_core-3.12.0-py3-none-any.whl",
+      "license_expression_or_metadata": "BSD-3-Clause",
+      "license_notices_and_vendored_SBOM": "NOT_FETCHED_NOT_QUALIFIED",
+      "metadata_sha256": "f8483d52f3957adacc30376fdc3855fc103b51862e14f13ed3a80da7461df0b3",
+      "metadata_url": "https://pypi.org/pypi/flit_core/3.12.0/json",
+      "name": "flit-core",
+      "payload_verified": false,
+      "requires_python": ">=3.6",
+      "source_identity_metadata": [
+        {
+          "filename": "flit_core-3.12.0.tar.gz",
+          "sha256": "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2",
+          "url": "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+        }
+      ],
+      "url": "https://files.pythonhosted.org/packages/f2/65/b6ba90634c984a4fcc02c7e3afe523fef500c4980fec67cc27536ee50acf/flit_core-3.12.0-py3-none-any.whl",
+      "version": "3.12.0"
+    },
+    {
+      "bytes": 1148996,
+      "declared_sha256": "17d2bf5d541add43822bcf0c43d7d847b160c9bb01d15d5007d84e2217aaa371",
+      "filename": "fonttools-4.61.1-py3-none-any.whl",
+      "license_expression_or_metadata": "MIT",
+      "license_notices_and_vendored_SBOM": "NOT_FETCHED_NOT_QUALIFIED",
+      "metadata_sha256": "f7c6aeff8163b9e236f0d442782ce1819adac8fb971e37644d84e7bf1345a6d4",
+      "metadata_url": "https://pypi.org/pypi/fonttools/4.61.1/json",
+      "name": "fonttools",
+      "payload_verified": false,
+      "requires_python": ">=3.10",
+      "source_identity_metadata": [
+        {
+          "filename": "fonttools-4.61.1.tar.gz",
+          "sha256": "6675329885c44657f826ef01d9e4fb33b9158e9d93c537d84ad8399539bc6f69",
+          "url": "https://files.pythonhosted.org/packages/ec/ca/cf17b88a8df95691275a3d77dc0a5ad9907f328ae53acbe6795da1b2f5ed/fonttools-4.61.1.tar.gz"
+        }
+      ],
+      "url": "https://files.pythonhosted.org/packages/c7/4e/ce75a57ff3aebf6fc1f4e9d508b8e5810618a33d900ad6c19eb30b290b97/fonttools-4.61.1-py3-none-any.whl",
+      "version": "4.61.1"
+    },
+    {
+      "bytes": 7038117,
+      "declared_sha256": "6741e6f3074a35e47c77b23a4e4f2d90db3ed905cb1c5e6e0d49bff2045632bc",
+      "filename": "pillow-12.1.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "license_expression_or_metadata": "MIT-CMU",
+      "license_notices_and_vendored_SBOM": "NOT_FETCHED_NOT_QUALIFIED",
+      "metadata_sha256": "6768c9287997f7b298d4f1ca0366aa6503e78f4f49f5992ec44bcb96e6a690af",
+      "metadata_url": "https://pypi.org/pypi/Pillow/12.1.0/json",
+      "name": "pillow",
+      "payload_verified": false,
+      "requires_python": ">=3.10",
+      "source_identity_metadata": [
+        {
+          "filename": "pillow-12.1.0.tar.gz",
+          "sha256": "5c5ae0a06e9ea030ab786b0251b32c7e4ce10e58d983c0d5c56029455180b5b9",
+          "url": "https://files.pythonhosted.org/packages/d0/02/d52c733a2452ef1ffcc123b68e6606d07276b0e358db70eabad7e40042b7/pillow-12.1.0.tar.gz"
+        }
+      ],
+      "url": "https://files.pythonhosted.org/packages/01/9a/632e58ec89a32738cabfd9ec418f0e9898a2b4719afc581f07c04a05e3c9/pillow-12.1.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "version": "12.1.0"
+    },
+    {
+      "bytes": 118140,
+      "declared_sha256": "e5c6e8d3fbad53479cab09ac03729e0a9faf2bee3db8208a550daf5af81a5934",
+      "filename": "pycparser-2.23-py3-none-any.whl",
+      "license_expression_or_metadata": "BSD-3-Clause",
+      "license_notices_and_vendored_SBOM": "NOT_FETCHED_NOT_QUALIFIED",
+      "metadata_sha256": "2f8b35ee20ccc932a73315a4fea04b3b88a17a66b23c5305af534a9a6d1f20a2",
+      "metadata_url": "https://pypi.org/pypi/pycparser/2.23/json",
+      "name": "pycparser",
+      "payload_verified": false,
+      "requires_python": ">=3.8",
+      "source_identity_metadata": [
+        {
+          "filename": "pycparser-2.23.tar.gz",
+          "sha256": "78816d4f24add8f10a06d6f05b4d424ad9e96cfebf68a4ddc99c65c0720d00c2",
+          "url": "https://files.pythonhosted.org/packages/fe/cf/d2d3b9f5699fb1e4615c8e32ff220203e43b248e1dfcc6736ad9057731ca/pycparser-2.23.tar.gz"
+        }
+      ],
+      "url": "https://files.pythonhosted.org/packages/a0/e3/59cd50310fc9b59512193629e1984c1f95e5c8ae6e5d8c69532ccc65a7fe/pycparser-2.23-py3-none-any.whl",
+      "version": "2.23"
+    },
+    {
+      "bytes": 8140,
+      "declared_sha256": "85b28a3af8c35e6fe1415f2b3f1d6851cb3b52f53592c2cda4db9a00a8979677",
+      "filename": "pydyf-0.13.0-py3-none-any.whl",
+      "license_expression_or_metadata": null,
+      "license_notices_and_vendored_SBOM": "NOT_FETCHED_NOT_QUALIFIED",
+      "metadata_sha256": "7c48bcaa3a7b7dcb4757b39e6457220151b8b6ff0f885a31277737a4543bbdce",
+      "metadata_url": "https://pypi.org/pypi/pydyf/0.13.0/json",
+      "name": "pydyf",
+      "payload_verified": false,
+      "requires_python": ">=3.11",
+      "source_identity_metadata": [
+        {
+          "filename": "pydyf-0.13.0.tar.gz",
+          "sha256": "3c1bd536c7161d9f472b82a8aaa27d3359a9058ec12de15302d92b3690dae7f5",
+          "url": "https://files.pythonhosted.org/packages/67/1f/3a10f8d2d106bb68330c43a5cd0faf922d1816f65a1581f35015ac654a79/pydyf-0.13.0.tar.gz"
+        }
+      ],
+      "url": "https://files.pythonhosted.org/packages/78/0a/091fdda21512cc4a149c5d43a3d29b8b336f4f04181f2553f43ed54f7490/pydyf-0.13.0-py3-none-any.whl",
+      "version": "0.13.0"
+    },
+    {
+      "bytes": 2079358,
+      "declared_sha256": "3a07fb017cb2341e1d9ff31b8634efb1ae4dc4b130468c7c39dd3d32e7c3affd",
+      "filename": "pyphen-0.17.2-py3-none-any.whl",
+      "license_expression_or_metadata": null,
+      "license_notices_and_vendored_SBOM": "NOT_FETCHED_NOT_QUALIFIED",
+      "metadata_sha256": "7a5dbc17bfcaec84750abd39cfd7a9339cfc532a4c4b74f8aab75e577ad93500",
+      "metadata_url": "https://pypi.org/pypi/Pyphen/0.17.2/json",
+      "name": "pyphen",
+      "payload_verified": false,
+      "requires_python": ">=3.9",
+      "source_identity_metadata": [
+        {
+          "filename": "pyphen-0.17.2.tar.gz",
+          "sha256": "f60647a9c9b30ec6c59910097af82bc5dd2d36576b918e44148d8b07ef3b4aa3",
+          "url": "https://files.pythonhosted.org/packages/69/56/e4d7e1bd70d997713649c5ce530b2d15a5fc2245a74ca820fc2d51d89d4d/pyphen-0.17.2.tar.gz"
+        }
+      ],
+      "url": "https://files.pythonhosted.org/packages/7b/1f/c2142d2edf833a90728e5cdeb10bdbdc094dde8dbac078cee0cf33f5e11b/pyphen-0.17.2-py3-none-any.whl",
+      "version": "0.17.2"
+    },
+    {
+      "bytes": 28404,
+      "declared_sha256": "6645326e562ea497d6d11cfa608ce3ad30c1e96576b0e43d678dcf6275df6761",
+      "filename": "tinycss2-1.5.0-py3-none-any.whl",
+      "license_expression_or_metadata": null,
+      "license_notices_and_vendored_SBOM": "NOT_FETCHED_NOT_QUALIFIED",
+      "metadata_sha256": "fab2db48c8bd82d11d0599925f4f40913a73204f23771d3b420b67b7427f935b",
+      "metadata_url": "https://pypi.org/pypi/tinycss2/1.5.0/json",
+      "name": "tinycss2",
+      "payload_verified": false,
+      "requires_python": ">=3.10",
+      "source_identity_metadata": [
+        {
+          "filename": "tinycss2-1.5.0.tar.gz",
+          "sha256": "6a7be7a654f38a2a55b61d2d97b1f65a7eb40d1cb4057ac37145f675f16efdf9",
+          "url": "https://files.pythonhosted.org/packages/83/75/00f94ca4e8fe9e791b43cba1cf4ed5538bf8ec2318b1b64a1a30c252c53f/tinycss2-1.5.0.tar.gz"
+        }
+      ],
+      "url": "https://files.pythonhosted.org/packages/29/1e/7c7284ffdae1de8d5bae8bee55749a78273d842b003928ee998b6fdffd0a/tinycss2-1.5.0-py3-none-any.whl",
+      "version": "1.5.0"
+    },
+    {
+      "bytes": 39793,
+      "declared_sha256": "13683277c5b176d070f82d099d977194b7a1e26815b016114f581a74bbfbf47e",
+      "filename": "tinyhtml5-2.0.0-py3-none-any.whl",
+      "license_expression_or_metadata": null,
+      "license_notices_and_vendored_SBOM": "NOT_FETCHED_NOT_QUALIFIED",
+      "metadata_sha256": "e77995ba4b2ad1ceb6d6bc366fefad02abc38f3d1ff607d0ac1e2e50a35adaac",
+      "metadata_url": "https://pypi.org/pypi/tinyhtml5/2.0.0/json",
+      "name": "tinyhtml5",
+      "payload_verified": false,
+      "requires_python": ">=3.9",
+      "source_identity_metadata": [
+        {
+          "filename": "tinyhtml5-2.0.0.tar.gz",
+          "sha256": "086f998833da24c300c414d9fe81d9b368fd04cb9d2596a008421cbc705fcfcc",
+          "url": "https://files.pythonhosted.org/packages/fd/03/6111ed99e9bf7dfa1c30baeef0e0fb7e0bd387bd07f8e5b270776fe1de3f/tinyhtml5-2.0.0.tar.gz"
+        }
+      ],
+      "url": "https://files.pythonhosted.org/packages/5c/de/27c57899297163a4a84104d5cec0af3b1ac5faf62f44667e506373c6b8ce/tinyhtml5-2.0.0-py3-none-any.whl",
+      "version": "2.0.0"
+    },
+    {
+      "bytes": 11774,
+      "declared_sha256": "a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78",
+      "filename": "webencodings-0.5.1-py2.py3-none-any.whl",
+      "license_expression_or_metadata": "BSD",
+      "license_notices_and_vendored_SBOM": "NOT_FETCHED_NOT_QUALIFIED",
+      "metadata_sha256": "a3c3223dabd0491c3d56ff490527efdb6e971b2cc31d7dd79906ea4b3ee300b6",
+      "metadata_url": "https://pypi.org/pypi/webencodings/0.5.1/json",
+      "name": "webencodings",
+      "payload_verified": false,
+      "requires_python": "",
+      "source_identity_metadata": [
+        {
+          "filename": "webencodings-0.5.1.tar.gz",
+          "sha256": "b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923",
+          "url": "https://files.pythonhosted.org/packages/0b/02/ae6ceac1baeda530866a85075641cec12989bd8d31af6d5ab4a3e8c92f47/webencodings-0.5.1.tar.gz"
+        }
+      ],
+      "url": "https://files.pythonhosted.org/packages/f4/24/2a3e3df732393fed8b3ebf2ec078f05546de641fe1b667ee316ec1dcf3b7/webencodings-0.5.1-py2.py3-none-any.whl",
+      "version": "0.5.1"
+    },
+    {
+      "bytes": 847135,
+      "declared_sha256": "18b5f1570f64d4988482e4466f10ef5f2a30f687c19ad62a64560f2152dc89eb",
+      "filename": "zopfli-0.4.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "license_expression_or_metadata": "Apache-2.0",
+      "license_notices_and_vendored_SBOM": "NOT_FETCHED_NOT_QUALIFIED",
+      "metadata_sha256": "f0cf10e6b31d6779881345cc5178da3a147519a77130dc40e5cb5162a7df16d1",
+      "metadata_url": "https://pypi.org/pypi/zopfli/0.4.0/json",
+      "name": "zopfli",
+      "payload_verified": false,
+      "requires_python": ">=3.10",
+      "source_identity_metadata": [
+        {
+          "filename": "zopfli-0.4.0.tar.gz",
+          "sha256": "a8ee992b2549e090cd3f0178bf606dd41a29e0613a04cdf5054224662c72dce6",
+          "url": "https://files.pythonhosted.org/packages/be/4c/efa0760686d4cc69e68a8f284d3c6c5884722c50f810af0e277fb7d61621/zopfli-0.4.0.tar.gz"
+        }
+      ],
+      "url": "https://files.pythonhosted.org/packages/5a/9e/8f81e69bd771014a488c4c64476b6e6faab91b2c913d0f81eca7e06401eb/zopfli-0.4.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "version": "0.4.0"
+    }
+  ],
+  "status": "STATIC_METADATA_LOCK_CANDIDATE_NOT_INSTALLED",
+  "target": {
+    "architecture": "linux_x86_64",
+    "base_platform_digest": "sha256:17cbbc787c42807b179b559a5356f87804f01812cbcabd57f2becd3605ce65cd",
+    "maximum_glibc_tag": "manylinux_2_36",
+    "python": "3.13.16",
+    "weasyprint_commit": "7e2dda0d7833916d2698c35e707bc80ddea1ed24",
+    "weasyprint_distribution": "BUILD_FROM_PINNED_SOURCE_USING_FLIT_CORE; resultingwheelhashMUST_BE_FROZEN_BEFORE_G0"
+  },
+  "unqualified": [
+    "actualwheel/sourcebytes/signatures",
+    "nativeELFABIclosure",
+    "licenses/vendoredSBOM",
+    "builtWeasywheel",
+    "finalOCIimage/CPythonbinary/Fontconfigcache/UAstylesheet/adapter/supervisorhashes"
+  ],
+  "wheel_selection": "Prefer pure wheels where offered, else best explicit target CPython3.13/manylinux<=2.36; no host-tag substitution"
+}
