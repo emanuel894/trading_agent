@@ -1,0 +1,133 @@
+{
+  "review_id": "P0A-G0-MISSION-001-PHYSICAL-BOLD-FINAL-INDEPENDENT-STATIC-REVIEW",
+  "created_UTC": "2026-10-24T19:01:00.177297+00:00",
+  "review_head": "7c761456d0175824976bd7c36e591e135082e4b9",
+  "continuation_base": "0835aac05e1b154faaa243f0fa2e9178d259c547",
+  "trusted_instruction_base": "29fb8e5b5fd48fa95f51a91d73f39b254d7ab5ba",
+  "trusted_instruction_sha256": {
+    "AGENTS.md": "291514f0c3017fae9534ce9cd64f71928698e0c6e7faaac24989c035b3b0483c",
+    "AI_PROJECT_POLICY.md": "69795c12456a1a7228d6936d433a256a829760453361d04b3686c2a2669237ce",
+    ".agents/skills/trading-project/SKILL.md": "ae1069018bdfe1b58284f0425b16abb6bdfeac5e39aac68af9530f77e60c2973",
+    ".agents/skills/trading-project/references/project-state.md": "8a5875710f55e319096609a81bb9b7bba3ec5cfa54f7c3fbf56c7aaf9ae5ce35"
+  },
+  "review_scope": "Fresh independent scientific/security review of exact-head CP1-CP3 inactive static proposal only. No product files edited.",
+  "requested_model": "gpt-6.1-sol",
+  "requested_effort": "high",
+  "actual_serving_model_id": "UNAVAILABLE",
+  "actual_reasoning_effort": "UNAVAILABLE",
+  "human_or_cross_provider_qualification": false,
+  "status": "CANDIDATE_READY_FOR_OWNER_CONTRACT_REVIEW_ONLY",
+  "recommendation": "Sufficient for owner review of the exact inactive V1.2 contract and fourteen-file font catalog. This is neither owner acceptance nor G0 passed nor execution readiness. All subsequent work requires its applicable separate explicit authority and complete gates.",
+  "material_final_findings": [],
+  "prior_findings_resolution": [
+    {
+      "id": "R1",
+      "status": "CORRECTED_IN_SPEC_BEFORE_EXECUTION",
+      "evidence": "DENIAL_MATRIX.json: thirty fresh-worker cases; each forbidden fatal call individually defined; no later-call coverage inferred after SIGSYS; payload serialization still pending."
+    },
+    {
+      "id": "R2",
+      "status": "CORRECTED_IN_SPEC_BEFORE_EXECUTION",
+      "evidence": "N16-host-read requires independently established nonsecret host-canary existence/hash, worker mounts and PID/mount namespace inventory plus allowed-mount comparison; worker ENOENT/EACCES alone insufficient."
+    }
+  ],
+  "passed_static_checks": [
+    "Six security proposal hash bindings, original ADR, PR50 gate and exact unapplied proposed-target hash match. git apply --check also passed without applying.",
+    "Fontconfig XML syntax/no include/no DTD and manifest bindings pass; native semantics/selection NOT_RUN.",
+    "Existing thirteen selected face hashes retained exactly; only the known physical DejaVu Bold candidate added, with transfer unauthorized.",
+    "Four analytical-template UTF8 hashes/spans and both exact rational glyph bboxes/advances match independent preexisting static-input evidence; private outline points are not copied.",
+    "Interim R1/R2 corrected: thirty individual fresh-worker definitions including twenty fatal syscall cases; independent host-canary/mount/namespace evidence required; proposed 64/102 arithmetic and hard600s budget agree.",
+    "Thirteen Python/build pin names, versions and hashes match inactive requirements; seven declared active edges are internally consistent specification only."
+  ],
+  "scientific_assessment": [
+    "The two-candidate bounded decision preserves the rejected Carlito result and identifies a physical 700 face rather than synthetic emphasis. The approximately9.1942% advance change and downstream wrap/linebox/baseline/paint/fragmentation risks are explicit; no historical/Microsoft equivalence claim.",
+    "Original source requests and byte spans remain authoritative; CSS700 normal maps globally to the pinned physical face and400 normal remains Symbols2. Unexpected selected blob/index/style/glyph/cluster, synthesis or within-catalog fallback rejects the whole document.",
+    "Visible/hidden/ambiguous accounting, every excluded interval, independent complete-MDA denominator, whole-document uncertainty outside MDA and unchanged scientific single-repair rule remain failclosed.",
+    "Positive geometry evidence derives from static input tables/polygons and rational placement assumptions. Negative OS/resource outcomes require independent kernel/cgroup/supervisor receipts. Neither oracle is derived from renderer success logs.",
+    "Four minimal HTML strings are openly incomplete analytical templates: nowrap/overlay placement and full paint/linebox/rounding/byte-boundary expectations still need serialization. No unmeasured result is claimed."
+  ],
+  "rights_and_security_assessment": [
+    "Complete Bitstream/Arev notices retained; source/archive identities and dpkg consistency are distinguished from verified source-build correspondence/signatures. Existing local use does not clear later actual operator/transfer/distribution boundaries; Narrow uncertainty remains separate.",
+    "Profiles, security exception and preparation request are inactive. Deny-all fetching and active-content preflight remain mandatory alongside proposed nonroot/secretless/namespaced readonly default-deny containment.",
+    "Unknown calls, attempted fetches, unsupported content, ambiguity and exhausted resources fail closed without policy weakening, substitution, repair or retry."
+  ],
+  "execution_readiness_blockers_explicitly_preserved": [
+    "Full PR50 family/parameter fixture and expected source/placement/paint/linebox/rounding/boundary manifest and thirty trusted probe payloads are not frozen. 64variants/102invocations is allocation arithmetic only, not proof that all required N03 schemes/P16 heights/family cases fit. No coverage may be compressed or waived to fit; infeasibility must stop.",
+    "Actual package/source payload integrity, runtime license/vendored SBOM, source-built wheel, final OCI/CPython/native ELF/ABI/UA/cache/environment/adapter/supervisor/compiledBPF hashes and actual enforcement receipts are unqualified.",
+    "No native Fontconfig semantics/selection, cache generation, shaping, hinting, rasterization, layout, probe, synthetic gate, authentic replay or inference was performed. No G0 or execution authorization inferred.",
+    "Private hosting/operator/transfer rights and exact later staging authorization remain unresolved. No font copied, installed, acquired or transferred by this review."
+  ],
+  "not_run": [
+    "Candidate execution of any kind",
+    "Container/image preparation",
+    "Package/font acquisition or staging",
+    "Native font selection/cache/shaping/layout/render/PDF",
+    "Denial/resource probes",
+    "Synthetic qualification gate",
+    "Authentic replay or extraction",
+    "Inference",
+    "Independent test-suite/demo rerun; author reports ordinary fixture validation separately",
+    "Hosted Ubuntu/Windows CI verification"
+  ],
+  "source_limited": [
+    "Metadata authenticity/signatures/source-build correspondence and raw package license/ABI payloads were not independently reacquired or reverified. Review verifies static internal bindings and reuses prior evidence.",
+    "Fresh independent agent review does not establish actual serving identity, human review or cross-provider qualification."
+  ],
+  "failed_review_checks": [],
+  "review_harness_note": "One preliminary static check script used selected_files count as a list and failed with TypeError; corrected to the selected fonts list. No candidate operation occurred. All final assertions passed.",
+  "actions": {
+    "network_requests": 0,
+    "font_acquisition_copy_transfer_install": 0,
+    "native_Fontconfig_or_candidate_invocations": 0,
+    "probe_invocations": 0,
+    "spend_USD": 0,
+    "product_file_mutations": 0,
+    "amendments_applied": 0,
+    "merges": 0
+  },
+  "artifact_sha256": {
+    "CHECKPOINT_PARENT_0835aac.json": "46fb667e4f550c022daa7b837e01c4fef1190347a512f15a81a1fd3917f911dd",
+    "CONTRACT_V1_2_PROPOSED.md": "bbd9441a78322ef1a81ff3808a6864b109c4d740711466468358e1be04552cee",
+    "CP1_CANDIDATES.json": "48db5498a39c14ff261b52891e385330b3c8c9f60240fb9e1acda402ff1c25bf",
+    "CP2_STATIC_CHECKS.json": "8935b5fba02d9e0f08881a380633f53e6f69b872fad7e6271d244c4837d137c8",
+    "CP3_SPEC.md": "806919e925a789be9fe946b5cf92605c3efefef9d134f1a855669da8244b2dc1",
+    "CP3_STATIC_CHECKS.json": "9169b9b791d276d0f3579861fdbf42dd87ec771a43630180b48c4f087aad3fd7",
+    "DEBIAN_METADATA_RECEIPT.json": "1a6efbea158604a82666709e96a7b6c0d6b6aac4fd0bb2ad05bb73d6902c2867",
+    "DENIAL_MATRIX.json": "43e1f0f312883f3956f71d47d384496eabd3c92e8dd17a8cb25927e410e170b9",
+    "DejaVu-2.37.LICENSE.txt": "7a083b136e64d064794c3419751e5c7dd10d2f64c108fe5ba161eae5e5958a93",
+    "FONTCONFIG_SPEC.json": "a1775b305a71bc53f212eebad83e19fd2dfb703f5026885b8f5197560d0cd6c3",
+    "FONT_CATALOG.proposed.json": "5259200d252c518adf767d3cbb654a5e18dfd20a246c8cabd05d0aef027eece4",
+    "ISOLATION_POLICY.proposed.json": "8a2b28837dee51e574b3d490ae79aed17eba39688e4cd59599620c9bb2641f4e",
+    "NATIVE_LOCK.proposed.json": "4371bbc87ed0c495f49eaa4f8ea857fb2d99ad6ff19689677e195f93d0662db2",
+    "ORACLES.proposed.json": "9810756eb3fed23c455d30a407c7b99189cd8c44aa28a3fa4715e8920561957c",
+    "OWNER_PACKET.md": "85aab93e27ff53668c4c428c7b7cc1a5bfb95094ba3612736735d507c22ae165",
+    "PREPARATION_AUTHORIZATION_REQUEST.json": "3da797ef7e430f6f52ca98489056318f6428dadeb8d0de0ed965c8bd91ed19d1",
+    "PYTHON_LOCK.proposed.json": "02f4dd68f80c2e6f181748e013eb45cb8d6051f981803fe1cd21f9868594092a",
+    "RUNTIME_SPEC.md": "d2be31b785c9a88bda207c4c531d0903647628686875c605cc68c167488e9bb6",
+    "SECURITY_EXCEPTION_SPEC.json": "99f5e5062b108ec6c120a73580a032a62e8ce751df3736ec1eaef0bd07cf869a",
+    "SECURITY_EXCEPTION_V1_2.proposed.patch": "d49a0dea3972208e98d6244cbc28dea7cc0b766cc80f3e092cc89bc1192b2a35",
+    "fonts-dejavu_2.37-8.dsc.txt": "219f7f8fba98827caaa296520730171ec230d3090ed8b6d663edb66839b48847",
+    "fonts.conf.proposed": "b13d9df6c21100198790eb63f9b4e0a8a4020687fdb0e9382326e8dd4e85b106",
+    "requirements.proposed.txt": "120d572674bc0dbe2c98f3b87cf13e8d1305150ee95a5644223f75d397fbe31d"
+  },
+  "private_evidence_sha256": {
+    "independent-static-oracle.json": "45939c697929ee7aa752d98de0adecafc4332258cd4f5521fb663d4977671efe",
+    "initial-review.json": "e55db99dc6419eb104afe8a602b0e70991068f0dc00cb883da128a40d64e7f38",
+    "cp2-cp3-interim-review.json": "2853c1f0a68bf92145a2daa8855072dff27d66d5cfd7bae112a97eb534fa509f"
+  },
+  "private_outline_data_copied_or_published": false,
+  "review_tool_versions": {
+    "static_check_python": "3.12.14",
+    "git": "git version 2.52.0"
+  },
+  "publication_binding": "Review binds exact7c761456 proposal bytes plus exactly the two hash-bound working-file clarification deltas in reviewed_publication_delta. Other later changed artifacts require delta review. Original23 artifact hashes remain head-bound.",
+  "reviewed_publication_delta": {
+    "base": "7c761456d0175824976bd7c36e591e135082e4b9",
+    "working_file_sha256": {
+      "trading_agent_starter/research/p0a_g0_mission_001/physical_bold_v1/OWNER_PACKET.md": "cf656dc6d94a9b1c0964b0e9f20165aeeb48c21a2acb09875657586450de7807",
+      "trading_agent_starter/research/p0a_g0_mission_001/PROGRESS.md": "92c06e3d2b699a9c4b479be901252db85e2d70a1ae7f4d0dfb2b3e65a98cc3aa"
+    },
+    "git_diff_sha256": "448778f6447aa115895d8e982ee0d6cb7f4a2c72c468ddd2326661ad2cba5462",
+    "assessment": "ACCEPTED_STATIC_CLARIFICATION_ONLY: OWNER_PACKET refers to hash-bound final independent review and explicitly conditions complete N03/P16/all-family coverage on unchanged caps; PROGRESS corrects stale14 to30fresh-worker denial definitions. No profile/contract/security/oracle/pin change. Final handoff metadata may later change and needs separate hashbinding."
+  }
+}

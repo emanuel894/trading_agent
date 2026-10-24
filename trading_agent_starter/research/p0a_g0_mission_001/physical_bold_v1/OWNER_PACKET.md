@@ -1,6 +1,7 @@
 # Physical-Bold candidate — integrated owner handoff (proposed)
 
-**CANDIDATE_READY_FOR_OWNER_CONTRACT_REVIEW**, subject to final independent review.
+**CANDIDATE_READY_FOR_OWNER_CONTRACT_REVIEW** for the inactive proposal only.
+See the hash-bound independent review receipt; runtime qualification is reserved.
 This is candidate feasibility and static specification, **not G0 qualification or
 execution authority**. P0A_INCOMPLETE. No font acquisition/transfer, layout, gate,
 authentic replay, inference, scientific amendment, trading, spend or merge.
@@ -38,6 +39,9 @@ are NOT_RUN/NOT_QUALIFIED. Complete32-family fixture bytes, exact placement/pain
 rounding/boundary answers and trustedprobe payloads still require pre-execution
 serialization/hashreview. The4minimalstrings are analytical suboracle templates,
 not an execution-ready complete gate manifest. No candidateoutput can fill gaps.
+The64/102allocation is arithmetic, not proof that the full required parameter
+manifest fits. N03scheme coverage, P16heights and all required family cases must
+remain complete within the unchanged cap; inability to fit stops qualification.
 
 ## Approval and smallest essential next work
 
