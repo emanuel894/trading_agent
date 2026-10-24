@@ -1,4 +1,6 @@
 // Observation compatibility only. No algorithm, portfolio, signal, brokerage or order API.
+using System;
+using System.IO;
 using System.Globalization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
