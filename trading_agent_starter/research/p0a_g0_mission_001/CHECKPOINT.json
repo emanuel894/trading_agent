@@ -1,12 +1,12 @@
 {
   "B2_B3_scope": "REUSED_PARTIAL_PR50_54_SPECIFICATIONS_ONLY; CP2_CP3_NOT_STARTED",
   "B_status": {
-    "B1": "BLOCKED",
+    "B1": "SPECIFIED_ONLY",
     "B2": "SPECIFIED_ONLY",
     "B3": "SPECIFIED_ONLY"
   },
-  "NEXT_ACTION": "Owner technical choice: separately authorize consideration of a physical-Bold open-font mapping for the two requests, or supply an upstream-supported exact Symbols2 synthesis binding compatible with fixed gate. No new search, patch or experiment initiated.",
-  "RESUME_PROMPT": "Read AGENTS.md, AI_PROJECT_POLICY.md and trading-project skill, then CHECKPOINT.json. Fetch docs/p0a-g0-mission-001 and verify exact evidence head plus publication-only metadata delta, evidence hashes and PR50/52/53/54 heads. Reconcile interrupted commit/push/review. Resume CP1 only after recorded owner technical choice; reuse source bindings/trace. No install/container/layout/probe/font-transfer/authentic/inference/spending/merge authority; no budget/repair reset.",
+  "NEXT_ACTION": "Automatically continue CP2 static exactFontconfig/runtime-lock/private-use specs, then CP3 isolation/oracles, no font acquisition/transfer/nativeexecution; seek only final owner contract review at CP4.",
+  "RESUME_PROMPT": "Read policy/skill and CHECKPOINT.json; fetch/verify docs/p0a-g0-mission-001 currenthead and evidence hashes. Preserve0835 trace and priorPRs. Resume first incomplete physical-Bold checkpoint (CP2 after CP1staticcompletion). Atmost2candidates alreadyevaluated; do notsearchagain/download/copyfonts. No native/layout/container/probe/authentic/inference/spend/merge authority. Verify pending commit/push outcomes and retain all counters.",
   "actions": {
     "authentic_replays": 0,
     "containers_run": 0,
@@ -23,23 +23,22 @@
   "base_sha": "29fb8e5b5fd48fa95f51a91d73f39b254d7ab5ba",
   "blocker_only_PR_prohibited": true,
   "branch": "docs/p0a-g0-mission-001",
-  "checkpoint_id": "CP1",
+  "checkpoint_id": "CP1_PHYSICAL_BOLD",
   "checkpoints": {
     "CP1": {
-      "investigation_deliverable": "COMPLETED_SOURCE_TRACE_ONLY",
-      "required": "positive supported exact native bold binding and independent material-visibility expectations NOT_ESTABLISHED",
-      "status": "BLOCKED"
+      "candidate": "DejaVuSansBold2.37",
+      "candidates_evaluated": 2,
+      "font_transfer": false,
+      "meaning": "candidate technical feasibility/static identity only; contract/selection/layout not accepted",
+      "status": "COMPLETED"
     },
     "CP2": {
-      "reason": "depends_on_CP1",
       "status": "NOT_STARTED"
     },
     "CP3": {
-      "reason": "depends_on_CP1",
       "status": "NOT_STARTED"
     },
     "CP4": {
-      "reason": "early technical-stop rule; exit packet does not qualify integrated G0",
       "status": "NOT_STARTED"
     }
   },
@@ -52,29 +51,33 @@
     "ordinary fixture suite/demo, distinct from native/G0",
     "independent initial review agrees bounded technical stop"
   ],
+  "continuation_id": "PHYSICAL_BOLD_V1",
   "cross_provider_human_qualification": false,
-  "durability": "Substantive evidence committed and remote-verified at6717bc71f9990c0e5a9c82bfaa02440ba240794a. This final checkpoint/review version is committed/pushed as a permitted publication-only delta; verify live containing commit on resume. Raw upstream cache is local; immutable URLs/hashes permit rehydration without discovery.",
+  "durability": "Physical-Bold CP1 initially uncommitted pending checkpoint commit; prior0835 remains durable. No restricted operation performed.",
   "evidence_sha256": {
-    "B1_TRACE.json": "145e173d9cc5d456b2d63e558f581bc5cc47dec6077edb5a2b1882b7863c671e",
-    "INDEPENDENT_REVIEW.json": "cd0963bfa28573207da1eb8ec200445715e68da95294899bd44f4171da1b83ae",
-    "PROGRESS.md": "e430983e7e4788fabae2b1e101bcbeb8c295e92077eb1cd90bcba3998f607c3d",
-    "SOURCE_BINDINGS.json": "1b95485d6721d5533feea241d749682d5aedb6d6a31d720cff78fdaee33eec40"
+    "physical_bold_v1/CHECKPOINT_PARENT_0835aac.json": "46fb667e4f550c022daa7b837e01c4fef1190347a512f15a81a1fd3917f911dd",
+    "physical_bold_v1/CONTRACT_V1_2_PROPOSED.md": "bbd9441a78322ef1a81ff3808a6864b109c4d740711466468358e1be04552cee",
+    "physical_bold_v1/CP1_CANDIDATES.json": "48db5498a39c14ff261b52891e385330b3c8c9f60240fb9e1acda402ff1c25bf",
+    "physical_bold_v1/DejaVu-2.37.LICENSE.txt": "7a083b136e64d064794c3419751e5c7dd10d2f64c108fe5ba161eae5e5958a93",
+    "physical_bold_v1/fonts-dejavu_2.37-8.dsc.txt": "219f7f8fba98827caaa296520730171ec230d3090ed8b6d663edb66839b48847"
   },
   "execution_request_reason": "No supported executable B1 binding established; technical choice must precede useful G0 execution request.",
-  "execution_status": "BLOCKED",
-  "final_decision": "TECHNICAL_DECISION_REQUIRED",
-  "head_semantics": "Exact independently reviewed substantive evidence HEAD. Later publication commit may change only CHECKPOINT.json metadata and add INDEPENDENT_REVIEW.json; B1_TRACE/SOURCE_BINDINGS/PROGRESS remain byte-identical. Git commit containing this checkpoint is the publication head; final remote receipt is also in /workspace/p0a-g0-mission-001/PUBLICATION.json.",
-  "head_sha": "6717bc71f9990c0e5a9c82bfaa02440ba240794a",
+  "execution_status": "IN_PROGRESS",
+  "final_decision": null,
+  "head_semantics": "exact current repository HEAD before physical-Bold CP1 checkpoint commit; pending permitted scoped edits recorded",
+  "head_sha": "0835aac05e1b154faaa243f0fa2e9178d259c547",
   "immutable_source_files": "15_HASH_SIZE_MODE_MATCH; dirs0555_files0444",
-  "independent_review": "ACCEPT_TECHNICAL_STOP_FOR_METADATA_ONLY_PUBLICATION; no blocking findings; not G0 or runtime qualification",
+  "independent_review": "Fresh initial CP1 review confirms plausible physical-face route; final integrated review pending",
   "independent_review_file": "INDEPENDENT_REVIEW.json",
   "independent_review_sha256": "cd0963bfa28573207da1eb8ec200445715e68da95294899bd44f4171da1b83ae",
   "maximum_new_PRs": 1,
   "mission_id": "P0A-G0-MISSION-001",
   "new_PRs": 0,
   "outstanding_blockers": [
-    "positive exact maintained Symbols2 bold binding not established; material visibility unknown"
+    "Owner/independent acceptance of proposedV1.2 beforeadoption",
+    "Native runtime/config/image/selection/materialgeometry/isolation qualification unexecuted"
   ],
+  "owner_authorization": "Bounded evaluate max2physicalBold candidates, no acquisition/adoption/transfer/install/layout/G0; continue static CP2/CP3 if viable",
   "pending_side_effects": [],
   "preserved_remote_heads": {
     "LEAN_PR55": "ee33d7bcb7d3d33ef32976486a06611af0a84575",
@@ -117,17 +120,15 @@
     "trading_agent_starter/research/p0a_visibility_001/TEST_MATRIX.md": "e136713b982318b275f880f7be712bd25c927016022c2e8b5e82cdc7f594d4ba",
     "trading_agent_starter/research/p0a_visibility_001/evidence.json": "8b562cf469bfc16b540a0c3f5b0269006163ae7bc9e65263543b131ebfa709b7"
   },
-  "publication_metadata_allowlist": [
-    "trading_agent_starter/research/p0a_g0_mission_001/CHECKPOINT.json",
-    "trading_agent_starter/research/p0a_g0_mission_001/INDEPENDENT_REVIEW.json"
-  ],
-  "publication_rule": "Push this checkpoint/receipt only; verify remote exact containing commit and diff allowlist. No PR solely to report this blocker. No other writes/experiments pending.",
+  "publication_metadata_allowlist": [],
+  "publication_rule": "Commit/push authorized new physical_bold_v1 proposal artifacts and current recovery metadata; priorB1evidence preserved; atmost1newscoped draftPR only for substantive specs, never solely blocker.",
   "repository": "emanuel894/trading_agent",
   "requested_review_effort": "high",
   "requested_review_model": "gpt-6.1-sol",
   "scientific_repair_gate": "UNCHANGED_SEPARATE_FROM_ENGINEERING_CYCLES",
   "smallest_execution_authorization": null,
   "source_binding_result": "NO_SUPPORTED_POSITIVE_SYNTHETIC_BOLD_BINDING_ESTABLISHED_IN_EXAMINED_ROUTES",
+  "starting_checkpoint_sha": "0835aac05e1b154faaa243f0fa2e9178d259c547",
   "tests": {
     "Windows": "NOT_RUN_CURRENT_CHECKPOINT; prior_PR54_both_OS_382_and_demo_reused_only_as_historical_regression",
     "candidate_layout_native_Fontconfig_security_tests": "NOT_RUN",

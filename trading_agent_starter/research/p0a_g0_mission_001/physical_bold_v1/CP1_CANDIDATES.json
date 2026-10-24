@@ -1,0 +1,125 @@
+{
+  "candidate_decision": "DejaVu Sans Bold2.37 VIABLE_FOR_CONTRACT_REVIEW_ONLY",
+  "candidate_limit": 2,
+  "candidates": [
+    {
+      "candidate": "Carlito Bold1.104",
+      "decision": "REJECTED_MISSING_BOTH_REQUIRED_CODEPOINTS",
+      "evidence_reused": true,
+      "existing_file_sha256": "bb5d20f79b82599ec72983597437373a80f2d2085fa91fc144fd74e876a594db",
+      "style": "Bold",
+      "symbol_glyphs": {
+        "U+2610": null,
+        "U+2612": null
+      }
+    },
+    {
+      "analysis": {
+        "fontTools": "4.61.1",
+        "mode": "STATIC_TABLES_ONLY; no glyph hint execution, shaping, rasterization, fontconfig or layout"
+      },
+      "bytes": 708920,
+      "candidate": "DejaVu Sans Bold",
+      "copyright": "Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved.\nCopyright (c) 2006 by Tavmjong Bah. All Rights Reserved.\nDejaVu changes are in public domain\n",
+      "dpkg_expected_md5": "4f29244f3b64c6978e77a4baffd6b6b5",
+      "dpkg_file_integrity": "MATCH",
+      "embedded_nameID13_license_sha256": "f1d7e97481cf4ac81f2d3ab8b14a483fb34b0b4824a3f8d2b1c70a6fa86a3b08",
+      "family": "DejaVu Sans",
+      "font_copied_or_downloaded": false,
+      "head_macStyle": 1,
+      "hhea": {
+        "ascent": 1901,
+        "descent": -483,
+        "lineGap": 0
+      },
+      "license_notice_file": "DejaVu-2.37.LICENSE.txt",
+      "os2_fsSelection": 32,
+      "os2_weight_class": 700,
+      "package": "fonts-dejavu-core",
+      "package_version": "2.37-8",
+      "path": "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+      "postscript_name": "DejaVuSans-Bold",
+      "sha256": "a4c5bc453ca281d90ea079e596da7ae0dfeb5777497c29ec254e76d97ff6f890",
+      "source_package_identity": {
+        "DSC_metadata_sha256": "219f7f8fba98827caaa296520730171ec230d3090ed8b6d663edb66839b48847",
+        "DSC_signature_verified": false,
+        "DSC_url": "https://deb.debian.org/debian/pool/main/f/fonts-dejavu/fonts-dejavu_2.37-8.dsc",
+        "archives_downloaded": false,
+        "debian_delta_archive": "fonts-dejavu_2.37-8.debian.tar.xz",
+        "debian_delta_sha256": "2401402245dec8a59fc5f0f8eff76d203a38440797f7f223e1d044e07c2d41fb",
+        "orig_archive": "fonts-dejavu_2.37.orig.tar.bz2",
+        "orig_archive_sha256": "4b21c5203f792343d5e90ab1cb0cf07e99887218abe3d83cd9a98cea9085e799",
+        "source_binary_build_correspondence": "NOT_VERIFIED",
+        "version": "2.37-8"
+      },
+      "style": "Bold",
+      "symbols": {
+        "U+2610": {
+          "advance_lsb": [
+            1836,
+            184
+          ],
+          "bbox_font_units": [
+            184,
+            0,
+            1653,
+            1493
+          ],
+          "composite": false,
+          "glyph": "uni2610"
+        },
+        "U+2612": {
+          "advance_lsb": [
+            1836,
+            183
+          ],
+          "bbox_font_units": [
+            183,
+            0,
+            1654,
+            1493
+          ],
+          "composite": false,
+          "glyph": "uni2612"
+        }
+      },
+      "typo": {
+        "ascender": 1556,
+        "descender": -492,
+        "lineGap": 410
+      },
+      "units_per_em": 2048,
+      "upstream_commit": "0eda8a319c08835009849583cd090bb5b141ce25",
+      "upstream_license_sha256": "7a083b136e64d064794c3419751e5c7dd10d2f64c108fe5ba161eae5e5958a93",
+      "upstream_license_url": "https://raw.githubusercontent.com/dejavu-fonts/dejavu-fonts/0eda8a319c08835009849583cd090bb5b141ce25/LICENSE",
+      "upstream_version_tag": "version_2_37",
+      "variable_axes": [],
+      "version": "Version 2.37"
+    }
+  ],
+  "candidates_evaluated": 2,
+  "checkpoint": "CP1_PHYSICAL_BOLD",
+  "contract_change": "INACTIVE_V1_2_PROPOSAL_OWNER_AND_INDEPENDENT_SCIENTIFIC_SECURITY_ACCEPTANCE_REQUIRED",
+  "engine_binding": "Existing WeasyPrint70\u2192PangoFT2/Fontconfig normal physical-face selection, CSS700\u2192Fontconfig bold200, physical file/hash/index/style guarded. No synthetic operation needed. Native selection NOT_EXECUTED.",
+  "font_acquisitions_downloads_transfers": 0,
+  "font_installs": 0,
+  "independent_initial_review": {
+    "path": "/workspace/p0a-g0-mission-001/physical-bold-v1/review/initial-review.json",
+    "sha256": "e55db99dc6419eb104afe8a602b0e70991068f0dc00cb883da128a40d64e7f38"
+  },
+  "layout_execution": false,
+  "maintainability": "Stable upstream2.37 plus maintained Debian Fonts Task Force2.37-8 packaging; not claimed recent glyph-design development",
+  "material_risks": {
+    "advance_delta_em": "4831/64000",
+    "effects": "wrap/min-content, line box, baseline, stacking/occlusion and fragmentation may change; no authentic qualification",
+    "new_physical_bold_advance_em": "1836/2048",
+    "old_regular_advance_em": "821/1000",
+    "relative_delta_percent": "~9.1942"
+  },
+  "mission_id": "P0A-G0-MISSION-001",
+  "oracle_input_review": {
+    "path": "/workspace/p0a-g0-mission-001/physical-bold-v1/review/independent-static-oracle.json",
+    "sha256": "45939c697929ee7aa752d98de0adecafc4332258cd4f5521fb663d4977671efe"
+  },
+  "scientific_criteria_changed": false
+}
