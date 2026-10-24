@@ -1,0 +1,114 @@
+{
+  "decision": "DATA_BLOCKED",
+  "proposal_only": true,
+  "base_branch": "feat/alpaca-paper-foundation",
+  "base_sha": "5f8b850548e2f7786814086d5350a72a19d87459",
+  "no_new_source_requests": true,
+  "native_qualification_reruns": 0,
+  "performance_runs": 0,
+  "external_spend_usd": 0,
+  "evidence": [
+    {
+      "path": "AI_PROJECT_POLICY.md",
+      "sha256": "69795c12456a1a7228d6936d433a256a829760453361d04b3686c2a2669237ce",
+      "url": "https://github.com/emanuel894/trading_agent/blob/5f8b850548e2f7786814086d5350a72a19d87459/AI_PROJECT_POLICY.md"
+    },
+    {
+      "path": ".agents/skills/trading-project/SKILL.md",
+      "sha256": "ae1069018bdfe1b58284f0425b16abb6bdfeac5e39aac68af9530f77e60c2973",
+      "url": "https://github.com/emanuel894/trading_agent/blob/5f8b850548e2f7786814086d5350a72a19d87459/.agents/skills/trading-project/SKILL.md"
+    },
+    {
+      "path": ".agents/skills/trading-project/references/project-state.md",
+      "sha256": "8a5875710f55e319096609a81bb9b7bba3ec5cfa54f7c3fbf56c7aaf9ae5ce35",
+      "url": "https://github.com/emanuel894/trading_agent/blob/5f8b850548e2f7786814086d5350a72a19d87459/.agents/skills/trading-project/references/project-state.md"
+    },
+    {
+      "path": "trading_agent_starter/MARKET_DATA_CONTRACT.md",
+      "sha256": "a44a1bd077cc2b4291c6a45b41b05155ef9bcccd65f34ed41b31dbd280841cc6",
+      "url": "https://github.com/emanuel894/trading_agent/blob/5f8b850548e2f7786814086d5350a72a19d87459/trading_agent_starter/MARKET_DATA_CONTRACT.md"
+    },
+    {
+      "path": "trading_agent_starter/ARCHITECTURE_DECISION_001.md",
+      "sha256": "8e550b45447c616138704715f2de4424c392bacc0d4b7939aa077a72657b3641",
+      "url": "https://github.com/emanuel894/trading_agent/blob/5f8b850548e2f7786814086d5350a72a19d87459/trading_agent_starter/ARCHITECTURE_DECISION_001.md"
+    },
+    {
+      "path": "trading_agent_starter/research/sip_quote_review_20260916.json",
+      "sha256": "f72b81cebc9ceb3ba3f62b59dbb82539b11cd84366fc738990425aaeabd15f16",
+      "url": "https://github.com/emanuel894/trading_agent/blob/5f8b850548e2f7786814086d5350a72a19d87459/trading_agent_starter/research/sip_quote_review_20260916.json"
+    },
+    {
+      "path": "trading_agent_starter/research/historical_quote_policy_v1.json",
+      "sha256": "8bac4acd729447a68117d98590da35e9bf38cef0c18827a7ce629b2c40f177ad",
+      "url": "https://github.com/emanuel894/trading_agent/blob/5f8b850548e2f7786814086d5350a72a19d87459/trading_agent_starter/research/historical_quote_policy_v1.json"
+    },
+    {
+      "path": "trading_agent_starter/research/source_rights_20260916.json",
+      "sha256": "f9efa6842f96de418564b3d883a797435e20c218dcb93690b87befe2bc69857a",
+      "url": "https://github.com/emanuel894/trading_agent/blob/5f8b850548e2f7786814086d5350a72a19d87459/trading_agent_starter/research/source_rights_20260916.json"
+    },
+    {
+      "path": "trading_agent_starter/research/dated_source_gate_20260916.json",
+      "sha256": "2e4fca43b0d97e3540702651fc12b97038d35ec8fd429197c8bb644723d28cb0",
+      "url": "https://github.com/emanuel894/trading_agent/blob/5f8b850548e2f7786814086d5350a72a19d87459/trading_agent_starter/research/dated_source_gate_20260916.json"
+    },
+    {
+      "path": "trading_agent_starter/research/owner_daily_smoke_attestation_20260922.json",
+      "sha256": "217f52d8ca0b38b9746d8b0c4cc472e6919aca2b75043e3e3ce3e45b139e224f",
+      "url": "https://github.com/emanuel894/trading_agent/blob/5f8b850548e2f7786814086d5350a72a19d87459/trading_agent_starter/research/owner_daily_smoke_attestation_20260922.json"
+    },
+    {
+      "path": "trading_agent_starter/research/cohort_spy_identity_20260916.json",
+      "sha256": "518689d34497decd88c212727e1d29289cbde5d75623b9b99ab9946bf65d987f",
+      "url": "https://github.com/emanuel894/trading_agent/blob/5f8b850548e2f7786814086d5350a72a19d87459/trading_agent_starter/research/cohort_spy_identity_20260916.json"
+    },
+    {
+      "path": "trading_agent_starter/config/access_gate_observations.json",
+      "sha256": "9491dad223a64bf9b45b0409618258742dade96ca5bb2f86f02c586b3a028cc1",
+      "url": "https://github.com/emanuel894/trading_agent/blob/5f8b850548e2f7786814086d5350a72a19d87459/trading_agent_starter/config/access_gate_observations.json"
+    },
+    {
+      "path": "trading_agent_starter/COHORT_CLOSURE_20260916.md",
+      "sha256": "e8198f38e481540a2ca0337613a6b6fdfffaee8eb76fc3f60554935414e09369",
+      "url": "https://github.com/emanuel894/trading_agent/blob/5f8b850548e2f7786814086d5350a72a19d87459/trading_agent_starter/COHORT_CLOSURE_20260916.md"
+    },
+    {
+      "path": "trading_agent_starter/agent/audit_market.py",
+      "sha256": "1d97fac3173a430232e9b7dc7554921ad010654883bae186517c99e9c5eb672c",
+      "url": "https://github.com/emanuel894/trading_agent/blob/5f8b850548e2f7786814086d5350a72a19d87459/trading_agent_starter/agent/audit_market.py"
+    },
+    {
+      "path": "trading_agent_starter/agent/alpaca_history.py",
+      "sha256": "11c05dc4a0d70423e2d770f332a14bc2451e080cf2333cb7eeab8dcc1c971ffc",
+      "url": "https://github.com/emanuel894/trading_agent/blob/5f8b850548e2f7786814086d5350a72a19d87459/trading_agent_starter/agent/alpaca_history.py"
+    },
+    {
+      "path": "trading_agent_starter/agent/alpaca_daily_contract.py",
+      "sha256": "8fc983b89af15e5d8528474e859edd3c8a67f1706914c3d4f3b793615259a561",
+      "url": "https://github.com/emanuel894/trading_agent/blob/5f8b850548e2f7786814086d5350a72a19d87459/trading_agent_starter/agent/alpaca_daily_contract.py"
+    },
+    {
+      "path": "trading_agent_starter/research/lean_intraday_integration_20261023/RESULT.md",
+      "sha256": "4999babd2092efb989db9100cc374b30f35b0260156f3121d32b06d483985a54",
+      "url": "https://github.com/emanuel894/trading_agent/blob/5f8b850548e2f7786814086d5350a72a19d87459/trading_agent_starter/research/lean_intraday_integration_20261023/RESULT.md"
+    }
+  ],
+  "external_references_reused_only": [
+    "https://data.alpaca.markets/v2/stocks/bars",
+    "https://data.alpaca.markets/v2/stocks/quotes",
+    "https://paper-api.alpaca.markets/v2/calendar",
+    "https://files.alpaca.markets/disclosures/library/TermsAndConditions.pdf",
+    "https://docs.alpaca.markets/us/docs/real-time-stock-pricing-data",
+    "https://www.nasdaqtrader.com/content/administrationsupport/agreementstrading/THRSSFeedTermsCond.pdf"
+  ],
+  "private_archive_expected_database_sha256": "4ac083a8c23c2c24c4bd0d4bb08467f43d626d5dd959bab4b2e8561a9272f7c7",
+  "raw_archive_independently_restored_here": false,
+  "retained_sample_window_utc": [
+    "2025-01-15T15:00:00+00:00",
+    "2025-01-15T15:05:00+00:00"
+  ],
+  "retained_quote_row_count": 60895,
+  "unique_quote_count": "UNKNOWN_REPEATED_REQUESTS_MAY_DUPLICATE",
+  "sample_status_rows": 0
+}
