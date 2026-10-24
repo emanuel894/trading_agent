@@ -1,0 +1,270 @@
+{
+  "checkpoint": "SIP_ENGINE_CP2_CP3_ORIGINAL_BINDINGS",
+  "base_sha": "fc3b6a8b7e5f070e6602487637d5e9b714023b7f",
+  "source_contract_commit": "91dddedbd3b5471a31e96ae90ec511e58bd7dd9d",
+  "code_head_sha": "30cc57af7e013d1bd6d61ed668389350d0ee1077",
+  "status": "NATIVE_ENGINE_DIAGNOSTIC_PASS",
+  "source_projection_sha256": "5097fa90a3080a60d20db230cc90849317654a37a3f5ce2ee6968dff7482f969",
+  "native_compiled_sha256": "2a3376d6ada459f3aa39d79fc561643979d98077965839d88a8d8701f6c169da",
+  "code_sha256": {
+    "EngineReplay.cs": "a3eb80569f019f1ed20a0ae7e4c79fc38e1b736de9d728b428224afd2097f57e",
+    "prepare.py": "e250e05b62fcbe3852d67cebfe7b28fd789f694429a4fd1c7b55f157d31c5ae6",
+    "run.py": "0cf1e83bf2dce64d68ce3c59bd9391646d08167eb2494676a46c3487a5dc2c28",
+    "build-local.sh": "27637013264dec5117416469ea48fcba811d31f902abdae7ff37ed18ec9b692c",
+    "CONTRACT.md": "48c4629c4f72a41a18489fa9d67b59988c8b3191337a1d447a59ae59c1d9e7f5"
+  },
+  "config_sha256": {
+    "source/Data/market-hours/market-hours-database.json": "f44effe21e7937a76a426bdb6a0de427b6440160b811b33bb6ed28c0f04ea1f0",
+    "source/Data/symbol-properties/symbol-properties-database.csv": "53072f5a5ac4ff1b0d6f14a28fb93c43b633c0713635539fda0c2695089e236a"
+  },
+  "accepted_manifest_sha256": "dbf0134509f550f9333548c59c12fa1d556bdf54f42ce70c2da74ba05c251ebb",
+  "attempts": [
+    {
+      "case": "synthetic-positive",
+      "repeat": 1,
+      "status": "PASS",
+      "input_sha256": "0969540114f510b08b5fbefdc5ed997aeeb6387f891a19b8e7e88e3aeef437a1",
+      "wall_seconds": 9.16643284199995,
+      "exit_code": 0,
+      "controls": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges"
+        ]
+      },
+      "output_sha256": "c3d0a2914e1fa20d602279124f56647df694a9e4f6311f7948b0fe8529572213",
+      "cgroup_peak_bytes": 254439424
+    },
+    {
+      "case": "synthetic-positive",
+      "repeat": 2,
+      "status": "PASS",
+      "input_sha256": "0969540114f510b08b5fbefdc5ed997aeeb6387f891a19b8e7e88e3aeef437a1",
+      "wall_seconds": 7.6733025620000035,
+      "exit_code": 0,
+      "controls": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges"
+        ]
+      },
+      "output_sha256": "c3d0a2914e1fa20d602279124f56647df694a9e4f6311f7948b0fe8529572213",
+      "cgroup_peak_bytes": 249405440
+    },
+    {
+      "case": "synthetic-gap",
+      "repeat": 1,
+      "status": "PASS",
+      "input_sha256": "2b2e58c6fac3e0a1b3f9b256b526bb67c883af090763a1a0999363c22b04cf6a",
+      "wall_seconds": 7.9498389169999655,
+      "exit_code": 0,
+      "controls": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges"
+        ]
+      },
+      "output_sha256": "b4c9b4180abd485d4167426230b0b0533d1fab0e831377b42ed16df435ef8af5",
+      "cgroup_peak_bytes": 250015744
+    },
+    {
+      "case": "synthetic-gap",
+      "repeat": 2,
+      "status": "PASS",
+      "input_sha256": "2b2e58c6fac3e0a1b3f9b256b526bb67c883af090763a1a0999363c22b04cf6a",
+      "wall_seconds": 9.31948759699992,
+      "exit_code": 0,
+      "controls": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges"
+        ]
+      },
+      "output_sha256": "b4c9b4180abd485d4167426230b0b0533d1fab0e831377b42ed16df435ef8af5",
+      "cgroup_peak_bytes": 249155584
+    },
+    {
+      "case": "synthetic-session-reject",
+      "repeat": 1,
+      "status": "PASS",
+      "input_sha256": "fa31121e3da34f12dad3b7cff04bc356f6b755ffb12697d8130863f968f18a1b",
+      "wall_seconds": 7.921297418999984,
+      "exit_code": 0,
+      "controls": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges"
+        ]
+      },
+      "output_sha256": "b3ce2f643945fb3b515339b0858ca112d10e2903f84eddb51865559fb82fd382",
+      "cgroup_peak_bytes": 248938496
+    },
+    {
+      "case": "synthetic-session-reject",
+      "repeat": 2,
+      "status": "PASS",
+      "input_sha256": "fa31121e3da34f12dad3b7cff04bc356f6b755ffb12697d8130863f968f18a1b",
+      "wall_seconds": 9.380114892000051,
+      "exit_code": 0,
+      "controls": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges"
+        ]
+      },
+      "output_sha256": "b3ce2f643945fb3b515339b0858ca112d10e2903f84eddb51865559fb82fd382",
+      "cgroup_peak_bytes": 250179584
+    },
+    {
+      "case": "synthetic-execution-denied",
+      "repeat": 1,
+      "status": "PASS",
+      "input_sha256": "8e65e31751b49f0a5b87944c0cf7ebd235b445a21ff7cbae5739b9053b3229a9",
+      "wall_seconds": 5.935358921999978,
+      "exit_code": 3,
+      "controls": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges"
+        ]
+      },
+      "output_sha256": "a5de1ba50cb5bcfbe081311a854e858db3592c985f7aba4653d361ddbc5922ee",
+      "cgroup_peak_bytes": 35766272
+    },
+    {
+      "case": "synthetic-execution-denied",
+      "repeat": 2,
+      "status": "PASS",
+      "input_sha256": "8e65e31751b49f0a5b87944c0cf7ebd235b445a21ff7cbae5739b9053b3229a9",
+      "wall_seconds": 7.146948813000108,
+      "exit_code": 3,
+      "controls": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges"
+        ]
+      },
+      "output_sha256": "a5de1ba50cb5bcfbe081311a854e858db3592c985f7aba4653d361ddbc5922ee",
+      "cgroup_peak_bytes": 35827712
+    },
+    {
+      "case": "synthetic-no-session",
+      "repeat": 1,
+      "status": "PASS",
+      "input_sha256": "426f6c3725e980c41b58eb4c6d308b18de575eca24aac4a8aa54135a2b94d789",
+      "wall_seconds": 5.719898786000044,
+      "exit_code": 3,
+      "controls": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges"
+        ]
+      },
+      "output_sha256": "146f24a8149f0637fc933f491f20dbb8c3ad6ae079e9b40ca41d2f6692d8363b",
+      "cgroup_peak_bytes": 35651584
+    },
+    {
+      "case": "synthetic-no-session",
+      "repeat": 2,
+      "status": "PASS",
+      "input_sha256": "426f6c3725e980c41b58eb4c6d308b18de575eca24aac4a8aa54135a2b94d789",
+      "wall_seconds": 7.890502309999988,
+      "exit_code": 3,
+      "controls": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges"
+        ]
+      },
+      "output_sha256": "146f24a8149f0637fc933f491f20dbb8c3ad6ae079e9b40ca41d2f6692d8363b",
+      "cgroup_peak_bytes": 35819520
+    },
+    {
+      "case": "real-observations",
+      "repeat": 1,
+      "status": "PASS",
+      "input_sha256": "09b18aad461fcaab9df1d47094df8e61e1c656843570f4da9bd29c9eb5a335fd",
+      "wall_seconds": 16.021590619999984,
+      "exit_code": 0,
+      "controls": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges"
+        ]
+      },
+      "output_sha256": "8ce747b99940af91c0a9b8d1186a4ef5b387c5378b7c571fa6a59f30bc46dc40",
+      "cgroup_peak_bytes": 809574400
+    },
+    {
+      "case": "real-observations",
+      "repeat": 2,
+      "status": "PASS",
+      "input_sha256": "09b18aad461fcaab9df1d47094df8e61e1c656843570f4da9bd29c9eb5a335fd",
+      "wall_seconds": 16.42004060599993,
+      "exit_code": 0,
+      "controls": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges"
+        ]
+      },
+      "output_sha256": "8ce747b99940af91c0a9b8d1186a4ef5b387c5378b7c571fa6a59f30bc46dc40",
+      "cgroup_peak_bytes": 808755200
+    }
+  ],
+  "remaining": [
+    "Independent review config-binding and failure-stage fixes",
+    "Final fixed-binding real pair and runtime-failure-stage negative pair",
+    "Complete2025IQP1 execution plan, final review and CI"
+  ],
+  "NEXT_ACTION": "Keep these12process receipts under their original bindings, fix only new review findings and validate changed boundary. No old archive/codec/qualification rerun, source probe, agreement search, performance, trading or merge.",
+  "RESUME_PROMPT": "Reconcile PR56 and latest engine checkpoint. Reuse CP1 contract and this original-binding CP2/CP3 evidence. Continue first incomplete reviewer fix/final binding validation; do not relabel prior receipts or reset budgets. Private artifacts /workspace/sip-native-engine-run02; source projection already bound. External spend0, no new data/registration/orders/trading/merge."
+}

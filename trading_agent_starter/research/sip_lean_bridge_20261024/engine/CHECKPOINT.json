@@ -1,0 +1,163 @@
+{
+  "checkpoint_id": "SIP_NATIVE_ENGINE_CP1_CP4_20261024",
+  "parent_reviewed_head": "fc3b6a8b7e5f070e6602487637d5e9b714023b7f",
+  "base_pr55_head": "ee33d7bcb7d3d33ef32976486a06611af0a84575",
+  "integration_base_sha": "5f8b850548e2f7786814086d5350a72a19d87459",
+  "branch": "feat/offline-sip-lean-bridge",
+  "cp1_contract_commit": "91dddedbd3b5471a31e96ae90ec511e58bd7dd9d",
+  "cp2_original_code_commit": "30cc57af7e013d1bd6d61ed668389350d0ee1077",
+  "cp3_original_checkpoint_commit": "f321ad4ad1599f31f01efd0216a0df92bdad22d6",
+  "final_executed_code_head_sha": "4c93a7c5d17dbc5176fae1136b0acf3e4d03bcdb",
+  "status": "NATIVE_ENGINE_DIAGNOSTIC_PASS_FULL_IQP1_UNAPPROVED",
+  "source_projection_sha256": "5097fa90a3080a60d20db230cc90849317654a37a3f5ce2ee6968dff7482f969",
+  "prepared_real_input_sha256": "09b18aad461fcaab9df1d47094df8e61e1c656843570f4da9bd29c9eb5a335fd",
+  "native_compiled_sha256": "1e35da101516572de6862dc60a06142b9e1e005b21e58430ae6495827481e679",
+  "code_sha256": {
+    "EngineReplay.cs": "83c66c49c19d33132089acc65c4816e3aaf9f2aee7c5e49b742ea5a582a6bea8",
+    "prepare.py": "e250e05b62fcbe3852d67cebfe7b28fd789f694429a4fd1c7b55f157d31c5ae6",
+    "run.py": "d7376ea88eff1218d6649d2c8e11a9bde2997d7ac5919c1815490b5bc7e8d21d",
+    "build-local.sh": "27637013264dec5117416469ea48fcba811d31f902abdae7ff37ed18ec9b692c",
+    "CONTRACT.md": "48c4629c4f72a41a18489fa9d67b59988c8b3191337a1d447a59ae59c1d9e7f5",
+    "fixtures/synthetic-positive.json": "0969540114f510b08b5fbefdc5ed997aeeb6387f891a19b8e7e88e3aeef437a1",
+    "fixtures/synthetic-gap.json": "2b2e58c6fac3e0a1b3f9b256b526bb67c883af090763a1a0999363c22b04cf6a",
+    "fixtures/synthetic-session-reject.json": "fa31121e3da34f12dad3b7cff04bc356f6b755ffb12697d8130863f968f18a1b"
+  },
+  "result": {
+    "initialized": true,
+    "ended": true,
+    "on_data_batches": 46473,
+    "events": 47458,
+    "bars": 5,
+    "quotes": 47453,
+    "trace_sha256": "7cfadceb64eab00338cc1348f2d6661c8573603c95f23326c8ebe9c7850956d5",
+    "orders": 0,
+    "engine": "AlgorithmManager.Run/SubscriptionSynchronizer/QCAlgorithm.OnData",
+    "execution_admitted": false,
+    "input_sha256": "09b18aad461fcaab9df1d47094df8e61e1c656843570f4da9bd29c9eb5a335fd",
+    "provider_calls": 0
+  },
+  "final_attempts": [
+    {
+      "case": "synthetic-post-end-failure",
+      "repeat": 1,
+      "status": "PASS",
+      "input_sha256": "7896ca3029b4fe01a663380e8bfee1a210af74814e2e78a01a7b84ca136266e1",
+      "wall_seconds": 8.022629177999988,
+      "exit_code": 3,
+      "controls": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges"
+        ]
+      },
+      "output_sha256": "e644ed4645331fcd4280a31ac2d06251acd382edaca4a64636d009089d197593",
+      "cgroup_peak_bytes": 250408960
+    },
+    {
+      "case": "synthetic-post-end-failure",
+      "repeat": 2,
+      "status": "PASS",
+      "input_sha256": "7896ca3029b4fe01a663380e8bfee1a210af74814e2e78a01a7b84ca136266e1",
+      "wall_seconds": 9.504415453999854,
+      "exit_code": 3,
+      "controls": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges"
+        ]
+      },
+      "output_sha256": "e644ed4645331fcd4280a31ac2d06251acd382edaca4a64636d009089d197593",
+      "cgroup_peak_bytes": 250155008
+    },
+    {
+      "case": "real-observations",
+      "repeat": 1,
+      "status": "PASS",
+      "input_sha256": "09b18aad461fcaab9df1d47094df8e61e1c656843570f4da9bd29c9eb5a335fd",
+      "wall_seconds": 13.028798570000163,
+      "exit_code": 0,
+      "controls": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges"
+        ]
+      },
+      "output_sha256": "8ce747b99940af91c0a9b8d1186a4ef5b387c5378b7c571fa6a59f30bc46dc40",
+      "cgroup_peak_bytes": 808988672
+    },
+    {
+      "case": "real-observations",
+      "repeat": 2,
+      "status": "PASS",
+      "input_sha256": "09b18aad461fcaab9df1d47094df8e61e1c656843570f4da9bd29c9eb5a335fd",
+      "wall_seconds": 12.357707495999875,
+      "exit_code": 0,
+      "controls": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges"
+        ]
+      },
+      "output_sha256": "8ce747b99940af91c0a9b8d1186a4ef5b387c5378b7c571fa6a59f30bc46dc40",
+      "cgroup_peak_bytes": 807649280
+    }
+  ],
+  "original_binding_attempts": "CHECKPOINT_CP3.json;12 processes retained under original30cc57a source, not relabeled",
+  "failure_stage_reproducer": "/workspace/sip-engine-stage-reproduction/RED_REPRODUCED.json; one deliberate failing-oracle process, NOT accepted evidence",
+  "all_new_native_processes": 17,
+  "old_native_qualification_reruns": 0,
+  "archive_verification_reruns": 0,
+  "codec_roundtrip_reruns": 0,
+  "source_calls": 0,
+  "agreement_searches": 0,
+  "spending_usd": 0,
+  "resume_validation": "PASS: --resume verified existing4 final receipts, launched0 containers and wrote0 checkpoint updates",
+  "tests": {
+    "engine_focused": 9,
+    "full_suite": 350,
+    "demo": "PASS_300_SYNTHETIC_BARS_NO_ORDERS",
+    "final_independent_review": "PENDING_FINAL_COMMIT",
+    "exact_head_CI": "PENDING_FINAL_COMMIT"
+  },
+  "cp4_plan_sha256": "bcfde90660d24cb77bbed5eb442250226f0b78ff1417a9310605588543f20ef3",
+  "authorization": {
+    "real_data_observation_engine_diagnostic": true,
+    "new_data_acquisition": false,
+    "strategy_evaluation": false,
+    "scientific_registration_change": false,
+    "trading": false,
+    "merge": false,
+    "rights": "UNRESOLVED_NO_FURTHER_SEARCH"
+  },
+  "completed": [
+    "CP1 frozen observational admission contract",
+    "CP2 actual IDataFeed/SubscriptionSynchronizer/AlgorithmManager/QCAlgorithm callbacks",
+    "CP3 deterministic authentic+synthetic validation, negative guards, resources, stage accounting and no-repeat resume",
+    "CP4 complete2025 input/execution plan with unchangedQ1/Q2/H2 proposal"
+  ],
+  "unresolved": [
+    "Historical tradable SPY identity/state/share-unit admission",
+    "Historical actual receipt/revision availability",
+    "Complete2025 bar/entry/exit/outcome source coverage",
+    "Full-year streaming/tradable execution mapping and independent review",
+    "Explicit IQ-P1 science registration and strategy-run mandate; rights unresolved"
+  ],
+  "NEXT_ACTION": "Finish final review/CI then stop for owner review. Do not begin data acquisition or strategy evaluation. Next owner decision can authorize the bounded missing-source qualification in IQ_P1_FULL_2025_PLAN.md; full2025scope and original science stay intact.",
+  "RESUME_PROMPT": "Resume SIP_NATIVE_ENGINE_CP1_CP4_20261024 on existing PR56/feat/offline-sip-lean-bridge. Reconcile remote head/comments and this checkpoint; verify code/source/config bindings. CP1-4 engine/plan work is complete. Reuse original-binding12process evidence and final4process evidence plus retained1stagebug reproducer, no relabeling/reset. Do not repeat original archive verification, codec, provider searches or old qualification. Final CLI supports --resume for /workspace/sip-native-engine-final01; it verifies receipts and skips completed runs; reject stale bindings or ambiguous pending directories. On environment loss restore exact private projection/prepared packets from approved source artifacts, not new retrieval. Finish only pending review/CI based on actual GitHub receipts, then stop before unapproved full-data/science/strategy work. No new data, credentials, paid service, performance, registrations, orders/trading or merge."
+}

@@ -1,0 +1,122 @@
+{
+  "checkpoint_id": "SIP-LEAN-TECH-20261024-01",
+  "base_pr": 55,
+  "base_sha": "ee33d7bcb7d3d33ef32976486a06611af0a84575",
+  "integration_base_sha": "5f8b850548e2f7786814086d5350a72a19d87459",
+  "branch": "feat/offline-sip-lean-bridge",
+  "code_head_sha": "b9e5156ca9abff5d6fdd3b1def98e1664c8de9fc",
+  "status": "OBSERVATION_CODEC_PASS_RESEARCH_REPLAY_NOT_AUTHORIZED",
+  "authorization": {
+    "owner_offline_technical_use": true,
+    "rights": "UNRESOLVED_NO_FURTHER_AGREEMENT_SEARCH",
+    "new_collection": false,
+    "strategy_or_performance": false,
+    "registration_amendment": false,
+    "trading": false,
+    "merge": false,
+    "spend_usd": 0
+  },
+  "source": {
+    "zip_sha256": "77423e560263b56129849b120e22f0d7be695647e949390f90c4e0cdf0037d4c",
+    "database_sha256": "4ac083a8c23c2c24c4bd0d4bb08467f43d626d5dd959bab4b2e8561a9272f7c7",
+    "records": 9,
+    "chain_head": "e5555e519fc1ac02eef41627227de15cdcc56a016da0045d0a4c025eac72f737",
+    "raw_objects_verified": 8,
+    "window": "2025-01-15T15:00:00Z/2025-01-15T15:05:00Z",
+    "symbol_projection": "SPY"
+  },
+  "python_projection": {
+    "sha256": "5097fa90a3080a60d20db230cc90849317654a37a3f5ce2ee6968dff7482f969",
+    "repeat_count": 2,
+    "byte_identical": true,
+    "bars": 5,
+    "quote_observations": 47453,
+    "ambiguous_quote_timestamps": 962,
+    "rejected_locked_or_crossed": 354,
+    "excluded_incomplete_bars": 1,
+    "private_payload_in_git": false
+  },
+  "native": {
+    "input_sha256": "5097fa90a3080a60d20db230cc90849317654a37a3f5ce2ee6968dff7482f969",
+    "compiled_dll_sha256": "6f718957d40b1f1f0bf51a48b3ca7c1f8b5708ea16a626bf3793c82c21d65b3a",
+    "native_source_sha256": "8d5ea77f081c405b26b25e45e695aad410cc6c21f3b80b7c6cbb424c418b8941",
+    "attempts": [
+      {
+        "repeat": 1,
+        "exit_code": 0,
+        "elapsed_seconds": 10.29030382999963,
+        "cgroup_peak_bytes": 643186688,
+        "controls": {
+          "NetworkMode": "none",
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges"
+          ]
+        },
+        "user": "65534:65534",
+        "output_sha256": "b44a2ee949b4124c40f5201920779dd1da3d190a155b5026f5b1205444a0ff04",
+        "bars": 5,
+        "quotes": 47453,
+        "field_comparison": "PASS_ALL_ROWS",
+        "orders": 0
+      },
+      {
+        "repeat": 2,
+        "exit_code": 0,
+        "elapsed_seconds": 9.79289265999978,
+        "cgroup_peak_bytes": 645697536,
+        "controls": {
+          "NetworkMode": "none",
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges"
+          ]
+        },
+        "user": "65534:65534",
+        "output_sha256": "b44a2ee949b4124c40f5201920779dd1da3d190a155b5026f5b1205444a0ff04",
+        "bars": 5,
+        "quotes": 47453,
+        "field_comparison": "PASS_ALL_ROWS",
+        "orders": 0
+      }
+    ],
+    "scope": "PUBLIC_LEAN_DATA_TYPES_ONLY_NOT_ALGORITHM_MANAGER",
+    "rights": "UNRESOLVED"
+  },
+  "code_sha256": {
+    "PLAN.md": "74f6bd069e0f97a4b4f82345f622c48351d00e052f0e0571785be05554aa3801",
+    "bridge.py": "dd7664ee7f68fd687c430aa0010778f6a31aefccfdea76619e99098df5355155",
+    "native/NuGet.Config": "9508cae5f76364f56e80eb97cb16493977243cf38e5cca6284e3d74f83b20a2c",
+    "native/Program.cs": "8d5ea77f081c405b26b25e45e695aad410cc6c21f3b80b7c6cbb424c418b8941",
+    "native/SipObservation.csproj": "a76ec89ef6b92002e55dcfdafb7828dfa882f2b7b6ef8863f4c06ec73f36f10a",
+    "native/build-local.sh": "7f586146a791f9ea544643728e81b87172267b92e2f9c97dbfd4e7e99eef4a79"
+  },
+  "tests": {
+    "focused": 9,
+    "full_suite": 341,
+    "demo": "PASS_300_SYNTHETIC_BARS_NO_ORDERS",
+    "native_old_qualification_reruns": 0,
+    "native_observation_roundtrips": 2,
+    "CI": "PENDING_FINAL_HEAD"
+  },
+  "preservation": {
+    "original_database_unchanged": true,
+    "old_scientific_and_IQP1_files": "UNCHANGED"
+  },
+  "failures_retained": [
+    "Initial projection rejected an AAPL-only quote page; fixed by full-chain symbol accumulation with regression.",
+    "Initial strict projection rejected tied quotes; observation mode now preserves both variants without claiming temporal order; strict state reduction still rejects ties.",
+    "Reviewer reproduced cyclic page-token acceptance; now rejects cycles and >50pages with regression.",
+    "Build attempts001/002/003 failed NuGet named mutex before compilation; logs retained privately.",
+    "Automatic approval rejected proposed root/hostmode777 retry; action NOT EXECUTED. Safe localcompiler build004 used UID65534,networknone,readonlyroot,existing assemblies,no restore/downloads.",
+    "Direct compiler CS1701 warning for accepted Newtonsoft net6 reference against net10 is retained; exact observation field/runtime tests passed."
+  ],
+  "NEXT_ACTION": "Owner reviews this technical result. Do not automatically start a strategy replay. Next separately authorized phase must define real security identity/session/status/size-unit and timestamp admission, supply predeclared source coverage, then approve unchanged IQ-P1 or a new explicit protocol before any performance evaluation. No agreement search.",
+  "RESUME_PROMPT": "Resume SIP-LEAN-TECH-20261024-01. Reconcile live PR/head and this manifest, verify code/source hashes; retain all prior checkpoints. Reuse verified ZIP77423e56, database4ac083,9-record chain,8objects, two deterministic Python projections and two native TradeBar/Tick field roundtrips. These are observation compatibility only, not AlgorithmManager/execution or scientific admission. Do not repeat old LEAN qualification, source probes, agreement searches or native pair unless bindings changed. Private payloads/logs remain /workspace/sip-private-evidence-checkpoint; if missing use the exact owner ZIP, never download replacement data. Rights remainUNRESOLVED. No new data, strategy/returns, science edits, trading, spend or merge. Finish only pending review/CI, then stop at owner science/source boundary; reconcile existing PR/comments before writes."
+}
