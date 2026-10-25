@@ -1,0 +1,49 @@
+{
+  "version": "sec-10q-source-decision-v1",
+  "state": "SEC_10Q_SOURCE_BOUNDARY_INCOMPLETE",
+  "issue": 29,
+  "foundation": "d90f13035cf47e4d96ac8a33aed25d784dc589fe",
+  "reason_codes": [
+    "ACCEPTANCE_CLOCK_CONFLICT",
+    "ARCHIVE_HEADER_TIMEZONE_NOT_INDEPENDENTLY_RESOLVED",
+    "PRIMARY_INDEX_SIZE_CONFLICT"
+  ],
+  "exact_missing_facts": [
+    {
+      "field": "Defensible SEC acceptance UTC for accession0000950170-25-067613",
+      "conflicting_sources": [
+        "M01 /filings/recent/acceptanceDateTime=2025-05-09T17:52:26.000Z",
+        "I01 Accepted=2025-05-09 09:52:26",
+        "H01 ACCEPTANCE-DATETIME=20250509095226"
+      ],
+      "needed": "Authoritative SEC archive-header timezone/serialization semantics and source correction/PAC or retained original metadata lineage sufficient to reconcile the conflicting assertions; no silent offset/earliest/latest/majority choice."
+    },
+    {
+      "field": "Exact original primary representation identity",
+      "conflicting_sources": [
+        "I01 filename fmbh-20250331.htm lists7305910bytes",
+        "P01same canonical path returned7306016bytes"
+      ],
+      "needed": "Source-grounded representation/transport/version explanation or matching authoritative bytes/manifest. Current response/hash alone proves only current retrieved representation; not equality to2025as-disseminated bytes."
+    }
+  ],
+  "provenance_clock_dependency_closed": false,
+  "historical_receipt_policy": "UNKNOWN/null unless independently evidenced; no such historical logs exist in this packet",
+  "scientific_blocker_proven": false,
+  "scientific_changes_made": false,
+  "eric_fmbh_dependency": "Live Issue7 final GENUINE_SOURCE_BLOCKER (2026-10-20): FMBH remainsUNRESOLVED, source path parked; Eric declined further record-specific information. No re-contact/purchase/skip/amendment authorized here.",
+  "further_critical_source_timing": "Only resolve the specific SEC acceptance/source-version contradictions before original events can feed registered freeze/acquisition audit. No broad feed/source audit or more LEAN qualification justified.",
+  "complete_captures": 8,
+  "oversized_aborted_captures": 1,
+  "paid_calls": 0,
+  "performance_inspected": false,
+  "mdna_inspected": false,
+  "next_three": [
+    "Owner decision whether to keep the first-alpha track parked under Issue7GENUINE_SOURCE_BLOCKER; a scientific-change proposal requires separate explicit authorization, never implemented here.",
+    "Only if the track is pursued, resolve the exact SEC clock and primary-representation contradictions using authoritative semantics/retained source lineage, no broad audit or paid/record-specific provider loop.",
+    "Only after source/eligibility gates clear, registered freeze/acquisition-latency audit with600seconds still provisional and the existing pre-performance deadline procedure unchanged."
+  ],
+  "direct_capture_http_attempts": 9,
+  "browser_discovery": "Official documentation search/open/find also used before direct immutable captures; these browser requests are not included in the nine direct-capture attempts.",
+  "eric_fmbh_state_reference": "https://github.com/emanuel894/trading_agent/issues/7#issuecomment-6289186654"
+}

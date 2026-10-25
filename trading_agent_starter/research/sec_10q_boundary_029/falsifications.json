@@ -1,0 +1,81 @@
+{
+  "version": "sec-source-falsifications-v1",
+  "cases": [
+    {
+      "id": "observed_clock_disagreement",
+      "kind": "actual retained sources",
+      "inputs": [
+        "M01acceptanceDateTime=2025-05-09T17:52:26.000Z",
+        "I01Accepted=2025-05-09 09:52:26",
+        "H01ACCEPTANCE-DATETIME=20250509095226"
+      ],
+      "expected": "QUARANTINE; resolved acceptance UTC null; no action time selected",
+      "basis": "Issue12conflict rule; cannot choose source/offset/majority to make a desired time"
+    },
+    {
+      "id": "observed_size_disagreement",
+      "kind": "actual retained sources",
+      "inputs": [
+        "I01primary_size=7305910",
+        "P01raw_bytes=7306016"
+      ],
+      "expected": "QUARANTINE original-byte identity claim; retain current response/hash separately",
+      "basis": "Size mismatch does not establish cause or historical edition; no body inspection to rescue it"
+    },
+    {
+      "id": "amendment_substitution",
+      "kind": "synthetic metadata mutation, not a retrieved10-Q/A",
+      "base": "sample.json M01row",
+      "mutation": {
+        "form": "10-Q/A"
+      },
+      "expected": "REJECT as target original even if CIK/report period match; store/link separate accession/version only on evidence",
+      "basis": "Amendment004 exact form10-Q/original_only and official accession identity"
+    },
+    {
+      "id": "later_accession_substitution",
+      "kind": "real other metadata row already present in M01, no extra retrieval",
+      "substitute_accession": "0000950170-25-105507",
+      "substitute_form": "10-Q",
+      "substitute_period": "2025-06-30",
+      "expected": "REJECT as May original; separate event key; same issuer/latest response is not identity",
+      "basis": "Exact accession/form/period, not CIK or latest10-Q alone"
+    },
+    {
+      "id": "missing_acceptance",
+      "kind": "synthetic metadata deletion",
+      "delete": [
+        "acceptanceDateTime",
+        "header acceptance timestamp"
+      ],
+      "leave": [
+        "filingDate=2025-05-09",
+        "reportDate=2025-03-31"
+      ],
+      "expected": "UNRESOLVED; dates remain date-only, no intraday UTC/publication clock",
+      "basis": "Official filing/report dates have different meanings; no midnight assignment"
+    },
+    {
+      "id": "invented_historical_receipt",
+      "kind": "synthetic clock mutation",
+      "mutation": "Copy M01acceptanceDateTime, HTTPDate, Last-Modified or P01current retrieval into historical_first_receipt",
+      "expected": "REJECT unsupported receipt; historical receipt/first machine observation remain null",
+      "basis": "Issue12channel/collector evidence semantics; no2025collector logs"
+    },
+    {
+      "id": "timezone_or_dst_ambiguity",
+      "kind": "synthetic clock mutation",
+      "mutation": "Header only with no qualified timezone/offset, or ambiguous DST fold",
+      "expected": "UNRESOLVED; no workstation zone or fixed-EST fallback",
+      "basis": "Preserve native string/precision and unknown timezone; corroboration needed"
+    },
+    {
+      "id": "same_url_changed_bytes",
+      "kind": "synthetic raw-version mutation, not source acquisition",
+      "mutation": "Change one byte of copied P01representation while retaining URL/accession",
+      "expected": "New observed evidence version/hash; never overwrite or inherit historical receipt; prior hash verification fails",
+      "basis": "URL/accession alone cannot identify a retained byte edition"
+    }
+  ],
+  "boundary": "Source-contract adjudication checks; no production ingestion/admission implementation or genuine amendment acquisition claimed"
+}
