@@ -71,6 +71,9 @@ if ($Action -eq 'Initialize') {
   Invoke-Diskpart @("create vdisk file=`"$image`" maximum=$SizeMiB type=fixed",
     "select vdisk file=`"$image`"", 'attach vdisk', 'create partition primary',
     'format fs=ntfs quick label=IQP1', "assign mount=`"$mount`"")
+  if (-not (Test-Path -LiteralPath $image -PathType Leaf)) {
+    throw 'IQP1_DISKPART_CREATE_FILE_MISSING'
+  }
 }
 if ($Action -eq 'Detach') {
   Invoke-Diskpart @("select vdisk file=`"$image`"", 'detach vdisk')
