@@ -89,6 +89,7 @@ def open_cache(root):
     reader.db = sqlite3.connect((root/"evidence.sqlite").as_uri()+"?mode=ro", uri=True, timeout=5)
     reader.db.row_factory = sqlite3.Row
     reader.db.execute("PRAGMA query_only=ON")
+    reader.db.execute("BEGIN")  # pin one read-only metadata snapshot through use
     return reader
 
 
@@ -130,6 +131,12 @@ def cache_chain(store, packet, *, fixture_only=False):
             timestamp(metadata.get("received_at"))
             if metadata.get("method") != "GET":
                 raise AuditFailure("IQP1_CACHE_ORIGINAL_METHOD_UNKNOWN")
+            allowed = {"symbols","start","end","feed","asof","sort","limit","page_token"}
+            if (set(base)-allowed or base.get("asof") != ["-"] or base.get("sort") != ["asc"]
+                    or base.get("limit") != ["10000"] or any(len(x) != 1 for x in base.values())
+                    or metadata.get("capture_mode") not in {None,"historical_backfill","acquisition"}
+                    or metadata.get("fixture_only") or metadata.get("synthetic")):
+                raise AuditFailure("IQP1_CACHE_SOURCE_QUERY_OR_MODE_UNPROVED")
         raw = store.raw(r)
         data = strict_json(raw)
         if not isinstance(data.get("quotes", {}).get("SPY"), list):
@@ -166,7 +173,7 @@ def run_pilot(store, cache, credentials, resource_gate, *, fixture_transport=Non
         raise AuditFailure("IQP1_ALREADY_STARTED_PRESERVE_LEDGER_OWNER_REVIEW_REQUIRED")
     # Mandatory retained January evidence is checked BEFORE credentials/network.
     chains = [(p, cache_chain(cache, p, fixture_only=fixture_transport is not None)) for p in plan[1:3]]
-    unique = {r["blob_sha"]:r for _, chain in chains for r in chain}
+    unique = {r["id"]:r for _, chain in chains for r in chain}
     cached_bytes = sum(len(cache.raw(r)) for r in unique.values())
     if cached_bytes >= 2_000_000_000:
         raise AuditFailure("IQP1_RETAINED_BODY_CAP_EXHAUSTED")
@@ -176,11 +183,11 @@ def run_pilot(store, cache, credentials, resource_gate, *, fixture_transport=Non
     store.append("iqp1_started", PLAN_KEY, {"cached_body_bytes":cached_bytes,
                   "fixture_only":fixture_transport is not None, "executable_admission":"NOT_GRANTED"})
     copied = {}
-    for sha, r in unique.items():
-        copied[sha] = store.append("iqp1_cached_http", r["source_key"],
+    for original_id, r in unique.items():
+        copied[original_id] = store.append("iqp1_cached_http", r["source_key"],
                         {"original_record":r, "purpose":"JAN15_REUSE"}, cache.raw(r))["id"]
     for p, chain in chains:
-        store.append("iqp1_packet", p["id"], {"state":"REUSED", "records":[copied[r["blob_sha"]] for r in chain]})
+        store.append("iqp1_packet", p["id"], {"state":"REUSED", "records":[copied[r["id"]] for r in chain]})
     budget = IQP1HTTPBudget.create(store, body_limit=2_000_000_000-cached_bytes)
     opener = DataOnlyOpener(resource_gate, transport=fixture_transport)
     http = ReadOnlyHTTP(store, user_agent="trading-agent/IQP1-source-only", credentials=credentials,

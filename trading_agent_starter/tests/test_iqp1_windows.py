@@ -14,6 +14,7 @@ import uuid
 TOOLS = Path(__file__).resolve().parents[2]/"tools"
 sys.path.insert(0, str(TOOLS))
 from iqp1_windows_job import run_job, sealed_environment
+import iqp1_local as local
 from iqp1_local import fixed_vhd, volume_command
 
 
@@ -26,13 +27,40 @@ class PortableWindowsContracts(unittest.TestCase):
         self.assertNotIn("AWS_SECRET_ACCESS_KEY", env)
         self.assertEqual(env["TRADING_ENABLED"], "false")
 
+    def test_executed_tree_receipt_changes_on_code_or_dependency_tampering(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            volume = Path(temporary)
+            (volume/"source").mkdir()
+            (volume/"python").mkdir()
+            (volume/"source"/"gate.py").write_text("GET-only fixture")
+            (volume/"python"/"python.exe").write_bytes(b"fixture interpreter")
+            before = local.runtime_hash(volume)
+            (volume/"source"/"gate.py").write_text("changed fixture")
+            self.assertNotEqual(before,local.runtime_hash(volume))
+            second = local.runtime_hash(volume)
+            (volume/"python"/"extra.pth").write_text("fixture injection")
+            self.assertNotEqual(second,local.runtime_hash(volume))
+
 
 @unittest.skipUnless(os.name == "nt", "Actual Windows kernel/VHD tests run in mandatory Windows CI")
 class WindowsKernelTests(unittest.TestCase):
+    def test_private_acl_replaces_default_grants_and_checks_immutable_tree(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            for name in ("source","python","evidence","tmp"):
+                (root/"volume"/name).mkdir(parents=True)
+            (root/"volume"/"source"/"fixture.py").write_text("fixture")
+            sid = local.owner_sid()
+            with self.assertRaises(subprocess.CalledProcessError):
+                local.storage_acl(root,sid,"Verify")
+            local.storage_acl(root,sid,"Harden")
+            local.storage_acl(root,sid,"Verify")
     def test_job_success_and_hard_memory_enforcement(self):
         with tempfile.TemporaryDirectory() as temporary:
             marker = Path(temporary)/"memory.json"
             script = ("import json,pathlib; chunks=[];\ntry:\n"
+                      " bytearray(256*1024**2)\n"
+                      "except MemoryError: pass\ntry:\n"
                       " for i in range(256): chunks.append(bytearray(1024**2))\n"
                       "except MemoryError:\n pathlib.Path("+repr(str(marker))+").write_text('MEMORY_BLOCKED')\n")
             result = run_job([sys.executable,"-I","-B","-c",script], temporary=temporary,
@@ -41,6 +69,22 @@ class WindowsKernelTests(unittest.TestCase):
             self.assertEqual(marker.read_text(), "MEMORY_BLOCKED")
             self.assertLessEqual(result["peak_job_bytes"], 64*1024**2)
             self.assertGreater(result["peak_job_bytes"], 1024**2)
+
+    def test_machine_consumption_survives_mutable_ledger_removal(self):
+        import winreg
+        from types import SimpleNamespace
+        from unittest.mock import patch
+        keyname = r"SOFTWARE\TradingAgent\IQP1-test-"+uuid.uuid4().hex
+        args = SimpleNamespace(root="C:\\fixture-only",commit="f"*40,approve="e"*64)
+        try:
+            with patch.object(local,"REGISTRY",keyname):
+                local.binding(create=dict(root=args.root,commit=args.commit,manifest=args.approve))
+                local.consume_once(args)
+                # The evidence directory is irrelevant to this independent cap.
+                with self.assertRaisesRegex(RuntimeError,"ALREADY_CONSUMED"):
+                    local.consume_once(args)
+        finally:
+            winreg.DeleteKey(winreg.HKEY_LOCAL_MACHINE,keyname)
 
     def test_deadline_kills_hung_child_and_descendant(self):
         with tempfile.TemporaryDirectory() as temporary:
