@@ -30,6 +30,25 @@ class PortableWindowsContracts(unittest.TestCase):
             self.assertEqual(len(raw.splitlines()),2)
             self.assertEqual(json.loads(raw.splitlines()[-1])["reason"],"IQP1_STANDARD_OWNER_TOKEN_REQUIRED")
 
+    def test_diskpart_structured_failure_keeps_native_output_private(self):
+        from unittest.mock import patch
+        private = b"private-path-and-credentials-do-not-log"
+        cmd_error = subprocess.CalledProcessError(
+            1, ["powershell.exe"], stderr=(
+                b"IQP1_SAFE_FAILURE_CODE=IQP1_DISKPART_CREATE_FAILED\r\n" + private))
+        with patch.object(local, "powershell", return_value="powershell.exe"):
+            with patch.object(local.subprocess, "check_output", side_effect=cmd_error):
+                with self.assertRaisesRegex(RuntimeError, r"^IQP1_DISKPART_CREATE_FAILED$") as failure:
+                    local.volume_command("Initialize", Path("C:/fixture"))
+        self.assertNotIn(private.decode(), str(failure.exception))
+        untrusted = subprocess.CalledProcessError(
+            1, ["powershell.exe"],
+            stderr=b"IQP1_SAFE_FAILURE_CODE=private-path-token\n" + private)
+        with patch.object(local, "powershell", return_value="powershell.exe"):
+            with patch.object(local.subprocess, "check_output", side_effect=untrusted):
+                with self.assertRaisesRegex(RuntimeError, r"^IQP1_VOLUME_INITIALIZE_FAILED$"):
+                    local.volume_command("Initialize", Path("C:/fixture"))
+
     def test_timeout_and_new_invocation_never_report_a_stale_failure(self):
         with tempfile.TemporaryDirectory() as temporary:
             local.retain_failure(temporary,"prepare-child","IQP1_OLD_FAILURE",invocation="old")
