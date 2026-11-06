@@ -54,6 +54,7 @@ def run_job(command, *, temporary, seconds=1800, memory=2*1024**3, mutex="Global
     if not 0 < seconds <= 1800 or not 32*1024**2 <= memory <= 2*1024**3 or not 1 <= active_processes <= 8:
         raise ValueError("INVALID_JOB_LIMITS")
     started = time.monotonic()
+    wall_started = time.time()
     k = ctypes.WinDLL("kernel32", use_last_error=True)
     SIZE = ctypes.c_size_t
     class Basic(ctypes.Structure):
@@ -151,11 +152,20 @@ def run_job(command, *, temporary, seconds=1800, memory=2*1024**3, mutex="Global
             before_start()  # machine-protected one-shot claim, under global mutex
         if k.ResumeThread(pi.thread) == 0xFFFFFFFF:
             raise OSError("WINDOWS_CHILD_RESUME_FAILED")
-        remaining = max(0, seconds-(time.monotonic()-started))
-        status = k.WaitForSingleObject(pi.process, int(remaining*1000))
-        timed_out = status == 0x102
-        if status not in (0, 0x102):
-            raise OSError("WINDOWS_JOB_WAIT_FAILED")
+        # A single Windows relative wait can exclude time spent in suspend.
+        # Recheck independent elapsed/wall clocks so sleep or a clock step cannot
+        # grant another thirty minutes. No child cooperation is required.
+        while True:
+            remaining = seconds-max(time.monotonic()-started,time.time()-wall_started)
+            if remaining <= 0:
+                timed_out = True
+                break
+            status = k.WaitForSingleObject(pi.process, min(100,max(1,int(remaining*1000))))
+            if status == 0:
+                timed_out = False
+                break
+            if status != 0x102:
+                raise OSError("WINDOWS_JOB_WAIT_FAILED")
         # Always kill any surviving descendant, even when the lead child exits.
         check(k.TerminateJobObject(job, 124 if timed_out else 125))
         code = W.DWORD()

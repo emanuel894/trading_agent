@@ -53,8 +53,11 @@ class WindowsKernelTests(unittest.TestCase):
             sid = local.owner_sid()
             with self.assertRaises(subprocess.CalledProcessError):
                 local.storage_acl(root,sid,"Verify")
-            local.storage_acl(root,sid,"Harden")
-            local.storage_acl(root,sid,"Verify")
+            for action in ("Harden","Verify"):
+                proof = subprocess.run(["powershell.exe","-NoProfile","-NonInteractive","-ExecutionPolicy","Bypass",
+                    "-File",str(TOOLS/"iqp1_storage_acl.ps1"),"-Action",action,"-Root",str(root),"-OwnerSid",sid],
+                    capture_output=True,text=True)
+                self.assertEqual(proof.returncode,0,proof.stderr)  # fixtures only, expose Windows diagnostics
     def test_job_success_and_hard_memory_enforcement(self):
         with tempfile.TemporaryDirectory() as temporary:
             marker = Path(temporary)/"memory.json"
