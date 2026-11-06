@@ -29,6 +29,14 @@ class PortableWindowsContracts(unittest.TestCase):
             self.assertNotIn("fixture-secret",raw)
             self.assertEqual(len(raw.splitlines()),2)
             self.assertEqual(json.loads(raw.splitlines()[-1])["reason"],"IQP1_STANDARD_OWNER_TOKEN_REQUIRED")
+
+    def test_timeout_and_new_invocation_never_report_a_stale_failure(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            local.retain_failure(temporary,"prepare-child","IQP1_OLD_FAILURE",invocation="old")
+            self.assertEqual(local.stop_reason(temporary,"new",timed_out=True),"IQP1_EXECUTION_DEADLINE_REACHED")
+            self.assertEqual(local.stop_reason(temporary,"new",timed_out=False),"IQP1_CHILD_TERMINATED_WITHOUT_CURRENT_RECEIPT")
+            local.retain_failure(temporary,"prepare-child","IQP1_CURRENT_FAILURE",invocation="new")
+            self.assertEqual(local.stop_reason(temporary,"new",timed_out=False),"IQP1_CURRENT_FAILURE")
     def test_child_environment_contains_no_acquisition_credentials(self):
         from unittest.mock import patch
         with patch.dict(os.environ, {"ALPACA_API_KEY":"do-not-forward", "AWS_SECRET_ACCESS_KEY":"do-not-forward"}):
@@ -135,7 +143,10 @@ class WindowsKernelTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             try:
+                local.retain_failure(root,"prepare-child","IQP1_FIXED_PREREQUISITE",invocation="old")
+                diagnostic = (root/"failure.jsonl").read_bytes()
                 info = volume_command("Initialize", root)
+                self.assertEqual((root/"failure.jsonl").read_bytes(),diagnostic)
                 self.assertEqual(info["filesystem"], "NTFS")
                 self.assertEqual(fixed_vhd(root/"pilot.vhd"),4092*1024**2+512)
                 volume = root/"volume"

@@ -48,18 +48,36 @@ def safe_failure(error):
     return "LOCAL_RUNTIME_FAILURE"
 
 
-def retain_failure(root, mode, reason):
+def retain_failure(root, mode, reason, *, invocation=""):
     """Bounded metadata-only diagnostic; never replaces the usage ledger."""
     root = Path(root)
     target = root/"volume"/"tmp" if (root/"volume"/"tmp").is_dir() else root
     path = target/"failure.jsonl"
-    raw = encode({"mode":mode,"reason":reason,"at_unix":time.time()})+b"\n"
+    raw = encode({"mode":mode,"reason":reason,"at_unix":time.time(),"invocation":invocation})+b"\n"
     if path.exists() and path.stat().st_size+len(raw) > 65536:
         return
     with path.open("ab") as handle:
         handle.write(raw)
         handle.flush()
         os.fsync(handle.fileno())
+
+
+def stop_reason(root, invocation, *, timed_out):
+    if timed_out:
+        return "IQP1_EXECUTION_DEADLINE_REACHED"
+    root = Path(root)
+    for receipt in (root/"volume"/"tmp"/"failure.jsonl",root/"failure.jsonl"):
+        if receipt.is_file() and receipt.stat().st_size <= 65536:
+            try:
+                records = [json.loads(line) for line in receipt.read_bytes().splitlines()]
+                for record in reversed(records):
+                    code = record["reason"]
+                    if (record.get("invocation") == invocation and isinstance(code,str)
+                            and re.fullmatch(r"[A-Z][A-Z0-9_]{0,120}",code)):
+                        return code
+            except (ValueError,KeyError,TypeError):
+                pass
+    return "IQP1_CHILD_TERMINATED_WITHOUT_CURRENT_RECEIPT"
 
 
 def encode(value):
@@ -312,7 +330,7 @@ def prepare(args):
                     source_only=True, external_spend=0)
     write_json(root/"manifest.json", manifest)
     subprocess.run([str(python), "-I", "-B", str(source/"tools"/"iqp1_local.py"), "seed", "--root", str(root),
-                    "--commit", args.commit], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                    "--commit", args.commit,"--invocation",args.invocation], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     manifest = read_json(root/"manifest.json")
     proof = storage_gate(root, manifest, inspect=True)
     approval = hashlib.sha256(encode(manifest)).hexdigest()
@@ -326,7 +344,8 @@ def prepare(args):
     marker = temp/"standard-user-probe.json"
     probe_name = "Local\\IQP1-private-preflight-"+uuid.uuid4().hex
     probe = run_job([str(python),"-I","-B",str(source/"tools"/"iqp1_local.py"),"verify-child",
-                    "--root",str(root),"--commit",args.commit,"--verify-job",probe_name],temporary=temp,seconds=180,
+                    "--root",str(root),"--commit",args.commit,"--verify-job",probe_name,
+                    "--invocation",args.invocation],temporary=temp,seconds=180,
                     linked_user=True,mutex="Local\\IQP1-standard-user-probe",job_name=probe_name,protected_sid=sid)
     if probe["exit_code"] != 0 or read_json(marker)["elevated"]:
         fail("IQP1_STANDARD_USER_RUNTIME_UNAVAILABLE")
@@ -432,6 +451,7 @@ def main():
     parser.add_argument("--credential-file", default="")
     parser.add_argument("--approve", default="")
     parser.add_argument("--verify-job",default="")
+    parser.add_argument("--invocation",default="")
     args = parser.parse_args()
     if os.name != "nt":
         fail("IQP1_WINDOWS_REQUIRED")
@@ -465,7 +485,7 @@ def main():
             command = [root/"volume"/"python"/"Scripts"/"python.exe", "-I", "-B",
                        root/"volume"/"source"/"tools"/"iqp1_local.py", "acquire-child",
                        "--root", root, "--commit", args.commit, "--approve", args.approve,
-                       "--credential-file", args.credential_file]
+                       "--credential-file", args.credential_file,"--invocation",args.invocation]
             return subprocess.call([str(x) for x in command], cwd=temporary)
         if args.mode == "prepare-child":
             prepare(args)
@@ -482,8 +502,10 @@ def main():
         temporary = root
         mode = "acquire-bootstrap"
     python, script = Path(sys.executable), Path(__file__)
+    invocation = uuid.uuid4().hex
     command = [python, "-I", "-B", script, mode, "--root", root, "--commit", args.commit,
-               "--cache", args.cache, "--credential-file", args.credential_file, "--approve", args.approve]
+               "--cache", args.cache, "--credential-file", args.credential_file, "--approve", args.approve,
+               "--invocation",invocation]
     job_name = "Global\\TradingAgent-IQP1-"+uuid.uuid4().hex if args.mode == "Acquire" else None
     protected_sid = binding()["owner_sid"] if args.mode == "Acquire" else None
     result = run_job(command, temporary=temporary, linked_user=args.mode == "Acquire",
@@ -494,15 +516,7 @@ def main():
                   external_cost=0)
     print(json.dumps(result, sort_keys=True))
     if result["exit_code"]:
-        for receipt in (root/"volume"/"tmp"/"failure.jsonl",root/"failure.jsonl"):
-            if receipt.is_file() and receipt.stat().st_size <= 65536:
-                try:
-                    code = json.loads(receipt.read_bytes().splitlines()[-1])["reason"]
-                    if isinstance(code,str) and re.fullmatch(r"[A-Z][A-Z0-9_]{0,120}",code):
-                        print("STOP_REASON="+code)
-                        break
-                except (ValueError,KeyError,IndexError):
-                    pass
+        print("STOP_REASON="+stop_reason(root,invocation,timed_out=result["timed_out"]))
     if result["exit_code"] == 0 and args.mode == "Prepare":
         print("APPROVE_MANIFEST="+read_json(root/"prepare.json")["approve_manifest"])
     return result["exit_code"]
@@ -516,7 +530,8 @@ if __name__ == "__main__":
         reason = safe_failure(error)
         if len(sys.argv)>1 and sys.argv[1] in {"prepare-child","acquire-bootstrap","acquire-child","seed","verify-child"}:
             try:
-                retain_failure(sys.argv[sys.argv.index("--root")+1],sys.argv[1],reason)
+                invocation = sys.argv[sys.argv.index("--invocation")+1] if "--invocation" in sys.argv else ""
+                retain_failure(sys.argv[sys.argv.index("--root")+1],sys.argv[1],reason,invocation=invocation)
             except Exception:
                 pass  # kernel/storage stops can prevent even metadata logging
         print("IQP1_STOPPED_PRESERVE_PRIVATE_ROOT: "+reason, file=sys.stderr)

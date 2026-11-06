@@ -21,7 +21,17 @@ function Invoke-Diskpart([string[]]$Commands) {
 if ($Action -eq 'Initialize') {
   if (Test-Path -LiteralPath $image) { throw 'IQP1_EXISTING_VOLUME_PRESERVE_NO_RESET' }
   $null = New-Item -ItemType Directory -Path $Root -Force
-  if (Get-ChildItem -LiteralPath $Root -Force) { throw 'IQP1_INITIALIZE_REQUIRES_EMPTY_ROOT' }
+  $existing = @(Get-ChildItem -LiteralPath $Root -Force)
+  foreach ($entry in $existing) {
+    if ($entry.Name -ne 'failure.jsonl' -or $entry.PSIsContainer -or $entry.Length -gt 65536 -or
+        ($entry.Attributes -band [IO.FileAttributes]::ReparsePoint)) { throw 'IQP1_INITIALIZE_REQUIRES_EMPTY_ROOT' }
+    foreach ($line in [IO.File]::ReadAllLines($entry.FullName)) {
+      $record = $line | ConvertFrom-Json
+      if ($record.reason -notmatch '^[A-Z][A-Z0-9_]{0,120}$' -or
+          $record.mode -notin @('prepare-child','seed','verify-child','acquire-bootstrap','acquire-child') -or
+          $null -eq $record.at_unix) { throw 'IQP1_INVALID_BOUNDED_FAILURE_DIAGNOSTIC' }
+    }
+  }
   $null = New-Item -ItemType Directory -Path $mount
   Invoke-Diskpart @("create vdisk file=`"$image`" maximum=$SizeMiB type=fixed",
     "select vdisk file=`"$image`"", 'attach vdisk', 'create partition primary',
