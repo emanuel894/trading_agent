@@ -49,15 +49,30 @@ class PilotTests(unittest.TestCase):
             store = EvidenceStore(root)
             record = store.append("fixture", "source", {"capture_mode": "fixture"}, b"retained")
             store.close()
-            reader = pilot.open_cache(root)
+            reader = pilot.open_cache(root,fixture_only=True)
             try:
                 self.assertEqual(reader.raw(reader.get(record["id"])), b"retained")
                 with self.assertRaises(Exception):
                     reader.append("fixture", "bad", {}, b"must not write")
             finally:
                 reader.close()
+            with self.assertRaisesRegex(AuditFailure,"ORIGINAL_JAN15_DATABASE_BINDING"):
+                pilot.open_cache(root)
             with self.assertRaises(AuditFailure):
                 pilot.open_cache(Path(temporary) / "absent")
+
+    def test_cache_reference_rejects_traversal_before_any_file_read(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)/"cache"
+            store = EvidenceStore(root)
+            store.close()
+            reader = pilot.open_cache(root,fixture_only=True)
+            try:
+                with patch.object(Path,"read_bytes",side_effect=AssertionError("must not read")):
+                    with self.assertRaisesRegex(AuditFailure,"OBJECT_REFERENCE_UNSAFE"):
+                        reader.raw({"blob_sha":"../../credential-reference"})
+            finally:
+                reader.close()
 
     def test_existing_jan15_chain_covers_both_windows_without_new_http(self):
         from urllib.parse import urlencode

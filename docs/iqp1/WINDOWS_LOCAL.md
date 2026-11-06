@@ -18,6 +18,8 @@ LEAN and offline Docker qualifications are reused; they are not rerun here.
 - A clean checkout at the **exact independently reviewed PR61 commit** with
   both Foundation OS jobs passing. Do not use a moving branch as approval.
 - Existing approved retained January15 EvidenceStore directory (SQLite + objects).
+  The original SQLite identity is pinned to PR56's already accepted
+  `4ac083a8c23c2c24c4bd0d4bb08467f43d626d5dd959bab4b2e8561a9272f7c7`.
   Prepare selects the complete original quote chain covering both predeclared
   windows and pins its record/hash references. Nothing is redownloaded or
   represented as historical receipt. Missing/ambiguous originals stop setup.

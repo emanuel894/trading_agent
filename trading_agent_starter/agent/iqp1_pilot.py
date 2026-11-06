@@ -16,6 +16,9 @@ from .audit_store import AuditFailure, EvidenceStore, canonical, digest, strict_
 from .iqp1_http_budget import IQP1HTTPBudget
 
 PLAN_KEY = IQP1HTTPBudget.KEY
+# Accepted PR56 bridge.py ORIGINAL_DB_SHA. This is an identity binding, not a
+# repeat of archive restoration/LEAN/source qualification.
+ORIGINAL_JAN15_DB_SHA = "4ac083a8c23c2c24c4bd0d4bb08467f43d626d5dd959bab4b2e8561a9272f7c7"
 
 
 def packet_plan():
@@ -79,12 +82,27 @@ class DataOnlyOpener:
         return self.transport.open(request, timeout=timeout)
 
 
-def open_cache(root):
-    """Reuse EvidenceStore readers without running its creating constructor."""
+class _Jan15Cache(EvidenceStore):
+    """PR56 ReadOnlyEvidence raw-reference guards; existing store readers reused."""
+    def raw(self, record):
+        sha = record["blob_sha"]
+        if not isinstance(sha,str) or len(sha) != 64 or any(c not in "0123456789abcdef" for c in sha):
+            raise AuditFailure("IQP1_CACHE_OBJECT_REFERENCE_UNSAFE")
+        path = self.objects/sha
+        if path.is_symlink() or not path.is_file() or path.stat().st_size > 40_000_000:
+            raise AuditFailure("IQP1_CACHE_OBJECT_MISSING_OR_UNSAFE")
+        return super().raw(record)
+
+
+def open_cache(root, *, fixture_only=False):
+    """Bind the already accepted originals, using PR56's read-only store contract."""
     root = Path(root).resolve(strict=True) if Path(root).exists() else None
-    if root is None or not (root / "evidence.sqlite").is_file() or not (root / "objects").is_dir():
+    if (root is None or not (root/"evidence.sqlite").is_file() or not (root/"objects").is_dir()
+            or (root/"evidence.sqlite").is_symlink() or (root/"objects").is_symlink()):
         raise AuditFailure("IQP1_EXISTING_JAN15_CACHE_REQUIRED")
-    reader = object.__new__(EvidenceStore)
+    if not fixture_only and digest((root/"evidence.sqlite").read_bytes()) != ORIGINAL_JAN15_DB_SHA:
+        raise AuditFailure("IQP1_ACCEPTED_ORIGINAL_JAN15_DATABASE_BINDING_CHANGED")
+    reader = object.__new__(_Jan15Cache)
     reader.root, reader.objects, reader.spool = root, root/"objects", root/"spool"
     reader.db = sqlite3.connect((root/"evidence.sqlite").as_uri()+"?mode=ro", uri=True, timeout=5)
     reader.db.row_factory = sqlite3.Row
