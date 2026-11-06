@@ -1,0 +1,327 @@
+"""One owner-local Windows pilot. Prepare never reads credentials or calls Alpaca.
+
+All created pilot content lives in a fixed VHD plus <=4MiB control allowance.
+Administrator-owned registry binding pins one root, manifest and evidence ID.
+There is deliberately no reset, new-ledger, alternate schedule or resume switch.
+"""
+import argparse
+import ctypes
+import hashlib
+import io
+import json
+import os
+from pathlib import Path
+import shutil
+import struct
+import subprocess
+import sys
+import tarfile
+import time
+import uuid
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from iqp1_windows_job import require_pilot_job, run_job
+
+CAP = 4*1024**3
+VHD_MIB = 4092
+RESERVE = 64*1024**2
+REGISTRY = r"SOFTWARE\TradingAgent\IQP1Boundary"
+CONTROL = {"pilot.vhd", "volume", "manifest.json", "prepare.json", "usage.json", "_diskpart.txt"}
+
+
+def fail(code):
+    raise RuntimeError(code)
+
+
+def encode(value):
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=True).encode()
+
+
+def read_json(path):
+    if path.stat().st_size > 65536:
+        fail("IQP1_CONTROL_FILE_TOO_LARGE")
+    return json.loads(path.read_bytes())
+
+
+def write_json(path, value):
+    raw = encode(value)
+    if len(raw) > 65536:
+        fail("IQP1_CONTROL_FILE_TOO_LARGE")
+    with path.open("wb") as handle:
+        handle.write(raw)
+        handle.flush()
+        os.fsync(handle.fileno())
+
+
+def volume_command(action, root, *, size=VHD_MIB):
+    script = Path(__file__).with_name("iqp1_volume.ps1")
+    raw = subprocess.check_output(["powershell.exe", "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
+            "-File", str(script), "-Action", action, "-Root", str(root), "-SizeMiB", str(size)],
+            stderr=subprocess.DEVNULL)
+    return json.loads(raw.decode("utf-8-sig")) if action != "Detach" else None
+
+
+def fixed_vhd(path, *, size_mib=VHD_MIB):
+    """Fixed footer, exact physical allocation and no sparse/compressed file."""
+    expected = size_mib*1024**2
+    stat = path.stat()
+    if stat.st_size != expected+512 or getattr(stat, "st_file_attributes", 0) & (0x200|0x800|0x400):
+        fail("IQP1_VHD_SIZE_OR_ALLOCATION_INVALID")
+    with path.open("rb") as handle:
+        handle.seek(-512, 2)
+        footer = bytearray(handle.read(512))
+    checksum = struct.unpack_from(">I", footer, 64)[0]
+    footer[64:68] = b"\0"*4
+    if (footer[:8] != b"conectix" or struct.unpack_from(">I", footer, 60)[0] != 2
+            or struct.unpack_from(">Q", footer, 48)[0] != expected
+            or checksum != (~sum(footer) & 0xFFFFFFFF)):
+        fail("IQP1_FIXED_VHD_FOOTER_INVALID")
+    if os.name == "nt":
+        k = ctypes.WinDLL("kernel32", use_last_error=True)
+        k.GetCompressedFileSizeW.argtypes = [ctypes.c_wchar_p, ctypes.POINTER(ctypes.c_ulong)]
+        k.GetCompressedFileSizeW.restype = ctypes.c_ulong
+        high = ctypes.c_ulong()
+        low = k.GetCompressedFileSizeW(str(path), ctypes.byref(high))
+        if low == 0xFFFFFFFF and ctypes.get_last_error():
+            fail("IQP1_PHYSICAL_ALLOCATION_UNVERIFIED")
+        allocated = (high.value << 32) | low
+        if not expected <= allocated <= expected+65536:
+            fail("IQP1_PHYSICAL_ALLOCATION_UNVERIFIED")
+    return stat.st_size
+
+
+def storage_gate(root, manifest, *, inspect=False):
+    root = Path(root)
+    if set(p.name for p in root.iterdir()) - CONTROL:
+        fail("IQP1_UNACCOUNTED_CONTROL_FILE")
+    total = fixed_vhd(root/"pilot.vhd")
+    for path in root.iterdir():
+        if path.name in {"volume", "pilot.vhd"}:
+            continue
+        if not path.is_file() or path.stat().st_size > 65536:
+            fail("IQP1_CONTROL_AREA_INVALID")
+        total += max(65536, path.stat().st_size)
+    if total > CAP:
+        fail("IQP1_PHYSICAL_CAP_EXCEEDED")
+    volume = root/"volume"
+    if inspect:
+        actual = volume_command("Inspect", root)
+        if actual["volume_id"] != manifest["volume_id"]:
+            fail("IQP1_VOLUME_IDENTITY_CHANGED")
+    # Check the mounted volume, not the unbounded directory underneath it.
+    free = shutil.disk_usage(volume).free
+    reserve = volume/"reserve.bin"
+    if reserve.stat().st_size != RESERVE or free < RESERVE+40_000_000:
+        fail("IQP1_FREE_SPACE_RESERVE_UNAVAILABLE")
+    return {"physical_bound_bytes":total, "free_bytes":free, "cap_bytes":CAP}
+
+
+def owner_sid():
+    # WindowsIdentity is metadata only; never enumerate environment/secrets.
+    return subprocess.check_output(["powershell.exe", "-NoProfile", "-NonInteractive", "-Command",
+            "[Security.Principal.WindowsIdentity]::GetCurrent().User.Value"], stderr=subprocess.DEVNULL).decode().strip()
+
+
+def binding(*, create=None):
+    import winreg
+    if create is not None:
+        with winreg.CreateKeyEx(winreg.HKEY_LOCAL_MACHINE, REGISTRY, 0, winreg.KEY_READ|winreg.KEY_WRITE) as key:
+            try:
+                winreg.QueryValueEx(key, "Binding")
+            except FileNotFoundError:
+                winreg.SetValueEx(key, "Binding", 0, winreg.REG_SZ, encode(create).decode())
+                return create
+            fail("IQP1_MACHINE_ALREADY_BOUND_NO_RESET")
+    with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, REGISTRY, 0, winreg.KEY_READ) as key:
+        return json.loads(winreg.QueryValueEx(key, "Binding")[0])
+
+
+def protect(path, sid):
+    subprocess.run(["icacls.exe", str(path), "/inheritance:r", "/grant:r", sid+":(OI)(CI)F",
+                    "*S-1-5-18:(OI)(CI)F", "*S-1-5-32-544:(OI)(CI)F"],
+                    check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+
+def prepare(args):
+    if not ctypes.windll.shell32.IsUserAnAdmin():
+        fail("IQP1_PREPARE_REQUIRES_ONE_TIME_ADMINISTRATOR")
+    try:
+        binding()
+    except FileNotFoundError:
+        pass
+    else:
+        fail("IQP1_MACHINE_ALREADY_BOUND_NO_RESET")
+    root = Path(args.root)
+    cache = Path(args.cache).resolve(strict=True)
+    if not (cache/"evidence.sqlite").is_file():
+        fail("IQP1_EXISTING_PRIVATE_CACHE_REQUIRED")
+    info = volume_command("Initialize", root)
+    volume = root/"volume"
+    sid = owner_sid()
+    protect(root, sid)
+    protect(volume, sid)
+    temp = volume/"tmp"
+    temp.mkdir()
+    os.environ.update(TEMP=str(temp), TMP=str(temp))
+    os.chdir(temp)
+    # Physically allocate reserve, do not merely extend/sparsify its length.
+    with (volume/"reserve.bin").open("xb") as handle:
+        for _ in range(64):
+            handle.write(b"\0"*(1024**2))
+        handle.flush()
+        os.fsync(handle.fileno())
+    from iqp1_build import source_packet
+    repo = Path(__file__).resolve().parents[1]
+    packet = source_packet(repo)
+    source = volume/"source"
+    source.mkdir()
+    with tarfile.open(fileobj=io.BytesIO(packet)) as archive:
+        archive.extractall(source, filter="data")
+    subprocess.run([sys.executable, "-I", "-B", "-m", "venv", str(volume/"python")], check=True,
+                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    python = volume/"python"/"Scripts"/"python.exe"
+    subprocess.run([str(python), "-I", "-B", "-m", "pip", "--isolated", "install", "--disable-pip-version-check",
+                   "--no-cache-dir", "--index-url", "https://pypi.org/simple", "-r",
+                   str(source/"trading_agent_starter"/"requirements.txt")], check=True,
+                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    # Store creation/cache validation occurs in the isolated quota-bound venv.
+    manifest = dict(commit=args.commit, root=str(root), volume_id=info["volume_id"], owner_sid=sid,
+                    cache=str(cache), ledger_id=uuid.uuid4().hex, source_sha256=hashlib.sha256(packet).hexdigest(),
+                    source_only=True, external_spend=0)
+    write_json(root/"manifest.json", manifest)
+    subprocess.run([str(python), "-I", "-B", str(source/"tools"/"iqp1_local.py"), "seed", "--root", str(root),
+                    "--commit", args.commit], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    proof = storage_gate(root, manifest, inspect=True)
+    approval = hashlib.sha256(encode(manifest)).hexdigest()
+    # Bind only after complete setup. A failed/partial VHD is preserved, never reset.
+    binding(create=dict(root=str(root), manifest=approval, commit=args.commit, owner_sid=sid))
+    write_json(root/"prepare.json", dict(status="OFFLINE_PREPARED", **proof,
+               approve_manifest=approval, alpaca_attempts=0, credentials_read=False))
+
+
+def seed_or_acquire(args):
+    root = Path(args.root)
+    manifest = read_json(root/"manifest.json")
+    sys.path.insert(0, str(root/"volume"/"source"/"trading_agent_starter"))
+    from agent.audit_store import EvidenceStore
+    from agent.iqp1_pilot import cache_chain, open_cache, packet_plan, run_pilot
+    with_cache = open_cache(manifest["cache"])
+    try:
+        # Verify mandatory Jan15 references before reading credentials.
+        for packet in packet_plan()[1:3]:
+            cache_chain(with_cache, packet)
+        if args.mode == "seed":
+            store = EvidenceStore(root/"volume"/"evidence")
+            try:
+                store.append("iqp1_private_binding", manifest["ledger_id"], manifest)
+            finally:
+                store.close()
+            return
+        if ctypes.windll.shell32.IsUserAnAdmin():
+            fail("IQP1_ACQUIRE_MUST_NOT_RUN_ELEVATED")
+        pinned = binding()
+        if (pinned["root"] != str(root) or pinned["commit"] != args.commit
+                or pinned["owner_sid"] != owner_sid()
+                or pinned["manifest"] != hashlib.sha256(encode(manifest)).hexdigest()
+                or args.approve != pinned["manifest"]):
+            fail("IQP1_OWNER_APPROVAL_OR_MACHINE_BINDING_MISMATCH")
+        proof = storage_gate(root, manifest, inspect=True)
+        ledger = root/"volume"/"evidence"
+        if not (ledger/"evidence.sqlite").is_file():
+            fail("IQP1_SOLE_LEDGER_MISSING_NO_REPLACEMENT")
+        store = EvidenceStore(ledger)
+        try:
+            seed = store.records("iqp1_private_binding", manifest["ledger_id"])
+            if len(seed) != 1 or seed[0]["metadata"] != manifest:
+                fail("IQP1_SOLE_LEDGER_BINDING_MISMATCH")
+            store.verify()
+            if store.records("iqp1_started"):
+                fail("IQP1_ALREADY_STARTED_PRESERVE_LEDGER")
+            # Local runtime only; never Prepare/CI/agents. No .env discovery.
+            credential = Path(args.credential_file).resolve(strict=True)
+            # Reject shared ACLs before reading. Inspect permissions, not values.
+            subprocess.run(["powershell.exe", "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
+                "-File", str(Path(__file__).with_name("iqp1_private_acl.ps1")), "-File", str(credential),
+                "-OwnerSid", manifest["owner_sid"]], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            secret = read_json(credential)
+            if set(secret) != {"key_id", "secret_key"} or not all(isinstance(x, str) and x for x in secret.values()):
+                fail("IQP1_CREDENTIAL_FORMAT_INVALID")
+            result = run_pilot(store, with_cache, (secret["key_id"], secret["secret_key"]),
+                               lambda: storage_gate(root, manifest))
+            write_json(root/"usage.json", dict(result, **proof))
+        finally:
+            store.close()
+    finally:
+        with_cache.close()
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("mode", choices=["Prepare", "Acquire", "prepare-child", "acquire-bootstrap", "acquire-child", "seed"])
+    parser.add_argument("--root", required=True)
+    parser.add_argument("--commit", required=True)
+    parser.add_argument("--cache", default="")
+    parser.add_argument("--credential-file", default="")
+    parser.add_argument("--approve", default="")
+    args = parser.parse_args()
+    if os.name != "nt":
+        fail("IQP1_WINDOWS_REQUIRED")
+    root = Path(os.path.abspath(args.root))
+    args.root = str(root)
+    if args.mode in {"prepare-child", "acquire-bootstrap", "seed", "acquire-child"}:
+        require_pilot_job()
+        # All potentially blocking git/setup/storage/network operations belong to
+        # the kernel-supervised child tree, never the watchdog process.
+        repo = Path(__file__).resolve().parents[1]
+        if args.mode in {"prepare-child", "acquire-bootstrap"}:
+            actual = subprocess.check_output(["git", "-C", str(repo), "rev-parse", "HEAD"], stderr=subprocess.DEVNULL).decode().strip()
+            if actual != args.commit or subprocess.check_output(["git", "-C", str(repo), "status", "--porcelain", "--untracked-files=no"]):
+                fail("IQP1_REVIEWED_CLEAN_COMMIT_REQUIRED")
+        if args.mode == "acquire-bootstrap":
+            manifest = read_json(root/"manifest.json")
+            if args.commit != manifest["commit"] or args.approve != hashlib.sha256(encode(manifest)).hexdigest():
+                fail("IQP1_EXPLICIT_PREPARED_MANIFEST_APPROVAL_REQUIRED")
+            temporary = root/"volume"/"tmp"
+            os.environ.update(TEMP=str(temporary), TMP=str(temporary))
+            command = [root/"volume"/"python"/"Scripts"/"python.exe", "-I", "-B",
+                       root/"volume"/"source"/"tools"/"iqp1_local.py", "acquire-child",
+                       "--root", root, "--commit", args.commit, "--approve", args.approve,
+                       "--credential-file", args.credential_file]
+            return subprocess.call([str(x) for x in command], cwd=temporary)
+        if args.mode == "prepare-child":
+            prepare(args)
+        else:
+            seed_or_acquire(args)
+        return 0
+    # The parent only supervises. Slow checks are in the job, under the deadline.
+    repo = Path(__file__).resolve().parents[1]
+    if args.mode == "Prepare":
+        root.mkdir(parents=True, exist_ok=True)
+        temporary = root
+        mode = "prepare-child"
+    else:
+        temporary = root
+        mode = "acquire-bootstrap"
+    python, script = Path(sys.executable), Path(__file__)
+    command = [python, "-I", "-B", script, mode, "--root", root, "--commit", args.commit,
+               "--cache", args.cache, "--credential-file", args.credential_file, "--approve", args.approve]
+    result = run_job(command, temporary=temporary)
+    # No raw HTTP, exceptions, secret paths or child stdout in console/CI logs.
+    result.update(alpaca_attempts=0 if args.mode == "Prepare" else "see sole ledger",
+                  external_cost=0)
+    print(json.dumps(result, sort_keys=True))
+    if result["exit_code"] == 0 and args.mode == "Prepare":
+        print("APPROVE_MANIFEST="+read_json(root/"prepare.json")["approve_manifest"])
+    if args.mode == "Acquire" and (root/"usage.json").exists():
+        # The durable HTTP ledger, not this convenience receipt, is authoritative.
+        result["source_usage"] = read_json(root/"usage.json")
+    return result["exit_code"]
+
+
+if __name__ == "__main__":
+    try:
+        raise SystemExit(main())
+    except (Exception, KeyboardInterrupt):
+        # Preserve files/ledger on all failure paths; never print arbitrary errors.
+        print("IQP1_STOPPED_PRESERVE_PRIVATE_ROOT", file=sys.stderr)
+        raise SystemExit(1)
