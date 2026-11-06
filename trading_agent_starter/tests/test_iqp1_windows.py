@@ -45,6 +45,21 @@ class PortableWindowsContracts(unittest.TestCase):
         self.assertNotIn("AWS_SECRET_ACCESS_KEY", env)
         self.assertEqual(env["TRADING_ENABLED"], "false")
 
+    @unittest.skipUnless(os.name == "nt", "Native Windows system-drive paths")
+    def test_sealed_environment_preserves_core_windows_paths_not_secrets(self):
+        from unittest.mock import patch
+        with patch.dict(os.environ, {"ALPACA_API_SECRET":"never-forward",
+                                     "AWS_SECRET_ACCESS_KEY":"never-forward"}):
+            env = sealed_environment("C:\\fixture-temp")
+        expected_drive = Path(os.environ["SystemRoot"]).drive
+        self.assertEqual(env["SystemDrive"].casefold(), expected_drive.casefold())
+        self.assertEqual(env["ProgramData"].casefold(),
+                         str(Path(expected_drive + "\\ProgramData")).casefold())
+        self.assertEqual(env["ALLUSERSPROFILE"], env["ProgramData"])
+        self.assertNotIn("%SystemDrive%", env["ProgramData"])
+        self.assertNotIn("ALPACA_API_SECRET", env)
+        self.assertNotIn("AWS_SECRET_ACCESS_KEY", env)
+
     def test_executed_tree_receipt_changes_on_code_or_dependency_tampering(self):
         with tempfile.TemporaryDirectory() as temporary:
             volume = Path(temporary)
