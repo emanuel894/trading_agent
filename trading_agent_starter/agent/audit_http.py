@@ -17,12 +17,15 @@ class NoRedirect(HTTPRedirectHandler):
 
 class ReadOnlyHTTP:
     def __init__(self, store, *, user_agent, credentials=None, max_requests=2000,
-                 min_interval=0.25, opener=None, sleep=time.sleep):
+                 min_interval=0.25, opener=None, sleep=time.sleep, budget=None):
         if not user_agent or len(user_agent) > 256 or "\n" in user_agent or "\r" in user_agent:
             raise AuditFailure("INVALID_SEC_USER_AGENT")
         if not 1 <= max_requests <= 5000 or min_interval < 0.25:
             raise AuditFailure("INVALID_HTTP_BUDGET")
+        if budget is not None and budget.store is not store:
+            raise AuditFailure("HTTP_BUDGET_STORE_MISMATCH")
         self.store, self.user_agent = store, user_agent
+        self.budget = budget
         self.credentials = credentials
         self.remaining, self.min_interval = max_requests, min_interval
         self.bytes_remaining = 2_000_000_000
@@ -60,6 +63,10 @@ class ReadOnlyHTTP:
                 raise AuditFailure("HTTP_BYTE_BUDGET_EXHAUSTED")
             self.sleep(max(0.0, self.min_interval - (time.monotonic() - self.last_request)))
             self.last_request = time.monotonic()
+            allowed_bytes = min(max_bytes, self.bytes_remaining)
+            reservation_id = None
+            if self.budget is not None:
+                reservation_id, allowed_bytes = self.budget.reserve(url, allowed_bytes)
             self.remaining -= 1
             started, tick = utc_now(), time.monotonic()
             status, raw, response_headers, failure = None, b"", {}, None
@@ -68,25 +75,30 @@ class ReadOnlyHTTP:
                     status = response.status
                     response_headers = {k.lower(): v for k, v in response.headers.items()
                                         if k.lower() in {"content-type", "date", "etag", "last-modified"}}
-                    allowed_bytes = min(max_bytes, self.bytes_remaining)
                     raw = response.read(allowed_bytes + 1)
                     if len(raw) > allowed_bytes:
                         failure = "RESPONSE_TOO_LARGE"
                         raw = raw[:allowed_bytes]
             except HTTPError as exc:
                 status, failure = exc.code, f"HTTP_{exc.code}"
-                raw = exc.read(min(max_bytes, 65536))
+                raw = exc.read(min(allowed_bytes, 65536))
             except AuditFailure as exc:
                 failure = str(exc)
             except (OSError, URLError, TimeoutError):
                 failure = "NETWORK_READ_FAILED"
             finished = utc_now()
             self.bytes_remaining -= len(raw)
-            record = self.store.append("http", url, {
+            metadata = {
                 "version": VERSION, "started_at": started, "received_at": finished,
                 "elapsed_seconds": time.monotonic() - tick, "attempt": attempt + 1,
                 "http_status": status, "headers": response_headers, "failure": failure,
-                "method": "GET", "source": host}, raw)
+                "method": "GET", "source": host}
+            if reservation_id is not None:
+                metadata.update(budget_reservation_id=reservation_id,
+                                retained_byte_allowance=allowed_bytes)
+            record = self.store.append("http", url, metadata, raw)
+            if self.budget is not None:
+                self.budget.settle(reservation_id, record["id"])
             if not failure and status == 200:
                 return record
             if status not in {429, 500, 502, 503, 504} and failure != "NETWORK_READ_FAILED":
