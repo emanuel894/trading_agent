@@ -29,6 +29,10 @@ REGISTRY = r"SOFTWARE\TradingAgent\IQP1Boundary"
 CONTROL = {"pilot.vhd", "volume", "manifest.json", "prepare.json", "_diskpart.txt"}
 
 
+def powershell():
+    return str(Path(os.environ["SystemRoot"])/"System32"/"WindowsPowerShell"/"v1.0"/"powershell.exe")
+
+
 def fail(code):
     raise RuntimeError(code)
 
@@ -55,7 +59,7 @@ def write_json(path, value):
 
 def volume_command(action, root, *, size=VHD_MIB):
     script = Path(__file__).with_name("iqp1_volume.ps1")
-    raw = subprocess.check_output(["powershell.exe", "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
+    raw = subprocess.check_output([powershell(), "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
             "-File", str(script), "-Action", action, "-Root", str(root), "-SizeMiB", str(size)],
             stderr=subprocess.DEVNULL)
     return json.loads(raw.decode("utf-8-sig")) if action != "Detach" else None
@@ -94,7 +98,7 @@ def storage_gate(root, manifest, *, inspect=False):
     root = Path(root)
     if set(p.name for p in root.iterdir()) - CONTROL:
         fail("IQP1_UNACCOUNTED_CONTROL_FILE")
-    total = fixed_vhd(root/"pilot.vhd")
+    total = fixed_vhd(root/"pilot.vhd")+65536  # conservative accepted host allocation-unit overhead
     for path in root.iterdir():
         if path.name in {"volume", "pilot.vhd"}:
             continue
@@ -117,14 +121,15 @@ def storage_gate(root, manifest, *, inspect=False):
     # Check the mounted volume, not the unbounded directory underneath it.
     free = shutil.disk_usage(volume).free
     reserve = volume/"reserve.bin"
-    if reserve.stat().st_size != RESERVE or free < RESERVE+40_000_000:
+    if (reserve.stat().st_size != RESERVE or getattr(reserve.stat(),"st_file_attributes",0)&(0x200|0x800|0x400)
+            or free < RESERVE+40_000_000):
         fail("IQP1_FREE_SPACE_RESERVE_UNAVAILABLE")
     return {"physical_bound_bytes":total, "free_bytes":free, "cap_bytes":CAP}
 
 
 def owner_sid():
     # WindowsIdentity is metadata only; never enumerate environment/secrets.
-    return subprocess.check_output(["powershell.exe", "-NoProfile", "-NonInteractive", "-Command",
+    return subprocess.check_output([powershell(), "-NoProfile", "-NonInteractive", "-Command",
             "[Security.Principal.WindowsIdentity]::GetCurrent().User.Value"], stderr=subprocess.DEVNULL).decode().strip()
 
 
@@ -143,7 +148,7 @@ def binding(*, create=None):
 
 
 def storage_acl(root, sid, action):
-    subprocess.run(["powershell.exe", "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
+    subprocess.run([powershell(), "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
                    "-File", str(Path(__file__).with_name("iqp1_storage_acl.ps1")), "-Action", action,
                    "-Root", str(root), "-OwnerSid", sid], check=True,
                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
@@ -153,7 +158,7 @@ def private_credential_metadata(path, sid):
     path = Path(path).resolve(strict=True)
     if not path.is_file() or path.stat().st_size > 65536:
         fail("IQP1_EXISTING_PRIVATE_CREDENTIAL_REFERENCE_REQUIRED")
-    subprocess.run(["powershell.exe", "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
+    subprocess.run([powershell(), "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
         "-File", str(Path(__file__).with_name("iqp1_private_acl.ps1")), "-File", str(path),
         "-OwnerSid", sid], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     return path
@@ -180,7 +185,7 @@ def base_python_proof(base):
     program_files = Path(os.environ["ProgramFiles"]).resolve(strict=True)
     if not base.is_relative_to(program_files):
         fail("IQP1_SYSTEM_PYTHON_INSTALLATION_REQUIRED")
-    subprocess.run(["powershell.exe","-NoProfile","-NonInteractive","-ExecutionPolicy","Bypass",
+    subprocess.run([powershell(),"-NoProfile","-NonInteractive","-ExecutionPolicy","Bypass",
                    "-File",str(Path(__file__).with_name("iqp1_base_acl.ps1")),"-Base",str(base)],
                    check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
     result = hashlib.sha256()
@@ -399,6 +404,8 @@ def main():
     args = parser.parse_args()
     if os.name != "nt":
         fail("IQP1_WINDOWS_REQUIRED")
+    if sys.version_info[:2] != (3,13) or struct.calcsize("P") != 8:
+        fail("IQP1_PYTHON_313_X64_REQUIRED")
     root = Path(os.path.abspath(args.root))
     args.root = str(root)
     if args.mode in {"prepare-child", "acquire-bootstrap", "seed", "acquire-child", "verify-child"}:

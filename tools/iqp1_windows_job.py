@@ -19,6 +19,10 @@ KERNEL_HEADROOM = 8*1024**2
 
 def sealed_environment(temporary):
     result = {key:os.environ[key] for key in ("SystemRoot", "WINDIR", "PATH", "COMSPEC", "ProgramFiles") if key in os.environ}
+    if os.name == "nt":
+        system = Path(os.environ["SystemRoot"])
+        result["PATH"] = os.pathsep.join([str(system/"System32"),str(system),
+                                         str(Path(os.environ["ProgramFiles"])/"Git"/"cmd")])
     result.update(TEMP=str(temporary), TMP=str(temporary), PYTHONNOUSERSITE="1",
                   TRADING_ENABLED="false", ALLOW_PAPER_ORDERS="false", ALPACA_LIVE_TRADE="false")
     return result

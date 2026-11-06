@@ -73,6 +73,9 @@ class WindowsKernelTests(unittest.TestCase):
                     "-File",str(TOOLS/"iqp1_storage_acl.ps1"),"-Action",action,"-Root",str(root),"-OwnerSid",sid],
                     capture_output=True,text=True)
                 self.assertEqual(proof.returncode,0,proof.stderr)  # fixtures only, expose Windows diagnostics
+            credential = root/"volume"/"evidence"/"fixture-not-a-secret.json"
+            credential.write_text("not JSON: metadata check must not read credentials")
+            self.assertEqual(local.private_credential_metadata(credential,sid),credential.resolve())
     def test_job_success_and_hard_memory_enforcement(self):
         with tempfile.TemporaryDirectory() as temporary:
             marker = Path(temporary)/"memory.json"
@@ -122,20 +125,27 @@ class WindowsKernelTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             try:
-                info = volume_command("Initialize", root, size=64)
+                info = volume_command("Initialize", root)
                 self.assertEqual(info["filesystem"], "NTFS")
-                self.assertEqual(fixed_vhd(root/"pilot.vhd", size_mib=64),64*1024**2+512)
+                self.assertEqual(fixed_vhd(root/"pilot.vhd"),4092*1024**2+512)
                 volume = root/"volume"
                 (volume/"retained.txt").write_text("persisted fixture")
+                with (volume/"reserve.bin").open("wb",buffering=0) as reserve:
+                    for _ in range(64):
+                        reserve.write(b"r"*1024**2)
+                proof = local.storage_gate(root,{"volume_id":info["volume_id"]},inspect=True)
+                self.assertLessEqual(proof["physical_bound_bytes"],4*1024**3)
                 with self.assertRaises(OSError):
                     with (volume/"fill.bin").open("wb", buffering=0) as handle:
-                        for _ in range(80):
+                        for _ in range(4100):
                             handle.write(b"x"*1024**2)
-                self.assertLess((root/"pilot.vhd").stat().st_size,65*1024**2)
+                self.assertLess((root/"pilot.vhd").stat().st_size,4*1024**3)
+                with self.assertRaisesRegex(RuntimeError,"FREE_SPACE_RESERVE"):
+                    local.storage_gate(root,{"volume_id":info["volume_id"]})
                 (volume/"fill.bin").unlink()
-                volume_command("Detach",root,size=64)
-                again = volume_command("Attach",root,size=64)
+                volume_command("Detach",root)
+                again = volume_command("Attach",root)
                 self.assertEqual(info["volume_id"],again["volume_id"])
                 self.assertEqual((volume/"retained.txt").read_text(),"persisted fixture")
             finally:
-                volume_command("Detach",root,size=64)
+                volume_command("Detach",root)
