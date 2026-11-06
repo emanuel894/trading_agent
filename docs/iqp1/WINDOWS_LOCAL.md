@@ -8,7 +8,7 @@ LEAN and offline Docker qualifications are reused; they are not rerun here.
 ## Owner inputs (private; never paste keys or raw data into chat/GitHub)
 
 - Windows 10/11 x64 with NTFS, UAC enabled, **all-users Python3.13 under
-  Program Files**, Git and
+  Program Files**, all-users Git (`Program Files\Git\cmd`), and
   built-in diskpart/Storage PowerShell support. Use the same owner account for
   elevated approval and its linked standard-user acquisition token. Prepare
   proves the complete unelevated offline preflight; a different administrator
@@ -52,7 +52,9 @@ pilot backups stay in this VHD; bounded control files plus allocated VHD stay
 below4GiB. This does not cap unrelated Windows/system/backup-service storage.
 
 It authenticates the copied source/runtime, verifies private ACLs, fixed VHD
-allocation and mounted identity, and probes the standard-user token. It creates
+allocation and mounted identity, and probes the standard-user token using the
+same protected named-job/query-only authentication and full offline preflight
+that acquisition requires. It creates
 one administrator-protected HKLM binding. It neither reads keys nor initializes
 an HTTP allowance. Partial/failed setup is preserved; there is no format/reset
 of existing media and no automatic second root.
@@ -93,6 +95,8 @@ reconciliation of the same usage, never deleting the latch or making a new ledge
   No unreviewed executable receives credentials; trading flags remain false.
 - Kernel aggregate/process commit limit is8MiB below2GiB, reserving headroom
   within the unchanged2GiB envelope. It is not a claim about total Windows RAM.
+  This kernel limit covers the setup/acquisition child tree; the small watchdog
+  Python process is separate from that job.
 - Independent thirty-minute Job Object supervisor kills the whole tree, including
   hung calls/descendants; parent exit also kills it. Slow setup/source operations
   are inside that job. Suspend/wall-clock changes cannot replenish the deadline.
@@ -100,6 +104,12 @@ reconciliation of the same usage, never deleting the latch or making a new ledge
 - Fixed VHD allocation/identity and64MiB reserve+40MB free headroom are checked
   before source work. No extra collector, partitioning around page caps or order
   client is constructed. A limit/source/credential failure stops the pilot.
+
+This boundary assumes a trusted owner and reviewed collector. It is not a general
+Windows sandbox against hostile native programs running as the same user; those
+can already read that user's credential file and may inject into processes.
+Use a private account/runtime with no such processes. Administrator tampering or
+external copies/backups are outside this collector's enforceable authority.
 
 Private records are in `volume\evidence\evidence.sqlite` and `objects`; successful
 summary is `volume\evidence\usage.json`. The ledger is authoritative even if the

@@ -24,6 +24,7 @@ def sealed_environment(temporary):
         result["PATH"] = os.pathsep.join([str(system/"System32"),str(system),
                                          str(Path(os.environ["ProgramFiles"])/"Git"/"cmd")])
     result.update(TEMP=str(temporary), TMP=str(temporary), PYTHONNOUSERSITE="1",
+                  GIT_OPTIONAL_LOCKS="0",
                   TRADING_ENABLED="false", ALLOW_PAPER_ORDERS="false", ALPACA_LIVE_TRADE="false")
     return result
 
@@ -85,6 +86,21 @@ def require_authorized_job(name):
         if security:
             k.LocalFree(security)
         k.CloseHandle(handle)
+
+
+def require_query_only_job(name):
+    require_authorized_job(name)
+    if ctypes.windll.shell32.IsUserAnAdmin():
+        raise RuntimeError("IQP1_STANDARD_OWNER_TOKEN_REQUIRED")
+    k = ctypes.WinDLL("kernel32",use_last_error=True)
+    k.OpenJobObjectW.argtypes, k.OpenJobObjectW.restype = [W.DWORD,W.BOOL,W.LPCWSTR],W.HANDLE
+    k.CloseHandle.argtypes = [W.HANDLE]
+    handle = k.OpenJobObjectW(1,False,name)  # JOB_OBJECT_ASSIGN_PROCESS, never granted
+    if handle:
+        k.CloseHandle(handle)
+        raise RuntimeError("IQP1_STANDARD_TOKEN_CAN_ASSIGN_JOB")
+    if ctypes.get_last_error() != 5:
+        raise RuntimeError("IQP1_JOB_ASSIGN_DENIAL_UNVERIFIED")
 
 
 def run_job(command, *, temporary, seconds=1800, memory=2*1024**3, mutex="Global\\TradingAgent-IQP1", active_processes=8,

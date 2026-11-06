@@ -20,7 +20,7 @@ import time
 import uuid
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from iqp1_windows_job import require_authorized_job, require_pilot_job, run_job
+from iqp1_windows_job import require_pilot_job, require_query_only_job, run_job
 
 CAP = 4*1024**3
 VHD_MIB = 4092
@@ -228,7 +228,7 @@ def authenticated_acquisition():
         if winreg.QueryValueEx(key,"Consumed")[0] != 1:
             fail("IQP1_MACHINE_AUTHORIZATION_NOT_CONSUMED")
         name = winreg.QueryValueEx(key,"AuthorizedJob")[0]
-    require_authorized_job(name)
+    require_query_only_job(name)
 
 
 def prepare(args):
@@ -296,9 +296,10 @@ def prepare(args):
     # Prove that this owner's UAC linked token is accessible and non-elevated,
     # through the exact suspended-child/job path used for later acquisition.
     marker = temp/"standard-user-probe.json"
+    probe_name = "Local\\IQP1-private-preflight-"+uuid.uuid4().hex
     probe = run_job([str(python),"-I","-B",str(source/"tools"/"iqp1_local.py"),"verify-child",
-                    "--root",str(root),"--commit",args.commit],temporary=temp,seconds=180,
-                    linked_user=True,mutex="Local\\IQP1-standard-user-probe")
+                    "--root",str(root),"--commit",args.commit,"--verify-job",probe_name],temporary=temp,seconds=180,
+                    linked_user=True,mutex="Local\\IQP1-standard-user-probe",job_name=probe_name,protected_sid=sid)
     if probe["exit_code"] != 0 or read_json(marker)["elevated"]:
         fail("IQP1_STANDARD_USER_RUNTIME_UNAVAILABLE")
     binding(create=dict(root=str(root), manifest=approval, commit=args.commit, owner_sid=sid))
@@ -341,6 +342,7 @@ def seed_or_acquire(args):
                 store.close()
             return
         if args.mode == "verify-child":
+            require_query_only_job(args.verify_job)
             if ctypes.windll.shell32.IsUserAnAdmin() or manifest["owner_sid"] != owner_sid():
                 fail("IQP1_STANDARD_OWNER_TOKEN_REQUIRED")
             storage_acl(root,manifest["owner_sid"],"Verify")
@@ -401,6 +403,7 @@ def main():
     parser.add_argument("--cache", default="")
     parser.add_argument("--credential-file", default="")
     parser.add_argument("--approve", default="")
+    parser.add_argument("--verify-job",default="")
     args = parser.parse_args()
     if os.name != "nt":
         fail("IQP1_WINDOWS_REQUIRED")
