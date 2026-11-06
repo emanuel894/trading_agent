@@ -11,6 +11,7 @@ import io
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import struct
 import subprocess
@@ -26,7 +27,7 @@ CAP = 4*1024**3
 VHD_MIB = 4092
 RESERVE = 64*1024**2
 REGISTRY = r"SOFTWARE\TradingAgent\IQP1Boundary"
-CONTROL = {"pilot.vhd", "volume", "manifest.json", "prepare.json", "_diskpart.txt"}
+CONTROL = {"pilot.vhd", "volume", "manifest.json", "prepare.json", "failure.jsonl", "_diskpart.txt"}
 
 
 def powershell():
@@ -35,6 +36,30 @@ def powershell():
 
 def fail(code):
     raise RuntimeError(code)
+
+
+def safe_failure(error):
+    if isinstance(error,MemoryError):
+        return "IQP1_MEMORY_LIMIT_REACHED"
+    if isinstance(error,OSError) and (error.errno == 28 or getattr(error,"winerror",None) == 112):
+        return "IQP1_PHYSICAL_STORAGE_LIMIT_REACHED"
+    if isinstance(error,RuntimeError) and re.fullmatch(r"[A-Z][A-Z0-9_]{0,120}",str(error)):
+        return str(error)
+    return "LOCAL_RUNTIME_FAILURE"
+
+
+def retain_failure(root, mode, reason):
+    """Bounded metadata-only diagnostic; never replaces the usage ledger."""
+    root = Path(root)
+    target = root/"volume"/"tmp" if (root/"volume"/"tmp").is_dir() else root
+    path = target/"failure.jsonl"
+    raw = encode({"mode":mode,"reason":reason,"at_unix":time.time()})+b"\n"
+    if path.exists() and path.stat().st_size+len(raw) > 65536:
+        return
+    with path.open("ab") as handle:
+        handle.write(raw)
+        handle.flush()
+        os.fsync(handle.fileno())
 
 
 def encode(value):
@@ -59,9 +84,12 @@ def write_json(path, value):
 
 def volume_command(action, root, *, size=VHD_MIB):
     script = Path(__file__).with_name("iqp1_volume.ps1")
-    raw = subprocess.check_output([powershell(), "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
-            "-File", str(script), "-Action", action, "-Root", str(root), "-SizeMiB", str(size)],
-            stderr=subprocess.DEVNULL)
+    try:
+        raw = subprocess.check_output([powershell(), "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
+                "-File", str(script), "-Action", action, "-Root", str(root), "-SizeMiB", str(size)],
+                stderr=subprocess.DEVNULL)
+    except subprocess.CalledProcessError:
+        fail("IQP1_VOLUME_"+action.upper()+"_FAILED")
     return json.loads(raw.decode("utf-8-sig")) if action != "Detach" else None
 
 
@@ -465,6 +493,16 @@ def main():
     result.update(alpaca_attempts=0 if args.mode == "Prepare" else "see sole ledger",
                   external_cost=0)
     print(json.dumps(result, sort_keys=True))
+    if result["exit_code"]:
+        for receipt in (root/"volume"/"tmp"/"failure.jsonl",root/"failure.jsonl"):
+            if receipt.is_file() and receipt.stat().st_size <= 65536:
+                try:
+                    code = json.loads(receipt.read_bytes().splitlines()[-1])["reason"]
+                    if isinstance(code,str) and re.fullmatch(r"[A-Z][A-Z0-9_]{0,120}",code):
+                        print("STOP_REASON="+code)
+                        break
+                except (ValueError,KeyError,IndexError):
+                    pass
     if result["exit_code"] == 0 and args.mode == "Prepare":
         print("APPROVE_MANIFEST="+read_json(root/"prepare.json")["approve_manifest"])
     return result["exit_code"]
@@ -475,7 +513,11 @@ if __name__ == "__main__":
         raise SystemExit(main())
     except (Exception, KeyboardInterrupt) as error:
         # Preserve files/ledger on all failure paths; never print arbitrary errors.
-        import re
-        reason = str(error) if isinstance(error,RuntimeError) and re.fullmatch(r"[A-Z][A-Z0-9_]{0,120}",str(error)) else "LOCAL_RUNTIME_FAILURE"
+        reason = safe_failure(error)
+        if len(sys.argv)>1 and sys.argv[1] in {"prepare-child","acquire-bootstrap","acquire-child","seed","verify-child"}:
+            try:
+                retain_failure(sys.argv[sys.argv.index("--root")+1],sys.argv[1],reason)
+            except Exception:
+                pass  # kernel/storage stops can prevent even metadata logging
         print("IQP1_STOPPED_PRESERVE_PRIVATE_ROOT: "+reason, file=sys.stderr)
         raise SystemExit(1)

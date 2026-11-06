@@ -19,6 +19,16 @@ from iqp1_local import fixed_vhd, volume_command
 
 
 class PortableWindowsContracts(unittest.TestCase):
+    def test_failure_diagnostic_retains_only_codes_and_never_secret_exception_text(self):
+        self.assertEqual(local.safe_failure(ValueError("fixture-secret-that-must-never-appear")),"LOCAL_RUNTIME_FAILURE")
+        self.assertEqual(local.safe_failure(MemoryError()),"IQP1_MEMORY_LIMIT_REACHED")
+        with tempfile.TemporaryDirectory() as temporary:
+            local.retain_failure(temporary,"prepare-child",local.safe_failure(ValueError("fixture-secret")))
+            local.retain_failure(temporary,"prepare-child","IQP1_STANDARD_OWNER_TOKEN_REQUIRED")
+            raw = (Path(temporary)/"failure.jsonl").read_text()
+            self.assertNotIn("fixture-secret",raw)
+            self.assertEqual(len(raw.splitlines()),2)
+            self.assertEqual(json.loads(raw.splitlines()[-1])["reason"],"IQP1_STANDARD_OWNER_TOKEN_REQUIRED")
     def test_child_environment_contains_no_acquisition_credentials(self):
         from unittest.mock import patch
         with patch.dict(os.environ, {"ALPACA_API_KEY":"do-not-forward", "AWS_SECRET_ACCESS_KEY":"do-not-forward"}):

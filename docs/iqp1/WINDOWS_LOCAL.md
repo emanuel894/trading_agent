@@ -116,7 +116,10 @@ external copies/backups are outside this collector's enforceable authority.
 Private records are in `volume\evidence\evidence.sqlite` and `objects`; successful
 summary is `volume\evidence\usage.json`. The ledger is authoritative even if the
 summary is absent after a crash. Console prints only sanitized process resource
-metrics; never publish raw response bodies/keys or the credential file. Keep the
+metrics and `STOP_REASON` codes. Bounded append-only `failure.jsonl` diagnostics
+are in `volume\tmp` (or the control root before volume creation); they contain
+no arbitrary exception text/keys/bodies and do not replace cumulative accounting.
+Never publish raw response bodies/keys or the credential file. Keep the
 VHD and ledger after stops; do not reset, rerun or inspect returns/holdouts.
 
 After reboot an already created VHD may need administrator attachment. Preserve
