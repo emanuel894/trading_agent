@@ -7,10 +7,14 @@ LEAN and offline Docker qualifications are reused; they are not rerun here.
 
 ## Owner inputs (private; never paste keys or raw data into chat/GitHub)
 
-- Windows 10/11 x64 with NTFS, UAC enabled, Python3.13 (`py -3.13`), Git and
+- Windows 10/11 x64 with NTFS, UAC enabled, **all-users Python3.13 under
+  Program Files**, Git and
   built-in diskpart/Storage PowerShell support. Use the same owner account for
   elevated approval and its linked standard-user acquisition token. Prepare
-  proves that this token works; a different administrator account is unsuitable.
+  proves the complete unelevated offline preflight; a different administrator
+  account is unsuitable. Base Python/stdlib must be administrator-protected and
+  its code hash is bound too. Per-user writable Python is rejected. If `py`
+  selects another install, use `-PythonExe 'C:\Program Files\Python313\python.exe'`.
 - A clean checkout at the **exact independently reviewed PR61 commit** with
   both Foundation OS jobs passing. Do not use a moving branch as approval.
 - Existing approved retained January15 EvidenceStore directory (SQLite + objects).
@@ -68,7 +72,10 @@ current no-Alpaca-request task.** Later explicit owner approval is this command:
 The elevated supervisor consumes a machine-protected one-shot authorization,
 then starts the source worker with the owner's **unelevated UAC token**, suspended
 until assigned to a kernel Job Object. The standard worker cannot reset that
-latch or change the immutable code. Deleting/restoring a ledger cannot authorize
+latch or change the immutable code. Both bootstrap and credential-reading worker
+authenticate membership in the exact administrator-owned kernel job recorded by
+that claim. The standard token gets query rights only, preventing an alternate
+job from impersonating this execution. Deleting/restoring a ledger cannot authorize
 another allowance. Failure after consumption requires an explicit reviewed
 reconciliation of the same usage, never deleting the latch or making a new ledger.
 

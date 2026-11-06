@@ -20,7 +20,7 @@ import time
 import uuid
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from iqp1_windows_job import require_pilot_job, run_job
+from iqp1_windows_job import require_authorized_job, require_pilot_job, run_job
 
 CAP = 4*1024**3
 VHD_MIB = 4092
@@ -105,8 +105,14 @@ def storage_gate(root, manifest, *, inspect=False):
         fail("IQP1_PHYSICAL_CAP_EXCEEDED")
     volume = root/"volume"
     if inspect:
-        actual = volume_command("Inspect", root)
-        if actual["volume_id"] != manifest["volume_id"]:
+        # Mount identity lookup is read-only and works for the unelevated worker;
+        # no Storage/WMI administrative capability enters acquisition.
+        k = ctypes.WinDLL("kernel32",use_last_error=True)
+        k.GetVolumeNameForVolumeMountPointW.argtypes = [ctypes.c_wchar_p,ctypes.c_wchar_p,ctypes.c_ulong]
+        k.GetVolumeNameForVolumeMountPointW.restype = ctypes.c_int
+        actual = ctypes.create_unicode_buffer(1024)
+        if (not k.GetVolumeNameForVolumeMountPointW(str(volume)+"\\",actual,len(actual))
+                or actual.value.casefold() != manifest["volume_id"].casefold()):
             fail("IQP1_VOLUME_IDENTITY_CHANGED")
     # Check the mounted volume, not the unbounded directory underneath it.
     free = shutil.disk_usage(volume).free
@@ -168,7 +174,27 @@ def runtime_hash(volume):
     return result.hexdigest()
 
 
-def consume_once(args):
+def base_python_proof(base):
+    """Trust only the owner's protected all-users Python; hash its code, not secrets."""
+    base = Path(base).resolve(strict=True)
+    program_files = Path(os.environ["ProgramFiles"]).resolve(strict=True)
+    if not base.is_relative_to(program_files):
+        fail("IQP1_SYSTEM_PYTHON_INSTALLATION_REQUIRED")
+    subprocess.run(["powershell.exe","-NoProfile","-NonInteractive","-ExecutionPolicy","Bypass",
+                   "-File",str(Path(__file__).with_name("iqp1_base_acl.ps1")),"-Base",str(base)],
+                   check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+    result = hashlib.sha256()
+    for path in sorted(base.rglob("*")):
+        if "site-packages" in path.relative_to(base).parts:
+            continue
+        if path.is_symlink() or getattr(path.stat(),"st_file_attributes",0)&0x400:
+            fail("IQP1_BASE_RUNTIME_LINK_REJECTED")
+        if path.is_file() and path.suffix.lower() in {".exe",".dll",".pyd",".py",".pyc",".zip",".whl",".pth"}:
+            result.update(encode([path.relative_to(base).as_posix(),hashlib.sha256(path.read_bytes()).hexdigest()]))
+    return {"root":str(base),"sha256":result.hexdigest()}
+
+
+def consume_once(args,job_name):
     """Elevated one-shot authorization, outside the owner-writable evidence VHD.
 
     Called with the global mutex held and child suspended. Failure after claim
@@ -184,10 +210,20 @@ def consume_once(args):
         try:
             winreg.QueryValueEx(key,"Consumed")
         except FileNotFoundError:
+            winreg.SetValueEx(key,"AuthorizedJob",0,winreg.REG_SZ,job_name)
             winreg.SetValueEx(key,"Consumed",0,winreg.REG_DWORD,1)
             winreg.FlushKey(key)
         else:
             fail("IQP1_MACHINE_PILOT_ALREADY_CONSUMED_PRESERVE_LEDGER")
+
+
+def authenticated_acquisition():
+    import winreg
+    with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE,REGISTRY,0,winreg.KEY_READ) as key:
+        if winreg.QueryValueEx(key,"Consumed")[0] != 1:
+            fail("IQP1_MACHINE_AUTHORIZATION_NOT_CONSUMED")
+        name = winreg.QueryValueEx(key,"AuthorizedJob")[0]
+    require_authorized_job(name)
 
 
 def prepare(args):
@@ -200,13 +236,14 @@ def prepare(args):
     else:
         fail("IQP1_MACHINE_ALREADY_BOUND_NO_RESET")
     root = Path(args.root)
+    base_proof = base_python_proof(sys.base_prefix)
     cache = Path(args.cache).resolve(strict=True)
     if not (cache/"evidence.sqlite").is_file():
         fail("IQP1_EXISTING_PRIVATE_CACHE_REQUIRED")
-    info = volume_command("Initialize", root)
-    volume = root/"volume"
     sid = owner_sid()
     credential = private_credential_metadata(args.credential_file,sid)  # metadata only, no read
+    info = volume_command("Initialize", root)
+    volume = root/"volume"
     temp = volume/"tmp"
     temp.mkdir()
     os.environ.update(TEMP=str(temp), TMP=str(temp))
@@ -237,6 +274,7 @@ def prepare(args):
     manifest = dict(commit=args.commit, root=str(root), volume_id=info["volume_id"], owner_sid=sid,
                     cache=str(cache), ledger_id=uuid.uuid4().hex, source_sha256=hashlib.sha256(packet).hexdigest(),
                     runtime_sha256=runtime_hash(volume),
+                    base_python=base_python_proof(sys.base_prefix),
                     credential_reference=str(credential),
                     source_only=True, external_spend=0)
     write_json(root/"manifest.json", manifest)
@@ -253,9 +291,8 @@ def prepare(args):
     # Prove that this owner's UAC linked token is accessible and non-elevated,
     # through the exact suspended-child/job path used for later acquisition.
     marker = temp/"standard-user-probe.json"
-    code = ("import ctypes,json,pathlib; pathlib.Path("+repr(str(marker))+").write_text("
-            "json.dumps({'elevated':bool(ctypes.windll.shell32.IsUserAnAdmin())}))")
-    probe = run_job([str(python),"-I","-B","-c",code],temporary=temp,seconds=10,
+    probe = run_job([str(python),"-I","-B",str(source/"tools"/"iqp1_local.py"),"verify-child",
+                    "--root",str(root),"--commit",args.commit],temporary=temp,seconds=180,
                     linked_user=True,mutex="Local\\IQP1-standard-user-probe")
     if probe["exit_code"] != 0 or read_json(marker)["elevated"]:
         fail("IQP1_STANDARD_USER_RUNTIME_UNAVAILABLE")
@@ -263,6 +300,10 @@ def prepare(args):
 
 
 def seed_or_acquire(args):
+    if args.mode == "acquire-child":
+        authenticated_acquisition()
+    elif args.mode not in {"seed","verify-child"}:
+        fail("IQP1_PRIVATE_WORKER_MODE_REJECTED")
     root = Path(args.root)
     manifest = read_json(root/"manifest.json")
     sys.path.insert(0, str(root/"volume"/"source"/"trading_agent_starter"))
@@ -293,6 +334,18 @@ def seed_or_acquire(args):
                 store.append("iqp1_private_binding", manifest["ledger_id"], manifest)
             finally:
                 store.close()
+            return
+        if args.mode == "verify-child":
+            if ctypes.windll.shell32.IsUserAnAdmin() or manifest["owner_sid"] != owner_sid():
+                fail("IQP1_STANDARD_OWNER_TOKEN_REQUIRED")
+            storage_acl(root,manifest["owner_sid"],"Verify")
+            storage_gate(root,manifest,inspect=True)
+            private_credential_metadata(manifest["credential_reference"],manifest["owner_sid"])
+            if runtime_hash(root/"volume") != manifest["runtime_sha256"] or references != manifest["cache_references"]:
+                fail("IQP1_OFFLINE_BINDINGS_CHANGED")
+            if base_python_proof(sys.base_prefix) != manifest["base_python"]:
+                fail("IQP1_BASE_PYTHON_CHANGED")
+            write_json(root/"volume"/"tmp"/"standard-user-probe.json",{"status":"OFFLINE_READY","elevated":False})
             return
         if references != manifest["cache_references"]:
             fail("IQP1_APPROVED_CACHE_REFERENCES_CHANGED")
@@ -327,6 +380,7 @@ def seed_or_acquire(args):
                 fail("IQP1_CREDENTIAL_FORMAT_INVALID")
             result = run_pilot(store, with_cache, (secret["key_id"], secret["secret_key"]),
                                lambda: storage_gate(root, manifest))
+            proof = storage_gate(root,manifest)
             write_json(ledger/"usage.json", dict(result, **proof))
         finally:
             store.close()
@@ -336,7 +390,7 @@ def seed_or_acquire(args):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("mode", choices=["Prepare", "Acquire", "prepare-child", "acquire-bootstrap", "acquire-child", "seed"])
+    parser.add_argument("mode", choices=["Prepare", "Acquire", "prepare-child", "acquire-bootstrap", "acquire-child", "seed", "verify-child"])
     parser.add_argument("--root", required=True)
     parser.add_argument("--commit", required=True)
     parser.add_argument("--cache", default="")
@@ -347,8 +401,10 @@ def main():
         fail("IQP1_WINDOWS_REQUIRED")
     root = Path(os.path.abspath(args.root))
     args.root = str(root)
-    if args.mode in {"prepare-child", "acquire-bootstrap", "seed", "acquire-child"}:
+    if args.mode in {"prepare-child", "acquire-bootstrap", "seed", "acquire-child", "verify-child"}:
         require_pilot_job()
+        if args.mode in {"acquire-bootstrap","acquire-child"}:
+            authenticated_acquisition()
         # All potentially blocking git/setup/storage/network operations belong to
         # the kernel-supervised child tree, never the watchdog process.
         repo = Path(__file__).resolve().parents[1]
@@ -364,6 +420,8 @@ def main():
             storage_gate(root,manifest,inspect=True)
             if runtime_hash(root/"volume") != manifest["runtime_sha256"]:
                 fail("IQP1_EXECUTABLE_RUNTIME_CHANGED")
+            if base_python_proof(sys.base_prefix) != manifest["base_python"]:
+                fail("IQP1_BASE_PYTHON_CHANGED")
             temporary = root/"volume"/"tmp"
             os.environ.update(TEMP=str(temporary), TMP=str(temporary))
             command = [root/"volume"/"python"/"Scripts"/"python.exe", "-I", "-B",
@@ -388,8 +446,11 @@ def main():
     python, script = Path(sys.executable), Path(__file__)
     command = [python, "-I", "-B", script, mode, "--root", root, "--commit", args.commit,
                "--cache", args.cache, "--credential-file", args.credential_file, "--approve", args.approve]
+    job_name = "Global\\TradingAgent-IQP1-"+uuid.uuid4().hex if args.mode == "Acquire" else None
+    protected_sid = binding()["owner_sid"] if args.mode == "Acquire" else None
     result = run_job(command, temporary=temporary, linked_user=args.mode == "Acquire",
-                     before_start=(lambda:consume_once(args)) if args.mode == "Acquire" else None)
+                     before_start=(lambda:consume_once(args,job_name)) if args.mode == "Acquire" else None,
+                     job_name=job_name,protected_sid=protected_sid)
     # No raw HTTP, exceptions, secret paths or child stdout in console/CI logs.
     result.update(alpaca_attempts=0 if args.mode == "Prepare" else "see sole ledger",
                   external_cost=0)

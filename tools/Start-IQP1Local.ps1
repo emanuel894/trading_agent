@@ -6,12 +6,14 @@ param(
   [Parameter(Mandatory=$true)][ValidatePattern('^[0-9a-f]{40}$')][string]$ReviewedCommit,
   [string]$ExistingCache = '',
   [string]$CredentialFile = '',
-  [string]$ApproveManifest = ''
+  [string]$ApproveManifest = '',
+  [string]$PythonExe = ''
 )
 $ErrorActionPreference = 'Stop'
 $repo = Split-Path $PSScriptRoot -Parent
 # Git/source checks run inside the kernel deadline, before any private access.
-$python = (& py -3.13 -I -c 'import sys; print(sys.executable)').Trim()
+$python = $PythonExe
+if (-not $python) { $python = (& py -3.13 -I -c 'import sys; print(sys.executable)').Trim() }
 if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $python)) { throw 'IQP1_PYTHON_313_REQUIRED' }
 $argsList = @('-I','-B',(Join-Path $PSScriptRoot 'iqp1_local.py'),$Mode,
   '--root',$Root,'--commit',$ReviewedCommit)

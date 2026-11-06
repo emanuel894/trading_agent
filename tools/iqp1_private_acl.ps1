@@ -1,5 +1,6 @@
 param([Parameter(Mandatory=$true)][string]$File, [Parameter(Mandatory=$true)][string]$OwnerSid)
 $ErrorActionPreference = 'Stop'
+Import-Module "$env:SystemRoot\System32\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Security\Microsoft.PowerShell.Security.psd1" -Force
 $acl = Get-Acl -LiteralPath $File
 $allowed = @($OwnerSid, 'S-1-5-18', 'S-1-5-32-544')
 foreach ($entry in $acl.Access) {

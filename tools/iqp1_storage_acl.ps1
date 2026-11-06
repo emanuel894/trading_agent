@@ -1,6 +1,7 @@
 param([ValidateSet('Harden','Verify')][string]$Action,
       [Parameter(Mandatory=$true)][string]$Root, [Parameter(Mandatory=$true)][string]$OwnerSid)
 $ErrorActionPreference = 'Stop'
+Import-Module "$env:SystemRoot\System32\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Security\Microsoft.PowerShell.Security.psd1" -Force
 $rootPath = [IO.Path]::GetFullPath($Root).TrimEnd('\')
 $admin = [Security.Principal.SecurityIdentifier]'S-1-5-32-544'
 $system = [Security.Principal.SecurityIdentifier]'S-1-5-18'

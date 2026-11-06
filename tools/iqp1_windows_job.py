@@ -18,7 +18,7 @@ KERNEL_HEADROOM = 8*1024**2
 
 
 def sealed_environment(temporary):
-    result = {key:os.environ[key] for key in ("SystemRoot", "WINDIR", "PATH", "COMSPEC") if key in os.environ}
+    result = {key:os.environ[key] for key in ("SystemRoot", "WINDIR", "PATH", "COMSPEC", "ProgramFiles") if key in os.environ}
     result.update(TEMP=str(temporary), TMP=str(temporary), PYTHONNOUSERSITE="1",
                   TRADING_ENABLED="false", ALLOW_PAPER_ORDERS="false", ALPACA_LIVE_TRADE="false")
     return result
@@ -47,12 +47,50 @@ def require_pilot_job():
         raise RuntimeError("IQP1_REQUIRED_KERNEL_JOB_NOT_PRESENT")
 
 
+def require_authorized_job(name):
+    """Membership in the admin-owned, query-only-to-owner one-shot kernel job.
+
+    Reproducing limits or cloning a deleted named object as a normal user cannot
+    satisfy this: its owner must be Administrators, and assigning a process to
+    the real object requires rights unavailable to the standard source worker.
+    """
+    k = ctypes.WinDLL("kernel32",use_last_error=True)
+    a = ctypes.WinDLL("advapi32",use_last_error=True)
+    k.OpenJobObjectW.argtypes, k.OpenJobObjectW.restype = [W.DWORD,W.BOOL,W.LPCWSTR],W.HANDLE
+    k.IsProcessInJob.argtypes, k.IsProcessInJob.restype = [W.HANDLE,W.HANDLE,ctypes.POINTER(W.BOOL)],W.BOOL
+    k.CloseHandle.argtypes = [W.HANDLE]
+    k.LocalFree.argtypes, k.LocalFree.restype = [W.LPVOID],W.LPVOID
+    a.GetSecurityInfo.argtypes = [W.HANDLE,ctypes.c_int,W.DWORD,W.LPVOID,W.LPVOID,W.LPVOID,W.LPVOID,W.LPVOID]
+    a.GetSecurityInfo.restype = W.DWORD
+    a.ConvertSidToStringSidW.argtypes, a.ConvertSidToStringSidW.restype = [W.LPVOID,ctypes.POINTER(W.LPWSTR)],W.BOOL
+    handle = k.OpenJobObjectW(0x20004,False,name)
+    if not handle:
+        raise RuntimeError("IQP1_AUTHORIZED_JOB_NOT_ACCESSIBLE")
+    security, owner, text = W.LPVOID(),W.LPVOID(),W.LPWSTR()
+    try:
+        inside = W.BOOL()
+        if not k.IsProcessInJob(W.HANDLE(-1),handle,ctypes.byref(inside)) or not inside:
+            raise RuntimeError("IQP1_NOT_IN_AUTHORIZED_JOB")
+        if a.GetSecurityInfo(handle,6,1,ctypes.byref(owner),None,None,None,ctypes.byref(security)):
+            raise RuntimeError("IQP1_AUTHORIZED_JOB_OWNER_UNVERIFIED")
+        if not a.ConvertSidToStringSidW(owner,ctypes.byref(text)) or text.value != "S-1-5-32-544":
+            raise RuntimeError("IQP1_AUTHORIZED_JOB_OWNER_INVALID")
+    finally:
+        if text:
+            k.LocalFree(ctypes.cast(text,W.LPVOID))
+        if security:
+            k.LocalFree(security)
+        k.CloseHandle(handle)
+
+
 def run_job(command, *, temporary, seconds=1800, memory=2*1024**3, mutex="Global\\TradingAgent-IQP1", active_processes=8,
-            linked_user=False, before_start=None):
+            linked_user=False, before_start=None, job_name=None, protected_sid=None):
     if os.name != "nt":
         raise RuntimeError("WINDOWS_KERNEL_REQUIRED")
     if not 0 < seconds <= 1800 or not 32*1024**2 <= memory <= 2*1024**3 or not 1 <= active_processes <= 8:
         raise ValueError("INVALID_JOB_LIMITS")
+    if bool(job_name) != bool(protected_sid):
+        raise ValueError("NAMED_JOB_REQUIRES_PROTECTED_OWNER")
     started = time.monotonic()
     wall_started = time.time()
     k = ctypes.WinDLL("kernel32", use_last_error=True)
@@ -94,7 +132,7 @@ def run_job(command, *, temporary, seconds=1800, memory=2*1024**3, mutex="Global
         function.argtypes, function.restype = args, result
     def check(value):
         if not value:
-            raise OSError("WINDOWS_JOB_ENFORCEMENT_FAILED")
+            raise RuntimeError("WINDOWS_JOB_ENFORCEMENT_FAILED_"+str(ctypes.get_last_error()))
         return value
     lock = check(k.CreateMutexW(None, False, mutex))
     job, pi, acquired, token = None, Process(), False, None
@@ -102,7 +140,26 @@ def run_job(command, *, temporary, seconds=1800, memory=2*1024**3, mutex="Global
         if k.WaitForSingleObject(lock, 0) != 0:
             raise RuntimeError("IQP1_OTHER_WORKER_OR_ABANDONED_LOCK")
         acquired = True
-        job = check(k.CreateJobObjectW(None, None))
+        if job_name:
+            a = ctypes.WinDLL("advapi32",use_last_error=True)
+            a.ConvertStringSecurityDescriptorToSecurityDescriptorW.argtypes = [W.LPCWSTR,W.DWORD,ctypes.POINTER(W.LPVOID),W.LPVOID]
+            a.ConvertStringSecurityDescriptorToSecurityDescriptorW.restype = W.BOOL
+            k.LocalFree.argtypes, k.LocalFree.restype = [W.LPVOID],W.LPVOID
+            class SecurityAttributes(ctypes.Structure):
+                _fields_ = [("length",W.DWORD),("descriptor",W.LPVOID),("inherit",W.BOOL)]
+            descriptor = W.LPVOID()
+            sddl = "O:BAG:BAD:P(A;;GA;;;SY)(A;;GA;;;BA)(A;;0x00020004;;;"+protected_sid+")"
+            check(a.ConvertStringSecurityDescriptorToSecurityDescriptorW(sddl,1,ctypes.byref(descriptor),None))
+            attributes = SecurityAttributes(ctypes.sizeof(SecurityAttributes),descriptor,False)
+            try:
+                ctypes.set_last_error(0)
+                job = check(k.CreateJobObjectW(ctypes.byref(attributes),job_name))
+                if ctypes.get_last_error() == 183:
+                    raise RuntimeError("IQP1_JOB_NAME_ALREADY_EXISTS")
+            finally:
+                k.LocalFree(descriptor)
+        else:
+            job = check(k.CreateJobObjectW(None, None))
         limit = Limits()
         # KILL_ON_JOB_CLOSE | JOB_MEMORY | PROCESS_MEMORY | ACTIVE_PROCESS.
         # One acquisition Python; up to eight descendants for offline setup only.

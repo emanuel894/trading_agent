@@ -44,6 +44,21 @@ class PortableWindowsContracts(unittest.TestCase):
 
 @unittest.skipUnless(os.name == "nt", "Actual Windows kernel/VHD tests run in mandatory Windows CI")
 class WindowsKernelTests(unittest.TestCase):
+    def test_named_admin_owned_job_authenticates_exact_membership(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            name = "Local\\IQP1-authorized-test-"+uuid.uuid4().hex
+            sid = local.owner_sid()
+            marker = Path(temporary)/"authenticated"
+            script = ("import sys,pathlib; sys.path.insert(0,"+repr(str(TOOLS))+"); "
+                "from iqp1_windows_job import require_authorized_job; require_authorized_job("+repr(name)+"); "
+                "pathlib.Path("+repr(str(marker))+").write_text('MEMBER')")
+            result = run_job([sys.executable,"-I","-B","-c",script],temporary=temporary,
+                seconds=20,job_name=name,protected_sid=sid,mutex="Local\\IQP1-test-"+uuid.uuid4().hex)
+            self.assertEqual(result["exit_code"],0)
+            self.assertEqual(marker.read_text(),"MEMBER")
+            from iqp1_windows_job import require_authorized_job
+            with self.assertRaises(RuntimeError):
+                require_authorized_job(name)  # object is gone; matching caps are insufficient
     def test_private_acl_replaces_default_grants_and_checks_immutable_tree(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -82,10 +97,10 @@ class WindowsKernelTests(unittest.TestCase):
         try:
             with patch.object(local,"REGISTRY",keyname):
                 local.binding(create=dict(root=args.root,commit=args.commit,manifest=args.approve))
-                local.consume_once(args)
+                local.consume_once(args,"Global\\fixture-authorized-job")
                 # The evidence directory is irrelevant to this independent cap.
                 with self.assertRaisesRegex(RuntimeError,"ALREADY_CONSUMED"):
-                    local.consume_once(args)
+                    local.consume_once(args,"Global\\fixture-alternate-job")
         finally:
             winreg.DeleteKey(winreg.HKEY_LOCAL_MACHINE,keyname)
 
