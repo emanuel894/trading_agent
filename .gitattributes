@@ -17,3 +17,5 @@ AGENTS.md text eol=lf
 CLOUD_AUTOMATION_PLAN_20261017.md text eol=lf
 automation/control.json text eol=lf
 trading_agent_starter/devloop/*.py text eol=lf
+# The retained Fed adapter verifies this accepted source manifest byte-for-byte.
+docs/event-evidence/sources/captures.json -text
