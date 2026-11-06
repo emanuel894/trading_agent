@@ -105,8 +105,15 @@ def volume_command(action, root, *, size=VHD_MIB):
     try:
         raw = subprocess.check_output([powershell(), "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
                 "-File", str(script), "-Action", action, "-Root", str(root), "-SizeMiB", str(size)],
-                stderr=subprocess.DEVNULL)
-    except subprocess.CalledProcessError:
+                stderr=subprocess.PIPE)
+    except subprocess.CalledProcessError as error:
+        # Only accept a single-line, bounded token emitted by the reviewed
+        # PowerShell helper. Never expose native DiskPart output, paths or
+        # stderr text in the owner receipt/usage ledger.
+        match = re.search(rb"(?m)^IQP1_SAFE_FAILURE_CODE=(IQP1_[A-Z0-9_]{1,100})\r?$",
+                          error.stderr or b"")
+        if match:
+            fail(match.group(1).decode("ascii"))
         fail("IQP1_VOLUME_"+action.upper()+"_FAILED")
     return json.loads(raw.decode("utf-8-sig")) if action != "Detach" else None
 
