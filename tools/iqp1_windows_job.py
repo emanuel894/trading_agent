@@ -21,6 +21,16 @@ def sealed_environment(temporary):
     result = {key:os.environ[key] for key in ("SystemRoot", "WINDIR", "PATH", "COMSPEC", "ProgramFiles") if key in os.environ}
     if os.name == "nt":
         system = Path(os.environ["SystemRoot"])
+        # A minimal CreateProcess environment must still resolve native Windows
+        # known folders. Without SystemDrive, some Windows components create a
+        # literal "%SystemDrive%/ProgramData/..." tree under the job cwd.
+        # Keep only these non-secret system paths, never inherited API keys.
+        system_drive = system.drive
+        if not system_drive or len(system_drive) != 2 or system_drive[1] != ":":
+            raise RuntimeError("IQP1_SYSTEM_DRIVE_REQUIRED")
+        result["SystemDrive"] = system_drive
+        result["ProgramData"] = str(Path(system_drive + "\\ProgramData"))
+        result["ALLUSERSPROFILE"] = result["ProgramData"]
         result["PATH"] = os.pathsep.join([str(system/"System32"),str(system),
                                          str(Path(os.environ["ProgramFiles"])/"Git"/"cmd")])
     result.update(TEMP=str(temporary), TMP=str(temporary), PYTHONNOUSERSITE="1",
