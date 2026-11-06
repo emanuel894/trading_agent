@@ -39,6 +39,12 @@ class FakeDataClient:
 
 
 class AlpacaConfigTests(unittest.TestCase):
+    def setUp(self):
+        # Fixtures must never discover a developer credential file.
+        loader = patch("dotenv.load_dotenv", return_value=False)
+        loader.start()
+        self.addCleanup(loader.stop)
+
     def base_env(self):
         return {
             "BROKER": "alpaca",

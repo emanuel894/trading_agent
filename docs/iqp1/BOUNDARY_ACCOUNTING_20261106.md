@@ -133,3 +133,7 @@ Execute only in the existing approved private credential-separated context after
 all remaining hard ceilings/destinations are verified and this code's independent
 review/CI are reconciled. Ordinary coding/review receives no credentials/private
 raw data. Stop on any unknown gate; no source/exit admission or strategy inference.
+
+## Local continuation
+
+See [local offline qualification](LOCAL_QUALIFICATION_20261106.md) for the owner-directed Mac continuation, credential-test fix, Docker evidence and remaining launch blockers. Original science/accounting evidence above is retained.
