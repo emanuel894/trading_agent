@@ -2,7 +2,8 @@
 
 All created pilot content lives in a fixed VHD plus <=4MiB control allowance.
 Administrator-owned registry binding pins one root, manifest and evidence ID.
-There is deliberately no reset, new-ledger, alternate schedule or resume switch.
+There is no reset, new-ledger or alternate schedule. An explicit offline-only
+continuation accepts just the interrupted pre-source setup, never a pilot run.
 """
 import argparse
 import ctypes
@@ -372,6 +373,59 @@ def authenticated_acquisition():
     require_query_only_job(name)
 
 
+def validate_early_prepare_layout(root):
+    """Accept only the owner's reported pre-source state; never remove anything."""
+    root = Path(root)
+    volume = root/"volume"
+    if (set(p.name for p in root.iterdir()) - {"pilot.vhd","volume","failure.jsonl"}
+            or not volume.is_dir() or not (root/"pilot.vhd").is_file()
+            or set(p.name for p in volume.iterdir()) != {"tmp","reserve.bin"}
+            or not (volume/"tmp").is_dir()
+            or set(p.name for p in (volume/"tmp").iterdir()) - {"failure.jsonl"}):
+        fail("IQP1_PREPARE_RESUME_STATE_UNSAFE")
+    for path in [root/"pilot.vhd",volume/"tmp",volume/"reserve.bin",
+                 root/"failure.jsonl",volume/"tmp"/"failure.jsonl"]:
+        if path.exists() and (path.is_symlink() or getattr(path.stat(),"st_file_attributes",0)&0x400):
+            fail("IQP1_PREPARE_RESUME_STATE_UNSAFE")
+    reserve = volume/"reserve.bin"
+    if (not reserve.is_file() or reserve.stat().st_size != RESERVE
+            or getattr(reserve.stat(),"st_file_attributes",0)&(0x200|0x800)):
+        fail("IQP1_PREPARE_RESUME_STATE_UNSAFE")
+    for path in (root/"failure.jsonl",volume/"tmp"/"failure.jsonl"):
+        if path.exists() and (not path.is_file() or path.stat().st_size > 65536):
+            fail("IQP1_PREPARE_RESUME_STATE_UNSAFE")
+
+
+def resume_early_prepare(root):
+    import winreg
+    try:
+        key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE,REGISTRY,0,winreg.KEY_READ)
+    except FileNotFoundError:
+        pass
+    else:
+        key.Close()
+        fail("IQP1_MACHINE_ALREADY_BOUND_NO_RESET")
+    validate_early_prepare_layout(root)
+    fixed_vhd(Path(root)/"pilot.vhd")
+    info = volume_command("Inspect",root)  # no attach, format, detach or reset
+    storage_gate(root,info,inspect=True)
+    return info
+
+
+def prepare_source_packet(repo,commit):
+    from iqp1_build import source_packet
+    try:
+        packet = source_packet(repo)
+    except (MemoryError,KeyboardInterrupt):
+        raise
+    except Exception:
+        fail("IQP1_PREPARE_SOURCE_EXPORT_FAILED")
+    with tarfile.open(fileobj=io.BytesIO(packet)) as archive:
+        if archive.pax_headers.get("comment") != commit:
+            fail("IQP1_SOURCE_ARCHIVE_COMMIT_CHANGED")
+    return packet
+
+
 def prepare(args):
     if not ctypes.windll.shell32.IsUserAnAdmin():
         fail("IQP1_PREPARE_REQUIRES_ONE_TIME_ADMINISTRATOR")
@@ -388,21 +442,24 @@ def prepare(args):
         fail("IQP1_EXISTING_PRIVATE_CACHE_REQUIRED")
     sid = owner_sid()
     credential = private_credential_metadata(args.credential_file,sid)  # metadata only, no read
-    info = volume_command("Initialize", root)
+    # Git export must succeed before allocating a new VHD or writing to one.
+    repo = Path(__file__).resolve().parents[1]
+    packet = prepare_source_packet(repo,args.commit)
+    continuing = args.resume_prepare
+    info = resume_early_prepare(root) if continuing else volume_command("Initialize",root)
     volume = root/"volume"
     temp = volume/"tmp"
-    temp.mkdir()
+    if not continuing:
+        temp.mkdir()
     os.environ.update(TEMP=str(temp), TMP=str(temp))
     os.chdir(temp)
     # Physically allocate reserve, do not merely extend/sparsify its length.
-    with (volume/"reserve.bin").open("xb") as handle:
-        for _ in range(64):
-            handle.write(b"\0"*(1024**2))
-        handle.flush()
-        os.fsync(handle.fileno())
-    from iqp1_build import source_packet
-    repo = Path(__file__).resolve().parents[1]
-    packet = source_packet(repo)
+    if not continuing:
+        with (volume/"reserve.bin").open("xb") as handle:
+            for _ in range(64):
+                handle.write(b"\0"*(1024**2))
+            handle.flush()
+            os.fsync(handle.fileno())
     source = volume/"source"
     source.mkdir()
     with tarfile.open(fileobj=io.BytesIO(packet)) as archive:
@@ -547,7 +604,10 @@ def main():
     parser.add_argument("--approve", default="")
     parser.add_argument("--verify-job",default="")
     parser.add_argument("--invocation",default="")
+    parser.add_argument("--resume-prepare",action="store_true")
     args = parser.parse_args()
+    if args.resume_prepare and args.mode not in {"Prepare","prepare-child"}:
+        fail("IQP1_RESUME_PREPARE_ONLY")
     if os.name != "nt":
         fail("IQP1_WINDOWS_REQUIRED")
     if sys.version_info[:2] != (3,13) or struct.calcsize("P") != 8:
@@ -601,6 +661,8 @@ def main():
     command = [python, "-I", "-B", script, mode, "--root", root, "--commit", args.commit,
                "--cache", args.cache, "--credential-file", args.credential_file, "--approve", args.approve,
                "--invocation",invocation]
+    if args.resume_prepare:
+        command.append("--resume-prepare")
     job_name = "Global\\TradingAgent-IQP1-"+uuid.uuid4().hex if args.mode == "Acquire" else None
     protected_sid = binding()["owner_sid"] if args.mode == "Acquire" else None
     result = run_job(command, temporary=temporary, linked_user=args.mode == "Acquire",

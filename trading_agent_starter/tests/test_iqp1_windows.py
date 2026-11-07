@@ -19,6 +19,75 @@ from iqp1_local import fixed_vhd, volume_command
 
 
 class PortableWindowsContracts(unittest.TestCase):
+    def _early_prepare_fixture(self, root):
+        (root/"pilot.vhd").write_bytes(b"fixture; native footer checked separately")
+        (root/"volume"/"tmp").mkdir(parents=True)
+        with (root/"volume"/"reserve.bin").open("wb") as reserve:
+            reserve.truncate(local.RESERVE)
+        local.retain_failure(root,"prepare-child","LOCAL_RUNTIME_FAILURE",invocation="old")
+
+    def test_early_prepare_resume_preserves_reported_owner_layout(self):
+        self.assertTrue(hasattr(local,"validate_early_prepare_layout"),"Early interrupted Prepare has no safe continuation")
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            self._early_prepare_fixture(root)
+            before = (root/"volume"/"tmp"/"failure.jsonl").read_bytes()
+            local.validate_early_prepare_layout(root)
+            self.assertEqual(before,(root/"volume"/"tmp"/"failure.jsonl").read_bytes())
+            self.assertFalse((root/"volume"/"evidence").exists())
+
+    def test_early_prepare_resume_rejects_any_advanced_or_unknown_content(self):
+        self.assertTrue(hasattr(local,"validate_early_prepare_layout"),"Missing recovery state guard")
+        for relative in ("manifest.json","prepare.json","_diskpart.txt","volume/source", "volume/python",
+                         "volume/evidence", "volume/tmp/unknown", "volume/objects"):
+            with self.subTest(relative=relative), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                self._early_prepare_fixture(root)
+                extra = root/relative
+                extra.write_bytes(b"must be preserved")
+                with self.assertRaisesRegex(RuntimeError,"RESUME_STATE_UNSAFE"):
+                    local.validate_early_prepare_layout(root)
+                self.assertEqual(extra.read_bytes(),b"must be preserved")
+
+    def test_resume_refuses_even_an_empty_existing_machine_registry_key(self):
+        from types import SimpleNamespace
+        from unittest.mock import patch,Mock
+        registry = SimpleNamespace(HKEY_LOCAL_MACHINE=1,KEY_READ=1,OpenKey=lambda *args:Mock())
+        with patch.dict(sys.modules,{"winreg":registry}):
+            with self.assertRaisesRegex(RuntimeError,"MACHINE_ALREADY_BOUND_NO_RESET"):
+                local.resume_early_prepare(Path("must-not-be-opened"))
+
+    def test_source_export_failure_precedes_any_volume_allocation(self):
+        self.assertTrue(hasattr(local,"prepare_source_packet"),"Source export has no preallocation gate")
+        from unittest.mock import patch
+        import iqp1_build
+        with patch.object(iqp1_build,"source_packet",side_effect=OSError("private fixture detail")):
+            with self.assertRaisesRegex(RuntimeError,r"^IQP1_PREPARE_SOURCE_EXPORT_FAILED$"):
+                local.prepare_source_packet(Path("fixture"),"a"*40)
+
+    def test_prepare_stops_before_disk_creation_when_git_export_fails(self):
+        from unittest.mock import patch
+        from types import SimpleNamespace
+        import iqp1_build
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            cache = root/"old-cache"
+            cache.mkdir()
+            (cache/"evidence.sqlite").write_bytes(b"fixture; no private data")
+            args = SimpleNamespace(root=str(root/"pilot"),cache=str(cache),credential_file="fixture-reference",
+                                   commit="a"*40,resume_prepare=False)
+            windows = SimpleNamespace(shell32=SimpleNamespace(IsUserAnAdmin=lambda:True))
+            with patch.object(local.ctypes,"windll",windows,create=True), \
+                 patch.object(local,"binding",side_effect=FileNotFoundError), \
+                 patch.object(local,"base_python_proof",return_value={}), \
+                 patch.object(local,"owner_sid",return_value="fixture-owner"), \
+                 patch.object(local,"private_credential_metadata",return_value=Path("fixture-reference")), \
+                 patch.object(iqp1_build,"source_packet",side_effect=OSError("fixture-export-failed")), \
+                 patch.object(local,"volume_command",side_effect=AssertionError("must not allocate VHD")):
+                with self.assertRaisesRegex(RuntimeError,r"^IQP1_PREPARE_SOURCE_EXPORT_FAILED$"):
+                    local.prepare(args)
+            self.assertFalse((root/"pilot").exists())
+
     def test_failure_diagnostic_retains_only_codes_and_never_secret_exception_text(self):
         self.assertEqual(local.safe_failure(ValueError("fixture-secret-that-must-never-appear")),"LOCAL_RUNTIME_FAILURE")
         self.assertEqual(local.safe_failure(MemoryError()),"IQP1_MEMORY_LIMIT_REACHED")
@@ -204,7 +273,7 @@ class WindowsKernelTests(unittest.TestCase):
         )
         self.assertEqual(result.returncode, 0, "CI_VHD_FIXTURE_DISMOUNT_FAILED")
 
-    def _initialize_vhd_in_kernel_job(self, size):
+    def _initialize_vhd_in_kernel_job(self, size, *, resume=False):
         self.assertTrue(ctypes.windll.shell32.IsUserAnAdmin())
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -216,6 +285,18 @@ class WindowsKernelTests(unittest.TestCase):
                 "try:\n"
                 " info=volume_command('Initialize',root,size=" + str(size) + ")\n"
                 " assert info['filesystem']=='NTFS'\n"
+                + (" from unittest.mock import patch\n"
+                   " import iqp1_local as local\n"
+                   " (root/'volume'/'tmp').mkdir()\n"
+                   " with (root/'volume'/'reserve.bin').open('wb') as reserve:\n"
+                   "  for _ in range(64): reserve.write(b'\\0'*1024**2)\n"
+                   " local.retain_failure(root,'prepare-child','LOCAL_RUNTIME_FAILURE',invocation='old')\n"
+                   " before=(root/'volume'/'tmp'/'failure.jsonl').read_bytes()\n"
+                   " with patch.object(local,'_native_diskpart',side_effect=AssertionError('must not reformat')):\n"
+                   "  continued=local.resume_early_prepare(root)\n"
+                   " assert continued['volume_id']==info['volume_id']\n"
+                   " assert (root/'volume'/'tmp'/'failure.jsonl').read_bytes()==before\n"
+                   " assert not (root/'volume'/'evidence').exists()\n" if resume else "") +
                 "except BaseException as error:\n"
                 " reason=str(error)\n"
                 " if not re.fullmatch(r'IQP1_[A-Z0-9_]{1,120}',reason): reason='LOCAL_RUNTIME_FAILURE'\n"
@@ -241,6 +322,9 @@ class WindowsKernelTests(unittest.TestCase):
 
     def test_fixed_vhd_initialize_under_real_kernel_job_limits(self):
         self._initialize_vhd_in_kernel_job(4092)
+
+    def test_interrupted_full_vhd_prepare_continues_without_reformat_or_ledger_reset(self):
+        self._initialize_vhd_in_kernel_job(4092,resume=True)
 
     def test_fixed_vhd_persists_and_fails_writes_at_physical_limit(self):
         self.assertTrue(ctypes.windll.shell32.IsUserAnAdmin(), "Windows qualification requires administrator VHD support")

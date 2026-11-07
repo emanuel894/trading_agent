@@ -7,9 +7,11 @@ param(
   [string]$ExistingCache = '',
   [string]$CredentialFile = '',
   [string]$ApproveManifest = '',
-  [string]$PythonExe = ''
+  [string]$PythonExe = '',
+  [switch]$ResumePrepare
 )
 $ErrorActionPreference = 'Stop'
+if ($ResumePrepare -and $Mode -ne 'Prepare') { throw 'IQP1_RESUME_PREPARE_ONLY' }
 $repo = Split-Path $PSScriptRoot -Parent
 # Git/source checks run inside the kernel deadline, before any private access.
 $python = $PythonExe
@@ -23,5 +25,6 @@ $argsList = @('-I','-B',(Join-Path $PSScriptRoot 'iqp1_local.py'),$Mode,
 if ($ExistingCache) { $argsList += @('--cache',$ExistingCache) }
 if ($CredentialFile) { $argsList += @('--credential-file',$CredentialFile) }
 if ($ApproveManifest) { $argsList += @('--approve',$ApproveManifest) }
+if ($ResumePrepare) { $argsList += '--resume-prepare' }
 & $python @argsList
 if ($LASTEXITCODE -ne 0) { throw "IQP1_STOPPED_EXIT_$LASTEXITCODE" }

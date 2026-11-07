@@ -85,6 +85,22 @@ reconciliation of the same usage, never deleting the latch or making a new ledge
 
 ## Enforced boundary and private evidence
 
+### Interrupted setup before source export
+
+An earlier Prepare could leave only `pilot.vhd`, `volume\tmp` and the allocated
+`volume\reserve.bin` after failing to export Git source. Source export is now
+checked before creating a new VHD and reports `IQP1_PREPARE_SOURCE_EXPORT_FAILED`
+without exposing arbitrary exception text.
+
+For that exact early state only, the same launcher accepts `-Mode Prepare
+-ResumePrepare` with the same Root/cache/credential-reference arguments and the
+new reviewed commit. It inspects and reuses the existing attached fixed VHD and
+reserve; it never formats, deletes, resets or makes another root. Prior diagnostic
+records remain. Any machine registry key, manifest, receipt, source/runtime,
+ledger or unexpected volume/tmp content blocks continuation. This is offline
+setup recovery, not pilot resumption, and cannot be used with Acquire. All normal
+quota/token/code/cache checks still apply before approval can be emitted.
+
 - One global mutex/worker and one pinned evidence ID/path; fixed12 logical
   packets for Jan15, Mar10, Jul3 2025 SPY. Mandatory Jan15 quote reuse; only
   missing bars/windows can call the source. Bars1 page, quote windows5 pages.
