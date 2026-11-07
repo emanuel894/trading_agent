@@ -6,16 +6,36 @@ $rootPath = [IO.Path]::GetFullPath($Root).TrimEnd('\')
 $admin = [Security.Principal.SecurityIdentifier]'S-1-5-32-544'
 $system = [Security.Principal.SecurityIdentifier]'S-1-5-18'
 $owner = [Security.Principal.SecurityIdentifier]$OwnerSid
-# Never follow an unexpected junction/symlink while replacing ACLs.
-$items = @((Get-Item -LiteralPath $rootPath -Force)) + @(Get-ChildItem -LiteralPath $rootPath -Force |
-  Where-Object Name -ne 'volume') + @((Get-Item -LiteralPath (Join-Path $rootPath 'volume') -Force)) +
-  @(Get-ChildItem -LiteralPath (Join-Path $rootPath 'volume') -Recurse -Force)
+# Enumerate managed content without ever descending into the volume's protected
+# OS metadata. Filtering after -Recurse is too late (and would alter its ACL).
+$volumePath = Join-Path $rootPath 'volume'
+$items = New-Object 'System.Collections.Generic.List[object]'
+$items.Add((Get-Item -LiteralPath $rootPath -Force))
+foreach ($entry in (Get-ChildItem -LiteralPath $rootPath -Force | Where-Object Name -ne 'volume')) {
+  $items.Add($entry)
+}
+$volumeItem = Get-Item -LiteralPath $volumePath -Force
+$items.Add($volumeItem)
+$pending = New-Object 'System.Collections.Generic.Stack[object]'
+$pending.Push($volumeItem)
+while ($pending.Count) {
+  $parent = $pending.Pop()
+  foreach ($entry in (Get-ChildItem -LiteralPath $parent.FullName -Force)) {
+    if ($parent.FullName.TrimEnd('\') -eq $volumePath -and
+        $entry.Name -ceq 'System Volume Information' -and
+        ([int]$entry.Attributes -band 0x16) -eq 0x16 -and
+        -not ($entry.Attributes -band [IO.FileAttributes]::ReparsePoint)) { continue }
+    if ($entry.Attributes -band [IO.FileAttributes]::ReparsePoint) { throw 'IQP1_UNEXPECTED_REPARSE_POINT' }
+    $items.Add($entry)
+    if ($entry.Attributes -band [IO.FileAttributes]::Directory) { $pending.Push($entry) }
+  }
+}
 foreach ($item in $items) {
   if (($item.Attributes -band [IO.FileAttributes]::ReparsePoint) -and
       $item.FullName.TrimEnd('\') -ne (Join-Path $rootPath 'volume')) { throw 'IQP1_UNEXPECTED_REPARSE_POINT' }
   $mutable = $item.FullName -match ('^' + [regex]::Escape((Join-Path $rootPath 'volume')) + '\\(evidence|tmp)(\\|$)')
   if ($Action -eq 'Harden') {
-    if ($item.PSIsContainer) {
+    if ($item.Attributes -band [IO.FileAttributes]::Directory) {
       $security = New-Object Security.AccessControl.DirectorySecurity
       $inherit = [Security.AccessControl.InheritanceFlags]'ContainerInherit,ObjectInherit'
     } else {
