@@ -1,5 +1,5 @@
 param(
-  [Parameter(Mandatory=$true)][ValidateSet('Stage','Inspect')][string]$Action,
+  [Parameter(Mandatory=$true)][ValidateSet('Stage','Inspect','Attach','Detach')][string]$Action,
   [Parameter(Mandatory=$true)][string]$Root,
   [string]$ExpectedVolumeGuid = ''
 )
@@ -37,6 +37,27 @@ if ($Action -eq 'Stage') {
   }
   $null = New-Item -ItemType Directory -Path $mount
   @{staged=$true} | ConvertTo-Json -Compress
+  exit 0
+}
+
+if ($Action -in @('Attach','Detach')) {
+  if (-not (Test-Path -LiteralPath $image -PathType Leaf)) { throw 'IQP1_VOLUME_IMAGE_MISSING' }
+  $current = Get-DiskImage -ImagePath $image -ErrorAction Stop
+  if ($Action -eq 'Detach') {
+    if (-not $current.Attached) { throw 'IQP1_VOLUME_ALREADY_DETACHED' }
+    $null = Dismount-DiskImage -ImagePath $image -ErrorAction Stop
+    if ((Get-DiskImage -ImagePath $image -ErrorAction Stop).Attached) {
+      throw 'IQP1_VOLUME_DETACH_NOT_CONFIRMED'
+    }
+    @{detached=$true} | ConvertTo-Json -Compress
+    exit 0
+  }
+  if ($current.Attached) { throw 'IQP1_VOLUME_ALREADY_ATTACHED' }
+  $null = Mount-DiskImage -ImagePath $image -NoDriveLetter -ErrorAction Stop
+  if (-not (Get-DiskImage -ImagePath $image -ErrorAction Stop).Attached) {
+    throw 'IQP1_VOLUME_ATTACH_NOT_CONFIRMED'
+  }
+  @{attached=$true} | ConvertTo-Json -Compress
   exit 0
 }
 
