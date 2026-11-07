@@ -173,18 +173,25 @@ class WindowsKernelTests(unittest.TestCase):
             self.assertFalse(marker.exists())
 
     def test_fixed_vhd_initialize_under_real_kernel_job_limits(self):
-        # Unlike the ordinary VHD test, this matches the Prepare environment:
-        # a suspended child assigned to the strict 2 GiB job before it runs.
+        # Exercise the same suspended child, sanitized Windows environment,
+        # fixed 4092 MiB VHD and strict kernel Job limit as owner's Prepare.
         self.assertTrue(ctypes.windll.shell32.IsUserAnAdmin())
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             script = (
-                "import pathlib,sys; sys.path.insert(0," + repr(str(TOOLS)) + "); "
-                "from iqp1_local import volume_command; "
-                "root=pathlib.Path(" + repr(str(root)) + "); "
-                "info=volume_command('Initialize',root); "
-                "assert info['filesystem']=='NTFS'; "
-                "volume_command('Detach',root)"
+                "import pathlib,sys,re\n"
+                "sys.path.insert(0," + repr(str(TOOLS)) + ")\n"
+                "from iqp1_local import volume_command\n"
+                "root=pathlib.Path(" + repr(str(root)) + ")\n"
+                "try:\n"
+                " info=volume_command('Initialize',root)\n"
+                " assert info['filesystem']=='NTFS'\n"
+                " volume_command('Detach',root)\n"
+                "except BaseException as error:\n"
+                " reason=str(error)\n"
+                " if not re.fullmatch(r'IQP1_[A-Z0-9_]{1,120}',reason): reason='LOCAL_RUNTIME_FAILURE'\n"
+                " (root/'fixture_failure_code.txt').write_text(reason,encoding='utf-8')\n"
+                " raise\n"
             )
             try:
                 receipt = run_job(
@@ -194,7 +201,9 @@ class WindowsKernelTests(unittest.TestCase):
                     memory=2*1024**3,
                     mutex="Local\\IQP1-vhd-job-test-" + uuid.uuid4().hex,
                 )
-                self.assertEqual(receipt["exit_code"], 0, receipt)
+                code = root/"fixture_failure_code.txt"
+                detail = code.read_text() if code.is_file() else receipt
+                self.assertEqual(receipt["exit_code"], 0, detail)
                 self.assertTrue((root/"pilot.vhd").exists())
             finally:
                 if (root/"pilot.vhd").is_file():
