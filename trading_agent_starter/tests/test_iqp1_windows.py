@@ -198,9 +198,16 @@ except BaseException as error:
         diag.mkdir()
         image=diag/'probe64.vhd'
         command=diag/'probe.txt'
-        command.write_text('create vdisk file="' + str(image) +
-                           '" maximum=64 type=fixed' + chr(10) + 'exit' + chr(10),
-                           encoding='ascii')
+        mount=root/'volume'
+        command.write_text(chr(10).join([
+            'create vdisk file="' + str(root/'pilot.vhd') + '" maximum=64 type=fixed',
+            'select vdisk file="' + str(root/'pilot.vhd') + '"',
+            'attach vdisk',
+            'create partition primary',
+            'format fs=ntfs quick label=IQP1',
+            'assign mount="' + str(mount) + os.sep + '"',
+            'exit', ''
+        ]), encoding='ascii')
         binary=pathlib.Path(os.environ['SystemRoot'])/'System32'/'diskpart.exe'
         probe=subprocess.run([str(binary),'/s',str(command)],
                              capture_output=True,timeout=45)
