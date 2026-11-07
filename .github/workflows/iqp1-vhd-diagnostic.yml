@@ -1,0 +1,20 @@
+name: IQP1 Windows VHD isolated diagnostic
+on:
+  push:
+    branches:
+      - feat/iqp1-durable-http-budget-20261106
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: windows-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install -r trading_agent_starter/requirements.txt
+      - name: Probe interrupted full-size Prepare recovery inside kernel job
+        working-directory: trading_agent_starter/tests
+        run: python -m unittest -v test_iqp1_windows.WindowsKernelTests.test_interrupted_full_vhd_prepare_continues_without_reformat_or_ledger_reset

@@ -58,6 +58,10 @@ def envelope_header():
 
 class StoreCase(unittest.TestCase):
     def setUp(self):
+        # Credential tests exercise only explicitly supplied fixture values.
+        loader = patch("dotenv.load_dotenv", return_value=False)
+        loader.start()
+        self.addCleanup(loader.stop)
         self.tmp = tempfile.TemporaryDirectory()
         self.store = EvidenceStore(Path(self.tmp.name) / "store")
 
