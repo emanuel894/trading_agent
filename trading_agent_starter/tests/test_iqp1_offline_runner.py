@@ -60,3 +60,30 @@ class SourcePacketTests(unittest.TestCase):
             packet = module.source_packet(root)
         with tarfile.open(fileobj=io.BytesIO(packet)) as archive:
             self.assertEqual(archive.getnames(), ['README.md', '[.]env'])
+
+    def test_source_packet_handles_more_than_windows_command_line_limit(self):
+        import io
+        import tarfile
+        import tempfile
+        spec = importlib.util.spec_from_file_location('source_build', ROOT / 'tools/iqp1_build.py')
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            subprocess.run(['git','init','-q',str(root)],check=True)
+            directory = root/'src'
+            directory.mkdir()
+            for i in range(420):
+                (directory/(f"file_{i:04d}_" + "a"*85 + ".txt")).write_text("fixture")
+            (root/'.env').write_text("SYNTHETIC_DO_NOT_INCLUDE")
+            subprocess.run(['git','-C',str(root),'add','-A'],check=True)
+            subprocess.run(['git','-C',str(root),'-c','user.email=fixture@example.test',
+                            '-c','user.name=fixture','commit','-qm','large-fixture'],check=True)
+            packet = module.source_packet(root)
+            with tarfile.open(fileobj=io.BytesIO(packet)) as archive:
+                files = [item for item in archive if item.isfile()]
+                self.assertEqual(len(files),420)
+                self.assertNotIn('.env',[item.name for item in files])
+                commit = subprocess.check_output(
+                    ['git','-C',str(root),'rev-parse','HEAD']).decode().strip()
+                self.assertEqual(archive.pax_headers.get('comment'),commit)
