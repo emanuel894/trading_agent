@@ -45,9 +45,16 @@ if (-not (Test-Path -LiteralPath $image -PathType Leaf)) { throw 'IQP1_VOLUME_IM
 $diskImage = Get-DiskImage -ImagePath $image -ErrorAction Stop
 if (-not $diskImage.Attached) { throw 'IQP1_VOLUME_DETACHED_OWNER_MUST_ATTACH' }
 $disk = $diskImage | Get-Disk -ErrorAction Stop
-$parts = @($disk | Get-Partition -ErrorAction Stop | Where-Object { $_.AccessPaths -contains $mount })
-if ($parts.Count -ne 1) { throw 'IQP1_MOUNT_IDENTITY_MISMATCH' }
-$volume = $parts[0] | Get-Volume -ErrorAction Stop
+# Resolve the actual volume at the folder mount, not the textual AccessPaths.
+# Windows can canonicalize the same folder as an 8.3 path, so string equality
+# would reject a correctly mounted VHD or accept an unverified alias.
+$volumes = @(Get-Volume -Path $mount -ErrorAction Stop)
+if ($volumes.Count -ne 1) { throw 'IQP1_MOUNT_IDENTITY_MISMATCH' }
+$volume = $volumes[0]
+$parts = @(Get-Partition -Volume $volume -ErrorAction Stop)
+if ($parts.Count -ne 1 -or $parts[0].DiskNumber -ne $disk.Number) {
+  throw 'IQP1_MOUNT_IDENTITY_MISMATCH'
+}
 if ($volume.FileSystem -ne 'NTFS' -or $volume.FileSystemLabel -ne 'IQP1' -or $volume.HealthStatus -ne 'Healthy') {
   throw 'IQP1_VOLUME_NOT_HEALTHY_NTFS'
 }
