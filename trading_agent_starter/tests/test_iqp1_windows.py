@@ -172,6 +172,37 @@ class WindowsKernelTests(unittest.TestCase):
             time.sleep(3)
             self.assertFalse(marker.exists())
 
+    def test_fixed_vhd_initialize_under_real_kernel_job_limits(self):
+        # Unlike the ordinary VHD test, this matches the Prepare environment:
+        # a suspended child assigned to the strict 2 GiB job before it runs.
+        self.assertTrue(ctypes.windll.shell32.IsUserAnAdmin())
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            script = (
+                "import pathlib,sys; sys.path.insert(0," + repr(str(TOOLS)) + "); "
+                "from iqp1_local import volume_command; "
+                "root=pathlib.Path(" + repr(str(root)) + "); "
+                "info=volume_command('Initialize',root); "
+                "assert info['filesystem']=='NTFS'; "
+                "volume_command('Detach',root)"
+            )
+            try:
+                receipt = run_job(
+                    [sys.executable, "-I", "-B", "-c", script],
+                    temporary=temporary,
+                    seconds=240,
+                    memory=2*1024**3,
+                    mutex="Local\\IQP1-vhd-job-test-" + uuid.uuid4().hex,
+                )
+                self.assertEqual(receipt["exit_code"], 0, receipt)
+                self.assertTrue((root/"pilot.vhd").exists())
+            finally:
+                if (root/"pilot.vhd").is_file():
+                    try:
+                        volume_command("Detach", root)
+                    except Exception:
+                        pass  # Preserve primary test failure; CI owns fixture only.
+
     def test_fixed_vhd_persists_and_fails_writes_at_physical_limit(self):
         self.assertTrue(ctypes.windll.shell32.IsUserAnAdmin(), "Windows qualification requires administrator VHD support")
         with tempfile.TemporaryDirectory() as temporary:
