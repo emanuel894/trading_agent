@@ -19,6 +19,18 @@ from iqp1_local import fixed_vhd, volume_command
 
 
 class PortableWindowsContracts(unittest.TestCase):
+    def test_only_real_hidden_system_directory_metadata_is_exempted(self):
+        self.assertTrue(hasattr(local,"ntfs_system_metadata"),"NTFS system metadata is mistaken for pilot state")
+        from types import SimpleNamespace
+        for name,attrs,expected in (("System Volume Information",0x16,True),
+                                    ("System Volume Information",0x10,False),
+                                    ("System Volume Information",0x416,False),
+                                    ("System Volume Information",0x6,False),
+                                    ("evidence",0x16,False)):
+            entry = SimpleNamespace(name=name,stat=lambda **kwargs:SimpleNamespace(st_file_attributes=attrs))
+            with self.subTest(name=name,attrs=attrs):
+                self.assertEqual(local.ntfs_system_metadata(entry),expected)
+
     def _early_prepare_fixture(self, root):
         (root/"pilot.vhd").write_bytes(b"fixture; native footer checked separately")
         (root/"volume"/"tmp").mkdir(parents=True)

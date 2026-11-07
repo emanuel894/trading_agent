@@ -373,15 +373,27 @@ def authenticated_acquisition():
     require_query_only_job(name)
 
 
+def ntfs_system_metadata(entry):
+    # Windows creates this OS-owned directory on an otherwise fresh NTFS VHD.
+    # Read cached directory-entry attributes, never descend/read its contents.
+    if entry.name != "System Volume Information":
+        return False
+    attrs = getattr(entry.stat(follow_symlinks=False),"st_file_attributes",0)
+    return attrs & 0x16 == 0x16 and not attrs & 0x400  # hidden/system/directory, no reparse
+
+
 def validate_early_prepare_layout(root):
     """Accept only the owner's reported pre-source state; never remove anything."""
     root = Path(root)
     volume = root/"volume"
     if (set(p.name for p in root.iterdir()) - {"pilot.vhd","volume","failure.jsonl"}
             or not volume.is_dir() or not (root/"pilot.vhd").is_file()
-            or set(p.name for p in volume.iterdir()) != {"tmp","reserve.bin"}
             or not (volume/"tmp").is_dir()
             or set(p.name for p in (volume/"tmp").iterdir()) - {"failure.jsonl"}):
+        fail("IQP1_PREPARE_RESUME_STATE_UNSAFE")
+    with os.scandir(volume) as entries:
+        names = {entry.name for entry in entries if not ntfs_system_metadata(entry)}
+    if names != {"tmp","reserve.bin"}:
         fail("IQP1_PREPARE_RESUME_STATE_UNSAFE")
     for path in [root/"pilot.vhd",volume/"tmp",volume/"reserve.bin",
                  root/"failure.jsonl",volume/"tmp"/"failure.jsonl"]:

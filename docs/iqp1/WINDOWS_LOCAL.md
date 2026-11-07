@@ -100,6 +100,9 @@ records remain. Any machine registry key, manifest, receipt, source/runtime,
 ledger or unexpected volume/tmp content blocks continuation. This is offline
 setup recovery, not pilot resumption, and cannot be used with Acquire. All normal
 quota/token/code/cache checks still apply before approval can be emitted.
+The volume's Windows-generated `System Volume Information` directory is recognized
+only by its exact name plus hidden/system/directory attributes and absence of a
+reparse point; its contents are never read. It still consumes the same VHD quota.
 
 - One global mutex/worker and one pinned evidence ID/path; fixed12 logical
   packets for Jan15, Mar10, Jul3 2025 SPY. Mandatory Jan15 quote reuse; only
