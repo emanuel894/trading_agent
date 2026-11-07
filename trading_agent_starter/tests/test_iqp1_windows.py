@@ -172,6 +172,44 @@ class WindowsKernelTests(unittest.TestCase):
             time.sleep(3)
             self.assertFalse(marker.exists())
 
+    def test_aa_small_fixed_vhd_initialize_under_kernel_job(self):
+        # Isolate whether the same kernel job rejects ALL VHD initialization
+        # or specifically the agreed 4092 MiB fixed allocation.
+        self.assertTrue(ctypes.windll.shell32.IsUserAnAdmin())
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            script = (
+                "import pathlib,sys,re\n"
+                "sys.path.insert(0," + repr(str(TOOLS)) + ")\n"
+                "from iqp1_local import volume_command\n"
+                "root=pathlib.Path(" + repr(str(root)) + ")\n"
+                "try:\n"
+                " info=volume_command('Initialize',root,size=64)\n"
+                " assert info['filesystem']=='NTFS'\n"
+                " volume_command('Detach',root)\n"
+                "except BaseException as error:\n"
+                " reason=str(error)\n"
+                " if not re.fullmatch(r'IQP1_[A-Z0-9_]{1,120}',reason): reason='LOCAL_RUNTIME_FAILURE'\n"
+                " (root/'fixture_failure_code.txt').write_text(reason,encoding='utf-8')\n"
+                " raise\n"
+            )
+            try:
+                receipt = run_job(
+                    [sys.executable, "-I", "-B", "-c", script],
+                    temporary=temporary, seconds=120, memory=2*1024**3,
+                    mutex="Local\\IQP1-small-vhd-test-" + uuid.uuid4().hex,
+                )
+                code = root/"fixture_failure_code.txt"
+                detail = code.read_text() if code.is_file() else receipt
+                self.assertEqual(receipt["exit_code"], 0, detail)
+                self.assertTrue((root/"pilot.vhd").is_file())
+            finally:
+                if (root/"pilot.vhd").is_file():
+                    try:
+                        volume_command("Detach", root)
+                    except Exception:
+                        pass
+
     def test_fixed_vhd_initialize_under_real_kernel_job_limits(self):
         # Exercise the same suspended child, sanitized Windows environment,
         # fixed 4092 MiB VHD and strict kernel Job limit as owner's Prepare.
