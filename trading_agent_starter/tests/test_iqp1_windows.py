@@ -308,7 +308,12 @@ class WindowsKernelTests(unittest.TestCase):
                    "  continued=local.resume_early_prepare(root)\n"
                    " assert continued['volume_id']==info['volume_id']\n"
                    " assert (root/'volume'/'tmp'/'failure.jsonl').read_bytes()==before\n"
-                   " assert not (root/'volume'/'evidence').exists()\n" if resume else "") +
+                   " assert not (root/'volume'/'evidence').exists()\n"
+                   " for directory in ['source','python','evidence']: (root/'volume'/directory).mkdir()\n"
+                   " sid=local.owner_sid()\n"
+                   " for phase in ['Harden','Verify']:\n"
+                   "  try: local.storage_acl(root,sid,phase)\n"
+                   "  except Exception: raise RuntimeError('IQP1_FIXTURE_ACL_'+phase.upper()+'_FAILED') from None\n" if resume else "") +
                 "except BaseException as error:\n"
                 " reason=str(error)\n"
                 " if not re.fullmatch(r'IQP1_[A-Z0-9_]{1,120}',reason): reason='LOCAL_RUNTIME_FAILURE'\n"
