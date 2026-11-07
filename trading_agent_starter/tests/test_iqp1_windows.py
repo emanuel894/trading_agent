@@ -46,8 +46,25 @@ class PortableWindowsContracts(unittest.TestCase):
             stderr=b"IQP1_SAFE_FAILURE_CODE=private-path-token\n" + private)
         with patch.object(local, "powershell", return_value="powershell.exe"):
             with patch.object(local.subprocess, "check_output", side_effect=untrusted):
-                with self.assertRaisesRegex(RuntimeError, r"^IQP1_VOLUME_INITIALIZE_FAILED$"):
+                with self.assertRaisesRegex(RuntimeError, r"^IQP1_VOLUME_STAGE_FAILED$"):
                     local.volume_command("Initialize", Path("C:/fixture"))
+
+    def test_native_diskpart_is_bounded_and_hides_error_transcript(self):
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            private = b"private-host-path-and-secret-that-must-not-leak"
+            native = subprocess.CompletedProcess(
+                ["diskpart.exe"], 1, stdout=private, stderr=b"Virtual Disk Service error"
+            )
+            with patch.dict(os.environ, {"SystemRoot":"C:\\Windows"}):
+                with patch.object(local.subprocess, "run", return_value=native):
+                    with self.assertRaisesRegex(RuntimeError, r"^IQP1_DISKPART_CREATE_FAILED$") as caught:
+                        local._native_diskpart(root, [
+                            f'create vdisk file="{root / "pilot.vhd"}" maximum=64 type=fixed'
+                        ], "Initialize")
+            self.assertNotIn(private.decode(), str(caught.exception))
+            self.assertFalse((root/"_diskpart.txt").exists())
 
     def test_timeout_and_new_invocation_never_report_a_stale_failure(self):
         with tempfile.TemporaryDirectory() as temporary:
