@@ -13,17 +13,38 @@ def safe_source_name(name):
 
 
 def source_packet(root):
-    # Resolve once so an advancing branch cannot change the listing/archive binding.
-    commit = subprocess.check_output(['git', '-C', str(root), 'rev-parse', '--verify', 'HEAD^{commit}']).decode().strip()
-    paths = subprocess.check_output(['git', '-C', str(root), 'ls-tree', '-r', '--name-only', '-z', commit]).decode().split('\0')
-    allowed = [name for name in paths if safe_source_name(name)]
-    if not allowed:
+    # Resolve the reviewed commit once. Never pass the full tracked-file list
+    # as Windows command-line arguments (CreateProcess has a ~32767-char cap).
+    # Archive only committed Git objects; do not read the working tree.
+    commit = subprocess.check_output(
+        ['git', '-C', str(root), 'rev-parse', '--verify', 'HEAD^{commit}']
+    ).decode().strip()
+    original = subprocess.check_output(['git', '-C', str(root), 'archive', commit])
+    output = io.BytesIO()
+    count = 0
+    with tarfile.open(fileobj=io.BytesIO(original), mode='r:') as archive:
+        if archive.pax_headers.get('comment') != commit:
+            raise ValueError('Reviewed source archive commit mismatch')
+        # Filter before constructing the returned packet; excluded tracked
+        # paths never enter the isolated runtime and special files fail closed.
+        with tarfile.open(fileobj=output, mode='w', format=tarfile.PAX_FORMAT,
+                          pax_headers={'comment': commit}) as filtered:
+            for item in archive:
+                if not safe_source_name(item.name):
+                    continue
+                if not item.isfile() and not item.isdir():
+                    raise ValueError('Unsafe path, link or special file in source context')
+                source = archive.extractfile(item) if item.isfile() else None
+                try:
+                    filtered.addfile(item, source)
+                finally:
+                    if source is not None:
+                        source.close()
+                if item.isfile():
+                    count += 1
+    if not count:
         raise ValueError('No committed source')
-    packet = subprocess.check_output(['git', '--literal-pathspecs', '-C', str(root), 'archive', commit, '--', *allowed])
-    with tarfile.open(fileobj=io.BytesIO(packet)) as archive:
-        if any(not (item.isfile() or item.isdir()) or not safe_source_name(item.name) for item in archive):
-            raise ValueError('Unsafe path, link or special file in source context')
-    return packet
+    return output.getvalue()
 
 
 def main():
