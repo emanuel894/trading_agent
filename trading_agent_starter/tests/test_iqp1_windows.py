@@ -173,26 +173,46 @@ class WindowsKernelTests(unittest.TestCase):
             self.assertFalse(marker.exists())
 
     def test_aa_small_fixed_vhd_initialize_under_kernel_job(self):
-        # Isolate whether the same kernel job rejects ALL VHD initialization
-        # or specifically the agreed 4092 MiB fixed allocation.
+        # The CI fixture contains no source credentials. Keep the production
+        # owner diagnostics code-only; record native DiskPart text here solely
+        # to identify why Windows refuses CREATE inside the bounded Job.
         self.assertTrue(ctypes.windll.shell32.IsUserAnAdmin())
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
-            script = (
-                "import pathlib,sys,re\n"
-                "sys.path.insert(0," + repr(str(TOOLS)) + ")\n"
-                "from iqp1_local import volume_command\n"
-                "root=pathlib.Path(" + repr(str(root)) + ")\n"
-                "try:\n"
-                " info=volume_command('Initialize',root,size=64)\n"
-                " assert info['filesystem']=='NTFS'\n"
-                " volume_command('Detach',root)\n"
-                "except BaseException as error:\n"
-                " reason=str(error)\n"
-                " if not re.fullmatch(r'IQP1_[A-Z0-9_]{1,120}',reason): reason='LOCAL_RUNTIME_FAILURE'\n"
-                " (root/'fixture_failure_code.txt').write_text(reason,encoding='utf-8')\n"
-                " raise\n"
-            )
+            script = f"""
+import pathlib,sys,re,subprocess,os
+sys.path.insert(0,{str(TOOLS)!r})
+from iqp1_local import volume_command
+root=pathlib.Path({str(root)!r})
+try:
+    info=volume_command('Initialize',root,size=64)
+    assert info['filesystem']=='NTFS'
+    volume_command('Detach',root)
+except BaseException as error:
+    reason=str(error)
+    if not re.fullmatch(r'IQP1_[A-Z0-9_]{{1,120}}',reason):
+        reason='LOCAL_RUNTIME_FAILURE'
+    (root/'fixture_failure_code.txt').write_text(reason,encoding='utf-8')
+    try:
+        diag=root/'fixture_diag'
+        diag.mkdir()
+        image=diag/'probe64.vhd'
+        command=diag/'probe.txt'
+        command.write_text('create vdisk file="' + str(image) +
+                           '" maximum=64 type=fixed' + chr(10) + 'exit' + chr(10),
+                           encoding='ascii')
+        binary=pathlib.Path(os.environ['SystemRoot'])/'System32'/'diskpart.exe'
+        probe=subprocess.run([str(binary),'/s',str(command)],
+                             capture_output=True,timeout=45)
+        output=(probe.stdout+probe.stderr).decode('mbcs',errors='replace')
+        output=output.replace(str(diag),'[fixture]')
+        output=output.replace(os.environ.get('COMPUTERNAME','__unknown__'),'[runner]')
+        (root/'fixture_native_diag.txt').write_text(
+            'exit='+str(probe.returncode)+' '+output[-900:],encoding='utf-8')
+    except BaseException:
+        (root/'fixture_native_diag.txt').write_text('NATIVE_DIAG_UNAVAILABLE')
+    raise
+"""
             try:
                 receipt = run_job(
                     [sys.executable, "-I", "-B", "-c", script],
@@ -200,7 +220,10 @@ class WindowsKernelTests(unittest.TestCase):
                     mutex="Local\\IQP1-small-vhd-test-" + uuid.uuid4().hex,
                 )
                 code = root/"fixture_failure_code.txt"
-                detail = code.read_text() if code.is_file() else receipt
+                native = root/"fixture_native_diag.txt"
+                detail = (code.read_text() if code.is_file() else str(receipt))
+                if native.is_file():
+                    detail += " | NATIVE: " + native.read_text()
                 self.assertEqual(receipt["exit_code"], 0, detail)
                 self.assertTrue((root/"pilot.vhd").is_file())
             finally:
