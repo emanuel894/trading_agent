@@ -1,10 +1,9 @@
 param(
-  [Parameter(Mandatory=$true)][ValidateSet('Initialize','Inspect','Attach','Detach')][string]$Action,
-  [Parameter(Mandatory=$true)][string]$Root,
-  [ValidateRange(64,4092)][int]$SizeMiB = 4092
+  [Parameter(Mandatory=$true)][ValidateSet('Stage','Inspect')][string]$Action,
+  [Parameter(Mandatory=$true)][string]$Root
 )
 $ErrorActionPreference = 'Stop'
-# Forward only structured bounded diagnostics; never reveal raw diskpart text.
+# Only bounded reviewed diagnostic tokens may leave this privileged helper.
 trap {
   $message = [string]$_.Exception.Message
   if ($message -match '^(IQP1_[A-Z0-9_]{1,100})$') {
@@ -20,40 +19,8 @@ if ($Root -notmatch '^[A-Za-z]:\\' -or $Root.Contains('"') -or $Root.Contains("`
 }
 $image = Join-Path $Root 'pilot.vhd'
 $mount = (Join-Path $Root 'volume') + '\'
-function Get-InitializeFailurePhase {
-  # Read-only inspections of the named VHD; never select/format a physical disk.
-  if (-not (Test-Path -LiteralPath $image -PathType Leaf)) { return 'CREATE' }
-  try {
-    $diskImage = Get-DiskImage -ImagePath $image -ErrorAction Stop
-    if (-not $diskImage.Attached) { return 'ATTACH' }
-    $disk = $diskImage | Get-Disk -ErrorAction Stop
-    $parts = @($disk | Get-Partition -ErrorAction Stop)
-    if ($parts.Count -eq 0) { return 'PARTITION' }
-    $mounted = @($parts | Where-Object { $_.AccessPaths -contains $mount })
-    if ($mounted.Count -ne 1) {
-      $formatted = @($parts | Get-Volume -ErrorAction SilentlyContinue |
-        Where-Object { $_.FileSystem -eq 'NTFS' -and $_.FileSystemLabel -eq 'IQP1' })
-      if ($formatted.Count -eq 0) { return 'FORMAT' }
-      return 'ASSIGN'
-    }
-    return 'VERIFY'
-  } catch { return 'VHD_INSPECT' }
-}
-function Invoke-Diskpart([string[]]$Commands) {
-  $script = Join-Path $Root '_diskpart.txt'
-  try {
-    [IO.File]::WriteAllLines($script, $Commands, [Text.Encoding]::ASCII)
-    # Capture native output but do not expose host paths or arbitrary text.
-    $nativeOutput = @(& "$env:SystemRoot\System32\diskpart.exe" /s $script 2>&1)
-    $exitCode = $LASTEXITCODE
-    $reportedError = [bool](($nativeOutput -join "`n") -match '(?i)DiskPart has encountered an error|Virtual Disk Service error|DiskPart failed')
-    if ($exitCode -ne 0 -or $reportedError) {
-      $phase = if ($Action -eq 'Initialize') { Get-InitializeFailurePhase } else { $Action.ToUpperInvariant() }
-      throw "IQP1_DISKPART_${phase}_FAILED"
-    }
-  } finally { Remove-Item -LiteralPath $script -Force -ErrorAction SilentlyContinue }
-}
-if ($Action -eq 'Initialize') {
+
+if ($Action -eq 'Stage') {
   if (Test-Path -LiteralPath $image) { throw 'IQP1_EXISTING_VOLUME_PRESERVE_NO_RESET' }
   $null = New-Item -ItemType Directory -Path $Root -Force
   $existing = @(Get-ChildItem -LiteralPath $Root -Force)
@@ -68,28 +35,19 @@ if ($Action -eq 'Initialize') {
     }
   }
   $null = New-Item -ItemType Directory -Path $mount
-  Invoke-Diskpart @("create vdisk file=`"$image`" maximum=$SizeMiB type=fixed",
-    "select vdisk file=`"$image`"", 'attach vdisk', 'create partition primary',
-    'format fs=ntfs quick label=IQP1', "assign mount=`"$mount`"")
-  if (-not (Test-Path -LiteralPath $image -PathType Leaf)) {
-    throw 'IQP1_DISKPART_CREATE_FILE_MISSING'
-  }
-}
-if ($Action -eq 'Detach') {
-  Invoke-Diskpart @("select vdisk file=`"$image`"", 'detach vdisk')
+  @{staged=$true} | ConvertTo-Json -Compress
   exit 0
 }
-if ($Action -eq 'Attach') {
-  Invoke-Diskpart @("select vdisk file=`"$image`"", 'attach vdisk')
-}
-$diskImage = Get-DiskImage -ImagePath $image
-if (-not $diskImage.Attached) {
-  if ($Action -eq 'Inspect') { throw 'IQP1_VOLUME_DETACHED_OWNER_MUST_ATTACH' }
-}
-$disk = $diskImage | Get-Disk
-$parts = @($disk | Get-Partition | Where-Object { $_.AccessPaths -contains $mount })
+
+# Inspect is read-only. It verifies the identity of the mounted VHD created by
+# the supervised Python worker and never attaches/formats physical storage.
+if (-not (Test-Path -LiteralPath $image -PathType Leaf)) { throw 'IQP1_VOLUME_IMAGE_MISSING' }
+$diskImage = Get-DiskImage -ImagePath $image -ErrorAction Stop
+if (-not $diskImage.Attached) { throw 'IQP1_VOLUME_DETACHED_OWNER_MUST_ATTACH' }
+$disk = $diskImage | Get-Disk -ErrorAction Stop
+$parts = @($disk | Get-Partition -ErrorAction Stop | Where-Object { $_.AccessPaths -contains $mount })
 if ($parts.Count -ne 1) { throw 'IQP1_MOUNT_IDENTITY_MISMATCH' }
-$volume = $parts[0] | Get-Volume
+$volume = $parts[0] | Get-Volume -ErrorAction Stop
 if ($volume.FileSystem -ne 'NTFS' -or $volume.FileSystemLabel -ne 'IQP1' -or $volume.HealthStatus -ne 'Healthy') {
   throw 'IQP1_VOLUME_NOT_HEALTHY_NTFS'
 }
