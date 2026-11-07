@@ -189,102 +189,22 @@ class WindowsKernelTests(unittest.TestCase):
             time.sleep(3)
             self.assertFalse(marker.exists())
 
-    def test_aa_small_fixed_vhd_initialize_under_kernel_job(self):
-        # The CI fixture contains no source credentials. Keep the production
-        # owner diagnostics code-only; record native DiskPart text here solely
-        # to identify why Windows refuses CREATE inside the bounded Job.
-        self.assertTrue(ctypes.windll.shell32.IsUserAnAdmin())
-        with tempfile.TemporaryDirectory() as temporary:
-            root = Path(temporary)
-            script = f"""
-import pathlib,sys,re,subprocess,os
-sys.path.insert(0,{str(TOOLS)!r})
-from iqp1_local import volume_command
-root=pathlib.Path({str(root)!r})
-try:
-    info=volume_command('Initialize',root,size=64)
-    assert info['filesystem']=='NTFS'
-    volume_command('Detach',root)
-except BaseException as error:
-    reason=str(error)
-    if not re.fullmatch(r'IQP1_[A-Z0-9_]{{1,120}}',reason):
-        reason='LOCAL_RUNTIME_FAILURE'
-    (root/'fixture_failure_code.txt').write_text(reason,encoding='utf-8')
-    try:
-        diag=root/'fixture_diag'
-        diag.mkdir()
-        image=diag/'probe64.vhd'
-        command=diag/'probe.txt'
-        mount=root/'volume'
-        command.write_text(chr(10).join([
-            'create vdisk file="' + str(root/'pilot.vhd') + '" maximum=64 type=fixed',
-            'select vdisk file="' + str(root/'pilot.vhd') + '"',
-            'attach vdisk',
-            'create partition primary',
-            'format fs=ntfs quick label=IQP1',
-            'assign mount="' + str(mount) + os.sep + '"',
-            'exit', ''
-        ]), encoding='ascii')
-        binary=pathlib.Path(os.environ['SystemRoot'])/'System32'/'diskpart.exe'
-        # CI-only copy of the reviewed helper, instrumented to retain the
-        # exact generated DiskPart command file and native response. No keys
-        # are used in this test and the production helper is untouched.
-        helper=pathlib.Path(sys.path[0])
-        original=(pathlib.Path(sys.path[0])/'iqp1_volume.ps1').read_text(encoding='utf-8')
-        instrumented=original.replace(
-          '[IO.File]::WriteAllLines($script, $Commands, [Text.Encoding]::ASCII)',
-          '[IO.File]::WriteAllLines($script, $Commands, [Text.Encoding]::ASCII)' +
-          chr(10) + '    Copy-Item -LiteralPath $script -Destination $env:CI_DISKPART_SCRIPT -Force'
-        ).replace(
-          '    $exitCode = $LASTEXITCODE',
-          '    $exitCode = $LASTEXITCODE' + chr(10) +
-          '    [IO.File]::WriteAllText($env:CI_DISKPART_OUTPUT,($nativeOutput -join "`n"))'
+    def _cleanup_ci_vhd(self, root):
+        """Dismount only the named disposable CI fixture, never any physical disk."""
+        image = root/"pilot.vhd"
+        if not image.is_file():
+            return
+        quoted = str(image).replace("'", "''")
+        command = ("$d=Get-DiskImage -ImagePath '"+quoted+
+                   "' -ErrorAction Stop; if ($d.Attached) { $d | Dismount-DiskImage -ErrorAction Stop }")
+        result = subprocess.run(
+            ["powershell.exe","-NoProfile","-NonInteractive","-ExecutionPolicy","Bypass",
+             "-Command",command],
+            capture_output=True, timeout=45
         )
-        diagnostic=diag/'instrumented.ps1'
-        diagnostic.write_text(instrumented,encoding='utf-8-sig')
-        subroot=diag/'pilot'
-        args=[str(pathlib.Path(os.environ['SystemRoot'])/'System32'/'WindowsPowerShell'/'v1.0'/'powershell.exe'),
-              '-NoProfile','-NonInteractive','-ExecutionPolicy','Bypass',
-              '-File',str(diagnostic),'-Action','Initialize','-Root',str(subroot),'-SizeMiB','64']
-        probe=subprocess.run(args,capture_output=True,timeout=60,
-            env=dict(os.environ,CI_DISKPART_SCRIPT=str(diag/'commands.txt'),
-                     CI_DISKPART_OUTPUT=str(diag/'output.txt')))
-        commands=(diag/'commands.txt').read_text(encoding='ascii',errors='replace') if (diag/'commands.txt').is_file() else 'NO_SCRIPT'
-        native=(diag/'output.txt').read_text(encoding='utf-8',errors='replace') if (diag/'output.txt').is_file() else 'NO_NATIVE_OUTPUT'
-        output=(probe.stdout+probe.stderr).decode('mbcs',errors='replace')
-        combined=('ps_exit='+str(probe.returncode)+' commands='+str(len(commands.splitlines()))+
-                  ' cmd1='+commands.splitlines()[0][:120] if commands.splitlines() else 'EMPTY_COMMANDS')
-        combined+= ' native=' + native[-1200:]+' ps=' + output[-500:]
-        combined=combined.replace(str(root),'[fixture]')
-        combined=combined.replace(os.environ.get('COMPUTERNAME','__unknown__'),'[runner]')
-        (root/'fixture_native_diag.txt').write_text(combined[-1900:],encoding='utf-8')
-    except BaseException:
-        (root/'fixture_native_diag.txt').write_text('NATIVE_DIAG_UNAVAILABLE')
-    raise
-"""
-            try:
-                receipt = run_job(
-                    [sys.executable, "-I", "-B", "-c", script],
-                    temporary=temporary, seconds=120, memory=2*1024**3,
-                    mutex="Local\\IQP1-small-vhd-test-" + uuid.uuid4().hex,
-                )
-                code = root/"fixture_failure_code.txt"
-                native = root/"fixture_native_diag.txt"
-                detail = (code.read_text() if code.is_file() else str(receipt))
-                if native.is_file():
-                    detail += " | NATIVE: " + native.read_text()
-                self.assertEqual(receipt["exit_code"], 0, detail)
-                self.assertTrue((root/"pilot.vhd").is_file())
-            finally:
-                if (root/"pilot.vhd").is_file():
-                    try:
-                        volume_command("Detach", root)
-                    except Exception:
-                        pass
+        self.assertEqual(result.returncode, 0, "CI_VHD_FIXTURE_DISMOUNT_FAILED")
 
-    def test_fixed_vhd_initialize_under_real_kernel_job_limits(self):
-        # Exercise the same suspended child, sanitized Windows environment,
-        # fixed 4092 MiB VHD and strict kernel Job limit as owner's Prepare.
+    def _initialize_vhd_in_kernel_job(self, size):
         self.assertTrue(ctypes.windll.shell32.IsUserAnAdmin())
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -294,9 +214,8 @@ except BaseException as error:
                 "from iqp1_local import volume_command\n"
                 "root=pathlib.Path(" + repr(str(root)) + ")\n"
                 "try:\n"
-                " info=volume_command('Initialize',root)\n"
+                " info=volume_command('Initialize',root,size=" + str(size) + ")\n"
                 " assert info['filesystem']=='NTFS'\n"
-                " volume_command('Detach',root)\n"
                 "except BaseException as error:\n"
                 " reason=str(error)\n"
                 " if not re.fullmatch(r'IQP1_[A-Z0-9_]{1,120}',reason): reason='LOCAL_RUNTIME_FAILURE'\n"
@@ -306,21 +225,22 @@ except BaseException as error:
             try:
                 receipt = run_job(
                     [sys.executable, "-I", "-B", "-c", script],
-                    temporary=temporary,
-                    seconds=240,
-                    memory=2*1024**3,
-                    mutex="Local\\IQP1-vhd-job-test-" + uuid.uuid4().hex,
+                    temporary=temporary, seconds=240, memory=2*1024**3,
+                    mutex="Local\\IQP1-vhd-job-test-" + uuid.uuid4().hex
                 )
-                code = root/"fixture_failure_code.txt"
-                detail = code.read_text() if code.is_file() else receipt
+                failure = root/"fixture_failure_code.txt"
+                detail = failure.read_text() if failure.is_file() else receipt
                 self.assertEqual(receipt["exit_code"], 0, detail)
-                self.assertTrue((root/"pilot.vhd").exists())
+                self.assertTrue((root/"pilot.vhd").is_file())
+                self.assertEqual(fixed_vhd(root/"pilot.vhd",size_mib=size),size*1024**2+512)
             finally:
-                if (root/"pilot.vhd").is_file():
-                    try:
-                        volume_command("Detach", root)
-                    except Exception:
-                        pass  # Preserve primary test failure; CI owns fixture only.
+                self._cleanup_ci_vhd(root)
+
+    def test_aa_small_fixed_vhd_initialize_under_kernel_job(self):
+        self._initialize_vhd_in_kernel_job(64)
+
+    def test_fixed_vhd_initialize_under_real_kernel_job_limits(self):
+        self._initialize_vhd_in_kernel_job(4092)
 
     def test_fixed_vhd_persists_and_fails_writes_at_physical_limit(self):
         self.assertTrue(ctypes.windll.shell32.IsUserAnAdmin(), "Windows qualification requires administrator VHD support")
