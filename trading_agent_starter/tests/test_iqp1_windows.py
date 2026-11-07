@@ -209,13 +209,38 @@ except BaseException as error:
             'exit', ''
         ]), encoding='ascii')
         binary=pathlib.Path(os.environ['SystemRoot'])/'System32'/'diskpart.exe'
-        probe=subprocess.run([str(binary),'/s',str(command)],
-                             capture_output=True,timeout=45)
+        # CI-only copy of the reviewed helper, instrumented to retain the
+        # exact generated DiskPart command file and native response. No keys
+        # are used in this test and the production helper is untouched.
+        helper=pathlib.Path(sys.path[0])
+        original=(pathlib.Path(sys.path[0])/'iqp1_volume.ps1').read_text(encoding='utf-8')
+        instrumented=original.replace(
+          '[IO.File]::WriteAllLines($script, $Commands, [Text.Encoding]::ASCII)',
+          '[IO.File]::WriteAllLines($script, $Commands, [Text.Encoding]::ASCII)' +
+          chr(10) + '    Copy-Item -LiteralPath $script -Destination $env:CI_DISKPART_SCRIPT -Force'
+        ).replace(
+          '    $exitCode = $LASTEXITCODE',
+          '    $exitCode = $LASTEXITCODE' + chr(10) +
+          '    [IO.File]::WriteAllText($env:CI_DISKPART_OUTPUT,($nativeOutput -join "`n"))'
+        )
+        diagnostic=diag/'instrumented.ps1'
+        diagnostic.write_text(instrumented,encoding='utf-8-sig')
+        subroot=diag/'pilot'
+        args=[str(pathlib.Path(os.environ['SystemRoot'])/'System32'/'WindowsPowerShell'/'v1.0'/'powershell.exe'),
+              '-NoProfile','-NonInteractive','-ExecutionPolicy','Bypass',
+              '-File',str(diagnostic),'-Action','Initialize','-Root',str(subroot),'-SizeMiB','64']
+        probe=subprocess.run(args,capture_output=True,timeout=60,
+            env=dict(os.environ,CI_DISKPART_SCRIPT=str(diag/'commands.txt'),
+                     CI_DISKPART_OUTPUT=str(diag/'output.txt')))
+        commands=(diag/'commands.txt').read_text(encoding='ascii',errors='replace') if (diag/'commands.txt').is_file() else 'NO_SCRIPT'
+        native=(diag/'output.txt').read_text(encoding='utf-8',errors='replace') if (diag/'output.txt').is_file() else 'NO_NATIVE_OUTPUT'
         output=(probe.stdout+probe.stderr).decode('mbcs',errors='replace')
-        output=output.replace(str(diag),'[fixture]')
-        output=output.replace(os.environ.get('COMPUTERNAME','__unknown__'),'[runner]')
-        (root/'fixture_native_diag.txt').write_text(
-            'exit='+str(probe.returncode)+' '+output[-900:],encoding='utf-8')
+        combined=('ps_exit='+str(probe.returncode)+' commands='+str(len(commands.splitlines()))+
+                  ' cmd1='+commands.splitlines()[0][:120] if commands.splitlines() else 'EMPTY_COMMANDS')
+        combined+= ' native=' + native[-1200:]+' ps=' + output[-500:]
+        combined=combined.replace(str(root),'[fixture]')
+        combined=combined.replace(os.environ.get('COMPUTERNAME','__unknown__'),'[runner]')
+        (root/'fixture_native_diag.txt').write_text(combined[-1900:],encoding='utf-8')
     except BaseException:
         (root/'fixture_native_diag.txt').write_text('NATIVE_DIAG_UNAVAILABLE')
     raise
