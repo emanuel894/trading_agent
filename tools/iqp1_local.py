@@ -197,11 +197,10 @@ def volume_command(action, root, *, size=VHD_MIB):
             fail("IQP1_DISKPART_CREATE_FILE_MISSING")
         return _volume_powershell("Inspect", root)
     if action in ("Attach", "Detach"):
-        image = root/"pilot.vhd"
-        if not image.is_file():
-            fail("IQP1_VOLUME_IMAGE_MISSING")
-        _native_diskpart(root, [f'select vdisk file="{image}"',
-                                "attach vdisk" if action == "Attach" else "detach vdisk"], action)
+        # Native DiskPart reliably creates the fixed image under the Job, but
+        # Windows Storage cmdlets more reliably release/reopen its mount.
+        # Each operation targets only the exact pilot.vhd and verifies state.
+        _volume_powershell(action, root)
         return _volume_powershell("Inspect", root) if action == "Attach" else None
     if action == "Inspect":
         return _volume_powershell("Inspect", root)
