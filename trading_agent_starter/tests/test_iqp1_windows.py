@@ -300,7 +300,12 @@ class WindowsKernelTests(unittest.TestCase):
                 "except BaseException as error:\n"
                 " reason=str(error)\n"
                 " if not re.fullmatch(r'IQP1_[A-Z0-9_]{1,120}',reason): reason='LOCAL_RUNTIME_FAILURE'\n"
-                " (root/'fixture_failure_code.txt').write_text(reason,encoding='utf-8')\n"
+                " import json\n"
+                " detail={'reason':reason,'root_names':[p.name for p in root.iterdir()]}\n"
+                " if (root/'volume').is_dir(): detail['volume_names']=[p.name for p in (root/'volume').iterdir()]\n"
+                " if (root/'volume'/'tmp').is_dir(): detail['tmp_names']=[p.name for p in (root/'volume'/'tmp').iterdir()]\n"
+                " detail['attributes']=[{'name':p.name,'link':p.is_symlink(),'attrs':getattr(p.stat(),'st_file_attributes',0),'bytes':p.stat().st_size} for p in [root/'pilot.vhd',root/'volume'/'tmp',root/'volume'/'reserve.bin'] if p.exists()]\n"
+                " (root/'fixture_failure_code.txt').write_text(json.dumps(detail),encoding='utf-8')\n"
                 " raise\n"
             )
             try:

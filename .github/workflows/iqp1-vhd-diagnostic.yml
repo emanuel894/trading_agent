@@ -15,6 +15,6 @@ jobs:
         with:
           python-version: '3.13'
       - run: python -m pip install -r trading_agent_starter/requirements.txt
-      - name: Probe 64MiB VHD inside kernel job
+      - name: Probe interrupted full-size Prepare recovery inside kernel job
         working-directory: trading_agent_starter/tests
-        run: python -m unittest -v test_iqp1_windows.WindowsKernelTests.test_aa_small_fixed_vhd_initialize_under_kernel_job
+        run: python -m unittest -v test_iqp1_windows.WindowsKernelTests.test_interrupted_full_vhd_prepare_continues_without_reformat_or_ledger_reset
