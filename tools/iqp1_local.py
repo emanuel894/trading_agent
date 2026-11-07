@@ -100,14 +100,33 @@ def write_json(path, value):
         os.fsync(handle.fileno())
 
 
+def _mounted_volume_guid(root):
+    """Read the actual folder mount GUID from Windows mount manager, not paths."""
+    if os.name != "nt":
+        fail("IQP1_WINDOWS_REQUIRED")
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    func = kernel.GetVolumeNameForVolumeMountPointW
+    func.argtypes = [ctypes.c_wchar_p, ctypes.c_wchar_p, ctypes.c_ulong]
+    func.restype = ctypes.c_int
+    result = ctypes.create_unicode_buffer(128)
+    mount = str(Path(root)/"volume") + "\\"
+    if not func(mount, result, len(result)):
+        fail("IQP1_MOUNT_IDENTITY_MISMATCH")
+    name = result.value
+    if not re.fullmatch(r"\\\\\?\\Volume\{[0-9a-fA-F-]{36}\}\\", name):
+        fail("IQP1_MOUNT_IDENTITY_MISMATCH")
+    return name
+
+
 def _volume_powershell(action, root):
     """Reviewed PowerShell stage gate and read-only mounted-volume identity check."""
     script = Path(__file__).with_name("iqp1_volume.ps1")
+    args = [powershell(), "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
+            "-File", str(script), "-Action", action, "-Root", str(root)]
+    if action == "Inspect":
+        args += ["-ExpectedVolumeGuid", _mounted_volume_guid(root)]
     try:
-        raw = subprocess.check_output(
-            [powershell(), "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
-             "-File", str(script), "-Action", action, "-Root", str(root)],
-            stderr=subprocess.PIPE)
+        raw = subprocess.check_output(args, stderr=subprocess.PIPE)
     except subprocess.CalledProcessError as error:
         # Accept only bounded codes from our reviewed helper, never host paths,
         # source errors or the native DiskPart transcript.
