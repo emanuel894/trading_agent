@@ -100,23 +100,93 @@ def write_json(path, value):
         os.fsync(handle.fileno())
 
 
-def volume_command(action, root, *, size=VHD_MIB):
+def _volume_powershell(action, root):
+    """Reviewed PowerShell stage gate and read-only mounted-volume identity check."""
     script = Path(__file__).with_name("iqp1_volume.ps1")
     try:
-        raw = subprocess.check_output([powershell(), "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
-                "-File", str(script), "-Action", action, "-Root", str(root), "-SizeMiB", str(size)],
-                stderr=subprocess.PIPE)
+        raw = subprocess.check_output(
+            [powershell(), "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
+             "-File", str(script), "-Action", action, "-Root", str(root)],
+            stderr=subprocess.PIPE)
     except subprocess.CalledProcessError as error:
-        # Only accept a single-line, bounded token emitted by the reviewed
-        # PowerShell helper. Never expose native DiskPart output, paths or
-        # stderr text in the owner receipt/usage ledger.
+        # Accept only bounded codes from our reviewed helper, never host paths,
+        # source errors or the native DiskPart transcript.
         match = re.search(rb"(?m)^IQP1_SAFE_FAILURE_CODE=(IQP1_[A-Z0-9_]{1,100})\r?$",
                           error.stderr or b"")
         if match:
             fail(match.group(1).decode("ascii"))
         fail("IQP1_VOLUME_"+action.upper()+"_FAILED")
-    return json.loads(raw.decode("utf-8-sig")) if action != "Detach" else None
+    return json.loads(raw.decode("utf-8-sig"))
 
+
+def _native_diskpart(root, instructions, action):
+    """Invoke DiskPart directly from the supervised Python worker.
+
+    Windows CI proved this full native sequence works inside the same kernel
+    Job Object; invoking diskpart.exe from the nested PowerShell child did not.
+    The script contains only reviewed fixed VHD commands, never disk 0 commands.
+    """
+    root = Path(root)
+    path = root/"_diskpart.txt"
+    if path.exists():
+        fail("IQP1_DISKPART_SCRIPT_ALREADY_EXISTS")
+    binary = Path(os.environ["SystemRoot"])/"System32"/"diskpart.exe"
+    try:
+        # DiskPart /s accepts the ASCII CRLF format used by the old helper.
+        with path.open("x", encoding="ascii", newline="\r\n") as handle:
+            handle.write("\n".join([*instructions, "exit", ""]))
+            handle.flush()
+            os.fsync(handle.fileno())
+        done = subprocess.run([str(binary), "/s", str(path)],
+                              stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                              check=False)
+        transcript = done.stdout + b"\n" + done.stderr
+        # DiskPart sometimes reports an error while returning process exit 0.
+        # Never log the transcript: it may contain private machine paths.
+        bad = (b"DiskPart has encountered an error", b"Virtual Disk Service error",
+               b"DiskPart failed", b"The system cannot find the file")
+        if done.returncode != 0 or any(message.lower() in transcript.lower() for message in bad):
+            if action == "Initialize" and not (root/"pilot.vhd").is_file():
+                fail("IQP1_DISKPART_CREATE_FAILED")
+            fail("IQP1_DISKPART_"+action.upper()+"_FAILED")
+    finally:
+        try:
+            path.unlink(missing_ok=True)
+        except OSError:
+            pass  # preserve the primary reason, never retry/reset the VHD
+
+
+def volume_command(action, root, *, size=VHD_MIB):
+    root = Path(root)
+    # ASCII is a deliberate DiskPart /s contract, not a lossy path conversion.
+    if not str(root).isascii() or any(char in str(root) for char in '"\r\n'):
+        fail("IQP1_UNSAFE_VOLUME_PATH")
+    if action == "Initialize":
+        if not 64 <= size <= VHD_MIB:
+            fail("IQP1_INVALID_VOLUME_SIZE")
+        _volume_powershell("Stage", root)
+        image = root/"pilot.vhd"
+        mount = str(root/"volume") + "\\"
+        _native_diskpart(root, [
+            f'create vdisk file="{image}" maximum={size} type=fixed',
+            f'select vdisk file="{image}"',
+            "attach vdisk", "create partition primary",
+            "format fs=ntfs quick label=IQP1",
+            f'assign mount="{mount}"'
+        ], "Initialize")
+        if not image.is_file():
+            fail("IQP1_DISKPART_CREATE_FILE_MISSING")
+        return _volume_powershell("Inspect", root)
+    if action in ("Attach", "Detach"):
+        image = root/"pilot.vhd"
+        if not image.is_file():
+            fail("IQP1_VOLUME_IMAGE_MISSING")
+        _native_diskpart(root, [f'select vdisk file="{image}"',
+                                "attach vdisk" if action == "Attach" else "detach vdisk"], action)
+        return _volume_powershell("Inspect", root) if action == "Attach" else None
+    if action == "Inspect":
+        return _volume_powershell("Inspect", root)
+    fail("IQP1_INVALID_VOLUME_ACTION")
 
 def fixed_vhd(path, *, size_mib=VHD_MIB):
     """Fixed footer, exact physical allocation and no sparse/compressed file."""
