@@ -1,10 +1,9 @@
 # Contributing
 
 This is an early-stage research project. Start with the credential-free
-[offline quickstart](docs/OFFLINE_QUICKSTART.md). Original code licensing is still
-pending; review the licensing section of [README.md](README.md) before contributing
-code intended for redistribution. Do not submit third-party code without its
-applicable permission and notices.
+[offline quickstart](docs/OFFLINE_QUICKSTART.md). Contributions to the project's original code are submitted under its
+[MIT License](LICENSE). Do not submit third-party code without its applicable
+permission and notices. The code license does not grant vendor data rights.
 
 ## Report a reproducible problem
 

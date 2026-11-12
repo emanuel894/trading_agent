@@ -56,11 +56,10 @@ No stars, downloads or endorsements are requested as a substitute for real use.
 
 ## Licensing and data
 
-A project-wide open-source license has not yet been activated. The
-[MIT license proposal](docs/licensing/MIT-LICENSE.proposed.txt) is for owner review
-and is **not a license grant**. Public visibility alone does not grant a general
-right to redistribute this code. Dependency licenses and vendor market-data
-rights remain separate from any future project license.
+The project's original code and documentation are available under the
+[MIT License](LICENSE), including commercial reuse under its terms. This license
+does not relicense third-party code, dependencies or vendor market data; those
+retain their own licenses and usage restrictions.
 
 Do not upload credentials, broker/account details or licensed raw data in issues,
 PRs or generated reports. Keep real-data acquisition and broker diagnostics out
